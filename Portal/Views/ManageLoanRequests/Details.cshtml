@@ -1,0 +1,32 @@
+﻿@model Portal.ViewModels.ProductRequestLoanViewModel
+@using Cf.Services;
+<div class="row">
+    <div class="col-xs-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">@ViewBag.Action @ViewBag.ModuleName</h4>
+                <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
+                        <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                        <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-body collapse in">
+                <div class="card-block">
+                    <form class="form">
+                        @Html.Partial("~/Views/Product/Details.cshtml", Model)
+                        @Html.Partial("~/Views/Request/Details.cshtml", Model)
+
+                        @Html.Partial("~/Views/LoanRequest/Details.cshtml", Model)
+                        @Html.Partial("~/Views/RefundableProduct/Details.cshtml", Model)
+
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,258 @@
+@model Cf.ViewModels.ExceptionalAmountVwViewModel
+	<div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">@ViewBag.Action @ViewBag.ModuleName</h4>
+                    <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
+                            <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                            <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-body collapse in">
+                    <div class="card-block">
+                        <form class="form">
+                            <div class="form-body">
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.Id, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.Id, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Instance.Id)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                 <input type="text" id="txtId" class="form-control" value="@Html.DisplayFor(model => model.Instance.Id)" disabled />
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.LoanRequestRequestProductId, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.LoanRequestRequestProductId, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Instance.LoanRequestRequestProductId)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                 <input type="text" id="txtLoanRequestRequestProductId" class="form-control" value="@Html.DisplayFor(model => model.Instance.LoanRequestRequestProductId)" disabled />
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.LoanRequestRequestProductEmployeeId, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.LoanRequestRequestProductEmployeeId, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Instance.LoanRequestRequestProductEmployeeId)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                 <input type="text" id="txtLoanRequestRequestProductEmployeeId" class="form-control" value="@Html.DisplayFor(model => model.Instance.LoanRequestRequestProductEmployeeId)" disabled />
+								        </div>
+									</div>
+								</div>
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.LoanRequestRequestProductEmployeeFullName, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.LoanRequestRequestProductEmployeeFullName, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Instance.LoanRequestRequestProductEmployeeFullName)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                 <input type="text" id="txtLoanRequestRequestProductEmployeeFullName" class="form-control" value="@Html.DisplayFor(model => model.Instance.LoanRequestRequestProductEmployeeFullName)" disabled />
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.LoanRequestRequestProductEmployeeDepartmentName, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.LoanRequestRequestProductEmployeeDepartmentName, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Instance.LoanRequestRequestProductEmployeeDepartmentName)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                 <input type="text" id="txtLoanRequestRequestProductEmployeeDepartmentName" class="form-control" value="@Html.DisplayFor(model => model.Instance.LoanRequestRequestProductEmployeeDepartmentName)" disabled />
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.LoanRequestRequestProductEmployeeDepartmentSalaryWorkPlaceName, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.LoanRequestRequestProductEmployeeDepartmentSalaryWorkPlaceName, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Instance.LoanRequestRequestProductEmployeeDepartmentSalaryWorkPlaceName)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                 <input type="text" id="txtLoanRequestRequestProductEmployeeDepartmentSalaryWorkPlaceName" class="form-control" value="@Html.DisplayFor(model => model.Instance.LoanRequestRequestProductEmployeeDepartmentSalaryWorkPlaceName)" disabled />
+								        </div>
+									</div>
+								</div>
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.LoanRequestRequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.LoanRequestRequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Instance.LoanRequestRequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                 <input type="text" id="txtLoanRequestRequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName" class="form-control" value="@Html.DisplayFor(model => model.Instance.LoanRequestRequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)" disabled />
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.LoanRequestRequestProductEmployeeCategoryName, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.LoanRequestRequestProductEmployeeCategoryName, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Instance.LoanRequestRequestProductEmployeeCategoryName)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                 <input type="text" id="txtLoanRequestRequestProductEmployeeCategoryName" class="form-control" value="@Html.DisplayFor(model => model.Instance.LoanRequestRequestProductEmployeeCategoryName)" disabled />
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.LoanRequestRequestProductProductTypeName, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.LoanRequestRequestProductProductTypeName, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Instance.LoanRequestRequestProductProductTypeName)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                 <input type="text" id="txtLoanRequestRequestProductProductTypeName" class="form-control" value="@Html.DisplayFor(model => model.Instance.LoanRequestRequestProductProductTypeName)" disabled />
+								        </div>
+									</div>
+								</div>
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.LoanRequestRequestProductProductTypeRate, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.LoanRequestRequestProductProductTypeRate, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Instance.LoanRequestRequestProductProductTypeRate)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                 <input type="text" id="txtLoanRequestRequestProductProductTypeRate" class="form-control" value="@Html.DisplayFor(model => model.Instance.LoanRequestRequestProductProductTypeRate)" disabled />
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.SubNumber, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.SubNumber, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Instance.SubNumber)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                 <input type="text" id="txtSubNumber" class="form-control" value="@Html.DisplayFor(model => model.Instance.SubNumber)" disabled />
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.Amount, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.Amount, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Instance.Amount)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                 <input type="text" id="txtAmount" class="form-control" value="@Html.DisplayFor(model => model.Instance.Amount)" disabled />
+								        </div>
+									</div>
+								</div>
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.Notes, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.Notes, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Instance.Notes)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                 <input type="text" id="txtNotes" class="form-control" value="@Html.DisplayFor(model => model.Instance.Notes)" disabled />
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.ExceptionalAmountTypeName, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.ExceptionalAmountTypeName, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Instance.ExceptionalAmountTypeName)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                 <input type="text" id="txtExceptionalAmountTypeName" class="form-control" value="@Html.DisplayFor(model => model.Instance.ExceptionalAmountTypeName)" disabled />
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.ExceptionalAmountTypeIsIncome, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.ExceptionalAmountTypeIsIncome, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Instance.ExceptionalAmountTypeIsIncome)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                 @Html.CheckBoxFor(model => model.Instance.ExceptionalAmountTypeIsIncome, new { @disabled = "disabled" ,@class="form-control" })
+								        </div>
+									</div>
+								</div>
+							</div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-primary mr-1">
+								        @Html.ActionLink((string)@ViewBag.Update, "Edit", new {
+																	id = Model.Instance.Id })
+                                </button>
+								<button type="button" class="btn btn-warning">
+							        @Html.ActionLink((string)@ViewBag.Back, "Index")
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">@ViewBag.No</span></button>
+                <h4 class="modal-title" id="deleteModalLabel">@ViewBag.Delete @ViewBag.ModuleName</h4>
+            </div>
+            <div id="deleteModalBody" class="modal-body"></div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+<script>
+    $(function () {
+        $("#deleteModal").modal("hide");  // initially hides the modal pop-up until needed
+
+        $(".deleteLink").on("click", function () {
+		var url=$(this).data("url");
+            $.get(url, { id: $(this).data("id") }, function (data) {
+                $("#deleteModalBody").html(data);
+
+                $("#deleteModal").modal("show");  // shows the modal pop-up now that we have our partial view
+            });
+
+        });
+    });
+</script>
+
+}

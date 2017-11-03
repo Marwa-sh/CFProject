@@ -1,0 +1,56 @@
+@*@model Cf.Data.LoanRequest*@
+@model Cf.ViewModels.LoanRequestViewModel
+
+<div class="form-body">
+    <div class="row">
+        
+        <div class="col-md-4">
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.NetIncome, htmlAttributes: new { @class = "control-label" })*@
+                @Html.LabelFor(model => model.LoanRequest.NetIncome, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.LoanRequest.NetIncome)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                @Html.EditorFor(model => model.LoanRequest.NetIncome, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LoanRequest.NetIncome, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.TotalDeduction, htmlAttributes: new { @class = "control-label" })*@
+                @Html.LabelFor(model => model.LoanRequest.TotalDeduction, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.LoanRequest.TotalDeduction)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                @Html.EditorFor(model => model.LoanRequest.TotalDeduction, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LoanRequest.TotalDeduction, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+</div>
+
+@*@section Scripts {
+    <script>
+		$(function () {
+            $.validator.addMethod('date',
+            function (value, element) {
+                if (this.optional(element)) {
+                    return true;
+                }
+                var ok = true;
+                try {
+                    $.datepicker.parseDate('dd/mm/yy', value);
+                }
+                catch (err) {
+                    ok = false;
+                }
+                return ok;
+            });
+            $(".IsDate").datepicker({ dateFormat: 'dd/mm/yy', changeYear: true });
+        });
+    </script>
+}*@

@@ -1,0 +1,31 @@
+@*@model Cf.ViewModels.LoanRequestVwViewModel*@
+@model Portal.ViewModels.ProductRequestLoanViewModel
+<div class="form-body">
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.Instance.NetIncome, htmlAttributes: new { @class = "control-label" })*@
+                @Html.LabelFor(model => model.LoanRequestVwViewModel.Instance.NetIncome, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.LoanRequestVwViewModel.Instance.NetIncome)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                <input type="text" id="txtNetIncome" class="form-control" value="@Html.DisplayFor(model => model.LoanRequestVwViewModel.Instance.NetIncome)" disabled />
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.Instance.TotalDeduction, htmlAttributes: new { @class = "control-label" })*@
+                @Html.LabelFor(model => model.LoanRequestVwViewModel.Instance.TotalDeduction, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.LoanRequestVwViewModel.Instance.TotalDeduction)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                <input type="text" id="txtTotalDeduction" class="form-control" value="@Html.DisplayFor(model => model.LoanRequestVwViewModel.Instance.TotalDeduction)" disabled />
+            </div>
+        </div>
+    </div>
+</div>

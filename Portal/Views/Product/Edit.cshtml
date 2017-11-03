@@ -1,0 +1,85 @@
+@*@model Cf.Data.Product*@
+@model  Cf.ViewModels.LoanRequestViewModel
+
+
+<div class="form-body">
+    <div class="row">
+        
+        <div class="col-md-4">
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.Employee, htmlAttributes: new { @class = "control-label" })*@
+                @Html.LabelFor(model => model.RequestProduct.Employee, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestProduct.Employee)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                @Html.DropDownListFor(model => model.RequestProduct.Employee, (SelectList)@ViewBag.EmployeeList, htmlAttributes: new { @class = "form-control combobox" })                 
+                @Html.ValidationMessageFor(model => model.RequestProduct.Employee, "", new { @class = "text-danger" })
+                <input type="hidden" name="Product.Id" id="txtProductId" class="form-control" value="@Html.DisplayFor(model => model.RequestProduct.Id)" />
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.ProductType, htmlAttributes: new { @class = "control-label" })*@
+                @Html.LabelFor(model => model.RequestProduct.ProductType, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestProduct.ProductType)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                @Html.DropDownListFor(model => model.RequestProduct.ProductType, (SelectList)@ViewBag.ProductTypeList, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.RequestProduct.ProductType, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+
+                @Html.LabelFor(model => model.RequestProduct.Notes, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestProduct.Notes)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                @Html.EditorFor(model => model.RequestProduct.Notes, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.RequestProduct.Notes, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        @*<div class="col-md-4">
+            <div class="form-group">
+                
+                @Html.LabelFor(model => model.Product.Amount, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Product.Amount)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                @Html.EditorFor(model => model.Product.Amount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Product.Amount, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+    </div>
+     
+</div>
+
+@*@section Scripts {
+    <script>
+		$(function () {
+            $.validator.addMethod('date',
+            function (value, element) {
+                if (this.optional(element)) {
+                    return true;
+                }
+                var ok = true;
+                try {
+                    $.datepicker.parseDate('dd/mm/yy', value);
+                }
+                catch (err) {
+                    ok = false;
+                }
+                return ok;
+            });
+            $(".IsDate").datepicker({ dateFormat: 'dd/mm/yy', changeYear: true });
+        });
+    </script>
+}*@

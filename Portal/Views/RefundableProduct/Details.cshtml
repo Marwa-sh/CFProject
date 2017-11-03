@@ -1,0 +1,59 @@
+@*@model Cf.ViewModels.RefundableProductVwViewModel*@
+@model Portal.ViewModels.ProductRequestLoanViewModel
+<div class="form-body">
+
+    <div class="row">
+
+        <div class="col-md-4">
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.Instance.PaymentPeriod, htmlAttributes: new { @class = "control-label" })*@
+                @Html.LabelFor(model => model.RefundableProductVwViewModel.Instance.PaymentPeriod, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RefundableProductVwViewModel.Instance.PaymentPeriod)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                <input type="text" id="txtPaymentPeriod" class="form-control" value="@Html.DisplayFor(model => model.RefundableProductVwViewModel.Instance.PaymentPeriod)" disabled />
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.Instance.Installment, htmlAttributes: new { @class = "control-label" })*@
+                @Html.LabelFor(model => model.RefundableProductVwViewModel.Instance.Installment, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RefundableProductVwViewModel.Instance.Installment)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                <input type="text" id="txtInstallment" class="form-control" value="@Html.DisplayFor(model => model.RefundableProductVwViewModel.Instance.Installment)" disabled />
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.Instance.NetAmount, htmlAttributes: new { @class = "control-label" })*@
+                @Html.LabelFor(model => model.RefundableProductVwViewModel.Instance.NetAmount, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RefundableProductVwViewModel.Instance.NetAmount)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                <input type="text" id="txtNetAmount" class="form-control" value="@Html.DisplayFor(model => model.RefundableProductVwViewModel.Instance.NetAmount)" disabled />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+       
+        <div class="col-md-4">
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.Instance.ProfitAmount, htmlAttributes: new { @class = "control-label" })*@
+                @Html.LabelFor(model => model.RefundableProductVwViewModel.Instance.ProfitAmount, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RefundableProductVwViewModel.Instance.ProfitAmount)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                <input type="text" id="txtProfitAmount" class="form-control" value="@Html.DisplayFor(model => model.RefundableProductVwViewModel.Instance.ProfitAmount)" disabled />
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+﻿
+@if (HttpContext.Current.Session["userName"] != null)
+{
+    using (Html.BeginForm("LogOff", "Home", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+
+       
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            @Html.ActionLink("مرحبا " + Session["userName"], "Profile","Home" )
+        </li>
+        <li><a href="javascript:document.getElementById('logoutForm').submit()">تسجيل الخروج</a></li>
+    </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+          <li>@Html.ActionLink("تسجيل الدخول", "Login", "Home", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}

@@ -1,0 +1,173 @@
+﻿@model Portal.ViewModels.GuarantorWithStatmentViewModel
+
+@using (Html.BeginForm())
+{
+    <h4 class="card-title">@ViewBag.Action @ViewBag.ModuleName</h4>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+                
+                <div class="card-body collapse in">
+                    <div class="card-block">
+                        <form class="form">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-body">
+                                <div class="row">
+                                   
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            @*@Html.LabelFor(model => model.SubNumber, htmlAttributes: new { @class = "control-label" })*@
+                                            @Html.LabelFor(model => model.Guarantor.SubNumber, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Guarantor.SubNumber)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                            @Html.EditorFor(model => model.Guarantor.SubNumber, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Guarantor.SubNumber, "", new { @class = "text-danger" })
+                                            <input type="hidden" name="Guarantor.RefundableProduct" id="txtProductId" class="form-control" value="@ViewBag.ProductId" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            @*@Html.LabelFor(model => model.Employee, htmlAttributes: new { @class = "control-label" })*@
+                                            @Html.LabelFor(model => model.Guarantor.Employee, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Guarantor.Employee)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                            @Html.DropDownListFor(model => model.Guarantor.Employee, (SelectList)@ViewBag.EmployeeList, htmlAttributes: new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.Guarantor.Employee, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            @*@Html.LabelFor(model => model.GuarantorStatus, htmlAttributes: new { @class = "control-label" })*@
+                                            @Html.LabelFor(model => model.Guarantor.GuarantorStatus, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Guarantor.GuarantorStatus)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                            @Html.DropDownListFor(model => model.Guarantor.GuarantorStatus, (SelectList)@ViewBag.GuarantorStatusList, htmlAttributes: new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.Guarantor.GuarantorStatus, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            @*@Html.LabelFor(model => model.Notes, htmlAttributes: new { @class = "control-label" })*@
+                                            @Html.LabelFor(model => model.Guarantor.Notes, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Guarantor.Notes)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                            @Html.EditorFor(model => model.Guarantor.Notes, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Guarantor.Notes, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            @*@Html.LabelFor(model => model.GrossSalary, htmlAttributes: new { @class = "control-label" })*@
+                                            @Html.LabelFor(model => model.GuarantorStatement.GrossSalary, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.GuarantorStatement.GrossSalary)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                            @Html.EditorFor(model => model.GuarantorStatement.GrossSalary, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.GuarantorStatement.GrossSalary, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            @*@Html.LabelFor(model => model.DeductionsAmount, htmlAttributes: new { @class = "control-label" })*@
+                                            @Html.LabelFor(model => model.GuarantorStatement.DeductionsAmount, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.GuarantorStatement.DeductionsAmount)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                            @Html.EditorFor(model => model.GuarantorStatement.DeductionsAmount, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.GuarantorStatement.DeductionsAmount, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            @*@Html.LabelFor(model => model.NetSalary, htmlAttributes: new { @class = "control-label" })*@
+                                            @Html.LabelFor(model => model.GuarantorStatement.NetSalary, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.GuarantorStatement.NetSalary)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                            @Html.EditorFor(model => model.GuarantorStatement.NetSalary, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.GuarantorStatement.NetSalary, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            @*@Html.LabelFor(model => model.ExceptionalIncome, htmlAttributes: new { @class = "control-label" })*@
+                                            @Html.LabelFor(model => model.GuarantorStatement.ExceptionalIncome, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.GuarantorStatement.ExceptionalIncome)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                            @Html.EditorFor(model => model.GuarantorStatement.ExceptionalIncome, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.GuarantorStatement.ExceptionalIncome, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary mr-1">
+                                    @ViewBag.Save
+                                </button>
+                                <button type="button" class="btn btn-warning">
+                                    @Html.ActionLink((string)ViewBag.Back, "Details", new   { id= @ViewBag.ProductId })
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     
+}
+@section Scripts {
+
+
+
+
+    @*<script>
+        $(function () {
+
+            $.validator.addMethod('date',
+            function (value, element) {
+                if (this.optional(element)) {
+                    return true;
+                }
+                var ok = true;
+                try {
+                    $.datepicker.parseDate('dd/mm/yy', value);
+                }
+                catch (err) {
+                    ok = false;
+                }
+                return ok;
+            });
+            $(".IsDate").datepicker({ dateFormat: 'dd/mm/yy', changeYear: true });
+        });
+    </script>*@
+}

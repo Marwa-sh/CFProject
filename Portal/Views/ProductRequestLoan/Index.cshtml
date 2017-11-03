@@ -1,0 +1,305 @@
+﻿@model Portal.ViewModels.ManageLoanDecision
+<div class="form-horizontal">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+</div>
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">@ViewBag.FilterOptions</h4>
+                    <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i id="cardOptionsSign" class="icon-minus4"></i></a></li>
+                            <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                            <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="cardOptions" class="card-body collapse in">
+                    <div class="card-block">
+                        <form class="form">
+                            <div class="form-body">
+                               
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            @*@Html.LabelFor(model => model.Filter.RequestRequestStatusId, htmlAttributes: new { @class = "control-label" })*@
+                                            @Html.LabelFor(model => model.LoanRequestVwViewModel.Filter.RequestRequestStatusId, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.LoanRequestVwViewModel.Filter.RequestRequestStatusId)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                            @Html.DropDownListFor(model => model.LoanRequestVwViewModel.Filter.RequestRequestStatusId, (SelectList)@ViewBag.RequestStatusList, htmlAttributes: new { @class = "form-control" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary mr-1">
+                                                @ViewBag.Search
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<div class="row">
+    <div class="col-xs-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">@ViewBag.Title</h4>
+                <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
+                        <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                        <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-body collapse in">
+                <div class="card-block card-dashboard">
+                    <button class="btn btn-success" type="button">
+                        @Html.ActionLink((string)ViewBag.Insert + " " + (string)ViewBag.ModuleName, "Create")
+                    </button>
+                    <button class="btn btn-warning" id="ApproveLoanRequest" type="button" value="@ViewBag.Approve @ViewBag.ModuleName">
+                        @ViewBag.Insert @ViewBag.LoanDecision
+                         
+                    </button>
+                </div>
+                <div class="table-responsive">
+                    <table id="Result" class="table table-bordered mb-0">
+                        <thead class="thead-inverse">
+                            <tr>
+                                <th></th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.LoanRequestVwViewModel.Instance.RequestProductId)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.LoanRequestVwViewModel.Instance.RequestProductEmployeeId)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.LoanRequestVwViewModel.Instance.RequestProductEmployeeFullName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.LoanRequestVwViewModel.Instance.RequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.LoanRequestVwViewModel.Instance.RequestProductEmployeeCategoryName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.LoanRequestVwViewModel.Instance.RequestProductProductTypeName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.LoanRequestVwViewModel.Instance.RequestDate)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.LoanRequestVwViewModel.Instance.RequestAmount)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.LoanRequestVwViewModel.Instance.RequestRequestStatusName)
+                                </th>
+
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.LoanRequestVwViewModel.List)
+                            {
+                                <tr>
+                                    <td>
+                                        <input id="isSellected" name="isSellected" type="checkbox" checked/>
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.RequestProductId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.RequestProductEmployeeId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.RequestProductEmployeeFullName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.RequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.RequestProductEmployeeCategoryName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.RequestProductProductTypeName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.RequestDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.RequestAmount)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.RequestRequestStatusName)
+                                    </td>
+                                    <td>
+                                        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                            <button type="button" class="btn btn-info">
+                                                @Html.ActionLink((string)ViewBag.Details, "Details",
+                                            new
+                                            {
+                                                id = item.RequestProductId
+                                            })
+                                            </button>
+                                            <button type="button" class="btn btn-warning">
+                                                @Html.ActionLink((string)ViewBag.Update, "Edit",
+                                            new
+                                            {
+                                                id = item.RequestProductId
+                                            })
+
+                                            </button>
+                                            @*<button type="button" class="btn btn-danger deleteLink" data-original-title="@ViewBag.Delete" id="delete" data-id="@item.RequestProductId">@ViewBag.Delete</button>*@
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="CreateLoanDecisionModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">@ViewBag.Insert @ViewBag.LoanDecision</h4>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("CreateLoanDecision", "ProductRequestLoan", FormMethod.Post))
+                {
+                   
+                }
+
+            </div>
+            @*<div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>*@
+        </div>
+
+    </div>
+</div>
+
+
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">@ViewBag.No</span></button>
+                <h4 class="modal-title" id="deleteModalLabel">@ViewBag.Delete @ViewBag.ModuleName</h4>
+            </div>
+            <div id="deleteModalBody" class="modal-body"></div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+@Scripts.Render("~/bundles/jqueryval")
+
+<script>
+		$(function () {
+            $.validator.addMethod('date',
+            function (value, element) {
+                if (this.optional(element)) {
+                    return true;
+                }
+                var ok = true;
+                try {
+                    $.datepicker.parseDate('dd/mm/yy', value);
+                }
+                catch (err) {
+                    ok = false;
+                }
+                return ok;
+            });
+            $(".IsDate").datepicker({ dateFormat: 'dd/mm/yy', changeYear: true });
+        });
+</script>
+ 
+<script>
+        $(document).ready(function () {
+            var len = $('#Result tr').length;
+            var res = $("#Result");
+            if (len == 1) {
+                var table = document.getElementById("Result");
+
+                // Create an empty <tr> element and add it to the 1st position of the table:
+                var row = table.insertRow(1);
+
+                //// Insert new cell 
+                var cell1 = row.insertCell(0);
+                cell1.colSpan = 12;
+                cell1.innerText = "لا يوجد نتائج";
+                cell1.align="center";
+                 
+            }
+            else {
+                
+                var value = $("#cardOptions").attr("class").replace("in", "");
+                $("#cardOptions").attr("class", value);
+                var value = $("#cardOptionsSign").attr("class").replace("icon-minus4", "icon-plus4");
+                $("#cardOptionsSign").attr("class", value);
+            }
+        });
+        $(function () {
+            $("#deleteModal").modal("hide");  // initially hides the modal pop-up until needed
+
+            $(".deleteLink").on("click", function () {
+                $.get('@Url.Action("Delete")', { id: $(this).data("id") }, function (data) {
+                    $("#deleteModalBody").html(data);
+
+                    $("#deleteModal").modal("show");  // shows the modal pop-up now that we have our partial view
+                });
+
+            });
+            $("#AddLoanDecision").on("click", function () {
+
+                $('#Result tr').filter(':has(:checkbox:checked)').each(function () {
+                    // this = tr
+                    $tr = $(this);
+
+                    $('td', $tr).each(function () {
+                        var index = $(this).cellIndex;
+                        if (index == 1) {
+                            console.log($(this).html());
+                        }
+
+                    });
+                     
+                });
+
+                $("#CreateLoanDecisionModal").modal("show");
+                @*$.get('@Url.Action("Delete")', { id: $(this).data("id") }, function (data) {
+	                $("#deleteModalBody").html(data);
+
+	                $("#deleteModal").modal("show");  // shows the modal pop-up now that we have our partial view*@
+            });
+
+        });
+        //});
+    </script>
+
+}

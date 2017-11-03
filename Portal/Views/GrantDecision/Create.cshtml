@@ -1,0 +1,265 @@
+@model Cf.Data.GrantDecision
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">@ViewBag.Action @ViewBag.ModuleName</h4>
+                    <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
+                            <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                            <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-body collapse in">
+                    <div class="card-block">
+                        <form class="form">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-body">
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Number, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Number, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Number)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                @Html.EditorFor(model => model.Number, new { htmlAttributes = new { @class = "form-control" } })
+								                @Html.ValidationMessageFor(model => model.Number, "", new { @class = "text-danger" })
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Year, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Year, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Year)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                @Html.EditorFor(model => model.Year, new { htmlAttributes = new { @class = "form-control" } })
+								                @Html.ValidationMessageFor(model => model.Year, "", new { @class = "text-danger" })
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.GrantTypeGroup, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.GrantTypeGroup, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.GrantTypeGroup)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                @Html.DropDownList("GrantTypeGroup", (SelectList)@ViewBag.GrantTypeGroupList, htmlAttributes: new { @class = "form-control" })
+								                @Html.ValidationMessageFor(model => model.GrantTypeGroup, "", new { @class = "text-danger" })
+								        </div>
+									</div>
+								</div>
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Date, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Date)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                @Html.TextBoxFor(model => model.Date, htmlAttributes: new { @class = "form-control IsDate" })
+								                @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.CersNumber, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.CersNumber, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.CersNumber)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                @Html.EditorFor(model => model.CersNumber, new { htmlAttributes = new { @class = "form-control" } })
+								                @Html.ValidationMessageFor(model => model.CersNumber, "", new { @class = "text-danger" })
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.CersDate, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.CersDate, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.CersDate)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                @Html.TextBoxFor(model => model.CersDate, htmlAttributes: new { @class = "form-control IsDate" })
+								                @Html.ValidationMessageFor(model => model.CersDate, "", new { @class = "text-danger" })
+								        </div>
+									</div>
+								</div>
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.PaymentNumber, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.PaymentNumber, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.PaymentNumber)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                @Html.EditorFor(model => model.PaymentNumber, new { htmlAttributes = new { @class = "form-control" } })
+								                @Html.ValidationMessageFor(model => model.PaymentNumber, "", new { @class = "text-danger" })
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.PaymentDate, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.PaymentDate, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.PaymentDate)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                @Html.TextBoxFor(model => model.PaymentDate, htmlAttributes: new { @class = "form-control IsDate" })
+								                @Html.ValidationMessageFor(model => model.PaymentDate, "", new { @class = "text-danger" })
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Notes, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Notes, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Notes)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                @Html.EditorFor(model => model.Notes, new { htmlAttributes = new { @class = "form-control" } })
+								                @Html.ValidationMessageFor(model => model.Notes, "", new { @class = "text-danger" })
+								        </div>
+									</div>
+								</div>
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.TableNumber, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.TableNumber, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.TableNumber)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                @Html.EditorFor(model => model.TableNumber, new { htmlAttributes = new { @class = "form-control" } })
+								                @Html.ValidationMessageFor(model => model.TableNumber, "", new { @class = "text-danger" })
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.TableDate, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.TableDate, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.TableDate)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                @Html.TextBoxFor(model => model.TableDate, htmlAttributes: new { @class = "form-control IsDate" })
+								                @Html.ValidationMessageFor(model => model.TableDate, "", new { @class = "text-danger" })
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.BaseNumber, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.BaseNumber, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.BaseNumber)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                @Html.EditorFor(model => model.BaseNumber, new { htmlAttributes = new { @class = "form-control" } })
+								                @Html.ValidationMessageFor(model => model.BaseNumber, "", new { @class = "text-danger" })
+								        </div>
+									</div>
+								</div>
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.BaseDate, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.BaseDate, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.BaseDate)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                @Html.TextBoxFor(model => model.BaseDate, htmlAttributes: new { @class = "form-control IsDate" })
+								                @Html.ValidationMessageFor(model => model.BaseDate, "", new { @class = "text-danger" })
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.AdditionalClause, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.AdditionalClause, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.AdditionalClause)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                @Html.EditorFor(model => model.AdditionalClause, new { htmlAttributes = new { @class = "form-control" } })
+								                @Html.ValidationMessageFor(model => model.AdditionalClause, "", new { @class = "text-danger" })
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.AdditionalIntroduction, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.AdditionalIntroduction, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.AdditionalIntroduction)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                @Html.EditorFor(model => model.AdditionalIntroduction, new { htmlAttributes = new { @class = "form-control" } })
+								                @Html.ValidationMessageFor(model => model.AdditionalIntroduction, "", new { @class = "text-danger" })
+								        </div>
+									</div>
+								</div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary mr-1">
+                                    @ViewBag.Save
+                                </button>
+                                <button type="button" class="btn btn-warning">
+                                    @Html.ActionLink((string)ViewBag.Back, "Index")
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section Scripts {
+    <script>
+		$(function () {
+            $.validator.addMethod('date',
+            function (value, element) {
+                if (this.optional(element)) {
+                    return true;
+                }
+                var ok = true;
+                try {
+                    $.datepicker.parseDate('dd/mm/yy', value);
+                }
+                catch (err) {
+                    ok = false;
+                }
+                return ok;
+            });
+            $(".IsDate").datepicker({ dateFormat: 'dd/mm/yy', changeYear: true });
+        });
+    </script>
+}

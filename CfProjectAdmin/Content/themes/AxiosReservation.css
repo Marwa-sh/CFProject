@@ -1,0 +1,43 @@
+﻿#customer-reservation-container{
+    max-height : 150px;
+    overflow-y : scroll;
+}
+#SearchAndPickResult{
+    max-height : 300px;
+    overflow-y : scroll;
+}
+.panel-heading > .clickable{
+    float:right !important;
+    margin-top: -20px;
+}
+input[name="validate"]{
+    margin: 3px !important;
+}
+.bootbox-body > textarea{
+    resize:vertical ;
+    width: 250px;
+    min-height: 110px;
+}
+#forwardTicket textarea{
+    resize:vertical ;
+}
+.list-container{
+    margin-top : 27px;
+    margin-bottom : 27px;
+}
+#choosed-customer-reservation, #series-container, #number-container{
+    width : 90%;
+    margin-left: 20px;
+}
+.j-select-picker{
+    padding-left : 24px;
+}
+.j-form-lable{
+    margin-top: 10px;
+}
+.table-with-release{
+    padding-left:30px!important;
+}
+textarea{
+     resize:vertical ;
+}

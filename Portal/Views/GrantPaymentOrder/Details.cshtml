@@ -1,0 +1,258 @@
+@model Cf.ViewModels.GrantPaymentOrderVwViewModel
+	<div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">@ViewBag.Action @ViewBag.ModuleName</h4>
+                    <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
+                            <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                            <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-body collapse in">
+                    <div class="card-block">
+                        <form class="form">
+                            <div class="form-body">
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.Id, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.Id, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Instance.Id)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                 <input type="text" id="txtId" class="form-control" value="@Html.DisplayFor(model => model.Instance.Id)" disabled />
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.Number, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.Number, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Instance.Number)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                 <input type="text" id="txtNumber" class="form-control" value="@Html.DisplayFor(model => model.Instance.Number)" disabled />
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.Year, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.Year, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Instance.Year)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                 <input type="text" id="txtYear" class="form-control" value="@Html.DisplayFor(model => model.Instance.Year)" disabled />
+								        </div>
+									</div>
+								</div>
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.Date, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.Date, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Instance.Date)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                 <input type="text" id="txtDate" class="form-control" value="@Html.DisplayFor(model => model.Instance.Date)" disabled />
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.Notes, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.Notes, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Instance.Notes)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                 <input type="text" id="txtNotes" class="form-control" value="@Html.DisplayFor(model => model.Instance.Notes)" disabled />
+								        </div>
+									</div>
+								</div>
+							</div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-primary mr-1">
+								        @Html.ActionLink((string)@ViewBag.Update, "Edit", new {
+																	id = Model.Instance.Id })
+                                </button>
+								<button type="button" class="btn btn-warning">
+							        @Html.ActionLink((string)@ViewBag.Back, "Index")
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">@ViewBag.GrantPaymentVwTitle @if(Model.GrantPaymentVwViewModel.List.Count == 0) {<span class="tag tag-default">@Model.GrantPaymentVwViewModel.List.Count</span>} else {<span class="tag tag-danger">@Model.GrantPaymentVwViewModel.List.Count</span> }</h4>
+                <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li><a data-action="collapse"><i class="icon-plus4"></i></a></li>
+                        <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                        <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-body collapse out">
+                <div class="card-block card-dashboard">
+                    <button class="btn btn-success" type="button">
+                        @Html.ActionLink((string)ViewBag.Insert + " " + (string)ViewBag.GrantPaymentVwTitle, "Create", "GrantPayment")
+                    </button>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered mb-0">
+                        <thead class="thead-inverse">
+					        <tr>
+					            <th>
+					                @Html.DisplayNameFor(model => model.GrantPaymentVwViewModel.Instance.Id)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.GrantPaymentVwViewModel.Instance.SubNumber)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.GrantPaymentVwViewModel.Instance.GrantProductEmployeeId)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.GrantPaymentVwViewModel.Instance.GrantProductEmployeeFullName)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.GrantPaymentVwViewModel.Instance.GrantProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.GrantPaymentVwViewModel.Instance.GrantProductEmployeeCategoryName)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.GrantPaymentVwViewModel.Instance.GrantProductProductTypeName)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.GrantPaymentVwViewModel.Instance.GrantProductAmount)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.GrantPaymentVwViewModel.Instance.GrantAmount)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.GrantPaymentVwViewModel.Instance.Amount)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.GrantPaymentVwViewModel.Instance.Notes)
+					            </th>
+           
+					            <th></th>
+					        </tr>
+                        </thead>
+                        <tbody>
+        @foreach (var item in Model.GrantPaymentVwViewModel.List)
+        {
+				            <tr>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.Id)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.SubNumber)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.GrantProductEmployeeId)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.GrantProductEmployeeFullName)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.GrantProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.GrantProductEmployeeCategoryName)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.GrantProductProductTypeName)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.GrantProductAmount)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.GrantAmount)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.Amount)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.Notes)
+                				</td>
+				                <td>
+									<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+										<button type="button" class="btn btn-info">
+					                    	@Html.ActionLink((string)ViewBag.Details, "Details", "GrantPayment",
+                        					new
+											{
+												id = item.Id
+                        					}, null)
+                                        </button>
+                                        <button type="button" class="btn btn-warning">
+					                    	@Html.ActionLink((string)ViewBag.Update, "Edit", "GrantPayment",
+                        					new
+                        					{
+												id = item.Id
+                        					}, null)
+                                        </button>
+                                        <button type="button" class="btn btn-danger deleteLink" data-original-title="@ViewBag.Delete" id="delete" data-id="@item.Id" data-url="@Url.Action("Delete", "GrantPayment")">@ViewBag.Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+				        }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">@ViewBag.No</span></button>
+                <h4 class="modal-title" id="deleteModalLabel">@ViewBag.Delete @ViewBag.ModuleName</h4>
+            </div>
+            <div id="deleteModalBody" class="modal-body"></div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+<script>
+    $(function () {
+        $("#deleteModal").modal("hide");  // initially hides the modal pop-up until needed
+
+        $(".deleteLink").on("click", function () {
+		var url=$(this).data("url");
+            $.get(url, { id: $(this).data("id") }, function (data) {
+                $("#deleteModalBody").html(data);
+
+                $("#deleteModal").modal("show");  // shows the modal pop-up now that we have our partial view
+            });
+
+        });
+    });
+</script>
+
+}

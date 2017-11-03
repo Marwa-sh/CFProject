@@ -1,0 +1,570 @@
+﻿@model Portal.ViewModels.ProductRequestLoanViewModel
+@using Cf.Services;
+<div class="row">
+    <div class="col-xs-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">@ViewBag.Action @ViewBag.ModuleName</h4>
+                <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
+                        <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                        <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-body collapse in">
+                <div class="card-block">
+                    <form class="form">
+                        @Html.Partial("~/Views/Product/Details.cshtml", Model)
+                        @Html.Partial("~/Views/Request/Details.cshtml", Model)
+
+                        @Html.Partial("~/Views/LoanRequest/Details.cshtml", Model)
+                        @Html.Partial("~/Views/RefundableProduct/Details.cshtml", Model)
+
+
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-primary mr-1">
+                                @Html.ActionLink((string)@ViewBag.Update, "Edit", new
+                           {
+                               id = Model.ProductVwViewModel.Instance.Id
+                           })
+                            </button>
+                            <button type="button" class="btn btn-warning">
+                                @Html.ActionLink((string)@ViewBag.Back, "Index")
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">@ViewBag.TitleGuarantor @if (Model.RefundableProductVwViewModel.GuarantorVwViewModel.List.Count == 0)
+    {<span class="tag tag-default">@Model.RefundableProductVwViewModel.GuarantorVwViewModel.List.Count</span>}
+    else
+    {<span class="tag tag-danger">@Model.RefundableProductVwViewModel.GuarantorVwViewModel.List.Count</span> }</h4>
+                <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li><a data-action="collapse"><i class="icon-plus4"></i></a></li>
+                        <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                        <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-body collapse out">
+                <div class="card-block card-dashboard">
+                    <button type="button" class="btn btn-danger createLink" data-original-title="@ViewBag.Insert" id="CreateG" data-url="@Url.Action("CreateGuarantorWithStatement", "ProductRequestLoan")">@ViewBag.Insert</button>
+                  
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered mb-0">
+                        <thead class="thead-inverse">
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.RefundableProductVwViewModel.GuarantorVwViewModel.Instance.Id)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.RefundableProductVwViewModel.GuarantorVwViewModel.Instance.SubNumber)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.RefundableProductVwViewModel.GuarantorVwViewModel.Instance.EmployeeId)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.RefundableProductVwViewModel.GuarantorVwViewModel.Instance.EmployeeFullName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.RefundableProductVwViewModel.GuarantorVwViewModel.Instance.EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.RefundableProductVwViewModel.GuarantorVwViewModel.Instance.EmployeeCategoryName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.RefundableProductVwViewModel.GuarantorVwViewModel.Instance.GuarantorStatusName)
+                                </th>
+                                 
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.RefundableProductVwViewModel.GuarantorVwViewModel.List)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Id)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.SubNumber)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EmployeeId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EmployeeFullName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EmployeeCategoryName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.GuarantorStatusName)
+                                    </td>
+                                    <td>
+                                        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                            
+                                            <button type="button" class="btn btn-warning editLink" data-id="@item.Id" data-original-title="@ViewBag.Update" id="CreateG" data-url="@Url.Action("EditGuarantorWithStatement", "ProductRequestLoan")">@ViewBag.Update</button>
+                                            <button type="button" class="btn btn-danger deleteLink" data-original-title="@ViewBag.Delete" id="delete" data-id="@item.Id" data-url="@Url.Action("DeleteGuarantorWithStatement", "ProductRequestLoan")">@ViewBag.Delete</button>
+                                            
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title"></h4>
+                <h4 class="card-title">
+                    @ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ExceptionalAmountType", "Exceptional income")
+                   @*@ViewBag.TitleExceptionalAount
+                     @if (Model.ExceptionalAmountVwViewModel.List.Count==0)
+                    {<span class="tag tag-default">@Model.ExceptionalAmountVwViewModel.List.Count</span>}
+                    else
+                    {<span class="tag tag-danger">@Model.ExceptionalAmountVwViewModel.List.Count</span> }*@
+                </h4>
+                <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
+                        <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                        <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-body collapse in">
+                <div class="card-block card-dashboard">
+                    <button type="button" class="btn btn-danger createLink" data-original-title="@ViewBag.Insert" id="CreateExceptionalAmount" data-url="@Url.Action("createExceptionalAmount", "ProductRequestLoan")">@ViewBag.Insert</button>
+
+                </div>
+                <div class="table-responsive">
+                    <table id="Result" class="table table-bordered mb-0">
+                        <thead class="thead-inverse">
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ExceptionalAmountVwViewModel.Instance.Id)
+                                </th>
+                                @*<th>
+                                    @Html.DisplayNameFor(model => model.ExceptionalAmountVwViewModel.Instance.LoanRequestRequestProductEmployeeId)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ExceptionalAmountVwViewModel.Instance.LoanRequestRequestProductEmployeeFullName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ExceptionalAmountVwViewModel.Instance.LoanRequestRequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ExceptionalAmountVwViewModel.Instance.LoanRequestRequestProductEmployeeCategoryName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ExceptionalAmountVwViewModel.Instance.LoanRequestRequestProductProductTypeName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ExceptionalAmountVwViewModel.Instance.SubNumber)
+                                </th>*@
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ExceptionalAmountVwViewModel.Instance.Amount)
+                                </th>
+                                @*<th>
+                                    @Html.DisplayNameFor(model => model.ExceptionalAmountVwViewModel.Instance.ExceptionalAmountTypeName)
+                                </th>*@
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ExceptionalAmountVwViewModel.Instance.ExceptionalAmountTypeIsIncome)
+                                </th>
+
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.ExceptionalAmountVwViewModel.List.Where(c=>c.ExceptionalAmountTypeId==1))
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Id)
+                                    </td>
+                                    @*<td>
+                                        @Html.DisplayFor(modelItem => item.LoanRequestRequestProductEmployeeId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LoanRequestRequestProductEmployeeFullName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LoanRequestRequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LoanRequestRequestProductEmployeeCategoryName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LoanRequestRequestProductProductTypeName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.SubNumber)
+                                    </td>*@
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Amount)
+                                    </td>
+                                    @*<td>
+                                        @Html.DisplayFor(modelItem => item.ExceptionalAmountTypeName)
+                                    </td>*@
+                                    <td>
+                                        @Html.CheckBoxFor(modelItem => item.ExceptionalAmountTypeIsIncome, new { @disabled = "disabled" })
+                                    </td>
+                                    <td>
+                                        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                           
+                                             <button type="button" class="btn btn-warning editLink" data-id="@item.Id" data-original-title="@ViewBag.Update" id="CreateG" data-url="@Url.Action("editExceptionalAmount", "ProductRequestLoan")">@ViewBag.Update</button>
+
+                                             
+                                            <button type="button" class="btn btn-danger deleteLink" data-original-title="@ViewBag.Delete" id="delete" data-id="@item.Id" data-url="@Url.Action("DeleteExceptionalAmount", "ProductRequestLoan")">@ViewBag.Delete</button>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title"></h4>
+                <h4 class="card-title">
+                    @ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ExceptionalAmountType", "Exceptional deduction")
+                    @*@ViewBag.TitleExceptionalAount @if (Model.ExceptionalAmountVwViewModel.List.Count == 0)
+                    {<span class="tag tag-default">@Model.ExceptionalAmountVwViewModel.List.Count</span>}
+                    else
+                    {<span class="tag tag-danger">@Model.ExceptionalAmountVwViewModel.List.Count</span> }*@
+                </h4>
+                <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
+                        <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                        <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-body collapse in">
+                <div class="card-block card-dashboard">
+                    <button type="button" class="btn btn-danger createLink" data-original-title="@ViewBag.Insert" id="CreateExceptionalAmount" data-url="@Url.Action("createExceptionalAmount", "ProductRequestLoan")">@ViewBag.Insert</button>
+
+                </div>
+                <div class="table-responsive">
+                    <table id="Result" class="table table-bordered mb-0">
+                        <thead class="thead-inverse">
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ExceptionalAmountVwViewModel.Instance.Id)
+                                </th>
+                                @*<th>
+                                    @Html.DisplayNameFor(model => model.ExceptionalAmountVwViewModel.Instance.LoanRequestRequestProductEmployeeId)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ExceptionalAmountVwViewModel.Instance.LoanRequestRequestProductEmployeeFullName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ExceptionalAmountVwViewModel.Instance.LoanRequestRequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ExceptionalAmountVwViewModel.Instance.LoanRequestRequestProductEmployeeCategoryName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ExceptionalAmountVwViewModel.Instance.LoanRequestRequestProductProductTypeName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ExceptionalAmountVwViewModel.Instance.SubNumber)
+                                </th>*@
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ExceptionalAmountVwViewModel.Instance.Amount)
+                                </th>
+                                @*<th>
+                                    @Html.DisplayNameFor(model => model.ExceptionalAmountVwViewModel.Instance.ExceptionalAmountTypeName)
+                                </th>*@
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ExceptionalAmountVwViewModel.Instance.ExceptionalAmountTypeIsIncome)
+                                </th>
+
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.ExceptionalAmountVwViewModel.List.Where(c => c.ExceptionalAmountTypeId == 2))
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Id)
+                                    </td>
+                                    @*<td>
+                                        @Html.DisplayFor(modelItem => item.LoanRequestRequestProductEmployeeId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LoanRequestRequestProductEmployeeFullName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LoanRequestRequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LoanRequestRequestProductEmployeeCategoryName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LoanRequestRequestProductProductTypeName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.SubNumber)
+                                    </td>*@
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Amount)
+                                    </td>
+                                    @*<td>
+                                        @Html.DisplayFor(modelItem => item.ExceptionalAmountTypeName)
+                                    </td>*@
+                                    <td>
+                                        @Html.CheckBoxFor(modelItem => item.ExceptionalAmountTypeIsIncome, new { @disabled = "disabled" })
+                                    </td>
+                                    <td>
+                                        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+
+                                            <button type="button" class="btn btn-warning editLink" data-id="@item.Id" data-original-title="@ViewBag.Update" id="CreateG" data-url="@Url.Action("editExceptionalAmount", "ProductRequestLoan")">@ViewBag.Update</button>
+
+
+                                            <button type="button" class="btn btn-danger deleteLink" data-original-title="@ViewBag.Delete" id="delete" data-id="@item.Id" data-url="@Url.Action("DeleteExceptionalAmount", "ProductRequestLoan")">@ViewBag.Delete</button>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title"></h4>
+                <h4 class="card-title">
+                    @ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ExceptionalAmountType", "Net deduction")
+                    @*@ViewBag.TitleExceptionalAount @if (Model.ExceptionalAmountVwViewModel.List.Count == 0)
+                    {<span class="tag tag-default">@Model.ExceptionalAmountVwViewModel.List.Count</span>}
+                    else
+                    {<span class="tag tag-danger">@Model.ExceptionalAmountVwViewModel.List.Count</span> }*@
+                </h4>
+                <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
+                        <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                        <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-body collapse in">
+                <div class="card-block card-dashboard">
+                    <button type="button" class="btn btn-danger createLink" data-original-title="@ViewBag.Insert" id="CreateExceptionalAmount" data-url="@Url.Action("createExceptionalAmount", "ProductRequestLoan")">@ViewBag.Insert</button>
+
+                </div>
+                <div class="table-responsive">
+                    <table id="Result" class="table table-bordered mb-0">
+                        <thead class="thead-inverse">
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ExceptionalAmountVwViewModel.Instance.Id)
+                                </th>
+                                @*<th>
+                                    @Html.DisplayNameFor(model => model.ExceptionalAmountVwViewModel.Instance.LoanRequestRequestProductEmployeeId)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ExceptionalAmountVwViewModel.Instance.LoanRequestRequestProductEmployeeFullName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ExceptionalAmountVwViewModel.Instance.LoanRequestRequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ExceptionalAmountVwViewModel.Instance.LoanRequestRequestProductEmployeeCategoryName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ExceptionalAmountVwViewModel.Instance.LoanRequestRequestProductProductTypeName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ExceptionalAmountVwViewModel.Instance.SubNumber)
+                                </th>*@
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ExceptionalAmountVwViewModel.Instance.Amount)
+                                </th>
+                                @*<th>
+                                    @Html.DisplayNameFor(model => model.ExceptionalAmountVwViewModel.Instance.ExceptionalAmountTypeName)
+                                </th>*@
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ExceptionalAmountVwViewModel.Instance.ExceptionalAmountTypeIsIncome)
+                                </th>
+
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.ExceptionalAmountVwViewModel.List.Where(c => c.ExceptionalAmountTypeId == 3))
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Id)
+                                    </td>
+                                    @*<td>
+                                        @Html.DisplayFor(modelItem => item.LoanRequestRequestProductEmployeeId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LoanRequestRequestProductEmployeeFullName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LoanRequestRequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LoanRequestRequestProductEmployeeCategoryName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LoanRequestRequestProductProductTypeName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.SubNumber)
+                                    </td>*@
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Amount)
+                                    </td>
+                                    @*<td>
+                                        @Html.DisplayFor(modelItem => item.ExceptionalAmountTypeName)
+                                    </td>*@
+                                    <td>
+                                        @Html.CheckBoxFor(modelItem => item.ExceptionalAmountTypeIsIncome, new { @disabled = "disabled" })
+                                    </td>
+                                    <td>
+                                        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+
+                                            <button type="button" class="btn btn-warning editLink" data-id="@item.Id" data-original-title="@ViewBag.Update" id="CreateG" data-url="@Url.Action("editExceptionalAmount", "ProductRequestLoan")">@ViewBag.Update</button>
+
+
+                                            <button type="button" class="btn btn-danger deleteLink" data-original-title="@ViewBag.Delete" id="delete" data-id="@item.Id" data-url="@Url.Action("DeleteExceptionalAmount", "ProductRequestLoan")">@ViewBag.Delete</button>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="FieldsModal" tabindex="-1" role="dialog" aria-labelledby="fieldsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">@ViewBag.No</span></button>
+                <h4 class="modal-title" id="fieldsModalLabel"> @ViewBag.TitleGuarantor </h4>
+            </div>
+            <div id="fieldsModalBody" class="modal-body">
+                
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">@ViewBag.No</span></button>
+                <h4 class="modal-title" id="deleteModalLabel">@ViewBag.Delete</h4>
+            </div>
+            <div id="deleteModalBody" class="modal-body"></div>
+
+        </div>
+    </div>
+</div>
+@section Scripts {
+  @Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/Adminjquiry")
+    <script>
+
+        $(function () {
+            $("#FieldsModal").modal("hide");  // initially hides the modal pop-up until needed
+
+            $(".createLink").on("click", function () {
+                var url = $(this).data("url");
+               
+                $.get(url, { id: $("#txtProductId").val() }, function (data) {
+                    $("#fieldsModalBody").html(data);
+
+                    $("#FieldsModal").modal("show");  // shows the modal pop-up now that we have our partial view
+                });
+               
+            });
+            $(".editLink").on("click", function () {
+                var url = $(this).data("url");
+               
+                $.get(url, { id: $(this).data("id") }, function (data) {
+                    $("#fieldsModalBody").html(data);
+
+                    $("#FieldsModal").modal("show");  // shows the modal pop-up now that we have our partial view
+                });
+                 
+
+            });
+            $(function () {
+                $("#deleteModal").modal("hide");  // initially hides the modal pop-up until needed
+
+                $(".deleteLink").on("click", function () {
+                    var url = $(this).data("url");
+                    $.get(url, { id: $(this).data("id") }, function (data) {
+                        $("#deleteModalBody").html(data);
+
+                        $("#deleteModal").modal("show");  // shows the modal pop-up now that we have our partial view
+                    });
+
+                });
+            });
+        });
+    </script>
+@*<script type="text/javascript">
+     $.validator.unobtrusive.parse("form");
+</script>*@
+}
+
+

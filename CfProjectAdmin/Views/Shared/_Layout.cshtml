@@ -1,0 +1,107 @@
+﻿@*<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - الصندوق التعاوني بدمشق</title>
+    @Styles.Render("~/Content/assets/css")
+    <link href="~/Content/assets/css/custom.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/bootstrap-rtl.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/bootstrap-rtl.min.css" rel="stylesheet" />
+    @*<link href="~/Content/assets/css/bootstrap.css" rel="stylesheet" />*@
+    <link href="~/Content/assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/Site.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div id="wrapper">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="adjust-nav">
+                <div class="navbar-header">
+                    <!--     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                             <span class="icon-bar"></span>
+                             <span class="icon-bar"></span>
+                             <span class="icon-bar"></span>
+                         </button> -->
+                    <a class="navbar-brand" style="color: #1D37F8" href="#"><i class="fa fa-square-o " style="color: #1D37F8"></i>  الصندوق التعاوني بدمشق </a>
+                </div>
+                <div class="navbar-collapse collapse" style="background: #FFBF81">
+                    <ul class="nav navbar-nav navbar-right" style="color: #1D37F8"></ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+
+            </div>
+        </div>
+        <!-- /. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <li class="text-center user-image-back">
+                        <img src="~/Content/assets/img/find_user.png" class="img-responsive" />
+                        @*<img src="assets/img/find_user.png" class="img-responsive" />*@
+
+                    </li>
+
+
+                    <li>
+                        <a href="#"><i class="fa fa-edit "></i>إدارة الأعضاء <span class="fa arrow"></span></a>
+                        <ul class="nav nav-third-level">
+                            <li style="padding-left:initial">
+                                @Html.ActionLink("الأعضاء", "Index", "Users",null,new { @style = "font-size: medium; color:red;padding-right: 60px;" })
+                            </li>
+                            <li>
+                                @Html.ActionLink("الأدوار", "Index", "Roles", null, new { @style = "font-size: medium; color:red;padding-right: 60px;" })
+                            </li>
+                            <li>
+                                @Html.ActionLink("الصلاحيات", "Index", "Privileges", null, new { @style = "font-size: medium; color:red;padding-right: 60px;" })
+                            </li>
+                           
+                        </ul>
+                    </li>
+                   
+
+                   
+                </ul>
+
+            </div>
+
+        </nav>
+
+
+
+
+        <!-- /. NAV SIDE  -->
+        <div class="container body-content" style="margin-right:260px ; margin-left:0 ; background:#FFFFCD">
+
+            @RenderBody()
+            <hr />
+            <footer>
+                <p> <h4 style="color:red" >@DateTime.Now.Date.ToShortDateString()  </h4> </p>
+            </footer>
+        </div>
+        <!-- /. ROW  -->
+        <!-- /. ROW  -->
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap-rtl")
+
+
+        @*<script src="~/Scripts/bootstrap-rtl.min.js"></script>*@
+        <script src="~/Scripts/bootstrap-rtl.js"></script>
+        @*<script src="~/Content/assets/js/bootstrap.min.js"></script>*@
+        <script src="~/Scripts/custom.js"></script>
+        @*<script src="~/Content/assets/js/custom.js"></script>*@
+        <script src="~/Scripts/jquery.metisMenu.js"></script>
+        @*<script src="~/Content/assets/js/jquery.metisMenu.js"></script>*@
+        <script src="~/Scripts/jquery-ui.js"></script>
+        @*<script src="~/Content/assets/js/jquery-1.10.2.js"></script>*@
+        <script src="~/Scripts/jquery-ui.min.js"></script>
+        <script src="~/Scripts/jquery-1.10.2.intellisense.js"></script>
+        <script src="~/Scripts/jquery-1.10.2.js"></script>
+        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        @RenderSection("scripts", required: false)
+    </div>
+</body>
+</html>
+

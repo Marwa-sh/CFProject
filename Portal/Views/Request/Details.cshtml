@@ -1,0 +1,99 @@
+@model Portal.ViewModels.ProductRequestLoanViewModel
+ <div class="form-body">
+    
+    
+   
+    <div class="row">
+        
+        <div class="col-md-4">
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.Instance.Date, htmlAttributes: new { @class = "control-label" })*@
+                @Html.LabelFor(model => model.RequestVwViewModel.Instance.Date, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestVwViewModel.Instance.Date)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                <input type="text" id="txtDate" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.Instance.Date)" disabled />
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.Instance.Amount, htmlAttributes: new { @class = "control-label" })*@
+                @Html.LabelFor(model => model.RequestVwViewModel.Instance.Amount, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestVwViewModel.Instance.Amount)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                <input type="text" id="txtAmount" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.Instance.Amount)" disabled />
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.Instance.Date, htmlAttributes: new { @class = "control-label" })*@
+                @Html.LabelFor(model => model.RequestVwViewModel.Instance.Attachment, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestVwViewModel.Instance.Attachment)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                <input type="text" id="txtAttachment" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.Instance.Attachment)" disabled />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.Instance.RequestStatusName, htmlAttributes: new { @class = "control-label" })*@
+                @Html.LabelFor(model => model.RequestVwViewModel.Instance.RequestStatusName, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestVwViewModel.Instance.RequestStatusName)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                <input type="text" id="txtRequestStatusName" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.Instance.RequestStatusName)" disabled />
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.Instance.RequestStatusName, htmlAttributes: new { @class = "control-label" })*@
+                @Html.LabelFor(model => model.RequestVwViewModel.Instance.BypassStatusName, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestVwViewModel.Instance.BypassStatusName)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                <input type="text" id="txtBypassStatusName" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.Instance.BypassStatusName)" disabled />
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.Instance.Notes, htmlAttributes: new { @class = "control-label" })*@
+                @Html.LabelFor(model => model.RequestVwViewModel.Instance.Notes, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestVwViewModel.Instance.Notes)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                <input type="text" id="txtNotes" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.Instance.Notes)" disabled />
+            </div>
+        </div>
+    </div>
+
+     <div class="row">
+         <div class="col-md-4">
+             <div class="form-group">
+                 @*@Html.LabelFor(model => model.Instance.RequestStatusName, htmlAttributes: new { @class = "control-label" })*@
+                 @Html.LabelFor(model => model.RequestVwViewModel.Instance.Cost, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestVwViewModel.Instance.Cost)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                 <input type="text" id="txtCost" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.Instance.Cost)" disabled />
+             </div>
+         </div>
+     </div>
+
+     </div>

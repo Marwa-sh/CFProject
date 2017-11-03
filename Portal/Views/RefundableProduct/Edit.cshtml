@@ -1,0 +1,98 @@
+@*@model Cf.Data.RefundableProduct*@
+@model Portal.ViewModels.ProductRequestLoanViewModel
+
+ <div class="form-body">
+    <div class="row">
+         
+        <div class="col-md-4">
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.PaymentPeriod, htmlAttributes: new { @class = "control-label" })*@
+                @Html.LabelFor(model => model.RefundableProduct.PaymentPeriod, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RefundableProduct.PaymentPeriod)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                @Html.EditorFor(model => model.RefundableProduct.PaymentPeriod, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.RefundableProduct.PaymentPeriod, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        @*<div class="col-md-4">
+            <div class="form-group">
+                
+                @Html.LabelFor(model => model.RefundableProduct.Installment, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RefundableProduct.Installment)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                @Html.EditorFor(model => model.RefundableProduct.Installment, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.RefundableProduct.Installment, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                
+                @Html.LabelFor(model => model.RefundableProduct.NetAmount, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RefundableProduct.NetAmount)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                @Html.EditorFor(model => model.RefundableProduct.NetAmount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.RefundableProduct.NetAmount, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+    </div>
+    @*<div class="row">
+        
+        <div class="col-md-4">
+            <div class="form-group">
+                
+                @Html.LabelFor(model => model.RefundableProduct.ProfitAmount, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RefundableProduct.ProfitAmount)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                @Html.EditorFor(model => model.RefundableProduct.ProfitAmount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.RefundableProduct.ProfitAmount, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+               
+                @Html.LabelFor(model => model.RefundableProduct.SyrianPoundRounds, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RefundableProduct.SyrianPoundRounds)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                @Html.EditorFor(model => model.RefundableProduct.SyrianPoundRounds, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.RefundableProduct.SyrianPoundRounds, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>*@
+</div>
+
+@*@section Scripts {
+    <script>
+		$(function () {
+            $.validator.addMethod('date',
+            function (value, element) {
+                if (this.optional(element)) {
+                    return true;
+                }
+                var ok = true;
+                try {
+                    $.datepicker.parseDate('dd/mm/yy', value);
+                }
+                catch (err) {
+                    ok = false;
+                }
+                return ok;
+            });
+            $(".IsDate").datepicker({ dateFormat: 'dd/mm/yy', changeYear: true });
+        });
+    </script>
+}*@

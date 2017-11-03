@@ -1,0 +1,142 @@
+@model Cf.Data.OutgoingLoan
+@using (Html.BeginForm())
+{
+	<div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">@ViewBag.Action @ViewBag.ModuleName</h4>
+                    <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
+                            <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                            <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-body collapse in">
+                    <div class="card-block">
+                        <form class="form">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-body">
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Loan, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Loan, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Loan)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                <input type="text" id="txtLoan" class="form-control" value="@Html.DisplayFor(model => model.Loan)" disabled />
+								                @Html.ValidationMessageFor(model => model.Loan, "", new { @class = "text-danger" })
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.LoanDecision, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.LoanDecision, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.LoanDecision)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                @Html.DropDownList("LoanDecision", (SelectList)@ViewBag.LoanDecisionList, htmlAttributes: new { @class = "form-control" })
+								                @Html.ValidationMessageFor(model => model.LoanDecision, "", new { @class = "text-danger" })
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.MainWorkPlace, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.MainWorkPlace, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.MainWorkPlace)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                @Html.DropDownList("MainWorkPlace", (SelectList)@ViewBag.MainWorkPlaceList, htmlAttributes: new { @class = "form-control" })
+								                @Html.ValidationMessageFor(model => model.MainWorkPlace, "", new { @class = "text-danger" })
+								        </div>
+									</div>
+								</div>
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.ApprovedAmount, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.ApprovedAmount, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.ApprovedAmount)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                @Html.EditorFor(model => model.ApprovedAmount, new { htmlAttributes = new { @class = "form-control" } })
+								                @Html.ValidationMessageFor(model => model.ApprovedAmount, "", new { @class = "text-danger" })
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.NetAmount, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.NetAmount, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.NetAmount)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                @Html.EditorFor(model => model.NetAmount, new { htmlAttributes = new { @class = "form-control" } })
+								                @Html.ValidationMessageFor(model => model.NetAmount, "", new { @class = "text-danger" })
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.ProfitAmount, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.ProfitAmount, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.ProfitAmount)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                @Html.EditorFor(model => model.ProfitAmount, new { htmlAttributes = new { @class = "form-control" } })
+								                @Html.ValidationMessageFor(model => model.ProfitAmount, "", new { @class = "text-danger" })
+								        </div>
+									</div>
+								</div>
+							</div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary mr-1">
+                                    @ViewBag.Save
+                                </button>
+                                <button type="button" class="btn btn-warning">
+                                    @Html.ActionLink((string)ViewBag.Back, "Index")
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section Scripts {
+    <script>
+		$(function () {
+            $.validator.addMethod('date',
+            function (value, element) {
+                if (this.optional(element)) {
+                    return true;
+                }
+                var ok = true;
+                try {
+                    $.datepicker.parseDate('dd/mm/yy', value);
+                }
+                catch (err) {
+                    ok = false;
+                }
+                return ok;
+            });
+            $(".IsDate").datepicker({ dateFormat: 'dd/mm/yy', changeYear: true });
+        });
+    </script>
+}

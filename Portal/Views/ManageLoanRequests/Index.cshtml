@@ -103,7 +103,7 @@
                                                     <td>
                                                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                                                             <button type="button" class="btn btn-success">
-                                                                @Html.ActionLink((string)ViewBag.Approve, "Approve",
+                                                                @Html.ActionLink((string)ViewBag.Validate, "Validate",
                                             new
                                             {
                                                 id = item.RequestProductId
@@ -237,6 +237,14 @@
                                             {
                                                 id = item.RequestProductId
                                             })
+                                            </button>
+                                            <button type="button" class="btn btn-success">
+                                                @Html.ActionLink((string)ViewBag.Approve, "Approve",
+                                            new
+                                            {
+                                                id = item.RequestProductId
+                                            })
+
                                             </button>
                                             @*<button type="button" class="btn btn-warning">
                                                     @Html.ActionLink((string)ViewBag.Update, "Edit",

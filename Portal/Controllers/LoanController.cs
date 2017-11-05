@@ -25,25 +25,32 @@ namespace Cf.Controllers
         private string no = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "No");
         private string search = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Search");
         private string filterOptions = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "FilterOptions");
-
+        private string noRecords = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "NoRecords");
+		
+	    public LoanController()
+    	{
+            ViewBag.ModuleName = moduleName;
+			ViewBag.Title = index;
+            ViewBag.Insert = insert;
+            ViewBag.Update = update;
+            ViewBag.Delete = delete;
+			ViewBag.Save = save;
+            ViewBag.Back = back;
+			ViewBag.Details = details;
+            ViewBag.ConfirmDelete = confirmDelete;
+            ViewBag.Yes = yes;
+            ViewBag.No = no;
+            ViewBag.Search = search;
+			ViewBag.FilterOptions = filterOptions;
+			ViewBag.NoRecords = noRecords;
+		}
+		
         /// <summary>
         /// Returns a list of LoanVw objects
         /// </summary>
         /// <returns></returns>
         public ActionResult Index(LoanVwViewModel Model)
         {
-            ViewBag.Title = index;
-            ViewBag.ModuleName = moduleName;
-            ViewBag.Insert = insert;
-            ViewBag.Update = update;
-            ViewBag.Delete = delete;
-            ViewBag.Details = details;
-            ViewBag.ConfirmDelete = confirmDelete;
-            ViewBag.Yes = yes;
-            ViewBag.No = no;
-            ViewBag.Search = search;
-			ViewBag.FilterOptions = filterOptions;
-			
             if (Model.Filter.HasCriteria)
 	        {
 				Db db = new Db(DbServices.ConnectionString);
@@ -61,14 +68,6 @@ namespace Cf.Controllers
         /// <returns></returns>
         public ActionResult Details(Nullable<int>  product)
         {
-            ViewBag.ModuleName = moduleName;
-            ViewBag.Action = details;
-            ViewBag.Details = details;
-            ViewBag.Update = update;
-            ViewBag.Back = back;
-			ViewBag.Insert = insert;
-			ViewBag.Delete = delete;
-            
             if (product == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -110,10 +109,6 @@ namespace Cf.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.ModuleName = moduleName;
-            ViewBag.Action = insert;
-            ViewBag.Save = save;
-            ViewBag.Back = back;
 			Db db = new Db(DbServices.ConnectionString);
 
             ViewBag.LoanDecisionList = new SelectList(LoanDecisionServices.List(db), "Id", "CersNumber");
@@ -154,21 +149,12 @@ namespace Cf.Controllers
             ViewBag.LoanStatusList = new SelectList(LoanStatusServices.List(db), "Id", "Name");
             ViewBag.LoanTypeList = new SelectList(LoanTypeServices.List(db), "ProductType", "Name");
             ViewBag.ProductList = new SelectList(ProductServices.List(db), "Id", "Notes");
-            ViewBag.ModuleName = moduleName;
-            ViewBag.Action = insert;
-            ViewBag.Save = save;
-            ViewBag.Back = back;
             return View(loan);
         }
 
         // GET: Loan/Edit/5
         public ActionResult Edit(Nullable<int>  product)
         {
-            ViewBag.ModuleName = moduleName;
-            ViewBag.Action = update;
-            ViewBag.Update = update;
-            ViewBag.Save = save;
-            ViewBag.Back = back;
             Db db = new Db(DbServices.ConnectionString);
 
             if (product == null)
@@ -219,24 +205,11 @@ namespace Cf.Controllers
             ViewBag.LoanStatusList = new SelectList(LoanStatusServices.List(db), "Id", "Name", loan.LoanStatus);
             ViewBag.LoanTypeList = new SelectList(LoanTypeServices.List(db), "ProductType", "Name", loan.LoanType);
             ViewBag.ProductList = new SelectList(ProductServices.List(db), "Id", "Notes", loan.Product);
-            ViewBag.ModuleName = moduleName;
-            ViewBag.Action = update;
-            ViewBag.Update = update;
-            ViewBag.Save = save;
-            ViewBag.Back = back;
             return View(loan);
         }
         // GET: Loan/Delete/5
         public ActionResult Delete(Nullable<int> id)
         {
-            ViewBag.ModuleName = moduleName;
-			ViewBag.Title = delete;
-			ViewBag.Delete = delete;
-			ViewBag.Yes = yes;
-			ViewBag.No = no;
-			ViewBag.ConfirmDelete = confirmDelete;
-            ViewBag.Action = delete;
-
 			if (id == null)
 			{
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

@@ -56,10 +56,11 @@ namespace Portal.Controllers
 
 
             ViewBag.NewLoanRequests = "NewLoanRequests";
-            ViewBag.SatisfyConditionsLoanRequests = "SatisfyConditionsLoanRequests";
+            ViewBag.SatisfyConditionsLoanRequests = "قيد إعداد القرار"; //"SatisfyConditionsLoanRequests";
             ViewBag.ExceptionalLoanRequests = "ExceptionalLoanRequests";
 
 
+            ViewBag.Validate = "Validate";
         }
 
         // GET: ManageLoanRequests
@@ -197,13 +198,10 @@ namespace Portal.Controllers
         }
 
 
-        #region Approve
-       
-        public ActionResult Approve(int? id)
+        #region Validate
+
+        public ActionResult Validate(int? id)
         {
-            ViewBag.TitleGuarantor = TitleGuarantor;
-            ViewBag.TitleExceptionalAount = TitleExceptionalAount;
-            
             if (id == null)
             {               
                 return RedirectToAction("Index");
@@ -217,11 +215,10 @@ namespace Portal.Controllers
         }
 
         #endregion
-        #region Approve
-        
+        #region Reject
+
         public ActionResult Reject(int? id)
-        {
-            
+        { 
             if (id == null)
             {
                 return RedirectToAction("Index");
@@ -235,7 +232,39 @@ namespace Portal.Controllers
         }
 
         #endregion
+        #region Approve
 
+        public ActionResult Approve(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            Request request = RequestServices.Get(id.Value);
+            request.RequestStatus = (int)RequestStatusEnum.Approved;
+            RequestServices.Update(request);
+
+            return RedirectToAction("Index");
+        }
+
+        #endregion
+
+        #region Exception
+        public ActionResult Exception(int? id)
+        {            
+            if (id == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            Request request = RequestServices.Get(id.Value);
+            request.RequestStatus = (int)RequestStatusEnum.ExcludedFromValidation;
+            RequestServices.Update(request);
+
+            return RedirectToAction("Index");
+        }
+        #endregion
 
     }
 }

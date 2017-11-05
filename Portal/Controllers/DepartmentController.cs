@@ -25,25 +25,32 @@ namespace Cf.Controllers
         private string no = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "No");
         private string search = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Search");
         private string filterOptions = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "FilterOptions");
-
+        private string noRecords = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "NoRecords");
+		
+	    public DepartmentController()
+    	{
+            ViewBag.ModuleName = moduleName;
+			ViewBag.Title = index;
+            ViewBag.Insert = insert;
+            ViewBag.Update = update;
+            ViewBag.Delete = delete;
+			ViewBag.Save = save;
+            ViewBag.Back = back;
+			ViewBag.Details = details;
+            ViewBag.ConfirmDelete = confirmDelete;
+            ViewBag.Yes = yes;
+            ViewBag.No = no;
+            ViewBag.Search = search;
+			ViewBag.FilterOptions = filterOptions;
+			ViewBag.NoRecords = noRecords;
+		}
+		
         /// <summary>
         /// Returns a list of DepartmentVw objects
         /// </summary>
         /// <returns></returns>
         public ActionResult Index(DepartmentVwViewModel Model)
         {
-            ViewBag.Title = index;
-            ViewBag.ModuleName = moduleName;
-            ViewBag.Insert = insert;
-            ViewBag.Update = update;
-            ViewBag.Delete = delete;
-            ViewBag.Details = details;
-            ViewBag.ConfirmDelete = confirmDelete;
-            ViewBag.Yes = yes;
-            ViewBag.No = no;
-            ViewBag.Search = search;
-			ViewBag.FilterOptions = filterOptions;
-			
             if (Model.Filter.HasCriteria)
 	        {
 				Db db = new Db(DbServices.ConnectionString);
@@ -61,14 +68,6 @@ namespace Cf.Controllers
         /// <returns></returns>
         public ActionResult Details(Nullable<int>  id)
         {
-            ViewBag.ModuleName = moduleName;
-            ViewBag.Action = details;
-            ViewBag.Details = details;
-            ViewBag.Update = update;
-            ViewBag.Back = back;
-			ViewBag.Insert = insert;
-			ViewBag.Delete = delete;
-            
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -90,10 +89,6 @@ namespace Cf.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.ModuleName = moduleName;
-            ViewBag.Action = insert;
-            ViewBag.Save = save;
-            ViewBag.Back = back;
 			Db db = new Db(DbServices.ConnectionString);
 
             ViewBag.SalaryWorkPlaceList = new SelectList(SalaryWorkPlaceServices.List(db), "Id", "Name");
@@ -126,21 +121,12 @@ namespace Cf.Controllers
             }
 
             ViewBag.SalaryWorkPlaceList = new SelectList(SalaryWorkPlaceServices.List(db), "Id", "Name");
-            ViewBag.ModuleName = moduleName;
-            ViewBag.Action = insert;
-            ViewBag.Save = save;
-            ViewBag.Back = back;
             return View(department);
         }
 
         // GET: Department/Edit/5
         public ActionResult Edit(Nullable<int>  id)
         {
-            ViewBag.ModuleName = moduleName;
-            ViewBag.Action = update;
-            ViewBag.Update = update;
-            ViewBag.Save = save;
-            ViewBag.Back = back;
             Db db = new Db(DbServices.ConnectionString);
 
             if (id == null)
@@ -183,24 +169,11 @@ namespace Cf.Controllers
             }
 
             ViewBag.SalaryWorkPlaceList = new SelectList(SalaryWorkPlaceServices.List(db), "Id", "Name", department.SalaryWorkPlace);
-            ViewBag.ModuleName = moduleName;
-            ViewBag.Action = update;
-            ViewBag.Update = update;
-            ViewBag.Save = save;
-            ViewBag.Back = back;
             return View(department);
         }
         // GET: Department/Delete/5
         public ActionResult Delete(Nullable<int> id)
         {
-            ViewBag.ModuleName = moduleName;
-			ViewBag.Title = delete;
-			ViewBag.Delete = delete;
-			ViewBag.Yes = yes;
-			ViewBag.No = no;
-			ViewBag.ConfirmDelete = confirmDelete;
-            ViewBag.Action = delete;
-
 			if (id == null)
 			{
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

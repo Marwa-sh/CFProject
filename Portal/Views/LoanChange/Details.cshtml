@@ -406,5 +406,24 @@
         });
     });
 </script>
+	<script>
+	$(document).ready(function () {
+		$('table').each(function(e){
+		
+				var table = $(this).context;
+                var len = table.rows.length;
+                if (len == 1) 
+                {                    
+                    // Create an empty <tr> element
+                    var row = table.insertRow(1);
 
+                    //// Insert new cell
+                    var cell1 = row.insertCell(0);
+                    cell1.colSpan = 12; cell1.align = "center";
+                    cell1.innerText = '@ViewBag.NoRecords';                    
+                }
+                 
+            });
+	    });
+	</script>
 }

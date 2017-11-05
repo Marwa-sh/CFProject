@@ -174,9 +174,6 @@
                         <thead class="thead-inverse">
 					        <tr>
 					            <th>
-					                @Html.DisplayNameFor(model => model.HealthLoanDecisionFirstPaymentVwViewModel.Instance.Id)
-					            </th>
-					            <th>
 					                @Html.DisplayNameFor(model => model.HealthLoanDecisionFirstPaymentVwViewModel.Instance.EmployeeId)
 					            </th>
 					            <th>
@@ -202,9 +199,6 @@
         @foreach (var item in Model.HealthLoanDecisionFirstPaymentVwViewModel.List)
         {
 				            <tr>
-                				<td>
-                    				 @Html.DisplayFor(modelItem => item.Id)
-                				</td>
                 				<td>
                     				 @Html.DisplayFor(modelItem => item.EmployeeId)
                 				</td>
@@ -280,5 +274,24 @@
         });
     });
 </script>
+	<script>
+	$(document).ready(function () {
+		$('table').each(function(e){
+		
+				var table = $(this).context;
+                var len = table.rows.length;
+                if (len == 1) 
+                {                    
+                    // Create an empty <tr> element
+                    var row = table.insertRow(1);
 
+                    //// Insert new cell
+                    var cell1 = row.insertCell(0);
+                    cell1.colSpan = 12; cell1.align = "center";
+                    cell1.innerText = '@ViewBag.NoRecords';                    
+                }
+                 
+            });
+	    });
+	</script>
 }

@@ -51,6 +51,7 @@ namespace Portal.Controllers
             ViewBag.FilterOptions = filterOptions;
             ViewBag.Back = back;
             ViewBag.Save = save;
+
         }
 
         #region Index Loan Request       

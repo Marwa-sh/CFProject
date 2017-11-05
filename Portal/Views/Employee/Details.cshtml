@@ -1,319 +1,319 @@
 @model Cf.ViewModels.EmployeeVwViewModel
-<div class="row">
-    <div class="col-xs-12">
-        <div class="card">
-            <div class="card-header">
-                <h4 class="card-title">@ViewBag.Action @ViewBag.ModuleName</h4>
-                <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
-                <div class="heading-elements">
-                    <ul class="list-inline mb-0">
-                        <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
-                        <li><a data-action="reload"><i class="icon-reload"></i></a></li>
-                        <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
-                    </ul>
+	<div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">@ViewBag.Action @ViewBag.ModuleName</h4>
+                    <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
+                            <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                            <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div class="card-body collapse in">
-                <div class="card-block">
-                    <form class="form">
-                        <div class="form-body">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        @*@Html.LabelFor(model => model.Instance.Id, htmlAttributes: new { @class = "control-label" })*@
-                                        @Html.LabelFor(model => model.Instance.Id, new Dictionary<string, Object>
+                <div class="card-body collapse in">
+                    <div class="card-block">
+                        <form class="form">
+                            <div class="form-body">
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.Id, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.Id, new Dictionary<string, Object>
 								                { { "class", "control-label" },
 								                  {"title", Html.ToolTipMessageFor(model => model.Instance.Id)},
 								                  {"data-toggle", "tooltip"},
 								                  {"data-placement", "bottom"}
 								                })
-                                        <input type="text" id="txtId" class="form-control" value="@Html.DisplayFor(model => model.Instance.Id)" disabled />
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        @*@Html.LabelFor(model => model.Instance.FirstName, htmlAttributes: new { @class = "control-label" })*@
-                                        @Html.LabelFor(model => model.Instance.FirstName, new Dictionary<string, Object>
+								                 <input type="text" id="txtId" class="form-control" value="@Html.DisplayFor(model => model.Instance.Id)" disabled />
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.FirstName, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.FirstName, new Dictionary<string, Object>
 								                { { "class", "control-label" },
 								                  {"title", Html.ToolTipMessageFor(model => model.Instance.FirstName)},
 								                  {"data-toggle", "tooltip"},
 								                  {"data-placement", "bottom"}
 								                })
-                                        <input type="text" id="txtFirstName" class="form-control" value="@Html.DisplayFor(model => model.Instance.FirstName)" disabled />
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        @*@Html.LabelFor(model => model.Instance.LastName, htmlAttributes: new { @class = "control-label" })*@
-                                        @Html.LabelFor(model => model.Instance.LastName, new Dictionary<string, Object>
+								                 <input type="text" id="txtFirstName" class="form-control" value="@Html.DisplayFor(model => model.Instance.FirstName)" disabled />
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.LastName, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.LastName, new Dictionary<string, Object>
 								                { { "class", "control-label" },
 								                  {"title", Html.ToolTipMessageFor(model => model.Instance.LastName)},
 								                  {"data-toggle", "tooltip"},
 								                  {"data-placement", "bottom"}
 								                })
-                                        <input type="text" id="txtLastName" class="form-control" value="@Html.DisplayFor(model => model.Instance.LastName)" disabled />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        @*@Html.LabelFor(model => model.Instance.FatherName, htmlAttributes: new { @class = "control-label" })*@
-                                        @Html.LabelFor(model => model.Instance.FatherName, new Dictionary<string, Object>
+								                 <input type="text" id="txtLastName" class="form-control" value="@Html.DisplayFor(model => model.Instance.LastName)" disabled />
+								        </div>
+									</div>
+								</div>
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.FatherName, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.FatherName, new Dictionary<string, Object>
 								                { { "class", "control-label" },
 								                  {"title", Html.ToolTipMessageFor(model => model.Instance.FatherName)},
 								                  {"data-toggle", "tooltip"},
 								                  {"data-placement", "bottom"}
 								                })
-                                        <input type="text" id="txtFatherName" class="form-control" value="@Html.DisplayFor(model => model.Instance.FatherName)" disabled />
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        @*@Html.LabelFor(model => model.Instance.MotherName, htmlAttributes: new { @class = "control-label" })*@
-                                        @Html.LabelFor(model => model.Instance.MotherName, new Dictionary<string, Object>
+								                 <input type="text" id="txtFatherName" class="form-control" value="@Html.DisplayFor(model => model.Instance.FatherName)" disabled />
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.MotherName, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.MotherName, new Dictionary<string, Object>
 								                { { "class", "control-label" },
 								                  {"title", Html.ToolTipMessageFor(model => model.Instance.MotherName)},
 								                  {"data-toggle", "tooltip"},
 								                  {"data-placement", "bottom"}
 								                })
-                                        <input type="text" id="txtMotherName" class="form-control" value="@Html.DisplayFor(model => model.Instance.MotherName)" disabled />
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        @*@Html.LabelFor(model => model.Instance.BirthDate, htmlAttributes: new { @class = "control-label" })*@
-                                        @Html.LabelFor(model => model.Instance.BirthDate, new Dictionary<string, Object>
+								                 <input type="text" id="txtMotherName" class="form-control" value="@Html.DisplayFor(model => model.Instance.MotherName)" disabled />
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.BirthDate, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.BirthDate, new Dictionary<string, Object>
 								                { { "class", "control-label" },
 								                  {"title", Html.ToolTipMessageFor(model => model.Instance.BirthDate)},
 								                  {"data-toggle", "tooltip"},
 								                  {"data-placement", "bottom"}
 								                })
-                                        <input type="text" id="txtBirthDate" class="form-control" value="@Html.DisplayFor(model => model.Instance.BirthDate)" disabled />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        @*@Html.LabelFor(model => model.Instance.ExpectedEndDate, htmlAttributes: new { @class = "control-label" })*@
-                                        @Html.LabelFor(model => model.Instance.ExpectedEndDate, new Dictionary<string, Object>
+								                 <input type="text" id="txtBirthDate" class="form-control" value="@Html.DisplayFor(model => model.Instance.BirthDate)" disabled />
+								        </div>
+									</div>
+								</div>
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.ExpectedEndDate, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.ExpectedEndDate, new Dictionary<string, Object>
 								                { { "class", "control-label" },
 								                  {"title", Html.ToolTipMessageFor(model => model.Instance.ExpectedEndDate)},
 								                  {"data-toggle", "tooltip"},
 								                  {"data-placement", "bottom"}
 								                })
-                                        <input type="text" id="txtExpectedEndDate" class="form-control" value="@Html.DisplayFor(model => model.Instance.ExpectedEndDate)" disabled />
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        @*@Html.LabelFor(model => model.Instance.CersStartDate, htmlAttributes: new { @class = "control-label" })*@
-                                        @Html.LabelFor(model => model.Instance.CersStartDate, new Dictionary<string, Object>
+								                 <input type="text" id="txtExpectedEndDate" class="form-control" value="@Html.DisplayFor(model => model.Instance.ExpectedEndDate)" disabled />
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.CersStartDate, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.CersStartDate, new Dictionary<string, Object>
 								                { { "class", "control-label" },
 								                  {"title", Html.ToolTipMessageFor(model => model.Instance.CersStartDate)},
 								                  {"data-toggle", "tooltip"},
 								                  {"data-placement", "bottom"}
 								                })
-                                        <input type="text" id="txtCersStartDate" class="form-control" value="@Html.DisplayFor(model => model.Instance.CersStartDate)" disabled />
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        @*@Html.LabelFor(model => model.Instance.CfStartDate, htmlAttributes: new { @class = "control-label" })*@
-                                        @Html.LabelFor(model => model.Instance.CfStartDate, new Dictionary<string, Object>
+								                 <input type="text" id="txtCersStartDate" class="form-control" value="@Html.DisplayFor(model => model.Instance.CersStartDate)" disabled />
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.CfStartDate, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.CfStartDate, new Dictionary<string, Object>
 								                { { "class", "control-label" },
 								                  {"title", Html.ToolTipMessageFor(model => model.Instance.CfStartDate)},
 								                  {"data-toggle", "tooltip"},
 								                  {"data-placement", "bottom"}
 								                })
-                                        <input type="text" id="txtCfStartDate" class="form-control" value="@Html.DisplayFor(model => model.Instance.CfStartDate)" disabled />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        @*@Html.LabelFor(model => model.Instance.LeaveDate, htmlAttributes: new { @class = "control-label" })*@
-                                        @Html.LabelFor(model => model.Instance.LeaveDate, new Dictionary<string, Object>
+								                 <input type="text" id="txtCfStartDate" class="form-control" value="@Html.DisplayFor(model => model.Instance.CfStartDate)" disabled />
+								        </div>
+									</div>
+								</div>
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.LeaveDate, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.LeaveDate, new Dictionary<string, Object>
 								                { { "class", "control-label" },
 								                  {"title", Html.ToolTipMessageFor(model => model.Instance.LeaveDate)},
 								                  {"data-toggle", "tooltip"},
 								                  {"data-placement", "bottom"}
 								                })
-                                        <input type="text" id="txtLeaveDate" class="form-control" value="@Html.DisplayFor(model => model.Instance.LeaveDate)" disabled />
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        @*@Html.LabelFor(model => model.Instance.LeaveReason, htmlAttributes: new { @class = "control-label" })*@
-                                        @Html.LabelFor(model => model.Instance.LeaveReason, new Dictionary<string, Object>
+								                 <input type="text" id="txtLeaveDate" class="form-control" value="@Html.DisplayFor(model => model.Instance.LeaveDate)" disabled />
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.LeaveReason, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.LeaveReason, new Dictionary<string, Object>
 								                { { "class", "control-label" },
 								                  {"title", Html.ToolTipMessageFor(model => model.Instance.LeaveReason)},
 								                  {"data-toggle", "tooltip"},
 								                  {"data-placement", "bottom"}
 								                })
-                                        <input type="text" id="txtLeaveReason" class="form-control" value="@Html.DisplayFor(model => model.Instance.LeaveReason)" disabled />
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        @*@Html.LabelFor(model => model.Instance.EmployeeStatusId, htmlAttributes: new { @class = "control-label" })*@
-                                        @Html.LabelFor(model => model.Instance.EmployeeStatusId, new Dictionary<string, Object>
+								                 <input type="text" id="txtLeaveReason" class="form-control" value="@Html.DisplayFor(model => model.Instance.LeaveReason)" disabled />
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.EmployeeStatusId, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.EmployeeStatusId, new Dictionary<string, Object>
 								                { { "class", "control-label" },
 								                  {"title", Html.ToolTipMessageFor(model => model.Instance.EmployeeStatusId)},
 								                  {"data-toggle", "tooltip"},
 								                  {"data-placement", "bottom"}
 								                })
-                                        <input type="text" id="txtEmployeeStatusId" class="form-control" value="@Html.DisplayFor(model => model.Instance.EmployeeStatusId)" disabled />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        @*@Html.LabelFor(model => model.Instance.EmployeeStatusName, htmlAttributes: new { @class = "control-label" })*@
-                                        @Html.LabelFor(model => model.Instance.EmployeeStatusName, new Dictionary<string, Object>
+								                 <input type="text" id="txtEmployeeStatusId" class="form-control" value="@Html.DisplayFor(model => model.Instance.EmployeeStatusId)" disabled />
+								        </div>
+									</div>
+								</div>
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.EmployeeStatusName, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.EmployeeStatusName, new Dictionary<string, Object>
 								                { { "class", "control-label" },
 								                  {"title", Html.ToolTipMessageFor(model => model.Instance.EmployeeStatusName)},
 								                  {"data-toggle", "tooltip"},
 								                  {"data-placement", "bottom"}
 								                })
-                                        <input type="text" id="txtEmployeeStatusName" class="form-control" value="@Html.DisplayFor(model => model.Instance.EmployeeStatusName)" disabled />
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        @*@Html.LabelFor(model => model.Instance.DepartmentId, htmlAttributes: new { @class = "control-label" })*@
-                                        @Html.LabelFor(model => model.Instance.DepartmentId, new Dictionary<string, Object>
+								                 <input type="text" id="txtEmployeeStatusName" class="form-control" value="@Html.DisplayFor(model => model.Instance.EmployeeStatusName)" disabled />
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.DepartmentId, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.DepartmentId, new Dictionary<string, Object>
 								                { { "class", "control-label" },
 								                  {"title", Html.ToolTipMessageFor(model => model.Instance.DepartmentId)},
 								                  {"data-toggle", "tooltip"},
 								                  {"data-placement", "bottom"}
 								                })
-                                        <input type="text" id="txtDepartmentId" class="form-control" value="@Html.DisplayFor(model => model.Instance.DepartmentId)" disabled />
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        @*@Html.LabelFor(model => model.Instance.DepartmentName, htmlAttributes: new { @class = "control-label" })*@
-                                        @Html.LabelFor(model => model.Instance.DepartmentName, new Dictionary<string, Object>
+								                 <input type="text" id="txtDepartmentId" class="form-control" value="@Html.DisplayFor(model => model.Instance.DepartmentId)" disabled />
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.DepartmentName, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.DepartmentName, new Dictionary<string, Object>
 								                { { "class", "control-label" },
 								                  {"title", Html.ToolTipMessageFor(model => model.Instance.DepartmentName)},
 								                  {"data-toggle", "tooltip"},
 								                  {"data-placement", "bottom"}
 								                })
-                                        <input type="text" id="txtDepartmentName" class="form-control" value="@Html.DisplayFor(model => model.Instance.DepartmentName)" disabled />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        @*@Html.LabelFor(model => model.Instance.DepartmentSalaryWorkPlaceId, htmlAttributes: new { @class = "control-label" })*@
-                                        @Html.LabelFor(model => model.Instance.DepartmentSalaryWorkPlaceId, new Dictionary<string, Object>
+								                 <input type="text" id="txtDepartmentName" class="form-control" value="@Html.DisplayFor(model => model.Instance.DepartmentName)" disabled />
+								        </div>
+									</div>
+								</div>
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.DepartmentSalaryWorkPlaceId, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.DepartmentSalaryWorkPlaceId, new Dictionary<string, Object>
 								                { { "class", "control-label" },
 								                  {"title", Html.ToolTipMessageFor(model => model.Instance.DepartmentSalaryWorkPlaceId)},
 								                  {"data-toggle", "tooltip"},
 								                  {"data-placement", "bottom"}
 								                })
-                                        <input type="text" id="txtDepartmentSalaryWorkPlaceId" class="form-control" value="@Html.DisplayFor(model => model.Instance.DepartmentSalaryWorkPlaceId)" disabled />
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        @*@Html.LabelFor(model => model.Instance.DepartmentSalaryWorkPlaceName, htmlAttributes: new { @class = "control-label" })*@
-                                        @Html.LabelFor(model => model.Instance.DepartmentSalaryWorkPlaceName, new Dictionary<string, Object>
+								                 <input type="text" id="txtDepartmentSalaryWorkPlaceId" class="form-control" value="@Html.DisplayFor(model => model.Instance.DepartmentSalaryWorkPlaceId)" disabled />
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.DepartmentSalaryWorkPlaceName, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.DepartmentSalaryWorkPlaceName, new Dictionary<string, Object>
 								                { { "class", "control-label" },
 								                  {"title", Html.ToolTipMessageFor(model => model.Instance.DepartmentSalaryWorkPlaceName)},
 								                  {"data-toggle", "tooltip"},
 								                  {"data-placement", "bottom"}
 								                })
-                                        <input type="text" id="txtDepartmentSalaryWorkPlaceName" class="form-control" value="@Html.DisplayFor(model => model.Instance.DepartmentSalaryWorkPlaceName)" disabled />
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        @*@Html.LabelFor(model => model.Instance.DepartmentSalaryWorkPlaceMainWorkPlaceId, htmlAttributes: new { @class = "control-label" })*@
-                                        @Html.LabelFor(model => model.Instance.DepartmentSalaryWorkPlaceMainWorkPlaceId, new Dictionary<string, Object>
+								                 <input type="text" id="txtDepartmentSalaryWorkPlaceName" class="form-control" value="@Html.DisplayFor(model => model.Instance.DepartmentSalaryWorkPlaceName)" disabled />
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.DepartmentSalaryWorkPlaceMainWorkPlaceId, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.DepartmentSalaryWorkPlaceMainWorkPlaceId, new Dictionary<string, Object>
 								                { { "class", "control-label" },
 								                  {"title", Html.ToolTipMessageFor(model => model.Instance.DepartmentSalaryWorkPlaceMainWorkPlaceId)},
 								                  {"data-toggle", "tooltip"},
 								                  {"data-placement", "bottom"}
 								                })
-                                        <input type="text" id="txtDepartmentSalaryWorkPlaceMainWorkPlaceId" class="form-control" value="@Html.DisplayFor(model => model.Instance.DepartmentSalaryWorkPlaceMainWorkPlaceId)" disabled />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        @*@Html.LabelFor(model => model.Instance.DepartmentSalaryWorkPlaceMainWorkPlaceName, htmlAttributes: new { @class = "control-label" })*@
-                                        @Html.LabelFor(model => model.Instance.DepartmentSalaryWorkPlaceMainWorkPlaceName, new Dictionary<string, Object>
+								                 <input type="text" id="txtDepartmentSalaryWorkPlaceMainWorkPlaceId" class="form-control" value="@Html.DisplayFor(model => model.Instance.DepartmentSalaryWorkPlaceMainWorkPlaceId)" disabled />
+								        </div>
+									</div>
+								</div>
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.DepartmentSalaryWorkPlaceMainWorkPlaceName, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.DepartmentSalaryWorkPlaceMainWorkPlaceName, new Dictionary<string, Object>
 								                { { "class", "control-label" },
 								                  {"title", Html.ToolTipMessageFor(model => model.Instance.DepartmentSalaryWorkPlaceMainWorkPlaceName)},
 								                  {"data-toggle", "tooltip"},
 								                  {"data-placement", "bottom"}
 								                })
-                                        <input type="text" id="txtDepartmentSalaryWorkPlaceMainWorkPlaceName" class="form-control" value="@Html.DisplayFor(model => model.Instance.DepartmentSalaryWorkPlaceMainWorkPlaceName)" disabled />
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        @*@Html.LabelFor(model => model.Instance.Notes, htmlAttributes: new { @class = "control-label" })*@
-                                        @Html.LabelFor(model => model.Instance.Notes, new Dictionary<string, Object>
+								                 <input type="text" id="txtDepartmentSalaryWorkPlaceMainWorkPlaceName" class="form-control" value="@Html.DisplayFor(model => model.Instance.DepartmentSalaryWorkPlaceMainWorkPlaceName)" disabled />
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.Notes, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.Notes, new Dictionary<string, Object>
 								                { { "class", "control-label" },
 								                  {"title", Html.ToolTipMessageFor(model => model.Instance.Notes)},
 								                  {"data-toggle", "tooltip"},
 								                  {"data-placement", "bottom"}
 								                })
-                                        <input type="text" id="txtNotes" class="form-control" value="@Html.DisplayFor(model => model.Instance.Notes)" disabled />
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        @*@Html.LabelFor(model => model.Instance.CategoryId, htmlAttributes: new { @class = "control-label" })*@
-                                        @Html.LabelFor(model => model.Instance.CategoryId, new Dictionary<string, Object>
+								                 <input type="text" id="txtNotes" class="form-control" value="@Html.DisplayFor(model => model.Instance.Notes)" disabled />
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.CategoryId, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.CategoryId, new Dictionary<string, Object>
 								                { { "class", "control-label" },
 								                  {"title", Html.ToolTipMessageFor(model => model.Instance.CategoryId)},
 								                  {"data-toggle", "tooltip"},
 								                  {"data-placement", "bottom"}
 								                })
-                                        <input type="text" id="txtCategoryId" class="form-control" value="@Html.DisplayFor(model => model.Instance.CategoryId)" disabled />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        @*@Html.LabelFor(model => model.Instance.CategoryName, htmlAttributes: new { @class = "control-label" })*@
-                                        @Html.LabelFor(model => model.Instance.CategoryName, new Dictionary<string, Object>
+								                 <input type="text" id="txtCategoryId" class="form-control" value="@Html.DisplayFor(model => model.Instance.CategoryId)" disabled />
+								        </div>
+									</div>
+								</div>
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.CategoryName, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.CategoryName, new Dictionary<string, Object>
 								                { { "class", "control-label" },
 								                  {"title", Html.ToolTipMessageFor(model => model.Instance.CategoryName)},
 								                  {"data-toggle", "tooltip"},
 								                  {"data-placement", "bottom"}
 								                })
-                                        <input type="text" id="txtCategoryName" class="form-control" value="@Html.DisplayFor(model => model.Instance.CategoryName)" disabled />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+								                 <input type="text" id="txtCategoryName" class="form-control" value="@Html.DisplayFor(model => model.Instance.CategoryName)" disabled />
+								        </div>
+									</div>
+								</div>
+							</div>
 
-                        <div class="form-actions">
-                            <button type="button" class="btn btn-primary mr-1">
-                                @Html.ActionLink((string)@ViewBag.Update, "Edit", new {
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-primary mr-1">
+								        @Html.ActionLink((string)@ViewBag.Update, "Edit", new {
 																	id = Model.Instance.Id })
-                            </button>
-                            <button type="button" class="btn btn-warning">
-                                @Html.ActionLink((string)@ViewBag.Back, "Index")
-                            </button>
-                        </div>
-                    </form>
+                                </button>
+								<button type="button" class="btn btn-warning">
+							        @Html.ActionLink((string)@ViewBag.Back, "Index")
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 <div class="row">
     <div class="col-xs-12">
@@ -338,68 +338,62 @@
                 <div class="table-responsive">
                     <table class="table table-bordered mb-0">
                         <thead class="thead-inverse">
-                            <tr>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.DebtVwViewModel.Instance.Id)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.DebtVwViewModel.Instance.Amount)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.DebtVwViewModel.Instance.IssuerName)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.DebtVwViewModel.Instance.Date)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.DebtVwViewModel.Instance.PeriodInMonths)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.DebtVwViewModel.Instance.ExceptionalPayment)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.DebtVwViewModel.Instance.Installment)
-                                </th>
-
-                                <th></th>
-                            </tr>
+					        <tr>
+					            <th>
+					                @Html.DisplayNameFor(model => model.DebtVwViewModel.Instance.Amount)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.DebtVwViewModel.Instance.IssuerName)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.DebtVwViewModel.Instance.Date)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.DebtVwViewModel.Instance.PeriodInMonths)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.DebtVwViewModel.Instance.ExceptionalPayment)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.DebtVwViewModel.Instance.Installment)
+					            </th>
+           
+					            <th></th>
+					        </tr>
                         </thead>
                         <tbody>
-                            @foreach (var item in Model.DebtVwViewModel.List)
+        @foreach (var item in Model.DebtVwViewModel.List)
         {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Id)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Amount)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.IssuerName)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Date)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.PeriodInMonths)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.ExceptionalPayment)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Installment)
-                                </td>
-                                <td>
-                                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                                        <button type="button" class="btn btn-info">
-                                            @Html.ActionLink((string)ViewBag.Details, "Details", "Debt",
+				            <tr>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.Amount)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.IssuerName)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.Date)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.PeriodInMonths)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.ExceptionalPayment)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.Installment)
+                				</td>
+				                <td>
+									<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+										<button type="button" class="btn btn-info">
+					                    	@Html.ActionLink((string)ViewBag.Details, "Details", "Debt",
                         					new
 											{
 												id = item.Id
                         					}, null)
                                         </button>
                                         <button type="button" class="btn btn-warning">
-                                            @Html.ActionLink((string)ViewBag.Update, "Edit", "Debt",
+					                    	@Html.ActionLink((string)ViewBag.Update, "Edit", "Debt",
                         					new
                         					{
 												id = item.Id
@@ -440,80 +434,74 @@
                 <div class="table-responsive">
                     <table class="table table-bordered mb-0">
                         <thead class="thead-inverse">
-                            <tr>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.GuarantorVwViewModel.Instance.Id)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.GuarantorVwViewModel.Instance.RefundableProductProductEmployeeId)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.GuarantorVwViewModel.Instance.RefundableProductProductEmployeeFullName)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.GuarantorVwViewModel.Instance.RefundableProductProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.GuarantorVwViewModel.Instance.RefundableProductProductEmployeeCategoryName)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.GuarantorVwViewModel.Instance.RefundableProductProductProductTypeName)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.GuarantorVwViewModel.Instance.RefundableProductProductAmount)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.GuarantorVwViewModel.Instance.SubNumber)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.GuarantorVwViewModel.Instance.GuarantorStatusName)
-                                </th>
-
-                                <th></th>
-                            </tr>
+					        <tr>
+					            <th>
+					                @Html.DisplayNameFor(model => model.GuarantorVwViewModel.Instance.RefundableProductProductEmployeeId)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.GuarantorVwViewModel.Instance.RefundableProductProductEmployeeFullName)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.GuarantorVwViewModel.Instance.RefundableProductProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.GuarantorVwViewModel.Instance.RefundableProductProductEmployeeCategoryName)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.GuarantorVwViewModel.Instance.RefundableProductProductProductTypeName)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.GuarantorVwViewModel.Instance.RefundableProductProductAmount)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.GuarantorVwViewModel.Instance.SubNumber)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.GuarantorVwViewModel.Instance.GuarantorStatusName)
+					            </th>
+           
+					            <th></th>
+					        </tr>
                         </thead>
                         <tbody>
-                            @foreach (var item in Model.GuarantorVwViewModel.List)
+        @foreach (var item in Model.GuarantorVwViewModel.List)
         {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Id)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.RefundableProductProductEmployeeId)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.RefundableProductProductEmployeeFullName)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.RefundableProductProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.RefundableProductProductEmployeeCategoryName)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.RefundableProductProductProductTypeName)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.RefundableProductProductAmount)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.SubNumber)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.GuarantorStatusName)
-                                </td>
-                                <td>
-                                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                                        <button type="button" class="btn btn-info">
-                                            @Html.ActionLink((string)ViewBag.Details, "Details", "Guarantor",
+				            <tr>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.RefundableProductProductEmployeeId)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.RefundableProductProductEmployeeFullName)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.RefundableProductProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.RefundableProductProductEmployeeCategoryName)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.RefundableProductProductProductTypeName)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.RefundableProductProductAmount)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.SubNumber)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.GuarantorStatusName)
+                				</td>
+				                <td>
+									<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+										<button type="button" class="btn btn-info">
+					                    	@Html.ActionLink((string)ViewBag.Details, "Details", "Guarantor",
                         					new
 											{
 												id = item.Id
                         					}, null)
                                         </button>
                                         <button type="button" class="btn btn-warning">
-                                            @Html.ActionLink((string)ViewBag.Update, "Edit", "Guarantor",
+					                    	@Html.ActionLink((string)ViewBag.Update, "Edit", "Guarantor",
                         					new
                         					{
 												id = item.Id
@@ -554,86 +542,80 @@
                 <div class="table-responsive">
                     <table class="table table-bordered mb-0">
                         <thead class="thead-inverse">
-                            <tr>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.MonthlyBalanceVwViewModel.Instance.Id)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.MonthlyBalanceVwViewModel.Instance.PaymentGroupName)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.MonthlyBalanceVwViewModel.Instance.Month)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.MonthlyBalanceVwViewModel.Instance.Opening)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.MonthlyBalanceVwViewModel.Instance.NormalLoans)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.MonthlyBalanceVwViewModel.Instance.IncomingLoans)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.MonthlyBalanceVwViewModel.Instance.Restitution)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.MonthlyBalanceVwViewModel.Instance.OutgoingLoans)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.MonthlyBalanceVwViewModel.Instance.SalaryPayment)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.MonthlyBalanceVwViewModel.Instance.CashPayment)
-                                </th>
-
-                                <th></th>
-                            </tr>
+					        <tr>
+					            <th>
+					                @Html.DisplayNameFor(model => model.MonthlyBalanceVwViewModel.Instance.PaymentGroupName)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.MonthlyBalanceVwViewModel.Instance.Month)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.MonthlyBalanceVwViewModel.Instance.Opening)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.MonthlyBalanceVwViewModel.Instance.NormalLoans)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.MonthlyBalanceVwViewModel.Instance.IncomingLoans)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.MonthlyBalanceVwViewModel.Instance.Restitution)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.MonthlyBalanceVwViewModel.Instance.OutgoingLoans)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.MonthlyBalanceVwViewModel.Instance.SalaryPayment)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.MonthlyBalanceVwViewModel.Instance.CashPayment)
+					            </th>
+           
+					            <th></th>
+					        </tr>
                         </thead>
                         <tbody>
-                            @foreach (var item in Model.MonthlyBalanceVwViewModel.List)
+        @foreach (var item in Model.MonthlyBalanceVwViewModel.List)
         {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Id)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.PaymentGroupName)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Month)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Opening)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.NormalLoans)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.IncomingLoans)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Restitution)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.OutgoingLoans)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.SalaryPayment)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.CashPayment)
-                                </td>
-                                <td>
-                                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                                        <button type="button" class="btn btn-info">
-                                            @Html.ActionLink((string)ViewBag.Details, "Details", "MonthlyBalance",
+				            <tr>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.PaymentGroupName)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.Month)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.Opening)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.NormalLoans)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.IncomingLoans)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.Restitution)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.OutgoingLoans)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.SalaryPayment)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.CashPayment)
+                				</td>
+				                <td>
+									<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+										<button type="button" class="btn btn-info">
+					                    	@Html.ActionLink((string)ViewBag.Details, "Details", "MonthlyBalance",
                         					new
 											{
 												id = item.Id
                         					}, null)
                                         </button>
                                         <button type="button" class="btn btn-warning">
-                                            @Html.ActionLink((string)ViewBag.Update, "Edit", "MonthlyBalance",
+					                    	@Html.ActionLink((string)ViewBag.Update, "Edit", "MonthlyBalance",
                         					new
                         					{
 												id = item.Id
@@ -674,50 +656,44 @@
                 <div class="table-responsive">
                     <table class="table table-bordered mb-0">
                         <thead class="thead-inverse">
-                            <tr>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.PaymentVwViewModel.Instance.Id)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.PaymentVwViewModel.Instance.PaymentGroupName)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.PaymentVwViewModel.Instance.Amount)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.PaymentVwViewModel.Instance.PaymentStatusName)
-                                </th>
-
-                                <th></th>
-                            </tr>
+					        <tr>
+					            <th>
+					                @Html.DisplayNameFor(model => model.PaymentVwViewModel.Instance.PaymentGroupName)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.PaymentVwViewModel.Instance.Amount)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.PaymentVwViewModel.Instance.PaymentStatusName)
+					            </th>
+           
+					            <th></th>
+					        </tr>
                         </thead>
                         <tbody>
-                            @foreach (var item in Model.PaymentVwViewModel.List)
+        @foreach (var item in Model.PaymentVwViewModel.List)
         {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Id)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.PaymentGroupName)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Amount)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.PaymentStatusName)
-                                </td>
-                                <td>
-                                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                                        <button type="button" class="btn btn-info">
-                                            @Html.ActionLink((string)ViewBag.Details, "Details", "Payment",
+				            <tr>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.PaymentGroupName)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.Amount)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.PaymentStatusName)
+                				</td>
+				                <td>
+									<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+										<button type="button" class="btn btn-info">
+					                    	@Html.ActionLink((string)ViewBag.Details, "Details", "Payment",
                         					new
 											{
 												id = item.Id
                         					}, null)
                                         </button>
                                         <button type="button" class="btn btn-warning">
-                                            @Html.ActionLink((string)ViewBag.Update, "Edit", "Payment",
+					                    	@Html.ActionLink((string)ViewBag.Update, "Edit", "Payment",
                         					new
                         					{
 												id = item.Id
@@ -758,68 +734,62 @@
                 <div class="table-responsive">
                     <table class="table table-bordered mb-0">
                         <thead class="thead-inverse">
-                            <tr>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.PayOrderVwViewModel.Instance.Id)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.PayOrderVwViewModel.Instance.Number)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.PayOrderVwViewModel.Instance.Date)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.PayOrderVwViewModel.Instance.PaymentGroupName)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.PayOrderVwViewModel.Instance.PaidAmount)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.PayOrderVwViewModel.Instance.IsProfit)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.PayOrderVwViewModel.Instance.IsFixed)
-                                </th>
-
-                                <th></th>
-                            </tr>
+					        <tr>
+					            <th>
+					                @Html.DisplayNameFor(model => model.PayOrderVwViewModel.Instance.Number)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.PayOrderVwViewModel.Instance.Date)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.PayOrderVwViewModel.Instance.PaymentGroupName)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.PayOrderVwViewModel.Instance.PaidAmount)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.PayOrderVwViewModel.Instance.IsProfit)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.PayOrderVwViewModel.Instance.IsFixed)
+					            </th>
+           
+					            <th></th>
+					        </tr>
                         </thead>
                         <tbody>
-                            @foreach (var item in Model.PayOrderVwViewModel.List)
+        @foreach (var item in Model.PayOrderVwViewModel.List)
         {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Id)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Number)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Date)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.PaymentGroupName)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.PaidAmount)
-                                </td>
-                                <td>
-                                    @Html.CheckBoxFor(modelItem => item.IsProfit, new { @disabled = "disabled" ,@class="form-control" })
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.IsFixed)
-                                </td>
-                                <td>
-                                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                                        <button type="button" class="btn btn-info">
-                                            @Html.ActionLink((string)ViewBag.Details, "Details", "PayOrder",
+				            <tr>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.Number)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.Date)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.PaymentGroupName)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.PaidAmount)
+                				</td>
+                				<td>
+                    				 @Html.CheckBoxFor(modelItem => item.IsProfit, new { @disabled = "disabled" ,@class="form-control" })
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.IsFixed)
+                				</td>
+				                <td>
+									<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+										<button type="button" class="btn btn-info">
+					                    	@Html.ActionLink((string)ViewBag.Details, "Details", "PayOrder",
                         					new
 											{
 												id = item.Id
                         					}, null)
                                         </button>
                                         <button type="button" class="btn btn-warning">
-                                            @Html.ActionLink((string)ViewBag.Update, "Edit", "PayOrder",
+					                    	@Html.ActionLink((string)ViewBag.Update, "Edit", "PayOrder",
                         					new
                         					{
 												id = item.Id
@@ -860,44 +830,38 @@
                 <div class="table-responsive">
                     <table class="table table-bordered mb-0">
                         <thead class="thead-inverse">
-                            <tr>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.ProductVwViewModel.Instance.Id)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.ProductVwViewModel.Instance.ProductTypeName)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.ProductVwViewModel.Instance.Amount)
-                                </th>
-
-                                <th></th>
-                            </tr>
+					        <tr>
+					            <th>
+					                @Html.DisplayNameFor(model => model.ProductVwViewModel.Instance.ProductTypeName)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.ProductVwViewModel.Instance.Amount)
+					            </th>
+           
+					            <th></th>
+					        </tr>
                         </thead>
                         <tbody>
-                            @foreach (var item in Model.ProductVwViewModel.List)
+        @foreach (var item in Model.ProductVwViewModel.List)
         {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Id)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.ProductTypeName)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Amount)
-                                </td>
-                                <td>
-                                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                                        <button type="button" class="btn btn-info">
-                                            @Html.ActionLink((string)ViewBag.Details, "Details", "Product",
+				            <tr>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.ProductTypeName)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.Amount)
+                				</td>
+				                <td>
+									<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+										<button type="button" class="btn btn-info">
+					                    	@Html.ActionLink((string)ViewBag.Details, "Details", "Product",
                         					new
 											{
 												id = item.Id
                         					}, null)
                                         </button>
                                         <button type="button" class="btn btn-warning">
-                                            @Html.ActionLink((string)ViewBag.Update, "Edit", "Product",
+					                    	@Html.ActionLink((string)ViewBag.Update, "Edit", "Product",
                         					new
                         					{
 												id = item.Id
@@ -938,44 +902,44 @@
                 <div class="table-responsive">
                     <table class="table table-bordered mb-0">
                         <thead class="thead-inverse">
-                            <tr>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.ProfileVwViewModel.Instance.Extension)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.ProfileVwViewModel.Instance.HomePhone)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.ProfileVwViewModel.Instance.MobilePhone)
-                                </th>
-
-                                <th></th>
-                            </tr>
+					        <tr>
+					            <th>
+					                @Html.DisplayNameFor(model => model.ProfileVwViewModel.Instance.Extension)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.ProfileVwViewModel.Instance.HomePhone)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.ProfileVwViewModel.Instance.MobilePhone)
+					            </th>
+           
+					            <th></th>
+					        </tr>
                         </thead>
                         <tbody>
-                            @foreach (var item in Model.ProfileVwViewModel.List)
+        @foreach (var item in Model.ProfileVwViewModel.List)
         {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Extension)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.HomePhone)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.MobilePhone)
-                                </td>
-                                <td>
-                                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                                        <button type="button" class="btn btn-info">
-                                            @Html.ActionLink((string)ViewBag.Details, "Details", "Profile",
+				            <tr>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.Extension)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.HomePhone)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.MobilePhone)
+                				</td>
+				                <td>
+									<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+										<button type="button" class="btn btn-info">
+					                    	@Html.ActionLink((string)ViewBag.Details, "Details", "Profile",
                         					new
 											{
 												employee = item.EmployeeId
                         					}, null)
                                         </button>
                                         <button type="button" class="btn btn-warning">
-                                            @Html.ActionLink((string)ViewBag.Update, "Edit", "Profile",
+					                    	@Html.ActionLink((string)ViewBag.Update, "Edit", "Profile",
                         					new
                         					{
 												employee = item.EmployeeId
@@ -1016,62 +980,56 @@
                 <div class="table-responsive">
                     <table class="table table-bordered mb-0">
                         <thead class="thead-inverse">
-                            <tr>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.SubscriptionVwViewModel.Instance.Id)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.SubscriptionVwViewModel.Instance.Month)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.SubscriptionVwViewModel.Instance.DepartmentSalaryWorkPlaceMainWorkPlaceName)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.SubscriptionVwViewModel.Instance.SubscriptionTypeName)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.SubscriptionVwViewModel.Instance.Amount)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.SubscriptionVwViewModel.Instance.IsFixed)
-                                </th>
-
-                                <th></th>
-                            </tr>
+					        <tr>
+					            <th>
+					                @Html.DisplayNameFor(model => model.SubscriptionVwViewModel.Instance.Month)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.SubscriptionVwViewModel.Instance.DepartmentSalaryWorkPlaceMainWorkPlaceName)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.SubscriptionVwViewModel.Instance.SubscriptionTypeName)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.SubscriptionVwViewModel.Instance.Amount)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.SubscriptionVwViewModel.Instance.IsFixed)
+					            </th>
+           
+					            <th></th>
+					        </tr>
                         </thead>
                         <tbody>
-                            @foreach (var item in Model.SubscriptionVwViewModel.List)
+        @foreach (var item in Model.SubscriptionVwViewModel.List)
         {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Id)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Month)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.DepartmentSalaryWorkPlaceMainWorkPlaceName)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.SubscriptionTypeName)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Amount)
-                                </td>
-                                <td>
-                                    @Html.CheckBoxFor(modelItem => item.IsFixed, new { @disabled = "disabled" ,@class="form-control" })
-                                </td>
-                                <td>
-                                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                                        <button type="button" class="btn btn-info">
-                                            @Html.ActionLink((string)ViewBag.Details, "Details", "Subscription",
+				            <tr>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.Month)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.DepartmentSalaryWorkPlaceMainWorkPlaceName)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.SubscriptionTypeName)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.Amount)
+                				</td>
+                				<td>
+                    				 @Html.CheckBoxFor(modelItem => item.IsFixed, new { @disabled = "disabled" ,@class="form-control" })
+                				</td>
+				                <td>
+									<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+										<button type="button" class="btn btn-info">
+					                    	@Html.ActionLink((string)ViewBag.Details, "Details", "Subscription",
                         					new
 											{
 												id = item.Id
                         					}, null)
                                         </button>
                                         <button type="button" class="btn btn-warning">
-                                            @Html.ActionLink((string)ViewBag.Update, "Edit", "Subscription",
+					                    	@Html.ActionLink((string)ViewBag.Update, "Edit", "Subscription",
                         					new
                         					{
 												id = item.Id
@@ -1103,41 +1061,39 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-    <script>
-        $(document).ready(function () {
+<script>
+    $(function () {
+        $("#deleteModal").modal("hide");  // initially hides the modal pop-up until needed
 
-            $('table').each(function (e) {
-                var table = $(this).context;
+        $(".deleteLink").on("click", function () {
+		var url=$(this).data("url");
+            $.get(url, { id: $(this).data("id") }, function (data) {
+                $("#deleteModalBody").html(data);
 
+                $("#deleteModal").modal("show");  // shows the modal pop-up now that we have our partial view
+            });
+
+        });
+    });
+</script>
+	<script>
+	$(document).ready(function () {
+		$('table').each(function(e){
+		
+				var table = $(this).context;
                 var len = table.rows.length;
                 if (len == 1) 
-                {    
-                    // Create an empty <tr> element and add it to the 1st position of the table:
+                {                    
+                    // Create an empty <tr> element
                     var row = table.insertRow(1);
 
                     //// Insert new cell
                     var cell1 = row.insertCell(0);
-                    cell1.colSpan = 12;
-                    cell1.innerText = "·« ÌÊÃœ ‰ «∆Ã";
-                    cell1.align = "center";
+                    cell1.colSpan = 12; cell1.align = "center";
+                    cell1.innerText = '@ViewBag.NoRecords';                    
                 }
                  
             });
-             
-        });
-        $(function () {
-            $("#deleteModal").modal("hide");  // initially hides the modal pop-up until needed
-
-            $(".deleteLink").on("click", function () {
-                var url=$(this).data("url");
-                $.get(url, { id: $(this).data("id") }, function (data) {
-                    $("#deleteModalBody").html(data);
-
-                    $("#deleteModal").modal("show");  // shows the modal pop-up now that we have our partial view
-                });
-
-            });
-        });
-    </script>
-
+	    });
+	</script>
 }

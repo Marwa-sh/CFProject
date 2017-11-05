@@ -102,20 +102,42 @@
 </div>
 @section Scripts {
     <script>
-        $(function () {
-            $(".IsDate").datepicker({
-                // format: 'MM/DD/YYYY',
-                calendarWeeks: true,
-                showTodayButton: true
+		$(function () {
+            $.validator.addMethod('date',
+            function (value, element) {
+                if (this.optional(element)) {
+                    return true;
+                }
+                var ok = true;
+                try {
+                    $.datepicker.parseDate('dd/mm/yy', value);
+                }
+                catch (err) {
+                    ok = false;
+                }
+                return ok;
             });
-        })
+            $(".IsDate").datepicker({ dateFormat: 'dd/mm/yy', changeYear: true });
+        });
     </script>
 
 	<script>
 	$(document).ready(function () {
 	        var len = $('#Result tr').length;
 	        var res = $("#Result");
-	        if (len == 1) {
+	        if (len == 1)
+			{
+                var table = document.getElementById("Result");
+
+                // Create an empty <tr> element and add it to the 1st position of the table:
+                var row = table.insertRow(1);
+
+                //// Insert new cell 
+                var cell1 = row.insertCell(0);
+                cell1.colSpan = 12;
+                cell1.innerText = '@ViewBag.NoRecords';
+                cell1.align="center";
+			
 	        }
 	        else {
 	            var value = $("#cardOptions").attr("class").replace("in", "out");

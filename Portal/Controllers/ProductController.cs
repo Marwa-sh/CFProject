@@ -25,25 +25,32 @@ namespace Cf.Controllers
         private string no = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "No");
         private string search = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Search");
         private string filterOptions = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "FilterOptions");
-
+        private string noRecords = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "NoRecords");
+		
+	    public ProductController()
+    	{
+            ViewBag.ModuleName = moduleName;
+			ViewBag.Title = index;
+            ViewBag.Insert = insert;
+            ViewBag.Update = update;
+            ViewBag.Delete = delete;
+			ViewBag.Save = save;
+            ViewBag.Back = back;
+			ViewBag.Details = details;
+            ViewBag.ConfirmDelete = confirmDelete;
+            ViewBag.Yes = yes;
+            ViewBag.No = no;
+            ViewBag.Search = search;
+			ViewBag.FilterOptions = filterOptions;
+			ViewBag.NoRecords = noRecords;
+		}
+		
         /// <summary>
         /// Returns a list of ProductVw objects
         /// </summary>
         /// <returns></returns>
         public ActionResult Index(ProductVwViewModel Model)
         {
-            ViewBag.Title = index;
-            ViewBag.ModuleName = moduleName;
-            ViewBag.Insert = insert;
-            ViewBag.Update = update;
-            ViewBag.Delete = delete;
-            ViewBag.Details = details;
-            ViewBag.ConfirmDelete = confirmDelete;
-            ViewBag.Yes = yes;
-            ViewBag.No = no;
-            ViewBag.Search = search;
-			ViewBag.FilterOptions = filterOptions;
-			
             if (Model.Filter.HasCriteria)
 	        {
 				Db db = new Db(DbServices.ConnectionString);
@@ -61,14 +68,6 @@ namespace Cf.Controllers
         /// <returns></returns>
         public ActionResult Details(Nullable<int>  id)
         {
-            ViewBag.ModuleName = moduleName;
-            ViewBag.Action = details;
-            ViewBag.Details = details;
-            ViewBag.Update = update;
-            ViewBag.Back = back;
-			ViewBag.Insert = insert;
-			ViewBag.Delete = delete;
-            
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -110,10 +109,6 @@ namespace Cf.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.ModuleName = moduleName;
-            ViewBag.Action = insert;
-            ViewBag.Save = save;
-            ViewBag.Back = back;
 			Db db = new Db(DbServices.ConnectionString);
 
             ViewBag.EmployeeList = new SelectList(EmployeeServices.List(db), "Id", "FirstName");
@@ -132,10 +127,9 @@ namespace Cf.Controllers
             {
 				try
 				{
-	                Product p=ProductServices.Insert(CurrentUser.Id, product, db);
+	                ProductServices.Insert(CurrentUser.Id, product, db);
 					TempData["Success"] = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "InsertConfirmed");
-                    //return RedirectToAction("Index");
-                    return RedirectToAction("Create", "Request" , new { id=p.Id});
+					return RedirectToAction("Index");
 				}
 				catch(CfException cfex)
 				{
@@ -149,21 +143,12 @@ namespace Cf.Controllers
 
             ViewBag.EmployeeList = new SelectList(EmployeeServices.List(db), "Id", "FirstName");
             ViewBag.ProductTypeList = new SelectList(ProductTypeServices.List(db), "Id", "Name");
-            ViewBag.ModuleName = moduleName;
-            ViewBag.Action = insert;
-            ViewBag.Save = save;
-            ViewBag.Back = back;
             return View(product);
         }
 
         // GET: Product/Edit/5
         public ActionResult Edit(Nullable<int>  id)
         {
-            ViewBag.ModuleName = moduleName;
-            ViewBag.Action = update;
-            ViewBag.Update = update;
-            ViewBag.Save = save;
-            ViewBag.Back = back;
             Db db = new Db(DbServices.ConnectionString);
 
             if (id == null)
@@ -208,24 +193,11 @@ namespace Cf.Controllers
 
             ViewBag.EmployeeList = new SelectList(EmployeeServices.List(db), "Id", "FirstName", product.Employee);
             ViewBag.ProductTypeList = new SelectList(ProductTypeServices.List(db), "Id", "Name", product.ProductType);
-            ViewBag.ModuleName = moduleName;
-            ViewBag.Action = update;
-            ViewBag.Update = update;
-            ViewBag.Save = save;
-            ViewBag.Back = back;
             return View(product);
         }
         // GET: Product/Delete/5
         public ActionResult Delete(Nullable<int> id)
         {
-            ViewBag.ModuleName = moduleName;
-			ViewBag.Title = delete;
-			ViewBag.Delete = delete;
-			ViewBag.Yes = yes;
-			ViewBag.No = no;
-			ViewBag.ConfirmDelete = confirmDelete;
-            ViewBag.Action = delete;
-
 			if (id == null)
 			{
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

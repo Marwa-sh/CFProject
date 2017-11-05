@@ -1,5 +1,5 @@
 ﻿@model Cf.ViewModels.LoanRequestVwViewModel
-
+@using Cf.Data;
 
 
 <div class="row">
@@ -7,10 +7,10 @@
         <div class="card">
             <div class="card-header">
                 <h4 class="card-title">@ViewBag.NewLoanRequests
-                 @if (Model.List.Where(c => c.RequestRequestStatusId == 1).ToList().Count == 0)
-                 {<span class="tag tag-default">@Model.List.Where(c => c.RequestRequestStatusId == 1).ToList().Count</span>}
+                 @if (Model.List.Where(c => c.RequestRequestStatusId ==(int) RequestStatusEnum.New).ToList().Count == 0)
+                 {<span class="tag tag-default">@Model.List.Where(c => c.RequestRequestStatusId == (int)RequestStatusEnum.New).ToList().Count</span>}
                 else
-                {<span class="tag tag-danger">@Model.List.Where(c => c.RequestRequestStatusId == 1).ToList().Count</span> }
+                {<span class="tag tag-danger">@Model.List.Where(c => c.RequestRequestStatusId == (int)RequestStatusEnum.New).ToList().Count</span> }
                 </h4>
                 @*<h4 class="card-title">@ViewBag.NewLoanRequests</h4>*@
                 <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
@@ -33,22 +33,13 @@
                     <table id="Result" class="table table-bordered mb-0">
                         <thead class="thead-inverse">
                             <tr>
-                                <th></th>
-                                @*<th>
-                                    @Html.DisplayNameFor(model => model.Instance.RequestProductId)
-                                </th>*@
+                                <th></th>                              
                                 <th>
                                     @Html.DisplayNameFor(model => model.Instance.RequestProductEmployeeId)
                                 </th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.Instance.RequestProductEmployeeFullName)
-                                </th>
-                                @*<th>
-                                    @Html.DisplayNameFor(model => model.Instance.RequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
-                                </th>*@
-                                @*<th>
-                                    @Html.DisplayNameFor(model => model.Instance.RequestProductEmployeeCategoryName)
-                                </th>*@
+                                </th>                              
                                 <th>
                                     @Html.DisplayNameFor(model => model.Instance.RequestProductProductTypeName)
                                 </th>
@@ -58,10 +49,7 @@
                                 <th>
                                     @Html.DisplayNameFor(model => model.Instance.RequestAmount)
                                 </th>
-                                @*<th>
-                                    @Html.DisplayNameFor(model => model.Instance.RequestRequestStatusName)
-                                </th>*@
-
+                            
                                 <th></th>
                                 <th></th>
                             </tr>
@@ -72,22 +60,13 @@
                                 <tr>
                                     <td>
                                         <input id="isSellected" name="isSellected" type="checkbox" checked />
-                                    </td>
-                                    @*<td>
-                                        @Html.DisplayFor(modelItem => item.RequestProductId)
-                                    </td>*@
+                                    </td>                                    
                                     <td>
                                         @Html.DisplayFor(modelItem => item.RequestProductEmployeeId)
                                     </td>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.RequestProductEmployeeFullName)
-                                    </td>
-                                    @*<td>
-                                        @Html.DisplayFor(modelItem => item.RequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
-                                    </td>*@
-                                    @*<td>
-                                        @Html.DisplayFor(modelItem => item.RequestProductEmployeeCategoryName)
-                                    </td>*@
+                                    </td>                                   
                                     <td>
                                         @Html.DisplayFor(modelItem => item.RequestProductProductTypeName)
                                     </td>
@@ -97,9 +76,6 @@
                                     <td>
                                         @Html.DisplayFor(modelItem => item.RequestAmount)
                                     </td>
-                                    @*<td>
-                                        @Html.DisplayFor(modelItem => item.RequestRequestStatusName)
-                                    </td>*@
                                     <td>
                                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                                             <button type="button" class="btn btn-info details" data-id="@item.RequestProductId">
@@ -119,14 +95,11 @@
                                     </td>
                                     @if (ViewBag.RoleName != null)
                                     {
-
                                         string role = ViewBag.RoleName;
-
                                         if (role.Equals("Manager"))
                                         {
                                             if (item.RequestRequestStatusId == 1)
-                                            {
-                                                
+                                            {                                                
                                                     <td>
                                                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                                                             <button type="button" class="btn btn-success">
@@ -187,10 +160,10 @@
             <div class="card-header">
                 <h4 class="card-title">
                     @ViewBag.SatisfyConditionsLoanRequests
-                @if (Model.List.Where(c => c.RequestRequestStatusId == 2).ToList().Count == 0)
-                {<span class="tag tag-default">@Model.List.Where(c => c.RequestRequestStatusId == 2).ToList().Count</span>}
+                @if (Model.List.Where(c => c.RequestRequestStatusId == (int)RequestStatusEnum.Valid).ToList().Count == 0)
+                {<span class="tag tag-default">@Model.List.Where(c => c.RequestRequestStatusId == (int)RequestStatusEnum.Valid).ToList().Count</span>}
                 else
-                {<span class="tag tag-danger">@Model.List.Where(c => c.RequestRequestStatusId == 2).ToList().Count</span> }
+                {<span class="tag tag-danger">@Model.List.Where(c => c.RequestRequestStatusId == (int)RequestStatusEnum.Valid).ToList().Count</span> }
             </h4>
 
                 @*<h4 class="card-title">@ViewBag.SatisfyConditionsLoanRequests</h4>*@
@@ -214,22 +187,13 @@
                     <table id="Result" class="table table-bordered mb-0">
                         <thead class="thead-inverse">
                             <tr>
-                                <th></th>
-                                @*<th>
-                                        @Html.DisplayNameFor(model => model.Instance.RequestProductId)
-                                    </th>*@
+                                <th></th>                             
                                 <th>
                                     @Html.DisplayNameFor(model => model.Instance.RequestProductEmployeeId)
                                 </th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.Instance.RequestProductEmployeeFullName)
-                                </th>
-                                @*<th>
-                                        @Html.DisplayNameFor(model => model.Instance.RequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
-                                    </th>*@
-                                @*<th>
-                                        @Html.DisplayNameFor(model => model.Instance.RequestProductEmployeeCategoryName)
-                                    </th>*@
+                                </th>                               
                                 <th>
                                     @Html.DisplayNameFor(model => model.Instance.RequestProductProductTypeName)
                                 </th>
@@ -238,11 +202,7 @@
                                 </th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.Instance.RequestAmount)
-                                </th>
-                                @*<th>
-                                    @Html.DisplayNameFor(model => model.Instance.RequestRequestStatusName)
-                                </th>*@
-
+                                </th>                             
                                 <th></th>
                                 <th></th>
                             </tr>
@@ -254,21 +214,12 @@
                                     <td>
                                         <input id="isSellected" name="isSellected" type="checkbox" checked />
                                     </td>
-                                    @*<td>
-                                            @Html.DisplayFor(modelItem => item.RequestProductId)
-                                        </td>*@
                                     <td>
                                         @Html.DisplayFor(modelItem => item.RequestProductEmployeeId)
                                     </td>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.RequestProductEmployeeFullName)
-                                    </td>
-                                    @*<td>
-                                            @Html.DisplayFor(modelItem => item.RequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
-                                        </td>*@
-                                    @*<td>
-                                            @Html.DisplayFor(modelItem => item.RequestProductEmployeeCategoryName)
-                                        </td>*@
+                                    </td>                                    
                                     <td>
                                         @Html.DisplayFor(modelItem => item.RequestProductProductTypeName)
                                     </td>
@@ -277,10 +228,7 @@
                                     </td>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.RequestAmount)
-                                    </td>
-                                    @*<td>
-                                        @Html.DisplayFor(modelItem => item.RequestRequestStatusName)
-                                    </td>*@
+                                    </td>                                 
                                     <td>
                                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                                             <button type="button" class="btn btn-info">
@@ -372,10 +320,10 @@
             <div class="card-header">
                 <h4 class="card-title">
                     @ViewBag.ExceptionalLoanRequests
-                @if (Model.List.Where(c => c.RequestRequestStatusId ==3).ToList().Count == 0)
-                {<span class="tag tag-default">@Model.List.Where(c => c.RequestRequestStatusId == 3).ToList().Count</span>}
+                @if (Model.List.Where(c => c.RequestRequestStatusId == (int)RequestStatusEnum.ExcludedFromValidation).ToList().Count == 0)
+                {<span class="tag tag-default">@Model.List.Where(c => c.RequestRequestStatusId == (int)RequestStatusEnum.ExcludedFromValidation).ToList().Count</span>}
                 else
-                {<span class="tag tag-danger">@Model.List.Where(c => c.RequestRequestStatusId == 3).ToList().Count</span> }
+                {<span class="tag tag-danger">@Model.List.Where(c => c.RequestRequestStatusId == (int)RequestStatusEnum.ExcludedFromValidation).ToList().Count</span> }
             </h4>
 
                 @*<h4 class="card-title">@ViewBag.ExceptionalLoanRequests</h4>*@
@@ -400,21 +348,12 @@
                         <thead class="thead-inverse">
                             <tr>
                                 <th></th>
-                                @*<th>
-                                        @Html.DisplayNameFor(model => model.Instance.RequestProductId)
-                                    </th>*@
                                 <th>
                                     @Html.DisplayNameFor(model => model.Instance.RequestProductEmployeeId)
                                 </th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.Instance.RequestProductEmployeeFullName)
-                                </th>
-                                @*<th>
-                                        @Html.DisplayNameFor(model => model.Instance.RequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
-                                    </th>*@
-                                @*<th>
-                                        @Html.DisplayNameFor(model => model.Instance.RequestProductEmployeeCategoryName)
-                                    </th>*@
+                                </th>                               
                                 <th>
                                     @Html.DisplayNameFor(model => model.Instance.RequestProductProductTypeName)
                                 </th>
@@ -423,10 +362,7 @@
                                 </th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.Instance.RequestAmount)
-                                </th>
-                                @*<th>
-                                    @Html.DisplayNameFor(model => model.Instance.RequestRequestStatusName)
-                                </th>*@
+                                </th>                              
 
                                 <th></th>
                                 <th></th>
@@ -439,21 +375,12 @@
                                     <td>
                                         <input id="isSellected" name="isSellected" type="checkbox" checked />
                                     </td>
-                                    @*<td>
-                                            @Html.DisplayFor(modelItem => item.RequestProductId)
-                                        </td>*@
                                     <td>
                                         @Html.DisplayFor(modelItem => item.RequestProductEmployeeId)
                                     </td>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.RequestProductEmployeeFullName)
-                                    </td>
-                                    @*<td>
-                                            @Html.DisplayFor(modelItem => item.RequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
-                                        </td>*@
-                                    @*<td>
-                                            @Html.DisplayFor(modelItem => item.RequestProductEmployeeCategoryName)
-                                        </td>*@
+                                    </td>                                   
                                     <td>
                                         @Html.DisplayFor(modelItem => item.RequestProductProductTypeName)
                                     </td>
@@ -462,10 +389,7 @@
                                     </td>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.RequestAmount)
-                                    </td>
-                                    @*<td>
-                                        @Html.DisplayFor(modelItem => item.RequestRequestStatusName)
-                                    </td>*@
+                                    </td>                                 
                                     <td>
                                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                                             <button type="button" class="btn btn-info">
@@ -551,10 +475,7 @@
     </div>
 </div>
 
-@*<div id="dialog" style="display: none">
-    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">@ViewBag.No</span></button>
-</div>*@
-
+ 
 
 <div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">
     <div class="modal-dialog">

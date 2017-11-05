@@ -209,7 +209,6 @@
     <Compile Include="Controllers\PaymentStatusController.cs" />
     <Compile Include="Controllers\PayOrderController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
-    <Compile Include="Controllers\ProductRequestLoanController.cs" />
     <Compile Include="Controllers\ProductTypeAvailabilityController.cs" />
     <Compile Include="Controllers\ProductTypeController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
@@ -1640,23 +1639,20 @@
     <Content Include="Scripts\bootstrap-datepicker\docs\options.rst" />
     <Content Include="Scripts\bootstrap-datepicker\less\datepicker.less" />
     <Content Include="Scripts\bootstrap-datepicker\tests\README.md" />
-    <Content Include="Views\ProductRequestLoan\Create.cshtml" />
-    <Content Include="Views\ProductRequestLoan\Details.cshtml" />
-    <Content Include="Views\ProductRequestLoan\Edit.cshtml" />
-    <Content Include="Views\ProductRequestLoan\Index.cshtml" />
-    <Content Include="Views\ProductRequestLoan\CreateGuarantorWithStatement.cshtml" />
-    <Content Include="Views\ProductRequestLoan\EditGuarantorWithStatement.cshtml" />
-    <Content Include="Views\ProductRequestLoan\createExceptionalAmount.cshtml" />
-    <Content Include="Views\ProductRequestLoan\editExceptionalAmount.cshtml" />
-    <Content Include="Views\ProductRequestLoan\DeleteGuarantorWithStatement.cshtml" />
     <Content Include="Views\Product\Delete.cshtml" />
-    <Content Include="Views\ProductRequestLoan\DeleteExceptionalAmount.cshtml" />
     <Content Include="Views\ManageLoanRequests\Index.cshtml" />
     <Content Include="Views\ManageLoanRequests\CreateLoanRequestDecision.cshtml" />
     <Content Include="Views\ManageLoanRequests\Details.cshtml" />
     <Content Include="Views\LoanRequestViewModel\Create.cshtml" />
     <Content Include="Views\LoanRequestViewModel\Edit.cshtml" />
     <Content Include="Views\LoanRequestViewModel\Details.cshtml" />
+    <Content Include="Views\LoanRequestViewModel\Index.cshtml" />
+    <Content Include="Views\LoanRequestViewModel\CreateExceptionalAmount.cshtml" />
+    <Content Include="Views\LoanRequestViewModel\CreateGuarantorWithStatement.cshtml" />
+    <Content Include="Views\LoanRequestViewModel\DeleteExceptionalAmount.cshtml" />
+    <Content Include="Views\LoanRequestViewModel\DeleteGuarantorWithStatement.cshtml" />
+    <Content Include="Views\LoanRequestViewModel\EditExceptionalAmount.cshtml" />
+    <Content Include="Views\LoanRequestViewModel\EditGuarantorWithStatement.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CfDataContext\CfDataContext.csproj">

@@ -21,11 +21,31 @@ namespace Cf.Data
 		/// </summary>
 		Ceiling = 4
 	}
-
-	/// <summary>
-	/// الهيئة الوظيفية
+    /// <summary>
+	/// نوع المبلغ الاستثنائي
 	/// </summary>
-	public enum CategoryEnum
+	[Flags()]
+    public enum ExceptionalAmountTypeEnum
+    {
+        /// <summary>
+        ///   
+        /// </summary>
+        ExceptionalIncome = 1,
+        /// <summary>
+        ///  
+        /// </summary>
+        ExceptionalDeduction = 2,
+        /// <summary>
+        ///  
+        /// </summary>
+        NetDeduction = 3
+    }
+
+
+    /// <summary>
+    /// الهيئة الوظيفية
+    /// </summary>
+    public enum CategoryEnum
 	{
         /// <summary>
 		/// (غير محددة)

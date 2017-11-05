@@ -33,16 +33,17 @@ namespace Portal.Controllers
         private string LoanDecision = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "LoanDecision", "ModuleName");
 
 
-        // GET: ManageLoanRequests
-        public ActionResult Index()
+        public ManageLoanRequestsController()
         {
-
-            ViewBag.Title = index;
             ViewBag.ModuleName = moduleName;
-            ViewBag.Insert = insert;
-            ViewBag.Update = update;
-            ViewBag.Delete = delete;
+            ViewBag.Action = details;
             ViewBag.Details = details;
+            ViewBag.Update = update;
+            ViewBag.Back = back;
+            ViewBag.Insert = insert;
+            ViewBag.Delete = delete;
+            ViewBag.Title = index;
+             
             ViewBag.ConfirmDelete = confirmDelete;
             ViewBag.Yes = yes;
             ViewBag.No = no;
@@ -59,26 +60,29 @@ namespace Portal.Controllers
             ViewBag.ExceptionalLoanRequests = "ExceptionalLoanRequests";
 
 
-            Db db = new Db(DbServices.ConnectionString);
-            List<LoanRequestVw> requests = null;
+        }
 
-            
+        // GET: ManageLoanRequests
+        public ActionResult Index()
+        {
+            Db db = new Db(DbServices.ConnectionString);
+            List<LoanRequestVw> requests = null;           
             string roleName = "Manager";
             switch (roleName)
             {
                 case "Employee" :
                     {
-                        requests=LoanRequestVwServices.List(db).Where(c => c.RequestRequestStatusId.Value == (int)LoanRequestStatusEnum.New).ToList();
+                        requests=LoanRequestVwServices.List(db).Where(c => c.RequestRequestStatusId.Value == (int)RequestStatusEnum.New).ToList();
                         break;
                     }
                 case  "Manager":
                     {
-                        requests = LoanRequestVwServices.List(db).Where(c => (c.RequestRequestStatusId.Value == (int)LoanRequestStatusEnum.Exceptional || c.RequestRequestStatusId.Value == (int)LoanRequestStatusEnum.StatisfyConditions || c.RequestRequestStatusId.Value == (int)LoanRequestStatusEnum.New)).ToList();
+                        requests = LoanRequestVwServices.List(db).Where(c => (c.RequestRequestStatusId.Value == (int)RequestStatusEnum.ExcludedFromValidation || c.RequestRequestStatusId.Value == (int)RequestStatusEnum.Valid || c.RequestRequestStatusId.Value == (int)RequestStatusEnum.New)).ToList();
                         break;
                     }
                 case "FinancialManager":
                     {
-                        requests = LoanRequestVwServices.List(db).Where(c => (c.RequestRequestStatusId.Value == (int)LoanRequestStatusEnum.StatisfyConditions || c.RequestRequestStatusId.Value == (int)LoanRequestStatusEnum.StatisfyConditions)).ToList();
+                        requests = LoanRequestVwServices.List(db).Where(c => (c.RequestRequestStatusId.Value == (int)RequestStatusEnum.New || c.RequestRequestStatusId.Value == (int)RequestStatusEnum.Valid)).ToList();
                         break;
                     }
 
@@ -90,9 +94,6 @@ namespace Portal.Controllers
             ViewBag.DecisionType = 1;
 
             ViewBag.RoleName = roleName;
-
-            //ViewBag.ProductTypeList = new SelectList(ProductTypeServices.List(db), "Id", "Name");
-            //ViewBag.RequestStatusList = new SelectList(RequestStatusServices.List(db), "Id", "Name");
             LoanRequestVwViewModel vm = new LoanRequestVwViewModel();
             vm.List = requests;
             return View(vm);
@@ -196,16 +197,45 @@ namespace Portal.Controllers
         }
 
 
-        enum LoanRequestStatusEnum
+        #region Approve
+       
+        public ActionResult Approve(int? id)
         {
-            New=1,
-            StatisfyConditions,
-            NotStatisfyConditions,
-            Exceptional,
-            ReadyForDecisionPreparation,
-            ReadyForDecisionMaking,
-            Executed,
-            Canceled
+            ViewBag.TitleGuarantor = TitleGuarantor;
+            ViewBag.TitleExceptionalAount = TitleExceptionalAount;
+            
+            if (id == null)
+            {               
+                return RedirectToAction("Index");
+            }
+
+            Request request = RequestServices.Get(id.Value);
+            request.RequestStatus =(int) RequestStatusEnum.Valid;
+            RequestServices.Update(request);
+             
+            return RedirectToAction("Index");
         }
+
+        #endregion
+        #region Approve
+        
+        public ActionResult Reject(int? id)
+        {
+            
+            if (id == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            Request request = RequestServices.Get(id.Value);
+            request.RequestStatus = (int)RequestStatusEnum.Invalid;
+            RequestServices.Update(request);
+
+            return RedirectToAction("Index");
+        }
+
+        #endregion
+
+
     }
 }

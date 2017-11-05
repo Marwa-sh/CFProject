@@ -1,30 +1,30 @@
 @*@model Cf.ViewModels.LoanRequestVwViewModel*@
-@model Portal.ViewModels.ProductRequestLoanViewModel
+@model Cf.ViewModels.ProductVwViewModel
 <div class="form-body">
 
     <div class="row">
         <div class="col-md-4">
             <div class="form-group">
                 @*@Html.LabelFor(model => model.Instance.NetIncome, htmlAttributes: new { @class = "control-label" })*@
-                @Html.LabelFor(model => model.LoanRequestVwViewModel.Instance.NetIncome, new Dictionary<string, Object>
+                @Html.LabelFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.NetIncome, new Dictionary<string, Object>
                                                 { { "class", "control-label" },
-                                                  {"title", Html.ToolTipMessageFor(model => model.LoanRequestVwViewModel.Instance.NetIncome)},
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.NetIncome)},
                                                   {"data-toggle", "tooltip"},
                                                   {"data-placement", "bottom"}
                                                 })
-                <input type="text" id="txtNetIncome" class="form-control" value="@Html.DisplayFor(model => model.LoanRequestVwViewModel.Instance.NetIncome)" disabled />
+                <input type="text" id="txtNetIncome" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.NetIncome)" disabled />
             </div>
         </div>
         <div class="col-md-4">
             <div class="form-group">
                 @*@Html.LabelFor(model => model.Instance.TotalDeduction, htmlAttributes: new { @class = "control-label" })*@
-                @Html.LabelFor(model => model.LoanRequestVwViewModel.Instance.TotalDeduction, new Dictionary<string, Object>
+                @Html.LabelFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.TotalDeduction, new Dictionary<string, Object>
                                                 { { "class", "control-label" },
-                                                  {"title", Html.ToolTipMessageFor(model => model.LoanRequestVwViewModel.Instance.TotalDeduction)},
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.TotalDeduction)},
                                                   {"data-toggle", "tooltip"},
                                                   {"data-placement", "bottom"}
                                                 })
-                <input type="text" id="txtTotalDeduction" class="form-control" value="@Html.DisplayFor(model => model.LoanRequestVwViewModel.Instance.TotalDeduction)" disabled />
+                <input type="text" id="txtTotalDeduction" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.TotalDeduction)" disabled />
             </div>
         </div>
     </div>

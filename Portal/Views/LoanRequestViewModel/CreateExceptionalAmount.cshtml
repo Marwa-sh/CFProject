@@ -1,0 +1,87 @@
+﻿@model Cf.Data.ExceptionalAmount
+@using (Html.BeginForm())
+{
+    <h4 class="card-title">@ViewBag.Insert   </h4>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+                
+                <div class="card-body collapse in">
+                    <div class="card-block">
+                        <form class="form">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-body">
+                                
+                                <input type="hidden" value="@ViewBag.LoanRequestId" name="LoanRequest" />
+
+                                <div class="row">
+                                     
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            @*@Html.LabelFor(model => model.Amount, htmlAttributes: new { @class = "control-label" })*@
+                                            @Html.LabelFor(model => model.Amount, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Amount)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                            @Html.EditorFor(model => model.Amount, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            @*@Html.LabelFor(model => model.Notes, htmlAttributes: new { @class = "control-label" })*@
+                                            @Html.LabelFor(model => model.Notes, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Notes)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                            @Html.EditorFor(model => model.Notes, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Notes, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <input type="hidden" value="@ViewBag.Type" name="ExceptionalAmountType"/>
+                                   
+                                </div>
+                                
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary mr-1">
+                                    @ViewBag.Save
+                                </button>
+                                <button type="button" class="btn btn-warning">
+                                    @Html.ActionLink((string)ViewBag.Back, "Details", new { id = @ViewBag.ProductId })
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section Scripts {
+    <script>
+		$(function () {
+            $.validator.addMethod('date',
+            function (value, element) {
+                if (this.optional(element)) {
+                    return true;
+                }
+                var ok = true;
+                try {
+                    $.datepicker.parseDate('dd/mm/yy', value);
+                }
+                catch (err) {
+                    ok = false;
+                }
+                return ok;
+            });
+            $(".IsDate").datepicker({ dateFormat: 'dd/mm/yy', changeYear: true });
+        });
+    </script>
+}

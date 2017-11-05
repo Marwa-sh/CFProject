@@ -1,4 +1,4 @@
-@model Portal.ViewModels.ProductRequestLoanViewModel
+@model  Cf.ViewModels.ProductVwViewModel
  
 <div class="form-body">
     <div class="row">
@@ -6,68 +6,65 @@
         <div class="col-md-4">
             <div class="form-group">
                 @*@Html.LabelFor(model => model.Instance.EmployeeId, htmlAttributes: new { @class = "control-label" })*@
-                @Html.LabelFor(model => model.ProductVwViewModel.Instance.EmployeeId, new Dictionary<string, Object>
+                @Html.LabelFor(model => model.Instance.EmployeeId, new Dictionary<string, Object>
                                                 { { "class", "control-label" },
-                                                  {"title", Html.ToolTipMessageFor(model => model.ProductVwViewModel.Instance.EmployeeId)},
+                                                  {"title", Html.ToolTipMessageFor(model => model.Instance.EmployeeId)},
                                                   {"data-toggle", "tooltip"},
                                                   {"data-placement", "bottom"}
                                                 })
-                <input type="text" id="txtEmployeeId" class="form-control" value="@Html.DisplayFor(model => model.ProductVwViewModel.Instance.EmployeeId)" disabled />
-                <input type="hidden" name="Product.Id" id="txtProductId" class="form-control" value="@Html.DisplayFor(model => model.ProductVwViewModel.Instance.Id)" />
+                <input type="text" id="txtEmployeeId" class="form-control" value="@Html.DisplayFor(model => model.Instance.EmployeeId)" disabled />
+                <input type="hidden" name="Product.Id" id="txtProductId" class="form-control" value="@Html.DisplayFor(model => model.Instance.Id)" />
             </div>
         </div>
         <div class="col-md-4">
             <div class="form-group">
                 @*@Html.LabelFor(model => model.Instance.EmployeeFullName, htmlAttributes: new { @class = "control-label" })*@
-                @Html.LabelFor(model => model.ProductVwViewModel.Instance.EmployeeFullName, new Dictionary<string, Object>
+                @Html.LabelFor(model => model.Instance.EmployeeFullName, new Dictionary<string, Object>
                                                 { { "class", "control-label" },
-                                                  {"title", Html.ToolTipMessageFor(model => model.ProductVwViewModel.Instance.EmployeeFullName)},
+                                                  {"title", Html.ToolTipMessageFor(model => model.Instance.EmployeeFullName)},
                                                   {"data-toggle", "tooltip"},
                                                   {"data-placement", "bottom"}
                                                 })
-                <input type="text" id="txtEmployeeFullName" class="form-control" value="@Html.DisplayFor(model => model.ProductVwViewModel.Instance.EmployeeFullName)" disabled />
+                <input type="text" id="txtEmployeeFullName" class="form-control" value="@Html.DisplayFor(model => model.Instance.EmployeeFullName)" disabled />
             </div>
         </div>
         <div class="col-md-4">
             <div class="form-group">
                 @*@Html.LabelFor(model => model.Instance.ProductTypeName, htmlAttributes: new { @class = "control-label" })*@
-                @Html.LabelFor(model => model.ProductVwViewModel.Instance.ProductTypeName, new Dictionary<string, Object>
+                @Html.LabelFor(model => model.Instance.ProductTypeName, new Dictionary<string, Object>
                                                 { { "class", "control-label" },
-                                                  {"title", Html.ToolTipMessageFor(model => model.ProductVwViewModel.Instance.ProductTypeName)},
+                                                  {"title", Html.ToolTipMessageFor(model => model.Instance.ProductTypeName)},
                                                   {"data-toggle", "tooltip"},
                                                   {"data-placement", "bottom"}
                                                 })
-                <input type="text" id="txtProductTypeName" class="form-control" value="@Html.DisplayFor(model => model.ProductVwViewModel.Instance.ProductTypeName)" disabled />
+                <input type="text" id="txtProductTypeName" class="form-control" value="@Html.DisplayFor(model => model.Instance.ProductTypeName)" disabled />
             </div>
         </div>
-    </div>
-     
-     
-     
+    </div>    
     <div class="row">
      
         <div class="col-md-4">
             <div class="form-group">
                 @*@Html.LabelFor(model => model.Instance.Amount, htmlAttributes: new { @class = "control-label" })*@
-                @Html.LabelFor(model => model.ProductVwViewModel.Instance.Amount, new Dictionary<string, Object>
+                @Html.LabelFor(model => model.Instance.Amount, new Dictionary<string, Object>
                                                 { { "class", "control-label" },
-                                                  {"title", Html.ToolTipMessageFor(model => model.ProductVwViewModel.Instance.Amount)},
+                                                  {"title", Html.ToolTipMessageFor(model => model.Instance.Amount)},
                                                   {"data-toggle", "tooltip"},
                                                   {"data-placement", "bottom"}
                                                 })
-                <input type="text" id="txtAmount" class="form-control" value="@Html.DisplayFor(model => model.ProductVwViewModel.Instance.Amount)" disabled />
+                <input type="text" id="txtAmount" class="form-control" value="@Html.DisplayFor(model => model.Instance.Amount)" disabled />
             </div>
         </div>
         <div class="col-md-4">
             <div class="form-group">
                 @*@Html.LabelFor(model => model.Instance.Notes, htmlAttributes: new { @class = "control-label" })*@
-                @Html.LabelFor(model => model.ProductVwViewModel.Instance.Notes, new Dictionary<string, Object>
+                @Html.LabelFor(model => model.Instance.Notes, new Dictionary<string, Object>
                                                 { { "class", "control-label" },
-                                                  {"title", Html.ToolTipMessageFor(model => model.ProductVwViewModel.Instance.Notes)},
+                                                  {"title", Html.ToolTipMessageFor(model => model.Instance.Notes)},
                                                   {"data-toggle", "tooltip"},
                                                   {"data-placement", "bottom"}
                                                 })
-                <input type="text" id="txtNotes" class="form-control" value="@Html.DisplayFor(model => model.ProductVwViewModel.Instance.Notes)" disabled />
+                <input type="text" id="txtNotes" class="form-control" value="@Html.DisplayFor(model => model.Instance.Notes)" disabled />
             </div>
         </div>
     </div>

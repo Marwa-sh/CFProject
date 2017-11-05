@@ -3,6 +3,7 @@ using Cf.Data;
 using Cf.Services;
 using Cf.Services.Exceptions;
 using Cf.ViewModels;
+using Portal.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -37,23 +38,34 @@ namespace Portal.Controllers
 
         public LoanRequestViewModelController()
         {
+            ViewBag.Title = index;
             ViewBag.ModuleName = moduleName;
-            ViewBag.Action = insert;
-            ViewBag.Save = save;
-            ViewBag.Back = back;
-
-            
-            ViewBag.Details = details;
-            ViewBag.Update = update;
             ViewBag.Insert = insert;
+            ViewBag.Update = update;
             ViewBag.Delete = delete;
-           
+            ViewBag.Details = details;
+            ViewBag.ConfirmDelete = confirmDelete;
+            ViewBag.Yes = yes;
+            ViewBag.No = no;
+            ViewBag.Search = search;
+            ViewBag.FilterOptions = filterOptions;
+            ViewBag.Back = back;
+            ViewBag.Save = save;
         }
 
         #region Index Loan Request       
-        public ActionResult Index()
+        public ActionResult Index(LoanRequestVwViewModel Model)
         {
-            return View();
+            
+            if (Model.Filter.HasCriteria)
+            {
+                Model.Filter.RequestRequestStatusId = (int)RequestStatusEnum.New;
+                Db db = new Db(DbServices.ConnectionString);
+                Model.List = LoanRequestVwServices.Get(Model.Filter, db);
+            }
+            else
+                Model.List = new List<LoanRequestVw>();
+            return View(Model);
         }
         #endregion
 
@@ -255,42 +267,17 @@ namespace Portal.Controllers
             if (productVwViewModel.Instance == null)
             {
                 return HttpNotFound();
-            }            
-            //// Request
-            //RequestVwViewModel requestVwViewModel = new RequestVwViewModel();
-            //requestVwViewModel.Instance = RequestVwServices.GetChildren(id.Value, db);
-            //if (requestVwViewModel.Instance == null)
-            //{
-            //    return HttpNotFound();
-            //}
+            }
+            //if (productVwViewModel.Instance.RefundableProductVw != null)
+            //    productVwViewModel.RefundableProductVwViewModel.List.Add(productVwViewModel.Instance.RefundableProductVw);
+             
+             
+            //if (productVwViewModel.Instance.RequestVw != null)
+            //    productVwViewModel.RequestVwViewModel.List.Add(productVwViewModel.Instance.RequestVw);
 
-            //// Loan Request
-            //LoanRequestVwViewModel loanRequestVwViewModel = new LoanRequestVwViewModel();
-            //loanRequestVwViewModel.Instance = LoanRequestVwServices.GetChildren(id.Value, db);
-            //if (loanRequestVwViewModel.Instance == null)
-            //{
-            //    return HttpNotFound();
-            //}
+            //productVwViewModel.RefundableProductVwViewModel.GuarantorVwViewModel.List = productVwViewModel.RefundableProductVwViewModel.Instance.GuarantorVwList;
 
-            //// RefundableProduct
-            //RefundableProductVwViewModel refundableProductVwViewModel = new RefundableProductVwViewModel();
-            //refundableProductVwViewModel.Instance = RefundableProductVwServices.GetChildren(id.Value, db);
-            //if (refundableProductVwViewModel.Instance == null)
-            //{
-            //    return HttpNotFound();
-            //}
-
-            //refundableProductVwViewModel.GuarantorVwViewModel.List = refundableProductVwViewModel.Instance.GuarantorVwList;
-
-            //LoanRequestViewModel vm = new LoanRequestViewModel();
-            //vm.ProductVwViewModel = productVwViewModel;
-            //vm.RequestVwViewModel = requestVwViewModel;
-            //vm.LoanRequestVwViewModel = loanRequestVwViewModel;
-            //vm.RefundableProductVwViewModel = refundableProductVwViewModel;
-
-            //vm.ExceptionalAmountVwViewModel.List = ExceptionalAmountVwServices.GetByLoanRequestRequestProductId(id.Value);
-
-
+            //productVwViewModel.RefundableProductVwViewModel.InstallmentVwViewModel.List = productVwViewModel.RefundableProductVwViewModel.Instance.InstallmentVwList;
 
 
             return View(productVwViewModel);
@@ -298,7 +285,392 @@ namespace Portal.Controllers
 
         #endregion
 
+        #region Guarantor - Statement
+        public ActionResult CreateGuarantorWithStatement(int? id)
+        {            
+            Db db = new Db(DbServices.ConnectionString);
+            if (id != null)
+            {
+                ViewBag.ProductId = id.Value;
+            }
+            else
+            {
+                RedirectToAction("Index");
+            }
+            ViewBag.EmployeeList = new SelectList(EmployeeServices.List(db), "Id", "FirstName");            
+            return PartialView();
+        }
+        [HttpPost]
+        public ActionResult CreateGuarantorWithStatement(GuarantorWithStatmentViewModel model)
+        {
+            try
+            {
+                Db db = new Db(DbServices.ConnectionString);
+                if (!(db.Connection.State == ConnectionState.Open)) db.Connection.Open();
+                db.Transaction = db.Connection.BeginTransaction();
 
+                if (ModelState.IsValid)
+                {
+                    try
+                    {
+                        model.Guarantor.GuarantorStatus =(int) GuarantorStatusEnum.New;
+                        // 1- Add Guaratntor
+                        Guarantor g = GuarantorServices.Insert(CurrentUser.Id, model.Guarantor, db);
+
+                        //2-Add GuarantorStatement                        
+                        model.GuarantorStatement.Guarantor = g.Id;
+                        GuarantorStatement gs = GuarantorStatementServices.Insert(CurrentUser.Id, model.GuarantorStatement, db);
+
+
+                        TempData["Success"] = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "InsertConfirmed");
+
+                    }
+                    catch (CfException cfex)
+                    {
+                        TempData["Failure"] = cfex.ErrorDefinition.LocalizedMessage;
+                    }
+                    catch (Exception ex)
+                    {
+                        TempData["Failure"] = ex.Message;
+                    }
+                }
+
+                if (db.Transaction != null) db.Transaction.Commit();
+                return RedirectToAction("Details", new { id = model.Guarantor.RefundableProduct });
+            }
+            catch
+            {
+                return View("Details");
+            }
+
+
+
+        }
+
+        public ActionResult EditGuarantorWithStatement(int? id)
+        {
+            ViewBag.ModuleName = moduleName;
+            ViewBag.Action = update;
+            ViewBag.Update = update;
+            ViewBag.Save = save;
+            ViewBag.Back = back;
+            Db db = new Db(DbServices.ConnectionString);
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Guarantor guarantor = GuarantorServices.Get(id.Value, db);
+            if (guarantor == null)
+            {
+                return HttpNotFound();
+            }
+
+
+            GuarantorStatement guarantorStatement = GuarantorStatementServices.Get(guarantor.Id, db);
+            if (guarantorStatement == null)
+            {
+                return HttpNotFound();
+            }
+
+
+            ViewBag.EmployeeList = new SelectList(EmployeeServices.List(db), "Id", "FirstName", guarantor.Employee);
+            ViewBag.GuarantorStatusList = new SelectList(GuarantorStatusServices.List(db), "Id", "Name", guarantor.GuarantorStatus);
+            ViewBag.ProductId = guarantor.RefundableProduct;
+            GuarantorWithStatmentViewModel vm = new GuarantorWithStatmentViewModel();
+            vm.Guarantor = guarantor;
+            vm.GuarantorStatement = guarantorStatement;
+
+
+            return PartialView(vm);
+        }
+
+        [HttpPost]
+        public ActionResult EditGuarantorWithStatement(GuarantorWithStatmentViewModel model)
+        {
+            try
+            {
+                Db db = new Db(DbServices.ConnectionString);
+                if (!(db.Connection.State == ConnectionState.Open)) db.Connection.Open();
+                db.Transaction = db.Connection.BeginTransaction();
+
+                if (ModelState.IsValid)
+                {
+                    try
+                    {
+                        // 1- Update Guaratntor
+                        GuarantorServices.Update(CurrentUser.Id, model.Guarantor, db);
+
+                        //2-Update GuarantorStatement                        
+                        model.GuarantorStatement.Guarantor = model.Guarantor.Id;
+                        GuarantorStatementServices.Update(CurrentUser.Id, model.GuarantorStatement, db);
+
+                        TempData["Success"] = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "InsertConfirmed");
+                    }
+                    catch (CfException cfex)
+                    {
+                        TempData["Failure"] = cfex.ErrorDefinition.LocalizedMessage;
+                    }
+                    catch (Exception ex)
+                    {
+                        TempData["Failure"] = ex.Message;
+                    }
+                }
+
+                if (db.Transaction != null) db.Transaction.Commit();
+                return RedirectToAction("Details", new { id = model.Guarantor.RefundableProduct });
+            }
+            catch
+            {
+                return View();
+            }
+
+        }
+
+
+        // GET: Guarantor/Delete/5
+        public ActionResult DeleteGuarantorWithStatement(Nullable<int> id)
+        {
+            //ViewBag.ModuleName = moduleName;
+            ViewBag.Title = delete;
+            ViewBag.Delete = delete;
+            ViewBag.Yes = yes;
+            ViewBag.No = no;
+            ViewBag.ConfirmDelete = confirmDelete;
+            ViewBag.Action = delete;
+
+            ViewBag.TitleGuarantor = TitleGuarantor;
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Db db = new Db(DbServices.ConnectionString);
+            Guarantor guarantor = GuarantorServices.Get(id.Value, db);
+            if (guarantor == null)
+            {
+                return HttpNotFound();
+            }
+            return PartialView(guarantor);
+        }
+
+        // POST: Guarantor/Delete/5
+        [HttpPost, ActionName("DeleteGuarantorWithStatement")]
+        public ActionResult DeleteConfirmedGuarantorWithStatement(int id)
+        {
+            try
+            {
+                Db db = new Db(DbServices.ConnectionString);
+                GuarantorStatementServices.Delete(CurrentUser.Id, id, db);
+                GuarantorServices.Delete(CurrentUser.Id, id, db);
+                TempData["Success"] = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "DeleteConfirmed");
+                // return RedirectToAction("Index");
+            }
+            catch (CfException cfex)
+            {
+                TempData["Failure"] = cfex.ErrorDefinition.LocalizedMessage;
+            }
+            catch (Exception ex)
+            {
+                TempData["Failure"] = ex.Message;
+            }
+            //return RedirectToAction("Details", new { id = model.Guarantor.RefundableProduct });
+            // return View(guarantor);
+            return RedirectToAction("Index");
+
+        }
+
+
+        #endregion
+
+        #region ExceptionalAmount
+
+        public ActionResult createExceptionalAmount(int? id, string Type)
+        {
+           
+            try
+            {
+                Db db = new Db(DbServices.ConnectionString);
+
+                if (id != null)
+                {
+                    ViewBag.LoanRequestId = id;
+                }
+                ViewBag.ExceptionalAmountTypeList = new SelectList(ExceptionalAmountTypeServices.List(db), "Id", "Name" , Type);
+                switch (Type)
+                {
+                    case "ExceptionalDeduction":
+                        {
+                            ViewBag.Type = (int)ExceptionalAmountTypeEnum.ExceptionalDeduction;
+                            break;
+                        }
+                    case "ExceptionalIncome":
+                        {
+                            ViewBag.Type = (int)ExceptionalAmountTypeEnum.ExceptionalIncome;
+                            break;
+                        }
+                    case "NetDeduction":
+                        {
+                            ViewBag.Type = (int)ExceptionalAmountTypeEnum.NetDeduction;
+                            break;
+                        }
+                    default:
+                        break;
+                }
+                
+                return PartialView();
+            }
+            catch (CfException exc)
+            {
+
+            }
+            catch (Exception exc)
+            {
+
+            }
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public ActionResult createExceptionalAmount(ExceptionalAmount model)
+        {
+            Db db = new Db(DbServices.ConnectionString);
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    ExceptionalAmountServices.Insert(CurrentUser.Id, model, db);
+                    TempData["Success"] = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "InsertConfirmed");
+
+                }
+                catch (CfException cfex)
+                {
+                    TempData["Failure"] = cfex.ErrorDefinition.LocalizedMessage;
+                }
+                catch (Exception ex)
+                {
+                    TempData["Failure"] = ex.Message;
+                }
+                return RedirectToAction("Details", new { id = model.LoanRequest });
+            }
+
+            ViewBag.ExceptionalAmountTypeList = new SelectList(ExceptionalAmountTypeServices.List(db), "Id", "Name");
+            ViewBag.LoanRequestList = new SelectList(LoanRequestServices.List(db), "Request", "Name");
+            ViewBag.ModuleName = moduleName;
+            ViewBag.Action = insert;
+            ViewBag.Save = save;
+            ViewBag.Back = back;
+            return View("Details", new { id = model.LoanRequest });
+
+        }
+
+        public ActionResult editExceptionalAmount(int? id)
+        {
+            ViewBag.ModuleName = moduleName;
+            ViewBag.Action = update;
+            ViewBag.Update = update;
+            ViewBag.Save = save;
+            ViewBag.Back = back;
+            Db db = new Db(DbServices.ConnectionString);
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            ExceptionalAmount exceptionalAmount = ExceptionalAmountServices.Get(id.Value, db);
+            if (exceptionalAmount == null)
+            {
+                return HttpNotFound();
+            }
+
+            ViewBag.ExceptionalAmountTypeList = new SelectList(ExceptionalAmountTypeServices.List(db), "Id", "Name", exceptionalAmount.ExceptionalAmountType);
+
+            return PartialView(exceptionalAmount);
+        }
+        [HttpPost]
+        public ActionResult editExceptionalAmount(ExceptionalAmount model)
+        {
+            Db db = new Db(DbServices.ConnectionString);
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    ExceptionalAmountServices.Update(CurrentUser.Id, model, db);
+                    TempData["Success"] = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "UpdateConfirmed");
+                    return RedirectToAction("Details", new { id = model.LoanRequest });
+                }
+                catch (CfException cfex)
+                {
+                    TempData["Failure"] = cfex.ErrorDefinition.LocalizedMessage;
+                }
+                catch (Exception ex)
+                {
+                    TempData["Failure"] = ex.Message;
+                }
+                return RedirectToAction("Details", new { id = model.LoanRequest });
+            }
+
+            ViewBag.ExceptionalAmountTypeList = new SelectList(ExceptionalAmountTypeServices.List(db), "Id", "Name", model.ExceptionalAmountType);
+
+            ViewBag.ModuleName = moduleName;
+            ViewBag.Action = update;
+            ViewBag.Update = update;
+            ViewBag.Save = save;
+            ViewBag.Back = back;
+            return View("Details", new { id = model.LoanRequest });
+        }
+
+        // GET: Guarantor/Delete/5
+        public ActionResult DeleteExceptionalAmount(Nullable<int> id)
+        {
+            ViewBag.ModuleName = moduleName;
+            ViewBag.Title = delete;
+            ViewBag.Delete = delete;
+            ViewBag.Yes = yes;
+            ViewBag.No = no;
+            ViewBag.ConfirmDelete = confirmDelete;
+            ViewBag.Action = delete;
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Db db = new Db(DbServices.ConnectionString);
+            ExceptionalAmount expAmount = ExceptionalAmountServices.Get(id.Value, db);
+            if (expAmount == null)
+            {
+                return HttpNotFound();
+            }
+            return PartialView(expAmount);
+        }
+
+        // POST: Guarantor/Delete/5
+        [HttpPost, ActionName("DeleteExceptionalAmount")]
+        public ActionResult DeleteConfirmedExceptionalAmount(int id)
+        {
+            try
+            {
+                Db db = new Db(DbServices.ConnectionString);
+                ExceptionalAmountServices.Delete(CurrentUser.Id, id, db);
+                TempData["Success"] = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "DeleteConfirmed");
+                // return RedirectToAction("Index");
+            }
+            catch (CfException cfex)
+            {
+                TempData["Failure"] = cfex.ErrorDefinition.LocalizedMessage;
+            }
+            catch (Exception ex)
+            {
+                TempData["Failure"] = ex.Message;
+            }
+            // return View(guarantor);
+            return RedirectToAction("Index");
+
+        }
+
+
+        #endregion
 
 
 

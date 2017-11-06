@@ -13,10 +13,10 @@ namespace Cf.Data
     {
         #region LoanDecision procedures.
         #region Initialize Loan
-        [Function(Name = "dbo.InitializeLoan")]
-        private int _LoanDecisionInitializeLoan([Parameter(Name = "@LoanRequestId")] int _id, [Parameter(Name = "@MinSeniority")] byte _minSeniority)
+        [Function(Name = "dbo.LoanGeneration")]
+        private int _LoanGeneration([Parameter(Name = "@ProductId")] int _productId, [Parameter(Name = "@LoanDecisionId")] int _loanDecisionId, [Parameter(Name = "@LoanGenerationStatusId")] byte _loanGenerationStatusId)
         {
-            IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+            IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _productId, _loanDecisionId, _loanGenerationStatusId);
             return (int) (result.ReturnValue);
         }
 
@@ -26,11 +26,12 @@ namespace Cf.Data
         /// <returns>A list of EmployeeStatus instances.</returns>
         /// <remarks>This method never returns null, 
         ///	if no records are available, length of the list will be 0.</remarks>
-        public void LoanDecisionInitializeLoan()
+        public void LoanGeneration([Parameter(Name = "@ProductId")] int _productId, [Parameter(Name = "@LoanDecisionId")] int _loanDecisionId, [Parameter(Name = "@LoanGenerationStatusId")] byte _loanGenerationStatusId)
         {
-            LoanDecisionInitializeLoan();
+			_LoanGeneration(_productId, _loanDecisionId, _loanGenerationStatusId);
         }
         #endregion
+		#endregion
     }
     #endregion
 }

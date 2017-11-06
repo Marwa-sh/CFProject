@@ -175,6 +175,7 @@
     <Compile Include="Controllers\GrantPaymentController.cs" />
     <Compile Include="Controllers\GrantPaymentOrderController.cs" />
     <Compile Include="Controllers\GrantRequestController.cs" />
+    <Compile Include="Controllers\GrantRequestViewModelController.cs" />
     <Compile Include="Controllers\GrantTypeController.cs" />
     <Compile Include="Controllers\GrantTypeGroupController.cs" />
     <Compile Include="Controllers\GuarantorController.cs" />
@@ -1591,6 +1592,7 @@
     <Folder Include="Areas\Log\Models\" />
     <Folder Include="Areas\Log\Views\Shared\" />
     <Folder Include="Controllers\Log\" />
+    <Folder Include="Views\GrantRequestViewModel\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

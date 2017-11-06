@@ -9,16 +9,24 @@ namespace Portal.ViewModels
 {
     public class ManageLoanDecision
     {
-        public LoanDecision LoanDecision { get; set; }
-        public List<int> LoanRequestIds { get; set; }
+        public LoanDecision LoanDecision { get; set; }        
+        List<RequestCustomized> Requests = new List<RequestCustomized>();
+
         public LoanRequestVwViewModel LoanRequestVwViewModel { get; set; }
         
 
         public ManageLoanDecision()
         {
-            LoanRequestIds = new List<int>();
+            Requests = new List<RequestCustomized>();
             LoanRequestVwViewModel = new LoanRequestVwViewModel();
 
+        }
+
+
+        public class RequestCustomized
+        {
+            public int RequestId { set; get; }
+            public bool isChecked { set; get; }
         }
     }
 }

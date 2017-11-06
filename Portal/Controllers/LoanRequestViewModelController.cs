@@ -34,6 +34,7 @@ namespace Portal.Controllers
         private string TitleGuarantor = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "Guarantor", "ModuleNamePlural");
         private string TitleExceptionalAount = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ExceptionalAmount", "ModuleNamePlural");
         private string LoanDecision = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "LoanDecision", "ModuleName");
+        private string noRecords = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "NoRecords");
 
 
         public LoanRequestViewModelController()
@@ -51,7 +52,7 @@ namespace Portal.Controllers
             ViewBag.FilterOptions = filterOptions;
             ViewBag.Back = back;
             ViewBag.Save = save;
-
+            ViewBag.NoRecords = noRecords;
         }
 
         #region Index Loan Request       
@@ -90,6 +91,7 @@ namespace Portal.Controllers
         [HttpPost]
         public ActionResult Create(LoanRequestViewModel model)
         {
+            GrantRequestViewModel
             int productId = 0;
             try
             {
@@ -269,18 +271,21 @@ namespace Portal.Controllers
             {
                 return HttpNotFound();
             }
-            //if (productVwViewModel.Instance.RefundableProductVw != null)
-            //    productVwViewModel.RefundableProductVwViewModel.List.Add(productVwViewModel.Instance.RefundableProductVw);
+            
+            List<GuarantorVw> Guarantors = GuarantorVwServices.GetByRefundableProductProductId(id.Value);
+            productVwViewModel.RefundableProductVwViewModel.GuarantorVwViewModel.List = Guarantors;
+
+
+            productVwViewModel.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.List = ExceptionalAmountVwServices.GetByLoanRequestRequestProductId(id.Value);
+
+            List<ExceptionalAmountVw> NetDeduction = ExceptionalAmountVwServices.GetByLoanRequestRequestProductId(id.Value).Where(c=>c.ExceptionalAmountTypeId==(int)ExceptionalAmountTypeEnum.NetDeduction).ToList();
+            List<ExceptionalAmountVw> ExceptionalIncome = ExceptionalAmountVwServices.GetByLoanRequestRequestProductId(id.Value).Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.ExceptionalIncome).ToList();
+            List<ExceptionalAmountVw> ExceptionalDeduction = ExceptionalAmountVwServices.GetByLoanRequestRequestProductId(id.Value).Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.ExceptionalDeduction).ToList();
+
+            ViewBag.NetDeduction = NetDeduction;
+            ViewBag.ExceptionalIncome = ExceptionalIncome;
+            ViewBag.ExceptionalDeduction = ExceptionalDeduction;
              
-             
-            //if (productVwViewModel.Instance.RequestVw != null)
-            //    productVwViewModel.RequestVwViewModel.List.Add(productVwViewModel.Instance.RequestVw);
-
-            //productVwViewModel.RefundableProductVwViewModel.GuarantorVwViewModel.List = productVwViewModel.RefundableProductVwViewModel.Instance.GuarantorVwList;
-
-            //productVwViewModel.RefundableProductVwViewModel.InstallmentVwViewModel.List = productVwViewModel.RefundableProductVwViewModel.Instance.InstallmentVwList;
-
-
             return View(productVwViewModel);
         }
 

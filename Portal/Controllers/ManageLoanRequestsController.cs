@@ -31,6 +31,7 @@ namespace Portal.Controllers
         private string TitleGuarantor = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "Guarantor", "ModuleNamePlural");
         private string TitleExceptionalAount = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ExceptionalAmount", "ModuleNamePlural");
         private string LoanDecision = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "LoanDecision", "ModuleName");
+        private string noRecords = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "NoRecords");
 
 
         public ManageLoanRequestsController()
@@ -54,6 +55,7 @@ namespace Portal.Controllers
             ViewBag.Reject = "Reject";
             ViewBag.Exception = "Exception";
 
+            ViewBag.NoRecords = noRecords;
 
             ViewBag.NewLoanRequests = "NewLoanRequests";
             ViewBag.SatisfyConditionsLoanRequests = "قيد إعداد القرار"; //"SatisfyConditionsLoanRequests";

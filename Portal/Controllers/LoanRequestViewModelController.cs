@@ -91,7 +91,7 @@ namespace Portal.Controllers
         [HttpPost]
         public ActionResult Create(LoanRequestViewModel model)
         {
-            GrantRequestViewModel
+             
             int productId = 0;
             try
             {

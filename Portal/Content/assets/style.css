@@ -111,3 +111,12 @@
 .has-error.checkbox .helper {
     color: #d9534f;
 }
+
+.tag-default 
+{
+    margin-right: 10px;
+}
+.tag-danger
+{
+    margin-right: 10px;
+}

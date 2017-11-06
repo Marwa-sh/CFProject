@@ -249,13 +249,18 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @{ 
+                                                int index = 0;
+                                            }
                                             @foreach (var item in Model.LoanRequestVwViewModel.List)
                                             {
                                                 <tr>
                                                     <td>
-                                                        <input type="hidden" name="Requests[]" value="@item.RequestProductId" />
-                                                        <input id="isSellected" name="isSellected" type="checkbox" checked />
+                                                        <input type="hidden" name="Requests[@index].RequestId" value="@item.RequestProductId" />
+                                                        @Html.CheckBox("Requests["+index+"].isChecked")
+                                                        @*<input id="isSellected" name="Requests[@index].isChecked" type="checkbox" checked />*@
                                                     </td>
+                                                    @{ index = index + 1;}
                                                     <td>
                                                         @Html.DisplayFor(modelItem => item.RequestProductEmployeeId)
                                                     </td>
@@ -286,6 +291,7 @@
                                                         </div>
                                                     </td>
                                                 </tr>
+
                                             }
                                         </tbody>
                                     </table>

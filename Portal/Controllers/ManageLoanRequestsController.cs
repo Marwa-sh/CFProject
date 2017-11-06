@@ -1,10 +1,12 @@
 ﻿using Cf.Controllers;
 using Cf.Data;
 using Cf.Services;
+using Cf.Services.Exceptions;
 using Cf.ViewModels;
 using Portal.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -69,29 +71,30 @@ namespace Portal.Controllers
         public ActionResult Index()
         {
             Db db = new Db(DbServices.ConnectionString);
-            List<LoanRequestVw> requests = null;           
+            List<LoanRequestVw> requests = null;
+            requests = LoanRequestVwServices.List(db);
             string roleName = "Manager";
-            switch (roleName)
-            {
-                case "Employee" :
-                    {
-                        requests=LoanRequestVwServices.List(db).Where(c => c.RequestRequestStatusId.Value == (int)RequestStatusEnum.New).ToList();
-                        break;
-                    }
-                case  "Manager":
-                    {
-                        requests = LoanRequestVwServices.List(db).Where(c => (c.RequestRequestStatusId.Value == (int)RequestStatusEnum.ExcludedFromValidation || c.RequestRequestStatusId.Value == (int)RequestStatusEnum.Valid || c.RequestRequestStatusId.Value == (int)RequestStatusEnum.New)).ToList();
-                        break;
-                    }
-                case "FinancialManager":
-                    {
-                        requests = LoanRequestVwServices.List(db).Where(c => (c.RequestRequestStatusId.Value == (int)RequestStatusEnum.New || c.RequestRequestStatusId.Value == (int)RequestStatusEnum.Valid)).ToList();
-                        break;
-                    }
+            //switch (roleName)
+            //{
+            //    case "Employee" :
+            //        {
+            //            requests=LoanRequestVwServices.List(db).Where(c => c.RequestRequestStatusId.Value == (int)RequestStatusEnum.New).ToList();
+            //            break;
+            //        }
+            //    case  "Manager":
+            //        {
+            //            requests = LoanRequestVwServices.List(db).Where(c => (c.RequestRequestStatusId.Value == (int)RequestStatusEnum.ExcludedFromValidation || c.RequestRequestStatusId.Value == (int)RequestStatusEnum.Valid || c.RequestRequestStatusId.Value == (int)RequestStatusEnum.New)).ToList();
+            //            break;
+            //        }
+            //    case "FinancialManager":
+            //        {
+            //            requests = LoanRequestVwServices.List(db).Where(c => (c.RequestRequestStatusId.Value == (int)RequestStatusEnum.New || c.RequestRequestStatusId.Value == (int)RequestStatusEnum.Valid)).ToList();
+            //            break;
+            //        }
 
-                default:
-                    break;
-            }
+            //    default:
+            //        break;
+            //}
             
 
             ViewBag.DecisionType = 1;
@@ -114,7 +117,7 @@ namespace Portal.Controllers
             Db db = new Db(DbServices.ConnectionString);
 
             ManageLoanDecision vm = new ManageLoanDecision();
-            vm.LoanRequestVwViewModel.List = LoanRequestVwServices.List(db).Where(c=>c.RequestRequestStatusId.Value==4).ToList();
+            vm.LoanRequestVwViewModel.List = LoanRequestVwServices.List(db).Where(c=>c.RequestRequestStatusId.Value==(int) RequestStatusEnum.FinanciallyApproved).ToList();
 
 
 
@@ -124,7 +127,46 @@ namespace Portal.Controllers
         [HttpPost]
         public ActionResult CreateLoanRequestDecision(ManageLoanDecision model)
         {
-            return View();
+            try
+            {
+                Db db = new Db(DbServices.ConnectionString);
+                if (!(db.Connection.State == ConnectionState.Open)) db.Connection.Open();
+                db.Transaction = db.Connection.BeginTransaction();
+
+                if (ModelState.IsValid)
+                {
+                    try
+                    {
+                        // 1- Add Loan Decision
+
+                        LoanDecision intance=LoanDecisionServices.Insert(model.LoanDecision);
+
+                        // 2- Add Loans
+                        for (int i = 0; i < model.Requests.Count; i++)
+                        {
+
+                        }
+                        TempData["Success"] = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "InsertConfirmed");
+
+                    }
+                    catch (CfException cfex)
+                    {
+                        TempData["Failure"] = cfex.ErrorDefinition.LocalizedMessage;
+                    }
+                    catch (Exception ex)
+                    {
+                        TempData["Failure"] = ex.Message;
+                    }
+                }
+
+                if (db.Transaction != null) db.Transaction.Commit();
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+             
         }
 
         #endregion
@@ -268,5 +310,24 @@ namespace Portal.Controllers
         }
         #endregion
 
+
+        #region FinantialApprove
+
+        public ActionResult FinantialApprove(int? id)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            Request request = RequestServices.Get(id.Value);
+            request.RequestStatus = (int)RequestStatusEnum.FinanciallyApproved;
+            RequestServices.Update(request);
+
+            return RedirectToAction("Index");
+        }
+
+
+        #endregion
     }
 }

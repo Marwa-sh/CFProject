@@ -80,7 +80,15 @@ namespace Portal.Controllers
             Db db = new Db(DbServices.ConnectionString);
             // For Product
             ViewBag.EmployeeList = new SelectList(EmployeeServices.List(db), "Id", "Id_Name");
+
+            //ToDo: Just Show Loan Type
+
+            List<LoanType> l = LoanTypeServices.List(db);
+            List<ProductType> f = ProductTypeServices.List(db);
+            
+             
             ViewBag.ProductTypeList = new SelectList(ProductTypeServices.List(db), "Id", "Name");
+
 
             // For Request
             //We need to customise the droplist for two options

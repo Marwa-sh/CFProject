@@ -130,9 +130,7 @@ namespace Portal.Controllers
             try
             {
                 Db db = new Db(DbServices.ConnectionString);
-                if (!(db.Connection.State == ConnectionState.Open)) db.Connection.Open();
-                db.Transaction = db.Connection.BeginTransaction();
-
+                 
                 if (ModelState.IsValid)
                 {
                     try
@@ -159,7 +157,7 @@ namespace Portal.Controllers
                     }
                 }
 
-                if (db.Transaction != null) db.Transaction.Commit();
+                 
                 return RedirectToAction("Index");
             }
             catch

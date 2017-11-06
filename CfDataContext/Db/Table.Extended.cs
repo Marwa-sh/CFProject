@@ -30,6 +30,7 @@ namespace Cf.Data
         {
             LoanDecisionInitializeLoan();
         }
-        #endregion
-    }
+		#endregion
+		#endregion
+	}
 }

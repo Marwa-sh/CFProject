@@ -137,9 +137,9 @@ namespace Portal.Controllers
                 {
                     try
                     {
-                        // 1- Add Loan Decision
-
-                        LoanDecision intance=LoanDecisionServices.Insert(model.LoanDecision);
+						// 1- Add Loan Decision
+						model.LoanDecision.LoanDecisionType = 1;
+                        LoanDecision intance=LoanDecisionServices.Insert(CurrentUser.Id, model.LoanDecision, db);
 
                         // 2- Add Loans
                         for (int i = 0; i < model.Requests.Count; i++)

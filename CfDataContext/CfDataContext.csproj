@@ -55,8 +55,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Db\Constructors.cs" />
+    <Compile Include="Db\GetCustom.cs" />
     <Compile Include="Db\GetPage.cs" />
-    <Compile Include="Db\Table.Extended.cs" />
     <Compile Include="Db\Tables.cs" />
     <Compile Include="Db\Views.cs" />
     <Compile Include="Db\Views.Filter.cs" />

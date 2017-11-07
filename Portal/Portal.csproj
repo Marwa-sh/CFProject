@@ -1643,7 +1643,6 @@
     <Content Include="Scripts\bootstrap-datepicker\tests\README.md" />
     <Content Include="Views\Product\Delete.cshtml" />
     <Content Include="Views\ManageLoanRequests\Index.cshtml" />
-    <Content Include="Views\ManageLoanRequests\CreateLoanRequestDecision.cshtml" />
     <Content Include="Views\ManageLoanRequests\Details.cshtml" />
     <Content Include="Views\LoanRequestViewModel\Create.cshtml" />
     <Content Include="Views\LoanRequestViewModel\Edit.cshtml" />
@@ -1655,6 +1654,7 @@
     <Content Include="Views\LoanRequestViewModel\DeleteGuarantorWithStatement.cshtml" />
     <Content Include="Views\LoanRequestViewModel\EditExceptionalAmount.cshtml" />
     <Content Include="Views\LoanRequestViewModel\EditGuarantorWithStatement.cshtml" />
+    <Content Include="Views\LoanDecision\CreateLoanRequestDecision.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CfDataContext\CfDataContext.csproj">

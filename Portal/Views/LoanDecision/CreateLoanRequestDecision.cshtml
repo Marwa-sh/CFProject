@@ -281,13 +281,16 @@
                                                     </td>
                                                     <td>
                                                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                                                            <button type="button" class="btn btn-info">
-                                                                @Html.ActionLink((string)ViewBag.Details, "Details",
+                                                            <button type="button" class="btn btn-info details" data-id="@item.RequestProductId">
+                                                                @ViewBag.Details
+                                                            </button>
+                                                            @*<button type="button" class="btn btn-info details">
+                                                                @Html.ActionLink((string)ViewBag.Details, "Details", "ManageLoanRequests",
                                             new
                                             {
                                                 id = item.RequestProductId
-                                            })
-                                                            </button>
+                                            },null)
+                                                            </button>*@
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -324,6 +327,18 @@
 }
 
  
+<div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content"  style="width:850px">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">@ViewBag.No</span></button>
+                <h4 class="modal-title" id="deleteModalLabel"> @ViewBag.Details</h4>
+            </div>
+            <div id="detailsModalBody" class="modal-body"></div>
+
+        </div>
+    </div>
+</div>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 <script>
@@ -343,6 +358,34 @@
                 return ok;
             });
             $(".IsDate").datepicker({ dateFormat: 'dd/mm/yy', changeYear: true });
+        });
+</script>
+<script>
+        $(function () {
+            
+            $(".details").click(function () {
+                var request_id = $(this).data("id");
+                $.ajax({
+                    type: "POST",
+                    url: "/ManageLoanRequests/Details",
+                    data: '{id: "' + request_id + '" }',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "html",
+                    success: function (response) {
+                        //$('#dialog').html(response);
+                        //$('#dialog').dialog('open');
+                        $("#detailsModalBody").html(response);
+
+                        $("#detailsModal").modal("show");
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+            });
         });
 </script>
 }

@@ -105,69 +105,7 @@ namespace Portal.Controllers
             return View(vm);
         }
 
-        #region CreateLoanRequestDecision
-        public ActionResult CreateLoanRequestDecision()
-        {
-            ViewBag.ModuleName = moduleName;
-            ViewBag.Action = insert;
-            ViewBag.Save = save;
-            ViewBag.Back = back;
-            ViewBag.Details = details;
-            ViewBag.Update = update;
-            Db db = new Db(DbServices.ConnectionString);
-
-            ManageLoanDecision vm = new ManageLoanDecision();
-            vm.LoanRequestVwViewModel.List = LoanRequestVwServices.List(db).Where(c=>c.RequestRequestStatusId.Value==(int) RequestStatusEnum.FinanciallyApproved).ToList();
-
-
-
-            return View(vm);
-        }
-
-        [HttpPost]
-        public ActionResult CreateLoanRequestDecision(ManageLoanDecision model)
-        {
-            try
-            {
-                Db db = new Db(DbServices.ConnectionString);
-                 
-                if (ModelState.IsValid)
-                {
-                    try
-                    {
-						// 1- Add Loan Decision
-						model.LoanDecision.LoanDecisionType = 1;
-                        LoanDecision intance=LoanDecisionServices.Insert(CurrentUser.Id, model.LoanDecision, db);
-
-                        // 2- Add Loans
-                        for (int i = 0; i < model.Requests.Count; i++)
-                        {
-                            
-                        }
-                        TempData["Success"] = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "InsertConfirmed");
-
-                    }
-                    catch (CfException cfex)
-                    {
-                        TempData["Failure"] = cfex.ErrorDefinition.LocalizedMessage;
-                    }
-                    catch (Exception ex)
-                    {
-                        TempData["Failure"] = ex.Message;
-                    }
-                }
-
-                 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-             
-        }
-
-        #endregion
+        
         [HttpPost]
         public ActionResult Details(int ? id)
         {
@@ -191,7 +129,6 @@ namespace Portal.Controllers
 
             Db db = new Db(DbServices.ConnectionString);
 
-            // Product
             ProductVwViewModel productVwViewModel = new ProductVwViewModel();
             productVwViewModel.Instance = ProductVwServices.GetChildren(id.Value, db);
             if (productVwViewModel.Instance == null)
@@ -199,44 +136,21 @@ namespace Portal.Controllers
                 return HttpNotFound();
             }
 
-            // Request
-            RequestVwViewModel requestVwViewModel = new RequestVwViewModel();
-            requestVwViewModel.Instance = RequestVwServices.GetChildren(id.Value, db);
-            if (requestVwViewModel.Instance == null)
-            {
-                return HttpNotFound();
-            }
-
-            // Loan Request
-            LoanRequestVwViewModel loanRequestVwViewModel = new LoanRequestVwViewModel();
-            loanRequestVwViewModel.Instance = LoanRequestVwServices.GetChildren(id.Value, db);
-            if (loanRequestVwViewModel.Instance == null)
-            {
-                return HttpNotFound();
-            }
-
-            // RefundableProduct
-            RefundableProductVwViewModel refundableProductVwViewModel = new RefundableProductVwViewModel();
-            refundableProductVwViewModel.Instance = RefundableProductVwServices.GetChildren(id.Value, db);
-            if (refundableProductVwViewModel.Instance == null)
-            {
-                return HttpNotFound();
-            }
-
-            refundableProductVwViewModel.GuarantorVwViewModel.List = refundableProductVwViewModel.Instance.GuarantorVwList;
-
-            ProductRequestLoanViewModel vm = new ProductRequestLoanViewModel();
-            vm.ProductVwViewModel = productVwViewModel;
-            vm.RequestVwViewModel = requestVwViewModel;
-            vm.LoanRequestVwViewModel = loanRequestVwViewModel;
-            vm.RefundableProductVwViewModel = refundableProductVwViewModel;
-
-            vm.ExceptionalAmountVwViewModel.List = ExceptionalAmountVwServices.GetByLoanRequestRequestProductId(id.Value);
+            List<GuarantorVw> Guarantors = GuarantorVwServices.GetByRefundableProductProductId(id.Value);
+            productVwViewModel.RefundableProductVwViewModel.GuarantorVwViewModel.List = Guarantors;
 
 
+            productVwViewModel.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.List = ExceptionalAmountVwServices.GetByLoanRequestRequestProductId(id.Value);
 
+            List<ExceptionalAmountVw> NetDeduction = ExceptionalAmountVwServices.GetByLoanRequestRequestProductId(id.Value).Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.NetDeduction).ToList();
+            List<ExceptionalAmountVw> ExceptionalIncome = ExceptionalAmountVwServices.GetByLoanRequestRequestProductId(id.Value).Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.ExceptionalIncome).ToList();
+            List<ExceptionalAmountVw> ExceptionalDeduction = ExceptionalAmountVwServices.GetByLoanRequestRequestProductId(id.Value).Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.ExceptionalDeduction).ToList();
 
-            return PartialView(vm);
+            ViewBag.NetDeduction = NetDeduction;
+            ViewBag.ExceptionalIncome = ExceptionalIncome;
+            ViewBag.ExceptionalDeduction = ExceptionalDeduction;
+
+            return PartialView(productVwViewModel);
         }
 
 

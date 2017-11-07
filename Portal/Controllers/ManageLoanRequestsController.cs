@@ -142,7 +142,7 @@ namespace Portal.Controllers
                         // 2- Add Loans
                         for (int i = 0; i < model.Requests.Count; i++)
                         {
-
+                            
                         }
                         TempData["Success"] = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "InsertConfirmed");
 

@@ -299,6 +299,20 @@ namespace Portal.Controllers
 
         #endregion
 
+        [HttpPost]
+        public JsonResult Calculate(int employeeId, int productTypeId, float amount,int period)
+        {
+            Db db = new Db(DbServices.ConnectionString);
+            EmployeeProductCalculatorFilter f = new EmployeeProductCalculatorFilter();
+            f.EmployeeId = employeeId; f.ProductTypeId = (short)productTypeId;
+            f.Amount =(decimal) amount; f.Period = (short)period;
+            List<EmployeeProductCalculatorResult> result=db.EmployeeProductCalculator(f);
+
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+
+
         #region Guarantor - Statement
         public ActionResult CreateGuarantorWithStatement(int? id)
         {            

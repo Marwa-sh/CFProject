@@ -27,6 +27,18 @@
 
                             @Html.Partial("~/Views/LoanRequest/Create.cshtml", Model)
                             @Html.Partial("~/Views/RefundableProduct/Create.cshtml", Model)
+
+                        <div class="row">
+                            <div class="col-sm-1">
+                                <button type="button" id="discover" class="btn btn-primary mr-1">
+                                    Discover
+                                </button>
+                            </div>
+                            <div class="col-sm-11"></div>
+
+                        </div>
+
+                        <br />
                                 <button type="submit" class="btn btn-primary mr-1">
                                     @ViewBag.Save
                                 </button>
@@ -46,6 +58,41 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+<script>
+        $(function () {
+            
+            $("#discover").click(function () {
+                console.log( $("#RequestProduct_Employee").val() +","+
+                 $("#RequestProduct_ProductType").val() + "," +
+                $("#Request_Amount").val() + "," +
+                $("#RequestProductProductRefundableProduct_PaymentPeriod").val()
+                );
+                $.ajax({
+                    type: "POST",
+                    url: "/LoanRequestViewModel/Calculate",
+                    data: '{employeeId: 1, productTypeId:1,amount: 50000,period: 12}'
+                    //data: { 
+                    //    employeeId: 1,// $("#RequestProduct_Employee").val() ,
+                    //    productTypeId:1,// $("#RequestProduct_ProductType").val(),
+                    //    amount: 20000,//$("#Request_Amount").val(),
+                    //    period: 12//$("#RequestProductProductRefundableProduct_PaymentPeriod").val()
+                    //    }
+                    ,
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "html",
+                    success: function (response) {                         
+                        console.log(response);
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+            });
+        });
+</script>
     <script>
         $(function () {
             $.validator.addMethod('date',

@@ -10,32 +10,38 @@ namespace Cf.Data
 	#region Db class definition
     public partial class Db
     {
-		#region EmployeeProductCalculator procedure.
+        #region EmployeeProductCalculator procedure.
 
+        [global::System.Data.Linq.Mapping.FunctionAttribute(Name = "dbo.EmployeeProductCalculator", IsComposable = true)]
+        private IQueryable<EmployeeProductCalculatorResult> _EmployeeProductCalculator([global::System.Data.Linq.Mapping.ParameterAttribute(Name = "EmployeeId", DbType = "Int")] System.Nullable<int> employeeId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "ProductTypeId", DbType = "SmallInt")] System.Nullable<short> productTypeId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "Amount", DbType = "Money")] System.Nullable<decimal> amount, [global::System.Data.Linq.Mapping.ParameterAttribute(Name = "Period", DbType = "SmallInt")] System.Nullable<short> period)
+        {
+            return this.CreateMethodCallQuery<EmployeeProductCalculatorResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), employeeId, productTypeId, amount, period);
+        }
+        //[Function(Name = "dbo.EmployeeProductCalculator",IsComposable =true)]
+        //private IQueryable<EmployeeProductCalculatorResult> _EmployeeProductCalculator([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@ProductTypeId")] Nullable<short> _productTypeId, [Parameter(Name = "@Amount")] Nullable<decimal> _amount, [Parameter(Name = "@Period")] Nullable<short> _period)
+        //{           
+        //          IExecuteResult result = this.CreateMethodCallQuery(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _employeeId, _productTypeId, _amount, _period);
+        //	return (result.ReturnValue as IQueryable<EmployeeProductCalculatorResult> );
+        //}
 
-		[Function(Name = "dbo.EmployeeProductCalculator")]
-		private ISingleResult<EmployeeProductCalculatorResult> _EmployeeProductCalculator([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@ProductTypeId")] Nullable<short> _productTypeId, [Parameter(Name = "@Amount")] Nullable<decimal> _amount, [Parameter(Name = "@Period")] Nullable<short> _period)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _employeeId, _productTypeId, _amount, _period);
-			return (result.ReturnValue as ISingleResult<EmployeeProductCalculatorResult>);
-		}
-
-		/// <summary>
-		/// Needs summary!
-		/// </summary>
-		/// <param name="_employeeId"></param>
-		/// <param name="_productTypeId"></param>
-		/// <param name="_amount"></param>
-		/// <param name="_period"></param>
-        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
-		/// <returns>A list of EmployeeProductCalculatorResult instances.</returns>
-		/// <remarks>This method never returns null, 
-		///	if no records are available, length of the list will be 0.</remarks>
-		public List<EmployeeProductCalculatorResult> EmployeeProductCalculator([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@ProductTypeId")] Nullable<short> _productTypeId, [Parameter(Name = "@Amount")] Nullable<decimal> _amount, [Parameter(Name = "@Period")] Nullable<short> _period)
-		{
-			ISingleResult<EmployeeProductCalculatorResult> list = _EmployeeProductCalculator(_employeeId, _productTypeId, _amount, _period);
-            return list.ToList<EmployeeProductCalculatorResult>();
-		}
+  //      /// <summary>
+  //      /// Needs summary!
+  //      /// </summary>
+  //      /// <param name="_employeeId"></param>
+  //      /// <param name="_productTypeId"></param>
+  //      /// <param name="_amount"></param>
+  //      /// <param name="_period"></param>
+  //      /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+  //      /// <returns>A list of EmployeeProductCalculatorResult instances.</returns>
+  //      /// <remarks>This method never returns null, 
+  //      ///	if no records are available, length of the list will be 0.</remarks>
+  //      public List<EmployeeProductCalculatorResult> EmployeeProductCalculator([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@ProductTypeId")] Nullable<short> _productTypeId, [Parameter(Name = "@Amount")] Nullable<decimal> _amount, [Parameter(Name = "@Period")] Nullable<short> _period)
+		//{
+		//	IQueryable<EmployeeProductCalculatorResult> list = _EmployeeProductCalculator(_employeeId, _productTypeId, _amount, _period);
+  //          if (list == null)
+  //              return null;
+  //          return list.ToList<EmployeeProductCalculatorResult>();
+		//}
 
         /// <summary>
 		/// Needs summary!
@@ -47,7 +53,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<EmployeeProductCalculatorResult> EmployeeProductCalculator(EmployeeProductCalculatorFilter filterInstance)
 		{
-			ISingleResult<EmployeeProductCalculatorResult> list = _EmployeeProductCalculator(filterInstance.EmployeeId, filterInstance.ProductTypeId, filterInstance.Amount, filterInstance.Period);
+			IQueryable<EmployeeProductCalculatorResult> list = _EmployeeProductCalculator(filterInstance.EmployeeId, filterInstance.ProductTypeId, filterInstance.Amount, filterInstance.Period);
             return list.ToList<EmployeeProductCalculatorResult>();
 		}
 		#endregion

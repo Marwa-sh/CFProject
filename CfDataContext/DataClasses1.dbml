@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Cf" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=Cf;Integrated Security=True" SettingsObjectName="CfDataContext.Properties.Settings" SettingsPropertyName="CfConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.EmployeeProductCalculator" Method="EmployeeProductCalculator" IsComposable="true">
+    <Parameter Name="EmployeeId" Parameter="employeeId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ProductTypeId" Parameter="productTypeId" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="Amount" Parameter="amount" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="Period" Parameter="period" Type="System.Int16" DbType="SmallInt" />
+    <ElementType Name="EmployeeProductCalculatorResult">
+      <Column Name="EmployeeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaxAmount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Seniority" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="MinSeniority" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="MinReusePeriod" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="ProductTypeId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="NetAmount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ProfitAmount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Installment" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Rate" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="GuarantorsCount" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

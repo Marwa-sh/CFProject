@@ -7,6 +7,12 @@ using Cf.Data;
 using Cf.Services;
 using Cf.Services.Exceptions;
 using Cf.ViewModels;
+using Portal.ViewModels;
+using Cf.Controllers;
+using System.Data;
+using System.Linq;
+using System.Web;
+
 
 namespace Cf.Controllers
 {
@@ -197,7 +203,73 @@ namespace Cf.Controllers
             }
             return View(loanDecision);
         }
+        #region CreateLoanRequestDecision
+        public ActionResult CreateLoanRequestDecision()
+        {
+            ViewBag.ModuleName = moduleName;
+            ViewBag.Action = insert;
+            ViewBag.Save = save;
+            ViewBag.Back = back;
+            ViewBag.Details = details;
+            ViewBag.Update = update;
+            Db db = new Db(DbServices.ConnectionString);
 
+            ManageLoanDecision vm = new ManageLoanDecision();
+            vm.LoanRequestVwViewModel.List = LoanRequestVwServices.List(db).Where(c => c.RequestRequestStatusId.Value == (int)RequestStatusEnum.FinanciallyApproved).ToList();
+
+
+
+            return View(vm);
+        }
+
+        [HttpPost]
+        public ActionResult CreateLoanRequestDecision(ManageLoanDecision model)
+        {
+            try
+            {
+                Db db = new Db(DbServices.ConnectionString);
+
+                if (ModelState.IsValid)
+                {
+                    try
+                    {
+                        // 1- Add Loan Decision
+                        model.LoanDecision.LoanDecisionType = (int)LoanDecisionTypeEnum.Normal;
+                        if (model.LoanDecision.IsPaidFromSalary == null)
+                            model.LoanDecision.IsPaidFromSalary = false;
+                        LoanDecision instance = LoanDecisionServices.Insert(CurrentUser.Id, model.LoanDecision, db);
+
+                        // 2- Add Loans
+                        for (int i = 0; i < model.Requests.Count; i++)
+                        {
+                            if (!model.Requests[i].isChecked) continue;
+                            db.LoanGenerate(model.Requests[i].RequestId, instance.Id, (int)LoanGenerationStatusEnum.LoanRequest);
+                        }
+
+
+                        TempData["Success"] = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "InsertConfirmed");
+
+                    }
+                    catch (CfException cfex)
+                    {
+                        TempData["Failure"] = cfex.ErrorDefinition.LocalizedMessage;
+                    }
+                    catch (Exception ex)
+                    {
+                        TempData["Failure"] = ex.Message;
+                    }
+                }
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+
+        }
+
+        #endregion
         // POST: LoanDecision/Delete/5
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int  id)

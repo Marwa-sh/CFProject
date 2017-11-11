@@ -17,62 +17,62 @@
                 @Html.ValidationMessageFor(model => model.RequestProductProductRefundableProduct.PaymentPeriod, "", new { @class = "text-danger" })
             </div>
         </div>
-        @*<div class="col-md-4">
+        <div class="col-md-4">
             <div class="form-group">
                 
-                @Html.LabelFor(model => model.RefundableProduct.Installment, new Dictionary<string, Object>
+                @Html.LabelFor(model => model.RequestProductProductRefundableProduct.Installment, new Dictionary<string, Object>
                                                 { { "class", "control-label" },
-                                                  {"title", Html.ToolTipMessageFor(model => model.RefundableProduct.Installment)},
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestProductProductRefundableProduct.Installment)},
                                                   {"data-toggle", "tooltip"},
                                                   {"data-placement", "bottom"}
                                                 })
-                @Html.EditorFor(model => model.RefundableProduct.Installment, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.RefundableProduct.Installment, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.RequestProductProductRefundableProduct.Installment, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+                @Html.ValidationMessageFor(model => model.RequestProductProductRefundableProduct.Installment, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="col-md-4">
             <div class="form-group">
                
-                @Html.LabelFor(model => model.RefundableProduct.NetAmount, new Dictionary<string, Object>
+                @Html.LabelFor(model => model.RequestProductProductRefundableProduct.NetAmount, new Dictionary<string, Object>
                                                 { { "class", "control-label" },
-                                                  {"title", Html.ToolTipMessageFor(model => model.RefundableProduct.NetAmount)},
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestProductProductRefundableProduct.NetAmount)},
                                                   {"data-toggle", "tooltip"},
                                                   {"data-placement", "bottom"}
                                                 })
-                @Html.EditorFor(model => model.RefundableProduct.NetAmount, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.RefundableProduct.NetAmount, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.RequestProductProductRefundableProduct.NetAmount, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+                @Html.ValidationMessageFor(model => model.RequestProductProductRefundableProduct.NetAmount, "", new { @class = "text-danger" })
             </div>
-        </div>*@
+        </div>
     </div>
-    @*<div class="row">
+    <div class="row">
       
         <div class="col-md-4">
             <div class="form-group">
                
-                @Html.LabelFor(model => model.RefundableProduct.ProfitAmount, new Dictionary<string, Object>
+                @Html.LabelFor(model => model.RequestProductProductRefundableProduct.ProfitAmount, new Dictionary<string, Object>
                                                 { { "class", "control-label" },
-                                                  {"title", Html.ToolTipMessageFor(model => model.RefundableProduct.ProfitAmount)},
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestProductProductRefundableProduct.ProfitAmount)},
                                                   {"data-toggle", "tooltip"},
                                                   {"data-placement", "bottom"}
                                                 })
-                @Html.EditorFor(model => model.RefundableProduct.ProfitAmount, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.RefundableProduct.ProfitAmount, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.RequestProductProductRefundableProduct.ProfitAmount, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+                @Html.ValidationMessageFor(model => model.RequestProductProductRefundableProduct.ProfitAmount, "", new { @class = "text-danger" })
             </div>
         </div>
-        <div class="col-md-4">
+        @*<div class="col-md-4">
             <div class="form-group">
                 
-                @Html.LabelFor(model => model.RefundableProduct.SyrianPoundRounds, new Dictionary<string, Object>
+                @Html.LabelFor(model => model.RequestProductProductRefundableProduct.SyrianPoundRounds, new Dictionary<string, Object>
                                                 { { "class", "control-label" },
-                                                  {"title", Html.ToolTipMessageFor(model => model.RefundableProduct.SyrianPoundRounds)},
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestProductProductRefundableProduct.SyrianPoundRounds)},
                                                   {"data-toggle", "tooltip"},
                                                   {"data-placement", "bottom"}
                                                 })
-                @Html.EditorFor(model => model.RefundableProduct.SyrianPoundRounds, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.RefundableProduct.SyrianPoundRounds, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.RequestProductProductRefundableProduct.SyrianPoundRounds, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.RequestProductProductRefundableProduct.SyrianPoundRounds, "", new { @class = "text-danger" })
             </div>
-        </div>
-    </div>*@
+        </div>*@
+    </div>
 </div>
 
 @*@section Scripts {

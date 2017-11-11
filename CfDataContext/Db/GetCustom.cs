@@ -8,16 +8,23 @@ using System.Data.Linq.Mapping;
 namespace Cf.Data
 {
 	#region Db class definition
-	public partial class Db
-	{
+    public partial class Db
+    {
 		#region EmployeeProductCalculator procedure.
 
 
-		[FunctionAttribute(Name = "dbo.EmployeeProductCalculator", IsComposable = true)]
-		private IQueryable<EmployeeProductCalculatorResult> _EmployeeProductCalculator([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@ProductTypeId")] Nullable<short> _productTypeId, [Parameter(Name = "@Amount")] Nullable<decimal> _amount, [Parameter(Name = "@Period")] Nullable<short> _period)
+		[Function(Name = "dbo.EmployeeProductCalculator")]
+		private ISingleResult<EmployeeProductCalculatorResult> _EmployeeProductCalculator([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@ProductTypeId")] Nullable<short> _productTypeId, [Parameter(Name = "@Amount")] Nullable<decimal> _amount, [Parameter(Name = "@Period")] Nullable<short> _period)
 		{
-			return this.CreateMethodCallQuery<EmployeeProductCalculatorResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _employeeId, _productTypeId, _amount, _period);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _employeeId, _productTypeId, _amount, _period);
+			return (result.ReturnValue as ISingleResult<EmployeeProductCalculatorResult>);
 		}
+        //[Function(Name = "dbo.EmployeeProductCalculator",IsComposable =true)]
+        //private IQueryable<EmployeeProductCalculatorResult> _EmployeeProductCalculator([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@ProductTypeId")] Nullable<short> _productTypeId, [Parameter(Name = "@Amount")] Nullable<decimal> _amount, [Parameter(Name = "@Period")] Nullable<short> _period)
+        //{           
+        //          IExecuteResult result = this.CreateMethodCallQuery(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _employeeId, _productTypeId, _amount, _period);
+        //	return (result.ReturnValue as IQueryable<EmployeeProductCalculatorResult> );
+        //}
 
 		/// <summary>
 		/// Needs summary!
@@ -26,27 +33,27 @@ namespace Cf.Data
 		/// <param name="_productTypeId"></param>
 		/// <param name="_amount"></param>
 		/// <param name="_period"></param>
-		/// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
 		/// <returns>A list of EmployeeProductCalculatorResult instances.</returns>
 		/// <remarks>This method never returns null, 
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<EmployeeProductCalculatorResult> EmployeeProductCalculator([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@ProductTypeId")] Nullable<short> _productTypeId, [Parameter(Name = "@Amount")] Nullable<decimal> _amount, [Parameter(Name = "@Period")] Nullable<short> _period)
 		{
-			IQueryable<EmployeeProductCalculatorResult> list = _EmployeeProductCalculator(_employeeId, _productTypeId, _amount, _period);
-			return list.ToList<EmployeeProductCalculatorResult>();
+			ISingleResult<EmployeeProductCalculatorResult> list = _EmployeeProductCalculator(_employeeId, _productTypeId, _amount, _period);
+            return list.ToList<EmployeeProductCalculatorResult>();
 		}
 
-		/// <summary>
+        /// <summary>
 		/// Needs summary!
 		/// </summary>
-		/// <param name="filterInstance">An instance of EmployeeProductCalculatorFilter that defines filtering options.</param>
-		/// <returns>A list of EmployeeProductCalculatorResult instances.</returns>
+        /// <param name="filterInstance">An instance of EmployeeProductCalculatorFilter that defines filtering options.</param>
+        /// <returns>A list of EmployeeProductCalculatorResult instances.</returns>
 		/// <remarks>This method never returns null, 
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<EmployeeProductCalculatorResult> EmployeeProductCalculator(EmployeeProductCalculatorFilter filterInstance)
 		{
 			IQueryable<EmployeeProductCalculatorResult> list = _EmployeeProductCalculator(filterInstance.EmployeeId, filterInstance.ProductTypeId, filterInstance.Amount, filterInstance.Period);
-			return list.ToList<EmployeeProductCalculatorResult>();
+            return list.ToList<EmployeeProductCalculatorResult>();
 		}
 		#endregion
 
@@ -64,27 +71,27 @@ namespace Cf.Data
 		/// </summary>
 		/// <param name="_productTypeId"></param>
 		/// <param name="_employeeId"></param>
-		/// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
 		/// <returns>A list of GetAvailabilityCeilingByProductTypeId_EmployeeIdResult instances.</returns>
 		/// <remarks>This method never returns null, 
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<GetAvailabilityCeilingByProductTypeId_EmployeeIdResult> GetAvailabilityCeilingByProductTypeId_EmployeeId([Parameter(Name = "@ProductTypeId")] Nullable<short> _productTypeId, [Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
 		{
 			IQueryable<GetAvailabilityCeilingByProductTypeId_EmployeeIdResult> list = _GetAvailabilityCeilingByProductTypeId_EmployeeId(_productTypeId, _employeeId);
-			return list.ToList<GetAvailabilityCeilingByProductTypeId_EmployeeIdResult>();
+            return list.ToList<GetAvailabilityCeilingByProductTypeId_EmployeeIdResult>();
 		}
 
-		/// <summary>
+        /// <summary>
 		/// Needs summary!
 		/// </summary>
-		/// <param name="filterInstance">An instance of GetAvailabilityCeilingByProductTypeId_EmployeeIdFilter that defines filtering options.</param>
-		/// <returns>A list of GetAvailabilityCeilingByProductTypeId_EmployeeIdResult instances.</returns>
+        /// <param name="filterInstance">An instance of GetAvailabilityCeilingByProductTypeId_EmployeeIdFilter that defines filtering options.</param>
+        /// <returns>A list of GetAvailabilityCeilingByProductTypeId_EmployeeIdResult instances.</returns>
 		/// <remarks>This method never returns null, 
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<GetAvailabilityCeilingByProductTypeId_EmployeeIdResult> GetAvailabilityCeilingByProductTypeId_EmployeeId(GetAvailabilityCeilingByProductTypeId_EmployeeIdFilter filterInstance)
 		{
 			IQueryable<GetAvailabilityCeilingByProductTypeId_EmployeeIdResult> list = _GetAvailabilityCeilingByProductTypeId_EmployeeId(filterInstance.ProductTypeId, filterInstance.EmployeeId);
-			return list.ToList<GetAvailabilityCeilingByProductTypeId_EmployeeIdResult>();
+            return list.ToList<GetAvailabilityCeilingByProductTypeId_EmployeeIdResult>();
 		}
 		#endregion
 
@@ -135,16 +142,16 @@ namespace Cf.Data
 		/// <param name="_rate"></param>
 		public decimal GetDueProfit([Parameter(Name = "@Amount")] Nullable<decimal> _amount, [Parameter(Name = "@Period")] Nullable<short> _period, [Parameter(Name = "@Rate")] Nullable<decimal> _rate)
 		{
-			return _GetDueProfit(_amount, _period, _rate);
+			 return _GetDueProfit(_amount, _period, _rate);
 		}
 
-		/// <summary>
+        /// <summary>
 		/// Needs summary!
 		/// </summary>
-		/// <param name="filterInstance">An instance of GetDueProfitFilter that defines filtering options.</param>
+        /// <param name="filterInstance">An instance of GetDueProfitFilter that defines filtering options.</param>
 		public decimal GetDueProfit(GetDueProfitFilter filterInstance)
 		{
-			return _GetDueProfit(filterInstance.Amount, filterInstance.Period, filterInstance.Rate);
+			 return _GetDueProfit(filterInstance.Amount, filterInstance.Period, filterInstance.Rate);
 		}
 		#endregion
 
@@ -166,16 +173,16 @@ namespace Cf.Data
 		/// <param name="_type"></param>
 		public double GetFinancialRatio([Parameter(Name = "@Period")] Nullable<short> _period, [Parameter(Name = "@Rate")] Nullable<double> _rate, [Parameter(Name = "@Type")] Nullable<bool> _type)
 		{
-			return _GetFinancialRatio(_period, _rate, _type);
+			 return _GetFinancialRatio(_period, _rate, _type);
 		}
 
-		/// <summary>
+        /// <summary>
 		/// Needs summary!
 		/// </summary>
-		/// <param name="filterInstance">An instance of GetFinancialRatioFilter that defines filtering options.</param>
+        /// <param name="filterInstance">An instance of GetFinancialRatioFilter that defines filtering options.</param>
 		public double GetFinancialRatio(GetFinancialRatioFilter filterInstance)
 		{
-			return _GetFinancialRatio(filterInstance.Period, filterInstance.Rate, filterInstance.Type);
+			 return _GetFinancialRatio(filterInstance.Period, filterInstance.Rate, filterInstance.Type);
 		}
 		#endregion
 
@@ -198,16 +205,16 @@ namespace Cf.Data
 		/// <param name="_type"></param>
 		public decimal GetInstallment([Parameter(Name = "@Amount")] Nullable<decimal> _amount, [Parameter(Name = "@Period")] Nullable<short> _period, [Parameter(Name = "@Rate")] Nullable<double> _rate, [Parameter(Name = "@Type")] Nullable<bool> _type)
 		{
-			return _GetInstallment(_amount, _period, _rate, _type);
+			 return _GetInstallment(_amount, _period, _rate, _type);
 		}
 
-		/// <summary>
+        /// <summary>
 		/// Needs summary!
 		/// </summary>
-		/// <param name="filterInstance">An instance of GetInstallmentFilter that defines filtering options.</param>
+        /// <param name="filterInstance">An instance of GetInstallmentFilter that defines filtering options.</param>
 		public decimal GetInstallment(GetInstallmentFilter filterInstance)
 		{
-			return _GetInstallment(filterInstance.Amount, filterInstance.Period, filterInstance.Rate, filterInstance.Type);
+			 return _GetInstallment(filterInstance.Amount, filterInstance.Period, filterInstance.Rate, filterInstance.Type);
 		}
 		#endregion
 
@@ -230,16 +237,16 @@ namespace Cf.Data
 		/// <param name="_type"></param>
 		public decimal GetPresentValue([Parameter(Name = "@Installment")] Nullable<decimal> _installment, [Parameter(Name = "@Period")] Nullable<short> _period, [Parameter(Name = "@Rate")] Nullable<double> _rate, [Parameter(Name = "@Type")] Nullable<bool> _type)
 		{
-			return _GetPresentValue(_installment, _period, _rate, _type);
+			 return _GetPresentValue(_installment, _period, _rate, _type);
 		}
 
-		/// <summary>
+        /// <summary>
 		/// Needs summary!
 		/// </summary>
-		/// <param name="filterInstance">An instance of GetPresentValueFilter that defines filtering options.</param>
+        /// <param name="filterInstance">An instance of GetPresentValueFilter that defines filtering options.</param>
 		public decimal GetPresentValue(GetPresentValueFilter filterInstance)
 		{
-			return _GetPresentValue(filterInstance.Installment, filterInstance.Period, filterInstance.Rate, filterInstance.Type);
+			 return _GetPresentValue(filterInstance.Installment, filterInstance.Period, filterInstance.Rate, filterInstance.Type);
 		}
 		#endregion
 
@@ -292,10 +299,10 @@ namespace Cf.Data
 			_LoanGenerate(_productId, _loanDecisionId, _loanGenerationStatusId);
 		}
 
-		/// <summary>
+        /// <summary>
 		/// Needs summary!
 		/// </summary>
-		/// <param name="filterInstance">An instance of LoanGenerateFilter that defines filtering options.</param>
+        /// <param name="filterInstance">An instance of LoanGenerateFilter that defines filtering options.</param>
 		public void LoanGenerate(LoanGenerateFilter filterInstance)
 		{
 			_LoanGenerate(filterInstance.ProductId, filterInstance.LoanDecisionId, filterInstance.LoanGenerationStatusId);
@@ -317,36 +324,36 @@ namespace Cf.Data
 		/// <param name="_productType"></param>
 		/// <param name="_amount"></param>
 		/// <param name="_period"></param>
-		/// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
 		/// <returns>A list of ProductCalculatorResult instances.</returns>
 		/// <remarks>This method never returns null, 
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<ProductCalculatorResult> ProductCalculator([Parameter(Name = "@ProductType")] Nullable<short> _productType, [Parameter(Name = "@Amount")] Nullable<decimal> _amount, [Parameter(Name = "@Period")] Nullable<short> _period)
 		{
 			IQueryable<ProductCalculatorResult> list = _ProductCalculator(_productType, _amount, _period);
-			return list.ToList<ProductCalculatorResult>();
+            return list.ToList<ProductCalculatorResult>();
 		}
 
-		/// <summary>
+        /// <summary>
 		/// Needs summary!
 		/// </summary>
-		/// <param name="filterInstance">An instance of ProductCalculatorFilter that defines filtering options.</param>
-		/// <returns>A list of ProductCalculatorResult instances.</returns>
+        /// <param name="filterInstance">An instance of ProductCalculatorFilter that defines filtering options.</param>
+        /// <returns>A list of ProductCalculatorResult instances.</returns>
 		/// <remarks>This method never returns null, 
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<ProductCalculatorResult> ProductCalculator(ProductCalculatorFilter filterInstance)
 		{
 			IQueryable<ProductCalculatorResult> list = _ProductCalculator(filterInstance.ProductType, filterInstance.Amount, filterInstance.Period);
-			return list.ToList<ProductCalculatorResult>();
+            return list.ToList<ProductCalculatorResult>();
 		}
 		#endregion
 	}
 	#endregion
 
 	#region EmployeeProductCalculator filter and result classes
-	#region EmployeeProductCalculatorFilter class definition
+    #region EmployeeProductCalculatorFilter class definition
 	/// <summary>
-	/// Filter class for EmployeeProductCalculator.
+    /// Filter class for EmployeeProductCalculator.
 	/// </summary>
 	public partial class EmployeeProductCalculatorFilter
 	{
@@ -355,12 +362,12 @@ namespace Cf.Data
 		/// Needs summary!
 		/// </summary>
 		public Nullable<int> EmployeeId { get; set; }
-
+		
 		/// <summary>
 		/// Needs summary!
 		/// </summary>
 		public Nullable<short> ProductTypeId { get; set; }
-
+		
 		/// <summary>
 		/// Needs summary!
 		/// </summary>
@@ -373,45 +380,45 @@ namespace Cf.Data
 	}
 	#endregion
 
-	#region EmployeeProductCalculatorResult class definition
+    #region EmployeeProductCalculatorResult class definition
 	/// <summary>
-	/// Result class for EmployeeProductCalculator.
+    /// Result class for EmployeeProductCalculator.
 	/// </summary>
 	public partial class EmployeeProductCalculatorResult
 	{
 		#region Public properties
 		public Nullable<int> EmployeeId { get; set; }
-
+		
 		public Nullable<decimal> MaxAmount { get; set; }
-
+		
 		public Nullable<short> Seniority { get; set; }
-
+		
 		public Nullable<byte> MinSeniority { get; set; }
-
+		
 		public Nullable<byte> MinReusePeriod { get; set; }
-
+		
 		public Nullable<short> ProductTypeId { get; set; }
-
+		
 		public Nullable<decimal> Amount { get; set; }
-
+		
 		public Nullable<decimal> NetAmount { get; set; }
-
+		
 		public Nullable<decimal> ProfitAmount { get; set; }
-
+		
 		public Nullable<decimal> Installment { get; set; }
-
+		
 		public Nullable<double> Rate { get; set; }
-
+		
 		public Nullable<byte> GuarantorsCount { get; set; }
 		#endregion
 	}
 	#endregion
-	#endregion
+    #endregion
 
 	#region GetAvailabilityCeilingByProductTypeId_EmployeeId filter and result classes
-	#region GetAvailabilityCeilingByProductTypeId_EmployeeIdFilter class definition
+    #region GetAvailabilityCeilingByProductTypeId_EmployeeIdFilter class definition
 	/// <summary>
-	/// Filter class for GetAvailabilityCeilingByProductTypeId_EmployeeId.
+    /// Filter class for GetAvailabilityCeilingByProductTypeId_EmployeeId.
 	/// </summary>
 	public partial class GetAvailabilityCeilingByProductTypeId_EmployeeIdFilter
 	{
@@ -428,9 +435,9 @@ namespace Cf.Data
 	}
 	#endregion
 
-	#region GetAvailabilityCeilingByProductTypeId_EmployeeIdResult class definition
+    #region GetAvailabilityCeilingByProductTypeId_EmployeeIdResult class definition
 	/// <summary>
-	/// Result class for GetAvailabilityCeilingByProductTypeId_EmployeeId.
+    /// Result class for GetAvailabilityCeilingByProductTypeId_EmployeeId.
 	/// </summary>
 	public partial class GetAvailabilityCeilingByProductTypeId_EmployeeIdResult
 	{
@@ -438,19 +445,19 @@ namespace Cf.Data
 		public Nullable<int> EmployeeId { get; set; }
 
 		public Nullable<short> ProductTypeId { get; set; }
-
+		
 		public Nullable<short> Seniority { get; set; }
-
+		
 		public Nullable<byte> MinSeniority { get; set; }
-
+		
 		public Nullable<byte> MinReusePeriod { get; set; }
-
+		
 		public Nullable<decimal> MaxAmount { get; set; }
 		#endregion
 	}
 	#endregion
 	#endregion
-
+		
 	#region GetDecimal filter and result classes
 	#region GetDecimalFilter class definition
 	/// <summary>
@@ -465,7 +472,7 @@ namespace Cf.Data
 		public Nullable<double> Value { get; set; }
 		#endregion
 	}
-	#endregion
+		#endregion
 
 	#region GetDecimal result class
 	public class GetDecimalResult
@@ -477,12 +484,12 @@ namespace Cf.Data
 		}
 	}
 	#endregion
-	#endregion
+    #endregion
 
 	#region GetDueProfit filter and result classes
-	#region GetDueProfitFilter class definition
+    #region GetDueProfitFilter class definition
 	/// <summary>
-	/// Filter class for GetDueProfit.
+    /// Filter class for GetDueProfit.
 	/// </summary>
 	public partial class GetDueProfitFilter
 	{
@@ -491,7 +498,7 @@ namespace Cf.Data
 		/// Needs summary!
 		/// </summary>
 		public Nullable<decimal> Amount { get; set; }
-
+		
 		/// <summary>
 		/// Needs summary!
 		/// </summary>
@@ -504,22 +511,22 @@ namespace Cf.Data
 	}
 	#endregion
 
-	#region GetDueProfit result class
-	public class GetDueProfitResult
-	{
-		internal GetDueProfitResult
-		(
-		)
-		{
-		}
-	}
-	#endregion
-	#endregion
+    #region GetDueProfit result class
+    public class GetDueProfitResult
+    {
+        internal GetDueProfitResult
+        (
+        )
+        {
+        }
+    }
+    #endregion
+    #endregion
 
 	#region GetFinancialRatio filter and result classes
-	#region GetFinancialRatioFilter class definition
+    #region GetFinancialRatioFilter class definition
 	/// <summary>
-	/// Filter class for GetFinancialRatio.
+    /// Filter class for GetFinancialRatio.
 	/// </summary>
 	public partial class GetFinancialRatioFilter
 	{
@@ -528,7 +535,7 @@ namespace Cf.Data
 		/// Needs summary!
 		/// </summary>
 		public Nullable<short> Period { get; set; }
-
+		
 		/// <summary>
 		/// Needs summary!
 		/// </summary>
@@ -541,22 +548,22 @@ namespace Cf.Data
 	}
 	#endregion
 
-	#region GetFinancialRatio result class
-	public class GetFinancialRatioResult
-	{
-		internal GetFinancialRatioResult
-		(
-		)
-		{
-		}
-	}
-	#endregion
-	#endregion
+    #region GetFinancialRatio result class
+    public class GetFinancialRatioResult
+    {
+        internal GetFinancialRatioResult
+        (
+        )
+        {
+        }
+    }
+    #endregion
+    #endregion
 
 	#region GetInstallment filter and result classes
-	#region GetInstallmentFilter class definition
+    #region GetInstallmentFilter class definition
 	/// <summary>
-	/// Filter class for GetInstallment.
+    /// Filter class for GetInstallment.
 	/// </summary>
 	public partial class GetInstallmentFilter
 	{
@@ -565,12 +572,12 @@ namespace Cf.Data
 		/// Needs summary!
 		/// </summary>
 		public Nullable<decimal> Amount { get; set; }
-
+		
 		/// <summary>
 		/// Needs summary!
 		/// </summary>
 		public Nullable<short> Period { get; set; }
-
+		
 		/// <summary>
 		/// Needs summary!
 		/// </summary>
@@ -583,22 +590,22 @@ namespace Cf.Data
 	}
 	#endregion
 
-	#region GetInstallment result class
-	public class GetInstallmentResult
-	{
-		internal GetInstallmentResult
-		(
-		)
-		{
-		}
-	}
-	#endregion
-	#endregion
+    #region GetInstallment result class
+    public class GetInstallmentResult
+    {
+        internal GetInstallmentResult
+        (
+        )
+        {
+        }
+    }
+    #endregion
+    #endregion
 
 	#region GetPresentValue filter and result classes
-	#region GetPresentValueFilter class definition
+    #region GetPresentValueFilter class definition
 	/// <summary>
-	/// Filter class for GetPresentValue.
+    /// Filter class for GetPresentValue.
 	/// </summary>
 	public partial class GetPresentValueFilter
 	{
@@ -607,12 +614,12 @@ namespace Cf.Data
 		/// Needs summary!
 		/// </summary>
 		public Nullable<decimal> Installment { get; set; }
-
+		
 		/// <summary>
 		/// Needs summary!
 		/// </summary>
 		public Nullable<short> Period { get; set; }
-
+		
 		/// <summary>
 		/// Needs summary!
 		/// </summary>
@@ -625,17 +632,17 @@ namespace Cf.Data
 	}
 	#endregion
 
-	#region GetPresentValue result class
-	public class GetPresentValueResult
-	{
-		internal GetPresentValueResult
-		(
-		)
-		{
-		}
-	}
-	#endregion
-	#endregion
+    #region GetPresentValue result class
+    public class GetPresentValueResult
+    {
+        internal GetPresentValueResult
+        (
+        )
+        {
+        }
+    }
+    #endregion
+    #endregion
 
 	#region GetString filter and result classes
 	#region GetStringFilter class definition
@@ -666,9 +673,9 @@ namespace Cf.Data
 	#endregion
 
 	#region LoanGenerate filter and result classes
-	#region LoanGenerateFilter class definition
+    #region LoanGenerateFilter class definition
 	/// <summary>
-	/// Filter class for LoanGenerate.
+    /// Filter class for LoanGenerate.
 	/// </summary>
 	public partial class LoanGenerateFilter
 	{
@@ -677,7 +684,7 @@ namespace Cf.Data
 		/// معرف المنتج
 		/// </summary>
 		public Nullable<int> ProductId { get; set; }
-
+		
 		/// <summary>
 		/// معرف قرار السلف
 		/// </summary>
@@ -690,22 +697,22 @@ namespace Cf.Data
 	}
 	#endregion
 
-	#region LoanGenerate result class
-	public class LoanGenerateResult
-	{
-		internal LoanGenerateResult
-		(
-		)
-		{
-		}
-	}
-	#endregion
-	#endregion
+    #region LoanGenerate result class
+    public class LoanGenerateResult
+    {
+        internal LoanGenerateResult
+        (
+        )
+        {
+        }
+    }
+    #endregion
+    #endregion
 
 	#region ProductCalculator filter and result classes
-	#region ProductCalculatorFilter class definition
+    #region ProductCalculatorFilter class definition
 	/// <summary>
-	/// Filter class for ProductCalculator.
+    /// Filter class for ProductCalculator.
 	/// </summary>
 	public partial class ProductCalculatorFilter
 	{
@@ -714,7 +721,7 @@ namespace Cf.Data
 		/// Needs summary!
 		/// </summary>
 		public Nullable<short> ProductType { get; set; }
-
+		
 		/// <summary>
 		/// Needs summary!
 		/// </summary>
@@ -727,28 +734,28 @@ namespace Cf.Data
 	}
 	#endregion
 
-	#region ProductCalculatorResult class definition
+    #region ProductCalculatorResult class definition
 	/// <summary>
-	/// Result class for ProductCalculator.
+    /// Result class for ProductCalculator.
 	/// </summary>
 	public partial class ProductCalculatorResult
 	{
 		#region Public properties
 		public Nullable<short> ProductTypeId { get; set; }
-
+		
 		public Nullable<decimal> Amount { get; set; }
-
+		
 		public Nullable<decimal> NetAmount { get; set; }
-
+		
 		public Nullable<decimal> ProfitAmount { get; set; }
-
+		
 		public Nullable<decimal> Installment { get; set; }
-
+		
 		public Nullable<double> Rate { get; set; }
-
+		
 		public Nullable<byte> GuarantorsCount { get; set; }
 		#endregion
 	}
 	#endregion
-	#endregion
+    #endregion
 }

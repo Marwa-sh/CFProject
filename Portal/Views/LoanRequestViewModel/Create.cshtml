@@ -79,8 +79,13 @@
                     //    }
                     ,
                     contentType: "application/json; charset=utf-8",
-                    dataType: "html",
-                    success: function (response) {                         
+                    dataType: "json",
+                    success: function (response) {
+
+                        $("#RequestProductProductRefundableProduct.Installment").val(response[0].Installment);
+                        $("#RequestProductProductRefundableProduct.NetAmount").val(response[0].NetAmount);
+                        $("#RequestProductProductRefundableProduct.ProfitAmount").val(response[0].ProfitAmount);
+
                         console.log(response);
                     },
                     failure: function (response) {

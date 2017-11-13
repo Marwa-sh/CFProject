@@ -1,5 +1,6 @@
 ﻿@model Cf.ViewModels.LoanRequestVwViewModel
 @using Cf.Data;
+@using Cf.Services;
 
 
 <div class="row">
@@ -55,7 +56,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (var item in Model.List.Where(c=>c.RequestRequestStatusId==1))
+                            @foreach (var item in Model.List.Where(c=>c.RequestRequestStatusId== (int)RequestStatusEnum.New))
                             {
                                 <tr>
                                     <td>
@@ -98,8 +99,19 @@
                                         string role = ViewBag.RoleName;
                                         if (role.Equals("Manager"))
                                         {
-                                            if (item.RequestRequestStatusId == 1)
-                                            {                                                
+                                            if (item.RequestRequestStatusId == (int)RequestStatusEnum.New)
+                                            {
+                                                int numOfGuarantors = GuarantorVwServices.GetByRefundableProductProductId(item.RequestProductId).Count;
+                                                if(numOfGuarantors==0)
+                                                {
+                                                    <td>
+
+                                                    </td>
+                                                }
+                                                else
+                                                {
+
+                                                }
                                                     <td>
                                                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                                                             <button type="button" class="btn btn-success">
@@ -126,7 +138,8 @@
                                             })
 
                                                             </button>
-                                                        </div></td>
+                                                        </div>
+                                                    </td>
                                             }
                                             else
                                             {

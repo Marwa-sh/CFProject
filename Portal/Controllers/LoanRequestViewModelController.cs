@@ -81,33 +81,15 @@ namespace Portal.Controllers
             // For Product
             ViewBag.EmployeeList = new SelectList(EmployeeServices.List(db), "Id", "Id_Name");
 
-            //ToDo: Just Show Loan Type
-
-            List<LoanType> loanTypes = LoanTypeServices.List(db);
-            List<ProductType> productTypes = ProductTypeServices.List(db);
-
-            List<ProductType> types = new List<ProductType>();
-
-            for (int i = 0; i < productTypes.Count ; i++)
-            {
-                int temp = productTypes[i].Id;
-                for (int j = 0; j < loanTypes.Count; j++)
-                {
-                    if (loanTypes[j].ProductType == temp)
-                        types.Add(productTypes[i]);
-                }
-            }
-
-
-            List<LoanTypeVw> type = LoanTypeVwServices.List(db);
-
-
+            //Just Show Loan Type            
             ViewBag.ProductTypeList = new SelectList(LoanTypeVwServices.List(db), "ProductTypeId", "ProductTypeName");
 
 
             // For Request
             //We need to customise the droplist for two options
             ViewBag.BypassStatusList = new SelectList(BypassStatusServices.List(db).Where((c => (c.Id == 0 || c.Id == 2))), "Id", "Name");
+
+             
             return View();
         }
 

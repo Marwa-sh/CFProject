@@ -73,6 +73,15 @@ namespace Portal.Controllers
             Db db = new Db(DbServices.ConnectionString);
             List<LoanRequestVw> requests = null;
             requests = LoanRequestVwServices.List(db);
+
+            for (int i = 0; i < requests.Count; i++)
+            {
+                int productId = requests[i].RequestProductId;
+                //int numOfGuarantors = GuarantorVwServices.GetByRefundableProductProductId(productId).Count;
+                //if(numOfGuarantors==0)
+
+            }
+
             string roleName = "Manager";
             //switch (roleName)
             //{

@@ -19,47 +19,293 @@
                 </div>
                 <div class="card-body collapse in">
                     <div class="card-block">
-                         
-                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                        @*
                             @Html.Partial("~/Views/Product/Create.cshtml", Model)
                             @Html.Partial("~/Views/Request/Create.cshtml", Model)
-
                             @Html.Partial("~/Views/LoanRequest/Create.cshtml", Model)
                             @Html.Partial("~/Views/RefundableProduct/Create.cshtml", Model)
+                        *@
+                        <div class="form-body">
+                            
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.RequestProduct.Employee, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestProduct.Employee)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        @Html.DropDownListFor(model => model.RequestProduct.Employee, (SelectList)@ViewBag.EmployeeList, htmlAttributes: new { @class = "form-control combobox" })
+                                        @Html.ValidationMessageFor(model => model.RequestProduct.Employee, "", new { @class = "text-danger" })
 
-                        <div class="row">
-                            <div class="col-sm-5"></div>
-                            <div class="col-sm-2">
-                                <button type="button" id="discover" class="btn btn-primary mr-1">
-                                    Discover
-                                </button>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.RequestProduct.ProductType, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestProduct.ProductType)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        @Html.DropDownListFor(model => model.RequestProduct.ProductType, (SelectList)@ViewBag.ProductTypeList, htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.RequestProduct.ProductType, "", new { @class = "text-danger" })
+
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Request.Amount, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Request.Amount)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        @Html.EditorFor(model => model.Request.Amount, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Request.Amount, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+
+                                        @Html.LabelFor(model => model.RequestProductProductRefundableProduct.PaymentPeriod, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestProductProductRefundableProduct.PaymentPeriod)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        @Html.EditorFor(model => model.RequestProductProductRefundableProduct.PaymentPeriod, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.RequestProductProductRefundableProduct.PaymentPeriod, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+
+                                        <button type="button" id="discover" class="btn btn-primary mr-1" style="margin-top: 27px;">
+                                            Discover
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-sm-5"></div>
+
+                            @*<div class="row">
+                                <div class="col-sm-5"></div>
+                                <div class="col-sm-2">
+                                    
+                                </div>
+                                <div class="col-sm-5"></div>
+
+                            </div>*@
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.LoanRequest.TotalDeduction, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.LoanRequest.TotalDeduction)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        @Html.EditorFor(model => model.LoanRequest.TotalDeduction, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.LoanRequest.TotalDeduction, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.LoanRequest.NetIncome, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.LoanRequest.NetIncome)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        @Html.EditorFor(model => model.LoanRequest.NetIncome, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.LoanRequest.NetIncome, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                @*<div class="col-md-3">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Request.BypassStatus, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Request.BypassStatus)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        @Html.DropDownListFor(model => model.Request.BypassStatus, (SelectList)@ViewBag.BypassStatusList, htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.Request.BypassStatus, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>*@
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Request.Date, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Request.Date)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        @Html.TextBoxFor(model => model.Request.Date, "{0:dd/MM/yyyy}", htmlAttributes: new { @class = "form-control IsDate", @Value = System.DateTime.Now.ToShortDateString() })
+                                        @Html.ValidationMessageFor(model => model.Request.Date, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Request.Notes, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Request.Notes)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        @Html.EditorFor(model => model.Request.Notes, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Request.Notes, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Request.Attachment, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Request.Attachment)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        @Html.EditorFor(model => model.Request.Attachment, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Request.Attachment, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                </div>
+                                <div class="col-md-3">
+                                </div>
+                                <div class="col-md-3">
+                                </div>
+                                
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" name="InstallmentFor">Installment</label>
+                                        <input disabled id="Installment" class="form-control" name="Installment" />
+                                        @*<label id="Installment" name="Installment"></label>*@
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" name="NetAmountFor">NetAmount</label>
+                                        <input disabled id="NetAmount" class="form-control" name="NetAmount" />
+                                        @*<label id="NetAmount" name="NetAmount"></label>*@
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" name="ProfitAmountFor">ProfitAmount</label>
+                                        <input disabled id="ProfitAmount" class="form-control" name="ProfitAmount" />
+                                        @*<label id="ProfitAmount" name="ProfitAmount"></label>*@
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" name="MaxAmountFor">MaxAmount</label>
+                                        <input disabled id="MaxAmount" class="form-control" name="MaxAmount" />
+                                        @*<label id="MaxAmount" name="MaxAmount"></label>*@
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" name="SeniorityFor">Seniority</label>
+                                        <input disabled id="Seniority" class="form-control" name="Seniority" />
+                                        @*<label id="Seniority" name="Seniority"></label>*@
+                                    </div>
+
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" name="MinSeniorityFor">MinSeniority</label>
+                                        <input disabled id="MinSeniority" class="form-control" name="MinSeniority" />
+                                        @*<label id="MinSeniority" name="MinSeniority"></label>*@
+                                    </div>
+
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" name="MinReusePeriodFor">MinReusePeriod</label>
+                                        <input disabled id="MinReusePeriod" class="form-control" name="MinReusePeriod" />
+                                        @*<label id="MinReusePeriod" name="MinReusePeriod"></label>*@
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" name="GuarantorsCountFor">GuarantorsCount</label>
+                                        <input disabled id="GuarantorsCount" class="form-control" name="GuarantorsCount" />
+                                        @*<label id="GuarantorsCount" name="GuarantorsCount"></label>*@
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" name="RateFor">Rate</label>
+                                        <input disabled id="Rate" class="form-control" name="Rate" />
+                                        @*<label id="Rate" name="Rate"></label>*@
+                                    </div>
+                                </div>
+                            </div>
+
+
 
                         </div>
 
+
+
+                        
+
                         <br />
-                                <button type="submit" class="btn btn-primary mr-1">
-                                    @ViewBag.Save
-                                </button>
-                                <button type="button" class="btn btn-warning">
-                                    @Html.ActionLink((string)ViewBag.Back, "Index")
-                                </button>
-                            </div>
-                         
+                        <button type="submit" class="btn btn-primary mr-1">
+                            @ViewBag.Save
+                        </button>
+                        <button type="button" class="btn btn-warning">
+                            @Html.ActionLink((string)ViewBag.Back, "Index")
+                        </button>
                     </div>
+
                 </div>
             </div>
         </div>
-     
+    </div>
+
 }
 
 
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-<script>
+    <script>
+        $(document).ready(function () {
+            
+            $(window).keydown(function (e) {
+                if (e.keyCode == 13) {
+                    $('#discover').click();
+                    event.preventDefault();
+                    return false;
+                }
+            });
+        });
         $(function () {
 
             $("#discover").click(function () {
@@ -76,8 +322,8 @@
                 else {
                     $.ajax({
                         type: "POST",
-                        url: "/LoanRequestViewModel/Calculate",
-                        data: '{employeeId: ' + $("#RequestProduct_Employee").val() + ', productTypeId:' + $("#RequestProduct_ProductType").val() + ',amount: ' + $("#Request_Amount").val() + ',period: ' + $("#RequestProductProductRefundableProduct_PaymentPeriod").val() + '}'                        
+                        url: '@Url.Action( "Calculate", "LoanRequestViewModel")',// "/LoanRequestViewModel/Calculate",
+                        data: '{employeeId: ' + $("#RequestProduct_Employee").val() + ', productTypeId:' + $("#RequestProduct_ProductType").val() + ',amount: ' + $("#Request_Amount").val() + ',period: ' + $("#RequestProductProductRefundableProduct_PaymentPeriod").val() + '}'
                    ,
                         contentType: "application/json; charset=utf-8",
                         dataType: "json",
@@ -85,9 +331,18 @@
                             for (var i = 0; i < response.length; i++) {
                                 var temp = response[i];
 
-                                $("#RequestProductProductRefundableProduct_Installment").val(temp.Installment);
-                                $("#RequestProductProductRefundableProduct_NetAmount").val(temp.NetAmount);
-                                $("#RequestProductProductRefundableProduct_ProfitAmount").val(temp.ProfitAmount);
+                                //$("#EmployeeIdlbl").text(temp.EmployeeId);
+                                $("#MaxAmount").val(temp.MaxAmount);
+                                $("#Seniority").val(temp.Seniority);
+                                $("#MinSeniority").val(temp.MinSeniority);
+                                $("#MinReusePeriod").val(temp.MinReusePeriod);
+                                //$("#ProductTypeIdlbl").text(temp.ProductTypeId);
+                                //$("#Amountlbl").text(temp.Amount);
+                                $("#Rate").val(temp.Rate);
+                                $("#GuarantorsCount").val(temp.GuarantorsCount);
+                                $("#Installment").val(temp.Installment);
+                                $("#NetAmount").val(temp.NetAmount);
+                                $("#ProfitAmount").val(temp.ProfitAmount);
 
                             }
 
@@ -104,7 +359,7 @@
 
             });
         });
-</script>
+    </script>
     <script>
         $(function () {
             $.validator.addMethod('date',
@@ -123,137 +378,137 @@
             });
             $(".IsDate").datepicker({ dateFormat: 'dd/mm/yy', changeYear: true });
         });
-    (function ($) {
-        $.widget("custom.combobox", {
-            _create: function () {
-                this.wrapper = $("<span>")
-                  .addClass("custom-combobox ")
-                  .insertAfter(this.element);
+        (function ($) {
+            $.widget("custom.combobox", {
+                _create: function () {
+                    this.wrapper = $("<span>")
+                      .addClass("custom-combobox ")
+                      .insertAfter(this.element);
 
-                this.element.hide();
-                this._createAutocomplete();
-                this._createShowAllButton();
-            },
+                    this.element.hide();
+                    this._createAutocomplete();
+                    this._createShowAllButton();
+                },
 
-            _createAutocomplete: function () {
-                var selected = this.element.children(":selected"),
-                  value = selected.val() ? selected.text() : "";
+                _createAutocomplete: function () {
+                    var selected = this.element.children(":selected"),
+                      value = selected.val() ? selected.text() : "";
 
-                this.input = $("<input>")
-                  .appendTo(this.wrapper)
-                  .val(value)
-                  .attr("title", "")
-                  .addClass("form-control custom-combobox-input ui-widget ui-widget-content ui-state-default ui-corner-left")
-                  .autocomplete({
-                      delay: 0,
-                      minLength: 0,
-                      source: $.proxy(this, "_source")
-                  })
-                  .tooltip({
-                      tooltipClass: "ui-state-highlight"
-                  });
+                    this.input = $("<input>")
+                      .appendTo(this.wrapper)
+                      .val(value)
+                      .attr("title", "")
+                      .addClass("form-control custom-combobox-input ui-widget ui-widget-content ui-state-default ui-corner-left")
+                      .autocomplete({
+                          delay: 0,
+                          minLength: 0,
+                          source: $.proxy(this, "_source")
+                      })
+                      .tooltip({
+                          tooltipClass: "ui-state-highlight"
+                      });
 
-                this._on(this.input, {
-                    autocompleteselect: function (event, ui) {
-                        ui.item.option.selected = true;
-                        this._trigger("select", event, {
-                            item: ui.item.option
-                        });
-                    },
+                    this._on(this.input, {
+                        autocompleteselect: function (event, ui) {
+                            ui.item.option.selected = true;
+                            this._trigger("select", event, {
+                                item: ui.item.option
+                            });
+                        },
 
-                    autocompletechange: "_removeIfInvalid"
-                });
-            },
+                        autocompletechange: "_removeIfInvalid"
+                    });
+                },
 
-            //_createShowAllButton: function () {
-            //    var input = this.input,
-            //      wasOpen = false;
+                //_createShowAllButton: function () {
+                //    var input = this.input,
+                //      wasOpen = false;
 
-            //    $("<a>")
-            //      .attr("tabIndex", -1)
-            //      .tooltip()
+                //    $("<a>")
+                //      .attr("tabIndex", -1)
+                //      .tooltip()
 
-            //      .appendTo(this.wrapper)
-            //      .button({
-            //          icons: {
-            //              primary: "ui-icon-triangle-1-s"
-            //          },
-            //          text: false
-            //      })
-            //      .removeClass("ui-corner-all")
-            //      .addClass("custom-combobox-toggle ui-corner-right")
-            //      .mousedown(function () {
-            //          wasOpen = input.autocomplete("widget").is(":visible");
-            //      })
-            //      .click(function () {
-            //          input.focus();
+                //      .appendTo(this.wrapper)
+                //      .button({
+                //          icons: {
+                //              primary: "ui-icon-triangle-1-s"
+                //          },
+                //          text: false
+                //      })
+                //      .removeClass("ui-corner-all")
+                //      .addClass("custom-combobox-toggle ui-corner-right")
+                //      .mousedown(function () {
+                //          wasOpen = input.autocomplete("widget").is(":visible");
+                //      })
+                //      .click(function () {
+                //          input.focus();
 
-            //          // Close if already visible
-            //          if (wasOpen) {
-            //              return;
-            //          }
+                //          // Close if already visible
+                //          if (wasOpen) {
+                //              return;
+                //          }
 
-            //          // Pass empty string as value to search for, displaying all results
-            //          input.autocomplete("search", "");
-            //      });
-            //},
+                //          // Pass empty string as value to search for, displaying all results
+                //          input.autocomplete("search", "");
+                //      });
+                //},
 
-            _source: function (request, response) {
-                var matcher = new RegExp($.ui.autocomplete.escapeRegex(request.term), "i");
-                response(this.element.children("option").map(function () {
-                    var text = $(this).text();
-                    if (this.value && (!request.term || matcher.test(text)))
-                        return {
-                            label: text,
-                            value: text,
-                            option: this
-                        };
-                }));
-            },
+                _source: function (request, response) {
+                    var matcher = new RegExp($.ui.autocomplete.escapeRegex(request.term), "i");
+                    response(this.element.children("option").map(function () {
+                        var text = $(this).text();
+                        if (this.value && (!request.term || matcher.test(text)))
+                            return {
+                                label: text,
+                                value: text,
+                                option: this
+                            };
+                    }));
+                },
 
-            _removeIfInvalid: function (event, ui) {
+                _removeIfInvalid: function (event, ui) {
 
-                // Selected an item, nothing to do
-                if (ui.item) {
-                    return;
-                }
-
-                // Search for a match (case-insensitive)
-                var value = this.input.val(),
-                  valueLowerCase = value.toLowerCase(),
-                  valid = false;
-                this.element.children("option").each(function () {
-                    if ($(this).text().toLowerCase() === valueLowerCase) {
-                        this.selected = valid = true;
-                        return false;
+                    // Selected an item, nothing to do
+                    if (ui.item) {
+                        return;
                     }
-                });
 
-                // Found a match, nothing to do
-                if (valid) {
-                    return;
+                    // Search for a match (case-insensitive)
+                    var value = this.input.val(),
+                      valueLowerCase = value.toLowerCase(),
+                      valid = false;
+                    this.element.children("option").each(function () {
+                        if ($(this).text().toLowerCase() === valueLowerCase) {
+                            this.selected = valid = true;
+                            return false;
+                        }
+                    });
+
+                    // Found a match, nothing to do
+                    if (valid) {
+                        return;
+                    }
+
+                    // Remove invalid value
+                    this.input
+                      .val("")
+                    this.element.val("");
+                    this._delay(function () {
+                        this.input.tooltip("close").attr("title", "");
+                    }, 2500);
+                    this.input.data("ui-autocomplete").term = "";
+                },
+
+                _destroy: function () {
+                    this.wrapper.remove();
+                    this.element.show();
                 }
+            });
+        })(jQuery);
+        $(document).ready(function () {
+            $('.combobox').combobox();
 
-                // Remove invalid value
-                this.input
-                  .val("")
-                this.element.val("");
-                this._delay(function () {
-                    this.input.tooltip("close").attr("title", "");
-                }, 2500);
-                this.input.data("ui-autocomplete").term = "";
-            },
-
-            _destroy: function () {
-                this.wrapper.remove();
-                this.element.show();
-            }
         });
-    })(jQuery);
-    $(document).ready(function () {
-        $('.combobox').combobox();
 
-    });
-		
     </script>
 }

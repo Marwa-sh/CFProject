@@ -1655,6 +1655,7 @@
     <Content Include="Views\LoanRequestViewModel\EditExceptionalAmount.cshtml" />
     <Content Include="Views\LoanRequestViewModel\EditGuarantorWithStatement.cshtml" />
     <Content Include="Views\LoanDecision\CreateLoanRequestDecision.cshtml" />
+    <Content Include="Views\LoanRequestViewModel\EmployeeCalculator.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CfDataContext\CfDataContext.csproj">

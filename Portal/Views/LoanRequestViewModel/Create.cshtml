@@ -29,12 +29,13 @@
                             @Html.Partial("~/Views/RefundableProduct/Create.cshtml", Model)
 
                         <div class="row">
-                            <div class="col-sm-1">
+                            <div class="col-sm-5"></div>
+                            <div class="col-sm-2">
                                 <button type="button" id="discover" class="btn btn-primary mr-1">
                                     Discover
                                 </button>
                             </div>
-                            <div class="col-sm-11"></div>
+                            <div class="col-sm-5"></div>
 
                         </div>
 
@@ -60,41 +61,47 @@
     @Scripts.Render("~/bundles/jqueryval")
 <script>
         $(function () {
-            
+
             $("#discover").click(function () {
-                console.log( $("#RequestProduct_Employee").val() +","+
-                 $("#RequestProduct_ProductType").val() + "," +
-                $("#Request_Amount").val() + "," +
-                $("#RequestProductProductRefundableProduct_PaymentPeriod").val()
-                );
-                $.ajax({
-                    type: "POST",
-                    url: "/LoanRequestViewModel/Calculate",
-                    data: '{employeeId: 1, productTypeId:1,amount: 50000,period: 12}'
-                    //data: { 
-                    //    employeeId: 1,// $("#RequestProduct_Employee").val() ,
-                    //    productTypeId:1,// $("#RequestProduct_ProductType").val(),
-                    //    amount: 20000,//$("#Request_Amount").val(),
-                    //    period: 12//$("#RequestProductProductRefundableProduct_PaymentPeriod").val()
-                    //    }
-                    ,
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    success: function (response) {
 
-                        $("#RequestProductProductRefundableProduct.Installment").val(response[0].Installment);
-                        $("#RequestProductProductRefundableProduct.NetAmount").val(response[0].NetAmount);
-                        $("#RequestProductProductRefundableProduct.ProfitAmount").val(response[0].ProfitAmount);
+                var productId = $("#RequestProduct_ProductType").val();
+                var employeeId = $("#RequestProduct_Employee").val();
+                var amount = $("#Request_Amount").val();
+                var period=$("#RequestProductProductRefundableProduct_PaymentPeriod").val();
 
-                        console.log(response);
-                    },
-                    failure: function (response) {
-                        alert(response.responseText);
-                    },
-                    error: function (response) {
-                        alert(response.responseText);
-                    }
-                });
+                if (productId == '' || employeeId == '' || amount == '' || period == '')
+                {
+                    swal("", "الحقول التالية مطلوبة: اسم الموظف، نوع السلفة، المبلغ والمدة", "error");
+                }
+                else {
+                    $.ajax({
+                        type: "POST",
+                        url: "/LoanRequestViewModel/Calculate",
+                        data: '{employeeId: ' + $("#RequestProduct_Employee").val() + ', productTypeId:' + $("#RequestProduct_ProductType").val() + ',amount: ' + $("#Request_Amount").val() + ',period: ' + $("#RequestProductProductRefundableProduct_PaymentPeriod").val() + '}'                        
+                   ,
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (response) {
+                            for (var i = 0; i < response.length; i++) {
+                                var temp = response[i];
+
+                                $("#RequestProductProductRefundableProduct_Installment").val(temp.Installment);
+                                $("#RequestProductProductRefundableProduct_NetAmount").val(temp.NetAmount);
+                                $("#RequestProductProductRefundableProduct_ProfitAmount").val(temp.ProfitAmount);
+
+                            }
+
+
+                        },
+                        failure: function (response) {
+                            alert(response.responseText);
+                        },
+                        error: function (response) {
+                            alert(response.responseText);
+                        }
+                    });
+                }
+
             });
         });
 </script>

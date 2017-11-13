@@ -128,8 +128,12 @@
             </div>
             <div class="card-body collapse in">
                 <div class="card-block card-dashboard">
-                    <button class="btn btn-success" type="button">
+                    <button class="btn btn-outline-blue type="button">
                         @Html.ActionLink((string)ViewBag.Insert + " " + (string)ViewBag.ModuleName, "Create")
+                    </button>
+
+                    <button class="btn btn-outline-info" type="button">
+                        @Html.ActionLink("Employee Calculator" , "EmployeeCalculator")
                     </button>
                 </div>
                 <div class="table-responsive">

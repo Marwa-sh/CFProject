@@ -83,11 +83,26 @@ namespace Portal.Controllers
 
             //ToDo: Just Show Loan Type
 
-            List<LoanType> l = LoanTypeServices.List(db);
-            List<ProductType> f = ProductTypeServices.List(db);
-            
-             
-            ViewBag.ProductTypeList = new SelectList(ProductTypeServices.List(db), "Id", "Name");
+            List<LoanType> loanTypes = LoanTypeServices.List(db);
+            List<ProductType> productTypes = ProductTypeServices.List(db);
+
+            List<ProductType> types = new List<ProductType>();
+
+            for (int i = 0; i < productTypes.Count ; i++)
+            {
+                int temp = productTypes[i].Id;
+                for (int j = 0; j < loanTypes.Count; j++)
+                {
+                    if (loanTypes[j].ProductType == temp)
+                        types.Add(productTypes[i]);
+                }
+            }
+
+
+            List<LoanTypeVw> type = LoanTypeVwServices.List(db);
+
+
+            ViewBag.ProductTypeList = new SelectList(LoanTypeVwServices.List(db), "ProductTypeId", "ProductTypeName");
 
 
             // For Request
@@ -101,9 +116,11 @@ namespace Portal.Controllers
         {
              
             int productId = 0;
+            
             try
             {
                 Db db = new Db(DbServices.ConnectionString);
+               
                 if (!(db.Connection.State == ConnectionState.Open)) db.Connection.Open();
                 db.Transaction = db.Connection.BeginTransaction();
 
@@ -111,6 +128,16 @@ namespace Portal.Controllers
                 {
                     try
                     {
+                        EmployeeProductCalculatorFilter f = new EmployeeProductCalculatorFilter();
+                        f.EmployeeId = model.RequestProduct.Employee; f.ProductTypeId = (short)model.RequestProduct.ProductType;
+                        f.Amount = (decimal)model.Request.Amount; f.Period = (short)model.RequestProductProductRefundableProduct.PaymentPeriod;
+                        List<EmployeeProductCalculatorResult> result = db.EmployeeProductCalculator(f);
+                        if (result.Count > 0)
+                        {
+                            model.RequestProductProductRefundableProduct.NetAmount = result[0].NetAmount.Value;
+                            model.RequestProductProductRefundableProduct.ProfitAmount = result[0].ProfitAmount.Value;
+                            model.RequestProductProductRefundableProduct.Installment = result[0].Installment.Value;
+                        }
                         // 1- Add Prouct
                         // set the Amount of the Produt the same as Request
                         model.RequestProduct.Amount = model.Request.Amount;
@@ -297,6 +324,29 @@ namespace Portal.Controllers
             return View(productVwViewModel);
         }
 
+        #endregion
+
+
+        #region  Calculate Employee Product
+        public ActionResult EmployeeCalculator()
+        {
+
+            Db db = new Db(DbServices.ConnectionString);
+            // For Product
+            ViewBag.EmployeeList = new SelectList(EmployeeServices.List(db), "Id", "Id_Name");
+
+            //ToDo: Just Show Loan Type
+
+            List<LoanType> l = LoanTypeServices.List(db);
+            List<ProductType> f = ProductTypeServices.List(db);
+
+
+            ViewBag.ProductTypeList = new SelectList(ProductTypeServices.List(db), "Id", "Name");
+
+            return View();
+        }
+
+        
         #endregion
 
         [HttpPost]

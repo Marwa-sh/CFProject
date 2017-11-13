@@ -55,6 +55,7 @@
     <Compile Include="Enumerations.cs" />
     <Compile Include="Exceptions\CfExceptionBase.cs" />
     <Compile Include="Exceptions\Exceptions.cs" />
+    <Compile Include="GetCustom.cs" />
     <Compile Include="GetPage.cs" />
     <Compile Include="Log\Db.cs" />
     <Compile Include="Log\ErrorHandler.cs" />

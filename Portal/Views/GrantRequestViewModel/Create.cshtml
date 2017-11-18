@@ -1,0 +1,287 @@
+﻿@model Cf.ViewModels.GrantRequestViewModel
+
+@using (Html.BeginForm())
+{
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">@ViewBag.Action @ViewBag.ModuleName</h4>
+                    <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
+                            <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                            <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-body collapse in">
+                    <div class="card-block">
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        @*@Html.LabelFor(model => model.Employee, htmlAttributes: new { @class = "control-label" })*@
+                                        @Html.LabelFor(model => model.RequestProduct.Employee, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestProduct.Employee)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        @Html.DropDownListFor(model=> model.RequestProduct.Employee, (SelectList)@ViewBag.EmployeeList, htmlAttributes: new { @class = "form-control combobox" })
+                                        @Html.ValidationMessageFor(model => model.RequestProduct.Employee, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        @*@Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label" })*@
+                                        @Html.LabelFor(model => model.Request.Date, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Request.Date)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        @Html.TextBoxFor(model => model.Request.Date, "{0:dd/MM/yyyy}", htmlAttributes: new { @class = "form-control IsDate", @Value = System.DateTime.Now.ToShortDateString() })
+                                        @Html.ValidationMessageFor(model => model.Request.Date, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        @*@Html.LabelFor(model => model.Amount, htmlAttributes: new { @class = "control-label" })*@
+                                        @Html.LabelFor(model => model.Request.Amount, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Request.Amount)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        @Html.EditorFor(model => model.Request.Amount, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Request.Amount, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        @*@Html.LabelFor(model => model.GrantType, htmlAttributes: new { @class = "control-label" })*@
+                                        @Html.LabelFor(model => model.GrantRequest.GrantType, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.GrantRequest.GrantType)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        @Html.DropDownList("GrantType", (SelectList)@ViewBag.GrantTypeList, htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.GrantRequest.GrantType, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>                             
+                            <div class="row">                                 
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        @*@Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label" })*@
+                                        @Html.LabelFor(model => model.GrantRequest.Description, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.GrantRequest.Description)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        @Html.EditorFor(model => model.GrantRequest.Description, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.GrantRequest.Description, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        @*@Html.LabelFor(model => model.EventDate, htmlAttributes: new { @class = "control-label" })*@
+                                        @Html.LabelFor(model => model.GrantRequest.EventDate, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.GrantRequest.EventDate)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        @Html.TextBoxFor(model => model.GrantRequest.EventDate, htmlAttributes: new { @class = "form-control IsDate" })
+                                        @Html.ValidationMessageFor(model => model.GrantRequest.EventDate, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        @*@Html.LabelFor(model => model.Notes, htmlAttributes: new { @class = "control-label" })*@
+                                        @Html.LabelFor(model => model.Request.Notes, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Request.Notes)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        @Html.EditorFor(model => model.Request.Notes, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Request.Notes, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        @*@Html.LabelFor(model => model.Attachment, htmlAttributes: new { @class = "control-label" })*@
+                                        @Html.LabelFor(model => model.Request.Attachment, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Request.Attachment)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        @Html.EditorFor(model => model.Request.Attachment, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Request.Attachment, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>                             
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        @*@Html.LabelFor(model => model.IsFromOtherBranch, htmlAttributes: new { @class = "control-label" })*@
+                                        @Html.LabelFor(model => model.GrantRequest.IsFromOtherBranch, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.GrantRequest.IsFromOtherBranch)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        @Html.EditorFor(model => model.GrantRequest.IsFromOtherBranch, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.GrantRequest.IsFromOtherBranch, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         
+                        <br />
+                        <button type="submit" class="btn btn-primary mr-1">
+                            @ViewBag.Save
+                        </button>
+                        <button type="button" class="btn btn-warning">
+                            @Html.ActionLink((string)ViewBag.Back, "Index")
+                        </button>
+                        
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+     
+    <script>
+        $(function () {
+            $.validator.addMethod('date',
+            function (value, element) {
+                if (this.optional(element)) {
+                    return true;
+                }
+                var ok = true;
+                try {
+                    $.datepicker.parseDate('dd/mm/yy', value);
+                }
+                catch (err) {
+                    ok = false;
+                }
+                return ok;
+            });
+            $(".IsDate").datepicker({ dateFormat: 'dd/mm/yy', changeYear: true });
+        });
+        (function ($) {
+            $.widget("custom.combobox", {
+                _create: function () {
+                    this.wrapper = $("<span>")
+                      .addClass("custom-combobox ")
+                      .insertAfter(this.element);
+
+                    this.element.hide();
+                    this._createAutocomplete();
+                    //this._createShowAllButton();
+                },
+
+                _createAutocomplete: function () {
+                    var selected = this.element.children(":selected"),
+                      value = selected.val() ? selected.text() : "";
+
+                    this.input = $("<input>")
+                      .appendTo(this.wrapper)
+                      .val(value)
+                      .attr("title", "")
+                      .addClass("form-control custom-combobox-input ui-widget ui-widget-content ui-state-default ui-corner-left")
+                      .autocomplete({
+                          delay: 0,
+                          minLength: 0,
+                          source: $.proxy(this, "_source")
+                      })
+                      .tooltip({
+                          tooltipClass: "ui-state-highlight"
+                      });
+
+                    this._on(this.input, {
+                        autocompleteselect: function (event, ui) {
+                            ui.item.option.selected = true;
+                            this._trigger("select", event, {
+                                item: ui.item.option
+                            });
+                        },
+
+                        autocompletechange: "_removeIfInvalid"
+                    });
+                },
+
+                _source: function (request, response) {
+                    var matcher = new RegExp($.ui.autocomplete.escapeRegex(request.term), "i");
+                    response(this.element.children("option").map(function () {
+                        var text = $(this).text();
+                        if (this.value && (!request.term || matcher.test(text)))
+                            return {
+                                label: text,
+                                value: text,
+                                option: this
+                            };
+                    }));
+                },
+
+                _removeIfInvalid: function (event, ui) {
+
+                    // Selected an item, nothing to do
+                    if (ui.item) {
+                        return;
+                    }
+
+                    // Search for a match (case-insensitive)
+                    var value = this.input.val(),
+                      valueLowerCase = value.toLowerCase(),
+                      valid = false;
+                    this.element.children("option").each(function () {
+                        if ($(this).text().toLowerCase() === valueLowerCase) {
+                            this.selected = valid = true;
+                            return false;
+                        }
+                    });
+
+                    // Found a match, nothing to do
+                    if (valid) {
+                        return;
+                    }
+
+                    // Remove invalid value
+                    this.input
+                      .val("")
+                    this.element.val("");
+                    this._delay(function () {
+                        this.input.tooltip("close").attr("title", "");
+                    }, 2500);
+                    this.input.data("ui-autocomplete").term = "";
+                },
+
+                _destroy: function () {
+                    this.wrapper.remove();
+                    this.element.show();
+                }
+            });
+        })(jQuery);
+        $(document).ready(function () {
+            $('.combobox').combobox();
+
+        });
+
+    </script>
+}

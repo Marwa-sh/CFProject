@@ -1595,7 +1595,6 @@
     <Folder Include="Areas\Log\Models\" />
     <Folder Include="Areas\Log\Views\Shared\" />
     <Folder Include="Controllers\Log\" />
-    <Folder Include="Views\GrantRequestViewModel\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -1659,6 +1658,7 @@
     <Content Include="Views\LoanRequestViewModel\EditGuarantorWithStatement.cshtml" />
     <Content Include="Views\LoanDecision\CreateLoanRequestDecision.cshtml" />
     <Content Include="Views\LoanRequestViewModel\EmployeeCalculator.cshtml" />
+    <Content Include="Views\GrantRequestViewModel\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CfDataContext\CfDataContext.csproj">

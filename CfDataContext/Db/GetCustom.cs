@@ -48,6 +48,32 @@ namespace Cf.Data
 			IQueryable<EmployeeProductCalculatorResult> list = _EmployeeProductCalculator(filterInstance.EmployeeId, filterInstance.ProductTypeId, filterInstance.Amount, filterInstance.Period);            
             return list.ToList<EmployeeProductCalculatorResult>();
 		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_employeeId"></param>
+		/// <param name="_productTypeId"></param>
+		/// <param name="_amount"></param>
+		/// <param name="_period"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>An instance of EmployeeProductCalculatorResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public EmployeeProductCalculatorResult EmployeeProductCalculatorFirstOrDefault([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@ProductTypeId")] Nullable<short> _productTypeId, [Parameter(Name = "@Amount")] Nullable<decimal> _amount, [Parameter(Name = "@Period")] Nullable<short> _period)
+		{
+			return EmployeeProductCalculator(_employeeId, _productTypeId, _amount, _period).FirstOrDefault();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of EmployeeProductCalculatorFilter that defines filtering options.</param>
+		/// <returns>An instance of EmployeeProductCalculatorResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public EmployeeProductCalculatorResult EmployeeProductCalculatorFirstOrDefault(EmployeeProductCalculatorFilter filterInstance)
+		{
+			return EmployeeProductCalculator(filterInstance.EmployeeId, filterInstance.ProductTypeId, filterInstance.Amount, filterInstance.Period).FirstOrDefault();
+		}
 		#endregion
 
 		#region GetAvailabilityCeilingByProductTypeId_EmployeeId procedure.
@@ -86,13 +112,37 @@ namespace Cf.Data
 			IQueryable<GetAvailabilityCeilingByProductTypeId_EmployeeIdResult> list = _GetAvailabilityCeilingByProductTypeId_EmployeeId(filterInstance.ProductTypeId, filterInstance.EmployeeId);
             return list.ToList<GetAvailabilityCeilingByProductTypeId_EmployeeIdResult>();
 		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_productTypeId"></param>
+		/// <param name="_employeeId"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>An instance of GetAvailabilityCeilingByProductTypeId_EmployeeIdResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public GetAvailabilityCeilingByProductTypeId_EmployeeIdResult GetAvailabilityCeilingByProductTypeId_EmployeeIdFirstOrDefault([Parameter(Name = "@ProductTypeId")] Nullable<short> _productTypeId, [Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
+		{
+			return GetAvailabilityCeilingByProductTypeId_EmployeeId(_productTypeId, _employeeId).FirstOrDefault();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of GetAvailabilityCeilingByProductTypeId_EmployeeIdFilter that defines filtering options.</param>
+		/// <returns>An instance of GetAvailabilityCeilingByProductTypeId_EmployeeIdResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public GetAvailabilityCeilingByProductTypeId_EmployeeIdResult GetAvailabilityCeilingByProductTypeId_EmployeeIdFirstOrDefault(GetAvailabilityCeilingByProductTypeId_EmployeeIdFilter filterInstance)
+		{
+			return GetAvailabilityCeilingByProductTypeId_EmployeeId(filterInstance.ProductTypeId, filterInstance.EmployeeId).FirstOrDefault();
+		}
 		#endregion
 
 		#region GetDueProfit procedure.
 
 		[Function(Name = "dbo.GetDueProfit")]
 		[return: Parameter(DbType = "money")]
-		private decimal _GetDueProfit([Parameter(Name = "@Amount")] Nullable<decimal> _amount, [Parameter(Name = "@Period")] Nullable<short> _period, [Parameter(Name = "@Rate")] Nullable<decimal> _rate)
+		private decimal _GetDueProfit([Parameter(Name = "@Amount")] Nullable<decimal> _amount, [Parameter(Name = "@Period")] Nullable<short> _period, [Parameter(Name = "@Rate")] Nullable<double> _rate)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _amount, _period, _rate);
 			return (decimal) (result.ReturnValue);
@@ -104,7 +154,7 @@ namespace Cf.Data
 		/// <param name="_amount"></param>
 		/// <param name="_period"></param>
 		/// <param name="_rate"></param>
-		public decimal GetDueProfit([Parameter(Name = "@Amount")] Nullable<decimal> _amount, [Parameter(Name = "@Period")] Nullable<short> _period, [Parameter(Name = "@Rate")] Nullable<decimal> _rate)
+		public decimal GetDueProfit([Parameter(Name = "@Amount")] Nullable<decimal> _amount, [Parameter(Name = "@Period")] Nullable<short> _period, [Parameter(Name = "@Rate")] Nullable<double> _rate)
 		{
 			 return _GetDueProfit(_amount, _period, _rate);
 		}
@@ -182,6 +232,126 @@ namespace Cf.Data
 		}
 		#endregion
 
+		#region GetInstallmentPaidAmounts procedure.
+
+
+		[FunctionAttribute(Name = "dbo.GetInstallmentPaidAmounts", IsComposable = true)]
+		private IQueryable<GetInstallmentPaidAmountsResult> _GetInstallmentPaidAmounts([Parameter(Name = "@RefundableProductId")] Nullable<int> _refundableProductId)
+		{
+			return this.CreateMethodCallQuery<GetInstallmentPaidAmountsResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _refundableProductId);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_refundableProductId"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>A list of GetInstallmentPaidAmountsResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<GetInstallmentPaidAmountsResult> GetInstallmentPaidAmounts([Parameter(Name = "@RefundableProductId")] Nullable<int> _refundableProductId)
+		{
+			IQueryable<GetInstallmentPaidAmountsResult> list = _GetInstallmentPaidAmounts(_refundableProductId);
+            return list.ToList<GetInstallmentPaidAmountsResult>();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of GetInstallmentPaidAmountsFilter that defines filtering options.</param>
+        /// <returns>A list of GetInstallmentPaidAmountsResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<GetInstallmentPaidAmountsResult> GetInstallmentPaidAmounts(GetInstallmentPaidAmountsFilter filterInstance)
+		{
+			IQueryable<GetInstallmentPaidAmountsResult> list = _GetInstallmentPaidAmounts(filterInstance.RefundableProductId);
+            return list.ToList<GetInstallmentPaidAmountsResult>();
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_refundableProductId"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>An instance of GetInstallmentPaidAmountsResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public GetInstallmentPaidAmountsResult GetInstallmentPaidAmountsFirstOrDefault([Parameter(Name = "@RefundableProductId")] Nullable<int> _refundableProductId)
+		{
+			return GetInstallmentPaidAmounts(_refundableProductId).FirstOrDefault();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of GetInstallmentPaidAmountsFilter that defines filtering options.</param>
+		/// <returns>An instance of GetInstallmentPaidAmountsResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public GetInstallmentPaidAmountsResult GetInstallmentPaidAmountsFirstOrDefault(GetInstallmentPaidAmountsFilter filterInstance)
+		{
+			return GetInstallmentPaidAmounts(filterInstance.RefundableProductId).FirstOrDefault();
+		}
+		#endregion
+
+		#region GetInstallments procedure.
+
+
+		[FunctionAttribute(Name = "dbo.GetInstallments", IsComposable = true)]
+		private IQueryable<GetInstallmentsResult> _GetInstallments([Parameter(Name = "@RefundableProductId")] Nullable<int> _refundableProductId)
+		{
+			return this.CreateMethodCallQuery<GetInstallmentsResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _refundableProductId);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_refundableProductId"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>A list of GetInstallmentsResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<GetInstallmentsResult> GetInstallments([Parameter(Name = "@RefundableProductId")] Nullable<int> _refundableProductId)
+		{
+			IQueryable<GetInstallmentsResult> list = _GetInstallments(_refundableProductId);
+            return list.ToList<GetInstallmentsResult>();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of GetInstallmentsFilter that defines filtering options.</param>
+        /// <returns>A list of GetInstallmentsResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<GetInstallmentsResult> GetInstallments(GetInstallmentsFilter filterInstance)
+		{
+			IQueryable<GetInstallmentsResult> list = _GetInstallments(filterInstance.RefundableProductId);
+            return list.ToList<GetInstallmentsResult>();
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_refundableProductId"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>An instance of GetInstallmentsResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public GetInstallmentsResult GetInstallmentsFirstOrDefault([Parameter(Name = "@RefundableProductId")] Nullable<int> _refundableProductId)
+		{
+			return GetInstallments(_refundableProductId).FirstOrDefault();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of GetInstallmentsFilter that defines filtering options.</param>
+		/// <returns>An instance of GetInstallmentsResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public GetInstallmentsResult GetInstallmentsFirstOrDefault(GetInstallmentsFilter filterInstance)
+		{
+			return GetInstallments(filterInstance.RefundableProductId).FirstOrDefault();
+		}
+		#endregion
+
 		#region GetPresentValue procedure.
 
 		[Function(Name = "dbo.GetPresentValue")]
@@ -211,6 +381,66 @@ namespace Cf.Data
 		public decimal GetPresentValue(GetPresentValueFilter filterInstance)
 		{
 			 return _GetPresentValue(filterInstance.Installment, filterInstance.Period, filterInstance.Rate, filterInstance.Type);
+		}
+		#endregion
+
+		#region GetRefundableProducts procedure.
+
+
+		[FunctionAttribute(Name = "dbo.GetRefundableProducts", IsComposable = true)]
+		private IQueryable<GetRefundableProductsResult> _GetRefundableProducts([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
+		{
+			return this.CreateMethodCallQuery<GetRefundableProductsResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _employeeId);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_employeeId"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>A list of GetRefundableProductsResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<GetRefundableProductsResult> GetRefundableProducts([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
+		{
+			IQueryable<GetRefundableProductsResult> list = _GetRefundableProducts(_employeeId);
+            return list.ToList<GetRefundableProductsResult>();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of GetRefundableProductsFilter that defines filtering options.</param>
+        /// <returns>A list of GetRefundableProductsResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<GetRefundableProductsResult> GetRefundableProducts(GetRefundableProductsFilter filterInstance)
+		{
+			IQueryable<GetRefundableProductsResult> list = _GetRefundableProducts(filterInstance.EmployeeId);
+            return list.ToList<GetRefundableProductsResult>();
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_employeeId"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>An instance of GetRefundableProductsResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public GetRefundableProductsResult GetRefundableProductsFirstOrDefault([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
+		{
+			return GetRefundableProducts(_employeeId).FirstOrDefault();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of GetRefundableProductsFilter that defines filtering options.</param>
+		/// <returns>An instance of GetRefundableProductsResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public GetRefundableProductsResult GetRefundableProductsFirstOrDefault(GetRefundableProductsFilter filterInstance)
+		{
+			return GetRefundableProducts(filterInstance.EmployeeId).FirstOrDefault();
 		}
 		#endregion
 
@@ -280,6 +510,31 @@ namespace Cf.Data
 		{
 			IQueryable<ProductCalculatorResult> list = _ProductCalculator(filterInstance.ProductType, filterInstance.Amount, filterInstance.Period);
             return list.ToList<ProductCalculatorResult>();
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_productType"></param>
+		/// <param name="_amount"></param>
+		/// <param name="_period"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>An instance of ProductCalculatorResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public ProductCalculatorResult ProductCalculatorFirstOrDefault([Parameter(Name = "@ProductType")] Nullable<short> _productType, [Parameter(Name = "@Amount")] Nullable<decimal> _amount, [Parameter(Name = "@Period")] Nullable<short> _period)
+		{
+			return ProductCalculator(_productType, _amount, _period).FirstOrDefault();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of ProductCalculatorFilter that defines filtering options.</param>
+		/// <returns>An instance of ProductCalculatorResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public ProductCalculatorResult ProductCalculatorFirstOrDefault(ProductCalculatorFilter filterInstance)
+		{
+			return ProductCalculator(filterInstance.ProductType, filterInstance.Amount, filterInstance.Period).FirstOrDefault();
 		}
 		#endregion
 	}
@@ -439,7 +694,7 @@ namespace Cf.Data
 		/// <summary>
 		/// Needs summary!
 		/// </summary>
-		public Nullable<decimal> Rate {get; set; }
+		public Nullable<double> Rate {get; set; }
 		#endregion
 	}
 	#endregion
@@ -535,6 +790,80 @@ namespace Cf.Data
     #endregion
     #endregion
 
+	#region GetInstallmentPaidAmounts filter and result classes
+    #region GetInstallmentPaidAmountsFilter class definition
+	/// <summary>
+    /// Filter class for GetInstallmentPaidAmounts.
+	/// </summary>
+	public partial class GetInstallmentPaidAmountsFilter
+	{
+		#region Public properties
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<int> RefundableProductId {get; set; }
+		#endregion
+	}
+	#endregion
+
+    #region GetInstallmentPaidAmountsResult class definition
+	/// <summary>
+    /// Result class for GetInstallmentPaidAmounts.
+	/// </summary>
+	public partial class GetInstallmentPaidAmountsResult
+	{
+		#region Public properties
+        public int InstallmentId {get; set; }
+		
+        public decimal PaidAmount {get; set; }
+		#endregion
+	}
+	#endregion
+    #endregion
+
+	#region GetInstallments filter and result classes
+    #region GetInstallmentsFilter class definition
+	/// <summary>
+    /// Filter class for GetInstallments.
+	/// </summary>
+	public partial class GetInstallmentsFilter
+	{
+		#region Public properties
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<int> RefundableProductId {get; set; }
+		#endregion
+	}
+	#endregion
+
+    #region GetInstallmentsResult class definition
+	/// <summary>
+    /// Result class for GetInstallments.
+	/// </summary>
+	public partial class GetInstallmentsResult
+	{
+		#region Public properties
+        public int Id {get; set; }
+		
+        public int RefundableProduct {get; set; }
+		
+        public short SubNumber {get; set; }
+		
+        public DateTime DueDate {get; set; }
+		
+        public decimal DueCapital {get; set; }
+		
+        public decimal DueProfit {get; set; }
+		
+        public decimal PaidAmount {get; set; }
+		
+        public int PaymentStatus {get; set; }
+		#endregion
+	}
+	#endregion
+    #endregion
+
 	#region GetPresentValue filter and result classes
     #region GetPresentValueFilter class definition
 	/// <summary>
@@ -575,6 +904,49 @@ namespace Cf.Data
         }
     }
     #endregion
+    #endregion
+
+	#region GetRefundableProducts filter and result classes
+    #region GetRefundableProductsFilter class definition
+	/// <summary>
+    /// Filter class for GetRefundableProducts.
+	/// </summary>
+	public partial class GetRefundableProductsFilter
+	{
+		#region Public properties
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<int> EmployeeId {get; set; }
+		#endregion
+	}
+	#endregion
+
+    #region GetRefundableProductsResult class definition
+	/// <summary>
+    /// Result class for GetRefundableProducts.
+	/// </summary>
+	public partial class GetRefundableProductsResult
+	{
+		#region Public properties
+        public int ProductId {get; set; }
+		
+        public int ProductEmployeeId {get; set; }
+		
+        public decimal Installment {get; set; }
+		
+        public decimal NetAmount {get; set; }
+		
+        public decimal ProfitAmount {get; set; }
+		
+        public short PaymentPeriod {get; set; }
+		
+        public Nullable<decimal> DueAmount {get; set; }
+		
+        public Nullable<decimal> PaidAmount {get; set; }
+		#endregion
+	}
+	#endregion
     #endregion
 
 	#region LoanGenerate filter and result classes

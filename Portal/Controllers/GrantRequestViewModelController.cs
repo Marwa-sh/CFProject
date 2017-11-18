@@ -1,6 +1,7 @@
 ﻿using Cf.Controllers;
 using Cf.Data;
 using Cf.Services;
+using Cf.Services.Exceptions;
 using Cf.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -81,70 +82,57 @@ namespace Portal.Controllers
         [HttpPost]
         public ActionResult Create(GrantRequestViewModel  model)
         {
-            return View();
-            //int productId = 0;
-            //try
-            //{
-            //    Db db = new Db(DbServices.ConnectionString);
+            //return View();
+            int productId = 0;
+            try
+            {
+                Db db = new Db(DbServices.ConnectionString);
 
-            //    if (!(db.Connection.State == ConnectionState.Open)) db.Connection.Open();
-            //    db.Transaction = db.Connection.BeginTransaction();
+                if (!(db.Connection.State == ConnectionState.Open)) db.Connection.Open();
+                db.Transaction = db.Connection.BeginTransaction();
 
-            //    if (ModelState.IsValid)
-            //    {
-            //        try
-            //        {
-            //            EmployeeProductCalculatorFilter f = new EmployeeProductCalculatorFilter();
-            //            f.EmployeeId = model.RequestProduct.Employee; f.ProductTypeId = (short)model.RequestProduct.ProductType;
-            //            f.Amount = (decimal)model.Request.Amount; f.Period = (short)model.RequestProductProductRefundableProduct.PaymentPeriod;
-            //            List<EmployeeProductCalculatorResult> result = db.EmployeeProductCalculator(f);
-            //            if (result.Count > 0)
-            //            {
-            //                model.RequestProductProductRefundableProduct.NetAmount = result[0].NetAmount.Value;
-            //                model.RequestProductProductRefundableProduct.ProfitAmount = result[0].ProfitAmount.Value;
-            //                model.RequestProductProductRefundableProduct.Installment = result[0].Installment.Value;
-            //            }
-            //            // 1- Add Prouct
-            //            // set the Amount of the Produt the same as Request
-            //            model.RequestProduct.Amount = model.Request.Amount;
-            //            Product p = ProductServices.Insert(CurrentUser.Id, model.RequestProduct, db);
-            //            productId = p.Id;
+                if (ModelState.IsValid)
+                {
+                    try
+                    {
+                        // 1- Add Prouct
+                        // set the Amount of the Produt the same as Request
+                        model.RequestProduct.Amount = model.Request.Amount;
+                        model.RequestProduct.ProductType = 0;
 
-            //            //2-Add Request                        
-            //            model.Request.Product = p.Id;
-            //            model.Request.RequestStatus = (int)RequestStatusEnum.New;
-            //            model.Request.Cost = 5;
-            //            Request r = RequestServices.Insert(CurrentUser.Id, model.Request, db);
+                        Product p = ProductServices.Insert(CurrentUser.Id, model.RequestProduct, db);
+                        productId = p.Id;
 
-            //            //3-Add LoanRequest
-            //            model.LoanRequest.Request = p.Id;
-            //            LoanRequestServices.Insert(CurrentUser.Id, model.LoanRequest, db);
+                        //2-Add Request                        
+                        model.Request.Product = p.Id;
+                        model.Request.RequestStatus = (int)RequestStatusEnum.New;
+                        model.Request.Cost = 5;
+                        Request r = RequestServices.Insert(CurrentUser.Id, model.Request, db);
 
-            //            //4- Add RefundableProduct
+                        //3-Add LoanRequest
+                        model.GrantRequest.Request = p.Id;
+                        GrantRequestServices.Insert(CurrentUser.Id, model.GrantRequest, db);
+    
+                        TempData["Success"] = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "InsertConfirmed");
 
-            //            model.RequestProductProductRefundableProduct.Product = p.Id;
-            //            RefundableProductServices.Insert(CurrentUser.Id, model.RequestProductProductRefundableProduct, db);
+                    }
+                    catch (CfException cfex)
+                    {
+                        TempData["Failure"] = cfex.ErrorDefinition.LocalizedMessage;
+                    }
+                    catch (Exception ex)
+                    {
+                        TempData["Failure"] = ex.Message;
+                    }
+                }
 
-            //            TempData["Success"] = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "InsertConfirmed");
-
-            //        }
-            //        catch (CfException cfex)
-            //        {
-            //            TempData["Failure"] = cfex.ErrorDefinition.LocalizedMessage;
-            //        }
-            //        catch (Exception ex)
-            //        {
-            //            TempData["Failure"] = ex.Message;
-            //        }
-            //    }
-
-            //    if (db.Transaction != null) db.Transaction.Commit();
-            //    return RedirectToAction("Details", new { id = productId });
-            //}
-            //catch
-            //{
-            //    return View();
-            //}
+                if (db.Transaction != null) db.Transaction.Commit();
+                return RedirectToAction("Details", new { id = productId });
+            }
+            catch
+            {
+                return View();
+            }
         }
 
         #endregion

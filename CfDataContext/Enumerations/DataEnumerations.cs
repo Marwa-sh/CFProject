@@ -2,25 +2,25 @@ using System;
 
 namespace Cf.Data
 {
-	/// <summary>
-	/// حالة تجاوز شروط الحصول على المنتج
-	/// </summary>
-	[Flags()]
-	public enum BypassStatusEnum
-	{
-		/// <summary>
-		/// الدفعات السابقة
-		/// </summary>
-		PreviousLoans = 1,
-		/// <summary>
-		/// عدد أشهر الاشتراك
-		/// </summary>
-		SubscriptionMonths = 2,
-		/// <summary>
-		/// السقف
-		/// </summary>
-		Ceiling = 4
-	}
+    /// <summary>
+    /// حالة تجاوز شروط الحصول على المنتج
+    /// </summary>
+    [Flags()]
+    public enum BypassStatusEnum
+    {
+        /// <summary>
+        /// الدفعات السابقة
+        /// </summary>
+        PreviousLoans = 1,
+        /// <summary>
+        /// عدد أشهر الاشتراك
+        /// </summary>
+        SubscriptionMonths = 2,
+        /// <summary>
+        /// السقف
+        /// </summary>
+        Ceiling = 4
+    }
     /// <summary>
 	/// نوع المبلغ الاستثنائي
 	/// </summary>
@@ -46,316 +46,316 @@ namespace Cf.Data
     /// الهيئة الوظيفية
     /// </summary>
     public enum CategoryEnum
-	{
+    {
         /// <summary>
 		/// (غير محددة)
 		/// </summary>
 		None = 0,
-		/// <summary>
-		/// هيئة بحث
-		/// </summary>
-		Research = 1,
-		/// <summary>
-		/// هيئة فنية
-		/// </summary>
-		Technical = 2,
-		/// <summary>
-		/// هيئة مخبرية
-		/// </summary>
-		Laboratory = 3,
-		/// <summary>
-		/// قانون عاملين
-		/// </summary>
-		WorkerLaw = 4
-	}
+        /// <summary>
+        /// هيئة بحث
+        /// </summary>
+        Research = 1,
+        /// <summary>
+        /// هيئة فنية
+        /// </summary>
+        Technical = 2,
+        /// <summary>
+        /// هيئة مخبرية
+        /// </summary>
+        Laboratory = 3,
+        /// <summary>
+        /// قانون عاملين
+        /// </summary>
+        WorkerLaw = 4
+    }
 
-	/// <summary>
-	/// الوضع الوظيفي
-	/// </summary>
-	public enum EmployeeStatusEnum
-	{
+    /// <summary>
+    /// الوضع الوظيفي
+    /// </summary>
+    public enum EmployeeStatusEnum
+    {
         /// <summary>
 		/// (غير محدد)
 		/// </summary>
 		None = 0,
-		/// <summary>
-		/// على رأس عمله
-		/// </summary>
-		Working = 1,
-		/// <summary>
-		/// مندب
-		/// </summary>
-		OutOfCers = 2,
-		/// <summary>
-		/// استيداع
-		/// </summary>
-		TemporarlyLeaving = 3,
-		/// <summary>
-		/// خدمة علم
-		/// </summary>
-		OnMilitaryService = 4,
-		/// <summary>
-		/// موفد خارجي
-		/// </summary>
-		External = 5,
-		/// <summary>
-		/// موفد داخلي
-		/// </summary>
-		Internal = 6,
-		/// <summary>
-		/// تارك
-		/// </summary>
-		Leaving = 8,
-		/// <summary>
-		/// عسكري
-		/// </summary>
-		Militery = 9,
-		/// <summary>
-		/// دورة خارج المركز
-		/// </summary>
-		OutsideCourse = 10,
-		/// <summary>
-		/// منتدب إدارة
-		/// </summary>
-		Delegate = 11,
-		/// <summary>
-		/// كف يد
-		/// </summary>
-		Forbidden = 12,
-		/// <summary>
-		/// ناكل
-		/// </summary>
-		Breaker = 13
-	}
-
-	/// <summary>
-	/// نوع الإعانة
-	/// </summary>
-	public enum GrantTypeEnum
-	{
-		/// <summary>
-		/// زواج
-		/// </summary>
-		Marriage = 1,
-		/// <summary>
-		/// ولادة
-		/// </summary>
-		NewlyBorn = 2,
-		/// <summary>
-		/// وفاة زوج
-		/// </summary>
-		DeathOfPartner = 3,
-		/// <summary>
-		/// وفاة ولد
-		/// </summary>
-		DeathOfChild = 4,
-		/// <summary>
-		/// وفاة احد الوالدين (الأب)
-		/// </summary>
-		DeathOfFather = 5,
-		/// <summary>
-		/// وفاة المشترك الطبيعية
-		/// </summary>
-		NaturalDeath = 6,
-		/// <summary>
-		/// وفاة المشترك الناجمة عن الخدمة
-		/// </summary>
-		ServiceDeath = 7,
-		/// <summary>
-		/// عجز كلي
-		/// </summary>
-		TotalDisability = 8,
-		/// <summary>
-		/// عجز جزئي
-		/// </summary>
-		PartialDisability = 9,
-		/// <summary>
-		/// أضرار مادية
-		/// </summary>
-		MaterialInjury = 10,
-		/// <summary>
-		/// نهاية خدمة
-		/// </summary>
-		EndOfService = 11,
-		/// <summary>
-		/// وفاة احد الوالدين (الأم)
-		/// </summary>
-		DeathOfMother = 12,
-		/// <summary>
-		/// ولادة حالة التوأم (الولد الثاني)
-		/// </summary>
-		TwinsSecondChild = 13
+        /// <summary>
+        /// على رأس عمله
+        /// </summary>
+        Working = 1,
+        /// <summary>
+        /// مندب
+        /// </summary>
+        OutOfCers = 2,
+        /// <summary>
+        /// استيداع
+        /// </summary>
+        TemporarlyLeaving = 3,
+        /// <summary>
+        /// خدمة علم
+        /// </summary>
+        OnMilitaryService = 4,
+        /// <summary>
+        /// موفد خارجي
+        /// </summary>
+        External = 5,
+        /// <summary>
+        /// موفد داخلي
+        /// </summary>
+        Internal = 6,
+        /// <summary>
+        /// تارك
+        /// </summary>
+        Leaving = 8,
+        /// <summary>
+        /// عسكري
+        /// </summary>
+        Militery = 9,
+        /// <summary>
+        /// دورة خارج المركز
+        /// </summary>
+        OutsideCourse = 10,
+        /// <summary>
+        /// منتدب إدارة
+        /// </summary>
+        Delegate = 11,
+        /// <summary>
+        /// كف يد
+        /// </summary>
+        Forbidden = 12,
+        /// <summary>
+        /// ناكل
+        /// </summary>
+        Breaker = 13
     }
 
-	/// <summary>
-	/// مجموعة أنواع الإعانات
-	/// </summary>
-	public enum GrantTypeGroupEnum
-	{
-		/// <summary>
-		/// أحوال مدنية
-		/// </summary>
-		Civil = 1,
-		/// <summary>
-		/// أضار مادية
-		/// </summary>
-		MaterialInjury = 2,
-		/// <summary>
-		/// ناجمة عن الخدمة
-		/// </summary>
-		ResultingFromService = 3,
-		/// <summary>
-		/// نهاية خدمة
-		/// </summary>
-		EndOfService = 4,
-		/// <summary>
-		/// وفاة طبيعة
-		/// </summary>
-		NaturalDeath = 5
-	}
+    /// <summary>
+    /// نوع الإعانة
+    /// </summary>
+    public enum GrantTypeEnum
+    {
+        /// <summary>
+        /// زواج
+        /// </summary>
+        Marriage = 1,
+        /// <summary>
+        /// ولادة
+        /// </summary>
+        NewlyBorn = 2,
+        /// <summary>
+        /// وفاة زوج
+        /// </summary>
+        DeathOfPartner = 3,
+        /// <summary>
+        /// وفاة ولد
+        /// </summary>
+        DeathOfChild = 4,
+        /// <summary>
+        /// وفاة احد الوالدين (الأب)
+        /// </summary>
+        DeathOfFather = 5,
+        /// <summary>
+        /// وفاة المشترك الطبيعية
+        /// </summary>
+        NaturalDeath = 6,
+        /// <summary>
+        /// وفاة المشترك الناجمة عن الخدمة
+        /// </summary>
+        ServiceDeath = 7,
+        /// <summary>
+        /// عجز كلي
+        /// </summary>
+        TotalDisability = 8,
+        /// <summary>
+        /// عجز جزئي
+        /// </summary>
+        PartialDisability = 9,
+        /// <summary>
+        /// أضرار مادية
+        /// </summary>
+        MaterialInjury = 10,
+        /// <summary>
+        /// نهاية خدمة
+        /// </summary>
+        EndOfService = 11,
+        /// <summary>
+        /// وفاة احد الوالدين (الأم)
+        /// </summary>
+        DeathOfMother = 12,
+        /// <summary>
+        /// ولادة حالة التوأم (الولد الثاني)
+        /// </summary>
+        TwinsSecondChild = 13
+    }
 
-	/// <summary>
-	/// حالة الكفيل
-	/// </summary>
-	public enum GuarantorStatusEnum
-	{
-		/// <summary>
-		/// Temporal
-		/// </summary>
-		Temporal = 0,
-		/// <summary>
-		/// جديد
-		/// </summary>
-		New = 1,
-		/// <summary>
-		/// قيد الدراسة
-		/// </summary>
-		UnderStudy = 2,
-		/// <summary>
-		/// مقبول
-		/// </summary>
-		Accepted = 3,
-		/// <summary>
-		/// مرفوض
-		/// </summary>
-		Rejected = 4,
-		/// <summary>
-		/// كفالة نشطة
-		/// </summary>
-		Active = 5,
-		/// <summary>
-		/// كفالة ملغاة
-		/// </summary>
-		Canceled = 6
-	}
+    /// <summary>
+    /// مجموعة أنواع الإعانات
+    /// </summary>
+    public enum GrantTypeGroupEnum
+    {
+        /// <summary>
+        /// أحوال مدنية
+        /// </summary>
+        Civil = 1,
+        /// <summary>
+        /// أضار مادية
+        /// </summary>
+        MaterialInjury = 2,
+        /// <summary>
+        /// ناجمة عن الخدمة
+        /// </summary>
+        ResultingFromService = 3,
+        /// <summary>
+        /// نهاية خدمة
+        /// </summary>
+        EndOfService = 4,
+        /// <summary>
+        /// وفاة طبيعة
+        /// </summary>
+        NaturalDeath = 5
+    }
 
-	/// <summary>
-	/// طريقة قبض التأمين
-	/// </summary>
-	public enum InsuranceTypeEnum
-	{
-		/// <summary>
-		/// نقداً
-		/// </summary>
-		Cash = 1,
-		/// <summary>
-		/// تحويل
-		/// </summary>
-		Transfer = 2
-	}
+    /// <summary>
+    /// حالة الكفيل
+    /// </summary>
+    public enum GuarantorStatusEnum
+    {
+        /// <summary>
+        /// Temporal
+        /// </summary>
+        Temporal = 0,
+        /// <summary>
+        /// جديد
+        /// </summary>
+        New = 1,
+        /// <summary>
+        /// قيد الدراسة
+        /// </summary>
+        UnderStudy = 2,
+        /// <summary>
+        /// مقبول
+        /// </summary>
+        Accepted = 3,
+        /// <summary>
+        /// مرفوض
+        /// </summary>
+        Rejected = 4,
+        /// <summary>
+        /// كفالة نشطة
+        /// </summary>
+        Active = 5,
+        /// <summary>
+        /// كفالة ملغاة
+        /// </summary>
+        Canceled = 6
+    }
 
-	/// <summary>
-	/// نوع قرار السلف
-	/// </summary>
-	public enum LoanDecisionTypeEnum
-	{
-		/// <summary>
-		/// عادي
-		/// </summary>
-		Normal = 1,
-		/// <summary>
-		/// نقل إلى مشرك آخر
-		/// </summary>
-		ChangeSubscriber = 2,
-		/// <summary>
-		/// نقل إلى فرع آخر
-		/// </summary>
-		OutgoingToOtherBranch = 3,
-		/// <summary>
-		/// نقل من فرع آخر
-		/// </summary>
-		IncommingFromOtherBranch = 4,
-		/// <summary>
-		/// نقل إلى كفيل
-		/// </summary>
-		ChangeToGuarantor = 5
-	}
+    /// <summary>
+    /// طريقة قبض التأمين
+    /// </summary>
+    public enum InsuranceTypeEnum
+    {
+        /// <summary>
+        /// نقداً
+        /// </summary>
+        Cash = 1,
+        /// <summary>
+        /// تحويل
+        /// </summary>
+        Transfer = 2
+    }
 
-	/// <summary>
-	/// حالة توليد بطاقة السلفة
-	/// </summary>
-	public enum LoanGenerationStatusEnum
-	{
-		/// <summary>
-		/// طلب سلفة
-		/// </summary>
-		LoanRequest = 0,
-		/// <summary>
-		/// أرصدة 2010
-		/// </summary>
-		BalanceOf2010 = 1,
-		/// <summary>
-		/// تحويل من فرع
-		/// </summary>
-		IncommingFromOtherBranch = 3,
-		/// <summary>
-		/// تحويل من موظف
-		/// </summary>
-		IncommingFromOtherSubscriber = 4,
-		/// <summary>
-		/// تحويل من مكفول
-		/// </summary>
-		IncommingFromGuarantee = 5
-	}
+    /// <summary>
+    /// نوع قرار السلف
+    /// </summary>
+    public enum LoanDecisionTypeEnum
+    {
+        /// <summary>
+        /// عادي
+        /// </summary>
+        Normal = 1,
+        /// <summary>
+        /// نقل إلى مشرك آخر
+        /// </summary>
+        ChangeSubscriber = 2,
+        /// <summary>
+        /// نقل إلى فرع آخر
+        /// </summary>
+        OutgoingToOtherBranch = 3,
+        /// <summary>
+        /// نقل من فرع آخر
+        /// </summary>
+        IncommingFromOtherBranch = 4,
+        /// <summary>
+        /// نقل إلى كفيل
+        /// </summary>
+        ChangeToGuarantor = 5
+    }
 
-	/// <summary>
-	/// حالة طلب الحصول على منتج
-	/// </summary>
-	public enum RequestStatusEnum
-	{
-		/// <summary>
-		/// قيد المعالجة
-		/// </summary>
-		New = 1,
-		/// <summary>
-		/// يحقق الشروط
-		/// </summary>
-		Valid = 2,
-		/// <summary>
-		/// قيد إعداد القرار
-		/// </summary>
-		Approved = 3,
-		/// <summary>
-		/// قيد إصدار القرار
-		/// </summary>
-		FinanciallyApproved = 4,
-		/// <summary>
-		/// منفذ
-		/// </summary>
-		Executed = 5,
-		/// <summary>
-		/// لا يحقق الشروط
-		/// </summary>
-		Invalid = 6,
-		/// <summary>
-		/// مستثنى من تحقيق الشروط
-		/// </summary>
-		ExcludedFromValidation = 7,
-		/// <summary>
-		/// ملغى
-		/// </summary>
-		Canceled = 8
-	}
+    /// <summary>
+    /// حالة توليد بطاقة السلفة
+    /// </summary>
+    public enum LoanGenerationStatusEnum
+    {
+        /// <summary>
+        /// طلب سلفة
+        /// </summary>
+        LoanRequest = 0,
+        /// <summary>
+        /// أرصدة 2010
+        /// </summary>
+        BalanceOf2010 = 1,
+        /// <summary>
+        /// تحويل من فرع
+        /// </summary>
+        IncommingFromOtherBranch = 3,
+        /// <summary>
+        /// تحويل من موظف
+        /// </summary>
+        IncommingFromOtherSubscriber = 4,
+        /// <summary>
+        /// تحويل من مكفول
+        /// </summary>
+        IncommingFromGuarantee = 5
+    }
+
+    /// <summary>
+    /// حالة طلب الحصول على منتج
+    /// </summary>
+    public enum RequestStatusEnum
+    {
+        /// <summary>
+        /// قيد المعالجة
+        /// </summary>
+        New = 1,
+        /// <summary>
+        /// يحقق الشروط
+        /// </summary>
+        Valid = 2,
+        /// <summary>
+        /// قيد إعداد القرار
+        /// </summary>
+        Approved = 3,
+        /// <summary>
+        /// قيد إصدار القرار
+        /// </summary>
+        FinanciallyApproved = 4,
+        /// <summary>
+        /// منفذ
+        /// </summary>
+        Executed = 5,
+        /// <summary>
+        /// لا يحقق الشروط
+        /// </summary>
+        Invalid = 6,
+        /// <summary>
+        /// مستثنى من تحقيق الشروط
+        /// </summary>
+        ExcludedFromValidation = 7,
+        /// <summary>
+        /// ملغى
+        /// </summary>
+        Canceled = 8
+    }
 
     /// <summary>
     /// حالة بطاقة السلفة

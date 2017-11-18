@@ -57,6 +57,7 @@
     <Compile Include="Exceptions\Exceptions.cs" />
     <Compile Include="GetCustom.cs" />
     <Compile Include="GetPage.cs" />
+    <Compile Include="LoanDecisionHelpers\LoanDecisionHelper.cs" />
     <Compile Include="Log\Db.cs" />
     <Compile Include="Log\ErrorHandler.cs" />
     <Compile Include="Log\Tables.cs" />

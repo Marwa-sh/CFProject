@@ -1,32 +1,407 @@
 ﻿@model Cf.ViewModels.ProductVwViewModel
 @using Cf.Services;
+@using Cf.Data;
 <div class="row">
     <div class="col-xs-12">
         <div class="card">
-            @*<div class="card-header">
-                <h4 class="card-title">@ViewBag.Action @ViewBag.ModuleName</h4>
-                <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
-                <div class="heading-elements">
-                    <ul class="list-inline mb-0">
-                        <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
-                        <li><a data-action="reload"><i class="icon-reload"></i></a></li>
-                        <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
-                    </ul>
-                </div>
-            </div>*@
             <div class="card-body collapse in">
                 <div class="card-block">
                     <form class="form">
-                        @Html.Partial("~/Views/Product/Details.cshtml", Model)
-                        @Html.Partial("~/Views/Request/Details.cshtml", Model)
 
-                        @Html.Partial("~/Views/LoanRequest/Details.cshtml", Model)
-                        @Html.Partial("~/Views/RefundableProduct/Details.cshtml", Model)
+                        <div class="form-body">
 
-                        
+                            <script>
+                                $(".AcceptGuarantor").click(function () {
+                                    var url = $(this).data("url");
+                                    var guarantor_id = $(this).data("id");
+                                    var parentElemnt = $(this).parent();
+                                    $.ajax({
+                                        type: "POST",
+                                        url: url,
+                                        data: '{id: "' + guarantor_id + '" }',
+                                        contentType: "application/json; charset=utf-8",
+                                        dataType: "html",
+                                        success: function (response) {
+                                            if (response == "Error") {
+                                                console.log(response);
+                                            }
+                                            else {
+                                                parentElemnt.html("" + response);
+                                            }
+
+                                        },
+                                        failure: function (response) {
+                                            alert(response.responseText);
+                                        },
+                                        error: function (response) {
+                                            alert(response.responseText);
+                                        }
+                                    });
+
+                                });
+                                $(".RejectGuarantor").click(function () {
+                                    var url = $(this).data("url");
+                                    var guarantor_id = $(this).data("id");
+                                    var parentElemnt = $(this).parent();
+                                    console.log("Elll: " + parentElemnt);
+                                    $.ajax({
+                                        type: "POST",
+                                        url: url,
+                                        data: '{id: "' + guarantor_id + '" }',
+                                        contentType: "application/json; charset=utf-8",
+                                        dataType: "html",
+                                        success: function (response) {
+
+                                            if (response == "Error") {
+                                                console.log(response);
+                                            }
+                                            else {
+                                                parentElemnt.html("" + response);
+                                            }
+                                        },
+                                        failure: function (response) {
+                                            alert(response.responseText);
+                                        },
+                                        error: function (response) {
+                                            alert(response.responseText);
+                                        }
+                                    });
+
+                                });
+                            </script>
+
+                            <ul class="nav nav-pills  ">
+
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="link-tab" data-toggle="tab" href="#Loan" aria-controls="link" aria-expanded="true">Loan</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " id="active-tab" data-toggle="tab" href="#Guarantors" aria-controls="active" aria-expanded="false">Guarantors</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content px-1 pt-1">
+                                <div role="tabpanel" class="tab-pane fade " id="Guarantors" aria-labelledby="active-tab" aria-expanded="false">
+
+
+                                    <table class="table table-bordered table-striped">
+
+                                        <tr>
+                                            @*<th>
+                                                    @Html.DisplayNameFor(model => model.RefundableProductVwViewModel.GuarantorVwViewModel.Instance.SubNumber)
+                                                </th>
+                                                <th>
+                                                    @Html.DisplayNameFor(model => model.RefundableProductVwViewModel.GuarantorVwViewModel.Instance.EmployeeId)
+                                                </th>*@
+                                            <th>
+                                                @*@Html.DisplayNameFor(model => model.RefundableProductVwViewModel.GuarantorVwViewModel.Instance.EmployeeFullName)*@
+                                            </th>
+                                            @*<th>
+                                                    @Html.DisplayNameFor(model => model.RefundableProductVwViewModel.GuarantorVwViewModel.Instance.EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
+                                                </th>
+                                                <th>
+                                                    @Html.DisplayNameFor(model => model.RefundableProductVwViewModel.GuarantorVwViewModel.Instance.EmployeeCategoryName)
+                                                </th>
+                                                <th>
+                                                    @Html.DisplayNameFor(model => model.RefundableProductVwViewModel.GuarantorVwViewModel.Instance.GuarantorStatusName)
+                                                </th>*@
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.RefundableProductVwViewModel.GuarantorVwViewModel.Instance.GuarantorStatementVw.DeductionsAmount)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.RefundableProductVwViewModel.GuarantorVwViewModel.Instance.GuarantorStatementVw.ExceptionalIncome)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.RefundableProductVwViewModel.GuarantorVwViewModel.Instance.GuarantorStatementVw.GrossSalary)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.RefundableProductVwViewModel.GuarantorVwViewModel.Instance.GuarantorStatementVw.NetSalary)
+                                            </th>
+                                            <th></th>
+                                        </tr>
+
+                                        @foreach (var item in Model.RefundableProductVwViewModel.GuarantorVwViewModel.List)
+                                        {
+                                            <tr>
+
+                                                @*<td>
+                                                        @Html.DisplayFor(modelItem => item.SubNumber)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.EmployeeId)
+                                                    </td>*@
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.EmployeeId)-@Html.DisplayFor(modelItem => item.EmployeeFullName)
+                                                </td>
+                                                @*<td>
+                                                        @Html.DisplayFor(modelItem => item.EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.EmployeeCategoryName)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.GuarantorStatusName)
+                                                    </td>*@
+                                                @{
+                                                    GuarantorStatement guarantorsStatement = GuarantorStatementServices.Get(item.Id);
+                                                }
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => guarantorsStatement.DeductionsAmount)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => guarantorsStatement.ExceptionalIncome)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => guarantorsStatement.GrossSalary)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => guarantorsStatement.NetSalary)
+                                                </td>
+                                                <td>
+                                                    @if (item.GuarantorStatusId == (int)GuarantorStatusEnum.New || item.GuarantorStatusId == (int)GuarantorStatusEnum.UnderStudy || item.GuarantorStatusId == (int)GuarantorStatusEnum.Temporal)
+                                                    {
+                                                        @*@if (ViewBag.RoleName == "FinantialEmployee")*@
+                                                        @*  {*@
+                                                        <div>
+                                                            <button type="button" class="btn btn-success AcceptGuarantor" data-url="@Url.Action("AcceptGuarantor")" data-id="@item.Id">
+                                                                <i class="icon-check-circle"></i>
+                                                            </button>
+                                                            <button type="button" class="btn btn-danger RejectGuarantor" data-url="@Url.Action("RejectGuarantor")" data-id="@item.Id">
+                                                                <i class="icon-times-circle"></i>
+                                                            </button>
+                                                        </div>
+                                                        @* }*@
+                                                    }
+                                                    else
+                                                    {
+                                                        int id = item.GuarantorStatusId;
+                                                        switch (id)
+                                                        {
+                                                            case 3:
+                                                                {
+                                                                    <div class='alert alert-success no-border mb-2' role='alert'>
+                                                                        <strong>
+                                                                            Accepted
+                                                                        </strong>
+                                                                    </div>
+                                                                    break;
+                                                                }
+                                                            case 4:
+                                                                {
+                                                                    <div class='alert alert-danger no-border mb-2' role='alert'>
+                                                                        <strong>
+                                                                            Rejected
+                                                                        </strong>
+                                                                    </div>
+                                                                    break;
+                                                                }
+                                                            default:
+                                                                <div class='alert alert-warning no-border mb-2' role='alert'>
+                                                                    <strong>
+                                                                        @item.GuarantorStatusName - @item.GuarantorStatusId
+                                                                    </strong>
+                                                                </div>
+                                                                break;
+                                                        }
+                                                    }
+
+
+                                                </td>
+                                            </tr>
+                                                    }
+                                    </table>
+
+
+                                </div>
+                                <div class="tab-pane fade active in " id="Loan" role="tabpanel" aria-labelledby="link-tab" aria-expanded="true">
+                                    <div class="row">
+
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                @*@Html.LabelFor(model => model.Instance.EmployeeId, htmlAttributes: new { @class = "control-label" })*@
+                                                @Html.LabelFor(model => model.Instance.EmployeeId, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Instance.EmployeeId)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                <input type="text" id="txtEmployeeId" class="form-control" value="@Html.DisplayFor(model => model.Instance.EmployeeId)" disabled />
+                                                <input type="hidden" name="Product.Id" id="txtProductId" class="form-control" value="@Html.DisplayFor(model => model.Instance.Id)" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                @*@Html.LabelFor(model => model.Instance.EmployeeFullName, htmlAttributes: new { @class = "control-label" })*@
+                                                @Html.LabelFor(model => model.Instance.EmployeeFullName, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Instance.EmployeeFullName)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                <input type="text" id="txtEmployeeFullName" class="form-control" value="@Html.DisplayFor(model => model.Instance.EmployeeFullName)" disabled />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                @*@Html.LabelFor(model => model.Instance.ProductTypeName, htmlAttributes: new { @class = "control-label" })*@
+                                                @Html.LabelFor(model => model.Instance.ProductTypeName, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Instance.ProductTypeName)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                <input type="text" id="txtProductTypeName" class="form-control" value="@Html.DisplayFor(model => model.Instance.ProductTypeName)" disabled />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                @*@Html.LabelFor(model => model.Instance.Amount, htmlAttributes: new { @class = "control-label" })*@
+                                                @Html.LabelFor(model => model.Instance.Amount, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Instance.Amount)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                <input type="text" id="txtAmount" class="form-control" value="@Html.DisplayFor(model => model.Instance.Amount)" disabled />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                @*@Html.LabelFor(model => model.Instance.Notes, htmlAttributes: new { @class = "control-label" })*@
+                                                @Html.LabelFor(model => model.RequestVwViewModel.Instance.Notes, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestVwViewModel.Instance.Notes)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                <input type="text" id="txtNotes" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.Instance.Notes)" disabled />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                @*@Html.LabelFor(model => model.Instance.Date, htmlAttributes: new { @class = "control-label" })*@
+                                                @Html.LabelFor(model => model.RequestVwViewModel.Instance.Attachment, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestVwViewModel.Instance.Attachment)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                <input type="text" id="txtAttachment" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.Instance.Attachment)" disabled />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                @*@Html.LabelFor(model => model.Instance.Date, htmlAttributes: new { @class = "control-label" })*@
+                                                @Html.LabelFor(model => model.RequestVwViewModel.Instance.Date, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestVwViewModel.Instance.Date)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                <input type="text" id="txtDate" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.Instance.Date)" disabled />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                @*@Html.LabelFor(model => model.Instance.Amount, htmlAttributes: new { @class = "control-label" })*@
+                                                @Html.LabelFor(model => model.RequestVwViewModel.Instance.Amount, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestVwViewModel.Instance.Amount)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                <input type="text" id="txtAmount" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.Instance.Amount)" disabled />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                @*@Html.LabelFor(model => model.Instance.NetIncome, htmlAttributes: new { @class = "control-label" })*@
+                                                @Html.LabelFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.NetIncome, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.NetIncome)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                <input type="text" id="txtNetIncome" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.NetIncome)" disabled />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                @*@Html.LabelFor(model => model.Instance.TotalDeduction, htmlAttributes: new { @class = "control-label" })*@
+                                                @Html.LabelFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.TotalDeduction, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.TotalDeduction)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                <input type="text" id="txtTotalDeduction" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.TotalDeduction)" disabled />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                @*@Html.LabelFor(model => model.Instance.PaymentPeriod, htmlAttributes: new { @class = "control-label" })*@
+                                                @Html.LabelFor(model => model.RefundableProductVwViewModel.Instance.PaymentPeriod, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RefundableProductVwViewModel.Instance.PaymentPeriod)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                <input type="text" id="txtPaymentPeriod" class="form-control" value="@Html.DisplayFor(model => model.RefundableProductVwViewModel.Instance.PaymentPeriod)" disabled />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                @*@Html.LabelFor(model => model.Instance.Installment, htmlAttributes: new { @class = "control-label" })*@
+                                                @Html.LabelFor(model => model.RefundableProductVwViewModel.Instance.Installment, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RefundableProductVwViewModel.Instance.Installment)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                <input type="text" id="txtInstallment" class="form-control" value="@Html.DisplayFor(model => model.RefundableProductVwViewModel.Instance.Installment)" disabled />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                @*@Html.LabelFor(model => model.Instance.NetAmount, htmlAttributes: new { @class = "control-label" })*@
+                                                @Html.LabelFor(model => model.RefundableProductVwViewModel.Instance.NetAmount, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RefundableProductVwViewModel.Instance.NetAmount)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                <input type="text" id="txtNetAmount" class="form-control" value="@Html.DisplayFor(model => model.RefundableProductVwViewModel.Instance.NetAmount)" disabled />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                @*@Html.LabelFor(model => model.Instance.ProfitAmount, htmlAttributes: new { @class = "control-label" })*@
+                                                @Html.LabelFor(model => model.RefundableProductVwViewModel.Instance.ProfitAmount, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RefundableProductVwViewModel.Instance.ProfitAmount)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                <input type="text" id="txtProfitAmount" class="form-control" value="@Html.DisplayFor(model => model.RefundableProductVwViewModel.Instance.ProfitAmount)" disabled />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+

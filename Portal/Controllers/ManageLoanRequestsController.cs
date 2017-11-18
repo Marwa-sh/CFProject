@@ -37,7 +37,7 @@ namespace Portal.Controllers
 
 
         public ManageLoanRequestsController()
-        {
+        {           
             ViewBag.ModuleName = moduleName;
             ViewBag.Action = details;
             ViewBag.Details = details;
@@ -46,7 +46,7 @@ namespace Portal.Controllers
             ViewBag.Insert = insert;
             ViewBag.Delete = delete;
             ViewBag.Title = index;
-             
+
             ViewBag.ConfirmDelete = confirmDelete;
             ViewBag.Yes = yes;
             ViewBag.No = no;
@@ -104,9 +104,9 @@ namespace Portal.Controllers
             //    default:
             //        break;
             //}
-            
 
-            ViewBag.DecisionType = 1;
+
+            ViewBag.DecisionType = (int)LoanDecisionTypeEnum.Normal;
 
             ViewBag.RoleName = roleName;
             LoanRequestVwViewModel vm = new LoanRequestVwViewModel();
@@ -114,17 +114,11 @@ namespace Portal.Controllers
             return View(vm);
         }
 
-        
+
         [HttpPost]
-        public ActionResult Details(int ? id)
+        public ActionResult Details(int? id)
         {
-            ViewBag.ModuleName = moduleName;
-            ViewBag.Action = details;
-            ViewBag.Details = details;
-            ViewBag.Update = update;
-            ViewBag.Back = back;
-            ViewBag.Insert = insert;
-            ViewBag.Delete = delete;
+           
 
             ViewBag.TitleGuarantor = TitleGuarantor;
             ViewBag.TitleExceptionalAount = TitleExceptionalAount;
@@ -144,10 +138,14 @@ namespace Portal.Controllers
             {
                 return HttpNotFound();
             }
+            productVwViewModel.RequestVwViewModel.Instance = RequestVwServices.Get(id.Value);
+            productVwViewModel.RequestVwViewModel.LoanRequestVwViewModel.Instance = LoanRequestVwServices.Get(id.Value);
+            productVwViewModel.RefundableProductVwViewModel.Instance = RefundableProductVwServices.Get(id.Value);
 
             List<GuarantorVw> Guarantors = GuarantorVwServices.GetByRefundableProductProductId(id.Value);
             productVwViewModel.RefundableProductVwViewModel.GuarantorVwViewModel.List = Guarantors;
 
+            //productVwViewModel.RefundableProductVwViewModel.GuarantorVwViewModel.Instance.GuarantorStatementVw=GuarantorStatementVwServices.
 
             productVwViewModel.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.List = ExceptionalAmountVwServices.GetByLoanRequestRequestProductId(id.Value);
 
@@ -168,14 +166,48 @@ namespace Portal.Controllers
         public ActionResult Validate(int? id)
         {
             if (id == null)
-            {               
+            {
                 return RedirectToAction("Index");
             }
+            try
+            {
+                Db db = new Db(DbServices.ConnectionString);
+                
+                LoanRequestVw request = LoanRequestVwServices.Get(id.Value);
+                RefundableProductVw refendable = RefundableProductVwServices.Get(id.Value);
+                int numOfGuarantorsNeeded = 0;
 
-            Request request = RequestServices.Get(id.Value);
-            request.RequestStatus =(int) RequestStatusEnum.Valid;
-            RequestServices.Update(request);
-             
+                EmployeeProductCalculatorFilter f = new EmployeeProductCalculatorFilter();
+                f.EmployeeId = request.RequestProductEmployeeId; f.ProductTypeId = (short)request.RequestProductProductTypeId;
+                f.Amount = (decimal)request.RequestAmount; f.Period = (short)refendable.PaymentPeriod;
+                List<EmployeeProductCalculatorResult> result = db.EmployeeProductCalculator(f);
+                if (result.Count > 0)
+                {
+                    numOfGuarantorsNeeded = result[0].GuarantorsCount.Value;
+                }
+
+                int numOfGuarantors = GuarantorVwServices.GetByRefundableProductProductId(id.Value).Count;
+                if (numOfGuarantors == numOfGuarantorsNeeded)
+                {                    
+                    Request r = RequestServices.Get(id.Value);
+                    r.RequestStatus = (int)RequestStatusEnum.Valid;
+                    RequestServices.Update(r);                    
+                }
+                else
+                {
+                    TempData["Failure"] = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "Guarantors", "NumberOfGuarantors");
+
+                }
+
+            }
+            catch (Exception e)
+            {
+                //EventLog eventLog = DbServices.Log(CurrentUser.Id, db, (int)EventCategoryEnum.Department, (int)EventSourceEnum.Department, (int)EventStatusEnum.Insert, new DepartmentVwXmlFormatter(instance), handler);
+                //if (eventLog != null)
+                //    throw DbServices.LogError(eventLog, ex, "Department", db);
+                //else
+                //    throw ex;
+            }
             return RedirectToAction("Index");
         }
 
@@ -183,7 +215,7 @@ namespace Portal.Controllers
         #region Reject
 
         public ActionResult Reject(int? id)
-        { 
+        {
             if (id == null)
             {
                 return RedirectToAction("Index");
@@ -205,10 +237,27 @@ namespace Portal.Controllers
             {
                 return RedirectToAction("Index");
             }
+            try
+            {
+                // 1- update loan reuest status
+                Request request = RequestServices.Get(id.Value);
+                request.RequestStatus = (int)RequestStatusEnum.Approved;
+                RequestServices.Update(request);
 
-            Request request = RequestServices.Get(id.Value);
-            request.RequestStatus = (int)RequestStatusEnum.Approved;
-            RequestServices.Update(request);
+                // 2- update guarantors status
+                List<Guarantor> Guarantors = GuarantorServices.GetByRefundableProduct(id.Value);
+                for (int i = 0; i < Guarantors.Count; i++)
+                {
+                    Guarantor temp = Guarantors[i];
+                    temp.GuarantorStatus =(int) GuarantorStatusEnum.UnderStudy;
+                    GuarantorServices.Update(temp);
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            
 
             return RedirectToAction("Index");
         }
@@ -217,7 +266,7 @@ namespace Portal.Controllers
 
         #region Exception
         public ActionResult Exception(int? id)
-        {            
+        {
             if (id == null)
             {
                 return RedirectToAction("Index");
@@ -248,6 +297,57 @@ namespace Portal.Controllers
             return RedirectToAction("Index");
         }
 
+
+        #endregion
+
+        #region Guaranntors Approve
+        [HttpPost]
+        public string AcceptGuarantor(int ? id)
+        {
+            string StartDivSuccess= "<div class='alert alert-success no-border mb-2' role='alert'><strong>";            
+            string EndDiv = "</strong></div> ";
+            try
+            {
+                if(id==null)
+                {
+                    return "Error";
+                }
+                Guarantor g = GuarantorServices.Get(id.Value);
+                g.GuarantorStatus =(int) GuarantorStatusEnum.Accepted;
+                GuarantorServices.Update(g);
+
+            }
+            catch(Exception ex)
+            {
+                return "Error";
+            }
+            return StartDivSuccess+ "Approved"+EndDiv;
+        }
+
+        #endregion
+        #region Guaranntors Reject
+        [HttpPost]
+        public string RejectGuarantor(int? id)
+        {
+            string StartDivReject = "<div class='alert alert-danger no-border mb-2' role='alert'><strong>";
+            string EndDiv = "</strong></div> ";
+            try
+            {
+                if (id == null)
+                {
+                    return "Error";
+                }
+                Guarantor g = GuarantorServices.Get(id.Value);
+                g.GuarantorStatus = (int)GuarantorStatusEnum.Rejected;
+                GuarantorServices.Update(g);
+
+            }
+            catch (Exception ex)
+            {
+                return "Error";
+            }
+            return StartDivReject + "Rejected" + EndDiv;
+        }
 
         #endregion
     }

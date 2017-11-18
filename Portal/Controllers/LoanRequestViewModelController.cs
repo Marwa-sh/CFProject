@@ -193,6 +193,16 @@ namespace Portal.Controllers
             //We need to customise the droplist for two options
             ViewBag.BypassStatusList = new SelectList(BypassStatusServices.List(db).Where((c => (c.Id == 0 || c.Id == 2))), "Id", "Name");
 
+            
+            EmployeeProductCalculatorFilter f = new EmployeeProductCalculatorFilter();
+            f.EmployeeId = product.Employee; f.ProductTypeId = (short)product.ProductType;
+            f.Amount = (decimal)request.Amount; f.Period = (short)refundableProduct.PaymentPeriod;
+            List<EmployeeProductCalculatorResult> result = db.EmployeeProductCalculator(f);
+            if(result.Count>0)
+            {
+                ViewBag.Calculations = result[0];
+            }
+
             LoanRequestViewModel vm = new LoanRequestViewModel();            
             vm.RequestProduct = product;
             vm.Request = request;
@@ -210,25 +220,35 @@ namespace Portal.Controllers
             {
                 try
                 {
+                    EmployeeProductCalculatorFilter f = new EmployeeProductCalculatorFilter();
+                    f.EmployeeId = model.RequestProduct.Employee; f.ProductTypeId = (short)model.RequestProduct.ProductType;
+                    f.Amount = (decimal)model.Request.Amount; f.Period = (short)model.RequestProductProductRefundableProduct.PaymentPeriod;
+                    List<EmployeeProductCalculatorResult> result = db.EmployeeProductCalculator(f);
+                    if (result.Count > 0)
+                    {
+                        model.RequestProductProductRefundableProduct.NetAmount = result[0].NetAmount.Value;
+                        model.RequestProductProductRefundableProduct.ProfitAmount = result[0].ProfitAmount.Value;
+                        model.RequestProductProductRefundableProduct.Installment = result[0].Installment.Value;
+                    }
                     // 1- Add Prouct
                     // set the Amount of the Produt the same as Request
-                    model.RequestProduct.Amount = model.Request.Amount;
-                    Product p = ProductServices.Insert(CurrentUser.Id, model.RequestProduct, db);
+                    //model.RequestProduct.Amount = model.Request.Amount;
+                    ProductServices.Update(CurrentUser.Id, model.RequestProduct, db);
                     ProductServices.Update(CurrentUser.Id, model.RequestProduct, db);
 
                     //2-Add Request                        
-                    model.Request.Product = p.Id;
-                    model.Request.RequestStatus = (int)RequestStatusEnum.New;
-                    model.Request.Cost = 5;
-                    Request r = RequestServices.Insert(CurrentUser.Id, model.Request, db);
+                    //model.Request.Product = model.RequestProduct.Id;
+                   // model.Request.RequestStatus = (int)RequestStatusEnum.New;
+                    //model.Request.Cost = 5;
+                    RequestServices.Update(CurrentUser.Id, model.Request, db);
 
                     //3-Add LoanRequest
-                    model.LoanRequest.Request = model.RequestProduct.Id;
+                    //model.LoanRequest.Request = model.RequestProduct.Id;
                     LoanRequestServices.Update(CurrentUser.Id, model.LoanRequest, db);
 
                     //4- Add RefundableProduct
 
-                    model.RequestProductProductRefundableProduct.Product = model.RequestProduct.Id;
+                    //model.RequestProductProductRefundableProduct.Product = model.RequestProduct.Id;
                     RefundableProductServices.Update(CurrentUser.Id, model.RequestProductProductRefundableProduct, db);
 
                     TempData["Success"] = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "UpdateConfirmed");
@@ -288,7 +308,11 @@ namespace Portal.Controllers
             {
                 return HttpNotFound();
             }
-            
+
+            productVwViewModel.RequestVwViewModel.Instance = RequestVwServices.Get(id.Value);
+            productVwViewModel.RequestVwViewModel.LoanRequestVwViewModel.Instance = LoanRequestVwServices.Get(id.Value);
+            productVwViewModel.RefundableProductVwViewModel.Instance = RefundableProductVwServices.Get(id.Value);
+
             List<GuarantorVw> Guarantors = GuarantorVwServices.GetByRefundableProductProductId(id.Value);
             productVwViewModel.RefundableProductVwViewModel.GuarantorVwViewModel.List = Guarantors;
 
@@ -465,7 +489,7 @@ namespace Portal.Controllers
                         model.GuarantorStatement.Guarantor = model.Guarantor.Id;
                         GuarantorStatementServices.Update(CurrentUser.Id, model.GuarantorStatement, db);
 
-                        TempData["Success"] = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "InsertConfirmed");
+                        TempData["Success"] = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "UpdateConfirmed");
                     }
                     catch (CfException cfex)
                     {
@@ -558,26 +582,7 @@ namespace Portal.Controllers
                     ViewBag.LoanRequestId = id;
                 }
                 ViewBag.ExceptionalAmountTypeList = new SelectList(ExceptionalAmountTypeServices.List(db), "Id", "Name" , Type);
-                switch (Type)
-                {
-                    case "ExceptionalDeduction":
-                        {
-                            ViewBag.Type = (int)ExceptionalAmountTypeEnum.ExceptionalDeduction;
-                            break;
-                        }
-                    case "ExceptionalIncome":
-                        {
-                            ViewBag.Type = (int)ExceptionalAmountTypeEnum.ExceptionalIncome;
-                            break;
-                        }
-                    case "NetDeduction":
-                        {
-                            ViewBag.Type = (int)ExceptionalAmountTypeEnum.NetDeduction;
-                            break;
-                        }
-                    default:
-                        break;
-                }
+                ViewBag.Type = Type;
                 
                 return PartialView();
             }

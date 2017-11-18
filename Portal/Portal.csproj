@@ -231,6 +231,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper.cs" />
+    <Compile Include="Helpers\LoanDecisionHelper.cs" />
     <Compile Include="MetaData\HtmlHelperExtensions\ToolTipHelper.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1588,6 +1589,8 @@
     <Folder Include="Areas\Cf\Controllers\" />
     <Folder Include="Areas\Cf\Models\" />
     <Folder Include="Areas\Cf\Views\Shared\" />
+    <Folder Include="Areas\Grants\" />
+    <Folder Include="Areas\Loans\" />
     <Folder Include="Areas\Log\Controllers\" />
     <Folder Include="Areas\Log\Models\" />
     <Folder Include="Areas\Log\Views\Shared\" />

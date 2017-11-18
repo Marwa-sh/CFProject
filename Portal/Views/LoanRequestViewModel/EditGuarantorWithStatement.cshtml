@@ -14,21 +14,13 @@
                             <div class="form-body">
                                 <div class="row">
 
-                                    @*<div class="col-md-4">
-                                        <div class="form-group">
-                                            
-                                            @Html.LabelFor(model => model.Guarantor.SubNumber, new Dictionary<string, Object>
-                                                { { "class", "control-label" },
-                                                  {"title", Html.ToolTipMessageFor(model => model.Guarantor.SubNumber)},
-                                                  {"data-toggle", "tooltip"},
-                                                  {"data-placement", "bottom"}
-                                                })
-                                            @Html.EditorFor(model => model.Guarantor.SubNumber, new { htmlAttributes = new { @class = "form-control" } })
-                                            @Html.ValidationMessageFor(model => model.Guarantor.SubNumber, "", new { @class = "text-danger" })
-                                            <input type="hidden" name="Guarantor.Id" id="txtId" class="form-control" value="@Model.Guarantor.Id" />
-                                            <input type="hidden" name="Guarantor.RefundableProduct" id="txtProductId" class="form-control" value="@Model.Guarantor.RefundableProduct" />
-                                        </div>
-                                    </div>*@
+                                    <input type="hidden" name="Guarantor.Id" id="txtGuarantorId" class="form-control" value="@Html.DisplayFor(model => model.Guarantor.Id)" />
+                                    <input type="hidden" name="Guarantor.RefundableProduct" id="txtRefundableProduct" class="form-control" value="@Html.DisplayFor(model => model.Guarantor.RefundableProduct)" />
+                                    <input type="hidden" name="Guarantor.SubNumber" id="txtSubNumber" class="form-control" value="@Html.DisplayFor(model => model.Guarantor.SubNumber)" />
+
+                                    <input type="hidden" name="GuarantorStatement.Guarantor" id="txtGuarantor" class="form-control" value="@Html.DisplayFor(model => model.GuarantorStatement.Guarantor)" />
+
+
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             @*@Html.LabelFor(model => model.Employee, htmlAttributes: new { @class = "control-label" })*@
@@ -38,8 +30,8 @@
                                                   {"data-toggle", "tooltip"},
                                                   {"data-placement", "bottom"}
                                                 })
-                                            @Html.DropDownListFor(model => model.Guarantor.Employee, (SelectList)@ViewBag.EmployeeList, htmlAttributes: new { @class = "form-control" })
-                                            @Html.ValidationMessageFor(model => model.Guarantor.Employee, "", new { @class = "text-danger" })
+
+                                            <input type="text" id="txtEmployeeId" class="form-control" value="@Html.DisplayFor(model => model.Guarantor.Employee)" disabled />
                                         </div>
                                     </div>
                                     <div class="col-md-4">

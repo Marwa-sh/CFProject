@@ -29,7 +29,7 @@
                             @Html.Partial("~/Views/RefundableProduct/Create.cshtml", Model)
                         *@
                         <div class="form-body">
-                            
+
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="form-group">
@@ -92,14 +92,7 @@
                                 </div>
                             </div>
 
-                            @*<div class="row">
-                                <div class="col-sm-5"></div>
-                                <div class="col-sm-2">
-                                    
-                                </div>
-                                <div class="col-sm-5"></div>
-
-                            </div>*@
+                            
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="form-group">
@@ -124,20 +117,8 @@
                                         @Html.EditorFor(model => model.LoanRequest.NetIncome, new { htmlAttributes = new { @class = "form-control" } })
                                         @Html.ValidationMessageFor(model => model.LoanRequest.NetIncome, "", new { @class = "text-danger" })
                                     </div>
-                                </div>
-                                @*<div class="col-md-3">
-                                    <div class="form-group">
-                                        @Html.LabelFor(model => model.Request.BypassStatus, new Dictionary<string, Object>
-                                                { { "class", "control-label" },
-                                                  {"title", Html.ToolTipMessageFor(model => model.Request.BypassStatus)},
-                                                  {"data-toggle", "tooltip"},
-                                                  {"data-placement", "bottom"}
-                                                })
-                                        @Html.DropDownListFor(model => model.Request.BypassStatus, (SelectList)@ViewBag.BypassStatusList, htmlAttributes: new { @class = "form-control" })
-                                        @Html.ValidationMessageFor(model => model.Request.BypassStatus, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>*@
-                                <div class="col-md-3">
+                                </div>                               
+                                <div class="col-md-2">
                                     <div class="form-group">
                                         @Html.LabelFor(model => model.Request.Date, new Dictionary<string, Object>
                                                 { { "class", "control-label" },
@@ -149,10 +130,25 @@
                                         @Html.ValidationMessageFor(model => model.Request.Date, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Request.Attachment, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Request.Attachment)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        @Html.EditorFor(model => model.Request.Attachment, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Request.Attachment, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+
+                                </div>
                             </div>
-                            
+
                             <div class="row">
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <div class="form-group">
                                         @Html.LabelFor(model => model.Request.Notes, new Dictionary<string, Object>
                                                 { { "class", "control-label" },
@@ -165,115 +161,160 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        @Html.LabelFor(model => model.Request.Attachment, new Dictionary<string, Object>
-                                                { { "class", "control-label" },
-                                                  {"title", Html.ToolTipMessageFor(model => model.Request.Attachment)},
-                                                  {"data-toggle", "tooltip"},
-                                                  {"data-placement", "bottom"}
-                                                })
-                                        @Html.EditorFor(model => model.Request.Attachment, new { htmlAttributes = new { @class = "form-control" } })
-                                        @Html.ValidationMessageFor(model => model.Request.Attachment, "", new { @class = "text-danger" })
+                               
+                            </div>
+ 
+                            <ul class="nav nav-pills  ">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="active-tab" data-toggle="tab" href="#Employee" aria-controls="active" aria-expanded="false">Employee</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " id="link-tab" data-toggle="tab" href="#Loan" aria-controls="link" aria-expanded="true">Loan</a>
+                                </li>                                
+                            </ul>
+                            <div class="tab-content px-1 pt-1">
+                                <div role="tabpanel" class="tab-pane fade active in" id="Employee" aria-labelledby="active-tab" aria-expanded="false">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="form-control-label" name="DepartmentNameFor">DepartmentName</label>
+                                                <input disabled id="DepartmentName" class="form-control" name="DepartmentName" />
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="form-control-label" name="DepartmentSalaryWorkPlaceNameFor">DepartmentSalaryWorkPlaceName</label>
+                                                <input disabled id="DepartmentSalaryWorkPlaceName" class="form-control" name="DepartmentSalaryWorkPlaceName" />
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="form-control-label" name="EmployeeStatusNameFor">EmployeeStatusName</label>
+                                                <input disabled id="EmployeeStatusName" class="form-control" name="EmployeeStatusName" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="form-control-label" name="CategoryNameFor">CategoryName</label>
+                                                <input disabled id="CategoryName" class="form-control" name="CategoryName" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="form-control-label" name="SeniorityFor">Seniority</label>
+                                                <input disabled id="Seniority" class="form-control" name="Seniority" />
+                                                @*<label id="Seniority" name="Seniority"></label>*@
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="form-control-label" name="MinSeniorityFor">MinSeniority</label>
+                                                <input disabled id="MinSeniority" class="form-control" name="MinSeniority" />
+                                                @*<label id="MinSeniority" name="MinSeniority"></label>*@
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="form-control-label" name="MinReusePeriodFor">MinReusePeriod</label>
+                                                <input disabled id="MinReusePeriod" class="form-control" name="MinReusePeriod" />
+                                                @*<label id="MinReusePeriod" name="MinReusePeriod"></label>*@
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="form-control-label" name="CersStartDateFor">CersStartDate</label>
+                                                <input disabled id="CersStartDate" class="form-control" name="CersStartDate" />
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="form-control-label" name="CfStartDateFor">CfStartDate</label>
+                                                <input disabled id="CfStartDate" class="form-control" name="CfStartDate" />                                               
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="form-control-label" name="LeaveDateFor">LeaveDate</label>
+                                                <input disabled id="LeaveDate" class="form-control" name="LeaveDate" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="form-control-label" name="LeaveReasonFor">LeaveReason</label>
+                                                <input disabled id="LeaveReason" class="form-control" name="LeaveReason" />
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                   
+                                </div>
+                                <div class="tab-pane fade " id="Loan" role="tabpanel" aria-labelledby="link-tab" aria-expanded="true">
+                                    
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="form-control-label" name="InstallmentFor">Installment</label>
+                                                <input disabled id="Installment" class="form-control" name="Installment" />
+                                                @*<label id="Installment" name="Installment"></label>*@
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="form-control-label" name="NetAmountFor">NetAmount</label>
+                                                <input disabled id="NetAmount" class="form-control" name="NetAmount" />
+                                                @*<label id="NetAmount" name="NetAmount"></label>*@
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="form-control-label" name="ProfitAmountFor">ProfitAmount</label>
+                                                <input disabled id="ProfitAmount" class="form-control" name="ProfitAmount" />
+                                                @*<label id="ProfitAmount" name="ProfitAmount"></label>*@
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="form-control-label" name="MaxAmountFor">MaxAmount</label>
+                                                <input disabled id="MaxAmount" class="form-control" name="MaxAmount" />
+                                                @*<label id="MaxAmount" name="MaxAmount"></label>*@
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="form-control-label" name="GuarantorsCountFor">GuarantorsCount</label>
+                                                <input disabled id="GuarantorsCount" class="form-control" name="GuarantorsCount" />
+                                                @*<label id="GuarantorsCount" name="GuarantorsCount"></label>*@
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label class="form-control-label" name="RateFor">Rate</label>
+                                                <input disabled id="Rate" class="form-control" name="Rate" />
+                                                @*<label id="Rate" name="Rate"></label>*@
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                                 
                             </div>
 
-                            <div class="row">
-                                <div class="col-md-3">
-                                </div>
-                                <div class="col-md-3">
-                                </div>
-                                <div class="col-md-3">
-                                </div>
-                                
-                            </div>
-
-
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="form-control-label" name="InstallmentFor">Installment</label>
-                                        <input disabled id="Installment" class="form-control" name="Installment" />
-                                        @*<label id="Installment" name="Installment"></label>*@
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="form-control-label" name="NetAmountFor">NetAmount</label>
-                                        <input disabled id="NetAmount" class="form-control" name="NetAmount" />
-                                        @*<label id="NetAmount" name="NetAmount"></label>*@
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="form-control-label" name="ProfitAmountFor">ProfitAmount</label>
-                                        <input disabled id="ProfitAmount" class="form-control" name="ProfitAmount" />
-                                        @*<label id="ProfitAmount" name="ProfitAmount"></label>*@
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="form-control-label" name="MaxAmountFor">MaxAmount</label>
-                                        <input disabled id="MaxAmount" class="form-control" name="MaxAmount" />
-                                        @*<label id="MaxAmount" name="MaxAmount"></label>*@
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="row">
-
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="form-control-label" name="SeniorityFor">Seniority</label>
-                                        <input disabled id="Seniority" class="form-control" name="Seniority" />
-                                        @*<label id="Seniority" name="Seniority"></label>*@
-                                    </div>
-
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="form-control-label" name="MinSeniorityFor">MinSeniority</label>
-                                        <input disabled id="MinSeniority" class="form-control" name="MinSeniority" />
-                                        @*<label id="MinSeniority" name="MinSeniority"></label>*@
-                                    </div>
-
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="form-control-label" name="MinReusePeriodFor">MinReusePeriod</label>
-                                        <input disabled id="MinReusePeriod" class="form-control" name="MinReusePeriod" />
-                                        @*<label id="MinReusePeriod" name="MinReusePeriod"></label>*@
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="form-control-label" name="GuarantorsCountFor">GuarantorsCount</label>
-                                        <input disabled id="GuarantorsCount" class="form-control" name="GuarantorsCount" />
-                                        @*<label id="GuarantorsCount" name="GuarantorsCount"></label>*@
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="form-control-label" name="RateFor">Rate</label>
-                                        <input disabled id="Rate" class="form-control" name="Rate" />
-                                        @*<label id="Rate" name="Rate"></label>*@
-                                    </div>
-                                </div>
-                            </div>
-
-
+                             
 
                         </div>
-
-
-
-                        
 
                         <br />
                         <button type="submit" class="btn btn-primary mr-1">
@@ -297,7 +338,7 @@
     @Scripts.Render("~/bundles/jqueryval")
     <script>
         $(document).ready(function () {
-            
+
             $(window).keydown(function (e) {
                 if (e.keyCode == 13) {
                     $('#discover').click();
@@ -313,17 +354,16 @@
                 var productId = $("#RequestProduct_ProductType").val();
                 var employeeId = $("#RequestProduct_Employee").val();
                 var amount = $("#Request_Amount").val();
-                var period=$("#RequestProductProductRefundableProduct_PaymentPeriod").val();
+                var period = $("#RequestProductProductRefundableProduct_PaymentPeriod").val();
 
-                if (productId == '' || employeeId == '' || amount == '' || period == '')
-                {
+                if (productId == '' || employeeId == '' || amount == '' || period == '') {
                     swal("", "الحقول التالية مطلوبة: اسم الموظف، نوع السلفة، المبلغ والمدة", "error");
                 }
                 else {
                     $.ajax({
                         type: "POST",
                         url: '@Url.Action( "Calculate", "LoanRequestViewModel")',// "/LoanRequestViewModel/Calculate",
-                        data: '{employeeId: ' + $("#RequestProduct_Employee").val() + ', productTypeId:' + $("#RequestProduct_ProductType").val() + ',amount: ' + $("#Request_Amount").val() + ',period: ' + $("#RequestProductProductRefundableProduct_PaymentPeriod").val() + '}'
+                        data: '{employeeId: ' + employeeId + ', productTypeId:' + productId + ',amount: ' + amount + ',period: ' + period + '}'
                    ,
                         contentType: "application/json; charset=utf-8",
                         dataType: "json",
@@ -331,18 +371,34 @@
                             for (var i = 0; i < response.length; i++) {
                                 var temp = response[i];
 
-                                //$("#EmployeeIdlbl").text(temp.EmployeeId);
+                                // Employee Info
                                 $("#MaxAmount").val(temp.MaxAmount);
                                 $("#Seniority").val(temp.Seniority);
                                 $("#MinSeniority").val(temp.MinSeniority);
-                                $("#MinReusePeriod").val(temp.MinReusePeriod);
-                                //$("#ProductTypeIdlbl").text(temp.ProductTypeId);
-                                //$("#Amountlbl").text(temp.Amount);
-                                $("#Rate").val(temp.Rate);
-                                $("#GuarantorsCount").val(temp.GuarantorsCount);
+                                $("#MinReusePeriod").val(temp.MinReusePeriod); 
+                                $("#CersStartDate").val(new Date(parseInt(temp.CersStartDate.substr(6))));
+                                $("#CfStartDate").val(new Date(parseInt(temp.CfStartDate.substr(6))));
+                                $("#LeaveDate").val(temp.LeaveDate);
+                                $("#LeaveReason").val(temp.LeaveReason);
+                                $("#DepartmentName").val(temp.DepartmentName);
+                                $("#DepartmentSalaryWorkPlaceName").val(temp.DepartmentSalaryWorkPlaceName);
+                                $("#EmployeeStatusName").val(temp.EmployeeStatusName); 
+                                $("#CategoryName").val(temp.CategoryName);
+
+                                // Loan Info
                                 $("#Installment").val(temp.Installment);
                                 $("#NetAmount").val(temp.NetAmount);
                                 $("#ProfitAmount").val(temp.ProfitAmount);
+                                $("#Rate").val(temp.Rate);
+                                $("#GuarantorsCount").val(temp.GuarantorsCount);
+
+                                var date = new Date(parseInt(temp.CersStartDate.substr(6)));
+                              
+                                console.log(date);
+                                
+                                //$("#ProductTypeIdlbl").text(temp.ProductTypeId);
+                                //$("#Amountlbl").text(temp.Amount);
+                                
 
                             }
 
@@ -387,7 +443,7 @@
 
                     this.element.hide();
                     this._createAutocomplete();
-                    this._createShowAllButton();
+                    //this._createShowAllButton();
                 },
 
                 _createAutocomplete: function () {
@@ -419,40 +475,7 @@
                         autocompletechange: "_removeIfInvalid"
                     });
                 },
-
-                //_createShowAllButton: function () {
-                //    var input = this.input,
-                //      wasOpen = false;
-
-                //    $("<a>")
-                //      .attr("tabIndex", -1)
-                //      .tooltip()
-
-                //      .appendTo(this.wrapper)
-                //      .button({
-                //          icons: {
-                //              primary: "ui-icon-triangle-1-s"
-                //          },
-                //          text: false
-                //      })
-                //      .removeClass("ui-corner-all")
-                //      .addClass("custom-combobox-toggle ui-corner-right")
-                //      .mousedown(function () {
-                //          wasOpen = input.autocomplete("widget").is(":visible");
-                //      })
-                //      .click(function () {
-                //          input.focus();
-
-                //          // Close if already visible
-                //          if (wasOpen) {
-                //              return;
-                //          }
-
-                //          // Pass empty string as value to search for, displaying all results
-                //          input.autocomplete("search", "");
-                //      });
-                //},
-
+                 
                 _source: function (request, response) {
                     var matcher = new RegExp($.ui.autocomplete.escapeRegex(request.term), "i");
                     response(this.element.children("option").map(function () {

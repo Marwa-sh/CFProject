@@ -45,7 +45,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<EmployeeProductCalculatorResult> EmployeeProductCalculator(EmployeeProductCalculatorFilter filterInstance)
 		{
-			IQueryable<EmployeeProductCalculatorResult> list = _EmployeeProductCalculator(filterInstance.EmployeeId, filterInstance.ProductTypeId, filterInstance.Amount, filterInstance.Period);
+			IQueryable<EmployeeProductCalculatorResult> list = _EmployeeProductCalculator(filterInstance.EmployeeId, filterInstance.ProductTypeId, filterInstance.Amount, filterInstance.Period);            
             return list.ToList<EmployeeProductCalculatorResult>();
 		}
 		#endregion

@@ -614,7 +614,7 @@ namespace Cf.ViewModels
 		/// <summary>
         /// An instance of GrantRequest
 		/// </summary>
-		public GrantRequest GrantRequest = new GrantRequest();
+		public GrantRequest GrantRequest { get; set; } = new GrantRequest();
 
 
 		/// <summary>

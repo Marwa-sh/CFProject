@@ -1,0 +1,821 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0956CB9F-3092-437C-B822-7BABB4C5C27F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TestCfDesktop</RootNamespace>
+    <AssemblyName>TestCfDesktop</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EbridgeControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\EbridgeControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Guifreaks.Common, Version=0.1.0.0, Culture=neutral, PublicKeyToken=c3c25e41a6abca42, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\Guifreaks.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Guifreaks.NavigationBar, Version=0.1.0.0, Culture=neutral, PublicKeyToken=bf0afd6b35ed9434, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\Guifreaks.NavigationBar.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CfDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CfDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WindowsForms\AvailabilityCeiling\FormAvailabilityCeilingView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\AvailabilityCeiling\FormAvailabilityCeilingView.Designer.cs">
+      <DependentUpon>FormAvailabilityCeilingView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\Availability\FormAvailabilityView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\Availability\FormAvailabilityView.Designer.cs">
+      <DependentUpon>FormAvailabilityView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\BypassStatus\FormBypassStatusView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\BypassStatus\FormBypassStatusView.Designer.cs">
+      <DependentUpon>FormBypassStatusView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\CashPayment\FormCashPaymentView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\CashPayment\FormCashPaymentView.Designer.cs">
+      <DependentUpon>FormCashPaymentView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\Category\FormCategoryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\Category\FormCategoryView.Designer.cs">
+      <DependentUpon>FormCategoryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\CollectOrder\FormCollectOrderView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\CollectOrder\FormCollectOrderView.Designer.cs">
+      <DependentUpon>FormCollectOrderView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\Debt\FormDebtView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\Debt\FormDebtView.Designer.cs">
+      <DependentUpon>FormDebtView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\Department\FormDepartmentView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\Department\FormDepartmentView.Designer.cs">
+      <DependentUpon>FormDepartmentView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\DownPayment\FormDownPaymentView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\DownPayment\FormDownPaymentView.Designer.cs">
+      <DependentUpon>FormDownPaymentView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\EmployeeSeniority\FormEmployeeSeniorityView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\EmployeeSeniority\FormEmployeeSeniorityView.Designer.cs">
+      <DependentUpon>FormEmployeeSeniorityView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\EmployeeStatus\FormEmployeeStatusView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\EmployeeStatus\FormEmployeeStatusView.Designer.cs">
+      <DependentUpon>FormEmployeeStatusView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\Employee\FormEmployeeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\Employee\FormEmployeeView.Designer.cs">
+      <DependentUpon>FormEmployeeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\EndWorkGrantBracket\FormEndWorkGrantBracketView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\EndWorkGrantBracket\FormEndWorkGrantBracketView.Designer.cs">
+      <DependentUpon>FormEndWorkGrantBracketView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\ErrorDefinition\FormErrorDefinitionView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\ErrorDefinition\FormErrorDefinitionView.Designer.cs">
+      <DependentUpon>FormErrorDefinitionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\EventCategory\FormEventCategoryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\EventCategory\FormEventCategoryView.Designer.cs">
+      <DependentUpon>FormEventCategoryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\EventLogError\FormEventLogErrorView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\EventLogError\FormEventLogErrorView.Designer.cs">
+      <DependentUpon>FormEventLogErrorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\EventLog\FormEventLogView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\EventLog\FormEventLogView.Designer.cs">
+      <DependentUpon>FormEventLogView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\EventSource\FormEventSourceView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\EventSource\FormEventSourceView.Designer.cs">
+      <DependentUpon>FormEventSourceView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\EventStatus\FormEventStatusView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\EventStatus\FormEventStatusView.Designer.cs">
+      <DependentUpon>FormEventStatusView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\ExceptionalAmountType\FormExceptionalAmountTypeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\ExceptionalAmountType\FormExceptionalAmountTypeView.Designer.cs">
+      <DependentUpon>FormExceptionalAmountTypeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\ExceptionalAmount\FormExceptionalAmountView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\ExceptionalAmount\FormExceptionalAmountView.Designer.cs">
+      <DependentUpon>FormExceptionalAmountView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\ExternalGrant\FormExternalGrantView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\ExternalGrant\FormExternalGrantView.Designer.cs">
+      <DependentUpon>FormExternalGrantView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\GrantDecision\FormGrantDecisionView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\GrantDecision\FormGrantDecisionView.Designer.cs">
+      <DependentUpon>FormGrantDecisionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\GrantDeduction\FormGrantDeductionView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\GrantDeduction\FormGrantDeductionView.Designer.cs">
+      <DependentUpon>FormGrantDeductionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\GrantPaymentOrder\FormGrantPaymentOrderView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\GrantPaymentOrder\FormGrantPaymentOrderView.Designer.cs">
+      <DependentUpon>FormGrantPaymentOrderView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\GrantPayment\FormGrantPaymentView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\GrantPayment\FormGrantPaymentView.Designer.cs">
+      <DependentUpon>FormGrantPaymentView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\GrantRequest\FormGrantRequestView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\GrantRequest\FormGrantRequestView.Designer.cs">
+      <DependentUpon>FormGrantRequestView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\GrantTypeGroup\FormGrantTypeGroupView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\GrantTypeGroup\FormGrantTypeGroupView.Designer.cs">
+      <DependentUpon>FormGrantTypeGroupView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\GrantType\FormGrantTypeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\GrantType\FormGrantTypeView.Designer.cs">
+      <DependentUpon>FormGrantTypeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\Grant\FormGrantView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\Grant\FormGrantView.Designer.cs">
+      <DependentUpon>FormGrantView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\GuarantorStatement\FormGuarantorStatementView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\GuarantorStatement\FormGuarantorStatementView.Designer.cs">
+      <DependentUpon>FormGuarantorStatementView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\GuarantorStatus\FormGuarantorStatusView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\GuarantorStatus\FormGuarantorStatusView.Designer.cs">
+      <DependentUpon>FormGuarantorStatusView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\Guarantor\FormGuarantorView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\Guarantor\FormGuarantorView.Designer.cs">
+      <DependentUpon>FormGuarantorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\HealthLoanDecisionFirstPayment\FormHealthLoanDecisionFirstPaymentView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\HealthLoanDecisionFirstPayment\FormHealthLoanDecisionFirstPaymentView.Designer.cs">
+      <DependentUpon>FormHealthLoanDecisionFirstPaymentView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\HealthLoanDecision\FormHealthLoanDecisionView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\HealthLoanDecision\FormHealthLoanDecisionView.Designer.cs">
+      <DependentUpon>FormHealthLoanDecisionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\IncomingLoan\FormIncomingLoanView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\IncomingLoan\FormIncomingLoanView.Designer.cs">
+      <DependentUpon>FormIncomingLoanView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\InstallmentDecreaseOrder\FormInstallmentDecreaseOrderView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\InstallmentDecreaseOrder\FormInstallmentDecreaseOrderView.Designer.cs">
+      <DependentUpon>FormInstallmentDecreaseOrderView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\InstallmentDecrease\FormInstallmentDecreaseView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\InstallmentDecrease\FormInstallmentDecreaseView.Designer.cs">
+      <DependentUpon>FormInstallmentDecreaseView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\Installment\FormInstallmentView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\Installment\FormInstallmentView.Designer.cs">
+      <DependentUpon>FormInstallmentView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\InsuranceType\FormInsuranceTypeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\InsuranceType\FormInsuranceTypeView.Designer.cs">
+      <DependentUpon>FormInsuranceTypeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\Issuer\FormIssuerView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\Issuer\FormIssuerView.Designer.cs">
+      <DependentUpon>FormIssuerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\LoanChange\FormLoanChangeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\LoanChange\FormLoanChangeView.Designer.cs">
+      <DependentUpon>FormLoanChangeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\LoanDecisionType\FormLoanDecisionTypeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\LoanDecisionType\FormLoanDecisionTypeView.Designer.cs">
+      <DependentUpon>FormLoanDecisionTypeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\LoanDecision\FormLoanDecisionView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\LoanDecision\FormLoanDecisionView.Designer.cs">
+      <DependentUpon>FormLoanDecisionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\LoanGenerationStatus\FormLoanGenerationStatusView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\LoanGenerationStatus\FormLoanGenerationStatusView.Designer.cs">
+      <DependentUpon>FormLoanGenerationStatusView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\LoanRequest\FormLoanRequestView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\LoanRequest\FormLoanRequestView.Designer.cs">
+      <DependentUpon>FormLoanRequestView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\LoanStatus\FormLoanStatusView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\LoanStatus\FormLoanStatusView.Designer.cs">
+      <DependentUpon>FormLoanStatusView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\LoanTypeClosure\FormLoanTypeClosureView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\LoanTypeClosure\FormLoanTypeClosureView.Designer.cs">
+      <DependentUpon>FormLoanTypeClosureView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\LoanType\FormLoanTypeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\LoanType\FormLoanTypeView.Designer.cs">
+      <DependentUpon>FormLoanTypeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\Loan\FormLoanView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\Loan\FormLoanView.Designer.cs">
+      <DependentUpon>FormLoanView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\MainWorkPlace\FormMainWorkPlaceView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\MainWorkPlace\FormMainWorkPlaceView.Designer.cs">
+      <DependentUpon>FormMainWorkPlaceView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\MissingInstallmentDecrease\FormMissingInstallmentDecreaseView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\MissingInstallmentDecrease\FormMissingInstallmentDecreaseView.Designer.cs">
+      <DependentUpon>FormMissingInstallmentDecreaseView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\MonthlyBalance\FormMonthlyBalanceView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\MonthlyBalance\FormMonthlyBalanceView.Designer.cs">
+      <DependentUpon>FormMonthlyBalanceView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\OutgoingLoan\FormOutgoingLoanView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\OutgoingLoan\FormOutgoingLoanView.Designer.cs">
+      <DependentUpon>FormOutgoingLoanView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\PaymentGroup\FormPaymentGroupView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\PaymentGroup\FormPaymentGroupView.Designer.cs">
+      <DependentUpon>FormPaymentGroupView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\PaymentStatus\FormPaymentStatusView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\PaymentStatus\FormPaymentStatusView.Designer.cs">
+      <DependentUpon>FormPaymentStatusView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\Payment\FormPaymentView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\Payment\FormPaymentView.Designer.cs">
+      <DependentUpon>FormPaymentView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\PayOrder\FormPayOrderView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\PayOrder\FormPayOrderView.Designer.cs">
+      <DependentUpon>FormPayOrderView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\ProductTypeAvailability\FormProductTypeAvailabilityView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\ProductTypeAvailability\FormProductTypeAvailabilityView.Designer.cs">
+      <DependentUpon>FormProductTypeAvailabilityView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\ProductType\FormProductTypeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\ProductType\FormProductTypeView.Designer.cs">
+      <DependentUpon>FormProductTypeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\Product\FormProductView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\Product\FormProductView.Designer.cs">
+      <DependentUpon>FormProductView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\Profile\FormProfileView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\Profile\FormProfileView.Designer.cs">
+      <DependentUpon>FormProfileView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\ProfitStrategy\FormProfitStrategyView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\ProfitStrategy\FormProfitStrategyView.Designer.cs">
+      <DependentUpon>FormProfitStrategyView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\RefundableProduct\FormRefundableProductView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\RefundableProduct\FormRefundableProductView.Designer.cs">
+      <DependentUpon>FormRefundableProductView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\RequestStatus\FormRequestStatusView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\RequestStatus\FormRequestStatusView.Designer.cs">
+      <DependentUpon>FormRequestStatusView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\Request\FormRequestView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\Request\FormRequestView.Designer.cs">
+      <DependentUpon>FormRequestView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\Resource\FormResourceView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\Resource\FormResourceView.Designer.cs">
+      <DependentUpon>FormResourceView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\SalaryPayment\FormSalaryPaymentView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\SalaryPayment\FormSalaryPaymentView.Designer.cs">
+      <DependentUpon>FormSalaryPaymentView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\SalaryWorkPlace\FormSalaryWorkPlaceView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\SalaryWorkPlace\FormSalaryWorkPlaceView.Designer.cs">
+      <DependentUpon>FormSalaryWorkPlaceView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\ServiceEndGrantRequest\FormServiceEndGrantRequestView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\ServiceEndGrantRequest\FormServiceEndGrantRequestView.Designer.cs">
+      <DependentUpon>FormServiceEndGrantRequestView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\Settlement\FormSettlementView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\Settlement\FormSettlementView.Designer.cs">
+      <DependentUpon>FormSettlementView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\SpecialCaseLoan\FormSpecialCaseLoanView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\SpecialCaseLoan\FormSpecialCaseLoanView.Designer.cs">
+      <DependentUpon>FormSpecialCaseLoanView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\SubscriptionType\FormSubscriptionTypeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\SubscriptionType\FormSubscriptionTypeView.Designer.cs">
+      <DependentUpon>FormSubscriptionTypeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\Subscription\FormSubscriptionView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\Subscription\FormSubscriptionView.Designer.cs">
+      <DependentUpon>FormSubscriptionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\TransitoryIncomingLoan\FormTransitoryIncomingLoanView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\TransitoryIncomingLoan\FormTransitoryIncomingLoanView.Designer.cs">
+      <DependentUpon>FormTransitoryIncomingLoanView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsForms\Warrant\FormWarrantView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\Warrant\FormWarrantView.Designer.cs">
+      <DependentUpon>FormWarrantView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="WindowsForms\AvailabilityCeiling\FormAvailabilityCeilingView.resx">
+      <DependentUpon>FormAvailabilityCeilingView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\Availability\FormAvailabilityView.resx">
+      <DependentUpon>FormAvailabilityView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\BypassStatus\FormBypassStatusView.resx">
+      <DependentUpon>FormBypassStatusView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\CashPayment\FormCashPaymentView.resx">
+      <DependentUpon>FormCashPaymentView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\Category\FormCategoryView.resx">
+      <DependentUpon>FormCategoryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\CollectOrder\FormCollectOrderView.resx">
+      <DependentUpon>FormCollectOrderView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\Debt\FormDebtView.resx">
+      <DependentUpon>FormDebtView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\Department\FormDepartmentView.resx">
+      <DependentUpon>FormDepartmentView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\DownPayment\FormDownPaymentView.resx">
+      <DependentUpon>FormDownPaymentView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\EmployeeSeniority\FormEmployeeSeniorityView.resx">
+      <DependentUpon>FormEmployeeSeniorityView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\EmployeeStatus\FormEmployeeStatusView.resx">
+      <DependentUpon>FormEmployeeStatusView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\Employee\FormEmployeeView.resx">
+      <DependentUpon>FormEmployeeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\EndWorkGrantBracket\FormEndWorkGrantBracketView.resx">
+      <DependentUpon>FormEndWorkGrantBracketView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\ErrorDefinition\FormErrorDefinitionView.resx">
+      <DependentUpon>FormErrorDefinitionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\EventCategory\FormEventCategoryView.resx">
+      <DependentUpon>FormEventCategoryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\EventLogError\FormEventLogErrorView.resx">
+      <DependentUpon>FormEventLogErrorView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\EventLog\FormEventLogView.resx">
+      <DependentUpon>FormEventLogView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\EventSource\FormEventSourceView.resx">
+      <DependentUpon>FormEventSourceView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\EventStatus\FormEventStatusView.resx">
+      <DependentUpon>FormEventStatusView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\ExceptionalAmountType\FormExceptionalAmountTypeView.resx">
+      <DependentUpon>FormExceptionalAmountTypeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\ExceptionalAmount\FormExceptionalAmountView.resx">
+      <DependentUpon>FormExceptionalAmountView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\ExternalGrant\FormExternalGrantView.resx">
+      <DependentUpon>FormExternalGrantView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\GrantDecision\FormGrantDecisionView.resx">
+      <DependentUpon>FormGrantDecisionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\GrantDeduction\FormGrantDeductionView.resx">
+      <DependentUpon>FormGrantDeductionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\GrantPaymentOrder\FormGrantPaymentOrderView.resx">
+      <DependentUpon>FormGrantPaymentOrderView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\GrantPayment\FormGrantPaymentView.resx">
+      <DependentUpon>FormGrantPaymentView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\GrantRequest\FormGrantRequestView.resx">
+      <DependentUpon>FormGrantRequestView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\GrantTypeGroup\FormGrantTypeGroupView.resx">
+      <DependentUpon>FormGrantTypeGroupView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\GrantType\FormGrantTypeView.resx">
+      <DependentUpon>FormGrantTypeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\Grant\FormGrantView.resx">
+      <DependentUpon>FormGrantView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\GuarantorStatement\FormGuarantorStatementView.resx">
+      <DependentUpon>FormGuarantorStatementView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\GuarantorStatus\FormGuarantorStatusView.resx">
+      <DependentUpon>FormGuarantorStatusView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\Guarantor\FormGuarantorView.resx">
+      <DependentUpon>FormGuarantorView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\HealthLoanDecisionFirstPayment\FormHealthLoanDecisionFirstPaymentView.resx">
+      <DependentUpon>FormHealthLoanDecisionFirstPaymentView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\HealthLoanDecision\FormHealthLoanDecisionView.resx">
+      <DependentUpon>FormHealthLoanDecisionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\IncomingLoan\FormIncomingLoanView.resx">
+      <DependentUpon>FormIncomingLoanView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\InstallmentDecreaseOrder\FormInstallmentDecreaseOrderView.resx">
+      <DependentUpon>FormInstallmentDecreaseOrderView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\InstallmentDecrease\FormInstallmentDecreaseView.resx">
+      <DependentUpon>FormInstallmentDecreaseView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\Installment\FormInstallmentView.resx">
+      <DependentUpon>FormInstallmentView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\InsuranceType\FormInsuranceTypeView.resx">
+      <DependentUpon>FormInsuranceTypeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\Issuer\FormIssuerView.resx">
+      <DependentUpon>FormIssuerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\LoanChange\FormLoanChangeView.resx">
+      <DependentUpon>FormLoanChangeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\LoanDecisionType\FormLoanDecisionTypeView.resx">
+      <DependentUpon>FormLoanDecisionTypeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\LoanDecision\FormLoanDecisionView.resx">
+      <DependentUpon>FormLoanDecisionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\LoanGenerationStatus\FormLoanGenerationStatusView.resx">
+      <DependentUpon>FormLoanGenerationStatusView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\LoanRequest\FormLoanRequestView.resx">
+      <DependentUpon>FormLoanRequestView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\LoanStatus\FormLoanStatusView.resx">
+      <DependentUpon>FormLoanStatusView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\LoanTypeClosure\FormLoanTypeClosureView.resx">
+      <DependentUpon>FormLoanTypeClosureView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\LoanType\FormLoanTypeView.resx">
+      <DependentUpon>FormLoanTypeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\Loan\FormLoanView.resx">
+      <DependentUpon>FormLoanView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\MainWorkPlace\FormMainWorkPlaceView.resx">
+      <DependentUpon>FormMainWorkPlaceView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\MissingInstallmentDecrease\FormMissingInstallmentDecreaseView.resx">
+      <DependentUpon>FormMissingInstallmentDecreaseView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\MonthlyBalance\FormMonthlyBalanceView.resx">
+      <DependentUpon>FormMonthlyBalanceView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\OutgoingLoan\FormOutgoingLoanView.resx">
+      <DependentUpon>FormOutgoingLoanView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\PaymentGroup\FormPaymentGroupView.resx">
+      <DependentUpon>FormPaymentGroupView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\PaymentStatus\FormPaymentStatusView.resx">
+      <DependentUpon>FormPaymentStatusView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\Payment\FormPaymentView.resx">
+      <DependentUpon>FormPaymentView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\PayOrder\FormPayOrderView.resx">
+      <DependentUpon>FormPayOrderView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\ProductTypeAvailability\FormProductTypeAvailabilityView.resx">
+      <DependentUpon>FormProductTypeAvailabilityView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\ProductType\FormProductTypeView.resx">
+      <DependentUpon>FormProductTypeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\Product\FormProductView.resx">
+      <DependentUpon>FormProductView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\Profile\FormProfileView.resx">
+      <DependentUpon>FormProfileView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\ProfitStrategy\FormProfitStrategyView.resx">
+      <DependentUpon>FormProfitStrategyView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\RefundableProduct\FormRefundableProductView.resx">
+      <DependentUpon>FormRefundableProductView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\RequestStatus\FormRequestStatusView.resx">
+      <DependentUpon>FormRequestStatusView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\Request\FormRequestView.resx">
+      <DependentUpon>FormRequestView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\Resource\FormResourceView.resx">
+      <DependentUpon>FormResourceView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\SalaryPayment\FormSalaryPaymentView.resx">
+      <DependentUpon>FormSalaryPaymentView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\SalaryWorkPlace\FormSalaryWorkPlaceView.resx">
+      <DependentUpon>FormSalaryWorkPlaceView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\ServiceEndGrantRequest\FormServiceEndGrantRequestView.resx">
+      <DependentUpon>FormServiceEndGrantRequestView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\Settlement\FormSettlementView.resx">
+      <DependentUpon>FormSettlementView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\SpecialCaseLoan\FormSpecialCaseLoanView.resx">
+      <DependentUpon>FormSpecialCaseLoanView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\SubscriptionType\FormSubscriptionTypeView.resx">
+      <DependentUpon>FormSubscriptionTypeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\Subscription\FormSubscriptionView.resx">
+      <DependentUpon>FormSubscriptionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\TransitoryIncomingLoan\FormTransitoryIncomingLoanView.resx">
+      <DependentUpon>FormTransitoryIncomingLoanView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\Warrant\FormWarrantView.resx">
+      <DependentUpon>FormWarrantView.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="CfDataSet.xsc">
+      <DependentUpon>CfDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CfDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CfDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CfDataSet.xss">
+      <DependentUpon>CfDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\Cf.Data.Category.datasource" />
+    <None Include="Properties\DataSources\Cf.Data.HealthLoanDecisionFirstPayment.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CfDataContext\CfDataContext.csproj">
+      <Project>{99852ce5-5586-414a-a2db-50f1c503e2aa}</Project>
+      <Name>CfDataContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CfServices\CfServices.csproj">
+      <Project>{e29453e4-0bcc-4bc4-a260-405be6654325}</Project>
+      <Name>CfServices</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

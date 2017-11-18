@@ -215,7 +215,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for CashPaymentVw.PaymentEmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "PaymentEmployeeFullName")
+		]
+		[Tooltip("PaymentEmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string PaymentEmployeeFullName { get; set; }
 		
         /// <summary>
@@ -231,7 +235,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for CashPaymentVw.PaymentEmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "PaymentEmployeeFullName3")
+		]
+		[Tooltip("PaymentEmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string PaymentEmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -738,7 +746,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for DebtVw.EmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName")
+		]
+		[Tooltip("EmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName { get; set; }
 		
         /// <summary>
@@ -754,7 +766,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for DebtVw.EmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName3")
+		]
+		[Tooltip("EmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -1186,7 +1202,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for DownPaymentVw.PaymentEmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "PaymentEmployeeFullName")
+		]
+		[Tooltip("PaymentEmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string PaymentEmployeeFullName { get; set; }
 		
         /// <summary>
@@ -1202,7 +1222,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for DownPaymentVw.PaymentEmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "PaymentEmployeeFullName3")
+		]
+		[Tooltip("PaymentEmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string PaymentEmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -1566,7 +1590,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for DownPaymentVw.RequestProductEmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "RequestProductEmployeeFullName")
+		]
+		[Tooltip("RequestProductEmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string RequestProductEmployeeFullName { get; set; }
 		
         /// <summary>
@@ -1582,7 +1610,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for DownPaymentVw.RequestProductEmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "RequestProductEmployeeFullName3")
+		]
+		[Tooltip("RequestProductEmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string RequestProductEmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -2044,7 +2076,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for EmployeeDetailVw.FullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "FullName")
+		]
+		[Tooltip("FullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string FullName { get; set; }
 		
         /// <summary>
@@ -2060,7 +2096,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for EmployeeDetailVw.FullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "FullName3")
+		]
+		[Tooltip("FullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string FullName3 { get; set; }
 		
         /// <summary>
@@ -2261,7 +2301,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for EmployeeDetailVw.IsMissingInstallmentDecrease property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.EmployeeDetailVw)),
+			Name = "IsMissingInstallmentDecrease")
+		]
+		[Tooltip("IsMissingInstallmentDecreaseTooltip", typeof(Cf.Data.Resources.EmployeeDetailVw))]
         public Nullable<bool> IsMissingInstallmentDecrease { get; set; }
 		
         /// <summary>
@@ -2318,7 +2362,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for EmployeeDetailVw.IsEmployeeSeniority property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.EmployeeDetailVw)),
+			Name = "IsEmployeeSeniority")
+		]
+		[Tooltip("IsEmployeeSeniorityTooltip", typeof(Cf.Data.Resources.EmployeeDetailVw))]
         public Nullable<bool> IsEmployeeSeniority { get; set; }
 		
         /// <summary>
@@ -2334,7 +2382,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for EmployeeDetailVw.IsProfile property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.EmployeeDetailVw)),
+			Name = "IsProfile")
+		]
+		[Tooltip("IsProfileTooltip", typeof(Cf.Data.Resources.EmployeeDetailVw))]
         public Nullable<bool> IsProfile { get; set; }
 		
         /// <summary>
@@ -2380,7 +2432,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for EmployeeDetailVw.IsTransitoryIncomingLoan property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.EmployeeDetailVw)),
+			Name = "IsTransitoryIncomingLoan")
+		]
+		[Tooltip("IsTransitoryIncomingLoanTooltip", typeof(Cf.Data.Resources.EmployeeDetailVw))]
         public Nullable<bool> IsTransitoryIncomingLoan { get; set; }
 		
         /// <summary>
@@ -2486,7 +2542,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for EmployeeSeniorityVw.EmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName")
+		]
+		[Tooltip("EmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName { get; set; }
 		
         /// <summary>
@@ -2502,7 +2562,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for EmployeeSeniorityVw.EmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName3")
+		]
+		[Tooltip("EmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -2793,7 +2857,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for EmployeeVw.FullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "FullName")
+		]
+		[Tooltip("FullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string FullName { get; set; }
 		
         /// <summary>
@@ -2809,7 +2877,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for EmployeeVw.FullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "FullName3")
+		]
+		[Tooltip("FullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string FullName3 { get; set; }
 		
         /// <summary>
@@ -3241,7 +3313,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for EventLogDetailVw.IsEventLogError property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.EventLogDetailVw)),
+			Name = "IsEventLogError")
+		]
+		[Tooltip("IsEventLogErrorTooltip", typeof(Cf.Data.Resources.EventLogDetailVw))]
         public Nullable<bool> IsEventLogError { get; set; }
 		
         /// <summary>
@@ -3719,7 +3795,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for ExceptionalAmountVw.LoanRequestRequestProductEmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "LoanRequestRequestProductEmployeeFullName")
+		]
+		[Tooltip("LoanRequestRequestProductEmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string LoanRequestRequestProductEmployeeFullName { get; set; }
 		
         /// <summary>
@@ -3735,7 +3815,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for ExceptionalAmountVw.LoanRequestRequestProductEmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "LoanRequestRequestProductEmployeeFullName3")
+		]
+		[Tooltip("LoanRequestRequestProductEmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string LoanRequestRequestProductEmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -4287,7 +4371,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for ExternalGrantVw.EmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName")
+		]
+		[Tooltip("EmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName { get; set; }
 		
         /// <summary>
@@ -4303,7 +4391,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for ExternalGrantVw.EmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName3")
+		]
+		[Tooltip("EmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -4872,7 +4964,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for GrantDeductionVw.GrantProductEmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "GrantProductEmployeeFullName")
+		]
+		[Tooltip("GrantProductEmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string GrantProductEmployeeFullName { get; set; }
 		
         /// <summary>
@@ -4888,7 +4984,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for GrantDeductionVw.GrantProductEmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "GrantProductEmployeeFullName3")
+		]
+		[Tooltip("GrantProductEmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string GrantProductEmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -5474,7 +5574,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for GrantDetailVw.ProductEmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "ProductEmployeeFullName")
+		]
+		[Tooltip("ProductEmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string ProductEmployeeFullName { get; set; }
 		
         /// <summary>
@@ -5490,7 +5594,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for GrantDetailVw.ProductEmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "ProductEmployeeFullName3")
+		]
+		[Tooltip("ProductEmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string ProductEmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -6006,7 +6114,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for GrantDetailVw.IsGrantDeduction property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.GrantDetailVw)),
+			Name = "IsGrantDeduction")
+		]
+		[Tooltip("IsGrantDeductionTooltip", typeof(Cf.Data.Resources.GrantDetailVw))]
         public Nullable<bool> IsGrantDeduction { get; set; }
 		
         /// <summary>
@@ -6214,7 +6326,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for GrantPaymentVw.GrantProductEmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "GrantProductEmployeeFullName")
+		]
+		[Tooltip("GrantProductEmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string GrantProductEmployeeFullName { get; set; }
 		
         /// <summary>
@@ -6230,7 +6346,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for GrantPaymentVw.GrantProductEmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "GrantProductEmployeeFullName3")
+		]
+		[Tooltip("GrantProductEmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string GrantProductEmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -6816,7 +6936,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for GrantRequestDetailVw.RequestProductEmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "RequestProductEmployeeFullName")
+		]
+		[Tooltip("RequestProductEmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string RequestProductEmployeeFullName { get; set; }
 		
         /// <summary>
@@ -6832,7 +6956,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for GrantRequestDetailVw.RequestProductEmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "RequestProductEmployeeFullName3")
+		]
+		[Tooltip("RequestProductEmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string RequestProductEmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -7315,7 +7443,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for GrantRequestDetailVw.IsServiceEndGrantRequest property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.GrantRequestDetailVw)),
+			Name = "IsServiceEndGrantRequest")
+		]
+		[Tooltip("IsServiceEndGrantRequestTooltip", typeof(Cf.Data.Resources.GrantRequestDetailVw))]
         public Nullable<bool> IsServiceEndGrantRequest { get; set; }
 		
         /// <summary>
@@ -7401,7 +7533,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for GrantRequestVw.RequestProductEmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "RequestProductEmployeeFullName")
+		]
+		[Tooltip("RequestProductEmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string RequestProductEmployeeFullName { get; set; }
 		
         /// <summary>
@@ -7417,7 +7553,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for GrantRequestVw.RequestProductEmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "RequestProductEmployeeFullName3")
+		]
+		[Tooltip("RequestProductEmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string RequestProductEmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -8040,7 +8180,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for GrantVw.ProductEmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "ProductEmployeeFullName")
+		]
+		[Tooltip("ProductEmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string ProductEmployeeFullName { get; set; }
 		
         /// <summary>
@@ -8056,7 +8200,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for GrantVw.ProductEmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "ProductEmployeeFullName3")
+		]
+		[Tooltip("ProductEmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string ProductEmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -8632,7 +8780,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for GuarantorDetailVw.RefundableProductProductEmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "RefundableProductProductEmployeeFullName")
+		]
+		[Tooltip("RefundableProductProductEmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string RefundableProductProductEmployeeFullName { get; set; }
 		
         /// <summary>
@@ -8648,7 +8800,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for GuarantorDetailVw.RefundableProductProductEmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "RefundableProductProductEmployeeFullName3")
+		]
+		[Tooltip("RefundableProductProductEmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string RefundableProductProductEmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -9069,7 +9225,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for GuarantorDetailVw.EmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName")
+		]
+		[Tooltip("EmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName { get; set; }
 		
         /// <summary>
@@ -9085,7 +9245,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for GuarantorDetailVw.EmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName3")
+		]
+		[Tooltip("EmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -9316,7 +9480,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for GuarantorDetailVw.IsGuarantorStatement property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.GuarantorDetailVw)),
+			Name = "IsGuarantorStatement")
+		]
+		[Tooltip("IsGuarantorStatementTooltip", typeof(Cf.Data.Resources.GuarantorDetailVw))]
         public Nullable<bool> IsGuarantorStatement { get; set; }
 		
         /// <summary>
@@ -9422,7 +9590,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for GuarantorStatementVw.GuarantorRefundableProductProductEmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "GuarantorRefundableProductProductEmployeeFullName")
+		]
+		[Tooltip("GuarantorRefundableProductProductEmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string GuarantorRefundableProductProductEmployeeFullName { get; set; }
 		
         /// <summary>
@@ -9438,7 +9610,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for GuarantorStatementVw.GuarantorRefundableProductProductEmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "GuarantorRefundableProductProductEmployeeFullName3")
+		]
+		[Tooltip("GuarantorRefundableProductProductEmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string GuarantorRefundableProductProductEmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -9859,7 +10035,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for GuarantorStatementVw.GuarantorEmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "GuarantorEmployeeFullName")
+		]
+		[Tooltip("GuarantorEmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string GuarantorEmployeeFullName { get; set; }
 		
         /// <summary>
@@ -9875,7 +10055,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for GuarantorStatementVw.GuarantorEmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "GuarantorEmployeeFullName3")
+		]
+		[Tooltip("GuarantorEmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string GuarantorEmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -10236,7 +10420,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for GuarantorVw.RefundableProductProductEmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "RefundableProductProductEmployeeFullName")
+		]
+		[Tooltip("RefundableProductProductEmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string RefundableProductProductEmployeeFullName { get; set; }
 		
         /// <summary>
@@ -10252,7 +10440,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for GuarantorVw.RefundableProductProductEmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "RefundableProductProductEmployeeFullName3")
+		]
+		[Tooltip("RefundableProductProductEmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string RefundableProductProductEmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -10673,7 +10865,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for GuarantorVw.EmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName")
+		]
+		[Tooltip("EmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName { get; set; }
 		
         /// <summary>
@@ -10689,7 +10885,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for GuarantorVw.EmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName3")
+		]
+		[Tooltip("EmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -10970,7 +11170,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for HealthLoanDecisionFirstPaymentVw.EmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName")
+		]
+		[Tooltip("EmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName { get; set; }
 		
         /// <summary>
@@ -10986,7 +11190,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for HealthLoanDecisionFirstPaymentVw.EmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName3")
+		]
+		[Tooltip("EmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -11668,7 +11876,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for IncomingLoanVw.LoanProductEmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "LoanProductEmployeeFullName")
+		]
+		[Tooltip("LoanProductEmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string LoanProductEmployeeFullName { get; set; }
 		
         /// <summary>
@@ -11684,7 +11896,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for IncomingLoanVw.LoanProductEmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "LoanProductEmployeeFullName3")
+		]
+		[Tooltip("LoanProductEmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string LoanProductEmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -12413,7 +12629,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for InstallmentDecreaseVw.EmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName")
+		]
+		[Tooltip("EmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName { get; set; }
 		
         /// <summary>
@@ -12429,7 +12649,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for InstallmentDecreaseVw.EmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName3")
+		]
+		[Tooltip("EmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -12780,7 +13004,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for InstallmentVw.RefundableProductProductEmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "RefundableProductProductEmployeeFullName")
+		]
+		[Tooltip("RefundableProductProductEmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string RefundableProductProductEmployeeFullName { get; set; }
 		
         /// <summary>
@@ -12796,7 +13024,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for InstallmentVw.RefundableProductProductEmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "RefundableProductProductEmployeeFullName3")
+		]
+		[Tooltip("RefundableProductProductEmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string RefundableProductProductEmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -13338,7 +13570,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for LoanChangeVw.LoanProductEmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "LoanProductEmployeeFullName")
+		]
+		[Tooltip("LoanProductEmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string LoanProductEmployeeFullName { get; set; }
 		
         /// <summary>
@@ -13354,7 +13590,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for LoanChangeVw.LoanProductEmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "LoanProductEmployeeFullName3")
+		]
+		[Tooltip("LoanProductEmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string LoanProductEmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -13939,7 +14179,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for LoanChangeVw.FromLoanProductEmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "FromLoanProductEmployeeFullName")
+		]
+		[Tooltip("FromLoanProductEmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string FromLoanProductEmployeeFullName { get; set; }
 		
         /// <summary>
@@ -13955,7 +14199,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for LoanChangeVw.FromLoanProductEmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "FromLoanProductEmployeeFullName3")
+		]
+		[Tooltip("FromLoanProductEmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string FromLoanProductEmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -14754,7 +15002,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for LoanDetailVw.ProductEmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "ProductEmployeeFullName")
+		]
+		[Tooltip("ProductEmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string ProductEmployeeFullName { get; set; }
 		
         /// <summary>
@@ -14770,7 +15022,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for LoanDetailVw.ProductEmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "ProductEmployeeFullName3")
+		]
+		[Tooltip("ProductEmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string ProductEmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -15315,7 +15571,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for LoanDetailVw.IsIncomingLoan property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanDetailVw)),
+			Name = "IsIncomingLoan")
+		]
+		[Tooltip("IsIncomingLoanTooltip", typeof(Cf.Data.Resources.LoanDetailVw))]
         public Nullable<bool> IsIncomingLoan { get; set; }
 		
         /// <summary>
@@ -15341,7 +15601,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for LoanDetailVw.IsLoanChange property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanDetailVw)),
+			Name = "IsLoanChange")
+		]
+		[Tooltip("IsLoanChangeTooltip", typeof(Cf.Data.Resources.LoanDetailVw))]
         public Nullable<bool> IsLoanChange { get; set; }
 		
         /// <summary>
@@ -15387,7 +15651,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for LoanDetailVw.LoanChangeFromLoanProductEmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "LoanChangeFromLoanProductEmployeeFullName")
+		]
+		[Tooltip("LoanChangeFromLoanProductEmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string LoanChangeFromLoanProductEmployeeFullName { get; set; }
 		
         /// <summary>
@@ -15403,7 +15671,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for LoanDetailVw.LoanChangeFromLoanProductEmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "LoanChangeFromLoanProductEmployeeFullName3")
+		]
+		[Tooltip("LoanChangeFromLoanProductEmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string LoanChangeFromLoanProductEmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -15948,7 +16220,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for LoanDetailVw.IsOutgoingLoan property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanDetailVw)),
+			Name = "IsOutgoingLoan")
+		]
+		[Tooltip("IsOutgoingLoanTooltip", typeof(Cf.Data.Resources.LoanDetailVw))]
         public Nullable<bool> IsOutgoingLoan { get; set; }
 		
         /// <summary>
@@ -16084,7 +16360,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for LoanRequestVw.RequestProductEmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "RequestProductEmployeeFullName")
+		]
+		[Tooltip("RequestProductEmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string RequestProductEmployeeFullName { get; set; }
 		
         /// <summary>
@@ -16100,7 +16380,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for LoanRequestVw.RequestProductEmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "RequestProductEmployeeFullName3")
+		]
+		[Tooltip("RequestProductEmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string RequestProductEmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -16982,7 +17266,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for LoanVw.ProductEmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "ProductEmployeeFullName")
+		]
+		[Tooltip("ProductEmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string ProductEmployeeFullName { get; set; }
 		
         /// <summary>
@@ -16998,7 +17286,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for LoanVw.ProductEmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "ProductEmployeeFullName3")
+		]
+		[Tooltip("ProductEmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string ProductEmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -17613,7 +17905,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for MissingInstallmentDecreaseVw.EmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName")
+		]
+		[Tooltip("EmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName { get; set; }
 		
         /// <summary>
@@ -17629,7 +17925,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for MissingInstallmentDecreaseVw.EmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName3")
+		]
+		[Tooltip("EmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -17931,7 +18231,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for MonthlyBalanceVw.EmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName")
+		]
+		[Tooltip("EmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName { get; set; }
 		
         /// <summary>
@@ -17947,7 +18251,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for MonthlyBalanceVw.EmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName3")
+		]
+		[Tooltip("EmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -18299,7 +18607,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for OutgoingLoanVw.LoanProductEmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "LoanProductEmployeeFullName")
+		]
+		[Tooltip("LoanProductEmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string LoanProductEmployeeFullName { get; set; }
 		
         /// <summary>
@@ -18315,7 +18627,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for OutgoingLoanVw.LoanProductEmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "LoanProductEmployeeFullName3")
+		]
+		[Tooltip("LoanProductEmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string LoanProductEmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -19124,7 +19440,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for PaymentDetailVw.EmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName")
+		]
+		[Tooltip("EmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName { get; set; }
 		
         /// <summary>
@@ -19140,7 +19460,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for PaymentDetailVw.EmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName3")
+		]
+		[Tooltip("EmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -19464,7 +19788,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for PaymentDetailVw.IsCashPayment property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.PaymentDetailVw)),
+			Name = "IsCashPayment")
+		]
+		[Tooltip("IsCashPaymentTooltip", typeof(Cf.Data.Resources.PaymentDetailVw))]
         public Nullable<bool> IsCashPayment { get; set; }
 		
         /// <summary>
@@ -19511,7 +19839,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for PaymentDetailVw.IsDownPayment property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.PaymentDetailVw)),
+			Name = "IsDownPayment")
+		]
+		[Tooltip("IsDownPaymentTooltip", typeof(Cf.Data.Resources.PaymentDetailVw))]
         public Nullable<bool> IsDownPayment { get; set; }
 		
         /// <summary>
@@ -19557,7 +19889,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for PaymentDetailVw.DownPaymentRequestProductEmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "DownPaymentRequestProductEmployeeFullName")
+		]
+		[Tooltip("DownPaymentRequestProductEmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string DownPaymentRequestProductEmployeeFullName { get; set; }
 		
         /// <summary>
@@ -19573,7 +19909,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for PaymentDetailVw.DownPaymentRequestProductEmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "DownPaymentRequestProductEmployeeFullName3")
+		]
+		[Tooltip("DownPaymentRequestProductEmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string DownPaymentRequestProductEmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -19995,7 +20335,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for PaymentDetailVw.IsSalaryPayment property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.PaymentDetailVw)),
+			Name = "IsSalaryPayment")
+		]
+		[Tooltip("IsSalaryPaymentTooltip", typeof(Cf.Data.Resources.PaymentDetailVw))]
         public Nullable<bool> IsSalaryPayment { get; set; }
 		
         /// <summary>
@@ -20181,7 +20525,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for PaymentVw.EmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName")
+		]
+		[Tooltip("EmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName { get; set; }
 		
         /// <summary>
@@ -20197,7 +20545,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for PaymentVw.EmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName3")
+		]
+		[Tooltip("EmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -20571,7 +20923,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for PayOrderVw.EmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName")
+		]
+		[Tooltip("EmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName { get; set; }
 		
         /// <summary>
@@ -20587,7 +20943,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for PayOrderVw.EmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName3")
+		]
+		[Tooltip("EmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -20982,7 +21342,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for ProductDetailVw.EmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName")
+		]
+		[Tooltip("EmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName { get; set; }
 		
         /// <summary>
@@ -20998,7 +21362,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for ProductDetailVw.EmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName3")
+		]
+		[Tooltip("EmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -21329,7 +21697,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for ProductDetailVw.IsGrant property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.ProductDetailVw)),
+			Name = "IsGrant")
+		]
+		[Tooltip("IsGrantTooltip", typeof(Cf.Data.Resources.ProductDetailVw))]
         public Nullable<bool> IsGrant { get; set; }
 		
         /// <summary>
@@ -21520,7 +21892,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for ProductDetailVw.GrantIsGrantDeduction property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.ProductDetailVw)),
+			Name = "GrantIsGrantDeduction")
+		]
+		[Tooltip("GrantIsGrantDeductionTooltip", typeof(Cf.Data.Resources.ProductDetailVw))]
         public bool GrantIsGrantDeduction { get; set; }
 		
         /// <summary>
@@ -21546,7 +21922,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for ProductDetailVw.IsLoan property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.ProductDetailVw)),
+			Name = "IsLoan")
+		]
+		[Tooltip("IsLoanTooltip", typeof(Cf.Data.Resources.ProductDetailVw))]
         public Nullable<bool> IsLoan { get; set; }
 		
         /// <summary>
@@ -21766,7 +22146,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for ProductDetailVw.LoanIsIncomingLoan property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.ProductDetailVw)),
+			Name = "LoanIsIncomingLoan")
+		]
+		[Tooltip("LoanIsIncomingLoanTooltip", typeof(Cf.Data.Resources.ProductDetailVw))]
         public bool LoanIsIncomingLoan { get; set; }
 		
         /// <summary>
@@ -21792,7 +22176,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for ProductDetailVw.LoanIsLoanChange property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.ProductDetailVw)),
+			Name = "LoanIsLoanChange")
+		]
+		[Tooltip("LoanIsLoanChangeTooltip", typeof(Cf.Data.Resources.ProductDetailVw))]
         public bool LoanIsLoanChange { get; set; }
 		
         /// <summary>
@@ -21838,7 +22226,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for ProductDetailVw.LoanLoanChangeFromLoanProductEmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "LoanLoanChangeFromLoanProductEmployeeFullName")
+		]
+		[Tooltip("LoanLoanChangeFromLoanProductEmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string LoanLoanChangeFromLoanProductEmployeeFullName { get; set; }
 		
         /// <summary>
@@ -21854,7 +22246,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for ProductDetailVw.LoanLoanChangeFromLoanProductEmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "LoanLoanChangeFromLoanProductEmployeeFullName3")
+		]
+		[Tooltip("LoanLoanChangeFromLoanProductEmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string LoanLoanChangeFromLoanProductEmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -22399,7 +22795,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for ProductDetailVw.LoanIsOutgoingLoan property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.ProductDetailVw)),
+			Name = "LoanIsOutgoingLoan")
+		]
+		[Tooltip("LoanIsOutgoingLoanTooltip", typeof(Cf.Data.Resources.ProductDetailVw))]
         public bool LoanIsOutgoingLoan { get; set; }
 		
         /// <summary>
@@ -22455,7 +22855,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for ProductDetailVw.IsRefundableProduct property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.ProductDetailVw)),
+			Name = "IsRefundableProduct")
+		]
+		[Tooltip("IsRefundableProductTooltip", typeof(Cf.Data.Resources.ProductDetailVw))]
         public Nullable<bool> IsRefundableProduct { get; set; }
 		
         /// <summary>
@@ -22511,7 +22915,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for ProductDetailVw.IsRequest property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.ProductDetailVw)),
+			Name = "IsRequest")
+		]
+		[Tooltip("IsRequestTooltip", typeof(Cf.Data.Resources.ProductDetailVw))]
         public Nullable<bool> IsRequest { get; set; }
 		
         /// <summary>
@@ -22608,7 +23016,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for ProductDetailVw.RequestIsGrantRequest property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.ProductDetailVw)),
+			Name = "RequestIsGrantRequest")
+		]
+		[Tooltip("RequestIsGrantRequestTooltip", typeof(Cf.Data.Resources.ProductDetailVw))]
         public bool RequestIsGrantRequest { get; set; }
 		
         /// <summary>
@@ -22675,7 +23087,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for ProductDetailVw.RequestGrantRequestIsServiceEndGrantRequest property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.ProductDetailVw)),
+			Name = "RequestGrantRequestIsServiceEndGrantRequest")
+		]
+		[Tooltip("RequestGrantRequestIsServiceEndGrantRequestTooltip", typeof(Cf.Data.Resources.ProductDetailVw))]
         public bool RequestGrantRequestIsServiceEndGrantRequest { get; set; }
 		
         /// <summary>
@@ -22711,7 +23127,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for ProductDetailVw.RequestIsLoanRequest property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.ProductDetailVw)),
+			Name = "RequestIsLoanRequest")
+		]
+		[Tooltip("RequestIsLoanRequestTooltip", typeof(Cf.Data.Resources.ProductDetailVw))]
         public bool RequestIsLoanRequest { get; set; }
 		
         /// <summary>
@@ -23027,7 +23447,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for ProductTypeDetailVw.IsLoanType property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.ProductTypeDetailVw)),
+			Name = "IsLoanType")
+		]
+		[Tooltip("IsLoanTypeTooltip", typeof(Cf.Data.Resources.ProductTypeDetailVw))]
         public Nullable<bool> IsLoanType { get; set; }
 		#endregion
 	}
@@ -23203,7 +23627,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for ProductVw.EmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName")
+		]
+		[Tooltip("EmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName { get; set; }
 		
         /// <summary>
@@ -23219,7 +23647,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for ProductVw.EmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName3")
+		]
+		[Tooltip("EmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -23590,7 +24022,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for ProfileVw.EmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName")
+		]
+		[Tooltip("EmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName { get; set; }
 		
         /// <summary>
@@ -23606,7 +24042,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for ProfileVw.EmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName3")
+		]
+		[Tooltip("EmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -23927,7 +24367,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for RefundableProductVw.ProductEmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "ProductEmployeeFullName")
+		]
+		[Tooltip("ProductEmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string ProductEmployeeFullName { get; set; }
 		
         /// <summary>
@@ -23943,7 +24387,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for RefundableProductVw.ProductEmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "ProductEmployeeFullName3")
+		]
+		[Tooltip("ProductEmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string ProductEmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -24374,7 +24822,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for RequestDetailVw.ProductEmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "ProductEmployeeFullName")
+		]
+		[Tooltip("ProductEmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string ProductEmployeeFullName { get; set; }
 		
         /// <summary>
@@ -24390,7 +24842,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for RequestDetailVw.ProductEmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "ProductEmployeeFullName3")
+		]
+		[Tooltip("ProductEmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string ProductEmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -24812,7 +25268,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for RequestDetailVw.IsGrantRequest property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.RequestDetailVw)),
+			Name = "IsGrantRequest")
+		]
+		[Tooltip("IsGrantRequestTooltip", typeof(Cf.Data.Resources.RequestDetailVw))]
         public Nullable<bool> IsGrantRequest { get; set; }
 		
         /// <summary>
@@ -24879,7 +25339,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for RequestDetailVw.GrantRequestIsServiceEndGrantRequest property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.RequestDetailVw)),
+			Name = "GrantRequestIsServiceEndGrantRequest")
+		]
+		[Tooltip("GrantRequestIsServiceEndGrantRequestTooltip", typeof(Cf.Data.Resources.RequestDetailVw))]
         public bool GrantRequestIsServiceEndGrantRequest { get; set; }
 		
         /// <summary>
@@ -24915,7 +25379,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for RequestDetailVw.IsLoanRequest property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.RequestDetailVw)),
+			Name = "IsLoanRequest")
+		]
+		[Tooltip("IsLoanRequestTooltip", typeof(Cf.Data.Resources.RequestDetailVw))]
         public Nullable<bool> IsLoanRequest { get; set; }
 		
         /// <summary>
@@ -25021,7 +25489,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for RequestVw.ProductEmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "ProductEmployeeFullName")
+		]
+		[Tooltip("ProductEmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string ProductEmployeeFullName { get; set; }
 		
         /// <summary>
@@ -25037,7 +25509,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for RequestVw.ProductEmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "ProductEmployeeFullName3")
+		]
+		[Tooltip("ProductEmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string ProductEmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -25579,7 +26055,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for SalaryPaymentVw.PaymentEmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "PaymentEmployeeFullName")
+		]
+		[Tooltip("PaymentEmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string PaymentEmployeeFullName { get; set; }
 		
         /// <summary>
@@ -25595,7 +26075,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for SalaryPaymentVw.PaymentEmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "PaymentEmployeeFullName3")
+		]
+		[Tooltip("PaymentEmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string PaymentEmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -26089,7 +26573,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for ServiceEndGrantRequestVw.GrantRequestRequestProductEmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "GrantRequestRequestProductEmployeeFullName")
+		]
+		[Tooltip("GrantRequestRequestProductEmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string GrantRequestRequestProductEmployeeFullName { get; set; }
 		
         /// <summary>
@@ -26105,7 +26593,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for ServiceEndGrantRequestVw.GrantRequestRequestProductEmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "GrantRequestRequestProductEmployeeFullName3")
+		]
+		[Tooltip("GrantRequestRequestProductEmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string GrantRequestRequestProductEmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -26688,7 +27180,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for SettlementVw.InstallmentRefundableProductProductEmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "InstallmentRefundableProductProductEmployeeFullName")
+		]
+		[Tooltip("InstallmentRefundableProductProductEmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string InstallmentRefundableProductProductEmployeeFullName { get; set; }
 		
         /// <summary>
@@ -26704,7 +27200,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for SettlementVw.InstallmentRefundableProductProductEmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "InstallmentRefundableProductProductEmployeeFullName3")
+		]
+		[Tooltip("InstallmentRefundableProductProductEmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string InstallmentRefundableProductProductEmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -27176,7 +27676,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for SettlementVw.PaymentEmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "PaymentEmployeeFullName")
+		]
+		[Tooltip("PaymentEmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string PaymentEmployeeFullName { get; set; }
 		
         /// <summary>
@@ -27192,7 +27696,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for SettlementVw.PaymentEmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "PaymentEmployeeFullName3")
+		]
+		[Tooltip("PaymentEmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string PaymentEmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -27576,7 +28084,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for SpecialCaseLoanVw.EmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName")
+		]
+		[Tooltip("EmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName { get; set; }
 		
         /// <summary>
@@ -27592,7 +28104,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for SpecialCaseLoanVw.EmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName3")
+		]
+		[Tooltip("EmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -28014,7 +28530,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for SubscriptionVw.EmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName")
+		]
+		[Tooltip("EmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName { get; set; }
 		
         /// <summary>
@@ -28030,7 +28550,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for SubscriptionVw.EmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName3")
+		]
+		[Tooltip("EmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -28392,7 +28916,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for TransitoryIncomingLoanVw.EmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName")
+		]
+		[Tooltip("EmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName { get; set; }
 		
         /// <summary>
@@ -28408,7 +28936,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for TransitoryIncomingLoanVw.EmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName3")
+		]
+		[Tooltip("EmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -28729,7 +29261,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for WarrantVw.DebtEmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "DebtEmployeeFullName")
+		]
+		[Tooltip("DebtEmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string DebtEmployeeFullName { get; set; }
 		
         /// <summary>
@@ -28745,7 +29281,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for WarrantVw.DebtEmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "DebtEmployeeFullName3")
+		]
+		[Tooltip("DebtEmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string DebtEmployeeFullName3 { get; set; }
 		
         /// <summary>
@@ -29087,7 +29627,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for WarrantVw.EmployeeFullName property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName")
+		]
+		[Tooltip("EmployeeFullNameTooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName { get; set; }
 		
         /// <summary>
@@ -29103,7 +29647,11 @@ namespace Cf.Data
         /// <summary>
         /// Metadata for WarrantVw.EmployeeFullName3 property
         /// </summary>
-
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.Employee)),
+			Name = "EmployeeFullName3")
+		]
+		[Tooltip("EmployeeFullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
         public string EmployeeFullName3 { get; set; }
 		
         /// <summary>

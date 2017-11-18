@@ -6,7 +6,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.AvailabilityCeilingVw class
     /// </summary>
-    public class AvailabilityCeilingVw : ResourceBase
+    public partial class AvailabilityCeilingVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.AvailabilityCeilingVw class
@@ -187,7 +187,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.AvailabilityVw class
     /// </summary>
-    public class AvailabilityVw : ResourceBase
+    public partial class AvailabilityVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.AvailabilityVw class
@@ -302,7 +302,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.BypassStatusVw class
     /// </summary>
-    public class BypassStatusVw : ResourceBase
+    public partial class BypassStatusVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.BypassStatusVw class
@@ -373,7 +373,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.CashPaymentVw class
     /// </summary>
-    public class CashPaymentVw : ResourceBase
+    public partial class CashPaymentVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.CashPaymentVw class
@@ -489,7 +489,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "PaymentEmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -500,7 +500,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "PaymentEmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -533,7 +533,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "PaymentEmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -544,7 +544,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "PaymentEmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -1324,7 +1324,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.CategoryVw class
     /// </summary>
-    public class CategoryVw : ResourceBase
+    public partial class CategoryVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.CategoryVw class
@@ -1395,7 +1395,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.CollectOrderVw class
     /// </summary>
-    public class CollectOrderVw : ResourceBase
+    public partial class CollectOrderVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.CollectOrderVw class
@@ -1532,7 +1532,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.DebtVw class
     /// </summary>
-    public class DebtVw : ResourceBase
+    public partial class DebtVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.DebtVw class
@@ -1648,7 +1648,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -1659,7 +1659,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -1692,7 +1692,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -1703,7 +1703,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -2373,7 +2373,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.DepartmentVw class
     /// </summary>
-    public class DepartmentVw : ResourceBase
+    public partial class DepartmentVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.DepartmentVw class
@@ -2532,7 +2532,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.DownPaymentVw class
     /// </summary>
-    public class DownPaymentVw : ResourceBase
+    public partial class DownPaymentVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.DownPaymentVw class
@@ -2648,7 +2648,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "PaymentEmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -2659,7 +2659,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "PaymentEmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -2692,7 +2692,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "PaymentEmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -2703,7 +2703,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "PaymentEmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -3484,7 +3484,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "RequestProductEmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -3495,7 +3495,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "RequestProductEmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -3528,7 +3528,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "RequestProductEmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -3539,7 +3539,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "RequestProductEmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -4451,7 +4451,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.EmployeeDetailVw class
     /// </summary>
-    public class EmployeeDetailVw : ResourceBase
+    public partial class EmployeeDetailVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.EmployeeDetailVw class
@@ -5468,7 +5468,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.EmployeeSeniorityVw class
     /// </summary>
-    public class EmployeeSeniorityVw : ResourceBase
+    public partial class EmployeeSeniorityVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.EmployeeSeniorityVw class
@@ -5562,7 +5562,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -5573,7 +5573,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -5606,7 +5606,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -5617,7 +5617,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -6067,7 +6067,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.EmployeeStatusVw class
     /// </summary>
-    public class EmployeeStatusVw : ResourceBase
+    public partial class EmployeeStatusVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.EmployeeStatusVw class
@@ -6160,7 +6160,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.EmployeeVw class
     /// </summary>
-    public class EmployeeVw : ResourceBase
+    public partial class EmployeeVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.EmployeeVw class
@@ -6737,7 +6737,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.EndWorkGrantBracketVw class
     /// </summary>
-    public class EndWorkGrantBracketVw : ResourceBase
+    public partial class EndWorkGrantBracketVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.EndWorkGrantBracketVw class
@@ -6808,7 +6808,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.ErrorDefinitionVw class
     /// </summary>
-    public class ErrorDefinitionVw : ResourceBase
+    public partial class ErrorDefinitionVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.ErrorDefinitionVw class
@@ -6923,7 +6923,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.EventCategoryVw class
     /// </summary>
-    public class EventCategoryVw : ResourceBase
+    public partial class EventCategoryVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.EventCategoryVw class
@@ -6994,7 +6994,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.EventLogDetailVw class
     /// </summary>
-    public class EventLogDetailVw : ResourceBase
+    public partial class EventLogDetailVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.EventLogDetailVw class
@@ -7351,7 +7351,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.EventLogErrorVw class
     /// </summary>
-    public class EventLogErrorVw : ResourceBase
+    public partial class EventLogErrorVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.EventLogErrorVw class
@@ -7686,7 +7686,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.EventLogVw class
     /// </summary>
-    public class EventLogVw : ResourceBase
+    public partial class EventLogVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.EventLogVw class
@@ -7955,7 +7955,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.EventSourceVw class
     /// </summary>
-    public class EventSourceVw : ResourceBase
+    public partial class EventSourceVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.EventSourceVw class
@@ -8026,7 +8026,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.EventStatusVw class
     /// </summary>
-    public class EventStatusVw : ResourceBase
+    public partial class EventStatusVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.EventStatusVw class
@@ -8119,7 +8119,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.ExceptionalAmountTypeVw class
     /// </summary>
-    public class ExceptionalAmountTypeVw : ResourceBase
+    public partial class ExceptionalAmountTypeVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.ExceptionalAmountTypeVw class
@@ -8212,7 +8212,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.ExceptionalAmountVw class
     /// </summary>
-    public class ExceptionalAmountVw : ResourceBase
+    public partial class ExceptionalAmountVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.ExceptionalAmountVw class
@@ -8350,7 +8350,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "LoanRequestRequestProductEmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -8361,7 +8361,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "LoanRequestRequestProductEmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -8394,7 +8394,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "LoanRequestRequestProductEmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -8405,7 +8405,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "LoanRequestRequestProductEmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -9493,7 +9493,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.ExternalGrantVw class
     /// </summary>
-    public class ExternalGrantVw : ResourceBase
+    public partial class ExternalGrantVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.ExternalGrantVw class
@@ -9609,7 +9609,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -9620,7 +9620,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -9653,7 +9653,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -9664,7 +9664,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -10378,7 +10378,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.GrantDecisionVw class
     /// </summary>
-    public class GrantDecisionVw : ResourceBase
+    public partial class GrantDecisionVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.GrantDecisionVw class
@@ -10779,7 +10779,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.GrantDeductionVw class
     /// </summary>
-    public class GrantDeductionVw : ResourceBase
+    public partial class GrantDeductionVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.GrantDeductionVw class
@@ -10895,7 +10895,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "GrantProductEmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -10906,7 +10906,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "GrantProductEmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -10939,7 +10939,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "GrantProductEmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -10950,7 +10950,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "GrantProductEmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -12104,7 +12104,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.GrantDetailVw class
     /// </summary>
-    public class GrantDetailVw : ResourceBase
+    public partial class GrantDetailVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.GrantDetailVw class
@@ -13451,7 +13451,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.GrantPaymentOrderVw class
     /// </summary>
-    public class GrantPaymentOrderVw : ResourceBase
+    public partial class GrantPaymentOrderVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.GrantPaymentOrderVw class
@@ -13588,7 +13588,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.GrantPaymentVw class
     /// </summary>
-    public class GrantPaymentVw : ResourceBase
+    public partial class GrantPaymentVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.GrantPaymentVw class
@@ -13858,7 +13858,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "GrantProductEmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -13869,7 +13869,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "GrantProductEmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -13902,7 +13902,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "GrantProductEmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -13913,7 +13913,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "GrantProductEmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -15067,7 +15067,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.GrantRequestDetailVw class
     /// </summary>
-    public class GrantRequestDetailVw : ResourceBase
+    public partial class GrantRequestDetailVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.GrantRequestDetailVw class
@@ -16370,7 +16370,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.GrantRequestVw class
     /// </summary>
-    public class GrantRequestVw : ResourceBase
+    public partial class GrantRequestVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.GrantRequestVw class
@@ -16486,7 +16486,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "RequestProductEmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -16497,7 +16497,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "RequestProductEmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -16530,7 +16530,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "RequestProductEmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -16541,7 +16541,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "RequestProductEmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -17585,7 +17585,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.GrantTypeGroupVw class
     /// </summary>
-    public class GrantTypeGroupVw : ResourceBase
+    public partial class GrantTypeGroupVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.GrantTypeGroupVw class
@@ -17656,7 +17656,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.GrantTypeVw class
     /// </summary>
-    public class GrantTypeVw : ResourceBase
+    public partial class GrantTypeVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.GrantTypeVw class
@@ -17793,7 +17793,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.GrantVw class
     /// </summary>
-    public class GrantVw : ResourceBase
+    public partial class GrantVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.GrantVw class
@@ -17909,7 +17909,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "ProductEmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -17920,7 +17920,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "ProductEmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -17953,7 +17953,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "ProductEmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -17964,7 +17964,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "ProductEmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -19074,7 +19074,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.GuarantorDetailVw class
     /// </summary>
-    public class GuarantorDetailVw : ResourceBase
+    public partial class GuarantorDetailVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.GuarantorDetailVw class
@@ -20839,7 +20839,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.GuarantorStatementVw class
     /// </summary>
-    public class GuarantorStatementVw : ResourceBase
+    public partial class GuarantorStatementVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.GuarantorStatementVw class
@@ -20977,7 +20977,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "GuarantorRefundableProductProductEmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -20988,7 +20988,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "GuarantorRefundableProductProductEmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -21021,7 +21021,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "GuarantorRefundableProductProductEmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -21032,7 +21032,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "GuarantorRefundableProductProductEmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -21945,7 +21945,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "GuarantorEmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -21956,7 +21956,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "GuarantorEmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -21989,7 +21989,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "GuarantorEmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -22000,7 +22000,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "GuarantorEmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -22582,7 +22582,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.GuarantorStatusVw class
     /// </summary>
-    public class GuarantorStatusVw : ResourceBase
+    public partial class GuarantorStatusVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.GuarantorStatusVw class
@@ -22653,7 +22653,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.GuarantorVw class
     /// </summary>
-    public class GuarantorVw : ResourceBase
+    public partial class GuarantorVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.GuarantorVw class
@@ -22791,7 +22791,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "RefundableProductProductEmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -22802,7 +22802,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "RefundableProductProductEmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -22835,7 +22835,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "RefundableProductProductEmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -22846,7 +22846,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "RefundableProductProductEmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -23759,7 +23759,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -23770,7 +23770,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -23803,7 +23803,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -23814,7 +23814,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -24308,7 +24308,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.HealthLoanDecisionFirstPaymentVw class
     /// </summary>
-    public class HealthLoanDecisionFirstPaymentVw : ResourceBase
+    public partial class HealthLoanDecisionFirstPaymentVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.HealthLoanDecisionFirstPaymentVw class
@@ -24424,7 +24424,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -24435,7 +24435,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -24468,7 +24468,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -24479,7 +24479,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -25611,7 +25611,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.HealthLoanDecisionVw class
     /// </summary>
-    public class HealthLoanDecisionVw : ResourceBase
+    public partial class HealthLoanDecisionVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.HealthLoanDecisionVw class
@@ -25836,7 +25836,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.IncomingLoanVw class
     /// </summary>
-    public class IncomingLoanVw : ResourceBase
+    public partial class IncomingLoanVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.IncomingLoanVw class
@@ -25952,7 +25952,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "LoanProductEmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -25963,7 +25963,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "LoanProductEmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -25996,7 +25996,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "LoanProductEmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -26007,7 +26007,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "LoanProductEmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -27227,7 +27227,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.InstallmentDecreaseOrderVw class
     /// </summary>
-    public class InstallmentDecreaseOrderVw : ResourceBase
+    public partial class InstallmentDecreaseOrderVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.InstallmentDecreaseOrderVw class
@@ -27364,7 +27364,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.InstallmentDecreaseVw class
     /// </summary>
-    public class InstallmentDecreaseVw : ResourceBase
+    public partial class InstallmentDecreaseVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.InstallmentDecreaseVw class
@@ -27590,7 +27590,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -27601,7 +27601,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -27634,7 +27634,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -27645,7 +27645,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -28271,7 +28271,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.InstallmentVw class
     /// </summary>
-    public class InstallmentVw : ResourceBase
+    public partial class InstallmentVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.InstallmentVw class
@@ -28409,7 +28409,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "RefundableProductProductEmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -28420,7 +28420,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "RefundableProductProductEmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -28453,7 +28453,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "RefundableProductProductEmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -28464,7 +28464,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "RefundableProductProductEmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -29398,7 +29398,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.InsuranceTypeVw class
     /// </summary>
-    public class InsuranceTypeVw : ResourceBase
+    public partial class InsuranceTypeVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.InsuranceTypeVw class
@@ -29469,7 +29469,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.IssuerVw class
     /// </summary>
-    public class IssuerVw : ResourceBase
+    public partial class IssuerVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.IssuerVw class
@@ -29540,7 +29540,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.LoanChangeVw class
     /// </summary>
-    public class LoanChangeVw : ResourceBase
+    public partial class LoanChangeVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.LoanChangeVw class
@@ -29656,7 +29656,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "LoanProductEmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -29667,7 +29667,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "LoanProductEmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -29700,7 +29700,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "LoanProductEmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -29711,7 +29711,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "LoanProductEmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -30976,7 +30976,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "FromLoanProductEmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -30987,7 +30987,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "FromLoanProductEmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -31020,7 +31020,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "FromLoanProductEmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -31031,7 +31031,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "FromLoanProductEmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -32207,7 +32207,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.LoanDecisionTypeVw class
     /// </summary>
-    public class LoanDecisionTypeVw : ResourceBase
+    public partial class LoanDecisionTypeVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.LoanDecisionTypeVw class
@@ -32278,7 +32278,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.LoanDecisionVw class
     /// </summary>
-    public class LoanDecisionVw : ResourceBase
+    public partial class LoanDecisionVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.LoanDecisionVw class
@@ -32657,7 +32657,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.LoanDetailVw class
     /// </summary>
-    public class LoanDetailVw : ResourceBase
+    public partial class LoanDetailVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.LoanDetailVw class
@@ -35544,7 +35544,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.LoanGenerationStatusVw class
     /// </summary>
-    public class LoanGenerationStatusVw : ResourceBase
+    public partial class LoanGenerationStatusVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.LoanGenerationStatusVw class
@@ -35615,7 +35615,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.LoanRequestVw class
     /// </summary>
-    public class LoanRequestVw : ResourceBase
+    public partial class LoanRequestVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.LoanRequestVw class
@@ -35731,7 +35731,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "RequestProductEmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -35742,7 +35742,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "RequestProductEmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -35775,7 +35775,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "RequestProductEmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -35786,7 +35786,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "RequestProductEmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -36742,7 +36742,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.LoanStatusVw class
     /// </summary>
-    public class LoanStatusVw : ResourceBase
+    public partial class LoanStatusVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.LoanStatusVw class
@@ -36813,7 +36813,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.LoanTypeClosureVw class
     /// </summary>
-    public class LoanTypeClosureVw : ResourceBase
+    public partial class LoanTypeClosureVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.LoanTypeClosureVw class
@@ -37346,7 +37346,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.LoanTypeVw class
     /// </summary>
-    public class LoanTypeVw : ResourceBase
+    public partial class LoanTypeVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.LoanTypeVw class
@@ -37615,7 +37615,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.LoanVw class
     /// </summary>
-    public class LoanVw : ResourceBase
+    public partial class LoanVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.LoanVw class
@@ -37731,7 +37731,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "ProductEmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -37742,7 +37742,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "ProductEmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -37775,7 +37775,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "ProductEmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -37786,7 +37786,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "ProductEmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -38962,7 +38962,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.MainWorkPlaceVw class
     /// </summary>
-    public class MainWorkPlaceVw : ResourceBase
+    public partial class MainWorkPlaceVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.MainWorkPlaceVw class
@@ -39033,7 +39033,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.MissingInstallmentDecreaseVw class
     /// </summary>
-    public class MissingInstallmentDecreaseVw : ResourceBase
+    public partial class MissingInstallmentDecreaseVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.MissingInstallmentDecreaseVw class
@@ -39127,7 +39127,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -39138,7 +39138,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -39171,7 +39171,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -39182,7 +39182,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -39720,7 +39720,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.MonthlyBalanceVw class
     /// </summary>
-    public class MonthlyBalanceVw : ResourceBase
+    public partial class MonthlyBalanceVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.MonthlyBalanceVw class
@@ -39836,7 +39836,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -39847,7 +39847,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -39880,7 +39880,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -39891,7 +39891,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -40539,7 +40539,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.OutgoingLoanVw class
     /// </summary>
-    public class OutgoingLoanVw : ResourceBase
+    public partial class OutgoingLoanVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.OutgoingLoanVw class
@@ -40655,7 +40655,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "LoanProductEmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -40666,7 +40666,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "LoanProductEmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -40699,7 +40699,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "LoanProductEmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -40710,7 +40710,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "LoanProductEmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -42348,7 +42348,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.PaymentDetailVw class
     /// </summary>
-    public class PaymentDetailVw : ResourceBase
+    public partial class PaymentDetailVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.PaymentDetailVw class
@@ -44575,7 +44575,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.PaymentGroupVw class
     /// </summary>
-    public class PaymentGroupVw : ResourceBase
+    public partial class PaymentGroupVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.PaymentGroupVw class
@@ -44646,7 +44646,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.PaymentStatusVw class
     /// </summary>
-    public class PaymentStatusVw : ResourceBase
+    public partial class PaymentStatusVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.PaymentStatusVw class
@@ -44717,7 +44717,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.PaymentVw class
     /// </summary>
-    public class PaymentVw : ResourceBase
+    public partial class PaymentVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.PaymentVw class
@@ -44833,7 +44833,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -44844,7 +44844,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -44877,7 +44877,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -44888,7 +44888,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -45580,7 +45580,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.PayOrderVw class
     /// </summary>
-    public class PayOrderVw : ResourceBase
+    public partial class PayOrderVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.PayOrderVw class
@@ -45696,7 +45696,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -45707,7 +45707,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -45740,7 +45740,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -45751,7 +45751,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -46487,7 +46487,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.ProductDetailVw class
     /// </summary>
-    public class ProductDetailVw : ResourceBase
+    public partial class ProductDetailVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.ProductDetailVw class
@@ -50540,7 +50540,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.ProductTypeAvailabilityVw class
     /// </summary>
-    public class ProductTypeAvailabilityVw : ResourceBase
+    public partial class ProductTypeAvailabilityVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.ProductTypeAvailabilityVw class
@@ -50919,7 +50919,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.ProductTypeDetailVw class
     /// </summary>
-    public class ProductTypeDetailVw : ResourceBase
+    public partial class ProductTypeDetailVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.ProductTypeDetailVw class
@@ -51210,7 +51210,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.ProductTypeVw class
     /// </summary>
-    public class ProductTypeVw : ResourceBase
+    public partial class ProductTypeVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.ProductTypeVw class
@@ -51479,7 +51479,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.ProductVw class
     /// </summary>
-    public class ProductVw : ResourceBase
+    public partial class ProductVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.ProductVw class
@@ -51595,7 +51595,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -51606,7 +51606,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -51639,7 +51639,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -51650,7 +51650,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -52364,7 +52364,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.ProfileVw class
     /// </summary>
-    public class ProfileVw : ResourceBase
+    public partial class ProfileVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.ProfileVw class
@@ -52458,7 +52458,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -52469,7 +52469,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -52502,7 +52502,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -52513,7 +52513,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -53029,7 +53029,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.ProfitStrategyVw class
     /// </summary>
-    public class ProfitStrategyVw : ResourceBase
+    public partial class ProfitStrategyVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.ProfitStrategyVw class
@@ -53100,7 +53100,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.RefundableProductVw class
     /// </summary>
-    public class RefundableProductVw : ResourceBase
+    public partial class RefundableProductVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.RefundableProductVw class
@@ -53216,7 +53216,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "ProductEmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -53227,7 +53227,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "ProductEmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -53260,7 +53260,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "ProductEmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -53271,7 +53271,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "ProductEmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -54095,7 +54095,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.RequestDetailVw class
     /// </summary>
-    public class RequestDetailVw : ResourceBase
+    public partial class RequestDetailVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.RequestDetailVw class
@@ -55486,7 +55486,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.RequestStatusVw class
     /// </summary>
-    public class RequestStatusVw : ResourceBase
+    public partial class RequestStatusVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.RequestStatusVw class
@@ -55557,7 +55557,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.RequestVw class
     /// </summary>
-    public class RequestVw : ResourceBase
+    public partial class RequestVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.RequestVw class
@@ -55673,7 +55673,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "ProductEmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -55684,7 +55684,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "ProductEmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -55717,7 +55717,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "ProductEmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -55728,7 +55728,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "ProductEmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -56640,7 +56640,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.ResourceVw class
     /// </summary>
-    public class ResourceVw : ResourceBase
+    public partial class ResourceVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.ResourceVw class
@@ -56799,7 +56799,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.SalaryPaymentVw class
     /// </summary>
-    public class SalaryPaymentVw : ResourceBase
+    public partial class SalaryPaymentVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.SalaryPaymentVw class
@@ -56915,7 +56915,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "PaymentEmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -56926,7 +56926,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "PaymentEmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -56959,7 +56959,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "PaymentEmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -56970,7 +56970,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "PaymentEmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -57816,7 +57816,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.SalaryWorkPlaceVw class
     /// </summary>
-    public class SalaryWorkPlaceVw : ResourceBase
+    public partial class SalaryWorkPlaceVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.SalaryWorkPlaceVw class
@@ -57931,7 +57931,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.ServiceEndGrantRequestVw class
     /// </summary>
-    public class ServiceEndGrantRequestVw : ResourceBase
+    public partial class ServiceEndGrantRequestVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.ServiceEndGrantRequestVw class
@@ -58047,7 +58047,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "GrantRequestRequestProductEmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -58058,7 +58058,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "GrantRequestRequestProductEmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -58091,7 +58091,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "GrantRequestRequestProductEmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -58102,7 +58102,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "GrantRequestRequestProductEmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -59212,7 +59212,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.SettlementVw class
     /// </summary>
-    public class SettlementVw : ResourceBase
+    public partial class SettlementVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.SettlementVw class
@@ -59372,7 +59372,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "InstallmentRefundableProductProductEmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -59383,7 +59383,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "InstallmentRefundableProductProductEmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -59416,7 +59416,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "InstallmentRefundableProductProductEmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -59427,7 +59427,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "InstallmentRefundableProductProductEmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -60450,7 +60450,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "PaymentEmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -60461,7 +60461,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "PaymentEmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -60494,7 +60494,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "PaymentEmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -60505,7 +60505,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "PaymentEmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -61219,7 +61219,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.SpecialCaseLoanVw class
     /// </summary>
-    public class SpecialCaseLoanVw : ResourceBase
+    public partial class SpecialCaseLoanVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.SpecialCaseLoanVw class
@@ -61335,7 +61335,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -61346,7 +61346,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -61379,7 +61379,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -61390,7 +61390,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -62126,7 +62126,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.SubscriptionTypeVw class
     /// </summary>
-    public class SubscriptionTypeVw : ResourceBase
+    public partial class SubscriptionTypeVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.SubscriptionTypeVw class
@@ -62197,7 +62197,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.SubscriptionVw class
     /// </summary>
-    public class SubscriptionVw : ResourceBase
+    public partial class SubscriptionVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.SubscriptionVw class
@@ -62313,7 +62313,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -62324,7 +62324,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -62357,7 +62357,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -62368,7 +62368,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -63060,7 +63060,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.TransitoryIncomingLoanVw class
     /// </summary>
-    public class TransitoryIncomingLoanVw : ResourceBase
+    public partial class TransitoryIncomingLoanVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.TransitoryIncomingLoanVw class
@@ -63154,7 +63154,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -63165,7 +63165,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -63198,7 +63198,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -63209,7 +63209,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -63769,7 +63769,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.WarrantVw class
     /// </summary>
-    public class WarrantVw : ResourceBase
+    public partial class WarrantVw : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.WarrantVw class
@@ -63907,7 +63907,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "DebtEmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -63918,7 +63918,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "DebtEmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -63951,7 +63951,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "DebtEmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -63962,7 +63962,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "DebtEmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 
@@ -64699,7 +64699,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName");
             }
         }
         
@@ -64710,7 +64710,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullNameTooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullNameTooltip");
             }
         }
 
@@ -64743,7 +64743,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName3");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3");
             }
         }
         
@@ -64754,7 +64754,7 @@ namespace Cf.Data.Resources
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "Employee", "EmployeeFullName3Tooltip");
+                return ResourcesCollection.GetString(Culture, "Employee", "FullName3Tooltip");
             }
         }
 

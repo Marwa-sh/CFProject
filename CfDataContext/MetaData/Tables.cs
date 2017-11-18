@@ -795,7 +795,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for Employee class
     /// </summary>
-	public class EmployeeMetaData
+	public partial class EmployeeMetaData
 	{
 		#region Public properties
         /// <summary>

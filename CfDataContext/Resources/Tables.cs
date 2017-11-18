@@ -999,7 +999,7 @@ namespace Cf.Data.Resources
     /// <summary>
     /// Resource management for Cf.Data.Employee class
     /// </summary>
-    public class Employee : ResourceBase
+    public partial class Employee : ResourceBase
     {
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.Employee class

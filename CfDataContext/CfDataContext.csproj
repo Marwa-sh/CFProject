@@ -80,6 +80,7 @@
     <Compile Include="Log\XmlFormatterBase.cs" />
     <Compile Include="Log\XmlRepresenterBase.cs" />
     <Compile Include="MetaData\Tables.cs" />
+    <Compile Include="MetaData\Tables.Extended.cs" />
     <Compile Include="MetaData\TooltipAttribute.cs" />
     <Compile Include="MetaData\Views.cs" />
     <Compile Include="MetaData\Views.Filter.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="Resources\ResourceBase.cs" />
     <Compile Include="Resources\ResourcesCollection.cs" />
     <Compile Include="Resources\Tables.cs" />
+    <Compile Include="Resources\Tables.Extended.cs" />
     <Compile Include="Resources\Views.cs" />
     <Compile Include="Resources\Views.Filter.cs" />
   </ItemGroup>

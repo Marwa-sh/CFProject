@@ -33,14 +33,16 @@ namespace Cf.Data
         {
             get
             {
-                return Id+ " " + FirstName + " " + LastName;
+                return Id + " " + FirstName + " " + LastName;
             }
             set
             {
                 id_name = value;
             }
         }
-        #endregion
-    }
-    #endregion
+		public string FullName { get; set; }
+		public string FullName3 { get; set; }
+		#endregion
+	}
+	#endregion
 }

@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -33,7 +34,7 @@ namespace Portal.Controllers
         private string TitleExceptionalAount = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ExceptionalAmount", "ModuleNamePlural");
         private string LoanDecision = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "LoanDecision", "ModuleName");
         private string noRecords = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "NoRecords");
-
+        
 
         public GrantRequestViewModelController()
         {
@@ -57,9 +58,17 @@ namespace Portal.Controllers
 
         #region Index Of Grant Request
         // GET: GrantRequestViewModel
-        public ActionResult Index()
+        public ActionResult Index(GrantRequestVwViewModel Model)
         {
-            return View();
+            if (Model.Filter.HasCriteria)
+            {                 
+                Db db = new Db(DbServices.ConnectionString);
+                Model.List = GrantRequestVwServices.Get(Model.Filter, db);
+            }
+            else
+                Model.List = new List<GrantRequestVw>();
+            return View(Model);
+            
         }
 
         #endregion
@@ -73,8 +82,8 @@ namespace Portal.Controllers
             // For Product
             ViewBag.EmployeeList = new SelectList(EmployeeServices.List(db), "Id", "Id_Name");
 
-            //Just Show Grant Type            
-            ViewBag.GrantTypeList = new SelectList(GrantTypeVwServices.List(db), "Id", "Name");         
+            //For Grant             
+            ViewBag.GrantTypeList = new SelectList(GrantTypeServices.List(db), "Id", "Name");         
 
             return View();
         }
@@ -111,6 +120,8 @@ namespace Portal.Controllers
 
                         //3-Add LoanRequest
                         model.GrantRequest.Request = p.Id;
+                        model.GrantRequest.Amount = model.Request.Amount;
+                       
                         GrantRequestServices.Insert(CurrentUser.Id, model.GrantRequest, db);
     
                         TempData["Success"] = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "InsertConfirmed");
@@ -135,6 +146,78 @@ namespace Portal.Controllers
             }
         }
 
+        #endregion
+
+        #region Details Grant Request
+
+        public ActionResult Details(int? id)
+        {
+            @ViewBag.ServiceEndGrantRequestVwTitle = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ServiceEndGrantRequest", "ModuleName");
+            // Details Of Products
+            if (id == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            Db db = new Db(DbServices.ConnectionString);
+
+            // Product
+            ProductVwViewModel productVwViewModel = new ProductVwViewModel();
+            productVwViewModel.Instance = ProductVwServices.GetChildren(id.Value, db);
+            if (productVwViewModel.Instance == null)
+            {
+                return HttpNotFound();
+            }
+
+            productVwViewModel.RequestVwViewModel.Instance = RequestVwServices.Get(id.Value);
+            productVwViewModel.RequestVwViewModel.GrantRequestVwViewModel.Instance = GrantRequestVwServices.Get(id.Value);
+
+
+            productVwViewModel.RequestVwViewModel.GrantRequestVwViewModel.ServiceEndGrantRequestVwViewModel.Instance = ServiceEndGrantRequestVwServices.Get(id.Value);
+
+          
+            return View(productVwViewModel);
+        }
+
+        #endregion
+
+
+        #region Edit Grant Request 
+        public ActionResult Edit(int? id)
+        {
+            Db db = new Db(DbServices.ConnectionString);
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Product product = ProductServices.Get(id.Value, db);
+            Request request = RequestServices.Get(id.Value, db);
+            GrantRequest loanRequest = GrantRequestServices.Get(id.Value, db);
+
+            if (product == null || request == null || loanRequest == null)
+            {
+                return HttpNotFound();
+            }
+
+            // For Product
+            ViewBag.EmployeeList = new SelectList(EmployeeServices.List(db), "Id", "Id_Name", product.Employee);
+
+            //For Grant             
+            ViewBag.GrantTypeList = new SelectList(GrantTypeServices.List(db), "Id", "Name");
+
+            GrantRequestViewModel vm = new GrantRequestViewModel();
+            vm.RequestProduct = product;
+            vm.Request = request;
+            vm.GrantRequest = loanRequest;
+
+            return View(vm);
+        }
+        [HttpPost]
+        public ActionResult Edit(GrantRequestViewModel model )
+        {
+            return View();
+        }
         #endregion
     }
 }

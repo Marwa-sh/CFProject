@@ -16,7 +16,7 @@ namespace Portal.Controllers
     public class ManageLoanRequestsController : BaseController
     {
 
-        private string moduleName = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "LoanRequest", "ModuleName");
+        private string moduleName = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ManageLoanRequest", "ModuleName");
         private string index = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "LoanRequest", "ModuleNamePlural");
         private string insert = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Insert");
         private string update = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Update");
@@ -117,9 +117,7 @@ namespace Portal.Controllers
 
         [HttpPost]
         public ActionResult Details(int? id)
-        {
-           
-
+        {           
             ViewBag.TitleGuarantor = TitleGuarantor;
             ViewBag.TitleExceptionalAount = TitleExceptionalAount;
             // Details Of Products
@@ -163,9 +161,10 @@ namespace Portal.Controllers
 
         #region Validate
 
-        public ActionResult Validate(int? id)
+        [HttpPost]
+        public ActionResult Validate(int Amount , int RequestId)
         {
-            if (id == null)
+            if (RequestId == 0)
             {
                 return RedirectToAction("Index");
             }
@@ -173,8 +172,8 @@ namespace Portal.Controllers
             {
                 Db db = new Db(DbServices.ConnectionString);
                 
-                LoanRequestVw request = LoanRequestVwServices.Get(id.Value);
-                RefundableProductVw refendable = RefundableProductVwServices.Get(id.Value);
+                LoanRequestVw request = LoanRequestVwServices.Get(RequestId);
+                RefundableProductVw refendable = RefundableProductVwServices.Get(RequestId);
                 int numOfGuarantorsNeeded = 0;
 
                 EmployeeProductCalculatorFilter f = new EmployeeProductCalculatorFilter();
@@ -186,10 +185,13 @@ namespace Portal.Controllers
                     numOfGuarantorsNeeded = result[0].GuarantorsCount.Value;
                 }
 
-                int numOfGuarantors = GuarantorVwServices.GetByRefundableProductProductId(id.Value).Count;
+                int numOfGuarantors = GuarantorVwServices.GetByRefundableProductProductId(RequestId).Count;
                 if (numOfGuarantors == numOfGuarantorsNeeded)
-                {                    
-                    Request r = RequestServices.Get(id.Value);
+                {
+                    Product p = ProductServices.Get(RequestId,db);
+                    p.Amount = Amount;
+                    ProductServices.Update(p);
+                    Request r = RequestServices.Get(RequestId);
                     r.RequestStatus = (int)RequestStatusEnum.Valid;
                     RequestServices.Update(r);                    
                 }
@@ -350,5 +352,56 @@ namespace Portal.Controllers
         }
 
         #endregion
+
+        #region Manage New Requests
+        public ActionResult ManageNewRequests()
+        {
+            LoanRequestVwViewModel vm = new LoanRequestVwViewModel();
+            try
+            {
+                Db db = new Db(DbServices.ConnectionString);
+                List<LoanRequestVw> requests = null;
+                requests = LoanRequestVwServices.List(db).Where(c => c.RequestRequestStatusId == RequestStatusEnum.New.GetHashCode()).ToList();              
+                vm.List = requests;
+            }
+            catch (Exception exc)
+            {
+                throw;
+            }
+            
+            return View(vm);             
+        }
+        #endregion
+
+        #region Manage Valide Requests
+        public ActionResult ManageValidRequests()
+        {
+            return View();
+        }
+        #endregion
+
+        #region Manage Approved Requests
+        public ActionResult ManageApprovedRequests()
+        {
+            return View();
+        }
+        #endregion
+
+        #region Manage Exceptional Requests
+        public ActionResult ManageExceptionalRequest()
+        {
+            return View();
+        }
+        #endregion
+
+        #region Manage Rejected Requests
+        public ActionResult ManageRejectedRequest()
+        {
+            return View();
+        }
+        #endregion
+
+
+
     }
 }

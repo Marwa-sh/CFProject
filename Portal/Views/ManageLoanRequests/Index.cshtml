@@ -14,7 +14,7 @@
                 else
                 {<span class="tag tag-danger">@Model.List.Where(c => c.RequestRequestStatusId == (int)RequestStatusEnum.New).ToList().Count</span> }
             </h4>
-            @*<h4 class="card-title">@ViewBag.NewLoanRequests</h4>*@
+             
             <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
             <div class="heading-elements">
                 <ul class="list-inline mb-0">
@@ -26,10 +26,42 @@
         </div>
         <div class="card-body collapse  ">
             <div class="card-block card-dashboard">
-                @*<button class="btn btn-success" type="button">
-                        @Html.ActionLink((string)ViewBag.Insert + " " + (string)ViewBag.ModuleName, "Create")
-                    </button>*@
+                <div class="row">
+                    <div class="col-md-2">
+                        <button class="btn btn-success" type="button">
+                            @Html.ActionLink("New Requests", "ManageNewRequests")
+                        </button>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-success" type="button">
+                            @Html.ActionLink("Valid Requests","ManageValidRequests")
+                        </button>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-success" type="button">
+                            @Html.ActionLink("Approved Requests","ManageApprovedRequests")
+                        </button>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-success" type="button">
+                            @Html.ActionLink("Exceptional Request","ManageExceptionalRequest" )
+                        </button>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-success" type="button">
+                            @Html.ActionLink("Rejected Request", "ManageRejectedRequest")
+                        </button>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+                
 
+               
+
+                
+                
+               
+                
             </div>
             <div class="table-responsive">
                 <table id="Result" class="table table-bordered mb-0">
@@ -649,6 +681,40 @@
         </div>
     </div>
 </div>
+
+
+<div class="modal fade" id="validateModal" tabindex="-1" role="dialog" aria-labelledby="validateModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="margin-right: -160px;width:1000px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">@ViewBag.No</span></button>
+                <h4 class="modal-title" id="validateModalLabel"> @ViewBag.ModuleName</h4>
+            </div>
+            <div id="validateModalBody" class="modal-body">
+                <h4>@ViewBag.ConfirmValidate</h4>
+                <div>
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <input type="text" name="Amount" id="txtAmount" value="Amount" />
+                        <input type="hidden"  name="RequestId" id="RequestId" />
+
+                        <div class="form-actions no-color">
+                            <input type="submit" value="@ViewBag.Yes" class="btn btn-danger" />
+                            <input type="button" onclick="location.href='@Url.Action("Validate")'" value="@ViewBag.No" class="btn btn-default" />
+                        </div>
+                    }
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
 @section Scripts
 {
     <script>
@@ -678,6 +744,32 @@
                     }
                 });
             });
+
+            $(".validate").click(function () {
+                var request_id = $(this).data("id");
+                $.ajax({
+                    type: "POST",
+                    url: "/ManageLoanRequests/Details",
+                    data: '{id: "' + request_id + '" }',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "html",
+                    success: function (response) {
+                        //$('#dialog').html(response);
+                        //$('#dialog').dialog('open');
+                        $("#detailsModalBody").html(response);
+
+                        $("#detailsModal").modal("show");
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+            });
+
+
         });
     </script>
     @*<script>

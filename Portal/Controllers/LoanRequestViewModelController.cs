@@ -79,7 +79,7 @@ namespace Portal.Controllers
 
             Db db = new Db(DbServices.ConnectionString);
             // For Product
-            ViewBag.EmployeeList = new SelectList(EmployeeServices.List(db), "Id", "Id_Name");
+            //ViewBag.EmployeeList = new SelectList(EmployeeServices.List(db), "Id", "Id_Name");
 
             //Just Show Loan Type            
             ViewBag.ProductTypeList = new SelectList(LoanTypeVwServices.List(db), "ProductTypeId", "ProductTypeName");
@@ -186,7 +186,7 @@ namespace Portal.Controllers
             } 
  
             // For Product
-            ViewBag.EmployeeList = new SelectList(EmployeeServices.List(db), "Id", "Id_Name", product.Employee);
+            //ViewBag.EmployeeList = new SelectList(EmployeeServices.List(db), "Id", "Id_Name", product.Employee);
             ViewBag.ProductTypeList = new SelectList(ProductTypeServices.List(db), "Id", "Name", product.ProductType);
 
             // For Request
@@ -381,7 +381,7 @@ namespace Portal.Controllers
             {
                 RedirectToAction("Index");
             }
-            ViewBag.EmployeeList = new SelectList(EmployeeServices.List(db), "Id", "FirstName");            
+            ViewBag.EmployeeList = new SelectList(EmployeeServices.List(db), "Id", "Id_Name");            
             return PartialView();
         }
         [HttpPost]
@@ -458,7 +458,7 @@ namespace Portal.Controllers
             }
 
 
-            ViewBag.EmployeeList = new SelectList(EmployeeServices.List(db), "Id", "FirstName", guarantor.Employee);
+            ViewBag.EmployeeList = new SelectList(EmployeeServices.List(db), "Id", "Id_Name", guarantor.Employee);
             ViewBag.GuarantorStatusList = new SelectList(GuarantorStatusServices.List(db), "Id", "Name", guarantor.GuarantorStatus);
             ViewBag.ProductId = guarantor.RefundableProduct;
             GuarantorWithStatmentViewModel vm = new GuarantorWithStatmentViewModel();

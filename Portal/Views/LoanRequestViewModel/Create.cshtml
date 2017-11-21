@@ -39,7 +39,8 @@
                                                   {"data-toggle", "tooltip"},
                                                   {"data-placement", "bottom"}
                                                 })
-                                        @Html.DropDownListFor(model => model.RequestProduct.Employee, (SelectList)@ViewBag.EmployeeList, htmlAttributes: new { @class = "form-control combobox" })
+                                        @Html.EditorFor(model => model.RequestProduct.Employee, new { htmlAttributes = new { @class = "form-control" } })
+                                        @*@Html.DropDownListFor(model => model.RequestProduct.Employee, (SelectList)@ViewBag.EmployeeList, htmlAttributes: new { @class = "form-control combobox" })*@
                                         @Html.ValidationMessageFor(model => model.RequestProduct.Employee, "", new { @class = "text-danger" })
 
                                     </div>
@@ -177,11 +178,19 @@
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="form-group">
+                                                <label class="form-control-label" name="FullNameFor">FullName</label>
+                                                <input disabled id="FullName" class="form-control" name="FullName" />
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
                                                 <label class="form-control-label" name="DepartmentNameFor">DepartmentName</label>
                                                 <input disabled id="DepartmentName" class="form-control" name="DepartmentName" />
                                             </div>
 
                                         </div>
+
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label class="form-control-label" name="DepartmentSalaryWorkPlaceNameFor">DepartmentSalaryWorkPlaceName</label>
@@ -195,14 +204,15 @@
                                                 <input disabled id="EmployeeStatusName" class="form-control" name="EmployeeStatusName" />
                                             </div>
                                         </div>
+                                       
+                                    </div>
+                                    <div class="row">
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label class="form-control-label" name="CategoryNameFor">CategoryName</label>
                                                 <input disabled id="CategoryName" class="form-control" name="CategoryName" />
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label class="form-control-label" name="SeniorityFor">Seniority</label>
@@ -226,6 +236,9 @@
                                                 @*<label id="MinReusePeriod" name="MinReusePeriod"></label>*@
                                             </div>
                                         </div>
+                                       
+                                    </div>
+                                    <div class="row">
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label class="form-control-label" name="CersStartDateFor">CersStartDate</label>
@@ -233,9 +246,6 @@
                                             </div>
 
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label class="form-control-label" name="CfStartDateFor">CfStartDate</label>
@@ -384,6 +394,7 @@
                                 $("#DepartmentSalaryWorkPlaceName").val(temp.DepartmentSalaryWorkPlaceName);
                                 $("#EmployeeStatusName").val(temp.EmployeeStatusName); 
                                 $("#CategoryName").val(temp.CategoryName);
+                                $("#FullName").val(temp.FullName);
 
                                 // Loan Info
                                 $("#Installment").val(temp.Installment);

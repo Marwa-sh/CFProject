@@ -71,7 +71,7 @@
                                                   {"data-toggle", "tooltip"},
                                                   {"data-placement", "bottom"}
                                                 })
-                                        @Html.DropDownList("GrantType", (SelectList)@ViewBag.GrantTypeList, htmlAttributes: new { @class = "form-control" })
+                                        @Html.DropDownListFor(model => model.GrantRequest.GrantType, (SelectList)@ViewBag.GrantTypeList, htmlAttributes: new { @class = "form-control" })
                                         @Html.ValidationMessageFor(model => model.GrantRequest.GrantType, "", new { @class = "text-danger" })
                                     </div>
                                 </div>

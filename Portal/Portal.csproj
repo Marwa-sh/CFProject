@@ -918,6 +918,12 @@
     <Content Include="Content\assets\vendors\css\ui\perfect-scrollbar.min.css" />
     <Content Include="Content\assets\vendors\css\ui\prism-treeview.css" />
     <Content Include="Content\assets\vendors\css\ui\prism.min.css" />
+    <Content Include="Content\FinalVersion\IBC-Blue.png" />
+    <Content Include="Content\FinalVersion\IBC-GreenBlue.png" />
+    <Content Include="Content\FinalVersion\IBC-Light-Green.png" />
+    <Content Include="Content\FinalVersion\IBC-PurpleBlue.png" />
+    <Content Include="Content\FinalVersion\IBC-Red.png" />
+    <Content Include="Content\FinalVersion\IBC1.png" />
     <Content Include="Content\jquery-steps-master\build\jquery.steps.js" />
     <Content Include="Content\jquery-steps-master\build\jquery.steps.min.js" />
     <Content Include="Content\jquery-steps-master\demo\css\jquery.steps.css" />
@@ -1659,6 +1665,11 @@
     <Content Include="Views\LoanDecision\CreateLoanRequestDecision.cshtml" />
     <Content Include="Views\LoanRequestViewModel\EmployeeCalculator.cshtml" />
     <Content Include="Views\GrantRequestViewModel\Create.cshtml" />
+    <Content Include="Views\GrantRequestViewModel\Index.cshtml" />
+    <Content Include="Views\GrantRequestViewModel\Details.cshtml" />
+    <Content Include="Views\GrantRequestViewModel\Edit.cshtml" />
+    <Content Include="Views\ManageLoanRequests\ManageNewRequests.cshtml" />
+    <Content Include="Views\ManageLoanRequests\_Navbar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CfDataContext\CfDataContext.csproj">

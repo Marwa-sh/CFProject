@@ -42,7 +42,6 @@
 
                                 <input type="hidden" name="RequestProductProductRefundableProduct.Product" id="txtRequestProductProductRefundableProduct" class="form-control" value="@Html.DisplayFor(model => model.RequestProductProductRefundableProduct.Product)" />
 
-
                                 <div class="row">
                                     <div class="col-md-3">
                                         <div class="form-group">
@@ -52,7 +51,8 @@
                                                   {"data-toggle", "tooltip"},
                                                   {"data-placement", "bottom"}
                                                 })
-                                            @Html.DropDownListFor(model => model.RequestProduct.Employee, (SelectList)@ViewBag.EmployeeList, htmlAttributes: new { @class = "form-control combobox" })
+                                            @Html.EditorFor(model => model.RequestProduct.Employee, new { htmlAttributes = new { @class = "form-control" } })
+                                            @*@Html.DropDownListFor(model => model.RequestProduct.Employee, (SelectList)@ViewBag.EmployeeList, htmlAttributes: new { @class = "form-control combobox" })*@
                                             @Html.ValidationMessageFor(model => model.RequestProduct.Employee, "", new { @class = "text-danger" })
 
                                         </div>
@@ -195,6 +195,13 @@
                                 <div class="tab-content px-1 pt-1">
                                     <div role="tabpanel" class="tab-pane fade active in" id="Employee" aria-labelledby="active-tab" aria-expanded="false">
                                         <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="form-control-label" name="FullNameFor">FullName</label>
+                                                    <input disabled id="FullName" value="@resultCalculator.FullName" class="form-control" name="FullName" />
+                                                </div>
+
+                                            </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label class="form-control-label" name="DepartmentNameFor">DepartmentName</label>
@@ -582,6 +589,7 @@
                                 $("#DepartmentSalaryWorkPlaceName").val(temp.DepartmentSalaryWorkPlaceName);
                                 $("#EmployeeStatusName").val(temp.EmployeeStatusName);
                                 $("#CategoryName").val(temp.CategoryName);
+                                $("#FullName").val(temp.FullName);
 
                                 // Loan Info
                                 $("#Installment").val(temp.Installment);

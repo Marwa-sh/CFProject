@@ -12,7 +12,7 @@
                     <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
                     <div class="heading-elements">
                         <ul class="list-inline mb-0">
-                            <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
+                            <li><a data-action="collapse"><i id="mark" class="icon-minus4"></i></a></li>
                             <li><a data-action="reload"><i class="icon-reload"></i></a></li>
                             <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
                         </ul>
@@ -137,7 +137,7 @@
                     </button>
                 </div>
                 <div class="table-responsive">
-                    <table id="Result" class="table table-bordered mb-0">
+                    <table id="Result" class="table table-bordered mb-0 ">
                         <thead class="thead-inverse">
                             <tr>
                                
@@ -170,8 +170,7 @@
                         <tbody>
                             @foreach (var item in Model.List)
                             {
-                                <tr>
-                                    
+                                <tr>                                    
                                     <td>
                                         @Html.DisplayFor(modelItem => item.RequestProductEmployeeId)
                                     </td>
@@ -258,6 +257,7 @@
 	        else {
 	            var value = $("#cardOptions").attr("class").replace("in", "");
 	            $("#cardOptions").attr("class", value);
+	            $("#mark").attr("class", "icon-plus4");
 	        }
 	    });
 	    $(function () {

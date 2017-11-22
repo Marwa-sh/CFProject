@@ -162,18 +162,18 @@ namespace Portal.Controllers
         #region Validate
 
         [HttpPost]
-        public ActionResult Validate(int Amount , int RequestId)
+        public string Validate(decimal ? Amount , int ? RequestId)
         {
             if (RequestId == 0)
             {
-                return RedirectToAction("Index");
+                return "Error";// RedirectToAction("ManageNewRequests");
             }
             try
             {
                 Db db = new Db(DbServices.ConnectionString);
                 
-                LoanRequestVw request = LoanRequestVwServices.Get(RequestId);
-                RefundableProductVw refendable = RefundableProductVwServices.Get(RequestId);
+                LoanRequestVw request = LoanRequestVwServices.Get(RequestId.Value);
+                RefundableProductVw refendable = RefundableProductVwServices.Get(RequestId.Value);
                 int numOfGuarantorsNeeded = 0;
 
                 EmployeeProductCalculatorFilter f = new EmployeeProductCalculatorFilter();
@@ -185,20 +185,20 @@ namespace Portal.Controllers
                     numOfGuarantorsNeeded = result[0].GuarantorsCount.Value;
                 }
 
-                int numOfGuarantors = GuarantorVwServices.GetByRefundableProductProductId(RequestId).Count;
+                int numOfGuarantors = GuarantorVwServices.GetByRefundableProductProductId(RequestId.Value).Count;
                 if (numOfGuarantors == numOfGuarantorsNeeded)
                 {
-                    Product p = ProductServices.Get(RequestId,db);
-                    p.Amount = Amount;
+                    Product p = ProductServices.Get(RequestId.Value,db);
+                    p.Amount = Amount.Value;
                     ProductServices.Update(p);
-                    Request r = RequestServices.Get(RequestId);
+                    Request r = RequestServices.Get(RequestId.Value);
                     r.RequestStatus = (int)RequestStatusEnum.Valid;
                     RequestServices.Update(r);                    
                 }
                 else
                 {
-                    TempData["Failure"] = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "Guarantors", "NumberOfGuarantors");
-
+                    //TempData["Failure"] = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "Guarantors", "NumberOfGuarantors");
+                    return ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "Guarantors", "NumberOfGuarantors");
                 }
 
             }
@@ -210,7 +210,7 @@ namespace Portal.Controllers
                 //else
                 //    throw ex;
             }
-            return RedirectToAction("Index");
+            return "Success";// RedirectToAction("ManageNewRequests");
         }
 
         #endregion
@@ -220,14 +220,14 @@ namespace Portal.Controllers
         {
             if (id == null)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("ManageNewRequests");
             }
 
             Request request = RequestServices.Get(id.Value);
             request.RequestStatus = (int)RequestStatusEnum.Invalid;
             RequestServices.Update(request);
 
-            return RedirectToAction("Index");
+            return RedirectToAction("ManageNewRequests");
         }
 
         #endregion
@@ -237,7 +237,7 @@ namespace Portal.Controllers
         {
             if (id == null)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("ManageValidRequests");
             }
             try
             {
@@ -258,10 +258,8 @@ namespace Portal.Controllers
             catch (Exception ex)
             {
 
-            }
-            
-
-            return RedirectToAction("Index");
+            }            
+            return RedirectToAction("ManageValidRequests");
         }
 
         #endregion
@@ -376,28 +374,80 @@ namespace Portal.Controllers
         #region Manage Valide Requests
         public ActionResult ManageValidRequests()
         {
-            return View();
+            LoanRequestVwViewModel vm = new LoanRequestVwViewModel();
+            try
+            {
+                Db db = new Db(DbServices.ConnectionString);
+                List<LoanRequestVw> requests = null;
+                requests = LoanRequestVwServices.List(db).Where(c => c.RequestRequestStatusId == RequestStatusEnum.Valid.GetHashCode()).ToList();
+                vm.List = requests;
+            }
+            catch (Exception exc)
+            {
+                throw;
+            }
+
+            return View(vm);            
         }
         #endregion
 
         #region Manage Approved Requests
         public ActionResult ManageApprovedRequests()
         {
-            return View();
+            LoanRequestVwViewModel vm = new LoanRequestVwViewModel();
+            try
+            {
+                Db db = new Db(DbServices.ConnectionString);
+                List<LoanRequestVw> requests = null;
+                requests = LoanRequestVwServices.List(db).Where(c => c.RequestRequestStatusId == RequestStatusEnum.Approved.GetHashCode()).ToList();
+                vm.List = requests;
+            }
+            catch (Exception exc)
+            {
+                throw;
+            }
+
+            return View(vm);
         }
         #endregion
 
         #region Manage Exceptional Requests
         public ActionResult ManageExceptionalRequest()
         {
-            return View();
+            LoanRequestVwViewModel vm = new LoanRequestVwViewModel();
+            try
+            {
+                Db db = new Db(DbServices.ConnectionString);
+                List<LoanRequestVw> requests = null;
+                requests = LoanRequestVwServices.List(db).Where(c => c.RequestRequestStatusId == RequestStatusEnum.ExcludedFromValidation.GetHashCode()).ToList();
+                vm.List = requests;
+            }
+            catch (Exception exc)
+            {
+                throw;
+            }
+
+            return View(vm);
         }
         #endregion
 
         #region Manage Rejected Requests
         public ActionResult ManageRejectedRequest()
         {
-            return View();
+            LoanRequestVwViewModel vm = new LoanRequestVwViewModel();
+            try
+            {
+                Db db = new Db(DbServices.ConnectionString);
+                List<LoanRequestVw> requests = null;
+                requests = LoanRequestVwServices.List(db).Where(c => c.RequestRequestStatusId == RequestStatusEnum.Invalid.GetHashCode()).ToList();
+                vm.List = requests;
+            }
+            catch (Exception exc)
+            {
+                throw;
+            }
+
+            return View(vm);
         }
         #endregion
 

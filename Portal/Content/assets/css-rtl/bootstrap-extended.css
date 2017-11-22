@@ -168,9 +168,9 @@ code {
   border-top : table-borderless;
 }
 
-.table th, .table td {
+/*.table th, .table td {
   padding : 0.75rem 2rem;
-}
+}*/
 
 .table.table-xl th, .table.table-xl td {
   padding : 1.25rem 2rem;
@@ -789,8 +789,9 @@ button:focus {
        -o-transition : 300ms ease all;
           transition : 300ms ease all;
 }
+/*edit*/
 .header-navbar .navbar-header .navbar-brand {
-  padding : 15px 6px;
+  padding : 4px 6px;
 }
 .header-navbar .navbar-container {
   padding : 0rem 1rem;

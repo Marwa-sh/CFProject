@@ -924,6 +924,8 @@
     <Content Include="Content\FinalVersion\IBC-PurpleBlue.png" />
     <Content Include="Content\FinalVersion\IBC-Red.png" />
     <Content Include="Content\FinalVersion\IBC1.png" />
+    <Content Include="Content\FinalVersion\IBC1.svg" />
+    <Content Include="Content\FinalVersion\IBCF.svg" />
     <Content Include="Content\jquery-steps-master\build\jquery.steps.js" />
     <Content Include="Content\jquery-steps-master\build\jquery.steps.min.js" />
     <Content Include="Content\jquery-steps-master\demo\css\jquery.steps.css" />
@@ -1670,6 +1672,11 @@
     <Content Include="Views\GrantRequestViewModel\Edit.cshtml" />
     <Content Include="Views\ManageLoanRequests\ManageNewRequests.cshtml" />
     <Content Include="Views\ManageLoanRequests\_Navbar.cshtml" />
+    <Content Include="Views\ManageLoanRequests\ManageValidRequests.cshtml" />
+    <Content Include="Views\ManageLoanRequests\ManageApprovedRequests.cshtml" />
+    <Content Include="Views\ManageLoanRequests\ManageExceptionalRequest.cshtml" />
+    <Content Include="Views\ManageLoanRequests\ManageRejectedRequest.cshtml" />
+    <Content Include="Views\ManageLoanRequests\_FiltersSection.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CfDataContext\CfDataContext.csproj">

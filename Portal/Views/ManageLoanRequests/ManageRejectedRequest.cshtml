@@ -1,0 +1,47 @@
+﻿
+@model Cf.ViewModels.LoanRequestVwViewModel
+@using Cf.Data;
+@using Cf.Services;
+
+<div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="margin-right: -160px;width:1000px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">@ViewBag.No</span></button>
+                <h4 class="modal-title" id="deleteModalLabel"> @ViewBag.ModuleName</h4>
+            </div>
+            <div id="detailsModalBody" class="modal-body"></div>
+
+        </div>
+    </div>
+</div>
+@section Scripts
+{
+    <script>
+        $(function () {
+            $(".details").click(function () {
+                var request_id = $(this).data("id");
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("Details", "ManageLoanRequests")',
+                    data: '{id: "' + request_id + '" }',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "html",
+                    success: function (response) {
+                        //$('#dialog').html(response);
+                        //$('#dialog').dialog('open');
+                        $("#detailsModalBody").html(response);
+
+                        $("#detailsModal").modal("show");
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+}

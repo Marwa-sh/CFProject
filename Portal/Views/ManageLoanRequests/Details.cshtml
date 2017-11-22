@@ -68,6 +68,38 @@
                                     });
 
                                 });
+                                $("#validate").click(function () {
+                                    
+                                    var requestId = $(this).data("id");
+                                    var amount = $("#txtAmount").val();
+                                    console.log("dd="+amount);
+                                    $.ajax({
+                                        type: "POST",
+                                        url: '@Url.Action("Validate")',
+                                        data: '{  Amount:' + amount + ' , RequestId: "' + requestId + '"}',
+                                        contentType: "application/json; charset=utf-8",
+                                        dataType: "html",
+                                        success: function (response) {
+                                             
+                                            if(response=="Success")
+                                            {
+                                                swal("", response, "success");
+                                            }
+                                            else  
+                                            {
+                                                swal("", response, "error");
+                                            }
+                                             
+                                        },
+                                        failure: function (response) {
+                                            alert("Error: "+response.responseText);
+                                        },
+                                        error: function (response) {
+                                            alert("Error: " + response.responseText);
+                                        }
+                                    });
+
+                                });
                         </script>
 
                         <ul class="nav nav-pills  ">
@@ -162,10 +194,10 @@
                                                     @*@if (ViewBag.RoleName == "FinantialEmployee")*@
                                                     @*  {*@
                                                     <div>
-                                                        <button type="button" class="btn btn-success AcceptGuarantor" data-url="@Url.Action("AcceptGuarantor")" data-id="@item.Id">
+                                                        <button type="button" class="btn btn-success btn-sm AcceptGuarantor" data-url="@Url.Action("AcceptGuarantor")" data-id="@item.Id">
                                                             <i class="icon-check-circle"></i>
                                                         </button>
-                                                        <button type="button" class="btn btn-danger RejectGuarantor" data-url="@Url.Action("RejectGuarantor")" data-id="@item.Id">
+                                                        <button type="button" class="btn btn-danger btn-sm RejectGuarantor" data-url="@Url.Action("RejectGuarantor")" data-id="@item.Id">
                                                             <i class="icon-times-circle"></i>
                                                         </button>
                                                     </div>
@@ -261,7 +293,7 @@
                                                   {"data-toggle", "tooltip"},
                                                   {"data-placement", "bottom"}
                                                 })
-                                            <input type="text" id="txtAmount" class="form-control" value="@Html.DisplayFor(model => model.Instance.Amount)" disabled />
+                                            <input type="text" id="txtAmount" class="form-control" value="@Html.DisplayFor(model => model.Instance.Amount)" />
                                         </div>
                                     </div>
                                 </div>
@@ -396,13 +428,14 @@
                                 <div class="row">
                                     <div class="col-md-4"></div>
                                     <div class="col-md-4">
-                                        <a class="btn btn-success" href="@Url.Action("Validate",new { id = Model.Instance.Id})">
+                                        <button id="validate" class="btn btn-success btn-sm" data-id="@Model.Instance.Id" name="validate"><i class="icon-check-circle"></i></button>
+                                        @*<a class="btn btn-success" href="@Url.Action("Validate",new {})">
                                             <i class="icon-check-circle"></i>
-                                        </a>
-                                        <a class="btn btn-danger" href="@Url.Action("Reject",new   {   id = Model.Instance.Id  })">
+                                        </a>*@
+                                        <a class="btn btn-danger btn-sm" href="@Url.Action("Reject",new   {   id = Model.Instance.Id  })">
                                             <i class="icon-times-circle"></i>
                                         </a>
-                                        <a class="btn btn-warning" href="@Url.Action("Exception",new   {   id = Model.Instance.Id  })">
+                                        <a class="btn btn-warning btn-sm" href="@Url.Action("Exception",new   {   id = Model.Instance.Id  })">
                                             <i class="icon-magic"></i>
                                         </a>
                                     </div>

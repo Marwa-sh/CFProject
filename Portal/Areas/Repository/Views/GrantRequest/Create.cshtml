@@ -1,0 +1,157 @@
+@model Cf.Data.GrantRequest
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">@ViewBag.Action @ViewBag.ModuleName</h4>
+                    <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
+                            <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                            <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-body collapse in">
+                    <div class="card-block">
+                        <form class="form">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-body">
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Request, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Request, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Request)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                @Html.EditorFor(model => model.Request, new { htmlAttributes = new { @class = "form-control" } })
+								                @Html.ValidationMessageFor(model => model.Request, "", new { @class = "text-danger" })
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.GrantType, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.GrantType, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.GrantType)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                @Html.DropDownList("GrantType", (SelectList)@ViewBag.GrantTypeList, htmlAttributes: new { @class = "form-control" })
+								                @Html.ValidationMessageFor(model => model.GrantType, "", new { @class = "text-danger" })
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Description, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Description)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+								                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+								        </div>
+									</div>
+								</div>
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Amount, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Amount, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Amount)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                @Html.EditorFor(model => model.Amount, new { htmlAttributes = new { @class = "form-control" } })
+								                @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Notes, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Notes, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Notes)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                @Html.EditorFor(model => model.Notes, new { htmlAttributes = new { @class = "form-control" } })
+								                @Html.ValidationMessageFor(model => model.Notes, "", new { @class = "text-danger" })
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.EventDate, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.EventDate, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.EventDate)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                @Html.TextBoxFor(model => model.EventDate, htmlAttributes: new { @class = "form-control IsDate" })
+								                @Html.ValidationMessageFor(model => model.EventDate, "", new { @class = "text-danger" })
+								        </div>
+									</div>
+								</div>
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.IsFromOtherBranch, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.IsFromOtherBranch, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.IsFromOtherBranch)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                @Html.EditorFor(model => model.IsFromOtherBranch, new { htmlAttributes = new { @class = "form-control" } })
+								                @Html.ValidationMessageFor(model => model.IsFromOtherBranch, "", new { @class = "text-danger" })
+								        </div>
+									</div>
+								</div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary mr-1">
+                                    @ViewBag.Save
+                                </button>
+                                <button type="button" class="btn btn-warning">
+                                    @Html.ActionLink((string)ViewBag.Back, "Index")
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section Scripts {
+    <script>
+		$(function () {
+            $.validator.addMethod('date',
+            function (value, element) {
+                if (this.optional(element)) {
+                    return true;
+                }
+                var ok = true;
+                try {
+                    $.datepicker.parseDate('dd/mm/yy', value);
+                }
+                catch (err) {
+                    ok = false;
+                }
+                return ok;
+            });
+            $(".IsDate").datepicker({ dateFormat: 'dd/mm/yy', changeYear: true });
+        });
+    </script>
+}

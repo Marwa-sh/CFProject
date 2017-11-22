@@ -67,6 +67,7 @@
     <Compile Include="Db\Views.Filter.cs" />
     <Compile Include="Dto\DeepLoadViews.cs" />
     <Compile Include="Dto\EventLogVw.Factory.cs" />
+    <Compile Include="Dto\GetCustom.cs" />
     <Compile Include="Dto\ParametersCustomCriterion.cs" />
     <Compile Include="Dto\Tables.cs" />
     <Compile Include="Dto\Views.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Log\Views.XmlRepresenters.cs" />
     <Compile Include="Log\XmlFormatterBase.cs" />
     <Compile Include="Log\XmlRepresenterBase.cs" />
+    <Compile Include="MetaData\GetCustom.cs" />
     <Compile Include="MetaData\Tables.cs" />
     <Compile Include="MetaData\Tables.Extended.cs" />
     <Compile Include="MetaData\TooltipAttribute.cs" />
@@ -91,6 +93,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Resources\CommonResources.cs" />
+    <Compile Include="Resources\GetCustom.cs" />
     <Compile Include="Resources\ResourceBase.cs" />
     <Compile Include="Resources\ResourcesCollection.cs" />
     <Compile Include="Resources\Tables.cs" />

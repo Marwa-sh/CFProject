@@ -1,0 +1,327 @@
+﻿@model Cf.Data.EmployeeProductCalculatorFilter
+
+@using (Html.BeginForm())
+{
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">@ViewBag.Action @ViewBag.ModuleName</h4>
+                    <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
+                            <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                            <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-body collapse in">
+                    <div class="card-block">
+                        <div class="form-body">
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+
+                                        @Html.LabelFor(model => model.EmployeeId, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model =>model.EmployeeId)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        @Html.DropDownListFor(model => model.EmployeeId, (SelectList)@ViewBag.EmployeeList, htmlAttributes: new { @class = "form-control combobox" })
+                                        @Html.ValidationMessageFor(model => model.EmployeeId, "", new { @class = "text-danger" })
+
+
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+
+                                        @Html.LabelFor(model => model.ProductTypeId, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.ProductTypeId)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        @Html.DropDownListFor(model => model.ProductTypeId, (SelectList)@ViewBag.ProductTypeList, htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.ProductTypeId, "", new { @class = "text-danger" })
+
+
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+
+                                        @Html.LabelFor(model => model.Amount, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Amount)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        @Html.EditorFor(model => model.Amount, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+
+                                        @Html.LabelFor(model => model.Period, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Period)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        @Html.EditorFor(model => model.Period, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Period, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-5"></div>
+                            <div class="col-sm-2">
+                                <button type="button" id="discover" class="btn btn-primary mr-1">
+                                    Discover
+                                </button>
+                            </div>
+                            <div class="col-sm-5"></div>
+
+                        </div>
+                        <div class="form-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" name="InstallmentFor">Installment</label>
+                                        <input disabled id="Installment" class="form-control" name="Installment" />
+                                        @*<label id="Installment" name="Installment"></label>*@
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" name="NetAmountFor">NetAmount</label>
+                                        <input disabled id="NetAmount" class="form-control" name="NetAmount" />
+                                        @*<label id="NetAmount" name="NetAmount"></label>*@
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" name="ProfitAmountFor">ProfitAmount</label>
+                                        <input disabled id="ProfitAmount" class="form-control" name="ProfitAmount" />
+                                        @*<label id="ProfitAmount" name="ProfitAmount"></label>*@
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" name="MaxAmountFor">MaxAmount</label>
+                                        <input disabled id="MaxAmount" class="form-control" name="MaxAmount" />
+                                        @*<label id="MaxAmount" name="MaxAmount"></label>*@
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" name="SeniorityFor">Seniority</label>
+                                        <input disabled id="Seniority" class="form-control" name="Seniority" />
+                                        @*<label id="Seniority" name="Seniority"></label>*@
+                                    </div>
+
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" name="MinSeniorityFor">MinSeniority</label>
+                                        <input disabled id="MinSeniority" class="form-control" name="MinSeniority" />
+                                        @*<label id="MinSeniority" name="MinSeniority"></label>*@
+                                    </div>
+
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" name="MinReusePeriodFor">MinReusePeriod</label>
+                                        <input disabled id="MinReusePeriod" class="form-control" name="MinReusePeriod" />
+                                        @*<label id="MinReusePeriod" name="MinReusePeriod"></label>*@
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" name="GuarantorsCountFor">GuarantorsCount</label>
+                                        <input disabled id="GuarantorsCount" class="form-control" name="GuarantorsCount" />
+                                        @*<label id="GuarantorsCount" name="GuarantorsCount"></label>*@
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                               
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" name="RateFor">Rate</label>
+                                        <input disabled id="Rate" class="form-control" name="Rate" />
+                                        @*<label id="Rate" name="Rate"></label>*@
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <button type="button" class="btn btn-warning">
+                            @Html.ActionLink((string)ViewBag.Back, "Index")
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+@*<div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title"> Result</h4>
+                    <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
+                            <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                            <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-body collapse in">
+                    <div class="card-block">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(function () {
+
+            $("#discover").click(function () {
+
+                var productId = $("#ProductTypeId").val();
+                var employeeId = $("#EmployeeId").val();
+                var amount = $("#Amount").val();
+                var period = $("#Period").val();
+
+                if (productId == '' || employeeId == '' || amount == '' || period == '') {
+
+                    swal("", "الحقول التالية مطلوبة: اسم الموظف، نوع السلفة، المبلغ والمدة", "error");
+                }
+                else {
+              //      swal({
+              //          title: 'Loading',
+              //          text: ' ',
+              //          timer: 5000,
+              //          onOpen: function () {
+              //              swal.showLoading()
+              //          }
+              //      }).then(
+              //function () { },
+              //// handling the promise rejection
+              //function (dismiss) {
+              //    if (dismiss === 'timer') {
+              //        console.log('I was closed by the timer')
+              //    }
+              //})
+                    $.ajax({
+                        type: "POST",
+                        url: "/LoanRequestViewModel/Calculate",
+                        data: '{employeeId: ' + employeeId + ', productTypeId:' + productId + ',amount: ' + amount + ',period: ' + period + '}'
+                   ,
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (response) {
+                            if (response.length == 0) {
+                                swal("", "لا يوجد نتائج", "error");
+                            }
+                            else {
+                                for (var i = 0; i < response.length; i++) {
+                                    var temp = response[i];
+
+                                    //$("#EmployeeIdlbl").text(temp.EmployeeId);
+                                    $("#MaxAmount").val(temp.MaxAmount);
+                                    $("#Seniority").val(temp.Seniority);
+                                    $("#MinSeniority").val(temp.MinSeniority);
+                                    $("#MinReusePeriod").val(temp.MinReusePeriod);
+                                    //$("#ProductTypeIdlbl").text(temp.ProductTypeId);
+                                    //$("#Amountlbl").text(temp.Amount);
+                                    $("#Rate").val(temp.Rate);
+                                    $("#GuarantorsCount").val(temp.GuarantorsCount);
+                                    $("#Installment").val(temp.Installment);
+                                    $("#NetAmount").val(temp.NetAmount);
+                                    $("#ProfitAmount").val(temp.ProfitAmount);
+
+                                }
+                            }
+
+                        },
+                        failure: function (response) {
+                            alert(response.responseText);
+                        },
+                        error: function (response) {
+                            alert(response.responseText);
+                        },
+                        xhr: function () {  // Custom XMLHttpRequest
+                            var myXhr = $.ajaxSettings.xhr();
+                            if (myXhr.upload) { // Check if upload property exists
+                                myXhr.upload.addEventListener('progress', function (e) { progressHandlingFunction(e) }, false);
+                                myXhr.upload.addEventListener('load', loadedHandlingFunction, false);
+                            }
+                            return myXhr;
+                        },
+                    });
+                    var progressHandlingFunction = function (e) {
+                        // What happens when it loading the ajax request.
+                        // Here put a sweet-alert with 'loading' icon (gif or any kind) using this parameter: 'imageUrl' that will replace the icon..
+
+                              swal({
+                                  title: 'Loading',
+                                  text: ' ',
+                                  timer: 2000,
+                                  onOpen: function () {
+                                      swal.showLoading()
+                                  }
+                              }).then(
+                        function () { },
+                        // handling the promise rejection
+                        function (dismiss) {
+                            if (dismiss === 'timer') {
+                                console.log('I was closed by the timer')
+                            }
+                        })
+                    };
+
+                    var loadedHandlingFunction = function () {
+                        // What happens when it finished loading the request...
+                        // Here put a sweet-alert with 'success' with any message you like on completion.
+                        swal("", "Finish", "success");
+                    }
+                }
+
+            });
+        });
+    </script>
+}

@@ -1,0 +1,293 @@
+@model Cf.ViewModels.GrantRequestVwViewModel
+	<div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">@ViewBag.Action @ViewBag.ModuleName</h4>
+                    <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
+                            <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                            <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-body collapse in">
+                    <div class="card-block">
+                        <form class="form">
+                            <div class="form-body">
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.RequestProductId, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.RequestProductId, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Instance.RequestProductId)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                 <input type="text" id="txtRequestProductId" class="form-control" value="@Html.DisplayFor(model => model.Instance.RequestProductId)" disabled />
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.RequestProductEmployeeId, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.RequestProductEmployeeId, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Instance.RequestProductEmployeeId)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                 <input type="text" id="txtRequestProductEmployeeId" class="form-control" value="@Html.DisplayFor(model => model.Instance.RequestProductEmployeeId)" disabled />
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.RequestProductEmployeeFullName, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.RequestProductEmployeeFullName, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Instance.RequestProductEmployeeFullName)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                 <input type="text" id="txtRequestProductEmployeeFullName" class="form-control" value="@Html.DisplayFor(model => model.Instance.RequestProductEmployeeFullName)" disabled />
+								        </div>
+									</div>
+								</div>
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.RequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.RequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Instance.RequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                 <input type="text" id="txtRequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName" class="form-control" value="@Html.DisplayFor(model => model.Instance.RequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)" disabled />
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.RequestProductEmployeeCategoryName, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.RequestProductEmployeeCategoryName, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Instance.RequestProductEmployeeCategoryName)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                 <input type="text" id="txtRequestProductEmployeeCategoryName" class="form-control" value="@Html.DisplayFor(model => model.Instance.RequestProductEmployeeCategoryName)" disabled />
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.RequestProductProductTypeName, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.RequestProductProductTypeName, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Instance.RequestProductProductTypeName)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                 <input type="text" id="txtRequestProductProductTypeName" class="form-control" value="@Html.DisplayFor(model => model.Instance.RequestProductProductTypeName)" disabled />
+								        </div>
+									</div>
+								</div>
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.RequestProductProductTypeRate, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.RequestProductProductTypeRate, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Instance.RequestProductProductTypeRate)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                 <input type="text" id="txtRequestProductProductTypeRate" class="form-control" value="@Html.DisplayFor(model => model.Instance.RequestProductProductTypeRate)" disabled />
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.RequestDate, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.RequestDate, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Instance.RequestDate)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                 <input type="text" id="txtRequestDate" class="form-control" value="@Html.DisplayFor(model => model.Instance.RequestDate)" disabled />
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.GrantType, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.GrantType, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Instance.GrantType)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                 <input type="text" id="txtGrantType" class="form-control" value="@Html.DisplayFor(model => model.Instance.GrantType)" disabled />
+								        </div>
+									</div>
+								</div>
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.Amount, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.Amount, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Instance.Amount)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                 <input type="text" id="txtAmount" class="form-control" value="@Html.DisplayFor(model => model.Instance.Amount)" disabled />
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Instance.Notes, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.Notes, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Instance.Notes)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                 <input type="text" id="txtNotes" class="form-control" value="@Html.DisplayFor(model => model.Instance.Notes)" disabled />
+								        </div>
+									</div>
+								</div>
+							</div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-primary mr-1">
+								        @Html.ActionLink((string)@ViewBag.Update, "Edit", new {
+																	request = Model.Instance.RequestProductId })
+                                </button>
+								<button type="button" class="btn btn-warning">
+							        @Html.ActionLink((string)@ViewBag.Back, "Index")
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">@ViewBag.ServiceEndGrantRequestVwTitle @if(Model.ServiceEndGrantRequestVwViewModel.List.Count == 0) {<span class="tag tag-default">@Model.ServiceEndGrantRequestVwViewModel.List.Count</span>} else {<span class="tag tag-danger">@Model.ServiceEndGrantRequestVwViewModel.List.Count</span> }</h4>
+                <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li><a data-action="collapse"><i class="icon-plus4"></i></a></li>
+                        <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                        <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-body collapse out">
+                <div class="card-block card-dashboard">
+                    <button class="btn btn-success" type="button">
+                        @Html.ActionLink((string)ViewBag.Insert + " " + (string)ViewBag.ServiceEndGrantRequestVwTitle, "Create", "ServiceEndGrantRequest")
+                    </button>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered mb-0">
+                        <thead class="bg-primary table-head-color">
+					        <tr>
+					            <th>
+					                @Html.DisplayNameFor(model => model.ServiceEndGrantRequestVwViewModel.Instance.ServiceInMonthes)
+					            </th>
+           
+					            <th></th>
+					        </tr>
+                        </thead>
+                        <tbody>
+        @foreach (var item in Model.ServiceEndGrantRequestVwViewModel.List)
+        {
+				            <tr>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.ServiceInMonthes)
+                				</td>
+				                <td>
+									<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+										<button type="button" class="btn btn-info">
+					                    	@Html.ActionLink((string)ViewBag.Details, "Details", "ServiceEndGrantRequest",
+                        					new
+											{
+												grantRequest = item.GrantRequestRequestProductId
+                        					}, null)
+                                        </button>
+                                        <button type="button" class="btn btn-warning">
+					                    	@Html.ActionLink((string)ViewBag.Update, "Edit", "ServiceEndGrantRequest",
+                        					new
+                        					{
+												grantRequest = item.GrantRequestRequestProductId
+                        					}, null)
+                                        </button>
+                                        <button type="button" class="btn btn-danger deleteLink" data-original-title="@ViewBag.Delete" id="delete" data-id="@item.GrantRequestRequestProductId" data-url="@Url.Action("Delete", "ServiceEndGrantRequest")">@ViewBag.Delete</button>
+                                    </div>
+                                </td>
+                            </tr>
+				        }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">@ViewBag.No</span></button>
+                <h4 class="modal-title" id="deleteModalLabel">@ViewBag.Delete @ViewBag.ModuleName</h4>
+            </div>
+            <div id="deleteModalBody" class="modal-body"></div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+<script>
+    $(function () {
+        $("#deleteModal").modal("hide");  // initially hides the modal pop-up until needed
+
+        $(".deleteLink").on("click", function () {
+		var url=$(this).data("url");
+            $.get(url, { id: $(this).data("id") }, function (data) {
+                $("#deleteModalBody").html(data);
+
+                $("#deleteModal").modal("show");  // shows the modal pop-up now that we have our partial view
+            });
+
+        });
+    });
+</script>
+	<script>
+	$(document).ready(function () {
+		$('table').each(function(e){
+		
+				var table = $(this).context;
+                var len = table.rows.length;
+                if (len == 1) 
+                {                    
+                    // Create an empty <tr> element
+                    var row = table.insertRow(1);
+
+                    //// Insert new cell
+                    var cell1 = row.insertCell(0);
+                    cell1.colSpan = 12; cell1.align = "center";
+                    cell1.innerText = '@ViewBag.NoRecords';                    
+                }
+                 
+            });
+	    });
+	</script>
+}

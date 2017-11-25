@@ -146,6 +146,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Grants\GrantsAreaRegistration.cs" />
     <Compile Include="Areas\Grants\Controllers\GrantRequestViewModelController.cs" />
+    <Compile Include="Areas\Loans\Controllers\LoanReportController.cs" />
     <Compile Include="Areas\Loans\LoansAreaRegistration.cs" />
     <Compile Include="Areas\Repository\Controllers\AvailabilityCeilingController.cs" />
     <Compile Include="Areas\Repository\Controllers\AvailabilityController.cs" />
@@ -236,6 +237,7 @@
     <Compile Include="MetaData\HtmlHelperExtensions\ToolTipHelper.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\Tables.Extended.cs" />
     <Compile Include="ViewModels\DeepLoadViews.cs" />
     <Compile Include="ViewModels\GuarantorWithStatmentViewModel.cs" />
     <Compile Include="ViewModels\ManageLoanDecision.cs" />
@@ -246,6 +248,9 @@
     <Compile Include="ViewModels\Views.Filter.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Grants\Views\GrantRequestViewModel\Details.cshtml" />
+    <Content Include="Areas\Grants\Views\GrantRequestViewModel\Edit.cshtml" />
+    <Content Include="Areas\Grants\Views\GrantRequestViewModel\Index.cshtml" />
     <Content Include="Content\assets\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\assets\css-rtl\app.css" />
     <Content Include="Content\assets\css-rtl\app.min.css" />
@@ -1717,10 +1722,18 @@
     <Content Include="Areas\Loans\Views\Shared\Error.cshtml" />
     <Content Include="Areas\Loans\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Grants\Views\web.config" />
-    <Content Include="Areas\Grants\_ViewStart.cshtml" />
+    <Content Include="Areas\Grants\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Grants\Views\Shared\Error.cshtml" />
     <Content Include="Areas\Grants\Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Areas\Grants\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Repository\Views\Home\About.cshtml" />
+    <Content Include="Areas\Repository\Views\Home\AccessDenied.cshtml" />
+    <Content Include="Areas\Repository\Views\Home\Contact.cshtml" />
+    <Content Include="Areas\Repository\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Repository\Views\Home\Login.cshtml" />
+    <Content Include="Areas\Repository\Views\Home\LogOff.cshtml" />
+    <Content Include="Areas\Loans\Views\LoanReport\Index.cshtml" />
+    <Content Include="Areas\Repository\Views\LoanDecision\CreateLoanRequestDecision.cshtml" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Scripts\bootstrap-datepicker\build\build.less" />
@@ -1752,9 +1765,6 @@
     <Content Include="Views\LoanDecision\CreateLoanRequestDecision.cshtml" />
     <Content Include="Areas\Loans\Views\LoanRequestViewModel\EmployeeCalculator.cshtml" />
     <Content Include="Areas\Grants\Views\GrantRequestViewModel\Create.cshtml" />
-    <Content Include="Areas\Grants\Views\GrantRequestViewModel\Index.cshtml" />
-    <Content Include="Areas\Grants\Views\GrantRequestViewModel\Details.cshtml" />
-    <Content Include="Areas\Grants\Views\GrantRequestViewModel\Edit.cshtml" />
     <Content Include="Areas\Loans\Views\ManageLoanRequests\ManageNewRequests.cshtml" />
     <Content Include="Areas\Loans\Views\ManageLoanRequests\_Navbar.cshtml" />
     <Content Include="Areas\Loans\Views\ManageLoanRequests\ManageValidRequests.cshtml" />

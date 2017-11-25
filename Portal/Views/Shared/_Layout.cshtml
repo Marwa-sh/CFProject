@@ -122,6 +122,33 @@
                         <li>
                             @Html.ActionLink("حالات الطلبات", "Index", "RequestStatus", new { Area = "Repository" }, new { })
                         </li>
+                        <li>
+                            @Html.ActionLink("أنواع السلف", "Index", "LoanType", new { Area = "Repository" }, new { })
+                        </li>
+                        <li>
+                            @Html.ActionLink("أنواع قرارات السلف", "Index", "LoanDecisionType", new { Area = "Repository" }, new { })
+                        </li>
+                        <li>
+                            @Html.ActionLink("حالات السلف", "Index", "LoanStatus", new { Area = "Repository" }, new { })
+                        </li>
+                        <li>
+                            @Html.ActionLink("حالات توليد السلف", "Index", "LoanGenerationStatus", new { Area = "Repository" }, new { })
+                        </li>
+                        <li>
+                            @Html.ActionLink("حالات التجاوز", "Index", "BypassStatus", new { Area = "Repository" }, new { })
+                        </li>
+                        <li>
+                            @Html.ActionLink("حالات الكفلاء", "Index", "GuarantorStatus", new { Area = "Repository" }, new { })
+                        </li>
+                        <li>
+                            @Html.ActionLink("أنواع المبالغ الاستثنائية", "Index", "ExceptionalAmountType", new { Area = "Repository" }, new { })
+                        </li>
+                        <li>
+                            @Html.ActionLink("قواعد إغلاق السلف", "Index", "LoanTypeClosure", new { Area = "Repository" }, new { })
+                        </li>
+                        <li>
+                            @Html.ActionLink("أنواع الاشتراكات", "Index", "SubscriptionType", new { Area = "Repository" }, new { })
+                        </li>
                     </ul>
                 </li>
                 <li class=" nav-item">
@@ -139,7 +166,7 @@
                             @Html.ActionLink("إصدار قرار السلف", "CreateLoanRequestDecision", "LoanDecision")
                         </li>*@
                         <li class="">
-                            @Html.ActionLink("طلبات الإعانة", "Index", "GrantRequestViewModel")
+                            @Html.ActionLink("طلبات الإعانة", "Index", "GrantRequestViewModel", new { Area = "Grants" }, new { })
                         </li>
                         
                     </ul>
@@ -156,24 +183,15 @@
                             @Html.ActionLink("إصدار قرار السلف", "CreateLoanRequestDecision", "LoanDecision", new { Area = "Repository" }, new { })
                         </li>
                         <li>
+                            @Html.ActionLink("تقارير السلف", "Index", "LoanReport", new { Area = "Loans" }, new { })
+                        </li>
+                        <li>
                             @Html.ActionLink("مجموعات الدفع", "Index", "PaymentGroup", new { Area = "Repository" }, new { })
                         </li>
-                        <li>
-                            @Html.ActionLink("أنواع السلف", "Index", "LoanType", new { Area = "Repository" }, new { })
-                        </li>
-                        <li>
-                            @Html.ActionLink("أنواع قرارات السلف", "Index", "LoanDecisionType", new { Area = "Repository" }, new { })
-                        </li>
-                        <li>
-                            @Html.ActionLink("حالات السلف", "Index", "LoanStatus", new { Area = "Repository" }, new { })
-                        </li>
-                        <li>
-                            @Html.ActionLink("حالات توليد السلف", "Index", "LoanGenerationStatus", new { Area = "Repository" }, new { })
-                        </li>
+                        
                         <li>
                             @Html.ActionLink("السلف الممنوحة", "Index", "Loan", new { Area = "Repository" }, new { })
-                        </li>
-                        
+                        </li>                      
                         <li>
                             @Html.ActionLink("قرارات السلف", "Index", "LoanDecision", new { Area = "Repository" }, new { })
                         </li>
@@ -188,19 +206,7 @@
                         </li>
                         <li>
                             @Html.ActionLink("الحالات الاستثنائية", "Index", "SpecialCaseLoan", new { Area = "Repository" }, new { })
-                        </li>
-                        <li>
-                            @Html.ActionLink("حالات التجاوز", "Index", "BypassStatus", new { Area = "Repository" }, new { })
-                        </li>
-                        <li>
-                            @Html.ActionLink("حالات الكفلاء", "Index", "GuarantorStatus", new { Area = "Repository" }, new { })
-                        </li>
-                        <li>
-                            @Html.ActionLink("أنواع المبالغ الاستثنائية", "Index", "ExceptionalAmountType", new { Area = "Repository" }, new { })
-                        </li>
-                        <li>
-                            @Html.ActionLink("قواعد إغلاق السلف", "Index", "LoanTypeClosure", new { Area = "Repository" }, new { })
-                        </li>
+                        </li>                        
                     </ul>
                 </li>
                 <li class=" nav-item"><a href="#"><i class="icon-help2"></i><span data-i18n="nav.project.main" class="menu-title">الإعانات</span></a>
@@ -293,9 +299,7 @@
                         <li>
                             @Html.ActionLink("الاشتراكات", "Index", "Subscription", new { Area = "Repository" }, new { })
                         </li>
-                        <li>
-                            @Html.ActionLink("أنواع الاشتراكات", "Index", "SubscriptionType", new { Area = "Repository" }, new { })
-                        </li>
+                       
                     </ul>
                 </li>
                 <li class=" nav-item"><a href="#"><i class="icon-eye6"></i><span data-i18n="nav.icons.main" class="menu-title">المراقبة العامة</span></a>

@@ -7,128 +7,208 @@
     <div class="col-xs-12">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">@ViewBag.Action @ViewBag.ModuleName</h4>
+                <h4 class="card-title">@ViewBag.Details @ViewBag.ModuleName</h4>
                 <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
                 <div class="heading-elements">
                     <ul class="list-inline mb-0">
-                        <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
+                        <li><a data-action="collapse"><i class="icon-plus4"></i></a></li>
                         <li><a data-action="reload"><i class="icon-reload"></i></a></li>
                         <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
                     </ul>
                 </div>
             </div>
-            <div class="card-body collapse in">
+            <div class="card-body collapse">
                 <div class="card-block">
                     <form class="form">
-                        @*@Html.Partial("~/Views/Product/Details.cshtml", Model)
-                            @Html.Partial("~/Views/Request/Details.cshtml", Model)
-
-                            @Html.Partial("~/Views/LoanRequest/Details.cshtml", Model)
-                            @Html.Partial("~/Views/RefundableProduct/Details.cshtml", Model)*@
-
                         <div class="form-body">
                             <div class="row">
-
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        @*@Html.LabelFor(model => model.Instance.EmployeeId, htmlAttributes: new { @class = "control-label" })*@
-                                        @Html.LabelFor(model => model.Instance.EmployeeId, new Dictionary<string, Object>
+                                        @*@Html.LabelFor(model => model.Instance.RequestProductId, htmlAttributes: new { @class = "control-label" })*@
+                                        @Html.LabelFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductId, new Dictionary<string, Object>
                                                 { { "class", "control-label" },
-                                                  {"title", Html.ToolTipMessageFor(model => model.Instance.EmployeeId)},
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductId)},
                                                   {"data-toggle", "tooltip"},
                                                   {"data-placement", "bottom"}
                                                 })
-                                        <input type="text" id="txtEmployeeId" class="form-control" value="@Html.DisplayFor(model => model.Instance.EmployeeId)" disabled />
-                                        <input type="hidden" name="Product.Id" id="txtProductId" class="form-control" value="@Html.DisplayFor(model => model.Instance.Id)" />
+                                        <input type="text" id="txtRequestProductId" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductId)" disabled />
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        @*@Html.LabelFor(model => model.Instance.EmployeeFullName, htmlAttributes: new { @class = "control-label" })*@
-                                        @Html.LabelFor(model => model.Instance.EmployeeFullName, new Dictionary<string, Object>
+                                        @*@Html.LabelFor(model => model.Instance.RequestProductEmployeeId, htmlAttributes: new { @class = "control-label" })*@
+                                        @Html.LabelFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductEmployeeId, new Dictionary<string, Object>
                                                 { { "class", "control-label" },
-                                                  {"title", Html.ToolTipMessageFor(model => model.Instance.EmployeeFullName)},
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductEmployeeId)},
                                                   {"data-toggle", "tooltip"},
                                                   {"data-placement", "bottom"}
                                                 })
-                                        <input type="text" id="txtEmployeeFullName" class="form-control" value="@Html.DisplayFor(model => model.Instance.EmployeeFullName)" disabled />
+                                        <input type="text" id="txtRequestProductEmployeeId" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductEmployeeId)" disabled />
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        @*@Html.LabelFor(model => model.Instance.ProductTypeName, htmlAttributes: new { @class = "control-label" })*@
-                                        @Html.LabelFor(model => model.Instance.ProductTypeName, new Dictionary<string, Object>
+                                        @*@Html.LabelFor(model => model.Instance.RequestProductEmployeeFullName, htmlAttributes: new { @class = "control-label" })*@
+                                        @Html.LabelFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductEmployeeFullName, new Dictionary<string, Object>
                                                 { { "class", "control-label" },
-                                                  {"title", Html.ToolTipMessageFor(model => model.Instance.ProductTypeName)},
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductEmployeeFullName)},
                                                   {"data-toggle", "tooltip"},
                                                   {"data-placement", "bottom"}
                                                 })
-                                        <input type="text" id="txtProductTypeName" class="form-control" value="@Html.DisplayFor(model => model.Instance.ProductTypeName)" disabled />
+                                        <input type="text" id="txtRequestProductEmployeeFullName" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductEmployeeFullName)" disabled />
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        @*@Html.LabelFor(model => model.Instance.Amount, htmlAttributes: new { @class = "control-label" })*@
-                                        @Html.LabelFor(model => model.Instance.Amount, new Dictionary<string, Object>
+                                        @*@Html.LabelFor(model => model.Instance.RequestProductEmployeeDepartmentName, htmlAttributes: new { @class = "control-label" })*@
+                                        @Html.LabelFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductEmployeeDepartmentName, new Dictionary<string, Object>
                                                 { { "class", "control-label" },
-                                                  {"title", Html.ToolTipMessageFor(model => model.Instance.Amount)},
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductEmployeeDepartmentName)},
                                                   {"data-toggle", "tooltip"},
                                                   {"data-placement", "bottom"}
                                                 })
-                                        <input type="text" id="txtAmount" class="form-control" value="@Html.DisplayFor(model => model.Instance.Amount)" disabled />
+                                        <input type="text" id="txtRequestProductEmployeeDepartmentName" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductEmployeeDepartmentName)" disabled />
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
+                               
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        @*@Html.LabelFor(model => model.Instance.Notes, htmlAttributes: new { @class = "control-label" })*@
-                                        @Html.LabelFor(model => model.RequestVwViewModel.Instance.Notes, new Dictionary<string, Object>
+                                        @*@Html.LabelFor(model => model.Instance.RequestProductEmployeeDepartmentSalaryWorkPlaceName, htmlAttributes: new { @class = "control-label" })*@
+                                        @Html.LabelFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductEmployeeDepartmentSalaryWorkPlaceName, new Dictionary<string, Object>
                                                 { { "class", "control-label" },
-                                                  {"title", Html.ToolTipMessageFor(model => model.RequestVwViewModel.Instance.Notes)},
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductEmployeeDepartmentSalaryWorkPlaceName)},
                                                   {"data-toggle", "tooltip"},
                                                   {"data-placement", "bottom"}
                                                 })
-                                        <input type="text" id="txtNotes" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.Instance.Notes)" disabled />
+                                        <input type="text" id="txtRequestProductEmployeeDepartmentSalaryWorkPlaceName" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductEmployeeDepartmentSalaryWorkPlaceName)" disabled />
                                     </div>
-                                </div>                             
+                                </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        @*@Html.LabelFor(model => model.Instance.Date, htmlAttributes: new { @class = "control-label" })*@
-                                        @Html.LabelFor(model => model.RequestVwViewModel.Instance.Attachment, new Dictionary<string, Object>
+                                        @*@Html.LabelFor(model => model.Instance.RequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName, htmlAttributes: new { @class = "control-label" })*@
+                                        @Html.LabelFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName, new Dictionary<string, Object>
                                                 { { "class", "control-label" },
-                                                  {"title", Html.ToolTipMessageFor(model => model.RequestVwViewModel.Instance.Attachment)},
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)},
                                                   {"data-toggle", "tooltip"},
                                                   {"data-placement", "bottom"}
                                                 })
-                                        <input type="text" id="txtAttachment" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.Instance.Attachment)" disabled />
+                                        <input type="text" id="txtRequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)" disabled />
+                                    </div>
+                                </div>                                
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        @*@Html.LabelFor(model => model.Instance.RequestProductProductTypeGuarantorsCount, htmlAttributes: new { @class = "control-label" })*@
+                                        @Html.LabelFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductProductTypeGuarantorsCount, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductProductTypeGuarantorsCount)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        <input type="text" id="txtRequestProductProductTypeGuarantorsCount" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductProductTypeGuarantorsCount)" disabled />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        @*@Html.LabelFor(model => model.Instance.RequestProductEmployeeCategoryName, htmlAttributes: new { @class = "control-label" })*@
+                                        @Html.LabelFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductEmployeeCategoryName, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductEmployeeCategoryName)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        <input type="text" id="txtRequestProductEmployeeCategoryName" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductEmployeeCategoryName)" disabled />
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-
+                               
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        @*@Html.LabelFor(model => model.Instance.Date, htmlAttributes: new { @class = "control-label" })*@
-                                        @Html.LabelFor(model => model.RequestVwViewModel.Instance.Date, new Dictionary<string, Object>
+                                        @*@Html.LabelFor(model => model.Instance.RequestProductProductTypeName, htmlAttributes: new { @class = "control-label" })*@
+                                        @Html.LabelFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductProductTypeName, new Dictionary<string, Object>
                                                 { { "class", "control-label" },
-                                                  {"title", Html.ToolTipMessageFor(model => model.RequestVwViewModel.Instance.Date)},
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductProductTypeName)},
                                                   {"data-toggle", "tooltip"},
                                                   {"data-placement", "bottom"}
                                                 })
-                                        <input type="text" id="txtDate" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.Instance.Date)" disabled />
+                                        <input type="text" id="txtRequestProductProductTypeName" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductProductTypeName)" disabled />
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        @*@Html.LabelFor(model => model.Instance.Amount, htmlAttributes: new { @class = "control-label" })*@
-                                        @Html.LabelFor(model => model.RequestVwViewModel.Instance.Amount, new Dictionary<string, Object>
+                                        @*@Html.LabelFor(model => model.Instance.RequestProductProductTypeRate, htmlAttributes: new { @class = "control-label" })*@
+                                        @Html.LabelFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductProductTypeRate, new Dictionary<string, Object>
                                                 { { "class", "control-label" },
-                                                  {"title", Html.ToolTipMessageFor(model => model.RequestVwViewModel.Instance.Amount)},
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductProductTypeRate)},
                                                   {"data-toggle", "tooltip"},
                                                   {"data-placement", "bottom"}
                                                 })
-                                        <input type="text" id="txtAmount" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.Instance.Amount)" disabled />
+                                        <input type="text" id="txtRequestProductProductTypeRate" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductProductTypeRate)" disabled />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        @*@Html.LabelFor(model => model.Instance.RequestProductProductTypePaymentGroupName, htmlAttributes: new { @class = "control-label" })*@
+                                        @Html.LabelFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductProductTypePaymentGroupName, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductProductTypePaymentGroupName)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        <input type="text" id="txtRequestProductProductTypePaymentGroupName" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductProductTypePaymentGroupName)" disabled />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        @*@Html.LabelFor(model => model.Instance.RequestDate, htmlAttributes: new { @class = "control-label" })*@
+                                        @Html.LabelFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestDate, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestDate)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        <input type="text" id="txtRequestDate" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestDate)" disabled />
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        @*@Html.LabelFor(model => model.Instance.RequestAmount, htmlAttributes: new { @class = "control-label" })*@
+                                        @Html.LabelFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestAmount, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestAmount)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        <input type="text" id="txtRequestAmount" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestAmount)" disabled />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        @*@Html.LabelFor(model => model.Instance.RequestRequestStatusName, htmlAttributes: new { @class = "control-label" })*@
+                                        @Html.LabelFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestRequestStatusName, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestRequestStatusName)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        <input type="text" id="txtRequestRequestStatusName" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestRequestStatusName)" disabled />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        @*@Html.LabelFor(model => model.Instance.RequestNotes, htmlAttributes: new { @class = "control-label" })*@
+                                        @Html.LabelFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestNotes, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestNotes)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        <input type="text" id="txtRequestNotes" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestNotes)" disabled />
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -143,6 +223,9 @@
                                         <input type="text" id="txtNetIncome" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.NetIncome)" disabled />
                                     </div>
                                 </div>
+                            </div>
+                            <div class="row">
+ 
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         @*@Html.LabelFor(model => model.Instance.TotalDeduction, htmlAttributes: new { @class = "control-label" })*@
@@ -155,10 +238,6 @@
                                         <input type="text" id="txtTotalDeduction" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.TotalDeduction)" disabled />
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <div class="row">
-
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         @*@Html.LabelFor(model => model.Instance.PaymentPeriod, htmlAttributes: new { @class = "control-label" })*@
@@ -195,6 +274,9 @@
                                         <input type="text" id="txtNetAmount" class="form-control" value="@Html.DisplayFor(model => model.RefundableProductVwViewModel.Instance.NetAmount)" disabled />
                                     </div>
                                 </div>
+                                
+                            </div>
+                            <div class="row">
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         @*@Html.LabelFor(model => model.Instance.ProfitAmount, htmlAttributes: new { @class = "control-label" })*@
@@ -207,21 +289,22 @@
                                         <input type="text" id="txtProfitAmount" class="form-control" value="@Html.DisplayFor(model => model.RefundableProductVwViewModel.Instance.ProfitAmount)" disabled />
                                     </div>
                                 </div>
-                            </div>                            
+                            </div>
                         </div>
 
                         <div class="form-actions">
                             <button type="button" class="btn btn-primary mr-1">
                                 @Html.ActionLink((string)@ViewBag.Update, "Edit", new
-                               {
-                                   id = Model.Instance.Id
-                               })
+                           {
+                               request = Model.Instance.Id
+                           })
                             </button>
                             <button type="button" class="btn btn-warning">
                                 @Html.ActionLink((string)@ViewBag.Back, "Index")
                             </button>
                         </div>
                     </form>
+                  
                 </div>
             </div>
         </div>
@@ -250,16 +333,16 @@
             </div>
             <div class="card-body collapse ">
                 <div class="card-block card-dashboard">
-                    <button type="button" class="btn btn-danger createLink" data-original-title="@ViewBag.Insert" id="CreateG" data-url="@Url.Action("CreateGuarantorWithStatement", "LoanRequestViewModel")">@ViewBag.Insert</button>
+                    <button type="button" class="btn btn-success createLink" data-original-title="@ViewBag.Insert" id="CreateG" data-url="@Url.Action("CreateGuarantorWithStatement", "LoanRequestViewModel")">@ViewBag.Insert</button>
 
                 </div>
                 <div class="table-responsive">
                     <table class="table table-bordered mb-0">
-                        <thead class="thead-inverse">
+                        <thead class="bg-primary table-head-color">
                             <tr>
                                 @*<th>
-                                    @Html.DisplayNameFor(model => model.RefundableProductVwViewModel.GuarantorVwViewModel.Instance.Id)
-                                </th>*@
+                                        @Html.DisplayNameFor(model => model.RefundableProductVwViewModel.GuarantorVwViewModel.Instance.Id)
+                                    </th>*@
                                 <th>
                                     @Html.DisplayNameFor(model => model.RefundableProductVwViewModel.GuarantorVwViewModel.Instance.SubNumber)
                                 </th>
@@ -287,8 +370,8 @@
                             {
                             <tr>
                                 @*<td>
-                                    @Html.DisplayFor(modelItem => item.Id)
-                                </td>*@
+                                        @Html.DisplayFor(modelItem => item.Id)
+                                    </td>*@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.SubNumber)
                                 </td>
@@ -331,8 +414,8 @@
             <div class="card-header">
                 <h4 class="card-title"></h4>
                 <h4 class="card-title">
-                    @ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ExceptionalAmountType", "Exceptional income")
-                    @if (Model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.List.Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.ExceptionalIncome).ToList().Count == 0)
+                     @ViewBag.ExceptionalIncome  
+                    @if(Model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.List.Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.ExceptionalIncome).ToList().Count == 0)
                     {<span class="tag tag-default">@Model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.List.Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.ExceptionalIncome).ToList().Count</span>}
                     else
                     {<span class="tag tag-danger">@Model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.List.Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.ExceptionalIncome).ToList().Count</span> }
@@ -348,16 +431,16 @@
             </div>
             <div class="card-body collapse ">
                 <div class="card-block card-dashboard">
-                    <button type="button" class="btn btn-danger createLinkAmount" data-original-title="@ViewBag.Insert" id="CreateExceptionalAmount" data-id='@ExceptionalAmountTypeEnum.ExceptionalIncome.GetHashCode()' data-url="@Url.Action("CreateExceptionalAmount", "LoanRequestViewModel")">@ViewBag.Insert</button>
+                    <button type="button" class="btn btn-success createLinkAmount" data-original-title="@ViewBag.Insert" id="CreateExceptionalAmount" data-id='@ExceptionalAmountTypeEnum.ExceptionalIncome.GetHashCode()' data-url="@Url.Action("CreateExceptionalAmount", "LoanRequestViewModel")">@ViewBag.Insert</button>
 
                 </div>
                 <div class="table-responsive">
                     <table id="Result" class="table table-bordered mb-0">
-                        <thead class="thead-inverse">
+                        <thead class="bg-primary table-head-color">
                             <tr>
                                 @*<th>
-                                    @Html.DisplayNameFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.Instance.Id)
-                                </th>*@
+                                        @Html.DisplayNameFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.Instance.Id)
+                                    </th>*@
                                 <th>
                                     @Html.DisplayNameFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.Instance.Amount)
                                 </th>
@@ -371,86 +454,10 @@
                         <tbody>
                             @foreach (var item in Model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.List.Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.ExceptionalIncome))
                             {
-                                <tr>
-                                    @*<td>
-                                        @Html.DisplayFor(modelItem => item.Id)
-                                    </td>*@
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Amount)
-                                    </td>
-                                    <td>
-                                        @Html.CheckBoxFor(modelItem => item.ExceptionalAmountTypeIsIncome, new { @disabled = "disabled" })
-                                    </td>
-                                    <td>
-                                        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-
-                                            <button type="button" class="btn btn-warning editLink" data-id="@item.Id" data-original-title="@ViewBag.Update" id="CreateG" data-url="@Url.Action("editExceptionalAmount", "LoanRequestViewModel")">@ViewBag.Update</button>
-
-
-                                            <button type="button" class="btn btn-danger deleteLink" data-original-title="@ViewBag.Delete" id="delete" data-id="@item.Id" data-url="@Url.Action("DeleteExceptionalAmount", "LoanRequestViewModel")">@ViewBag.Delete</button>
-
-                                        </div>
-                                    </td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-xs-12">
-        <div class="card">
-            <div class="card-header">
-                <h4 class="card-title"></h4>
-                <h4 class="card-title">
-                    @ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ExceptionalAmountType", "Exceptional deduction")
-                    @if (Model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.List.Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.ExceptionalDeduction).ToList().Count == 0)
-                    {<span class="tag tag-default">@Model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.List.Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.ExceptionalDeduction).ToList().Count </span>}
-                    else
-                    {<span class="tag tag-danger">@Model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.List.Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.ExceptionalDeduction).ToList().Count </span> }
-                </h4>
-                <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
-                <div class="heading-elements">
-                    <ul class="list-inline mb-0">
-                        <li><a data-action="collapse"><i class="icon-plus4"></i></a></li>
-                        <li><a data-action="reload"><i class="icon-reload"></i></a></li>
-                        <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="card-body collapse ">
-                <div class="card-block card-dashboard">
-                    <button type="button" class="btn btn-danger createLinkAmount" data-original-title="@ViewBag.Insert" id="CreateExceptionalAmount" data-id="@ExceptionalAmountTypeEnum.ExceptionalDeduction.GetHashCode()" data-url="@Url.Action("createExceptionalAmount", "LoanRequestViewModel")">@ViewBag.Insert</button>
-
-                </div>
-                <div class="table-responsive">
-                    <table id="Result" class="table table-bordered mb-0">
-                        <thead class="thead-inverse">
-                            <tr>
-                                @*<th>
-                                    @Html.DisplayNameFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.Instance.Id)
-                                </th>*@
-                                <th>
-                                    @Html.DisplayNameFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.Instance.Amount)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.Instance.ExceptionalAmountTypeIsIncome)
-                                </th>
-
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var item in Model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.List.Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.ExceptionalDeduction))
-                            {
                             <tr>
                                 @*<td>
-                                    @Html.DisplayFor(modelItem => item.Id)
-                                </td>*@
+                                        @Html.DisplayFor(modelItem => item.Id)
+                                    </td>*@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Amount)
                                 </td>
@@ -483,7 +490,83 @@
             <div class="card-header">
                 <h4 class="card-title"></h4>
                 <h4 class="card-title">
-                    @ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ExceptionalAmountType", "Net deduction")
+                    @ViewBag.ExceptionalDeduction
+                    @if (Model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.List.Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.ExceptionalDeduction).ToList().Count == 0)
+                    {<span class="tag tag-default">@Model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.List.Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.ExceptionalDeduction).ToList().Count </span>}
+                    else
+                    {<span class="tag tag-danger">@Model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.List.Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.ExceptionalDeduction).ToList().Count </span> }
+                </h4>
+                <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li><a data-action="collapse"><i class="icon-plus4"></i></a></li>
+                        <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                        <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-body collapse ">
+                <div class="card-block card-dashboard">
+                    <button type="button" class="btn btn-success createLinkAmount" data-original-title="@ViewBag.Insert" id="CreateExceptionalAmount" data-id="@ExceptionalAmountTypeEnum.ExceptionalDeduction.GetHashCode()" data-url="@Url.Action("createExceptionalAmount", "LoanRequestViewModel")">@ViewBag.Insert</button>
+
+                </div>
+                <div class="table-responsive">
+                    <table id="Result" class="table table-bordered mb-0">
+                        <thead class="bg-primary table-head-color">
+                            <tr>
+                                @*<th>
+                                        @Html.DisplayNameFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.Instance.Id)
+                                    </th>*@
+                                <th>
+                                    @Html.DisplayNameFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.Instance.Amount)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.Instance.ExceptionalAmountTypeIsIncome)
+                                </th>
+
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.List.Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.ExceptionalDeduction))
+                            {
+                            <tr>
+                                @*<td>
+                                        @Html.DisplayFor(modelItem => item.Id)
+                                    </td>*@
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Amount)
+                                </td>
+                                <td>
+                                    @Html.CheckBoxFor(modelItem => item.ExceptionalAmountTypeIsIncome, new { @disabled = "disabled" })
+                                </td>
+                                <td>
+                                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+
+                                        <button type="button" class="btn btn-warning editLink" data-id="@item.Id" data-original-title="@ViewBag.Update" id="CreateG" data-url="@Url.Action("editExceptionalAmount", "LoanRequestViewModel")">@ViewBag.Update</button>
+
+
+                                        <button type="button" class="btn btn-danger deleteLink" data-original-title="@ViewBag.Delete" id="delete" data-id="@item.Id" data-url="@Url.Action("DeleteExceptionalAmount", "LoanRequestViewModel")">@ViewBag.Delete</button>
+
+                                    </div>
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title"></h4>
+                <h4 class="card-title">
+                    @ViewBag.NetDeduction
                     @if (Model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.List.Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.NetDeduction).ToList().Count == 0)
                      {<span class="tag tag-default">@Model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.List.Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.NetDeduction).ToList().Count</span>}
                      else
@@ -500,16 +583,16 @@
             </div>
             <div class="card-body collapse ">
                 <div class="card-block card-dashboard">
-                    <button type="button" class="btn btn-danger createLinkAmount" data-original-title="@ViewBag.Insert" id="CreateExceptionalAmount" data-id="@ExceptionalAmountTypeEnum.NetDeduction.GetHashCode()" data-url="@Url.Action("CreateExceptionalAmount", "LoanRequestViewModel")">@ViewBag.Insert</button>
+                    <button type="button" class="btn btn-success createLinkAmount" data-original-title="@ViewBag.Insert" id="CreateExceptionalAmount" data-id="@ExceptionalAmountTypeEnum.NetDeduction.GetHashCode()" data-url="@Url.Action("CreateExceptionalAmount", "LoanRequestViewModel")">@ViewBag.Insert</button>
 
                 </div>
                 <div class="table-responsive">
                     <table id="Result" class="table table-bordered mb-0">
-                        <thead class="thead-inverse">
+                        <thead class="bg-primary table-head-color">
                             <tr>
                                 @*<th>
-                                    @Html.DisplayNameFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.Instance.Id)
-                                </th>*@
+                                        @Html.DisplayNameFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.Instance.Id)
+                                    </th>*@
                                 <th>
                                     @Html.DisplayNameFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.Instance.Amount)
                                 </th>
@@ -525,8 +608,8 @@
                             {
                             <tr>
                                 @*<td>
-                                    @Html.DisplayFor(modelItem => item.Id)
-                                </td>*@
+                                        @Html.DisplayFor(modelItem => item.Id)
+                                    </td>*@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Amount)
                                 </td>
@@ -587,21 +670,23 @@
         $(document).ready(function () {
 
             $('table').each(function (e) {
-                var table = $(this).context;
 
+                var table = $(this).context;
+                var tbody = table.tBodies[0];
                 var len = table.rows.length;
                 if (len == 1) {
-                    // Create an empty <tr> element and add it to the 1st position of the table:
-                    var row = table.insertRow(1);
+                    // Create an empty <tr> element
+                    var row = tbody.insertRow(0);
 
                     //// Insert new cell
                     var cell1 = row.insertCell(0);
-                    cell1.colSpan = 12;
+                    cell1.colSpan = 12; cell1.align = "center";
                     cell1.innerText = '@ViewBag.NoRecords';
-                    cell1.align = "center";
                 }
 
             });
+
+             
 
         });
         $(function () {
@@ -655,7 +740,7 @@
         });
     </script>
 
-<script>
+    <script>
 
         (function ($) {
             $.widget("custom.combobox", {
@@ -756,7 +841,7 @@
 
         });
 
-</script>
+    </script>
 
 }
 

@@ -33,8 +33,18 @@ namespace Portal.Areas.Loans.Controllers
 
         private string TitleGuarantor = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "Guarantor", "ModuleNamePlural");
         private string TitleExceptionalAount = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ExceptionalAmount", "ModuleNamePlural");
+
+        private string exceptionalIncome= ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ExceptionalAmountType", "ExceptionalIncome");
+        private string exceptionalDeduction = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ExceptionalAmountType", "ExceptionalDeduction");
+        private string netDeduction = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ExceptionalAmountType", "NetDeduction");
+
+
         private string LoanDecision = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "LoanDecision", "ModuleName");
         private string noRecords = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "NoRecords");
+        private string discover = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Discover");
+
+        private string loan = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "Loan", "ModuleName");
+        private string employee = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "Employee", "ModuleName");
 
 
         public LoanRequestViewModelController()
@@ -53,16 +63,27 @@ namespace Portal.Areas.Loans.Controllers
             ViewBag.Back = back;
             ViewBag.Save = save;
             ViewBag.NoRecords = noRecords;
+
+            ViewBag.Discover = discover;
+            ViewBag.Loan = loan;
+            ViewBag.Employee = employee;
+
+            ViewBag.Action = update;
+
+
         }
 
         #region Index Loan Request       
         public ActionResult Index(LoanRequestVwViewModel Model)
         {
-            
+            Db db = new Db(DbServices.ConnectionString);
+                     
+            ViewBag.ProductTypeList = new SelectList(LoanTypeVwServices.List(db), "ProductTypeId", "ProductTypeName");
+            ViewBag.PaymentGroupList = new SelectList(PaymentGroupServices.List(db), "Id", "Name");
+
             if (Model.Filter.HasCriteria)
             {
-                Model.Filter.RequestRequestStatusId = (int)RequestStatusEnum.New;
-                Db db = new Db(DbServices.ConnectionString);
+                //Model.Filter.RequestRequestStatusId = (int)RequestStatusEnum.New;               
                 Model.List = LoanRequestVwServices.Get(Model.Filter, db);
             }
             else
@@ -197,11 +218,12 @@ namespace Portal.Areas.Loans.Controllers
             EmployeeProductCalculatorFilter f = new EmployeeProductCalculatorFilter();
             f.EmployeeId = product.Employee; f.ProductTypeId = (short)product.ProductType;
             f.Amount = (decimal)request.Amount; f.Period = (short)refundableProduct.PaymentPeriod;
-            List<EmployeeProductCalculatorResult> result = db.EmployeeProductCalculator(f);
-            if(result.Count>0)
+            EmployeeProductCalculatorResult result = db.EmployeeProductCalculatorFirstOrDefault(f);
+            if(result!=null)
             {
-                ViewBag.Calculations = result[0];
+                ViewBag.Calculations = result;
             }
+            
 
             LoanRequestViewModel vm = new LoanRequestViewModel();            
             vm.RequestProduct = product;
@@ -274,13 +296,7 @@ namespace Portal.Areas.Loans.Controllers
             ViewBag.ProductList = new SelectList(ProductServices.List(db), "Id", "Notes", model.Request.Product);
             ViewBag.RequestStatusList = new SelectList(RequestStatusServices.List(db), "Id", "Name", model.Request.RequestStatus);
 
-            ViewBag.ModuleName = moduleName;
-            ViewBag.Action = update;
-            ViewBag.Update = update;
-            ViewBag.Save = save;
-            ViewBag.Back = back;
-
-
+           
             return View(model);
         }
 
@@ -291,7 +307,10 @@ namespace Portal.Areas.Loans.Controllers
         public ActionResult Details(int? id)
         {
             ViewBag.TitleGuarantor = TitleGuarantor;
-            ViewBag.TitleExceptionalAount = TitleExceptionalAount;
+            ViewBag.TitleExceptionalAount = TitleExceptionalAount;            
+            ViewBag.ExceptionalIncome = exceptionalIncome;
+            ViewBag.ExceptionalDeduction = exceptionalDeduction;
+            ViewBag.NetDeduction = netDeduction;
             
             // Details Of Products
             if (id == null)
@@ -323,9 +342,9 @@ namespace Portal.Areas.Loans.Controllers
             List<ExceptionalAmountVw> ExceptionalIncome = ExceptionalAmountVwServices.GetByLoanRequestRequestProductId(id.Value).Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.ExceptionalIncome).ToList();
             List<ExceptionalAmountVw> ExceptionalDeduction = ExceptionalAmountVwServices.GetByLoanRequestRequestProductId(id.Value).Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.ExceptionalDeduction).ToList();
 
-            ViewBag.NetDeduction = NetDeduction;
-            ViewBag.ExceptionalIncome = ExceptionalIncome;
-            ViewBag.ExceptionalDeduction = ExceptionalDeduction;
+            ViewBag.NetDeductionList = NetDeduction;
+            ViewBag.ExceptionalIncomeList = ExceptionalIncome;
+            ViewBag.ExceptionalDeductionList = ExceptionalDeduction;
              
             return View(productVwViewModel);
         }

@@ -97,7 +97,7 @@ p in E.Privileges on rp.PrivilegeId equals p.Id
                 {
                     requestContext.HttpContext.Response.Clear();
                     if (!Response.IsRequestBeingRedirected)
-                        requestContext.HttpContext.Response.Redirect(Url.Action("AccessDenied", "Home"));
+                        requestContext.HttpContext.Response.Redirect(Url.Action("AccessDenied", "Home" , new { Area="Repository" }));
                     requestContext.HttpContext.Response.End();
 
                 }

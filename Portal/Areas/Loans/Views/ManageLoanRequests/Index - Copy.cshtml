@@ -1,0 +1,853 @@
+﻿@model Cf.ViewModels.LoanRequestVwViewModel
+@using Cf.Data;
+@using Cf.Services;
+
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">
+                    DashBoard
+                </h4>
+
+                <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
+                        <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                        <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-body collapse in ">
+                <div class="card-block card-dashboard">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <button class="btn btn-success" type="button">
+                                @Html.ActionLink("New Requests", "ManageNewRequests")
+                            </button>
+                        </div>
+                        <div class="col-md-2">
+                            <button class="btn btn-success" type="button">
+                                @Html.ActionLink("Valid Requests", "ManageValidRequests")
+                            </button>
+                        </div>
+                        <div class="col-md-2">
+                            <button class="btn btn-success" type="button">
+                                @Html.ActionLink("Approved Requests", "ManageApprovedRequests")
+                            </button>
+                        </div>
+                        <div class="col-md-2">
+                            <button class="btn btn-success" type="button">
+                                @Html.ActionLink("Exceptional Request", "ManageExceptionalRequest")
+                            </button>
+                        </div>
+                        <div class="col-md-2">
+                            <button class="btn btn-success" type="button">
+                                @Html.ActionLink("Rejected Request", "ManageRejectedRequest")
+                            </button>
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">
+                    @ViewBag.NewLoanRequests
+                @if (Model.List.Where(c => c.RequestRequestStatusId == (int)RequestStatusEnum.New).ToList().Count == 0)
+                {<span class="tag tag-default">@Model.List.Where(c => c.RequestRequestStatusId == (int)RequestStatusEnum.New).ToList().Count</span>}
+                else
+                {<span class="tag tag-danger">@Model.List.Where(c => c.RequestRequestStatusId == (int)RequestStatusEnum.New).ToList().Count</span> }
+            </h4>
+             
+            <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+            <div class="heading-elements">
+                <ul class="list-inline mb-0">
+                    <li><a data-action="collapse"><i class="icon-plus4"></i></a></li>
+                    <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                    <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="card-body collapse  ">
+            <div class="card-block card-dashboard">
+                <div class="row">
+                    <div class="col-md-2">
+                        <button class="btn btn-success" type="button">
+                            @Html.ActionLink("New Requests", "ManageNewRequests")
+                        </button>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-success" type="button">
+                            @Html.ActionLink("Valid Requests","ManageValidRequests")
+                        </button>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-success" type="button">
+                            @Html.ActionLink("Approved Requests","ManageApprovedRequests")
+                        </button>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-success" type="button">
+                            @Html.ActionLink("Exceptional Request","ManageExceptionalRequest" )
+                        </button>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-success" type="button">
+                            @Html.ActionLink("Rejected Request", "ManageRejectedRequest")
+                        </button>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+                
+
+               
+
+                
+                
+               
+                
+            </div>
+            <div class="table-responsive">
+                <table id="Result" class="table table-bordered mb-0">
+                    <thead class="thead-inverse">
+                        <tr>
+                            @*<th></th>*@
+                            <th>
+                                @Html.DisplayNameFor(model => model.Instance.RequestProductEmployeeId)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Instance.RequestProductEmployeeFullName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Instance.RequestProductProductTypeName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Instance.RequestDate)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Instance.RequestAmount)
+                            </th>
+
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.List.Where(c => c.RequestRequestStatusId == (int)RequestStatusEnum.New))
+                        {
+                            <tr>
+                                @*<td>
+                                        <input id="isSellected" name="isSellected" type="checkbox" checked />
+                                    </td>*@
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RequestProductEmployeeId)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RequestProductEmployeeFullName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RequestProductProductTypeName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RequestDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RequestAmount)
+                                </td>
+                                <td>
+                                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                        <button type="button" class="btn btn-info details" data-id="@item.RequestProductId">
+                                            @ViewBag.Details
+                                        </button>
+                                         
+                                    </div>
+                                </td>
+                                @if (ViewBag.RoleName != null)
+                                {
+                                    string role = ViewBag.RoleName;
+                                    if (role.Equals("Manager"))
+                                    {
+                                        if (item.RequestRequestStatusId == (int)RequestStatusEnum.New)
+                                        {
+                                            int numOfGuarantors = GuarantorVwServices.GetByRefundableProductProductId(item.RequestProductId).Count;
+                                            if (numOfGuarantors == 0)
+                                            {
+                                                <td>
+                                                    @numOfGuarantors
+                                                </td>
+                                            }
+                                            else
+                                            {
+                                                <td>
+                                                    @numOfGuarantors
+                                                </td>
+                                            }
+                                            <td>
+                                                <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+
+                                                    <a class="btn btn-success" href="@Url.Action("Validate",new   {   id = item.RequestProductId  })">
+                                                        <i class="icon-check-circle"></i>
+                                                    </a>
+                                                    <a class="btn btn-danger" href="@Url.Action("Reject",new   {   id = item.RequestProductId  })">
+                                                        <i class="icon-times-circle"></i>
+                                                    </a>
+                                                    <a class="btn btn-warning" href="@Url.Action("Exception",new   {   id = item.RequestProductId  })">
+                                                        <i class="icon-magic"></i>
+                                                    </a>
+
+
+                                                </div>
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td>Not New</td>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <td>No Privillage</td>
+                                    }
+
+                                }
+                                else
+                                {
+                                    <td></td>
+                                }
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">
+                    السلف التي تحقق الشروط
+                    @*@ViewBag.SatisfyConditionsLoanRequests*@
+                    @if (Model.List.Where(c => c.RequestRequestStatusId == (int)RequestStatusEnum.Valid).ToList().Count == 0)
+                {<span class="tag tag-default">@Model.List.Where(c => c.RequestRequestStatusId == (int)RequestStatusEnum.Valid).ToList().Count</span>}
+                else
+                {<span class="tag tag-danger">@Model.List.Where(c => c.RequestRequestStatusId == (int)RequestStatusEnum.Valid).ToList().Count</span> }
+                </h4>
+
+               
+                <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li><a data-action="collapse"><i class="icon-plus4"></i></a></li>
+                        <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                        <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-body collapse  ">
+                <div class="card-block card-dashboard">
+                    @*<button class="btn btn-success" type="button">
+                            @Html.ActionLink((string)ViewBag.Insert + " " + (string)ViewBag.ModuleName, "Create")
+                        </button>*@
+
+                </div>
+                <div class="table-responsive">
+                    <table id="Result" class="table table-bordered mb-0">
+                        <thead class="thead-inverse">
+                            <tr>
+                                
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Instance.RequestProductEmployeeId)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Instance.RequestProductEmployeeFullName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Instance.RequestProductProductTypeName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Instance.RequestDate)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Instance.RequestAmount)
+                                </th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.List.Where(c => c.RequestRequestStatusId == 2))
+                            {
+                            <tr>
+                                 
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RequestProductEmployeeId)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RequestProductEmployeeFullName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RequestProductProductTypeName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RequestDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RequestAmount)
+                                </td>
+                                <td>
+                                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                         
+                                        <button type="button" class="btn btn-info details" data-id="@item.RequestProductId">
+                                            @ViewBag.Details
+                                        </button>
+                                        <button type="button" class="btn btn-success">
+                                            @Html.ActionLink((string)ViewBag.Approve, "Approve",
+                                            new
+                                            {
+                                                id = item.RequestProductId
+                                            })
+
+                                        </button>
+                                        
+                                    </div>
+                                </td>
+                                @if (ViewBag.RoleName != null)
+                                    {
+
+                                        string role = ViewBag.RoleName;
+
+                                        if (role.Equals("Manager"))
+                                        {
+                                            if (item.RequestRequestStatusId == 1)
+                                            {
+
+                                    <td>
+                                        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                            <button type="button" class="btn btn-success">
+                                                @Html.ActionLink((string)ViewBag.Approve, "Approve",
+                                            new
+                                            {
+                                                id = item.RequestProductId
+                                            })
+
+                                            </button>
+                                            <button type="button" class="btn btn-danger">
+                                                @Html.ActionLink((string)ViewBag.Reject, "Reject",
+                                            new
+                                            {
+                                                id = item.RequestProductId
+                                            })
+
+                                            </button>
+                                            <button type="button" class="btn btn-outline-pink">
+                                                @Html.ActionLink((string)ViewBag.Exception, "Exception",
+                                            new
+                                            {
+                                                id = item.RequestProductId
+                                            })
+
+                                            </button>
+                                        </div>
+                                    </td>
+                                            }
+                                            else
+                                            {
+                                    <td></td>
+                                            }
+                                        }
+                                        else
+                                        {
+                                    <td></td>
+                                        }
+
+                                    }
+                                    else
+                                    {
+                                    <td></td>
+                                    }
+
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">
+                    السلف قيد إعداد القرار
+                    @if (Model.List.Where(c => c.RequestRequestStatusId == (int)RequestStatusEnum.Approved).ToList().Count == 0)
+                    {<span class="tag tag-default">@Model.List.Where(c => c.RequestRequestStatusId == (int)RequestStatusEnum.Approved).ToList().Count</span>}
+                    else
+                    {<span class="tag tag-danger">@Model.List.Where(c => c.RequestRequestStatusId == (int)RequestStatusEnum.Approved).ToList().Count</span> }
+                </h4>
+
+                @*<h4 class="card-title">@ViewBag.SatisfyConditionsLoanRequests</h4>*@
+                <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li><a data-action="collapse"><i class="icon-plus4"></i></a></li>
+                        <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                        <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-body collapse  ">
+                <div class="card-block card-dashboard">
+                    @*<button class="btn btn-success" type="button">
+                            @Html.ActionLink((string)ViewBag.Insert + " " + (string)ViewBag.ModuleName, "Create")
+                        </button>*@
+
+                </div>
+                <div class="table-responsive">
+                    <table id="Result" class="table table-bordered mb-0">
+                        <thead class="thead-inverse">
+                            <tr>
+                            
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Instance.RequestProductEmployeeId)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Instance.RequestProductEmployeeFullName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Instance.RequestProductProductTypeName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Instance.RequestDate)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Instance.RequestAmount)
+                                </th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.List.Where(c => c.RequestRequestStatusId == (int) RequestStatusEnum.Approved))
+                            {
+                            <tr>
+                                
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RequestProductEmployeeId)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RequestProductEmployeeFullName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RequestProductProductTypeName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RequestDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RequestAmount)
+                                </td>
+                                <td>
+                                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                        <button type="button" class="btn btn-info">
+                                            @Html.ActionLink((string)ViewBag.Details, "Details",
+                                            new
+                                            {
+                                                id = item.RequestProductId
+                                            })
+                                        </button>
+                                        <button type="button" class="btn btn-success">
+                                            @Html.ActionLink((string)ViewBag.Approve, "FinantialApprove",
+                                            new
+                                            {
+                                                id = item.RequestProductId
+                                            })
+
+                                        </button>
+                                        @*<button type="button" class="btn btn-warning">
+                                                @Html.ActionLink((string)ViewBag.Update, "Edit",
+                                            new
+                                            {
+                                                id = item.RequestProductId
+                                            })
+
+                                            </button>*@
+                                        @*<button type="button" class="btn btn-danger deleteLink" data-original-title="@ViewBag.Delete" id="delete" data-id="@item.RequestProductId">@ViewBag.Delete</button>*@
+                                    </div>
+                                </td>
+                                @if (ViewBag.RoleName != null)
+                                    {
+
+                                        string role = ViewBag.RoleName;
+
+                                        if (role.Equals("Manager"))
+                                        {
+                                            if (item.RequestRequestStatusId == 1)
+                                            {
+
+                                    <td>
+                                        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                            <button type="button" class="btn btn-success">
+                                                @Html.ActionLink((string)ViewBag.Approve, "Approve",
+                                            new
+                                            {
+                                                id = item.RequestProductId
+                                            })
+
+                                            </button>
+                                            <button type="button" class="btn btn-danger">
+                                                @Html.ActionLink((string)ViewBag.Reject, "Reject",
+                                            new
+                                            {
+                                                id = item.RequestProductId
+                                            })
+
+                                            </button>
+                                            <button type="button" class="btn btn-outline-pink">
+                                                @Html.ActionLink((string)ViewBag.Exception, "Exception",
+                                            new
+                                            {
+                                                id = item.RequestProductId
+                                            })
+
+                                            </button>
+                                        </div>
+                                    </td>
+                                            }
+                                            else
+                                            {
+                                    <td></td>
+                                            }
+                                        }
+                                        else
+                                        {
+                                    <td></td>
+                                        }
+
+                                    }
+                                    else
+                                    {
+                                    <td></td>
+                                    }
+
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">
+                    @ViewBag.ExceptionalLoanRequests
+                    @if (Model.List.Where(c => c.RequestRequestStatusId == (int)RequestStatusEnum.ExcludedFromValidation).ToList().Count == 0)
+                {<span class="tag tag-default">@Model.List.Where(c => c.RequestRequestStatusId == (int)RequestStatusEnum.ExcludedFromValidation).ToList().Count</span>}
+                else
+                {<span class="tag tag-danger">@Model.List.Where(c => c.RequestRequestStatusId == (int)RequestStatusEnum.ExcludedFromValidation).ToList().Count</span> }
+                </h4>
+
+                @*<h4 class="card-title">@ViewBag.ExceptionalLoanRequests</h4>*@
+                <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li><a data-action="collapse"><i class="icon-plus4"></i></a></li>
+                        <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                        <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-body collapse  ">
+                <div class="card-block card-dashboard">
+                    @*<button class="btn btn-success" type="button">
+                            @Html.ActionLink((string)ViewBag.Insert + " " + (string)ViewBag.ModuleName, "Create")
+                        </button>*@
+
+                </div>
+                <div class="table-responsive">
+                    <table id="Result" class="table table-bordered mb-0">
+                        <thead class="thead-inverse">
+                            <tr>
+                                <th></th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Instance.RequestProductEmployeeId)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Instance.RequestProductEmployeeFullName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Instance.RequestProductProductTypeName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Instance.RequestDate)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Instance.RequestAmount)
+                                </th>
+
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.List.Where(c => c.RequestRequestStatusId == 3))
+                            {
+                            <tr>
+                                <td>
+                                    <input id="isSellected" name="isSellected" type="checkbox" checked />
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RequestProductEmployeeId)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RequestProductEmployeeFullName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RequestProductProductTypeName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RequestDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RequestAmount)
+                                </td>
+                                <td>
+                                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                        <button type="button" class="btn btn-info">
+                                            @Html.ActionLink((string)ViewBag.Details, "Details",
+                                            new
+                                            {
+                                                id = item.RequestProductId
+                                            })
+                                        </button>
+                                        @*<button type="button" class="btn btn-warning">
+                                                @Html.ActionLink((string)ViewBag.Update, "Edit",
+                                            new
+                                            {
+                                                id = item.RequestProductId
+                                            })
+
+                                            </button>*@
+                                        @*<button type="button" class="btn btn-danger deleteLink" data-original-title="@ViewBag.Delete" id="delete" data-id="@item.RequestProductId">@ViewBag.Delete</button>*@
+                                    </div>
+                                </td>
+                                @if (ViewBag.RoleName != null)
+                                    {
+
+                                        string role = ViewBag.RoleName;
+
+                                        if (role.Equals("Manager"))
+                                        {
+                                            if (item.RequestRequestStatusId == 1)
+                                            {
+
+                                    <td>
+                                        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                            <button type="button" class="btn btn-success">
+                                                @Html.ActionLink((string)ViewBag.Approve, "Approve",
+                                            new
+                                            {
+                                                id = item.RequestProductId
+                                            })
+
+                                            </button>
+                                            <button type="button" class="btn btn-danger">
+                                                @Html.ActionLink((string)ViewBag.Reject, "Reject",
+                                            new
+                                            {
+                                                id = item.RequestProductId
+                                            })
+
+                                            </button>
+                                            <button type="button" class="btn btn-outline-pink">
+                                                @Html.ActionLink((string)ViewBag.Exception, "Exception",
+                                            new
+                                            {
+                                                id = item.RequestProductId
+                                            })
+
+                                            </button>
+                                        </div>
+                                    </td>
+                                            }
+                                            else
+                                            {
+                                    <td></td>
+                                            }
+                                        }
+                                        else
+                                        {
+                                    <td></td>
+                                        }
+
+                                    }
+                                    else
+                                    {
+                                    <td></td>
+                                    }
+
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="margin-right: -160px;width:1000px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">@ViewBag.No</span></button>
+                <h4 class="modal-title" id="deleteModalLabel"> @ViewBag.ModuleName</h4>
+            </div>
+            <div id="detailsModalBody" class="modal-body"></div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="validateModal" tabindex="-1" role="dialog" aria-labelledby="validateModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="margin-right: -160px;width:1000px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">@ViewBag.No</span></button>
+                <h4 class="modal-title" id="validateModalLabel"> @ViewBag.ModuleName</h4>
+            </div>
+            <div id="validateModalBody" class="modal-body">
+                <h4>@ViewBag.ConfirmValidate</h4>
+                <div>
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <input type="text" name="Amount" id="txtAmount" value="Amount" />
+                        <input type="hidden"  name="RequestId" id="RequestId" />
+
+                        <div class="form-actions no-color">
+                            <input type="submit" value="@ViewBag.Yes" class="btn btn-danger" />
+                            <input type="button" onclick="location.href='@Url.Action("Validate")'" value="@ViewBag.No" class="btn btn-default" />
+                        </div>
+                    }
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script>
+        $(function () {
+          
+          
+            $(".details").click(function () {
+                var request_id = $(this).data("id");
+                $.ajax({
+                    type: "POST",
+                    url: "/ManageLoanRequests/Details",
+                    data: '{id: "' + request_id + '" }',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "html",
+                    success: function (response) {
+                        //$('#dialog').html(response);
+                        //$('#dialog').dialog('open');
+                        $("#detailsModalBody").html(response);
+
+                        $("#detailsModal").modal("show");
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+            });
+
+            //$(".validate").click(function () {
+            //    var request_id = $(this).data("id");
+            //    $.ajax({
+            //        type: "POST",
+            //        url: "/ManageLoanRequests/Details",
+            //        data: '{id: "' + request_id + '" }',
+            //        contentType: "application/json; charset=utf-8",
+            //        dataType: "html",
+            //        success: function (response) {
+            //            //$('#dialog').html(response);
+            //            //$('#dialog').dialog('open');
+            //            $("#detailsModalBody").html(response);
+
+            //            $("#detailsModal").modal("show");
+            //        },
+            //        failure: function (response) {
+            //            alert(response.responseText);
+            //        },
+            //        error: function (response) {
+            //            alert(response.responseText);
+            //        }
+            //    });
+            //});
+
+
+        });
+    </script>
+    @*<script>
+            $(document).ready(function () {
+
+                $('table').each(function (e) {
+                    var len = $(this).length;
+                    if (len == 1) {
+                        var table = $(this).context;
+
+                        // Create an empty <tr> element and add it to the 1st position of the table:
+                        var row = table.insertRow(1);
+
+                        //// Insert new cell
+                        var cell1 = row.insertCell(0);
+                        cell1.colSpan = 12;
+                        cell1.innerText = "لا يوجد نتائج";
+                        cell1.align = "center";
+                    }
+
+                });
+
+            });
+        </script>*@
+}

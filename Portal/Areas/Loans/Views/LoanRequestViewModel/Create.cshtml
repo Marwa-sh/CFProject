@@ -87,13 +87,13 @@
                                     <div class="form-group">
 
                                         <button type="button" id="discover" class="btn btn-primary mr-1" style="margin-top: 27px;">
-                                            Discover
+                                            @ViewBag.Discover
                                         </button>
                                     </div>
                                 </div>
                             </div>
 
-                            
+
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="form-group">
@@ -118,7 +118,7 @@
                                         @Html.EditorFor(model => model.LoanRequest.NetIncome, new { htmlAttributes = new { @class = "form-control" } })
                                         @Html.ValidationMessageFor(model => model.LoanRequest.NetIncome, "", new { @class = "text-danger" })
                                     </div>
-                                </div>                               
+                                </div>
                                 <div class="col-md-2">
                                     <div class="form-group">
                                         @Html.LabelFor(model => model.Request.Date, new Dictionary<string, Object>
@@ -162,30 +162,40 @@
                                     </div>
                                 </div>
 
-                               
+
                             </div>
- 
+
                             <ul class="nav nav-pills  ">
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="active-tab" data-toggle="tab" href="#Employee" aria-controls="active" aria-expanded="false">Employee</a>
+                                    <a class="nav-link active" id="active-tab" data-toggle="tab" href="#Employee" aria-controls="active" aria-expanded="false">@ViewBag.Employee</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link " id="link-tab" data-toggle="tab" href="#Loan" aria-controls="link" aria-expanded="true">Loan</a>
-                                </li>                                
+                                    <a class="nav-link " id="link-tab" data-toggle="tab" href="#Loan" aria-controls="link" aria-expanded="true">@ViewBag.Loan</a>
+                                </li>
                             </ul>
                             <div class="tab-content px-1 pt-1">
                                 <div role="tabpanel" class="tab-pane fade active in" id="Employee" aria-labelledby="active-tab" aria-expanded="false">
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label class="form-control-label" name="FullNameFor">FullName</label>
+                                                @Html.LabelFor(model => model.EmployeeProductCalculatorResult.FullName, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.EmployeeProductCalculatorResult.FullName)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
                                                 <input disabled id="FullName" class="form-control" name="FullName" />
                                             </div>
 
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label class="form-control-label" name="DepartmentNameFor">DepartmentName</label>
+                                                @Html.LabelFor(model => model.EmployeeProductCalculatorResult.DepartmentName, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.EmployeeProductCalculatorResult.DepartmentName)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
                                                 <input disabled id="DepartmentName" class="form-control" name="DepartmentName" />
                                             </div>
 
@@ -193,111 +203,174 @@
 
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label class="form-control-label" name="DepartmentSalaryWorkPlaceNameFor">DepartmentSalaryWorkPlaceName</label>
+                                                @Html.LabelFor(model => model.EmployeeProductCalculatorResult.DepartmentSalaryWorkPlaceName, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.EmployeeProductCalculatorResult.DepartmentSalaryWorkPlaceName)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
                                                 <input disabled id="DepartmentSalaryWorkPlaceName" class="form-control" name="DepartmentSalaryWorkPlaceName" />
                                             </div>
 
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label class="form-control-label" name="EmployeeStatusNameFor">EmployeeStatusName</label>
+                                                @Html.LabelFor(model => model.EmployeeProductCalculatorResult.EmployeeStatusName, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.EmployeeProductCalculatorResult.EmployeeStatusName)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
                                                 <input disabled id="EmployeeStatusName" class="form-control" name="EmployeeStatusName" />
                                             </div>
                                         </div>
-                                       
+
                                     </div>
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label class="form-control-label" name="CategoryNameFor">CategoryName</label>
+                                                @Html.LabelFor(model => model.EmployeeProductCalculatorResult.CategoryName, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.EmployeeProductCalculatorResult.CategoryName)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
                                                 <input disabled id="CategoryName" class="form-control" name="CategoryName" />
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label class="form-control-label" name="SeniorityFor">Seniority</label>
+                                                @Html.LabelFor(model => model.EmployeeProductCalculatorResult.Seniority, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.EmployeeProductCalculatorResult.Seniority)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
                                                 <input disabled id="Seniority" class="form-control" name="Seniority" />
-                                                @*<label id="Seniority" name="Seniority"></label>*@
                                             </div>
 
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label class="form-control-label" name="MinSeniorityFor">MinSeniority</label>
+                                                @Html.LabelFor(model => model.EmployeeProductCalculatorResult.MinSeniority, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.EmployeeProductCalculatorResult.MinSeniority)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
                                                 <input disabled id="MinSeniority" class="form-control" name="MinSeniority" />
-                                                @*<label id="MinSeniority" name="MinSeniority"></label>*@
                                             </div>
 
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label class="form-control-label" name="MinReusePeriodFor">MinReusePeriod</label>
+                                                @Html.LabelFor(model => model.EmployeeProductCalculatorResult.MinReusePeriod, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.EmployeeProductCalculatorResult.MinReusePeriod)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
                                                 <input disabled id="MinReusePeriod" class="form-control" name="MinReusePeriod" />
-                                                @*<label id="MinReusePeriod" name="MinReusePeriod"></label>*@
                                             </div>
                                         </div>
-                                       
+
                                     </div>
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label class="form-control-label" name="CersStartDateFor">CersStartDate</label>
+                                                @Html.LabelFor(model => model.EmployeeProductCalculatorResult.CersStartDate, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.EmployeeProductCalculatorResult.CersStartDate)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
                                                 <input disabled id="CersStartDate" class="form-control" name="CersStartDate" />
                                             </div>
 
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label class="form-control-label" name="CfStartDateFor">CfStartDate</label>
-                                                <input disabled id="CfStartDate" class="form-control" name="CfStartDate" />                                               
+                                                @Html.LabelFor(model => model.EmployeeProductCalculatorResult.CfStartDate, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.EmployeeProductCalculatorResult.CfStartDate)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                <input disabled id="CfStartDate" class="form-control" name="CfStartDate" />
                                             </div>
 
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label class="form-control-label" name="LeaveDateFor">LeaveDate</label>
+                                                @Html.LabelFor(model => model.EmployeeProductCalculatorResult.LeaveDate, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.EmployeeProductCalculatorResult.LeaveDate)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
                                                 <input disabled id="LeaveDate" class="form-control" name="LeaveDate" />
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label class="form-control-label" name="LeaveReasonFor">LeaveReason</label>
+                                                @Html.LabelFor(model => model.EmployeeProductCalculatorResult.LeaveReason, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.EmployeeProductCalculatorResult.LeaveReason)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
                                                 <input disabled id="LeaveReason" class="form-control" name="LeaveReason" />
                                             </div>
                                         </div>
-                                       
+
                                     </div>
-                                   
+
                                 </div>
                                 <div class="tab-pane fade " id="Loan" role="tabpanel" aria-labelledby="link-tab" aria-expanded="true">
-                                    
+
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label class="form-control-label" name="InstallmentFor">Installment</label>
+                                                @Html.LabelFor(model => model.EmployeeProductCalculatorResult.Installment, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.EmployeeProductCalculatorResult.Installment)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
                                                 <input disabled id="Installment" class="form-control" name="Installment" />
-                                                @*<label id="Installment" name="Installment"></label>*@
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label class="form-control-label" name="NetAmountFor">NetAmount</label>
+                                                @Html.LabelFor(model => model.EmployeeProductCalculatorResult.NetAmount, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.EmployeeProductCalculatorResult.NetAmount)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
                                                 <input disabled id="NetAmount" class="form-control" name="NetAmount" />
-                                                @*<label id="NetAmount" name="NetAmount"></label>*@
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label class="form-control-label" name="ProfitAmountFor">ProfitAmount</label>
+                                                @Html.LabelFor(model => model.EmployeeProductCalculatorResult.ProfitAmount, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.EmployeeProductCalculatorResult.ProfitAmount)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
                                                 <input disabled id="ProfitAmount" class="form-control" name="ProfitAmount" />
-                                                @*<label id="ProfitAmount" name="ProfitAmount"></label>*@
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label class="form-control-label" name="MaxAmountFor">MaxAmount</label>
+                                                @Html.LabelFor(model => model.EmployeeProductCalculatorResult.MaxAmount, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.EmployeeProductCalculatorResult.MaxAmount)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
                                                 <input disabled id="MaxAmount" class="form-control" name="MaxAmount" />
-                                                @*<label id="MaxAmount" name="MaxAmount"></label>*@
                                             </div>
 
                                         </div>
@@ -305,25 +378,30 @@
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label class="form-control-label" name="GuarantorsCountFor">GuarantorsCount</label>
+                                                @Html.LabelFor(model => model.EmployeeProductCalculatorResult.GuarantorsCount, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.EmployeeProductCalculatorResult.GuarantorsCount)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
                                                 <input disabled id="GuarantorsCount" class="form-control" name="GuarantorsCount" />
-                                                @*<label id="GuarantorsCount" name="GuarantorsCount"></label>*@
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label class="form-control-label" name="RateFor">Rate</label>
+                                                @Html.LabelFor(model => model.EmployeeProductCalculatorResult.Rate, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.EmployeeProductCalculatorResult.Rate)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
                                                 <input disabled id="Rate" class="form-control" name="Rate" />
-                                                @*<label id="Rate" name="Rate"></label>*@
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                 
+
                             </div>
-
-                             
-
                         </div>
 
                         <br />
@@ -341,8 +419,6 @@
     </div>
 
 }
-
-
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
@@ -378,41 +454,42 @@
                         contentType: "application/json; charset=utf-8",
                         dataType: "json",
                         success: function (response) {
-                            for (var i = 0; i < response.length; i++) {
-                                var temp = response[i];
-
-                                // Employee Info
-                                $("#MaxAmount").val(temp.MaxAmount);
-                                $("#Seniority").val(temp.Seniority);
-                                $("#MinSeniority").val(temp.MinSeniority);
-                                $("#MinReusePeriod").val(temp.MinReusePeriod); 
-                                $("#CersStartDate").val(new Date(parseInt(temp.CersStartDate.substr(6))));
-                                $("#CfStartDate").val(new Date(parseInt(temp.CfStartDate.substr(6))));
-                                $("#LeaveDate").val(temp.LeaveDate);
-                                $("#LeaveReason").val(temp.LeaveReason);
-                                $("#DepartmentName").val(temp.DepartmentName);
-                                $("#DepartmentSalaryWorkPlaceName").val(temp.DepartmentSalaryWorkPlaceName);
-                                $("#EmployeeStatusName").val(temp.EmployeeStatusName); 
-                                $("#CategoryName").val(temp.CategoryName);
-                                $("#FullName").val(temp.FullName);
-
-                                // Loan Info
-                                $("#Installment").val(temp.Installment);
-                                $("#NetAmount").val(temp.NetAmount);
-                                $("#ProfitAmount").val(temp.ProfitAmount);
-                                $("#Rate").val(temp.Rate);
-                                $("#GuarantorsCount").val(temp.GuarantorsCount);
-
-                                var date = new Date(parseInt(temp.CersStartDate.substr(6)));
-                              
-                                console.log(date);
-                                
-                                //$("#ProductTypeIdlbl").text(temp.ProductTypeId);
-                                //$("#Amountlbl").text(temp.Amount);
-                                
-
+                            if (response.length == 0) {
+                                swal("", "الرقم الذاتي غير موجود", "error");
                             }
+                            else {
 
+
+                                for (var i = 0; i < response.length; i++) {
+                                    var temp = response[i];
+
+                                    // Employee Info
+                                    $("#MaxAmount").val(temp.MaxAmount);
+                                    $("#Seniority").val(temp.Seniority);
+                                    $("#MinSeniority").val(temp.MinSeniority);
+                                    $("#MinReusePeriod").val(temp.MinReusePeriod);
+                                    $("#CersStartDate").val(new Date(parseInt(temp.CersStartDate.substr(6))));
+                                    $("#CfStartDate").val(new Date(parseInt(temp.CfStartDate.substr(6))));
+                                    $("#LeaveDate").val(temp.LeaveDate);
+                                    $("#LeaveReason").val(temp.LeaveReason);
+                                    $("#DepartmentName").val(temp.DepartmentName);
+                                    $("#DepartmentSalaryWorkPlaceName").val(temp.DepartmentSalaryWorkPlaceName);
+                                    $("#EmployeeStatusName").val(temp.EmployeeStatusName);
+                                    $("#CategoryName").val(temp.CategoryName);
+                                    $("#FullName").val(temp.FullName);
+
+                                    // Loan Info
+                                    $("#Installment").val(temp.Installment);
+                                    $("#NetAmount").val(temp.NetAmount);
+                                    $("#ProfitAmount").val(temp.ProfitAmount);
+                                    $("#Rate").val(temp.Rate);
+                                    $("#GuarantorsCount").val(temp.GuarantorsCount);
+
+                                    var date = new Date(parseInt(temp.CersStartDate.substr(6)));
+
+                                    console.log(date);
+                                }
+                            }
 
                         },
                         failure: function (response) {
@@ -486,7 +563,7 @@
                         autocompletechange: "_removeIfInvalid"
                     });
                 },
-                 
+
                 _source: function (request, response) {
                     var matcher = new RegExp($.ui.autocomplete.escapeRegex(request.term), "i");
                     response(this.element.children("option").map(function () {

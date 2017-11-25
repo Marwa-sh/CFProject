@@ -35,6 +35,17 @@ namespace Portal.Areas.Loans.Controllers
         private string LoanDecision = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "LoanDecision", "ModuleName");
         private string noRecords = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "NoRecords");
 
+        private string approve = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Approve");
+        private string reject = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Reject");
+        private string exception = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Exception");
+        private string validate = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Validate");
+
+        private string newLoanRequests = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "NewLoanRequests");
+        private string validLoanRequests = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "ValidLoanRequests");
+        private string approvedLoanRequests = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "ApprovedLoanRequests");
+        private string exceptionalLoanRequests = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "ExceptionalLoanRequests");
+        private string rejectedLoanRequests = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "RejectedLoanRequests");
+        
 
         public ManageLoanRequestsController()
         {           
@@ -46,6 +57,7 @@ namespace Portal.Areas.Loans.Controllers
             ViewBag.Insert = insert;
             ViewBag.Delete = delete;
             ViewBag.Title = index;
+            ViewBag.NoRecords = noRecords;
 
             ViewBag.ConfirmDelete = confirmDelete;
             ViewBag.Yes = yes;
@@ -53,18 +65,16 @@ namespace Portal.Areas.Loans.Controllers
             ViewBag.Search = search;
             ViewBag.FilterOptions = filterOptions;
 
-            ViewBag.Approve = "Approve";
-            ViewBag.Reject = "Reject";
-            ViewBag.Exception = "Exception";
+            ViewBag.Approve = approve;
+            ViewBag.Reject = reject;
+            ViewBag.Exception = exception;
+            ViewBag.Validate = validate;
 
-            ViewBag.NoRecords = noRecords;
-
-            ViewBag.NewLoanRequests = "NewLoanRequests";
-            ViewBag.SatisfyConditionsLoanRequests = "قيد إعداد القرار"; //"SatisfyConditionsLoanRequests";
-            ViewBag.ExceptionalLoanRequests = "ExceptionalLoanRequests";
-
-
-            ViewBag.Validate = "Validate";
+            ViewBag.NewLoanRequests = newLoanRequests;
+            ViewBag.ValidLoanRequests = validLoanRequests;
+            ViewBag.ApprovedLoanRequests = approvedLoanRequests;
+            ViewBag.ExceptionalLoanRequests = exceptionalLoanRequests;
+            ViewBag.RejectedLoanRequests = rejectedLoanRequests;
         }
 
         // GET: ManageLoanRequests

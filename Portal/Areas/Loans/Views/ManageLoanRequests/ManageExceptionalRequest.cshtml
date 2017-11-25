@@ -11,10 +11,10 @@
             <div class="card-header">
                 <h4 class="card-title">
                     @ViewBag.ExceptionalLoanRequests
-                    @if (Model.List.Where(c => c.RequestRequestStatusId == (int)RequestStatusEnum.ExcludedFromValidation).ToList().Count == 0)
-                    {<span class="tag tag-default">@Model.List.Where(c => c.RequestRequestStatusId == (int)RequestStatusEnum.ExcludedFromValidation).ToList().Count</span>}
+                    @if (Model.List.Count == 0)
+                    {<span class="tag tag-default">@Model.List.Count</span>}
                     else
-                    {<span class="tag tag-danger">@Model.List.Where(c => c.RequestRequestStatusId == (int)RequestStatusEnum.ExcludedFromValidation).ToList().Count</span> }
+                    {<span class="tag tag-danger">@Model.List.Count</span> }
                 </h4>
 
                 @*<h4 class="card-title">@ViewBag.ExceptionalLoanRequests</h4>*@
@@ -36,7 +36,7 @@
                 </div>
                 <div class="table-responsive">
                     <table id="Result" class="table table-bordered mb-0">
-                        <thead class="thead-inverse">
+                        <thead class="bg-primary table-head-color">
                             <tr>
                                 <th></th>
                                 <th>
@@ -60,7 +60,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (var item in Model.List.Where(c => c.RequestRequestStatusId == 3))
+                            @foreach (var item in Model.List)
                             {
                                 <tr>
                                     <td>

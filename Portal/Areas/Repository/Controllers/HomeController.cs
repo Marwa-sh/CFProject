@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
-namespace CfProject.Controllers
+namespace Portal.Areas.Repository.Controllers
 {
     public class HomeController : Controller
     {

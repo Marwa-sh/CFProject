@@ -12,7 +12,7 @@
                     <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
                     <div class="heading-elements">
                         <ul class="list-inline mb-0">
-                            <li><a data-action="collapse"><i id="filter" class="icon-minus4"></i></a></li>
+                            <li><a data-action="collapse"><i id="mark" class="icon-minus4"></i></a></li>
                             <li><a data-action="reload"><i class="icon-reload"></i></a></li>
                             <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
                         </ul>
@@ -56,8 +56,7 @@
                                                   {"data-toggle", "tooltip"},
                                                   {"data-placement", "bottom"}
                                                 })
-                                            @Html.DropDownListFor(model => model.Filter.RequestProductProductTypeId, (SelectList)@ViewBag.ProductTypeList, htmlAttributes: new { @class = "form-control" })
-                                            @*@Html.EditorFor(model => model.Filter.RequestProductProductTypeId, new { htmlAttributes = new { @class = "form-control" } })*@
+                                            @Html.EditorFor(model => model.Filter.RequestProductProductTypeId, new { htmlAttributes = new { @class = "form-control" } })
                                         </div>
                                     </div>
                                 </div>
@@ -71,8 +70,7 @@
                                                   {"data-toggle", "tooltip"},
                                                   {"data-placement", "bottom"}
                                                 })
-                                            @Html.DropDownListFor(model => model.Filter.RequestProductProductTypeId, (SelectList)@ViewBag.PaymentGroupList, htmlAttributes: new { @class = "form-control" })
-                                            @*@Html.EditorFor(model => model.Filter.RequestProductProductTypePaymentGroupId, new { htmlAttributes = new { @class = "form-control" } })*@
+                                            @Html.EditorFor(model => model.Filter.RequestProductProductTypePaymentGroupId, new { htmlAttributes = new { @class = "form-control" } })
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -99,7 +97,7 @@
                                             @Html.TextBoxFor(model => model.Filter.MaxRequestDate, htmlAttributes: new { @class = "form-control IsDate" })
                                         </div>
                                     </div>
-                                </div>                               
+                                </div>
                             </div>
 
                             <div class="form-actions">
@@ -130,26 +128,26 @@
             </div>
             <div class="card-body collapse in">
                 <div class="card-block card-dashboard">
-                    <button class="btn btn-success type="button">
+                    <button class="btn btn-outline-blue type=" button">
                         @Html.ActionLink((string)ViewBag.Insert + " " + (string)ViewBag.ModuleName, "Create")
                     </button>
 
-                    @*<button class="btn btn-outline-info" type="button">
-                        @Html.ActionLink("Employee Calculator" , "EmployeeCalculator")
-                    </button>*@
+                    <button class="btn btn-outline-info" type="button">
+                        @Html.ActionLink("Employee Calculator", "EmployeeCalculator")
+                    </button>
                 </div>
                 <div class="table-responsive">
                     <table id="Result" class="table table-bordered mb-0 ">
                         <thead class="bg-primary table-head-color">
                             <tr>
-                               
+
                                 <th>
                                     @Html.DisplayNameFor(model => model.Instance.RequestProductEmployeeId)
                                 </th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.Instance.RequestProductEmployeeFullName)
                                 </th>
-                               
+
                                 <th>
                                     @Html.DisplayNameFor(model => model.Instance.RequestProductEmployeeCategoryName)
                                 </th>
@@ -172,14 +170,14 @@
                         <tbody>
                             @foreach (var item in Model.List)
                             {
-                                <tr>                                    
+                                <tr>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.RequestProductEmployeeId)
                                     </td>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.RequestProductEmployeeFullName)
                                     </td>
-                                   
+
                                     <td>
                                         @Html.DisplayFor(modelItem => item.RequestProductEmployeeCategoryName)
                                     </td>
@@ -238,26 +236,8 @@
     </div>
 </div>
 @section Scripts {
-    
-<script>
-		$(function () {
-            $.validator.addMethod('date',
-            function (value, element) {
-                if (this.optional(element)) {
-                    return true;
-                }
-                var ok = true;
-                try {
-                    $.datepicker.parseDate('dd/mm/yy', value);
-                }
-                catch (err) {
-                    ok = false;
-                }
-                return ok;
-            });
-            $(".IsDate").datepicker({ dateFormat: 'dd/mm/yy', changeYear: true });
-        });
-</script>
+
+
     <script>
 	$(document).ready(function () {
 	        var len = $('#Result tr').length;
@@ -268,7 +248,7 @@
 	            // Create an empty <tr> element and add it to the 1st position of the table:
 	            var row = table.insertRow(0);
 
-	            //// Insert new cell 
+	            //// Insert new cell
 	            var cell1 = row.insertCell(0);
 	            cell1.colSpan = 12;
 	            cell1.innerText = '@ViewBag.NoRecords';
@@ -277,7 +257,7 @@
 	        else {
 	            var value = $("#cardOptions").attr("class").replace("in", "");
 	            $("#cardOptions").attr("class", value);
-	            $("#filter").attr("class", "icon-plus4");
+	            $("#mark").attr("class", "icon-plus4");
 	        }
 	    });
 	    $(function () {

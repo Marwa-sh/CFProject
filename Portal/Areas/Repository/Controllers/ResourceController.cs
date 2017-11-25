@@ -7,8 +7,9 @@ using Cf.Data;
 using Cf.Services;
 using Cf.Services.Exceptions;
 using Cf.ViewModels;
+using Cf.Controllers;
 
-namespace Cf.Controllers
+namespace Portal.Areas.Repository.Controllers
 {
     public class ResourceController : BaseController
     {

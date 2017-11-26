@@ -128,15 +128,14 @@
             </div>
             <div class="card-body collapse in">
                 <div class="card-block card-dashboard">
-                    <button class="btn btn-outline-blue type=" button">
-                        @Html.ActionLink((string)ViewBag.Insert + " " + (string)ViewBag.ModuleName, "Create")
-                    </button>
 
-                    <button class="btn btn-outline-info" type="button">
-                        @Html.ActionLink("Employee Calculator", "EmployeeCalculator")
+                    <input type="text" name="EmployeeId" id="EmployeeId" />
+                    <button id="GetLoans" class="btn btn-blue">
+                        Get
                     </button>
+                    <canvas id="simple-pie-chart" height="400"></canvas>
                 </div>
-                <div class="table-responsive">
+                @*<div class="table-responsive">
                     <table id="Result" class="table table-bordered mb-0 ">
                         <thead class="bg-primary table-head-color">
                             <tr>
@@ -217,7 +216,7 @@
                             }
                         </tbody>
                     </table>
-                </div>
+                </div>*@
             </div>
         </div>
     </div>
@@ -237,7 +236,45 @@
 </div>
 @section Scripts {
 
+    <script>
+        
+        // Pie chart
+        // ------------------------------
+        $(window).on("load", function () {
 
+            //Get the context of the Chart canvas element we want to select
+            var ctx = $("#simple-pie-chart");
+
+            // Chart Options
+            var chartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                responsiveAnimationDuration: 500,
+            };
+
+            // Chart Data
+            var chartData = {
+                labels: ["January", "February", "March", "April", "May"],
+                datasets: [{
+                    label: "My First dataset",
+                    data: [85, 65, 34, 45, 35],
+                    backgroundColor: ["#99B898", "#FECEA8", "#FF847C", "#E84A5F", "#2A363B"],
+                }]
+            };
+
+            var config = {
+                type: 'pie',
+
+                // Chart Options
+                options: chartOptions,
+
+                data: chartData
+            };
+
+            // Create the chart
+            var pieSimpleChart = new Chart(ctx, config);
+        });
+    </script>
     <script>
 	$(document).ready(function () {
 	        var len = $('#Result tr').length;

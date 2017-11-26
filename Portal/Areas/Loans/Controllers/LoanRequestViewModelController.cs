@@ -46,6 +46,9 @@ namespace Portal.Areas.Loans.Controllers
         private string loan = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "Loan", "ModuleName");
         private string employee = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "Employee", "ModuleName");
 
+        private string select = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Select");
+
+         
 
         public LoanRequestViewModelController()
         {
@@ -69,7 +72,7 @@ namespace Portal.Areas.Loans.Controllers
             ViewBag.Employee = employee;
 
             ViewBag.Action = update;
-
+            ViewBag.Select = select;
 
         }
 

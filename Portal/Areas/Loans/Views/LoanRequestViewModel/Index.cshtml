@@ -56,7 +56,7 @@
                                                   {"data-toggle", "tooltip"},
                                                   {"data-placement", "bottom"}
                                                 })
-                                            @Html.DropDownListFor(model => model.Filter.RequestProductProductTypeId, (SelectList)@ViewBag.ProductTypeList, htmlAttributes: new { @class = "form-control" })
+                                            @Html.DropDownListFor(model => model.Filter.RequestProductProductTypeId, (SelectList)@ViewBag.ProductTypeList,  (string)@ViewBag.Select , htmlAttributes: new { @class = "form-control" })
                                             @*@Html.EditorFor(model => model.Filter.RequestProductProductTypeId, new { htmlAttributes = new { @class = "form-control" } })*@
                                         </div>
                                     </div>
@@ -71,7 +71,7 @@
                                                   {"data-toggle", "tooltip"},
                                                   {"data-placement", "bottom"}
                                                 })
-                                            @Html.DropDownListFor(model => model.Filter.RequestProductProductTypeId, (SelectList)@ViewBag.PaymentGroupList, htmlAttributes: new { @class = "form-control" })
+                                            @Html.DropDownListFor(model => model.Filter.RequestProductProductTypeId, (SelectList)@ViewBag.PaymentGroupList, (string)@ViewBag.Select, htmlAttributes: new { @class = "form-control" })
                                             @*@Html.EditorFor(model => model.Filter.RequestProductProductTypePaymentGroupId, new { htmlAttributes = new { @class = "form-control" } })*@
                                         </div>
                                     </div>

@@ -398,6 +398,12 @@
                                                 <input disabled id="Rate" class="form-control" name="Rate" />
                                             </div>
                                         </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                @Html.Label("Status")
+                                                <input disabled id="ResultStatus" class="form-control" name="ResultStatus" />
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -458,8 +464,6 @@
                                 swal("", "الرقم الذاتي غير موجود", "error");
                             }
                             else {
-
-
                                 for (var i = 0; i < response.length; i++) {
                                     var temp = response[i];
 
@@ -486,7 +490,17 @@
                                     $("#GuarantorsCount").val(temp.GuarantorsCount);
 
                                     var date = new Date(parseInt(temp.CersStartDate.substr(6)));
-
+                                    if (amount > temp.MaxAmount)
+                                    {
+                                        $("#ResultStatus").val('@ViewBag.Exceeds');
+                                        $("#ResultStatus").css("color","red");
+                                    }
+                                    else
+                                    {
+                                        $("#ResultStatus").val('@ViewBag.Good');
+                                        $("#ResultStatus").css("color", "green");
+                                    }
+                                    
                                     console.log(date);
                                 }
                             }

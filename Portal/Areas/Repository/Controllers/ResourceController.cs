@@ -27,8 +27,9 @@ namespace Portal.Areas.Repository.Controllers
         private string search = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Search");
         private string filterOptions = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "FilterOptions");
         private string noRecords = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "NoRecords");
-		
-	    public ResourceController()
+        private string reload = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Reload");
+
+        public ResourceController()
     	{
             ViewBag.ModuleName = moduleName;
 			ViewBag.Title = index;
@@ -44,7 +45,8 @@ namespace Portal.Areas.Repository.Controllers
             ViewBag.Search = search;
 			ViewBag.FilterOptions = filterOptions;
 			ViewBag.NoRecords = noRecords;
-		}
+            ViewBag.Reload = reload;
+        }
 		
         /// <summary>
         /// Returns a list of ResourceVw objects
@@ -61,6 +63,24 @@ namespace Portal.Areas.Repository.Controllers
                 Model.List = new List<ResourceVw>();
             return View(Model);
         }
+
+        /// <summary>
+        /// Reload Resources
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult ReloadResources(ResourceVwViewModel Model)
+        {
+            ResourceServices.ReloadResources();
+            if (Model.Filter.HasCriteria)
+            {
+                Db db = new Db(DbServices.ConnectionString);
+                Model.List = ResourceVwServices.Get(Model.Filter, db);
+            }
+            else
+                Model.List = new List<ResourceVw>();
+            return View("Index",Model);
+        }
+
 
         /// <summary>
         /// 

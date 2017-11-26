@@ -107,6 +107,9 @@
                     <button class="btn btn-success" type="button">
                         @Html.ActionLink((string)ViewBag.Insert + " " + (string)ViewBag.ModuleName, "Create")
                     </button>
+                    <button class="btn btn-primary" type="button">
+                        @Html.ActionLink((string)ViewBag.Reload + " " + (string)ViewBag.ModuleName, "ReloadResources")
+                    </button>
                 </div>
                 <div class="table-responsive">
                     <table id="Result" class="table table-bordered mb-0">

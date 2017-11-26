@@ -431,6 +431,12 @@
                                           
                                                 </div>
                                             </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    @Html.Label("Status")
+                                                    <input disabled id="ResultStatus" class="form-control" name="ResultStatus" />
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -673,7 +679,14 @@
                                 $("#Rate").val(temp.Rate);
                                 $("#GuarantorsCount").val(temp.GuarantorsCount);
 
-
+                                if (amount > temp.MaxAmount) {
+                                    $("#ResultStatus").val('@ViewBag.Exceeds');
+                                    $("#ResultStatus").css("color", "red");
+                                }
+                                else {
+                                    $("#ResultStatus").val('@ViewBag.Good');
+                                    $("#ResultStatus").css("color", "green");
+                                }
                             }
 
 

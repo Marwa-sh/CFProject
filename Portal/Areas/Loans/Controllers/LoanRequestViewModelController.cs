@@ -47,8 +47,10 @@ namespace Portal.Areas.Loans.Controllers
         private string employee = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "Employee", "ModuleName");
 
         private string select = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Select");
+        private string exceeds = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Exceeds");
+        private string good = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Good");
 
-         
+
 
         public LoanRequestViewModelController()
         {
@@ -73,7 +75,8 @@ namespace Portal.Areas.Loans.Controllers
 
             ViewBag.Action = update;
             ViewBag.Select = select;
-
+            ViewBag.Exceeds = exceeds;
+            ViewBag.Good = good;
         }
 
         #region Index Loan Request       

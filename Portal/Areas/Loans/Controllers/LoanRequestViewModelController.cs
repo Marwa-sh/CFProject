@@ -94,7 +94,7 @@ namespace Portal.Areas.Loans.Controllers
             ViewBag.AmountSituationRejected = amountSituationRejected;
             ViewBag.DebtsSituationRejected = debtsSituationRejected;
             ViewBag.InstallmentSituationRejected = installmentSituationRejected;
-            
+
 
         }
 
@@ -397,7 +397,7 @@ namespace Portal.Areas.Loans.Controllers
                 ViewBag.Calculator = result;
                 ViewBag.Solvency = solvencyResult;
             }
-            
+
 
             return View(productVwViewModel);
         }
@@ -501,6 +501,25 @@ namespace Portal.Areas.Loans.Controllers
                         model.GuarantorStatement.Guarantor = g.Id;
                         GuarantorStatement gs = GuarantorStatementServices.Insert(CurrentUser.Id, model.GuarantorStatement, db);
 
+                        Request r = db.RequestGet(model.Guarantor.RefundableProduct);
+                        RefundableProduct rp = db.RefundableProductGet(model.Guarantor.RefundableProduct);
+
+                        //Calculate Solvency 
+                        GetEmployeeSolvencyFilter filter = new GetEmployeeSolvencyFilter()
+                        {
+                            EmployeeId = model.Guarantor.Employee,
+                            Amount = r.Amount,
+                            Date = r.Date,
+                            Installment = rp.Installment,
+                            GrossSalary = model.GuarantorStatement.GrossSalary,
+                            NetSalary = model.GuarantorStatement.NetSalary
+                        };
+                        GetEmployeeSolvencyResult solvencyResult = db.GetEmployeeSolvencyFirstOrDefault(filter);
+
+                        // update notes field at Guarantor
+                        string result = getResult(solvencyResult);
+                        g.Notes = result;
+                        GuarantorServices.Update(CurrentUser.Id, g, db);
 
                         TempData["Success"] = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "InsertConfirmed");
 
@@ -525,6 +544,29 @@ namespace Portal.Areas.Loans.Controllers
 
 
 
+        }
+
+        private string getResult(GetEmployeeSolvencyResult solvencyResult)
+        {
+            string result = "";
+            if (solvencyResult.IncomeSolvency < solvencyResult.MaxAllowedDebt)
+            {
+                result += debtsSituationAccepted+". /n";
+            }
+            else
+            {
+                result += debtsSituationRejected + ". /n";
+            }
+            if (solvencyResult.NetSalarySolvency > 0)
+            {
+                result += installmentSituationAccepted + ". /n";
+            }
+            else
+            {
+                result += installmentSituationRejected + ". /n";
+            }
+
+            return result;
         }
 
         public ActionResult EditGuarantorWithStatement(int? id)

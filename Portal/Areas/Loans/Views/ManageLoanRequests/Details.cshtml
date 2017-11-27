@@ -148,6 +148,9 @@
                                         <th>
                                             @Html.DisplayNameFor(model => model.RefundableProductVwViewModel.GuarantorVwViewModel.Instance.GuarantorStatementVw.NetSalary)
                                         </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.RefundableProductVwViewModel.GuarantorVwViewModel.Instance.Notes)
+                                        </th>
                                         <th></th>
                                     </tr>
 
@@ -189,18 +192,21 @@
                                                 @Html.DisplayFor(modelItem => guarantorsStatement.NetSalary)
                                             </td>
                                             <td>
+                                                @Html.DisplayFor(modelItem => item.Notes)
+                                            </td>
+                                            <td>
                                                 @if (item.GuarantorStatusId == (int)GuarantorStatusEnum.New || item.GuarantorStatusId == (int)GuarantorStatusEnum.UnderStudy || item.GuarantorStatusId == (int)GuarantorStatusEnum.Temporal)
                                                     {
                                                     @*@if (ViewBag.RoleName == "FinantialEmployee")*@
                                                     @*  {*@
-                                                    <div>
+                                                    @*<div>
                                                         <button type="button" class="btn btn-success btn-sm AcceptGuarantor" data-url="@Url.Action("AcceptGuarantor")" data-id="@item.Id">
                                                             <i class="icon-check-circle"></i>
                                                         </button>
                                                         <button type="button" class="btn btn-danger btn-sm RejectGuarantor" data-url="@Url.Action("RejectGuarantor")" data-id="@item.Id">
                                                             <i class="icon-times-circle"></i>
                                                         </button>
-                                                    </div>
+                                                    </div>*@
                                                     @* }*@
                                                     }
                                                     else

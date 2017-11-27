@@ -22,12 +22,7 @@
 
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                        @*
-                            @Html.Partial("~/Views/Product/Create.cshtml", Model)
-                            @Html.Partial("~/Views/Request/Create.cshtml", Model)
-                            @Html.Partial("~/Views/LoanRequest/Create.cshtml", Model)
-                            @Html.Partial("~/Views/RefundableProduct/Create.cshtml", Model)
-                        *@
+
                         <div class="form-body">
 
                             <div class="row">
@@ -171,6 +166,9 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link " id="link-tab" data-toggle="tab" href="#Loan" aria-controls="link" aria-expanded="true">@ViewBag.Loan</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " id="link-tab" data-toggle="tab" href="#LoanStatusResult" aria-controls="link" aria-expanded="true">@ViewBag.Result</a>
                                 </li>
                             </ul>
                             <div class="tab-content px-1 pt-1">
@@ -406,7 +404,147 @@
                                         </div>
                                     </div>
                                 </div>
-
+                                <div class="tab-pane fade " id="LoanStatusResult" role="tabpanel" aria-labelledby="link-tab" aria-expanded="true">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.GetEmployeeSolvencyResult.DebtRemainingAmount, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.GetEmployeeSolvencyResult.DebtRemainingAmount)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                    <input disabled id="DebtRemainingAmount" class="form-control" name="DebtRemainingAmount" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.GetEmployeeSolvencyResult.WarrantRemainingAmount, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.GetEmployeeSolvencyResult.WarrantRemainingAmount)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                    <input disabled id="WarrantRemainingAmount" class="form-control" name="WarrantRemainingAmount" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.GetEmployeeSolvencyResult.TotalAmount, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.GetEmployeeSolvencyResult.TotalAmount)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                    <input disabled id="TotalAmount" class="form-control" name="TotalAmount" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.GetEmployeeSolvencyResult.DebtInstallment, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.GetEmployeeSolvencyResult.DebtInstallment)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                    <input disabled id="DebtInstallment" class="form-control" name="DebtInstallment" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.GetEmployeeSolvencyResult.WarrantInstallment, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.GetEmployeeSolvencyResult.WarrantInstallment)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                    <input disabled id="WarrantInstallment" class="form-control" name="WarrantInstallment" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.GetEmployeeSolvencyResult.TotalInstallment, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.GetEmployeeSolvencyResult.TotalInstallment)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                    <input disabled id="TotalInstallment" class="form-control" name="TotalInstallment" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                      
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.GetEmployeeSolvencyResult.MaxAllowedDebt, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.GetEmployeeSolvencyResult.MaxAllowedDebt)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                    <input disabled id="MaxAllowedDebt" class="form-control" name="MaxAllowedDebt" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.GetEmployeeSolvencyResult.MaxAllowedDeduction, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.GetEmployeeSolvencyResult.MaxAllowedDeduction)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                    <input disabled id="MaxAllowedDeduction" class="form-control" name="MaxAllowedDeduction" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.GetEmployeeSolvencyResult.IncomeSolvency, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.GetEmployeeSolvencyResult.IncomeSolvency)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                    <input disabled id="IncomeSolvency" class="form-control" name="IncomeSolvency" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.GetEmployeeSolvencyResult.NetSalarySolvency, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.GetEmployeeSolvencyResult.NetSalarySolvency)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                    <input disabled id="NetSalarySolvency" class="form-control" name="NetSalarySolvency" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -447,81 +585,111 @@
                 var employeeId = $("#RequestProduct_Employee").val();
                 var amount = $("#Request_Amount").val();
                 var period = $("#RequestProductProductRefundableProduct_PaymentPeriod").val();
+                var netAmount = $("#LoanRequest_NetIncome").val();
+                var deductions = $("#LoanRequest_TotalDeduction").val();
 
-                if (productId == '' || employeeId == '' || amount == '' || period == '') {
+                if (productId == '' || employeeId == '' || amount == '' || period == '' || netAmount == '' || deductions == '')
+                {
                     swal("", "الحقول التالية مطلوبة: اسم الموظف، نوع السلفة، المبلغ والمدة", "error");
                 }
-                else {
+                else
+                {
                     $.ajax({
                         type: "POST",
                         url: '@Url.Action( "Calculate", "LoanRequestViewModel")',// "/LoanRequestViewModel/Calculate",
-                        data: '{employeeId: ' + employeeId + ', productTypeId:' + productId + ',amount: ' + amount + ',period: ' + period + '}'
+                        data:
+                            '{ employeeId: ' + employeeId +
+                            ', productTypeId:' + productId +
+                            ', amount: ' + amount +
+                            ', period: ' + period +
+                            ', netAmount: ' + netAmount +
+                            ', deductions: '+ deductions + '}'
                    ,
                         contentType: "application/json; charset=utf-8",
                         dataType: "json",
                         success: function (response) {
-                            if (response.length == 0) {
-                                swal("", "الرقم الذاتي غير موجود", "error");
+                            if (response == "Error")
+                            {
+
+                            }
+                            else
+                            {
+
+                            }
+                            
+                            var Calculator = response.Calculator;
+                            var Solevency = response.Solevency;
+                       
+                            var CersStartDate = Calculator.CersStartDate.replace('/Date(', '');
+                            CersStartDate = CersStartDate.replace(')/', '');
+                            var dateCersStartDate = new Date(parseInt(CersStartDate));
+
+                            var CfStartDate = Calculator.CfStartDate.replace('/Date(', '');
+                            CfStartDate = CfStartDate.replace(')/', '');
+
+                            var dateCfStartDate = new Date(parseInt(CfStartDate));
+
+                            console.log("Date=" + dateCersStartDate.toISOString() + " ,, " + dateCfStartDate.toLocaleDateString())
+
+                            // Employee Info
+                            $("#MaxAmount").val(Calculator.MaxAmount);
+                            $("#Seniority").val(Calculator.Seniority);
+                            $("#MinSeniority").val(Calculator.MinSeniority);
+                            $("#MinReusePeriod").val(Calculator.MinReusePeriod);
+                            $("#CersStartDate").val(dateCersStartDate.toLocaleDateString());
+                            $("#CfStartDate").val(dateCfStartDate.toLocaleDateString());
+                            $("#LeaveDate").val(Calculator.LeaveDate);
+                            $("#LeaveReason").val(Calculator.LeaveReason);
+                            $("#DepartmentName").val(Calculator.DepartmentName);
+                            $("#DepartmentSalaryWorkPlaceName").val(Calculator.DepartmentSalaryWorkPlaceName);
+                            $("#EmployeeStatusName").val(Calculator.EmployeeStatusName);
+                            $("#CategoryName").val(Calculator.CategoryName);
+                            $("#FullName").val(Calculator.FullName);
+
+                            // Loan Info
+                            $("#Installment").val(Calculator.Installment);
+                            $("#NetAmount").val(Calculator.NetAmount);
+                            $("#ProfitAmount").val(Calculator.ProfitAmount);
+                            $("#Rate").val(Calculator.Rate);
+                            $("#GuarantorsCount").val(Calculator.GuarantorsCount);
+ 
+                            if (amount > Calculator.MaxAmount) {
+                                $("#ResultStatus").val('@ViewBag.Exceeds');
+                                $("#ResultStatus").css("color", "red");
                             }
                             else {
-                                for (var i = 0; i < response.length; i++) {
-                                    var temp = response[i];
-
-                                    var CersStartDate = temp.CersStartDate.replace('/Date(', '');
-                                    CersStartDate = CersStartDate.replace(')/', '');
-                                    var dateCersStartDate = new Date(parseInt(CersStartDate));
-
-
-                                    var CfStartDate = temp.CfStartDate.replace('/Date(', '');
-                                    CfStartDate = CfStartDate.replace(')/', '');
-
-                                    var dateCfStartDate = new Date(parseInt(CfStartDate));
-
-                                    console.log("Date=" + dateCersStartDate.toISOString() +" ,, "+dateCfStartDate.toLocaleDateString())
-
-                                    // Employee Info
-                                    $("#MaxAmount").val(temp.MaxAmount);
-                                    $("#Seniority").val(temp.Seniority);
-                                    $("#MinSeniority").val(temp.MinSeniority);
-                                    $("#MinReusePeriod").val(temp.MinReusePeriod);
-                                    $("#CersStartDate").val(dateCersStartDate.toLocaleDateString());
-                                    $("#CfStartDate").val(dateCfStartDate.toLocaleDateString());
-                                    $("#LeaveDate").val(temp.LeaveDate);
-                                    $("#LeaveReason").val(temp.LeaveReason);
-                                    $("#DepartmentName").val(temp.DepartmentName);
-                                    $("#DepartmentSalaryWorkPlaceName").val(temp.DepartmentSalaryWorkPlaceName);
-                                    $("#EmployeeStatusName").val(temp.EmployeeStatusName);
-                                    $("#CategoryName").val(temp.CategoryName);
-                                    $("#FullName").val(temp.FullName);
-
-                                    // Loan Info
-                                    $("#Installment").val(temp.Installment);
-                                    $("#NetAmount").val(temp.NetAmount);
-                                    $("#ProfitAmount").val(temp.ProfitAmount);
-                                    $("#Rate").val(temp.Rate);
-                                    $("#GuarantorsCount").val(temp.GuarantorsCount);
-
-                                    //var g = temp.CersStartDate.replace('/Date(', '');
-                                    //g=g.replace(')/', '');
-                                    
-                                    //var date = new Date(parseInt(g));
-                                     
-                                    //console.log(""+date );
-                                    if (amount > temp.MaxAmount)
-                                    {
-                                        $("#ResultStatus").val('@ViewBag.Exceeds');
-                                        $("#ResultStatus").css("color","red");
-                                    }
-                                    else
-                                    {
-                                        $("#ResultStatus").val('@ViewBag.Good');
-                                        $("#ResultStatus").css("color", "green");
-                                    }
-                                    
-                                   
-                                }
+                                $("#ResultStatus").val('@ViewBag.Good');
+                                $("#ResultStatus").css("color", "green");
                             }
-
+                            // Solvency 
+                            $("#DebtRemainingAmount").val(Solevency.DebtRemainingAmount);
+                            $("#WarrantRemainingAmount").val(Solevency.WarrantRemainingAmount);
+                            $("#TotalAmount").val(Solevency.TotalAmount);
+                            $("#DebtInstallment").val(Solevency.DebtInstallment);
+                            $("#WarrantInstallment").val(Solevency.WarrantInstallment);
+                            $("#TotalInstallment").val(Solevency.TotalInstallment);
+                            $("#MaxAllowedDebt").val(Solevency.MaxAllowedDebt);
+                            $("#MaxAllowedDeduction").val(Solevency.MaxAllowedDeduction);
+                            $("#IncomeSolvency").val(Solevency.IncomeSolvency);
+                            $("#NetSalarySolvency").val(Solevency.NetSalarySolvency);
+                            
+                            if(Solevency.IncomeSolvency<Solevency.MaxAllowedDebt)
+                            {
+                                $("#IncomeSolvency").css("color", "green");
+                            }
+                            else
+                            {
+                                $("#IncomeSolvency").css("color", "red");
+                            }
+                            if (Solevency.NetSalarySolvency > 0 )
+                            {
+                                $("#NetSalarySolvency").css("color", "green");
+                            }
+                            else
+                            {
+                                $("#NetSalarySolvency").css("color", "red");
+                            }
+ 
                         },
                         failure: function (response) {
                             alert(response.responseText);

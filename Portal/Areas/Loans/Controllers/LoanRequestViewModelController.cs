@@ -34,7 +34,7 @@ namespace Portal.Areas.Loans.Controllers
         private string TitleGuarantor = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "Guarantor", "ModuleNamePlural");
         private string TitleExceptionalAount = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ExceptionalAmount", "ModuleNamePlural");
 
-        private string exceptionalIncome= ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ExceptionalAmountType", "ExceptionalIncome");
+        private string exceptionalIncome = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ExceptionalAmountType", "ExceptionalIncome");
         private string exceptionalDeduction = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ExceptionalAmountType", "ExceptionalDeduction");
         private string netDeduction = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ExceptionalAmountType", "NetDeduction");
 
@@ -49,7 +49,15 @@ namespace Portal.Areas.Loans.Controllers
         private string select = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Select");
         private string exceeds = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Exceeds");
         private string good = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Good");
+        private string result = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Result");
 
+        private string amountSituationAccepted = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "AmountSituationAccepted");
+        private string debtsSituationAccepted = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "DebtsSituationAccepted");
+        private string installmentSituationAccepted = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "InstallmentSituationAccepted");
+
+        private string amountSituationRejected = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "AmountSituationRejected");
+        private string debtsSituationRejected = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "DebtsSituationRejected");
+        private string installmentSituationRejected = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "InstallmentSituationRejected");
 
 
         public LoanRequestViewModelController()
@@ -77,13 +85,24 @@ namespace Portal.Areas.Loans.Controllers
             ViewBag.Select = select;
             ViewBag.Exceeds = exceeds;
             ViewBag.Good = good;
+            ViewBag.Result = result;
+
+            ViewBag.AmountSituationAccepted = amountSituationAccepted;
+            ViewBag.DebtsSituationAccepted = debtsSituationAccepted;
+            ViewBag.InstallmentSituationAccepted = installmentSituationAccepted;
+
+            ViewBag.AmountSituationRejected = amountSituationRejected;
+            ViewBag.DebtsSituationRejected = debtsSituationRejected;
+            ViewBag.InstallmentSituationRejected = installmentSituationRejected;
+            
+
         }
 
         #region Index Loan Request       
         public ActionResult Index(LoanRequestVwViewModel Model)
         {
             Db db = new Db(DbServices.ConnectionString);
-                     
+
             ViewBag.ProductTypeList = new SelectList(LoanTypeVwServices.List(db), "ProductTypeId", "ProductTypeName");
             ViewBag.PaymentGroupList = new SelectList(PaymentGroupServices.List(db), "Id", "Name");
 
@@ -116,20 +135,20 @@ namespace Portal.Areas.Loans.Controllers
             //We need to customise the droplist for two options
             ViewBag.BypassStatusList = new SelectList(BypassStatusServices.List(db).Where((c => (c.Id == 0 || c.Id == 2))), "Id", "Name");
 
-             
+
             return View();
         }
 
         [HttpPost]
         public ActionResult Create(LoanRequestViewModel model)
         {
-             
+
             int productId = 0;
-            
+
             try
             {
                 Db db = new Db(DbServices.ConnectionString);
-               
+
                 if (!(db.Connection.State == ConnectionState.Open)) db.Connection.Open();
                 db.Transaction = db.Connection.BeginTransaction();
 
@@ -155,7 +174,7 @@ namespace Portal.Areas.Loans.Controllers
 
                         //2-Add Request                        
                         model.Request.Product = p.Id;
-                        model.Request.RequestStatus = (int) RequestStatusEnum.New;
+                        model.Request.RequestStatus = (int)RequestStatusEnum.New;
                         model.Request.Cost = 5;
                         Request r = RequestServices.Insert(CurrentUser.Id, model.Request, db);
 
@@ -210,8 +229,8 @@ namespace Portal.Areas.Loans.Controllers
             if (product == null || request == null || loanRequest == null || refundableProduct == null)
             {
                 return HttpNotFound();
-            } 
- 
+            }
+
             // For Product
             //ViewBag.EmployeeList = new SelectList(EmployeeServices.List(db), "Id", "Id_Name", product.Employee);
             ViewBag.ProductTypeList = new SelectList(ProductTypeServices.List(db), "Id", "Name", product.ProductType);
@@ -220,18 +239,18 @@ namespace Portal.Areas.Loans.Controllers
             //We need to customise the droplist for two options
             ViewBag.BypassStatusList = new SelectList(BypassStatusServices.List(db).Where((c => (c.Id == 0 || c.Id == 2))), "Id", "Name");
 
-            
+
             EmployeeProductCalculatorFilter f = new EmployeeProductCalculatorFilter();
             f.EmployeeId = product.Employee; f.ProductTypeId = (short)product.ProductType;
             f.Amount = (decimal)request.Amount; f.Period = (short)refundableProduct.PaymentPeriod;
             EmployeeProductCalculatorResult result = db.EmployeeProductCalculatorFirstOrDefault(f);
-            if(result!=null)
+            if (result != null)
             {
                 ViewBag.Calculations = result;
             }
-            
 
-            LoanRequestViewModel vm = new LoanRequestViewModel();            
+
+            LoanRequestViewModel vm = new LoanRequestViewModel();
             vm.RequestProduct = product;
             vm.Request = request;
             vm.LoanRequest = loanRequest;
@@ -266,7 +285,7 @@ namespace Portal.Areas.Loans.Controllers
 
                     //2-Add Request                        
                     //model.Request.Product = model.RequestProduct.Id;
-                   // model.Request.RequestStatus = (int)RequestStatusEnum.New;
+                    // model.Request.RequestStatus = (int)RequestStatusEnum.New;
                     //model.Request.Cost = 5;
                     RequestServices.Update(CurrentUser.Id, model.Request, db);
 
@@ -302,7 +321,7 @@ namespace Portal.Areas.Loans.Controllers
             ViewBag.ProductList = new SelectList(ProductServices.List(db), "Id", "Notes", model.Request.Product);
             ViewBag.RequestStatusList = new SelectList(RequestStatusServices.List(db), "Id", "Name", model.Request.RequestStatus);
 
-           
+
             return View(model);
         }
 
@@ -313,21 +332,21 @@ namespace Portal.Areas.Loans.Controllers
         public ActionResult Details(int? id)
         {
             ViewBag.TitleGuarantor = TitleGuarantor;
-            ViewBag.TitleExceptionalAount = TitleExceptionalAount;            
+            ViewBag.TitleExceptionalAount = TitleExceptionalAount;
             ViewBag.ExceptionalIncome = exceptionalIncome;
             ViewBag.ExceptionalDeduction = exceptionalDeduction;
             ViewBag.NetDeduction = netDeduction;
-            
+
             // Details Of Products
             if (id == null)
-            {                
+            {
                 return RedirectToAction("Index");
             }
 
             Db db = new Db(DbServices.ConnectionString);
 
             // Product
-            ProductVwViewModel productVwViewModel = new ProductVwViewModel();            
+            ProductVwViewModel productVwViewModel = new ProductVwViewModel();
             productVwViewModel.Instance = ProductVwServices.GetChildren(id.Value, db);
             if (productVwViewModel.Instance == null)
             {
@@ -344,14 +363,42 @@ namespace Portal.Areas.Loans.Controllers
 
             productVwViewModel.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.List = ExceptionalAmountVwServices.GetByLoanRequestRequestProductId(id.Value);
 
-            List<ExceptionalAmountVw> NetDeduction = ExceptionalAmountVwServices.GetByLoanRequestRequestProductId(id.Value).Where(c=>c.ExceptionalAmountTypeId==(int)ExceptionalAmountTypeEnum.NetDeduction).ToList();
+            List<ExceptionalAmountVw> NetDeduction = ExceptionalAmountVwServices.GetByLoanRequestRequestProductId(id.Value).Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.NetDeduction).ToList();
             List<ExceptionalAmountVw> ExceptionalIncome = ExceptionalAmountVwServices.GetByLoanRequestRequestProductId(id.Value).Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.ExceptionalIncome).ToList();
             List<ExceptionalAmountVw> ExceptionalDeduction = ExceptionalAmountVwServices.GetByLoanRequestRequestProductId(id.Value).Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.ExceptionalDeduction).ToList();
 
             ViewBag.NetDeductionList = NetDeduction;
             ViewBag.ExceptionalIncomeList = ExceptionalIncome;
             ViewBag.ExceptionalDeductionList = ExceptionalDeduction;
-             
+
+            // Calculate Solvency and Boundries
+
+            EmployeeProductCalculatorFilter f = new EmployeeProductCalculatorFilter()
+            {
+                EmployeeId = productVwViewModel.Instance.EmployeeId,
+                ProductTypeId = productVwViewModel.Instance.ProductTypeId,
+                Amount = productVwViewModel.RequestVwViewModel.Instance.Amount,
+                Period = productVwViewModel.RefundableProductVwViewModel.Instance.PaymentPeriod
+            };
+
+            EmployeeProductCalculatorResult result = db.EmployeeProductCalculatorFirstOrDefault(f);
+            if (result != null)
+            {
+                GetEmployeeSolvencyFilter filter = new GetEmployeeSolvencyFilter()
+                {
+                    EmployeeId = productVwViewModel.Instance.EmployeeId,
+                    Amount = productVwViewModel.RequestVwViewModel.Instance.Amount,
+                    Date = System.DateTime.Now,
+                    Installment = result.Installment,
+                    GrossSalary = productVwViewModel.RequestVwViewModel.LoanRequestVwViewModel.Instance.NetIncome,
+                    NetSalary = productVwViewModel.RequestVwViewModel.LoanRequestVwViewModel.Instance.NetIncome
+                };
+                GetEmployeeSolvencyResult solvencyResult = db.GetEmployeeSolvencyFirstOrDefault(filter);
+                ViewBag.Calculator = result;
+                ViewBag.Solvency = solvencyResult;
+            }
+            
+
             return View(productVwViewModel);
         }
 
@@ -377,26 +424,50 @@ namespace Portal.Areas.Loans.Controllers
             return View();
         }
 
-        
+
         #endregion
 
         [HttpPost]
-        public JsonResult Calculate(int employeeId, int productTypeId, float amount,int period)
+        public JsonResult Calculate(int employeeId, int productTypeId, float amount, int period, float netAmount, float deductions)
         {
             Db db = new Db(DbServices.ConnectionString);
-            EmployeeProductCalculatorFilter f = new EmployeeProductCalculatorFilter();
-            f.EmployeeId = employeeId; f.ProductTypeId = (short)productTypeId;
-            f.Amount =(decimal) amount; f.Period = (short)period;
-            List<EmployeeProductCalculatorResult> result=db.EmployeeProductCalculator(f);
+            EmployeeProductCalculatorFilter f = new EmployeeProductCalculatorFilter()
+            {
+                EmployeeId = employeeId,
+                ProductTypeId = (short)productTypeId,
+                Amount = (decimal)amount,
+                Period = (short)period
+            };
 
-            return Json(result, JsonRequestBehavior.AllowGet);
+            EmployeeProductCalculatorResult result = db.EmployeeProductCalculatorFirstOrDefault(f);
+            if (result == null)
+            {
+                return Json("Error", JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                GetEmployeeSolvencyFilter filter = new GetEmployeeSolvencyFilter()
+                {
+                    EmployeeId = employeeId,
+                    Amount = (decimal)amount,
+                    Date = System.DateTime.Now,
+                    Installment = result.Installment,
+                    GrossSalary = (decimal)netAmount,
+                    NetSalary = (decimal)netAmount
+
+                };
+                GetEmployeeSolvencyResult solvencyResult = db.GetEmployeeSolvencyFirstOrDefault(filter);
+
+                return Json(new { Calculator = result, Solevency = solvencyResult }, JsonRequestBehavior.AllowGet);
+            }
+
         }
 
 
 
         #region Guarantor - Statement
         public ActionResult CreateGuarantorWithStatement(int? id)
-        {            
+        {
             Db db = new Db(DbServices.ConnectionString);
             if (id != null)
             {
@@ -406,7 +477,7 @@ namespace Portal.Areas.Loans.Controllers
             {
                 RedirectToAction("Index");
             }
-            ViewBag.EmployeeList = new SelectList(EmployeeServices.List(db), "Id", "Id_Name");            
+            ViewBag.EmployeeList = new SelectList(EmployeeServices.List(db), "Id", "Id_Name");
             return PartialView();
         }
         [HttpPost]
@@ -422,7 +493,7 @@ namespace Portal.Areas.Loans.Controllers
                 {
                     try
                     {
-                        model.Guarantor.GuarantorStatus =(int) GuarantorStatusEnum.New;
+                        model.Guarantor.GuarantorStatus = (int)GuarantorStatusEnum.New;
                         // 1- Add Guaratntor
                         Guarantor g = GuarantorServices.Insert(CurrentUser.Id, model.Guarantor, db);
 
@@ -597,7 +668,7 @@ namespace Portal.Areas.Loans.Controllers
 
         public ActionResult createExceptionalAmount(int? id, string Type)
         {
-           
+
             try
             {
                 Db db = new Db(DbServices.ConnectionString);
@@ -606,9 +677,9 @@ namespace Portal.Areas.Loans.Controllers
                 {
                     ViewBag.LoanRequestId = id;
                 }
-                ViewBag.ExceptionalAmountTypeList = new SelectList(ExceptionalAmountTypeServices.List(db), "Id", "Name" , Type);
+                ViewBag.ExceptionalAmountTypeList = new SelectList(ExceptionalAmountTypeServices.List(db), "Id", "Name", Type);
                 ViewBag.Type = Type;
-                
+
                 return PartialView();
             }
             catch (CfException exc)

@@ -411,11 +411,11 @@ namespace Cf.Data
 		
         public Nullable<decimal> MaxAllowedDebt {get; set; }
 		
-        public Nullable<double> MaxAllowedDeduction {get; set; }
+        public Nullable<decimal> MaxAllowedDeduction {get; set; }
 		
         public Nullable<decimal> IncomeSolvency {get; set; }
 		
-        public Nullable<double> NetSalarySolvency {get; set; }
+        public Nullable<decimal> NetSalarySolvency {get; set; }
 		#endregion
 	}
 	#endregion

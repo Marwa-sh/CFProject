@@ -73,7 +73,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                               
+
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         @*@Html.LabelFor(model => model.Instance.RequestProductEmployeeDepartmentSalaryWorkPlaceName, htmlAttributes: new { @class = "control-label" })*@
@@ -97,7 +97,7 @@
                                                 })
                                         <input type="text" id="txtRequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)" disabled />
                                     </div>
-                                </div>                                
+                                </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         @*@Html.LabelFor(model => model.Instance.RequestProductProductTypeGuarantorsCount, htmlAttributes: new { @class = "control-label" })*@
@@ -124,7 +124,7 @@
                                 </div>
                             </div>
                             <div class="row">
-                               
+
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         @*@Html.LabelFor(model => model.Instance.RequestProductProductTypeName, htmlAttributes: new { @class = "control-label" })*@
@@ -174,7 +174,6 @@
                                     </div>
                                 </div>
                             </div>
-                            
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="form-group">
@@ -226,7 +225,7 @@
                                 </div>
                             </div>
                             <div class="row">
- 
+
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         @*@Html.LabelFor(model => model.Instance.TotalDeduction, htmlAttributes: new { @class = "control-label" })*@
@@ -275,7 +274,7 @@
                                         <input type="text" id="txtNetAmount" class="form-control" value="@Html.DisplayFor(model => model.RefundableProductVwViewModel.Instance.NetAmount)" disabled />
                                     </div>
                                 </div>
-                                
+
                             </div>
                             <div class="row">
                                 <div class="col-md-3">
@@ -291,21 +290,75 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        @{
+                                            EmployeeProductCalculatorResult result = ViewBag.Calculator;
+                                            GetEmployeeSolvencyResult solvencyResult = ViewBag.Solvency;
+                                        }
+                                        @if (result == null || solvencyResult == null)
+                                        {
+
+                                        }
+                                        else
+                                        {
+                                            if (result.Amount > result.MaxAmount)
+                                            {
+                                                <label id="AmountSituation" style="color:red">
+                                                   @ViewBag.AmountSituationRejected
+                                                </label><br />
+                                            }
+                                            else
+                                            {
+                                                <label id="AmountSituation" style="color:green">
+                                                  @ViewBag.AmountSituationAccepted
+                                                </label><br />
+                                            }
+                                            if (solvencyResult.IncomeSolvency < solvencyResult.MaxAllowedDebt)
+                                            {
+                                                <label id="DebtsSituation" style="color:green">
+                                                    @ViewBag.DebtsSituationAccepted
+                                                </label><br />
+                                            }
+                                            else
+                                            {
+                                                <label id="DebtsSituation" style="color:red">
+                                                   @ViewBag.DebtsSituationRejected
+                                                </label><br />
+                                            }
+                                            if (solvencyResult.NetSalarySolvency > 0)
+                                            {
+                                                <label id="InstallmentSituation" style="color:green">
+                                                    @ViewBag.InstallmentSituationAccepted
+                                                </label><br />
+                                            }
+                                            else
+                                            {
+                                                <label id="InstallmentSituation" style="color:red">
+                                                   @ViewBag.InstallmentSituationRejected
+                                                </label><br />
+                                            }
+                                        }
+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="form-actions">
                             <button type="button" class="btn btn-primary mr-1">
                                 @Html.ActionLink((string)@ViewBag.Update, "Edit", new
-                           {
-                               request = Model.Instance.Id
-                           })
+                                   {
+                                       request = Model.Instance.Id
+                                   })
                             </button>
                             <button type="button" class="btn btn-warning">
                                 @Html.ActionLink((string)@ViewBag.Back, "Index")
                             </button>
                         </div>
                     </form>
-                  
+
                 </div>
             </div>
         </div>
@@ -369,37 +422,37 @@
                         <tbody>
                             @foreach (var item in Model.RefundableProductVwViewModel.GuarantorVwViewModel.List)
                             {
-                            <tr>
-                                @*<td>
-                                        @Html.DisplayFor(modelItem => item.Id)
-                                    </td>*@
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.SubNumber)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.EmployeeId)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.EmployeeFullName)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.EmployeeCategoryName)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.GuarantorStatusName)
-                                </td>
-                                <td>
-                                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                <tr>
+                                    @*<td>
+                                            @Html.DisplayFor(modelItem => item.Id)
+                                        </td>*@
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.SubNumber)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EmployeeId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EmployeeFullName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EmployeeCategoryName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.GuarantorStatusName)
+                                    </td>
+                                    <td>
+                                        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
 
-                                        <button type="button" class="btn btn-warning editLink" data-id="@item.Id" data-original-title="@ViewBag.Update" id="CreateG" data-url="@Url.Action("EditGuarantorWithStatement", "LoanRequestViewModel", new { Area="Loans"})">@ViewBag.Update</button>
-                                        <button type="button" class="btn btn-danger deleteLink" data-original-title="@ViewBag.Delete" id="delete" data-id="@item.Id" data-url="@Url.Action("DeleteGuarantorWithStatement", "LoanRequestViewModel", new { Area="Loans"})">@ViewBag.Delete</button>
+                                            <button type="button" class="btn btn-warning editLink" data-id="@item.Id" data-original-title="@ViewBag.Update" id="CreateG" data-url="@Url.Action("EditGuarantorWithStatement", "LoanRequestViewModel", new { Area="Loans"})">@ViewBag.Update</button>
+                                            <button type="button" class="btn btn-danger deleteLink" data-original-title="@ViewBag.Delete" id="delete" data-id="@item.Id" data-url="@Url.Action("DeleteGuarantorWithStatement", "LoanRequestViewModel", new { Area="Loans"})">@ViewBag.Delete</button>
 
-                                    </div>
-                                </td>
-                            </tr>
+                                        </div>
+                                    </td>
+                                </tr>
                             }
                         </tbody>
                     </table>
@@ -415,8 +468,8 @@
             <div class="card-header">
                 <h4 class="card-title"></h4>
                 <h4 class="card-title">
-                     @ViewBag.ExceptionalIncome  
-                    @if(Model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.List.Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.ExceptionalIncome).ToList().Count == 0)
+                    @ViewBag.ExceptionalIncome
+                    @if (Model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.List.Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.ExceptionalIncome).ToList().Count == 0)
                     {<span class="tag tag-default">@Model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.List.Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.ExceptionalIncome).ToList().Count</span>}
                     else
                     {<span class="tag tag-danger">@Model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.List.Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.ExceptionalIncome).ToList().Count</span> }
@@ -455,27 +508,27 @@
                         <tbody>
                             @foreach (var item in Model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.List.Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.ExceptionalIncome))
                             {
-                            <tr>
-                                @*<td>
-                                        @Html.DisplayFor(modelItem => item.Id)
-                                    </td>*@
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Amount)
-                                </td>
-                                <td>
-                                    @Html.CheckBoxFor(modelItem => item.ExceptionalAmountTypeIsIncome, new { @disabled = "disabled" })
-                                </td>
-                                <td>
-                                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                <tr>
+                                    @*<td>
+                                            @Html.DisplayFor(modelItem => item.Id)
+                                        </td>*@
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Amount)
+                                    </td>
+                                    <td>
+                                        @Html.CheckBoxFor(modelItem => item.ExceptionalAmountTypeIsIncome, new { @disabled = "disabled" })
+                                    </td>
+                                    <td>
+                                        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
 
-                                        <button type="button" class="btn btn-warning editLink" data-id="@item.Id" data-original-title="@ViewBag.Update" id="CreateG" data-url="@Url.Action("editExceptionalAmount", "LoanRequestViewModel", new { Area="Loans"})">@ViewBag.Update</button>
+                                            <button type="button" class="btn btn-warning editLink" data-id="@item.Id" data-original-title="@ViewBag.Update" id="CreateG" data-url="@Url.Action("editExceptionalAmount", "LoanRequestViewModel", new { Area="Loans"})">@ViewBag.Update</button>
 
 
-                                        <button type="button" class="btn btn-danger deleteLink" data-original-title="@ViewBag.Delete" id="delete" data-id="@item.Id" data-url="@Url.Action("DeleteExceptionalAmount", "LoanRequestViewModel", new { Area="Loans"})">@ViewBag.Delete</button>
+                                            <button type="button" class="btn btn-danger deleteLink" data-original-title="@ViewBag.Delete" id="delete" data-id="@item.Id" data-url="@Url.Action("DeleteExceptionalAmount", "LoanRequestViewModel", new { Area="Loans"})">@ViewBag.Delete</button>
 
-                                    </div>
-                                </td>
-                            </tr>
+                                        </div>
+                                    </td>
+                                </tr>
                             }
                         </tbody>
                     </table>
@@ -531,27 +584,27 @@
                         <tbody>
                             @foreach (var item in Model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.List.Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.ExceptionalDeduction))
                             {
-                            <tr>
-                                @*<td>
-                                        @Html.DisplayFor(modelItem => item.Id)
-                                    </td>*@
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Amount)
-                                </td>
-                                <td>
-                                    @Html.CheckBoxFor(modelItem => item.ExceptionalAmountTypeIsIncome, new { @disabled = "disabled" })
-                                </td>
-                                <td>
-                                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                <tr>
+                                    @*<td>
+                                            @Html.DisplayFor(modelItem => item.Id)
+                                        </td>*@
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Amount)
+                                    </td>
+                                    <td>
+                                        @Html.CheckBoxFor(modelItem => item.ExceptionalAmountTypeIsIncome, new { @disabled = "disabled" })
+                                    </td>
+                                    <td>
+                                        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
 
-                                        <button type="button" class="btn btn-warning editLink" data-id="@item.Id" data-original-title="@ViewBag.Update" id="CreateG" data-url="@Url.Action("editExceptionalAmount", "LoanRequestViewModel")">@ViewBag.Update</button>
+                                            <button type="button" class="btn btn-warning editLink" data-id="@item.Id" data-original-title="@ViewBag.Update" id="CreateG" data-url="@Url.Action("editExceptionalAmount", "LoanRequestViewModel")">@ViewBag.Update</button>
 
 
-                                        <button type="button" class="btn btn-danger deleteLink" data-original-title="@ViewBag.Delete" id="delete" data-id="@item.Id" data-url="@Url.Action("DeleteExceptionalAmount", "LoanRequestViewModel")">@ViewBag.Delete</button>
+                                            <button type="button" class="btn btn-danger deleteLink" data-original-title="@ViewBag.Delete" id="delete" data-id="@item.Id" data-url="@Url.Action("DeleteExceptionalAmount", "LoanRequestViewModel")">@ViewBag.Delete</button>
 
-                                    </div>
-                                </td>
-                            </tr>
+                                        </div>
+                                    </td>
+                                </tr>
                             }
                         </tbody>
                     </table>
@@ -569,9 +622,9 @@
                 <h4 class="card-title">
                     @ViewBag.NetDeduction
                     @if (Model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.List.Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.NetDeduction).ToList().Count == 0)
-                     {<span class="tag tag-default">@Model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.List.Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.NetDeduction).ToList().Count</span>}
-                     else
-                     {<span class="tag tag-danger">@Model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.List.Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.NetDeduction).ToList().Count</span> }
+                    {<span class="tag tag-default">@Model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.List.Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.NetDeduction).ToList().Count</span>}
+                    else
+                    {<span class="tag tag-danger">@Model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.List.Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.NetDeduction).ToList().Count</span> }
                 </h4>
                 <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
                 <div class="heading-elements">
@@ -607,27 +660,27 @@
                         <tbody>
                             @foreach (var item in Model.RequestVwViewModel.LoanRequestVwViewModel.ExceptionalAmountVwViewModel.List.Where(c => c.ExceptionalAmountTypeId == (int)ExceptionalAmountTypeEnum.NetDeduction))
                             {
-                            <tr>
-                                @*<td>
-                                        @Html.DisplayFor(modelItem => item.Id)
-                                    </td>*@
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Amount)
-                                </td>
-                                <td>
-                                    @Html.CheckBoxFor(modelItem => item.ExceptionalAmountTypeIsIncome, new { @disabled = "disabled" })
-                                </td>
-                                <td>
-                                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                <tr>
+                                    @*<td>
+                                            @Html.DisplayFor(modelItem => item.Id)
+                                        </td>*@
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Amount)
+                                    </td>
+                                    <td>
+                                        @Html.CheckBoxFor(modelItem => item.ExceptionalAmountTypeIsIncome, new { @disabled = "disabled" })
+                                    </td>
+                                    <td>
+                                        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
 
-                                        <button type="button" class="btn btn-warning editLink" data-id="@item.Id" data-original-title="@ViewBag.Update" id="CreateG" data-url="@Url.Action("EditExceptionalAmount", "LoanRequestViewModel")">@ViewBag.Update</button>
+                                            <button type="button" class="btn btn-warning editLink" data-id="@item.Id" data-original-title="@ViewBag.Update" id="CreateG" data-url="@Url.Action("EditExceptionalAmount", "LoanRequestViewModel")">@ViewBag.Update</button>
 
 
-                                        <button type="button" class="btn btn-danger deleteLink" data-original-title="@ViewBag.Delete" id="delete" data-id="@item.Id" data-url="@Url.Action("DeleteExceptionalAmount", "LoanRequestViewModel")">@ViewBag.Delete</button>
+                                            <button type="button" class="btn btn-danger deleteLink" data-original-title="@ViewBag.Delete" id="delete" data-id="@item.Id" data-url="@Url.Action("DeleteExceptionalAmount", "LoanRequestViewModel")">@ViewBag.Delete</button>
 
-                                    </div>
-                                </td>
-                            </tr>
+                                        </div>
+                                    </td>
+                                </tr>
                             }
                         </tbody>
                     </table>
@@ -687,7 +740,7 @@
 
             });
 
-             
+
 
         });
         $(function () {

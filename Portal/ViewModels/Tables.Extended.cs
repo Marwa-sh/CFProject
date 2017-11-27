@@ -11,5 +11,6 @@ namespace Cf.ViewModels
     public partial class LoanRequestViewModel
     {         
         public EmployeeProductCalculatorResult EmployeeProductCalculatorResult { get; set; }
+        public GetEmployeeSolvencyResult GetEmployeeSolvencyResult { get; set; }
     }
 }

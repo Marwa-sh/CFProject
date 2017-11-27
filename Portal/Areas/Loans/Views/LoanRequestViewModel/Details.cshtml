@@ -44,6 +44,7 @@
                                                   {"data-placement", "bottom"}
                                                 })
                                         <input type="text" id="txtRequestProductEmployeeId" class="form-control" value="@Html.DisplayFor(model => model.RequestVwViewModel.LoanRequestVwViewModel.Instance.RequestProductEmployeeId)" disabled />
+                                        <input type="hidden" name="Product.Id" id="txtProductId" class="form-control" value="@Html.DisplayFor(model => model.Instance.Id)" />
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -333,7 +334,7 @@
             </div>
             <div class="card-body collapse ">
                 <div class="card-block card-dashboard">
-                    <button type="button" class="btn btn-success createLink" data-original-title="@ViewBag.Insert" id="CreateG" data-url="@Url.Action("CreateGuarantorWithStatement", "LoanRequestViewModel")">@ViewBag.Insert</button>
+                    <button type="button" class="btn btn-success createLink" data-original-title="@ViewBag.Insert" id="CreateG" data-url="@Url.Action("CreateGuarantorWithStatement", "LoanRequestViewModel" , new { Area="Loans"})">@ViewBag.Insert</button>
 
                 </div>
                 <div class="table-responsive">
@@ -393,8 +394,8 @@
                                 <td>
                                     <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
 
-                                        <button type="button" class="btn btn-warning editLink" data-id="@item.Id" data-original-title="@ViewBag.Update" id="CreateG" data-url="@Url.Action("EditGuarantorWithStatement", "LoanRequestViewModel")">@ViewBag.Update</button>
-                                        <button type="button" class="btn btn-danger deleteLink" data-original-title="@ViewBag.Delete" id="delete" data-id="@item.Id" data-url="@Url.Action("DeleteGuarantorWithStatement", "LoanRequestViewModel")">@ViewBag.Delete</button>
+                                        <button type="button" class="btn btn-warning editLink" data-id="@item.Id" data-original-title="@ViewBag.Update" id="CreateG" data-url="@Url.Action("EditGuarantorWithStatement", "LoanRequestViewModel", new { Area="Loans"})">@ViewBag.Update</button>
+                                        <button type="button" class="btn btn-danger deleteLink" data-original-title="@ViewBag.Delete" id="delete" data-id="@item.Id" data-url="@Url.Action("DeleteGuarantorWithStatement", "LoanRequestViewModel", new { Area="Loans"})">@ViewBag.Delete</button>
 
                                     </div>
                                 </td>
@@ -431,7 +432,7 @@
             </div>
             <div class="card-body collapse ">
                 <div class="card-block card-dashboard">
-                    <button type="button" class="btn btn-success createLinkAmount" data-original-title="@ViewBag.Insert" id="CreateExceptionalAmount" data-id='@ExceptionalAmountTypeEnum.ExceptionalIncome.GetHashCode()' data-url="@Url.Action("CreateExceptionalAmount", "LoanRequestViewModel")">@ViewBag.Insert</button>
+                    <button type="button" class="btn btn-success createLinkAmount" data-original-title="@ViewBag.Insert" id="CreateExceptionalAmount" data-id='@ExceptionalAmountTypeEnum.ExceptionalIncome.GetHashCode()' data-url="@Url.Action("CreateExceptionalAmount", "LoanRequestViewModel", new { Area="Loans"})">@ViewBag.Insert</button>
 
                 </div>
                 <div class="table-responsive">
@@ -467,10 +468,10 @@
                                 <td>
                                     <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
 
-                                        <button type="button" class="btn btn-warning editLink" data-id="@item.Id" data-original-title="@ViewBag.Update" id="CreateG" data-url="@Url.Action("editExceptionalAmount", "LoanRequestViewModel")">@ViewBag.Update</button>
+                                        <button type="button" class="btn btn-warning editLink" data-id="@item.Id" data-original-title="@ViewBag.Update" id="CreateG" data-url="@Url.Action("editExceptionalAmount", "LoanRequestViewModel", new { Area="Loans"})">@ViewBag.Update</button>
 
 
-                                        <button type="button" class="btn btn-danger deleteLink" data-original-title="@ViewBag.Delete" id="delete" data-id="@item.Id" data-url="@Url.Action("DeleteExceptionalAmount", "LoanRequestViewModel")">@ViewBag.Delete</button>
+                                        <button type="button" class="btn btn-danger deleteLink" data-original-title="@ViewBag.Delete" id="delete" data-id="@item.Id" data-url="@Url.Action("DeleteExceptionalAmount", "LoanRequestViewModel", new { Area="Loans"})">@ViewBag.Delete</button>
 
                                     </div>
                                 </td>

@@ -467,13 +467,25 @@
                                 for (var i = 0; i < response.length; i++) {
                                     var temp = response[i];
 
+                                    var CersStartDate = temp.CersStartDate.replace('/Date(', '');
+                                    CersStartDate = CersStartDate.replace(')/', '');
+                                    var dateCersStartDate = new Date(parseInt(CersStartDate));
+
+
+                                    var CfStartDate = temp.CfStartDate.replace('/Date(', '');
+                                    CfStartDate = CfStartDate.replace(')/', '');
+
+                                    var dateCfStartDate = new Date(parseInt(CfStartDate));
+
+                                    console.log("Date=" + dateCersStartDate.toISOString() +" ,, "+dateCfStartDate.toLocaleDateString())
+
                                     // Employee Info
                                     $("#MaxAmount").val(temp.MaxAmount);
                                     $("#Seniority").val(temp.Seniority);
                                     $("#MinSeniority").val(temp.MinSeniority);
                                     $("#MinReusePeriod").val(temp.MinReusePeriod);
-                                    $("#CersStartDate").val(new Date(parseInt(temp.CersStartDate.substr(6))));
-                                    $("#CfStartDate").val(new Date(parseInt(temp.CfStartDate.substr(6))));
+                                    $("#CersStartDate").val(dateCersStartDate.toLocaleDateString());
+                                    $("#CfStartDate").val(dateCfStartDate.toLocaleDateString());
                                     $("#LeaveDate").val(temp.LeaveDate);
                                     $("#LeaveReason").val(temp.LeaveReason);
                                     $("#DepartmentName").val(temp.DepartmentName);
@@ -489,7 +501,12 @@
                                     $("#Rate").val(temp.Rate);
                                     $("#GuarantorsCount").val(temp.GuarantorsCount);
 
-                                    var date = new Date(parseInt(temp.CersStartDate.substr(6)));
+                                    //var g = temp.CersStartDate.replace('/Date(', '');
+                                    //g=g.replace(')/', '');
+                                    
+                                    //var date = new Date(parseInt(g));
+                                     
+                                    //console.log(""+date );
                                     if (amount > temp.MaxAmount)
                                     {
                                         $("#ResultStatus").val('@ViewBag.Exceeds');
@@ -501,7 +518,7 @@
                                         $("#ResultStatus").css("color", "green");
                                     }
                                     
-                                    console.log(date);
+                                   
                                 }
                             }
 

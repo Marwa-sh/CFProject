@@ -20,16 +20,11 @@ namespace Cf.Controllers
         public   CfIdentityEntities E = new CfIdentityEntities();
         public  void login(string username, string password)
         {
-
-
             HttpContext.Current.Session["user"] = E.Users.Where(c => c.UserName == username && c.Password == password).FirstOrDefault();
-
         }
 
         public  bool IsAllow(string controller, string action)
         {
-
-
             if (HttpContext.Current.Session["user"] == null)
             {
                 return false;

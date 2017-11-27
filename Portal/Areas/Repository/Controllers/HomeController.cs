@@ -122,7 +122,7 @@ namespace Portal.Areas.Repository.Controllers
 
             if (Session["user"] != null)
             {
-                return RedirectToAction("AccessDenied", "Home");
+                return RedirectToAction("AccessDenied", "Home" ,new  { area="Repository"});
             }
             ViewBag.ReturnUrl = returnUrl;
             return View();
@@ -181,7 +181,7 @@ namespace Portal.Areas.Repository.Controllers
 
             if (Session["user"] == null)
             {
-                return RedirectToAction("Login");
+                return RedirectToAction("Login", "Home", new { area = "Repository" });
             }
             else
             {

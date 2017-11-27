@@ -10,58 +10,6 @@ namespace Cf.Data
 	#region Db class definition
     public partial class Db
     {
-		#region EmployeeCustom procedure.
-
-
-		[Function(Name = "dbo.EmployeeCustom")]
-        [ResultType(typeof(EmployeeCustomResult1))]
-        [ResultType(typeof(EmployeeCustomResult2))]
-		private IMultipleResults _EmployeeCustom()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return (IMultipleResults)(result.ReturnValue);
-		}
-
-		/// <summary>
-		/// Needs summary!
-		/// </summary>
-        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
-		/// <returns>A list of EmployeeCustomResult instances.</returns>
-		/// <remarks>This method never returns null, 
-		///	if no records are available, length of the list will be 0.</remarks>
-		public EmployeeCustomResult EmployeeCustom()
-		{
-			IMultipleResults multipleResult = _EmployeeCustom();
-            EmployeeCustomResult result =
-                new EmployeeCustomResult
-                (
-                    multipleResult.GetResult<EmployeeCustomResult1>().ToList<EmployeeCustomResult1>(),
-                    multipleResult.GetResult<EmployeeCustomResult2>().ToList<EmployeeCustomResult2>()
-                );
-            return result;
-		}
-
-        /// <summary>
-		/// Needs summary!
-		/// </summary>
-        /// <param name="filterInstance">An instance of EmployeeCustomFilter that defines filtering options.</param>
-        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
-        /// <returns>A list of EmployeeCustomResult instances.</returns>
-		/// <remarks>This method never returns null, 
-		///	if no records are available, length of the list will be 0.</remarks>
-		public EmployeeCustomResult EmployeeCustom(EmployeeCustomFilter filterInstance)
-		{
-			IMultipleResults multipleResult = _EmployeeCustom();
-            EmployeeCustomResult result =
-                new EmployeeCustomResult
-                (
-                    multipleResult.GetResult<EmployeeCustomResult1>().ToList<EmployeeCustomResult1>(),
-                    multipleResult.GetResult<EmployeeCustomResult2>().ToList<EmployeeCustomResult2>()
-                );
-            return result;
-		}
-		#endregion
-
 		#region EmployeeProductCalculator procedure.
 
 
@@ -190,6 +138,158 @@ namespace Cf.Data
 		}
 		#endregion
 
+		#region GetDebts procedure.
+
+
+		[FunctionAttribute(Name = "dbo.GetDebts", IsComposable = true)]
+		private IQueryable<GetDebtsResult> _GetDebts([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date)
+		{
+			return this.CreateMethodCallQuery<GetDebtsResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _employeeId, _date);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_employeeId"></param>
+		/// <param name="_date"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>A list of GetDebtsResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<GetDebtsResult> GetDebts([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date)
+		{
+			IQueryable<GetDebtsResult> list = _GetDebts(_employeeId, _date);
+            return list.ToList<GetDebtsResult>();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of GetDebtsFilter that defines filtering options.</param>
+        /// <returns>A list of GetDebtsResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<GetDebtsResult> GetDebts(GetDebtsFilter filterInstance)
+		{
+			IQueryable<GetDebtsResult> list = _GetDebts(filterInstance.EmployeeId, filterInstance.Date);
+            return list.ToList<GetDebtsResult>();
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_employeeId"></param>
+		/// <param name="_date"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>An instance of GetDebtsResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public GetDebtsResult GetDebtsFirstOrDefault([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date)
+		{
+			return GetDebts(_employeeId, _date).FirstOrDefault();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of GetDebtsFilter that defines filtering options.</param>
+		/// <returns>An instance of GetDebtsResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public GetDebtsResult GetDebtsFirstOrDefault(GetDebtsFilter filterInstance)
+		{
+			return GetDebts(filterInstance.EmployeeId, filterInstance.Date).FirstOrDefault();
+		}
+		#endregion
+
+		#region GetDebtScalar procedure.
+
+		[Function(Name = "dbo.GetDebtScalar")]
+		[return: Parameter(DbType = "money")]
+		private decimal _GetDebtScalar([Parameter(Name = "@Date")] Nullable<DateTime> _date, [Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _date, _employeeId);
+			return (decimal) (result.ReturnValue);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_date"></param>
+		/// <param name="_employeeId"></param>
+		public decimal GetDebtScalar([Parameter(Name = "@Date")] Nullable<DateTime> _date, [Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
+		{
+			 return _GetDebtScalar(_date, _employeeId);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of GetDebtScalarFilter that defines filtering options.</param>
+		public decimal GetDebtScalar(GetDebtScalarFilter filterInstance)
+		{
+			 return _GetDebtScalar(filterInstance.Date, filterInstance.EmployeeId);
+		}
+		#endregion
+
+		#region GetDebtSolvency procedure.
+
+
+		[FunctionAttribute(Name = "dbo.GetDebtSolvency", IsComposable = true)]
+		private IQueryable<GetDebtSolvencyResult> _GetDebtSolvency([Parameter(Name = "@ProductId")] Nullable<int> _productId)
+		{
+			return this.CreateMethodCallQuery<GetDebtSolvencyResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _productId);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_productId"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>A list of GetDebtSolvencyResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<GetDebtSolvencyResult> GetDebtSolvency([Parameter(Name = "@ProductId")] Nullable<int> _productId)
+		{
+			IQueryable<GetDebtSolvencyResult> list = _GetDebtSolvency(_productId);
+            return list.ToList<GetDebtSolvencyResult>();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of GetDebtSolvencyFilter that defines filtering options.</param>
+        /// <returns>A list of GetDebtSolvencyResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<GetDebtSolvencyResult> GetDebtSolvency(GetDebtSolvencyFilter filterInstance)
+		{
+			IQueryable<GetDebtSolvencyResult> list = _GetDebtSolvency(filterInstance.ProductId);
+            return list.ToList<GetDebtSolvencyResult>();
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_productId"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>An instance of GetDebtSolvencyResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public GetDebtSolvencyResult GetDebtSolvencyFirstOrDefault([Parameter(Name = "@ProductId")] Nullable<int> _productId)
+		{
+			return GetDebtSolvency(_productId).FirstOrDefault();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of GetDebtSolvencyFilter that defines filtering options.</param>
+		/// <returns>An instance of GetDebtSolvencyResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public GetDebtSolvencyResult GetDebtSolvencyFirstOrDefault(GetDebtSolvencyFilter filterInstance)
+		{
+			return GetDebtSolvency(filterInstance.ProductId).FirstOrDefault();
+		}
+		#endregion
+
 		#region GetDueProfit procedure.
 
 		[Function(Name = "dbo.GetDueProfit")]
@@ -218,6 +318,262 @@ namespace Cf.Data
 		public decimal GetDueProfit(GetDueProfitFilter filterInstance)
 		{
 			 return _GetDueProfit(filterInstance.Amount, filterInstance.Period, filterInstance.Rate);
+		}
+		#endregion
+
+		#region GetEmployeeDebts procedure.
+
+
+		[FunctionAttribute(Name = "dbo.GetEmployeeDebts", IsComposable = true)]
+		private IQueryable<GetEmployeeDebtsResult> _GetEmployeeDebts([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date)
+		{
+			return this.CreateMethodCallQuery<GetEmployeeDebtsResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _employeeId, _date);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_employeeId"></param>
+		/// <param name="_date"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>A list of GetEmployeeDebtsResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<GetEmployeeDebtsResult> GetEmployeeDebts([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date)
+		{
+			IQueryable<GetEmployeeDebtsResult> list = _GetEmployeeDebts(_employeeId, _date);
+            return list.ToList<GetEmployeeDebtsResult>();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of GetEmployeeDebtsFilter that defines filtering options.</param>
+        /// <returns>A list of GetEmployeeDebtsResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<GetEmployeeDebtsResult> GetEmployeeDebts(GetEmployeeDebtsFilter filterInstance)
+		{
+			IQueryable<GetEmployeeDebtsResult> list = _GetEmployeeDebts(filterInstance.EmployeeId, filterInstance.Date);
+            return list.ToList<GetEmployeeDebtsResult>();
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_employeeId"></param>
+		/// <param name="_date"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>An instance of GetEmployeeDebtsResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public GetEmployeeDebtsResult GetEmployeeDebtsFirstOrDefault([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date)
+		{
+			return GetEmployeeDebts(_employeeId, _date).FirstOrDefault();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of GetEmployeeDebtsFilter that defines filtering options.</param>
+		/// <returns>An instance of GetEmployeeDebtsResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public GetEmployeeDebtsResult GetEmployeeDebtsFirstOrDefault(GetEmployeeDebtsFilter filterInstance)
+		{
+			return GetEmployeeDebts(filterInstance.EmployeeId, filterInstance.Date).FirstOrDefault();
+		}
+		#endregion
+
+		#region GetEmployeeSolvency procedure.
+
+
+		[FunctionAttribute(Name = "dbo.GetEmployeeSolvency", IsComposable = true)]
+		private IQueryable<GetEmployeeSolvencyResult> _GetEmployeeSolvency([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date, [Parameter(Name = "@Amount")] Nullable<decimal> _amount, [Parameter(Name = "@Installment")] Nullable<decimal> _installment, [Parameter(Name = "@GrossSalary")] Nullable<decimal> _grossSalary, [Parameter(Name = "@NetSalary")] Nullable<decimal> _netSalary)
+		{
+			return this.CreateMethodCallQuery<GetEmployeeSolvencyResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _employeeId, _date, _amount, _installment, _grossSalary, _netSalary);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_employeeId"></param>
+		/// <param name="_date"></param>
+		/// <param name="_amount"></param>
+		/// <param name="_installment"></param>
+		/// <param name="_grossSalary"></param>
+		/// <param name="_netSalary"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>A list of GetEmployeeSolvencyResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<GetEmployeeSolvencyResult> GetEmployeeSolvency([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date, [Parameter(Name = "@Amount")] Nullable<decimal> _amount, [Parameter(Name = "@Installment")] Nullable<decimal> _installment, [Parameter(Name = "@GrossSalary")] Nullable<decimal> _grossSalary, [Parameter(Name = "@NetSalary")] Nullable<decimal> _netSalary)
+		{
+			IQueryable<GetEmployeeSolvencyResult> list = _GetEmployeeSolvency(_employeeId, _date, _amount, _installment, _grossSalary, _netSalary);
+            return list.ToList<GetEmployeeSolvencyResult>();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of GetEmployeeSolvencyFilter that defines filtering options.</param>
+        /// <returns>A list of GetEmployeeSolvencyResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<GetEmployeeSolvencyResult> GetEmployeeSolvency(GetEmployeeSolvencyFilter filterInstance)
+		{
+			IQueryable<GetEmployeeSolvencyResult> list = _GetEmployeeSolvency(filterInstance.EmployeeId, filterInstance.Date, filterInstance.Amount, filterInstance.Installment, filterInstance.GrossSalary, filterInstance.NetSalary);
+            return list.ToList<GetEmployeeSolvencyResult>();
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_employeeId"></param>
+		/// <param name="_date"></param>
+		/// <param name="_amount"></param>
+		/// <param name="_installment"></param>
+		/// <param name="_grossSalary"></param>
+		/// <param name="_netSalary"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>An instance of GetEmployeeSolvencyResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public GetEmployeeSolvencyResult GetEmployeeSolvencyFirstOrDefault([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date, [Parameter(Name = "@Amount")] Nullable<decimal> _amount, [Parameter(Name = "@Installment")] Nullable<decimal> _installment, [Parameter(Name = "@GrossSalary")] Nullable<decimal> _grossSalary, [Parameter(Name = "@NetSalary")] Nullable<decimal> _netSalary)
+		{
+			return GetEmployeeSolvency(_employeeId, _date, _amount, _installment, _grossSalary, _netSalary).FirstOrDefault();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of GetEmployeeSolvencyFilter that defines filtering options.</param>
+		/// <returns>An instance of GetEmployeeSolvencyResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public GetEmployeeSolvencyResult GetEmployeeSolvencyFirstOrDefault(GetEmployeeSolvencyFilter filterInstance)
+		{
+			return GetEmployeeSolvency(filterInstance.EmployeeId, filterInstance.Date, filterInstance.Amount, filterInstance.Installment, filterInstance.GrossSalary, filterInstance.NetSalary).FirstOrDefault();
+		}
+		#endregion
+
+		#region GetEmployeeSumDebts procedure.
+
+
+		[FunctionAttribute(Name = "dbo.GetEmployeeSumDebts", IsComposable = true)]
+		private IQueryable<GetEmployeeSumDebtsResult> _GetEmployeeSumDebts([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date)
+		{
+			return this.CreateMethodCallQuery<GetEmployeeSumDebtsResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _employeeId, _date);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_employeeId"></param>
+		/// <param name="_date"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>A list of GetEmployeeSumDebtsResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<GetEmployeeSumDebtsResult> GetEmployeeSumDebts([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date)
+		{
+			IQueryable<GetEmployeeSumDebtsResult> list = _GetEmployeeSumDebts(_employeeId, _date);
+            return list.ToList<GetEmployeeSumDebtsResult>();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of GetEmployeeSumDebtsFilter that defines filtering options.</param>
+        /// <returns>A list of GetEmployeeSumDebtsResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<GetEmployeeSumDebtsResult> GetEmployeeSumDebts(GetEmployeeSumDebtsFilter filterInstance)
+		{
+			IQueryable<GetEmployeeSumDebtsResult> list = _GetEmployeeSumDebts(filterInstance.EmployeeId, filterInstance.Date);
+            return list.ToList<GetEmployeeSumDebtsResult>();
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_employeeId"></param>
+		/// <param name="_date"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>An instance of GetEmployeeSumDebtsResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public GetEmployeeSumDebtsResult GetEmployeeSumDebtsFirstOrDefault([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date)
+		{
+			return GetEmployeeSumDebts(_employeeId, _date).FirstOrDefault();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of GetEmployeeSumDebtsFilter that defines filtering options.</param>
+		/// <returns>An instance of GetEmployeeSumDebtsResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public GetEmployeeSumDebtsResult GetEmployeeSumDebtsFirstOrDefault(GetEmployeeSumDebtsFilter filterInstance)
+		{
+			return GetEmployeeSumDebts(filterInstance.EmployeeId, filterInstance.Date).FirstOrDefault();
+		}
+		#endregion
+
+		#region GetEmployeeWarrants procedure.
+
+
+		[FunctionAttribute(Name = "dbo.GetEmployeeWarrants", IsComposable = true)]
+		private IQueryable<GetEmployeeWarrantsResult> _GetEmployeeWarrants([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date)
+		{
+			return this.CreateMethodCallQuery<GetEmployeeWarrantsResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _employeeId, _date);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_employeeId"></param>
+		/// <param name="_date"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>A list of GetEmployeeWarrantsResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<GetEmployeeWarrantsResult> GetEmployeeWarrants([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date)
+		{
+			IQueryable<GetEmployeeWarrantsResult> list = _GetEmployeeWarrants(_employeeId, _date);
+            return list.ToList<GetEmployeeWarrantsResult>();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of GetEmployeeWarrantsFilter that defines filtering options.</param>
+        /// <returns>A list of GetEmployeeWarrantsResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<GetEmployeeWarrantsResult> GetEmployeeWarrants(GetEmployeeWarrantsFilter filterInstance)
+		{
+			IQueryable<GetEmployeeWarrantsResult> list = _GetEmployeeWarrants(filterInstance.EmployeeId, filterInstance.Date);
+            return list.ToList<GetEmployeeWarrantsResult>();
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_employeeId"></param>
+		/// <param name="_date"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>An instance of GetEmployeeWarrantsResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public GetEmployeeWarrantsResult GetEmployeeWarrantsFirstOrDefault([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date)
+		{
+			return GetEmployeeWarrants(_employeeId, _date).FirstOrDefault();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of GetEmployeeWarrantsFilter that defines filtering options.</param>
+		/// <returns>An instance of GetEmployeeWarrantsResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public GetEmployeeWarrantsResult GetEmployeeWarrantsFirstOrDefault(GetEmployeeWarrantsFilter filterInstance)
+		{
+			return GetEmployeeWarrants(filterInstance.EmployeeId, filterInstance.Date).FirstOrDefault();
 		}
 		#endregion
 
@@ -493,6 +849,130 @@ namespace Cf.Data
 		public GetRefundableProductsResult GetRefundableProductsFirstOrDefault(GetRefundableProductsFilter filterInstance)
 		{
 			return GetRefundableProducts(filterInstance.EmployeeId).FirstOrDefault();
+		}
+		#endregion
+
+		#region GetWarrants procedure.
+
+
+		[FunctionAttribute(Name = "dbo.GetWarrants", IsComposable = true)]
+		private IQueryable<GetWarrantsResult> _GetWarrants([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date)
+		{
+			return this.CreateMethodCallQuery<GetWarrantsResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _employeeId, _date);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_employeeId"></param>
+		/// <param name="_date"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>A list of GetWarrantsResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<GetWarrantsResult> GetWarrants([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date)
+		{
+			IQueryable<GetWarrantsResult> list = _GetWarrants(_employeeId, _date);
+            return list.ToList<GetWarrantsResult>();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of GetWarrantsFilter that defines filtering options.</param>
+        /// <returns>A list of GetWarrantsResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<GetWarrantsResult> GetWarrants(GetWarrantsFilter filterInstance)
+		{
+			IQueryable<GetWarrantsResult> list = _GetWarrants(filterInstance.EmployeeId, filterInstance.Date);
+            return list.ToList<GetWarrantsResult>();
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_employeeId"></param>
+		/// <param name="_date"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>An instance of GetWarrantsResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public GetWarrantsResult GetWarrantsFirstOrDefault([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date)
+		{
+			return GetWarrants(_employeeId, _date).FirstOrDefault();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of GetWarrantsFilter that defines filtering options.</param>
+		/// <returns>An instance of GetWarrantsResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public GetWarrantsResult GetWarrantsFirstOrDefault(GetWarrantsFilter filterInstance)
+		{
+			return GetWarrants(filterInstance.EmployeeId, filterInstance.Date).FirstOrDefault();
+		}
+		#endregion
+
+		#region GetWarrantSolvency procedure.
+
+
+		[FunctionAttribute(Name = "dbo.GetWarrantSolvency", IsComposable = true)]
+		private IQueryable<GetWarrantSolvencyResult> _GetWarrantSolvency([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@ProductId")] Nullable<int> _productId)
+		{
+			return this.CreateMethodCallQuery<GetWarrantSolvencyResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _employeeId, _productId);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_employeeId"></param>
+		/// <param name="_productId"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>A list of GetWarrantSolvencyResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<GetWarrantSolvencyResult> GetWarrantSolvency([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@ProductId")] Nullable<int> _productId)
+		{
+			IQueryable<GetWarrantSolvencyResult> list = _GetWarrantSolvency(_employeeId, _productId);
+            return list.ToList<GetWarrantSolvencyResult>();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of GetWarrantSolvencyFilter that defines filtering options.</param>
+        /// <returns>A list of GetWarrantSolvencyResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<GetWarrantSolvencyResult> GetWarrantSolvency(GetWarrantSolvencyFilter filterInstance)
+		{
+			IQueryable<GetWarrantSolvencyResult> list = _GetWarrantSolvency(filterInstance.EmployeeId, filterInstance.ProductId);
+            return list.ToList<GetWarrantSolvencyResult>();
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_employeeId"></param>
+		/// <param name="_productId"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>An instance of GetWarrantSolvencyResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public GetWarrantSolvencyResult GetWarrantSolvencyFirstOrDefault([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@ProductId")] Nullable<int> _productId)
+		{
+			return GetWarrantSolvency(_employeeId, _productId).FirstOrDefault();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of GetWarrantSolvencyFilter that defines filtering options.</param>
+		/// <returns>An instance of GetWarrantSolvencyResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public GetWarrantSolvencyResult GetWarrantSolvencyFirstOrDefault(GetWarrantSolvencyFilter filterInstance)
+		{
+			return GetWarrantSolvency(filterInstance.EmployeeId, filterInstance.ProductId).FirstOrDefault();
 		}
 		#endregion
 

@@ -2,483 +2,6 @@ using System;
 
 namespace Cf.Data.Resources
 {
-	#region EmployeeCustom filter and result classes
-	#region EmployeeCustomFilter meta data class definition
-    /// <summary>
-    /// Resource management for EmployeeCustomFilter class
-    /// </summary>
-	public partial class EmployeeCustomFilter : ResourceBase
-	{
-        /// <summary>
-        /// Internal constructor for Cf.Data.Resources.EmployeeCustomFilter class
-        /// </summary>
-        internal EmployeeCustomFilter()
-        {
-        }
-	
-		#region Public properties
-		#endregion
-	}
-	#endregion
-
-    #region EmployeeCustomResult1 class definition
-	/// <summary>
-    /// Result class for EmployeeCustom.
-	/// </summary>
-	public partial class EmployeeCustomResult1 : ResourceBase
-	{
-        /// <summary>
-        /// Internal constructor for Cf.Data.Resources.EmployeeCustomResult1 class
-        /// </summary>
-        internal EmployeeCustomResult1()
-        {
-        }
-
-		#region Public properties
-        /// <summary>
-        /// Resource for EmployeeCustomResult1.Id property
-        /// </summary>
-        public static string Id
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult1", "Id");
-            }
-        }
-
-		/// <summary>
-        /// Looks up a localized string similar to IdTooltip.
-        /// </summary>
-        public static string IdTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult1", "IdTooltip");
-            }
-        }
-        /// <summary>
-        /// Resource for EmployeeCustomResult1.FirstName property
-        /// </summary>
-        public static string FirstName
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult1", "FirstName");
-            }
-        }
-
-		/// <summary>
-        /// Looks up a localized string similar to FirstNameTooltip.
-        /// </summary>
-        public static string FirstNameTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult1", "FirstNameTooltip");
-            }
-        }
-        /// <summary>
-        /// Resource for EmployeeCustomResult1.LastName property
-        /// </summary>
-        public static string LastName
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult1", "LastName");
-            }
-        }
-
-		/// <summary>
-        /// Looks up a localized string similar to LastNameTooltip.
-        /// </summary>
-        public static string LastNameTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult1", "LastNameTooltip");
-            }
-        }
-        /// <summary>
-        /// Resource for EmployeeCustomResult1.FatherName property
-        /// </summary>
-        public static string FatherName
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult1", "FatherName");
-            }
-        }
-
-		/// <summary>
-        /// Looks up a localized string similar to FatherNameTooltip.
-        /// </summary>
-        public static string FatherNameTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult1", "FatherNameTooltip");
-            }
-        }
-        /// <summary>
-        /// Resource for EmployeeCustomResult1.MotherName property
-        /// </summary>
-        public static string MotherName
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult1", "MotherName");
-            }
-        }
-
-		/// <summary>
-        /// Looks up a localized string similar to MotherNameTooltip.
-        /// </summary>
-        public static string MotherNameTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult1", "MotherNameTooltip");
-            }
-        }
-        /// <summary>
-        /// Resource for EmployeeCustomResult1.BirthDate property
-        /// </summary>
-        public static string BirthDate
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult1", "BirthDate");
-            }
-        }
-
-		/// <summary>
-        /// Looks up a localized string similar to BirthDateTooltip.
-        /// </summary>
-        public static string BirthDateTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult1", "BirthDateTooltip");
-            }
-        }
-        /// <summary>
-        /// Resource for EmployeeCustomResult1.ExpectedEndDate property
-        /// </summary>
-        public static string ExpectedEndDate
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult1", "ExpectedEndDate");
-            }
-        }
-
-		/// <summary>
-        /// Looks up a localized string similar to ExpectedEndDateTooltip.
-        /// </summary>
-        public static string ExpectedEndDateTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult1", "ExpectedEndDateTooltip");
-            }
-        }
-        /// <summary>
-        /// Resource for EmployeeCustomResult1.CersStartDate property
-        /// </summary>
-        public static string CersStartDate
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult1", "CersStartDate");
-            }
-        }
-
-		/// <summary>
-        /// Looks up a localized string similar to CersStartDateTooltip.
-        /// </summary>
-        public static string CersStartDateTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult1", "CersStartDateTooltip");
-            }
-        }
-        /// <summary>
-        /// Resource for EmployeeCustomResult1.CfStartDate property
-        /// </summary>
-        public static string CfStartDate
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult1", "CfStartDate");
-            }
-        }
-
-		/// <summary>
-        /// Looks up a localized string similar to CfStartDateTooltip.
-        /// </summary>
-        public static string CfStartDateTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult1", "CfStartDateTooltip");
-            }
-        }
-        /// <summary>
-        /// Resource for EmployeeCustomResult1.LeaveDate property
-        /// </summary>
-        public static string LeaveDate
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult1", "LeaveDate");
-            }
-        }
-
-		/// <summary>
-        /// Looks up a localized string similar to LeaveDateTooltip.
-        /// </summary>
-        public static string LeaveDateTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult1", "LeaveDateTooltip");
-            }
-        }
-        /// <summary>
-        /// Resource for EmployeeCustomResult1.LeaveReason property
-        /// </summary>
-        public static string LeaveReason
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult1", "LeaveReason");
-            }
-        }
-
-		/// <summary>
-        /// Looks up a localized string similar to LeaveReasonTooltip.
-        /// </summary>
-        public static string LeaveReasonTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult1", "LeaveReasonTooltip");
-            }
-        }
-        /// <summary>
-        /// Resource for EmployeeCustomResult1.EmployeeStatus property
-        /// </summary>
-        public static string EmployeeStatus
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult1", "EmployeeStatus");
-            }
-        }
-
-		/// <summary>
-        /// Looks up a localized string similar to EmployeeStatusTooltip.
-        /// </summary>
-        public static string EmployeeStatusTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult1", "EmployeeStatusTooltip");
-            }
-        }
-        /// <summary>
-        /// Resource for EmployeeCustomResult1.Department property
-        /// </summary>
-        public static string Department
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult1", "Department");
-            }
-        }
-
-		/// <summary>
-        /// Looks up a localized string similar to DepartmentTooltip.
-        /// </summary>
-        public static string DepartmentTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult1", "DepartmentTooltip");
-            }
-        }
-        /// <summary>
-        /// Resource for EmployeeCustomResult1.Notes property
-        /// </summary>
-        public static string Notes
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult1", "Notes");
-            }
-        }
-
-		/// <summary>
-        /// Looks up a localized string similar to NotesTooltip.
-        /// </summary>
-        public static string NotesTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult1", "NotesTooltip");
-            }
-        }
-        /// <summary>
-        /// Resource for EmployeeCustomResult1.Category property
-        /// </summary>
-        public static string Category
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult1", "Category");
-            }
-        }
-
-		/// <summary>
-        /// Looks up a localized string similar to CategoryTooltip.
-        /// </summary>
-        public static string CategoryTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult1", "CategoryTooltip");
-            }
-        }
-    	#endregion
-    }
-   	#endregion
-
-    #region EmployeeCustomResult2 class definition
-	/// <summary>
-    /// Result class for EmployeeCustom.
-	/// </summary>
-	public partial class EmployeeCustomResult2 : ResourceBase
-	{
-        /// <summary>
-        /// Internal constructor for Cf.Data.Resources.EmployeeCustomResult2 class
-        /// </summary>
-        internal EmployeeCustomResult2()
-        {
-        }
-
-		#region Public properties
-        /// <summary>
-        /// Resource for EmployeeCustomResult2.Product property
-        /// </summary>
-        public static string Product
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult2", "Product");
-            }
-        }
-
-		/// <summary>
-        /// Looks up a localized string similar to ProductTooltip.
-        /// </summary>
-        public static string ProductTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult2", "ProductTooltip");
-            }
-        }
-        /// <summary>
-        /// Resource for EmployeeCustomResult2.LoanDecision property
-        /// </summary>
-        public static string LoanDecision
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult2", "LoanDecision");
-            }
-        }
-
-		/// <summary>
-        /// Looks up a localized string similar to LoanDecisionTooltip.
-        /// </summary>
-        public static string LoanDecisionTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult2", "LoanDecisionTooltip");
-            }
-        }
-        /// <summary>
-        /// Resource for EmployeeCustomResult2.LoanType property
-        /// </summary>
-        public static string LoanType
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult2", "LoanType");
-            }
-        }
-
-		/// <summary>
-        /// Looks up a localized string similar to LoanTypeTooltip.
-        /// </summary>
-        public static string LoanTypeTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult2", "LoanTypeTooltip");
-            }
-        }
-        /// <summary>
-        /// Resource for EmployeeCustomResult2.LoanGenerationStatus property
-        /// </summary>
-        public static string LoanGenerationStatus
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult2", "LoanGenerationStatus");
-            }
-        }
-
-		/// <summary>
-        /// Looks up a localized string similar to LoanGenerationStatusTooltip.
-        /// </summary>
-        public static string LoanGenerationStatusTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult2", "LoanGenerationStatusTooltip");
-            }
-        }
-        /// <summary>
-        /// Resource for EmployeeCustomResult2.LoanStatus property
-        /// </summary>
-        public static string LoanStatus
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult2", "LoanStatus");
-            }
-        }
-
-		/// <summary>
-        /// Looks up a localized string similar to LoanStatusTooltip.
-        /// </summary>
-        public static string LoanStatusTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeCustomResult2", "LoanStatusTooltip");
-            }
-        }
-    	#endregion
-    }
-   	#endregion
-
-	#endregion
-
 	#region EmployeeProductCalculator filter and result classes
 	#region EmployeeProductCalculatorFilter meta data class definition
     /// <summary>
@@ -723,27 +246,6 @@ namespace Cf.Data.Resources
             }
         }
         /// <summary>
-        /// Resource for EmployeeProductCalculatorResult.DepartmentId property
-        /// </summary>
-        public static string DepartmentId
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeProductCalculatorResult", "DepartmentId");
-            }
-        }
-
-		/// <summary>
-        /// Looks up a localized string similar to DepartmentIdTooltip.
-        /// </summary>
-        public static string DepartmentIdTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeProductCalculatorResult", "DepartmentIdTooltip");
-            }
-        }
-        /// <summary>
         /// Resource for EmployeeProductCalculatorResult.DepartmentName property
         /// </summary>
         public static string DepartmentName
@@ -762,27 +264,6 @@ namespace Cf.Data.Resources
             get
             {
                 return ResourcesCollection.GetString(Culture, "EmployeeProductCalculatorResult", "DepartmentNameTooltip");
-            }
-        }
-        /// <summary>
-        /// Resource for EmployeeProductCalculatorResult.DepartmentSalaryWorkPlaceId property
-        /// </summary>
-        public static string DepartmentSalaryWorkPlaceId
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeProductCalculatorResult", "DepartmentSalaryWorkPlaceId");
-            }
-        }
-
-		/// <summary>
-        /// Looks up a localized string similar to DepartmentSalaryWorkPlaceIdTooltip.
-        /// </summary>
-        public static string DepartmentSalaryWorkPlaceIdTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeProductCalculatorResult", "DepartmentSalaryWorkPlaceIdTooltip");
             }
         }
         /// <summary>
@@ -807,27 +288,6 @@ namespace Cf.Data.Resources
             }
         }
         /// <summary>
-        /// Resource for EmployeeProductCalculatorResult.EmployeeStatusId property
-        /// </summary>
-        public static string EmployeeStatusId
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeProductCalculatorResult", "EmployeeStatusId");
-            }
-        }
-
-		/// <summary>
-        /// Looks up a localized string similar to EmployeeStatusIdTooltip.
-        /// </summary>
-        public static string EmployeeStatusIdTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeProductCalculatorResult", "EmployeeStatusIdTooltip");
-            }
-        }
-        /// <summary>
         /// Resource for EmployeeProductCalculatorResult.EmployeeStatusName property
         /// </summary>
         public static string EmployeeStatusName
@@ -846,27 +306,6 @@ namespace Cf.Data.Resources
             get
             {
                 return ResourcesCollection.GetString(Culture, "EmployeeProductCalculatorResult", "EmployeeStatusNameTooltip");
-            }
-        }
-        /// <summary>
-        /// Resource for EmployeeProductCalculatorResult.CategoryId property
-        /// </summary>
-        public static string CategoryId
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeProductCalculatorResult", "CategoryId");
-            }
-        }
-
-		/// <summary>
-        /// Looks up a localized string similar to CategoryIdTooltip.
-        /// </summary>
-        public static string CategoryIdTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeProductCalculatorResult", "CategoryIdTooltip");
             }
         }
         /// <summary>
@@ -1098,6 +537,27 @@ namespace Cf.Data.Resources
             get
             {
                 return ResourcesCollection.GetString(Culture, "EmployeeProductCalculatorResult", "RateTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for EmployeeProductCalculatorResult.AnnualRate property
+        /// </summary>
+        public static string AnnualRate
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeProductCalculatorResult", "AnnualRate");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to AnnualRateTooltip.
+        /// </summary>
+        public static string AnnualRateTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeProductCalculatorResult", "AnnualRateTooltip");
             }
         }
         /// <summary>
@@ -1334,6 +794,546 @@ namespace Cf.Data.Resources
 
 	#endregion
 
+	#region GetDebts filter and result classes
+	#region GetDebtsFilter meta data class definition
+    /// <summary>
+    /// Resource management for GetDebtsFilter class
+    /// </summary>
+	public partial class GetDebtsFilter : ResourceBase
+	{
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.GetDebtsFilter class
+        /// </summary>
+        internal GetDebtsFilter()
+        {
+        }
+	
+		#region Public properties
+        /// <summary>
+        /// Resource for GetDebtsFilter.EmployeeId property
+        /// </summary>
+        public static string EmployeeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtsFilter", "EmployeeId");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to EmployeeIdTooltip.
+        /// </summary>
+        public static string EmployeeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtsFilter", "EmployeeIdTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetDebtsFilter.Date property
+        /// </summary>
+        public static string Date
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtsFilter", "Date");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to DateTooltip.
+        /// </summary>
+        public static string DateTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtsFilter", "DateTooltip");
+            }
+        }
+		#endregion
+	}
+	#endregion
+
+    #region GetDebtsResult class definition
+	/// <summary>
+    /// Result class for GetDebts.
+	/// </summary>
+	public partial class GetDebtsResult : ResourceBase
+	{
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.GetDebtsResult class
+        /// </summary>
+        internal GetDebtsResult()
+        {
+        }
+
+		#region Public properties
+        /// <summary>
+        /// Resource for GetDebtsResult.Id property
+        /// </summary>
+        public static string Id
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtsResult", "Id");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to IdTooltip.
+        /// </summary>
+        public static string IdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtsResult", "IdTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetDebtsResult.EmployeeId property
+        /// </summary>
+        public static string EmployeeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtsResult", "EmployeeId");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to EmployeeIdTooltip.
+        /// </summary>
+        public static string EmployeeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtsResult", "EmployeeIdTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetDebtsResult.OriginalAmount property
+        /// </summary>
+        public static string OriginalAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtsResult", "OriginalAmount");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to OriginalAmountTooltip.
+        /// </summary>
+        public static string OriginalAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtsResult", "OriginalAmountTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetDebtsResult.RemainingAmount property
+        /// </summary>
+        public static string RemainingAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtsResult", "RemainingAmount");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to RemainingAmountTooltip.
+        /// </summary>
+        public static string RemainingAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtsResult", "RemainingAmountTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetDebtsResult.Installment property
+        /// </summary>
+        public static string Installment
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtsResult", "Installment");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to InstallmentTooltip.
+        /// </summary>
+        public static string InstallmentTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtsResult", "InstallmentTooltip");
+            }
+        }
+    	#endregion
+    }
+   	#endregion
+
+	#endregion
+
+	#region GetDebtScalar filter and result classes
+	#region GetDebtScalarFilter meta data class definition
+    /// <summary>
+    /// Resource management for GetDebtScalarFilter class
+    /// </summary>
+	public partial class GetDebtScalarFilter : ResourceBase
+	{
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.GetDebtScalarFilter class
+        /// </summary>
+        internal GetDebtScalarFilter()
+        {
+        }
+	
+		#region Public properties
+        /// <summary>
+        /// Resource for GetDebtScalarFilter.Date property
+        /// </summary>
+        public static string Date
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtScalarFilter", "Date");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to DateTooltip.
+        /// </summary>
+        public static string DateTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtScalarFilter", "DateTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetDebtScalarFilter.EmployeeId property
+        /// </summary>
+        public static string EmployeeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtScalarFilter", "EmployeeId");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to EmployeeIdTooltip.
+        /// </summary>
+        public static string EmployeeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtScalarFilter", "EmployeeIdTooltip");
+            }
+        }
+		#endregion
+	}
+	#endregion
+
+	#endregion
+
+	#region GetDebtSolvency filter and result classes
+	#region GetDebtSolvencyFilter meta data class definition
+    /// <summary>
+    /// Resource management for GetDebtSolvencyFilter class
+    /// </summary>
+	public partial class GetDebtSolvencyFilter : ResourceBase
+	{
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.GetDebtSolvencyFilter class
+        /// </summary>
+        internal GetDebtSolvencyFilter()
+        {
+        }
+	
+		#region Public properties
+        /// <summary>
+        /// Resource for GetDebtSolvencyFilter.ProductId property
+        /// </summary>
+        public static string ProductId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtSolvencyFilter", "ProductId");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to ProductIdTooltip.
+        /// </summary>
+        public static string ProductIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtSolvencyFilter", "ProductIdTooltip");
+            }
+        }
+		#endregion
+	}
+	#endregion
+
+    #region GetDebtSolvencyResult class definition
+	/// <summary>
+    /// Result class for GetDebtSolvency.
+	/// </summary>
+	public partial class GetDebtSolvencyResult : ResourceBase
+	{
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.GetDebtSolvencyResult class
+        /// </summary>
+        internal GetDebtSolvencyResult()
+        {
+        }
+
+		#region Public properties
+        /// <summary>
+        /// Resource for GetDebtSolvencyResult.EmployeeId property
+        /// </summary>
+        public static string EmployeeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtSolvencyResult", "EmployeeId");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to EmployeeIdTooltip.
+        /// </summary>
+        public static string EmployeeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtSolvencyResult", "EmployeeIdTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetDebtSolvencyResult.DebtRemainingAmount property
+        /// </summary>
+        public static string DebtRemainingAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtSolvencyResult", "DebtRemainingAmount");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to DebtRemainingAmountTooltip.
+        /// </summary>
+        public static string DebtRemainingAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtSolvencyResult", "DebtRemainingAmountTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetDebtSolvencyResult.WarrantRemainingAmount property
+        /// </summary>
+        public static string WarrantRemainingAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtSolvencyResult", "WarrantRemainingAmount");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to WarrantRemainingAmountTooltip.
+        /// </summary>
+        public static string WarrantRemainingAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtSolvencyResult", "WarrantRemainingAmountTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetDebtSolvencyResult.TotalAmount property
+        /// </summary>
+        public static string TotalAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtSolvencyResult", "TotalAmount");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to TotalAmountTooltip.
+        /// </summary>
+        public static string TotalAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtSolvencyResult", "TotalAmountTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetDebtSolvencyResult.DebtInstallment property
+        /// </summary>
+        public static string DebtInstallment
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtSolvencyResult", "DebtInstallment");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to DebtInstallmentTooltip.
+        /// </summary>
+        public static string DebtInstallmentTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtSolvencyResult", "DebtInstallmentTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetDebtSolvencyResult.WarrantInstallment property
+        /// </summary>
+        public static string WarrantInstallment
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtSolvencyResult", "WarrantInstallment");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to WarrantInstallmentTooltip.
+        /// </summary>
+        public static string WarrantInstallmentTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtSolvencyResult", "WarrantInstallmentTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetDebtSolvencyResult.TotalInstallment property
+        /// </summary>
+        public static string TotalInstallment
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtSolvencyResult", "TotalInstallment");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to TotalInstallmentTooltip.
+        /// </summary>
+        public static string TotalInstallmentTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtSolvencyResult", "TotalInstallmentTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetDebtSolvencyResult.MaxAllowedDebt property
+        /// </summary>
+        public static string MaxAllowedDebt
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtSolvencyResult", "MaxAllowedDebt");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to MaxAllowedDebtTooltip.
+        /// </summary>
+        public static string MaxAllowedDebtTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtSolvencyResult", "MaxAllowedDebtTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetDebtSolvencyResult.MaxAllowedDeduction property
+        /// </summary>
+        public static string MaxAllowedDeduction
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtSolvencyResult", "MaxAllowedDeduction");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to MaxAllowedDeductionTooltip.
+        /// </summary>
+        public static string MaxAllowedDeductionTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtSolvencyResult", "MaxAllowedDeductionTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetDebtSolvencyResult.IncomeSolvency property
+        /// </summary>
+        public static string IncomeSolvency
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtSolvencyResult", "IncomeSolvency");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to IncomeSolvencyTooltip.
+        /// </summary>
+        public static string IncomeSolvencyTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtSolvencyResult", "IncomeSolvencyTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetDebtSolvencyResult.NetSalarySolvency property
+        /// </summary>
+        public static string NetSalarySolvency
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtSolvencyResult", "NetSalarySolvency");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to NetSalarySolvencyTooltip.
+        /// </summary>
+        public static string NetSalarySolvencyTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetDebtSolvencyResult", "NetSalarySolvencyTooltip");
+            }
+        }
+    	#endregion
+    }
+   	#endregion
+
+	#endregion
+
 	#region GetDueProfit filter and result classes
 	#region GetDueProfitFilter meta data class definition
     /// <summary>
@@ -1415,6 +1415,1044 @@ namespace Cf.Data.Resources
 		#endregion
 	}
 	#endregion
+
+	#endregion
+
+	#region GetEmployeeDebts filter and result classes
+	#region GetEmployeeDebtsFilter meta data class definition
+    /// <summary>
+    /// Resource management for GetEmployeeDebtsFilter class
+    /// </summary>
+	public partial class GetEmployeeDebtsFilter : ResourceBase
+	{
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.GetEmployeeDebtsFilter class
+        /// </summary>
+        internal GetEmployeeDebtsFilter()
+        {
+        }
+	
+		#region Public properties
+        /// <summary>
+        /// Resource for GetEmployeeDebtsFilter.EmployeeId property
+        /// </summary>
+        public static string EmployeeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeDebtsFilter", "EmployeeId");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to EmployeeIdTooltip.
+        /// </summary>
+        public static string EmployeeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeDebtsFilter", "EmployeeIdTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetEmployeeDebtsFilter.Date property
+        /// </summary>
+        public static string Date
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeDebtsFilter", "Date");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to DateTooltip.
+        /// </summary>
+        public static string DateTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeDebtsFilter", "DateTooltip");
+            }
+        }
+		#endregion
+	}
+	#endregion
+
+    #region GetEmployeeDebtsResult class definition
+	/// <summary>
+    /// Result class for GetEmployeeDebts.
+	/// </summary>
+	public partial class GetEmployeeDebtsResult : ResourceBase
+	{
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.GetEmployeeDebtsResult class
+        /// </summary>
+        internal GetEmployeeDebtsResult()
+        {
+        }
+
+		#region Public properties
+        /// <summary>
+        /// Resource for GetEmployeeDebtsResult.EmployeeId property
+        /// </summary>
+        public static string EmployeeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeDebtsResult", "EmployeeId");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to EmployeeIdTooltip.
+        /// </summary>
+        public static string EmployeeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeDebtsResult", "EmployeeIdTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetEmployeeDebtsResult.OriginalAmount property
+        /// </summary>
+        public static string OriginalAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeDebtsResult", "OriginalAmount");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to OriginalAmountTooltip.
+        /// </summary>
+        public static string OriginalAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeDebtsResult", "OriginalAmountTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetEmployeeDebtsResult.RemainingAmount property
+        /// </summary>
+        public static string RemainingAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeDebtsResult", "RemainingAmount");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to RemainingAmountTooltip.
+        /// </summary>
+        public static string RemainingAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeDebtsResult", "RemainingAmountTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetEmployeeDebtsResult.Installment property
+        /// </summary>
+        public static string Installment
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeDebtsResult", "Installment");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to InstallmentTooltip.
+        /// </summary>
+        public static string InstallmentTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeDebtsResult", "InstallmentTooltip");
+            }
+        }
+    	#endregion
+    }
+   	#endregion
+
+	#endregion
+
+	#region GetEmployeeSolvency filter and result classes
+	#region GetEmployeeSolvencyFilter meta data class definition
+    /// <summary>
+    /// Resource management for GetEmployeeSolvencyFilter class
+    /// </summary>
+	public partial class GetEmployeeSolvencyFilter : ResourceBase
+	{
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.GetEmployeeSolvencyFilter class
+        /// </summary>
+        internal GetEmployeeSolvencyFilter()
+        {
+        }
+	
+		#region Public properties
+        /// <summary>
+        /// Resource for GetEmployeeSolvencyFilter.EmployeeId property
+        /// </summary>
+        public static string EmployeeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSolvencyFilter", "EmployeeId");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to EmployeeIdTooltip.
+        /// </summary>
+        public static string EmployeeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSolvencyFilter", "EmployeeIdTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetEmployeeSolvencyFilter.Date property
+        /// </summary>
+        public static string Date
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSolvencyFilter", "Date");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to DateTooltip.
+        /// </summary>
+        public static string DateTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSolvencyFilter", "DateTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetEmployeeSolvencyFilter.Amount property
+        /// </summary>
+        public static string Amount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSolvencyFilter", "Amount");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to AmountTooltip.
+        /// </summary>
+        public static string AmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSolvencyFilter", "AmountTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetEmployeeSolvencyFilter.Installment property
+        /// </summary>
+        public static string Installment
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSolvencyFilter", "Installment");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to InstallmentTooltip.
+        /// </summary>
+        public static string InstallmentTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSolvencyFilter", "InstallmentTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetEmployeeSolvencyFilter.GrossSalary property
+        /// </summary>
+        public static string GrossSalary
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSolvencyFilter", "GrossSalary");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to GrossSalaryTooltip.
+        /// </summary>
+        public static string GrossSalaryTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSolvencyFilter", "GrossSalaryTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetEmployeeSolvencyFilter.NetSalary property
+        /// </summary>
+        public static string NetSalary
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSolvencyFilter", "NetSalary");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to NetSalaryTooltip.
+        /// </summary>
+        public static string NetSalaryTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSolvencyFilter", "NetSalaryTooltip");
+            }
+        }
+		#endregion
+	}
+	#endregion
+
+    #region GetEmployeeSolvencyResult class definition
+	/// <summary>
+    /// Result class for GetEmployeeSolvency.
+	/// </summary>
+	public partial class GetEmployeeSolvencyResult : ResourceBase
+	{
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.GetEmployeeSolvencyResult class
+        /// </summary>
+        internal GetEmployeeSolvencyResult()
+        {
+        }
+
+		#region Public properties
+        /// <summary>
+        /// Resource for GetEmployeeSolvencyResult.EmployeeId property
+        /// </summary>
+        public static string EmployeeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSolvencyResult", "EmployeeId");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to EmployeeIdTooltip.
+        /// </summary>
+        public static string EmployeeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSolvencyResult", "EmployeeIdTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetEmployeeSolvencyResult.DebtRemainingAmount property
+        /// </summary>
+        public static string DebtRemainingAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSolvencyResult", "DebtRemainingAmount");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to DebtRemainingAmountTooltip.
+        /// </summary>
+        public static string DebtRemainingAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSolvencyResult", "DebtRemainingAmountTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetEmployeeSolvencyResult.WarrantRemainingAmount property
+        /// </summary>
+        public static string WarrantRemainingAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSolvencyResult", "WarrantRemainingAmount");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to WarrantRemainingAmountTooltip.
+        /// </summary>
+        public static string WarrantRemainingAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSolvencyResult", "WarrantRemainingAmountTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetEmployeeSolvencyResult.TotalAmount property
+        /// </summary>
+        public static string TotalAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSolvencyResult", "TotalAmount");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to TotalAmountTooltip.
+        /// </summary>
+        public static string TotalAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSolvencyResult", "TotalAmountTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetEmployeeSolvencyResult.DebtInstallment property
+        /// </summary>
+        public static string DebtInstallment
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSolvencyResult", "DebtInstallment");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to DebtInstallmentTooltip.
+        /// </summary>
+        public static string DebtInstallmentTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSolvencyResult", "DebtInstallmentTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetEmployeeSolvencyResult.WarrantInstallment property
+        /// </summary>
+        public static string WarrantInstallment
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSolvencyResult", "WarrantInstallment");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to WarrantInstallmentTooltip.
+        /// </summary>
+        public static string WarrantInstallmentTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSolvencyResult", "WarrantInstallmentTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetEmployeeSolvencyResult.TotalInstallment property
+        /// </summary>
+        public static string TotalInstallment
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSolvencyResult", "TotalInstallment");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to TotalInstallmentTooltip.
+        /// </summary>
+        public static string TotalInstallmentTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSolvencyResult", "TotalInstallmentTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetEmployeeSolvencyResult.MaxAllowedDebt property
+        /// </summary>
+        public static string MaxAllowedDebt
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSolvencyResult", "MaxAllowedDebt");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to MaxAllowedDebtTooltip.
+        /// </summary>
+        public static string MaxAllowedDebtTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSolvencyResult", "MaxAllowedDebtTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetEmployeeSolvencyResult.MaxAllowedDeduction property
+        /// </summary>
+        public static string MaxAllowedDeduction
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSolvencyResult", "MaxAllowedDeduction");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to MaxAllowedDeductionTooltip.
+        /// </summary>
+        public static string MaxAllowedDeductionTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSolvencyResult", "MaxAllowedDeductionTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetEmployeeSolvencyResult.IncomeSolvency property
+        /// </summary>
+        public static string IncomeSolvency
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSolvencyResult", "IncomeSolvency");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to IncomeSolvencyTooltip.
+        /// </summary>
+        public static string IncomeSolvencyTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSolvencyResult", "IncomeSolvencyTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetEmployeeSolvencyResult.NetSalarySolvency property
+        /// </summary>
+        public static string NetSalarySolvency
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSolvencyResult", "NetSalarySolvency");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to NetSalarySolvencyTooltip.
+        /// </summary>
+        public static string NetSalarySolvencyTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSolvencyResult", "NetSalarySolvencyTooltip");
+            }
+        }
+    	#endregion
+    }
+   	#endregion
+
+	#endregion
+
+	#region GetEmployeeSumDebts filter and result classes
+	#region GetEmployeeSumDebtsFilter meta data class definition
+    /// <summary>
+    /// Resource management for GetEmployeeSumDebtsFilter class
+    /// </summary>
+	public partial class GetEmployeeSumDebtsFilter : ResourceBase
+	{
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.GetEmployeeSumDebtsFilter class
+        /// </summary>
+        internal GetEmployeeSumDebtsFilter()
+        {
+        }
+	
+		#region Public properties
+        /// <summary>
+        /// Resource for GetEmployeeSumDebtsFilter.EmployeeId property
+        /// </summary>
+        public static string EmployeeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSumDebtsFilter", "EmployeeId");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to EmployeeIdTooltip.
+        /// </summary>
+        public static string EmployeeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSumDebtsFilter", "EmployeeIdTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetEmployeeSumDebtsFilter.Date property
+        /// </summary>
+        public static string Date
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSumDebtsFilter", "Date");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to DateTooltip.
+        /// </summary>
+        public static string DateTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSumDebtsFilter", "DateTooltip");
+            }
+        }
+		#endregion
+	}
+	#endregion
+
+    #region GetEmployeeSumDebtsResult class definition
+	/// <summary>
+    /// Result class for GetEmployeeSumDebts.
+	/// </summary>
+	public partial class GetEmployeeSumDebtsResult : ResourceBase
+	{
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.GetEmployeeSumDebtsResult class
+        /// </summary>
+        internal GetEmployeeSumDebtsResult()
+        {
+        }
+
+		#region Public properties
+        /// <summary>
+        /// Resource for GetEmployeeSumDebtsResult.EmployeeId property
+        /// </summary>
+        public static string EmployeeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSumDebtsResult", "EmployeeId");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to EmployeeIdTooltip.
+        /// </summary>
+        public static string EmployeeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSumDebtsResult", "EmployeeIdTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetEmployeeSumDebtsResult.HasDebts property
+        /// </summary>
+        public static string HasDebts
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSumDebtsResult", "HasDebts");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to HasDebtsTooltip.
+        /// </summary>
+        public static string HasDebtsTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSumDebtsResult", "HasDebtsTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetEmployeeSumDebtsResult.DebtOriginalAmount property
+        /// </summary>
+        public static string DebtOriginalAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSumDebtsResult", "DebtOriginalAmount");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to DebtOriginalAmountTooltip.
+        /// </summary>
+        public static string DebtOriginalAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSumDebtsResult", "DebtOriginalAmountTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetEmployeeSumDebtsResult.DebtRemainingAmount property
+        /// </summary>
+        public static string DebtRemainingAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSumDebtsResult", "DebtRemainingAmount");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to DebtRemainingAmountTooltip.
+        /// </summary>
+        public static string DebtRemainingAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSumDebtsResult", "DebtRemainingAmountTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetEmployeeSumDebtsResult.DebtInstallment property
+        /// </summary>
+        public static string DebtInstallment
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSumDebtsResult", "DebtInstallment");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to DebtInstallmentTooltip.
+        /// </summary>
+        public static string DebtInstallmentTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSumDebtsResult", "DebtInstallmentTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetEmployeeSumDebtsResult.HasWarrants property
+        /// </summary>
+        public static string HasWarrants
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSumDebtsResult", "HasWarrants");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to HasWarrantsTooltip.
+        /// </summary>
+        public static string HasWarrantsTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSumDebtsResult", "HasWarrantsTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetEmployeeSumDebtsResult.WarrantOriginalAmount property
+        /// </summary>
+        public static string WarrantOriginalAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSumDebtsResult", "WarrantOriginalAmount");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to WarrantOriginalAmountTooltip.
+        /// </summary>
+        public static string WarrantOriginalAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSumDebtsResult", "WarrantOriginalAmountTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetEmployeeSumDebtsResult.WarrantRemainingAmount property
+        /// </summary>
+        public static string WarrantRemainingAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSumDebtsResult", "WarrantRemainingAmount");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to WarrantRemainingAmountTooltip.
+        /// </summary>
+        public static string WarrantRemainingAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSumDebtsResult", "WarrantRemainingAmountTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetEmployeeSumDebtsResult.WarrantInstallment property
+        /// </summary>
+        public static string WarrantInstallment
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSumDebtsResult", "WarrantInstallment");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to WarrantInstallmentTooltip.
+        /// </summary>
+        public static string WarrantInstallmentTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSumDebtsResult", "WarrantInstallmentTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetEmployeeSumDebtsResult.TotalAmount property
+        /// </summary>
+        public static string TotalAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSumDebtsResult", "TotalAmount");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to TotalAmountTooltip.
+        /// </summary>
+        public static string TotalAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSumDebtsResult", "TotalAmountTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetEmployeeSumDebtsResult.TotalInstallment property
+        /// </summary>
+        public static string TotalInstallment
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSumDebtsResult", "TotalInstallment");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to TotalInstallmentTooltip.
+        /// </summary>
+        public static string TotalInstallmentTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeSumDebtsResult", "TotalInstallmentTooltip");
+            }
+        }
+    	#endregion
+    }
+   	#endregion
+
+	#endregion
+
+	#region GetEmployeeWarrants filter and result classes
+	#region GetEmployeeWarrantsFilter meta data class definition
+    /// <summary>
+    /// Resource management for GetEmployeeWarrantsFilter class
+    /// </summary>
+	public partial class GetEmployeeWarrantsFilter : ResourceBase
+	{
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.GetEmployeeWarrantsFilter class
+        /// </summary>
+        internal GetEmployeeWarrantsFilter()
+        {
+        }
+	
+		#region Public properties
+        /// <summary>
+        /// Resource for GetEmployeeWarrantsFilter.EmployeeId property
+        /// </summary>
+        public static string EmployeeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeWarrantsFilter", "EmployeeId");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to EmployeeIdTooltip.
+        /// </summary>
+        public static string EmployeeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeWarrantsFilter", "EmployeeIdTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetEmployeeWarrantsFilter.Date property
+        /// </summary>
+        public static string Date
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeWarrantsFilter", "Date");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to DateTooltip.
+        /// </summary>
+        public static string DateTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeWarrantsFilter", "DateTooltip");
+            }
+        }
+		#endregion
+	}
+	#endregion
+
+    #region GetEmployeeWarrantsResult class definition
+	/// <summary>
+    /// Result class for GetEmployeeWarrants.
+	/// </summary>
+	public partial class GetEmployeeWarrantsResult : ResourceBase
+	{
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.GetEmployeeWarrantsResult class
+        /// </summary>
+        internal GetEmployeeWarrantsResult()
+        {
+        }
+
+		#region Public properties
+        /// <summary>
+        /// Resource for GetEmployeeWarrantsResult.EmployeeId property
+        /// </summary>
+        public static string EmployeeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeWarrantsResult", "EmployeeId");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to EmployeeIdTooltip.
+        /// </summary>
+        public static string EmployeeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeWarrantsResult", "EmployeeIdTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetEmployeeWarrantsResult.OriginalAmount property
+        /// </summary>
+        public static string OriginalAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeWarrantsResult", "OriginalAmount");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to OriginalAmountTooltip.
+        /// </summary>
+        public static string OriginalAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeWarrantsResult", "OriginalAmountTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetEmployeeWarrantsResult.RemainingAmount property
+        /// </summary>
+        public static string RemainingAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeWarrantsResult", "RemainingAmount");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to RemainingAmountTooltip.
+        /// </summary>
+        public static string RemainingAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeWarrantsResult", "RemainingAmountTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetEmployeeWarrantsResult.Installment property
+        /// </summary>
+        public static string Installment
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeWarrantsResult", "Installment");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to InstallmentTooltip.
+        /// </summary>
+        public static string InstallmentTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetEmployeeWarrantsResult", "InstallmentTooltip");
+            }
+        }
+    	#endregion
+    }
+   	#endregion
 
 	#endregion
 
@@ -1662,6 +2700,27 @@ namespace Cf.Data.Resources
 
 		#region Public properties
         /// <summary>
+        /// Resource for GetInstallmentPaidAmountsResult.RefundableProductId property
+        /// </summary>
+        public static string RefundableProductId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetInstallmentPaidAmountsResult", "RefundableProductId");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to RefundableProductIdTooltip.
+        /// </summary>
+        public static string RefundableProductIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetInstallmentPaidAmountsResult", "RefundableProductIdTooltip");
+            }
+        }
+        /// <summary>
         /// Resource for GetInstallmentPaidAmountsResult.InstallmentId property
         /// </summary>
         public static string InstallmentId
@@ -1763,6 +2822,27 @@ namespace Cf.Data.Resources
         }
 
 		#region Public properties
+        /// <summary>
+        /// Resource for GetInstallmentsResult.RefundableProductId property
+        /// </summary>
+        public static string RefundableProductId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetInstallmentsResult", "RefundableProductId");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to RefundableProductIdTooltip.
+        /// </summary>
+        public static string RefundableProductIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetInstallmentsResult", "RefundableProductIdTooltip");
+            }
+        }
         /// <summary>
         /// Resource for GetInstallmentsResult.Id property
         /// </summary>
@@ -2270,6 +3350,525 @@ namespace Cf.Data.Resources
 
 	#endregion
 
+	#region GetWarrants filter and result classes
+	#region GetWarrantsFilter meta data class definition
+    /// <summary>
+    /// Resource management for GetWarrantsFilter class
+    /// </summary>
+	public partial class GetWarrantsFilter : ResourceBase
+	{
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.GetWarrantsFilter class
+        /// </summary>
+        internal GetWarrantsFilter()
+        {
+        }
+	
+		#region Public properties
+        /// <summary>
+        /// Resource for GetWarrantsFilter.EmployeeId property
+        /// </summary>
+        public static string EmployeeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantsFilter", "EmployeeId");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to EmployeeIdTooltip.
+        /// </summary>
+        public static string EmployeeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantsFilter", "EmployeeIdTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetWarrantsFilter.Date property
+        /// </summary>
+        public static string Date
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantsFilter", "Date");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to DateTooltip.
+        /// </summary>
+        public static string DateTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantsFilter", "DateTooltip");
+            }
+        }
+		#endregion
+	}
+	#endregion
+
+    #region GetWarrantsResult class definition
+	/// <summary>
+    /// Result class for GetWarrants.
+	/// </summary>
+	public partial class GetWarrantsResult : ResourceBase
+	{
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.GetWarrantsResult class
+        /// </summary>
+        internal GetWarrantsResult()
+        {
+        }
+
+		#region Public properties
+        /// <summary>
+        /// Resource for GetWarrantsResult.Id property
+        /// </summary>
+        public static string Id
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantsResult", "Id");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to IdTooltip.
+        /// </summary>
+        public static string IdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantsResult", "IdTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetWarrantsResult.DebtId property
+        /// </summary>
+        public static string DebtId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantsResult", "DebtId");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to DebtIdTooltip.
+        /// </summary>
+        public static string DebtIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantsResult", "DebtIdTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetWarrantsResult.EmployeeId property
+        /// </summary>
+        public static string EmployeeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantsResult", "EmployeeId");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to EmployeeIdTooltip.
+        /// </summary>
+        public static string EmployeeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantsResult", "EmployeeIdTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetWarrantsResult.OriginalAmount property
+        /// </summary>
+        public static string OriginalAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantsResult", "OriginalAmount");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to OriginalAmountTooltip.
+        /// </summary>
+        public static string OriginalAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantsResult", "OriginalAmountTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetWarrantsResult.RemainingAmount property
+        /// </summary>
+        public static string RemainingAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantsResult", "RemainingAmount");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to RemainingAmountTooltip.
+        /// </summary>
+        public static string RemainingAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantsResult", "RemainingAmountTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetWarrantsResult.Installment property
+        /// </summary>
+        public static string Installment
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantsResult", "Installment");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to InstallmentTooltip.
+        /// </summary>
+        public static string InstallmentTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantsResult", "InstallmentTooltip");
+            }
+        }
+    	#endregion
+    }
+   	#endregion
+
+	#endregion
+
+	#region GetWarrantSolvency filter and result classes
+	#region GetWarrantSolvencyFilter meta data class definition
+    /// <summary>
+    /// Resource management for GetWarrantSolvencyFilter class
+    /// </summary>
+	public partial class GetWarrantSolvencyFilter : ResourceBase
+	{
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.GetWarrantSolvencyFilter class
+        /// </summary>
+        internal GetWarrantSolvencyFilter()
+        {
+        }
+	
+		#region Public properties
+        /// <summary>
+        /// Resource for GetWarrantSolvencyFilter.EmployeeId property
+        /// </summary>
+        public static string EmployeeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantSolvencyFilter", "EmployeeId");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to EmployeeIdTooltip.
+        /// </summary>
+        public static string EmployeeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantSolvencyFilter", "EmployeeIdTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetWarrantSolvencyFilter.ProductId property
+        /// </summary>
+        public static string ProductId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantSolvencyFilter", "ProductId");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to ProductIdTooltip.
+        /// </summary>
+        public static string ProductIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantSolvencyFilter", "ProductIdTooltip");
+            }
+        }
+		#endregion
+	}
+	#endregion
+
+    #region GetWarrantSolvencyResult class definition
+	/// <summary>
+    /// Result class for GetWarrantSolvency.
+	/// </summary>
+	public partial class GetWarrantSolvencyResult : ResourceBase
+	{
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.GetWarrantSolvencyResult class
+        /// </summary>
+        internal GetWarrantSolvencyResult()
+        {
+        }
+
+		#region Public properties
+        /// <summary>
+        /// Resource for GetWarrantSolvencyResult.EmployeeId property
+        /// </summary>
+        public static string EmployeeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantSolvencyResult", "EmployeeId");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to EmployeeIdTooltip.
+        /// </summary>
+        public static string EmployeeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantSolvencyResult", "EmployeeIdTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetWarrantSolvencyResult.DebtRemainingAmount property
+        /// </summary>
+        public static string DebtRemainingAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantSolvencyResult", "DebtRemainingAmount");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to DebtRemainingAmountTooltip.
+        /// </summary>
+        public static string DebtRemainingAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantSolvencyResult", "DebtRemainingAmountTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetWarrantSolvencyResult.WarrantRemainingAmount property
+        /// </summary>
+        public static string WarrantRemainingAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantSolvencyResult", "WarrantRemainingAmount");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to WarrantRemainingAmountTooltip.
+        /// </summary>
+        public static string WarrantRemainingAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantSolvencyResult", "WarrantRemainingAmountTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetWarrantSolvencyResult.TotalAmount property
+        /// </summary>
+        public static string TotalAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantSolvencyResult", "TotalAmount");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to TotalAmountTooltip.
+        /// </summary>
+        public static string TotalAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantSolvencyResult", "TotalAmountTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetWarrantSolvencyResult.DebtInstallment property
+        /// </summary>
+        public static string DebtInstallment
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantSolvencyResult", "DebtInstallment");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to DebtInstallmentTooltip.
+        /// </summary>
+        public static string DebtInstallmentTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantSolvencyResult", "DebtInstallmentTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetWarrantSolvencyResult.WarrantInstallment property
+        /// </summary>
+        public static string WarrantInstallment
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantSolvencyResult", "WarrantInstallment");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to WarrantInstallmentTooltip.
+        /// </summary>
+        public static string WarrantInstallmentTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantSolvencyResult", "WarrantInstallmentTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetWarrantSolvencyResult.TotalInstallment property
+        /// </summary>
+        public static string TotalInstallment
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantSolvencyResult", "TotalInstallment");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to TotalInstallmentTooltip.
+        /// </summary>
+        public static string TotalInstallmentTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantSolvencyResult", "TotalInstallmentTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetWarrantSolvencyResult.MaxAllowedDebt property
+        /// </summary>
+        public static string MaxAllowedDebt
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantSolvencyResult", "MaxAllowedDebt");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to MaxAllowedDebtTooltip.
+        /// </summary>
+        public static string MaxAllowedDebtTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantSolvencyResult", "MaxAllowedDebtTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetWarrantSolvencyResult.MaxAllowedDeduction property
+        /// </summary>
+        public static string MaxAllowedDeduction
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantSolvencyResult", "MaxAllowedDeduction");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to MaxAllowedDeductionTooltip.
+        /// </summary>
+        public static string MaxAllowedDeductionTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantSolvencyResult", "MaxAllowedDeductionTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetWarrantSolvencyResult.IncomeSolvency property
+        /// </summary>
+        public static string IncomeSolvency
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantSolvencyResult", "IncomeSolvency");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to IncomeSolvencyTooltip.
+        /// </summary>
+        public static string IncomeSolvencyTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantSolvencyResult", "IncomeSolvencyTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for GetWarrantSolvencyResult.NetSalarySolvency property
+        /// </summary>
+        public static string NetSalarySolvency
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantSolvencyResult", "NetSalarySolvency");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to NetSalarySolvencyTooltip.
+        /// </summary>
+        public static string NetSalarySolvencyTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "GetWarrantSolvencyResult", "NetSalarySolvencyTooltip");
+            }
+        }
+    	#endregion
+    }
+   	#endregion
+
+	#endregion
+
 	#region LoanGenerate filter and result classes
 	#region LoanGenerateFilter meta data class definition
     /// <summary>
@@ -2574,6 +4173,27 @@ namespace Cf.Data.Resources
             get
             {
                 return ResourcesCollection.GetString(Culture, "ProductCalculatorResult", "RateTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for ProductCalculatorResult.AnnualRate property
+        /// </summary>
+        public static string AnnualRate
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ProductCalculatorResult", "AnnualRate");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to AnnualRateTooltip.
+        /// </summary>
+        public static string AnnualRateTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ProductCalculatorResult", "AnnualRateTooltip");
             }
         }
         /// <summary>

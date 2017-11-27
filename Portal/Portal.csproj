@@ -237,6 +237,7 @@
     <Compile Include="MetaData\HtmlHelperExtensions\ToolTipHelper.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\EmployeeLoansReport.cs" />
     <Compile Include="ViewModels\Tables.Extended.cs" />
     <Compile Include="ViewModels\DeepLoadViews.cs" />
     <Compile Include="ViewModels\GuarantorWithStatmentViewModel.cs" />

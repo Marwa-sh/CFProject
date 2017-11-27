@@ -5,339 +5,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Cf.Data
 {
-	#region EmployeeCustom filter and result classes
-	#region EmployeeCustomFilter meta data class definition
-    /// <summary>
-    /// Metadata for EmployeeCustomFilter class
-    /// </summary>
-	public partial class EmployeeCustomFilterMetaData
-	{
-		#region Public properties
-		#endregion
-	}
-	#endregion
-
-
-    #region EmployeeCustomResult1MetaData class definition
-	/// <summary>
-    /// Result class for EmployeeCustom.
-	/// </summary>
-	public partial class EmployeeCustomResult1MetaData
-	{
-		#region Public properties
-		[Display(
-			Name = "Id",
-			ResourceType = typeof(Cf.Data.Resources.EmployeeCustomResult1))
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.EmployeeCustomResult1))]
-		[Required(
-			ErrorMessageResourceName = "RequiredCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		[Range(
-			0,
-			2147483647,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-        public int Id {get; set; }
-		
-		[Display(
-			Name = "FirstName",
-			ResourceType = typeof(Cf.Data.Resources.EmployeeCustomResult1))
-		]
-		[Tooltip("FirstNameTooltip", typeof(Cf.Data.Resources.EmployeeCustomResult1))]
-		[Required(
-			ErrorMessageResourceName = "RequiredCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		[StringLength(
-			50,
-			MinimumLength = 0,
-			ErrorMessageResourceName = "StringLengthCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-        public string FirstName {get; set; }
-		
-		[Display(
-			Name = "LastName",
-			ResourceType = typeof(Cf.Data.Resources.EmployeeCustomResult1))
-		]
-		[Tooltip("LastNameTooltip", typeof(Cf.Data.Resources.EmployeeCustomResult1))]
-		[Required(
-			ErrorMessageResourceName = "RequiredCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		[StringLength(
-			50,
-			MinimumLength = 0,
-			ErrorMessageResourceName = "StringLengthCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-        public string LastName {get; set; }
-		
-		[Display(
-			Name = "FatherName",
-			ResourceType = typeof(Cf.Data.Resources.EmployeeCustomResult1))
-		]
-		[Tooltip("FatherNameTooltip", typeof(Cf.Data.Resources.EmployeeCustomResult1))]
-		[StringLength(
-			50,
-			MinimumLength = 0,
-			ErrorMessageResourceName = "StringLengthCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-        public string FatherName {get; set; }
-		
-		[Display(
-			Name = "MotherName",
-			ResourceType = typeof(Cf.Data.Resources.EmployeeCustomResult1))
-		]
-		[Tooltip("MotherNameTooltip", typeof(Cf.Data.Resources.EmployeeCustomResult1))]
-		[StringLength(
-			50,
-			MinimumLength = 0,
-			ErrorMessageResourceName = "StringLengthCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-        public string MotherName {get; set; }
-		
-		[Display(
-			Name = "BirthDate",
-			ResourceType = typeof(Cf.Data.Resources.EmployeeCustomResult1))
-		]
-		[Tooltip("BirthDateTooltip", typeof(Cf.Data.Resources.EmployeeCustomResult1))]
-		[DataType(
-			DataType.Date,
-			ErrorMessageResourceName = "DateCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-        public Nullable<DateTime> BirthDate {get; set; }
-		
-		[Display(
-			Name = "ExpectedEndDate",
-			ResourceType = typeof(Cf.Data.Resources.EmployeeCustomResult1))
-		]
-		[Tooltip("ExpectedEndDateTooltip", typeof(Cf.Data.Resources.EmployeeCustomResult1))]
-		[DataType(
-			DataType.Date,
-			ErrorMessageResourceName = "DateCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-        public Nullable<DateTime> ExpectedEndDate {get; set; }
-		
-		[Display(
-			Name = "CersStartDate",
-			ResourceType = typeof(Cf.Data.Resources.EmployeeCustomResult1))
-		]
-		[Tooltip("CersStartDateTooltip", typeof(Cf.Data.Resources.EmployeeCustomResult1))]
-		[DataType(
-			DataType.Date,
-			ErrorMessageResourceName = "DateCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-        public Nullable<DateTime> CersStartDate {get; set; }
-		
-		[Display(
-			Name = "CfStartDate",
-			ResourceType = typeof(Cf.Data.Resources.EmployeeCustomResult1))
-		]
-		[Tooltip("CfStartDateTooltip", typeof(Cf.Data.Resources.EmployeeCustomResult1))]
-		[DataType(
-			DataType.Date,
-			ErrorMessageResourceName = "DateCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-        public Nullable<DateTime> CfStartDate {get; set; }
-		
-		[Display(
-			Name = "LeaveDate",
-			ResourceType = typeof(Cf.Data.Resources.EmployeeCustomResult1))
-		]
-		[Tooltip("LeaveDateTooltip", typeof(Cf.Data.Resources.EmployeeCustomResult1))]
-		[DataType(
-			DataType.Date,
-			ErrorMessageResourceName = "DateCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-        public Nullable<DateTime> LeaveDate {get; set; }
-		
-		[Display(
-			Name = "LeaveReason",
-			ResourceType = typeof(Cf.Data.Resources.EmployeeCustomResult1))
-		]
-		[Tooltip("LeaveReasonTooltip", typeof(Cf.Data.Resources.EmployeeCustomResult1))]
-		[StringLength(
-			50,
-			MinimumLength = 0,
-			ErrorMessageResourceName = "StringLengthCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-        public string LeaveReason {get; set; }
-		
-		[Display(
-			Name = "EmployeeStatus",
-			ResourceType = typeof(Cf.Data.Resources.EmployeeCustomResult1))
-		]
-		[Tooltip("EmployeeStatusTooltip", typeof(Cf.Data.Resources.EmployeeCustomResult1))]
-		[Required(
-			ErrorMessageResourceName = "RequiredCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		[Range(
-			0,
-			127,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-        public byte EmployeeStatus {get; set; }
-		
-		[Display(
-			Name = "Department",
-			ResourceType = typeof(Cf.Data.Resources.EmployeeCustomResult1))
-		]
-		[Tooltip("DepartmentTooltip", typeof(Cf.Data.Resources.EmployeeCustomResult1))]
-		[Required(
-			ErrorMessageResourceName = "RequiredCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		[Range(
-			0,
-			2147483647,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-        public int Department {get; set; }
-		
-		[Display(
-			Name = "Notes",
-			ResourceType = typeof(Cf.Data.Resources.EmployeeCustomResult1))
-		]
-		[Tooltip("NotesTooltip", typeof(Cf.Data.Resources.EmployeeCustomResult1))]
-		[StringLength(
-			500,
-			MinimumLength = 0,
-			ErrorMessageResourceName = "StringLengthCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-        public string Notes {get; set; }
-		
-		[Display(
-			Name = "Category",
-			ResourceType = typeof(Cf.Data.Resources.EmployeeCustomResult1))
-		]
-		[Tooltip("CategoryTooltip", typeof(Cf.Data.Resources.EmployeeCustomResult1))]
-		[Required(
-			ErrorMessageResourceName = "RequiredCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		[Range(
-			0,
-			127,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-        public byte Category {get; set; }
-		#endregion
-	}
-	#endregion
-
-    #region EmployeeCustomResult2MetaData class definition
-	/// <summary>
-    /// Result class for EmployeeCustom.
-	/// </summary>
-	public partial class EmployeeCustomResult2MetaData
-	{
-		#region Public properties
-		[Display(
-			Name = "Product",
-			ResourceType = typeof(Cf.Data.Resources.EmployeeCustomResult2))
-		]
-		[Tooltip("ProductTooltip", typeof(Cf.Data.Resources.EmployeeCustomResult2))]
-		[Required(
-			ErrorMessageResourceName = "RequiredCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		[Range(
-			0,
-			2147483647,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-        public int Product {get; set; }
-		
-		[Display(
-			Name = "LoanDecision",
-			ResourceType = typeof(Cf.Data.Resources.EmployeeCustomResult2))
-		]
-		[Tooltip("LoanDecisionTooltip", typeof(Cf.Data.Resources.EmployeeCustomResult2))]
-		[Required(
-			ErrorMessageResourceName = "RequiredCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		[Range(
-			0,
-			2147483647,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-        public int LoanDecision {get; set; }
-		
-		[Display(
-			Name = "LoanType",
-			ResourceType = typeof(Cf.Data.Resources.EmployeeCustomResult2))
-		]
-		[Tooltip("LoanTypeTooltip", typeof(Cf.Data.Resources.EmployeeCustomResult2))]
-		[Required(
-			ErrorMessageResourceName = "RequiredCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		[Range(
-			0,
-			32767,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-        public short LoanType {get; set; }
-		
-		[Display(
-			Name = "LoanGenerationStatus",
-			ResourceType = typeof(Cf.Data.Resources.EmployeeCustomResult2))
-		]
-		[Tooltip("LoanGenerationStatusTooltip", typeof(Cf.Data.Resources.EmployeeCustomResult2))]
-		[Required(
-			ErrorMessageResourceName = "RequiredCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		[Range(
-			0,
-			127,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-        public byte LoanGenerationStatus {get; set; }
-		
-		[Display(
-			Name = "LoanStatus",
-			ResourceType = typeof(Cf.Data.Resources.EmployeeCustomResult2))
-		]
-		[Tooltip("LoanStatusTooltip", typeof(Cf.Data.Resources.EmployeeCustomResult2))]
-		[Required(
-			ErrorMessageResourceName = "RequiredCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		[Range(
-			0,
-			127,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-        public byte LoanStatus {get; set; }
-		#endregion
-	}
-	#endregion
-	#endregion
-
 	#region EmployeeProductCalculator filter and result classes
 	#region EmployeeProductCalculatorFilter meta data class definition
     /// <summary>
@@ -495,23 +162,6 @@ namespace Cf.Data
         public string LeaveReason {get; set; }
 		
 		[Display(
-			Name = "DepartmentId",
-			ResourceType = typeof(Cf.Data.Resources.EmployeeProductCalculatorResult))
-		]
-		[Tooltip("DepartmentIdTooltip", typeof(Cf.Data.Resources.EmployeeProductCalculatorResult))]
-		[Required(
-			ErrorMessageResourceName = "RequiredCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		[Range(
-			0,
-			2147483647,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-        public int DepartmentId {get; set; }
-		
-		[Display(
 			Name = "DepartmentName",
 			ResourceType = typeof(Cf.Data.Resources.EmployeeProductCalculatorResult))
 		]
@@ -527,23 +177,6 @@ namespace Cf.Data
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
         public string DepartmentName {get; set; }
-		
-		[Display(
-			Name = "DepartmentSalaryWorkPlaceId",
-			ResourceType = typeof(Cf.Data.Resources.EmployeeProductCalculatorResult))
-		]
-		[Tooltip("DepartmentSalaryWorkPlaceIdTooltip", typeof(Cf.Data.Resources.EmployeeProductCalculatorResult))]
-		[Required(
-			ErrorMessageResourceName = "RequiredCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		[Range(
-			0,
-			2147483647,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-        public int DepartmentSalaryWorkPlaceId {get; set; }
 		
 		[Display(
 			Name = "DepartmentSalaryWorkPlaceName",
@@ -563,23 +196,6 @@ namespace Cf.Data
         public string DepartmentSalaryWorkPlaceName {get; set; }
 		
 		[Display(
-			Name = "EmployeeStatusId",
-			ResourceType = typeof(Cf.Data.Resources.EmployeeProductCalculatorResult))
-		]
-		[Tooltip("EmployeeStatusIdTooltip", typeof(Cf.Data.Resources.EmployeeProductCalculatorResult))]
-		[Required(
-			ErrorMessageResourceName = "RequiredCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		[Range(
-			0,
-			127,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-        public byte EmployeeStatusId {get; set; }
-		
-		[Display(
 			Name = "EmployeeStatusName",
 			ResourceType = typeof(Cf.Data.Resources.EmployeeProductCalculatorResult))
 		]
@@ -595,23 +211,6 @@ namespace Cf.Data
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
         public string EmployeeStatusName {get; set; }
-		
-		[Display(
-			Name = "CategoryId",
-			ResourceType = typeof(Cf.Data.Resources.EmployeeProductCalculatorResult))
-		]
-		[Tooltip("CategoryIdTooltip", typeof(Cf.Data.Resources.EmployeeProductCalculatorResult))]
-		[Required(
-			ErrorMessageResourceName = "RequiredCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		[Range(
-			0,
-			127,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-        public byte CategoryId {get; set; }
 		
 		[Display(
 			Name = "CategoryName",
@@ -723,6 +322,13 @@ namespace Cf.Data
 		]
 		[Tooltip("RateTooltip", typeof(Cf.Data.Resources.EmployeeProductCalculatorResult))]
         public Nullable<double> Rate {get; set; }
+		
+		[Display(
+			Name = "AnnualRate",
+			ResourceType = typeof(Cf.Data.Resources.EmployeeProductCalculatorResult))
+		]
+		[Tooltip("AnnualRateTooltip", typeof(Cf.Data.Resources.EmployeeProductCalculatorResult))]
+        public Nullable<decimal> AnnualRate {get; set; }
 		
 		[Display(
 			Name = "GuarantorsCount",
@@ -868,6 +474,289 @@ namespace Cf.Data
 	#endregion
 	#endregion
 
+	#region GetDebts filter and result classes
+	#region GetDebtsFilter meta data class definition
+    /// <summary>
+    /// Metadata for GetDebtsFilter class
+    /// </summary>
+	public partial class GetDebtsFilterMetaData
+	{
+		#region Public properties
+        /// <summary>
+        /// Metadata for GetDebtsFilter.EmployeeId property
+        /// </summary>
+		[Display(
+			Name = "EmployeeId",
+			ResourceType = typeof(Cf.Data.Resources.GetDebtsFilter))
+		]
+		[Tooltip("EmployeeIdTooltip", typeof(Cf.Data.Resources.GetDebtsFilter))]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<int> EmployeeId { get; set; }
+		
+        /// <summary>
+        /// Metadata for GetDebtsFilter.Date property
+        /// </summary>
+		[Display(
+			Name = "Date",
+			ResourceType = typeof(Cf.Data.Resources.GetDebtsFilter))
+		]
+		[Tooltip("DateTooltip", typeof(Cf.Data.Resources.GetDebtsFilter))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<DateTime> Date { get; set; }
+		#endregion
+	}
+	#endregion
+
+
+    #region GetDebtsResultMetaData class definition
+	/// <summary>
+    /// Result class for GetDebts.
+	/// </summary>
+	public partial class GetDebtsResultMetaData
+	{
+		#region Public properties
+		[Display(
+			Name = "Id",
+			ResourceType = typeof(Cf.Data.Resources.GetDebtsResult))
+		]
+		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.GetDebtsResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public int Id {get; set; }
+		
+		[Display(
+			Name = "EmployeeId",
+			ResourceType = typeof(Cf.Data.Resources.GetDebtsResult))
+		]
+		[Tooltip("EmployeeIdTooltip", typeof(Cf.Data.Resources.GetDebtsResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public int EmployeeId {get; set; }
+		
+		[Display(
+			Name = "OriginalAmount",
+			ResourceType = typeof(Cf.Data.Resources.GetDebtsResult))
+		]
+		[Tooltip("OriginalAmountTooltip", typeof(Cf.Data.Resources.GetDebtsResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public decimal OriginalAmount {get; set; }
+		
+		[Display(
+			Name = "RemainingAmount",
+			ResourceType = typeof(Cf.Data.Resources.GetDebtsResult))
+		]
+		[Tooltip("RemainingAmountTooltip", typeof(Cf.Data.Resources.GetDebtsResult))]
+        public Nullable<decimal> RemainingAmount {get; set; }
+		
+		[Display(
+			Name = "Installment",
+			ResourceType = typeof(Cf.Data.Resources.GetDebtsResult))
+		]
+		[Tooltip("InstallmentTooltip", typeof(Cf.Data.Resources.GetDebtsResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public decimal Installment {get; set; }
+		#endregion
+	}
+	#endregion
+	#endregion
+
+	#region GetDebtScalar filter and result classes
+	#region GetDebtScalarFilter meta data class definition
+    /// <summary>
+    /// Metadata for GetDebtScalarFilter class
+    /// </summary>
+	public partial class GetDebtScalarFilterMetaData
+	{
+		#region Public properties
+        /// <summary>
+        /// Metadata for GetDebtScalarFilter.Date property
+        /// </summary>
+		[Display(
+			Name = "Date",
+			ResourceType = typeof(Cf.Data.Resources.GetDebtScalarFilter))
+		]
+		[Tooltip("DateTooltip", typeof(Cf.Data.Resources.GetDebtScalarFilter))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<DateTime> Date { get; set; }
+		
+        /// <summary>
+        /// Metadata for GetDebtScalarFilter.EmployeeId property
+        /// </summary>
+		[Display(
+			Name = "EmployeeId",
+			ResourceType = typeof(Cf.Data.Resources.GetDebtScalarFilter))
+		]
+		[Tooltip("EmployeeIdTooltip", typeof(Cf.Data.Resources.GetDebtScalarFilter))]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<int> EmployeeId { get; set; }
+		#endregion
+	}
+	#endregion
+
+	#endregion
+
+	#region GetDebtSolvency filter and result classes
+	#region GetDebtSolvencyFilter meta data class definition
+    /// <summary>
+    /// Metadata for GetDebtSolvencyFilter class
+    /// </summary>
+	public partial class GetDebtSolvencyFilterMetaData
+	{
+		#region Public properties
+        /// <summary>
+        /// Metadata for GetDebtSolvencyFilter.ProductId property
+        /// </summary>
+		[Display(
+			Name = "ProductId",
+			ResourceType = typeof(Cf.Data.Resources.GetDebtSolvencyFilter))
+		]
+		[Tooltip("ProductIdTooltip", typeof(Cf.Data.Resources.GetDebtSolvencyFilter))]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<int> ProductId { get; set; }
+		#endregion
+	}
+	#endregion
+
+
+    #region GetDebtSolvencyResultMetaData class definition
+	/// <summary>
+    /// Result class for GetDebtSolvency.
+	/// </summary>
+	public partial class GetDebtSolvencyResultMetaData
+	{
+		#region Public properties
+		[Display(
+			Name = "EmployeeId",
+			ResourceType = typeof(Cf.Data.Resources.GetDebtSolvencyResult))
+		]
+		[Tooltip("EmployeeIdTooltip", typeof(Cf.Data.Resources.GetDebtSolvencyResult))]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<int> EmployeeId {get; set; }
+		
+		[Display(
+			Name = "DebtRemainingAmount",
+			ResourceType = typeof(Cf.Data.Resources.GetDebtSolvencyResult))
+		]
+		[Tooltip("DebtRemainingAmountTooltip", typeof(Cf.Data.Resources.GetDebtSolvencyResult))]
+        public Nullable<decimal> DebtRemainingAmount {get; set; }
+		
+		[Display(
+			Name = "WarrantRemainingAmount",
+			ResourceType = typeof(Cf.Data.Resources.GetDebtSolvencyResult))
+		]
+		[Tooltip("WarrantRemainingAmountTooltip", typeof(Cf.Data.Resources.GetDebtSolvencyResult))]
+        public Nullable<decimal> WarrantRemainingAmount {get; set; }
+		
+		[Display(
+			Name = "TotalAmount",
+			ResourceType = typeof(Cf.Data.Resources.GetDebtSolvencyResult))
+		]
+		[Tooltip("TotalAmountTooltip", typeof(Cf.Data.Resources.GetDebtSolvencyResult))]
+        public Nullable<decimal> TotalAmount {get; set; }
+		
+		[Display(
+			Name = "DebtInstallment",
+			ResourceType = typeof(Cf.Data.Resources.GetDebtSolvencyResult))
+		]
+		[Tooltip("DebtInstallmentTooltip", typeof(Cf.Data.Resources.GetDebtSolvencyResult))]
+        public Nullable<decimal> DebtInstallment {get; set; }
+		
+		[Display(
+			Name = "WarrantInstallment",
+			ResourceType = typeof(Cf.Data.Resources.GetDebtSolvencyResult))
+		]
+		[Tooltip("WarrantInstallmentTooltip", typeof(Cf.Data.Resources.GetDebtSolvencyResult))]
+        public Nullable<decimal> WarrantInstallment {get; set; }
+		
+		[Display(
+			Name = "TotalInstallment",
+			ResourceType = typeof(Cf.Data.Resources.GetDebtSolvencyResult))
+		]
+		[Tooltip("TotalInstallmentTooltip", typeof(Cf.Data.Resources.GetDebtSolvencyResult))]
+        public Nullable<decimal> TotalInstallment {get; set; }
+		
+		[Display(
+			Name = "MaxAllowedDebt",
+			ResourceType = typeof(Cf.Data.Resources.GetDebtSolvencyResult))
+		]
+		[Tooltip("MaxAllowedDebtTooltip", typeof(Cf.Data.Resources.GetDebtSolvencyResult))]
+        public Nullable<decimal> MaxAllowedDebt {get; set; }
+		
+		[Display(
+			Name = "MaxAllowedDeduction",
+			ResourceType = typeof(Cf.Data.Resources.GetDebtSolvencyResult))
+		]
+		[Tooltip("MaxAllowedDeductionTooltip", typeof(Cf.Data.Resources.GetDebtSolvencyResult))]
+        public Nullable<decimal> MaxAllowedDeduction {get; set; }
+		
+		[Display(
+			Name = "IncomeSolvency",
+			ResourceType = typeof(Cf.Data.Resources.GetDebtSolvencyResult))
+		]
+		[Tooltip("IncomeSolvencyTooltip", typeof(Cf.Data.Resources.GetDebtSolvencyResult))]
+        public Nullable<decimal> IncomeSolvency {get; set; }
+		
+		[Display(
+			Name = "NetSalarySolvency",
+			ResourceType = typeof(Cf.Data.Resources.GetDebtSolvencyResult))
+		]
+		[Tooltip("NetSalarySolvencyTooltip", typeof(Cf.Data.Resources.GetDebtSolvencyResult))]
+        public Nullable<decimal> NetSalarySolvency {get; set; }
+		#endregion
+	}
+	#endregion
+	#endregion
+
 	#region GetDueProfit filter and result classes
 	#region GetDueProfitFilter meta data class definition
     /// <summary>
@@ -915,6 +804,572 @@ namespace Cf.Data
 	}
 	#endregion
 
+	#endregion
+
+	#region GetEmployeeDebts filter and result classes
+	#region GetEmployeeDebtsFilter meta data class definition
+    /// <summary>
+    /// Metadata for GetEmployeeDebtsFilter class
+    /// </summary>
+	public partial class GetEmployeeDebtsFilterMetaData
+	{
+		#region Public properties
+        /// <summary>
+        /// Metadata for GetEmployeeDebtsFilter.EmployeeId property
+        /// </summary>
+		[Display(
+			Name = "EmployeeId",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeDebtsFilter))
+		]
+		[Tooltip("EmployeeIdTooltip", typeof(Cf.Data.Resources.GetEmployeeDebtsFilter))]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<int> EmployeeId { get; set; }
+		
+        /// <summary>
+        /// Metadata for GetEmployeeDebtsFilter.Date property
+        /// </summary>
+		[Display(
+			Name = "Date",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeDebtsFilter))
+		]
+		[Tooltip("DateTooltip", typeof(Cf.Data.Resources.GetEmployeeDebtsFilter))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<DateTime> Date { get; set; }
+		#endregion
+	}
+	#endregion
+
+
+    #region GetEmployeeDebtsResultMetaData class definition
+	/// <summary>
+    /// Result class for GetEmployeeDebts.
+	/// </summary>
+	public partial class GetEmployeeDebtsResultMetaData
+	{
+		#region Public properties
+		[Display(
+			Name = "EmployeeId",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeDebtsResult))
+		]
+		[Tooltip("EmployeeIdTooltip", typeof(Cf.Data.Resources.GetEmployeeDebtsResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public int EmployeeId {get; set; }
+		
+		[Display(
+			Name = "OriginalAmount",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeDebtsResult))
+		]
+		[Tooltip("OriginalAmountTooltip", typeof(Cf.Data.Resources.GetEmployeeDebtsResult))]
+        public Nullable<decimal> OriginalAmount {get; set; }
+		
+		[Display(
+			Name = "RemainingAmount",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeDebtsResult))
+		]
+		[Tooltip("RemainingAmountTooltip", typeof(Cf.Data.Resources.GetEmployeeDebtsResult))]
+        public Nullable<decimal> RemainingAmount {get; set; }
+		
+		[Display(
+			Name = "Installment",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeDebtsResult))
+		]
+		[Tooltip("InstallmentTooltip", typeof(Cf.Data.Resources.GetEmployeeDebtsResult))]
+        public Nullable<decimal> Installment {get; set; }
+		#endregion
+	}
+	#endregion
+	#endregion
+
+	#region GetEmployeeSolvency filter and result classes
+	#region GetEmployeeSolvencyFilter meta data class definition
+    /// <summary>
+    /// Metadata for GetEmployeeSolvencyFilter class
+    /// </summary>
+	public partial class GetEmployeeSolvencyFilterMetaData
+	{
+		#region Public properties
+        /// <summary>
+        /// Metadata for GetEmployeeSolvencyFilter.EmployeeId property
+        /// </summary>
+		[Display(
+			Name = "EmployeeId",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeSolvencyFilter))
+		]
+		[Tooltip("EmployeeIdTooltip", typeof(Cf.Data.Resources.GetEmployeeSolvencyFilter))]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<int> EmployeeId { get; set; }
+		
+        /// <summary>
+        /// Metadata for GetEmployeeSolvencyFilter.Date property
+        /// </summary>
+		[Display(
+			Name = "Date",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeSolvencyFilter))
+		]
+		[Tooltip("DateTooltip", typeof(Cf.Data.Resources.GetEmployeeSolvencyFilter))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<DateTime> Date { get; set; }
+		
+        /// <summary>
+        /// Metadata for GetEmployeeSolvencyFilter.Amount property
+        /// </summary>
+		[Display(
+			Name = "Amount",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeSolvencyFilter))
+		]
+		[Tooltip("AmountTooltip", typeof(Cf.Data.Resources.GetEmployeeSolvencyFilter))]
+        public Nullable<decimal> Amount { get; set; }
+		
+        /// <summary>
+        /// Metadata for GetEmployeeSolvencyFilter.Installment property
+        /// </summary>
+		[Display(
+			Name = "Installment",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeSolvencyFilter))
+		]
+		[Tooltip("InstallmentTooltip", typeof(Cf.Data.Resources.GetEmployeeSolvencyFilter))]
+        public Nullable<decimal> Installment { get; set; }
+		
+        /// <summary>
+        /// Metadata for GetEmployeeSolvencyFilter.GrossSalary property
+        /// </summary>
+		[Display(
+			Name = "GrossSalary",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeSolvencyFilter))
+		]
+		[Tooltip("GrossSalaryTooltip", typeof(Cf.Data.Resources.GetEmployeeSolvencyFilter))]
+        public Nullable<decimal> GrossSalary { get; set; }
+		
+        /// <summary>
+        /// Metadata for GetEmployeeSolvencyFilter.NetSalary property
+        /// </summary>
+		[Display(
+			Name = "NetSalary",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeSolvencyFilter))
+		]
+		[Tooltip("NetSalaryTooltip", typeof(Cf.Data.Resources.GetEmployeeSolvencyFilter))]
+        public Nullable<decimal> NetSalary { get; set; }
+		#endregion
+	}
+	#endregion
+
+
+    #region GetEmployeeSolvencyResultMetaData class definition
+	/// <summary>
+    /// Result class for GetEmployeeSolvency.
+	/// </summary>
+	public partial class GetEmployeeSolvencyResultMetaData
+	{
+		#region Public properties
+		[Display(
+			Name = "EmployeeId",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeSolvencyResult))
+		]
+		[Tooltip("EmployeeIdTooltip", typeof(Cf.Data.Resources.GetEmployeeSolvencyResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public int EmployeeId {get; set; }
+		
+		[Display(
+			Name = "DebtRemainingAmount",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeSolvencyResult))
+		]
+		[Tooltip("DebtRemainingAmountTooltip", typeof(Cf.Data.Resources.GetEmployeeSolvencyResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public decimal DebtRemainingAmount {get; set; }
+		
+		[Display(
+			Name = "WarrantRemainingAmount",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeSolvencyResult))
+		]
+		[Tooltip("WarrantRemainingAmountTooltip", typeof(Cf.Data.Resources.GetEmployeeSolvencyResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public decimal WarrantRemainingAmount {get; set; }
+		
+		[Display(
+			Name = "TotalAmount",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeSolvencyResult))
+		]
+		[Tooltip("TotalAmountTooltip", typeof(Cf.Data.Resources.GetEmployeeSolvencyResult))]
+        public Nullable<decimal> TotalAmount {get; set; }
+		
+		[Display(
+			Name = "DebtInstallment",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeSolvencyResult))
+		]
+		[Tooltip("DebtInstallmentTooltip", typeof(Cf.Data.Resources.GetEmployeeSolvencyResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public decimal DebtInstallment {get; set; }
+		
+		[Display(
+			Name = "WarrantInstallment",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeSolvencyResult))
+		]
+		[Tooltip("WarrantInstallmentTooltip", typeof(Cf.Data.Resources.GetEmployeeSolvencyResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public decimal WarrantInstallment {get; set; }
+		
+		[Display(
+			Name = "TotalInstallment",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeSolvencyResult))
+		]
+		[Tooltip("TotalInstallmentTooltip", typeof(Cf.Data.Resources.GetEmployeeSolvencyResult))]
+        public Nullable<decimal> TotalInstallment {get; set; }
+		
+		[Display(
+			Name = "MaxAllowedDebt",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeSolvencyResult))
+		]
+		[Tooltip("MaxAllowedDebtTooltip", typeof(Cf.Data.Resources.GetEmployeeSolvencyResult))]
+        public Nullable<decimal> MaxAllowedDebt {get; set; }
+		
+		[Display(
+			Name = "MaxAllowedDeduction",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeSolvencyResult))
+		]
+		[Tooltip("MaxAllowedDeductionTooltip", typeof(Cf.Data.Resources.GetEmployeeSolvencyResult))]
+        public Nullable<decimal> MaxAllowedDeduction {get; set; }
+		
+		[Display(
+			Name = "IncomeSolvency",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeSolvencyResult))
+		]
+		[Tooltip("IncomeSolvencyTooltip", typeof(Cf.Data.Resources.GetEmployeeSolvencyResult))]
+        public Nullable<decimal> IncomeSolvency {get; set; }
+		
+		[Display(
+			Name = "NetSalarySolvency",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeSolvencyResult))
+		]
+		[Tooltip("NetSalarySolvencyTooltip", typeof(Cf.Data.Resources.GetEmployeeSolvencyResult))]
+        public Nullable<decimal> NetSalarySolvency {get; set; }
+		#endregion
+	}
+	#endregion
+	#endregion
+
+	#region GetEmployeeSumDebts filter and result classes
+	#region GetEmployeeSumDebtsFilter meta data class definition
+    /// <summary>
+    /// Metadata for GetEmployeeSumDebtsFilter class
+    /// </summary>
+	public partial class GetEmployeeSumDebtsFilterMetaData
+	{
+		#region Public properties
+        /// <summary>
+        /// Metadata for GetEmployeeSumDebtsFilter.EmployeeId property
+        /// </summary>
+		[Display(
+			Name = "EmployeeId",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeSumDebtsFilter))
+		]
+		[Tooltip("EmployeeIdTooltip", typeof(Cf.Data.Resources.GetEmployeeSumDebtsFilter))]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<int> EmployeeId { get; set; }
+		
+        /// <summary>
+        /// Metadata for GetEmployeeSumDebtsFilter.Date property
+        /// </summary>
+		[Display(
+			Name = "Date",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeSumDebtsFilter))
+		]
+		[Tooltip("DateTooltip", typeof(Cf.Data.Resources.GetEmployeeSumDebtsFilter))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<DateTime> Date { get; set; }
+		#endregion
+	}
+	#endregion
+
+
+    #region GetEmployeeSumDebtsResultMetaData class definition
+	/// <summary>
+    /// Result class for GetEmployeeSumDebts.
+	/// </summary>
+	public partial class GetEmployeeSumDebtsResultMetaData
+	{
+		#region Public properties
+		[Display(
+			Name = "EmployeeId",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeSumDebtsResult))
+		]
+		[Tooltip("EmployeeIdTooltip", typeof(Cf.Data.Resources.GetEmployeeSumDebtsResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public int EmployeeId {get; set; }
+		
+		[Display(
+			Name = "HasDebts",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeSumDebtsResult))
+		]
+		[Tooltip("HasDebtsTooltip", typeof(Cf.Data.Resources.GetEmployeeSumDebtsResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public int HasDebts {get; set; }
+		
+		[Display(
+			Name = "DebtOriginalAmount",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeSumDebtsResult))
+		]
+		[Tooltip("DebtOriginalAmountTooltip", typeof(Cf.Data.Resources.GetEmployeeSumDebtsResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public decimal DebtOriginalAmount {get; set; }
+		
+		[Display(
+			Name = "DebtRemainingAmount",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeSumDebtsResult))
+		]
+		[Tooltip("DebtRemainingAmountTooltip", typeof(Cf.Data.Resources.GetEmployeeSumDebtsResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public decimal DebtRemainingAmount {get; set; }
+		
+		[Display(
+			Name = "DebtInstallment",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeSumDebtsResult))
+		]
+		[Tooltip("DebtInstallmentTooltip", typeof(Cf.Data.Resources.GetEmployeeSumDebtsResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public decimal DebtInstallment {get; set; }
+		
+		[Display(
+			Name = "HasWarrants",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeSumDebtsResult))
+		]
+		[Tooltip("HasWarrantsTooltip", typeof(Cf.Data.Resources.GetEmployeeSumDebtsResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public int HasWarrants {get; set; }
+		
+		[Display(
+			Name = "WarrantOriginalAmount",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeSumDebtsResult))
+		]
+		[Tooltip("WarrantOriginalAmountTooltip", typeof(Cf.Data.Resources.GetEmployeeSumDebtsResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public decimal WarrantOriginalAmount {get; set; }
+		
+		[Display(
+			Name = "WarrantRemainingAmount",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeSumDebtsResult))
+		]
+		[Tooltip("WarrantRemainingAmountTooltip", typeof(Cf.Data.Resources.GetEmployeeSumDebtsResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public decimal WarrantRemainingAmount {get; set; }
+		
+		[Display(
+			Name = "WarrantInstallment",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeSumDebtsResult))
+		]
+		[Tooltip("WarrantInstallmentTooltip", typeof(Cf.Data.Resources.GetEmployeeSumDebtsResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public decimal WarrantInstallment {get; set; }
+		
+		[Display(
+			Name = "TotalAmount",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeSumDebtsResult))
+		]
+		[Tooltip("TotalAmountTooltip", typeof(Cf.Data.Resources.GetEmployeeSumDebtsResult))]
+        public Nullable<decimal> TotalAmount {get; set; }
+		
+		[Display(
+			Name = "TotalInstallment",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeSumDebtsResult))
+		]
+		[Tooltip("TotalInstallmentTooltip", typeof(Cf.Data.Resources.GetEmployeeSumDebtsResult))]
+        public Nullable<decimal> TotalInstallment {get; set; }
+		#endregion
+	}
+	#endregion
+	#endregion
+
+	#region GetEmployeeWarrants filter and result classes
+	#region GetEmployeeWarrantsFilter meta data class definition
+    /// <summary>
+    /// Metadata for GetEmployeeWarrantsFilter class
+    /// </summary>
+	public partial class GetEmployeeWarrantsFilterMetaData
+	{
+		#region Public properties
+        /// <summary>
+        /// Metadata for GetEmployeeWarrantsFilter.EmployeeId property
+        /// </summary>
+		[Display(
+			Name = "EmployeeId",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeWarrantsFilter))
+		]
+		[Tooltip("EmployeeIdTooltip", typeof(Cf.Data.Resources.GetEmployeeWarrantsFilter))]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<int> EmployeeId { get; set; }
+		
+        /// <summary>
+        /// Metadata for GetEmployeeWarrantsFilter.Date property
+        /// </summary>
+		[Display(
+			Name = "Date",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeWarrantsFilter))
+		]
+		[Tooltip("DateTooltip", typeof(Cf.Data.Resources.GetEmployeeWarrantsFilter))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<DateTime> Date { get; set; }
+		#endregion
+	}
+	#endregion
+
+
+    #region GetEmployeeWarrantsResultMetaData class definition
+	/// <summary>
+    /// Result class for GetEmployeeWarrants.
+	/// </summary>
+	public partial class GetEmployeeWarrantsResultMetaData
+	{
+		#region Public properties
+		[Display(
+			Name = "EmployeeId",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeWarrantsResult))
+		]
+		[Tooltip("EmployeeIdTooltip", typeof(Cf.Data.Resources.GetEmployeeWarrantsResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public int EmployeeId {get; set; }
+		
+		[Display(
+			Name = "OriginalAmount",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeWarrantsResult))
+		]
+		[Tooltip("OriginalAmountTooltip", typeof(Cf.Data.Resources.GetEmployeeWarrantsResult))]
+        public Nullable<decimal> OriginalAmount {get; set; }
+		
+		[Display(
+			Name = "RemainingAmount",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeWarrantsResult))
+		]
+		[Tooltip("RemainingAmountTooltip", typeof(Cf.Data.Resources.GetEmployeeWarrantsResult))]
+        public Nullable<decimal> RemainingAmount {get; set; }
+		
+		[Display(
+			Name = "Installment",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeWarrantsResult))
+		]
+		[Tooltip("InstallmentTooltip", typeof(Cf.Data.Resources.GetEmployeeWarrantsResult))]
+        public Nullable<decimal> Installment {get; set; }
+		#endregion
+	}
+	#endregion
 	#endregion
 
 	#region GetFinancialRatio filter and result classes
@@ -1061,6 +1516,23 @@ namespace Cf.Data
 	{
 		#region Public properties
 		[Display(
+			Name = "RefundableProductId",
+			ResourceType = typeof(Cf.Data.Resources.GetInstallmentPaidAmountsResult))
+		]
+		[Tooltip("RefundableProductIdTooltip", typeof(Cf.Data.Resources.GetInstallmentPaidAmountsResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public int RefundableProductId {get; set; }
+		
+		[Display(
 			Name = "InstallmentId",
 			ResourceType = typeof(Cf.Data.Resources.GetInstallmentPaidAmountsResult))
 		]
@@ -1127,6 +1599,23 @@ namespace Cf.Data
 	public partial class GetInstallmentsResultMetaData
 	{
 		#region Public properties
+		[Display(
+			Name = "RefundableProductId",
+			ResourceType = typeof(Cf.Data.Resources.GetInstallmentsResult))
+		]
+		[Tooltip("RefundableProductIdTooltip", typeof(Cf.Data.Resources.GetInstallmentsResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public int RefundableProductId {get; set; }
+		
 		[Display(
 			Name = "Id",
 			ResourceType = typeof(Cf.Data.Resources.GetInstallmentsResult))
@@ -1444,6 +1933,270 @@ namespace Cf.Data
 	#endregion
 	#endregion
 
+	#region GetWarrants filter and result classes
+	#region GetWarrantsFilter meta data class definition
+    /// <summary>
+    /// Metadata for GetWarrantsFilter class
+    /// </summary>
+	public partial class GetWarrantsFilterMetaData
+	{
+		#region Public properties
+        /// <summary>
+        /// Metadata for GetWarrantsFilter.EmployeeId property
+        /// </summary>
+		[Display(
+			Name = "EmployeeId",
+			ResourceType = typeof(Cf.Data.Resources.GetWarrantsFilter))
+		]
+		[Tooltip("EmployeeIdTooltip", typeof(Cf.Data.Resources.GetWarrantsFilter))]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<int> EmployeeId { get; set; }
+		
+        /// <summary>
+        /// Metadata for GetWarrantsFilter.Date property
+        /// </summary>
+		[Display(
+			Name = "Date",
+			ResourceType = typeof(Cf.Data.Resources.GetWarrantsFilter))
+		]
+		[Tooltip("DateTooltip", typeof(Cf.Data.Resources.GetWarrantsFilter))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<DateTime> Date { get; set; }
+		#endregion
+	}
+	#endregion
+
+
+    #region GetWarrantsResultMetaData class definition
+	/// <summary>
+    /// Result class for GetWarrants.
+	/// </summary>
+	public partial class GetWarrantsResultMetaData
+	{
+		#region Public properties
+		[Display(
+			Name = "Id",
+			ResourceType = typeof(Cf.Data.Resources.GetWarrantsResult))
+		]
+		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.GetWarrantsResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public int Id {get; set; }
+		
+		[Display(
+			Name = "DebtId",
+			ResourceType = typeof(Cf.Data.Resources.GetWarrantsResult))
+		]
+		[Tooltip("DebtIdTooltip", typeof(Cf.Data.Resources.GetWarrantsResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public int DebtId {get; set; }
+		
+		[Display(
+			Name = "EmployeeId",
+			ResourceType = typeof(Cf.Data.Resources.GetWarrantsResult))
+		]
+		[Tooltip("EmployeeIdTooltip", typeof(Cf.Data.Resources.GetWarrantsResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public int EmployeeId {get; set; }
+		
+		[Display(
+			Name = "OriginalAmount",
+			ResourceType = typeof(Cf.Data.Resources.GetWarrantsResult))
+		]
+		[Tooltip("OriginalAmountTooltip", typeof(Cf.Data.Resources.GetWarrantsResult))]
+        public Nullable<decimal> OriginalAmount {get; set; }
+		
+		[Display(
+			Name = "RemainingAmount",
+			ResourceType = typeof(Cf.Data.Resources.GetWarrantsResult))
+		]
+		[Tooltip("RemainingAmountTooltip", typeof(Cf.Data.Resources.GetWarrantsResult))]
+        public Nullable<decimal> RemainingAmount {get; set; }
+		
+		[Display(
+			Name = "Installment",
+			ResourceType = typeof(Cf.Data.Resources.GetWarrantsResult))
+		]
+		[Tooltip("InstallmentTooltip", typeof(Cf.Data.Resources.GetWarrantsResult))]
+        public Nullable<decimal> Installment {get; set; }
+		#endregion
+	}
+	#endregion
+	#endregion
+
+	#region GetWarrantSolvency filter and result classes
+	#region GetWarrantSolvencyFilter meta data class definition
+    /// <summary>
+    /// Metadata for GetWarrantSolvencyFilter class
+    /// </summary>
+	public partial class GetWarrantSolvencyFilterMetaData
+	{
+		#region Public properties
+        /// <summary>
+        /// Metadata for GetWarrantSolvencyFilter.EmployeeId property
+        /// </summary>
+		[Display(
+			Name = "EmployeeId",
+			ResourceType = typeof(Cf.Data.Resources.GetWarrantSolvencyFilter))
+		]
+		[Tooltip("EmployeeIdTooltip", typeof(Cf.Data.Resources.GetWarrantSolvencyFilter))]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<int> EmployeeId { get; set; }
+		
+        /// <summary>
+        /// Metadata for GetWarrantSolvencyFilter.ProductId property
+        /// </summary>
+		[Display(
+			Name = "ProductId",
+			ResourceType = typeof(Cf.Data.Resources.GetWarrantSolvencyFilter))
+		]
+		[Tooltip("ProductIdTooltip", typeof(Cf.Data.Resources.GetWarrantSolvencyFilter))]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<int> ProductId { get; set; }
+		#endregion
+	}
+	#endregion
+
+
+    #region GetWarrantSolvencyResultMetaData class definition
+	/// <summary>
+    /// Result class for GetWarrantSolvency.
+	/// </summary>
+	public partial class GetWarrantSolvencyResultMetaData
+	{
+		#region Public properties
+		[Display(
+			Name = "EmployeeId",
+			ResourceType = typeof(Cf.Data.Resources.GetWarrantSolvencyResult))
+		]
+		[Tooltip("EmployeeIdTooltip", typeof(Cf.Data.Resources.GetWarrantSolvencyResult))]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<int> EmployeeId {get; set; }
+		
+		[Display(
+			Name = "DebtRemainingAmount",
+			ResourceType = typeof(Cf.Data.Resources.GetWarrantSolvencyResult))
+		]
+		[Tooltip("DebtRemainingAmountTooltip", typeof(Cf.Data.Resources.GetWarrantSolvencyResult))]
+        public Nullable<decimal> DebtRemainingAmount {get; set; }
+		
+		[Display(
+			Name = "WarrantRemainingAmount",
+			ResourceType = typeof(Cf.Data.Resources.GetWarrantSolvencyResult))
+		]
+		[Tooltip("WarrantRemainingAmountTooltip", typeof(Cf.Data.Resources.GetWarrantSolvencyResult))]
+        public Nullable<decimal> WarrantRemainingAmount {get; set; }
+		
+		[Display(
+			Name = "TotalAmount",
+			ResourceType = typeof(Cf.Data.Resources.GetWarrantSolvencyResult))
+		]
+		[Tooltip("TotalAmountTooltip", typeof(Cf.Data.Resources.GetWarrantSolvencyResult))]
+        public Nullable<decimal> TotalAmount {get; set; }
+		
+		[Display(
+			Name = "DebtInstallment",
+			ResourceType = typeof(Cf.Data.Resources.GetWarrantSolvencyResult))
+		]
+		[Tooltip("DebtInstallmentTooltip", typeof(Cf.Data.Resources.GetWarrantSolvencyResult))]
+        public Nullable<decimal> DebtInstallment {get; set; }
+		
+		[Display(
+			Name = "WarrantInstallment",
+			ResourceType = typeof(Cf.Data.Resources.GetWarrantSolvencyResult))
+		]
+		[Tooltip("WarrantInstallmentTooltip", typeof(Cf.Data.Resources.GetWarrantSolvencyResult))]
+        public Nullable<decimal> WarrantInstallment {get; set; }
+		
+		[Display(
+			Name = "TotalInstallment",
+			ResourceType = typeof(Cf.Data.Resources.GetWarrantSolvencyResult))
+		]
+		[Tooltip("TotalInstallmentTooltip", typeof(Cf.Data.Resources.GetWarrantSolvencyResult))]
+        public Nullable<decimal> TotalInstallment {get; set; }
+		
+		[Display(
+			Name = "MaxAllowedDebt",
+			ResourceType = typeof(Cf.Data.Resources.GetWarrantSolvencyResult))
+		]
+		[Tooltip("MaxAllowedDebtTooltip", typeof(Cf.Data.Resources.GetWarrantSolvencyResult))]
+        public Nullable<decimal> MaxAllowedDebt {get; set; }
+		
+		[Display(
+			Name = "MaxAllowedDeduction",
+			ResourceType = typeof(Cf.Data.Resources.GetWarrantSolvencyResult))
+		]
+		[Tooltip("MaxAllowedDeductionTooltip", typeof(Cf.Data.Resources.GetWarrantSolvencyResult))]
+        public Nullable<decimal> MaxAllowedDeduction {get; set; }
+		
+		[Display(
+			Name = "IncomeSolvency",
+			ResourceType = typeof(Cf.Data.Resources.GetWarrantSolvencyResult))
+		]
+		[Tooltip("IncomeSolvencyTooltip", typeof(Cf.Data.Resources.GetWarrantSolvencyResult))]
+        public Nullable<decimal> IncomeSolvency {get; set; }
+		
+		[Display(
+			Name = "NetSalarySolvency",
+			ResourceType = typeof(Cf.Data.Resources.GetWarrantSolvencyResult))
+		]
+		[Tooltip("NetSalarySolvencyTooltip", typeof(Cf.Data.Resources.GetWarrantSolvencyResult))]
+        public Nullable<decimal> NetSalarySolvency {get; set; }
+		#endregion
+	}
+	#endregion
+	#endregion
+
 	#region LoanGenerate filter and result classes
 	#region LoanGenerateFilter meta data class definition
     /// <summary>
@@ -1613,6 +2366,13 @@ namespace Cf.Data
 		]
 		[Tooltip("RateTooltip", typeof(Cf.Data.Resources.ProductCalculatorResult))]
         public Nullable<double> Rate {get; set; }
+		
+		[Display(
+			Name = "AnnualRate",
+			ResourceType = typeof(Cf.Data.Resources.ProductCalculatorResult))
+		]
+		[Tooltip("AnnualRateTooltip", typeof(Cf.Data.Resources.ProductCalculatorResult))]
+        public Nullable<decimal> AnnualRate {get; set; }
 		
 		[Display(
 			Name = "GuarantorsCount",

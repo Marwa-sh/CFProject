@@ -64,8 +64,9 @@ namespace Cf.Data
             string xsl ="<xsl:stylesheet xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" version=\"1.0\">";
             xsl += "\t<xsl:output method=\"html\" />";
             xsl += "\n\t<xsl:template match=\"/\">";
-            xsl += "\n\t\t<table width=\"1000\" class=\"eventCategoryParams\" id=\"" + module + "\">";
-            foreach(XslParameter p in parameters)
+            // xsl += "\n\t\t<table width=\"500\" class=\"eventCategoryParams table-bordered mb-0\" id=\"" + module + "\">";
+			xsl += "\n\t\t<table width=\"100%\" class=\"eventCategoryParams table-bordered mb-0\" id=\"" + module + "\">";
+			foreach (XslParameter p in parameters)
             {
 				xsl += "\n\t\t\t<tr>";
 				xsl += p.ToString();

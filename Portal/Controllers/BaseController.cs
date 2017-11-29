@@ -1,4 +1,5 @@
-﻿using CfMembership;
+﻿using Cf.Services;
+using CfMembership;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -53,6 +54,39 @@ p in E.Privileges on rp.PrivilegeId equals p.Id
     public class BaseController : Controller
     {
         
+        public string insert = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Insert");
+        public string update = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Update");
+        public string delete = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Delete");
+        public string save = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Save");
+        public string back = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Back");
+        public string details = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Details");
+        public string confirmDelete = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "ConfirmDelete");
+        public string yes = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Yes");
+        public string no = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "No");
+        public string search = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Search");
+        public string filterOptions = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "FilterOptions");
+        public string noRecords = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "NoRecords");
+        public string select = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Select");
+
+        public BaseController()
+        {
+            
+            ViewBag.Insert = insert;
+            ViewBag.Update = update;
+            ViewBag.Delete = delete;
+            ViewBag.Save = save;
+            ViewBag.Back = back;
+            ViewBag.Details = details;
+            ViewBag.ConfirmDelete = confirmDelete;
+            ViewBag.Yes = yes;
+            ViewBag.No = no;
+            ViewBag.Search = search;
+            ViewBag.FilterOptions = filterOptions;
+            ViewBag.NoRecords = noRecords;
+            ViewBag.Select = select;
+        }
+
+
         public int CurrentUserId
         {
             get
@@ -101,16 +135,7 @@ p in E.Privileges on rp.PrivilegeId equals p.Id
             
         }
 
-
-
-
-
-
-
-
-
-
-
+        
 
     }
 }

@@ -42,9 +42,6 @@
 					                @Html.DisplayNameFor(model => model.Instance.LoanTypeProductTypePaymentGroupName)
 					            </th>
 					            <th>
-					                @Html.DisplayNameFor(model => model.Instance.LoanTypeProductTypeIsActive)
-					            </th>
-					            <th>
 					                @Html.DisplayNameFor(model => model.Instance.ClosingLoanTypeProductTypeName)
 					            </th>
 					            <th>
@@ -52,9 +49,6 @@
 					            </th>
 					            <th>
 					                @Html.DisplayNameFor(model => model.Instance.ClosingLoanTypeProductTypePaymentGroupName)
-					            </th>
-					            <th>
-					                @Html.DisplayNameFor(model => model.Instance.ClosingLoanTypeProductTypeIsActive)
 					            </th>
            
 					            <th></th>
@@ -80,9 +74,6 @@
                     				@Html.DisplayFor(modelItem => item.LoanTypeProductTypePaymentGroupName)
                 				</td>
                 				<td>
-                    				@Html.CheckBoxFor(modelItem => item.LoanTypeProductTypeIsActive.Value, new { @disabled = "disabled" })
-                				</td>
-                				<td>
                     				@Html.DisplayFor(modelItem => item.ClosingLoanTypeProductTypeName)
                 				</td>
                 				<td>
@@ -90,9 +81,6 @@
                 				</td>
                 				<td>
                     				@Html.DisplayFor(modelItem => item.ClosingLoanTypeProductTypePaymentGroupName)
-                				</td>
-                				<td>
-                    				@Html.CheckBoxFor(modelItem => item.ClosingLoanTypeProductTypeIsActive.Value, new { @disabled = "disabled" })
                 				</td>
 				                <td>
 									<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
@@ -163,7 +151,7 @@
 	        var res = $("#Result");
 	        if (len == 1)
 			{
-                var table = document.getElementById("Result").getElementByTagName('tbody')[0];
+                var table = document.getElementById("Result").tBodies[0];
 
                 // Create an empty <tr> element and add it to the 1st position of the table:
                 var row = table.insertRow(0);

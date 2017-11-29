@@ -130,10 +130,7 @@
 					                @Html.DisplayNameFor(model => model.PaymentVwViewModel.Instance.EmployeeFullName)
 					            </th>
 					            <th>
-					                @Html.DisplayNameFor(model => model.PaymentVwViewModel.Instance.EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
-					            </th>
-					            <th>
-					                @Html.DisplayNameFor(model => model.PaymentVwViewModel.Instance.EmployeeCategoryName)
+					                @Html.DisplayNameFor(model => model.PaymentVwViewModel.Instance.EmployeeDepartmentSalaryWorkPlaceName)
 					            </th>
 					            <th>
 					                @Html.DisplayNameFor(model => model.PaymentVwViewModel.Instance.PaymentGroupName)
@@ -159,10 +156,7 @@
                     				 @Html.DisplayFor(modelItem => item.EmployeeFullName)
                 				</td>
                 				<td>
-                    				 @Html.DisplayFor(modelItem => item.EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
-                				</td>
-                				<td>
-                    				 @Html.DisplayFor(modelItem => item.EmployeeCategoryName)
+                    				 @Html.DisplayFor(modelItem => item.EmployeeDepartmentSalaryWorkPlaceName)
                 				</td>
                 				<td>
                     				 @Html.DisplayFor(modelItem => item.PaymentGroupName)
@@ -237,9 +231,10 @@
 				var table = $(this).context;
                 var len = table.rows.length;
                 if (len == 1) 
-                {                    
+                {             
+					table = table.tBodies[0];
                     // Create an empty <tr> element
-                    var row = table.insertRow(1);
+                    var row = table.insertRow(0);
 
                     //// Insert new cell
                     var cell1 = row.insertCell(0);

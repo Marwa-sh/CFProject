@@ -3087,7 +3087,7 @@ namespace Cf.Data
 		]
 		[Tooltip("NotesTooltip", typeof(Cf.Data.Resources.Guarantor))]
 		[StringLength(
-			50,
+			256,
 			MinimumLength = 0,
 			ErrorMessageResourceName = "StringLengthCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))

@@ -36,10 +36,7 @@
 					                @Html.DisplayNameFor(model => model.Instance.LoanRequestRequestProductEmployeeFullName)
 					            </th>
 					            <th>
-					                @Html.DisplayNameFor(model => model.Instance.LoanRequestRequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
-					            </th>
-					            <th>
-					                @Html.DisplayNameFor(model => model.Instance.LoanRequestRequestProductEmployeeCategoryName)
+					                @Html.DisplayNameFor(model => model.Instance.LoanRequestRequestProductEmployeeDepartmentSalaryWorkPlaceName)
 					            </th>
 					            <th>
 					                @Html.DisplayNameFor(model => model.Instance.LoanRequestRequestProductProductTypeName)
@@ -49,9 +46,6 @@
 					            </th>
 					            <th>
 					                @Html.DisplayNameFor(model => model.Instance.Amount)
-					            </th>
-					            <th>
-					                @Html.DisplayNameFor(model => model.Instance.ExceptionalAmountTypeId)
 					            </th>
 					            <th>
 					                @Html.DisplayNameFor(model => model.Instance.ExceptionalAmountTypeName)
@@ -77,10 +71,7 @@
                     				@Html.DisplayFor(modelItem => item.LoanRequestRequestProductEmployeeFullName)
                 				</td>
                 				<td>
-                    				@Html.DisplayFor(modelItem => item.LoanRequestRequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
-                				</td>
-                				<td>
-                    				@Html.DisplayFor(modelItem => item.LoanRequestRequestProductEmployeeCategoryName)
+                    				@Html.DisplayFor(modelItem => item.LoanRequestRequestProductEmployeeDepartmentSalaryWorkPlaceName)
                 				</td>
                 				<td>
                     				@Html.DisplayFor(modelItem => item.LoanRequestRequestProductProductTypeName)
@@ -90,9 +81,6 @@
                 				</td>
                 				<td>
                     				@Html.DisplayFor(modelItem => item.Amount)
-                				</td>
-                				<td>
-                    				@Html.DisplayFor(modelItem => item.ExceptionalAmountTypeId)
                 				</td>
                 				<td>
                     				@Html.DisplayFor(modelItem => item.ExceptionalAmountTypeName)
@@ -169,7 +157,7 @@
 	        var res = $("#Result");
 	        if (len == 1)
 			{
-                var table = document.getElementById("Result").getElementByTagName('tbody')[0];
+                var table = document.getElementById("Result").tBodies[0];
 
                 // Create an empty <tr> element and add it to the 1st position of the table:
                 var row = table.insertRow(0);

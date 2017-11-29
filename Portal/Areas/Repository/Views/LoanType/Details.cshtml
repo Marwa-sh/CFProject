@@ -18,7 +18,7 @@
                         <form class="form">
                             <div class="form-body">
                                 <div class="row">
-									<div class="col-md-4">
+									<div class="col-md-12">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.ProductTypeId, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.ProductTypeId, new Dictionary<string, Object>
@@ -30,7 +30,9 @@
 								                 <input type="text" id="txtProductTypeId" class="form-control" value="@Html.DisplayFor(model => model.Instance.ProductTypeId)" disabled />
 								        </div>
 									</div>
-									<div class="col-md-4">
+								</div>
+                                <div class="row">
+									<div class="col-md-12">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.ProductTypeName, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.ProductTypeName, new Dictionary<string, Object>
@@ -42,7 +44,9 @@
 								                 <input type="text" id="txtProductTypeName" class="form-control" value="@Html.DisplayFor(model => model.Instance.ProductTypeName)" disabled />
 								        </div>
 									</div>
-									<div class="col-md-4">
+								</div>
+                                <div class="row">
+									<div class="col-md-12">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.ProductTypeRate, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.ProductTypeRate, new Dictionary<string, Object>
@@ -56,7 +60,7 @@
 									</div>
 								</div>
                                 <div class="row">
-									<div class="col-md-4">
+									<div class="col-md-12">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.ProductTypeGuarantorsCount, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.ProductTypeGuarantorsCount, new Dictionary<string, Object>
@@ -68,7 +72,9 @@
 								                 <input type="text" id="txtProductTypeGuarantorsCount" class="form-control" value="@Html.DisplayFor(model => model.Instance.ProductTypeGuarantorsCount)" disabled />
 								        </div>
 									</div>
-									<div class="col-md-4">
+								</div>
+                                <div class="row">
+									<div class="col-md-12">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.ProductTypePrintLabel, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.ProductTypePrintLabel, new Dictionary<string, Object>
@@ -80,7 +86,9 @@
 								                 <input type="text" id="txtProductTypePrintLabel" class="form-control" value="@Html.DisplayFor(model => model.Instance.ProductTypePrintLabel)" disabled />
 								        </div>
 									</div>
-									<div class="col-md-4">
+								</div>
+                                <div class="row">
+									<div class="col-md-12">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.ProductTypeProfitStrategyName, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.ProductTypeProfitStrategyName, new Dictionary<string, Object>
@@ -94,7 +102,7 @@
 									</div>
 								</div>
                                 <div class="row">
-									<div class="col-md-4">
+									<div class="col-md-12">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.ProductTypePaymentGroupName, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.ProductTypePaymentGroupName, new Dictionary<string, Object>
@@ -106,7 +114,9 @@
 								                 <input type="text" id="txtProductTypePaymentGroupName" class="form-control" value="@Html.DisplayFor(model => model.Instance.ProductTypePaymentGroupName)" disabled />
 								        </div>
 									</div>
-									<div class="col-md-4">
+								</div>
+                                <div class="row">
+									<div class="col-md-12">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.ProductTypeIsActive, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.ProductTypeIsActive, new Dictionary<string, Object>
@@ -170,9 +180,6 @@
 					            <th>
 					                @Html.DisplayNameFor(model => model.ClosingLoanTypeClosureVwViewModel.Instance.ClosingLoanTypeProductTypePaymentGroupName)
 					            </th>
-					            <th>
-					                @Html.DisplayNameFor(model => model.ClosingLoanTypeClosureVwViewModel.Instance.ClosingLoanTypeProductTypeIsActive)
-					            </th>
            
 					            <th></th>
 					        </tr>
@@ -189,9 +196,6 @@
                 				</td>
                 				<td>
                     				 @Html.DisplayFor(modelItem => item.ClosingLoanTypeProductTypePaymentGroupName)
-                				</td>
-                				<td>
-                    				 @Html.CheckBoxFor(modelItem => item.ClosingLoanTypeProductTypeIsActive.Value, new { @disabled = "disabled" ,@class="form-control" })
                 				</td>
 				                <td>
 									<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
@@ -254,9 +258,6 @@
 					            <th>
 					                @Html.DisplayNameFor(model => model.LoanTypeClosureVwViewModel.Instance.ClosingLoanTypeProductTypePaymentGroupName)
 					            </th>
-					            <th>
-					                @Html.DisplayNameFor(model => model.LoanTypeClosureVwViewModel.Instance.ClosingLoanTypeProductTypeIsActive)
-					            </th>
            
 					            <th></th>
 					        </tr>
@@ -273,9 +274,6 @@
                 				</td>
                 				<td>
                     				 @Html.DisplayFor(modelItem => item.ClosingLoanTypeProductTypePaymentGroupName)
-                				</td>
-                				<td>
-                    				 @Html.CheckBoxFor(modelItem => item.ClosingLoanTypeProductTypeIsActive.Value, new { @disabled = "disabled" ,@class="form-control" })
                 				</td>
 				                <td>
 									<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
@@ -341,9 +339,10 @@
 				var table = $(this).context;
                 var len = table.rows.length;
                 if (len == 1) 
-                {                    
+                {             
+					table = table.tBodies[0];
                     // Create an empty <tr> element
-                    var row = table.insertRow(1);
+                    var row = table.insertRow(0);
 
                     //// Insert new cell
                     var cell1 = row.insertCell(0);

@@ -9,7 +9,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of CashPaymentVw class
     /// </summary>
-	public class CashPaymentVwFilterMetaData
+	public partial class CashPaymentVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -61,20 +61,34 @@ namespace Cf.Data
 		public Nullable<int>  PaymentEmployeeDepartmentSalaryWorkPlaceId { get; set; }
 
 		/// <summary>
-		/// Metadata for PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId  filter property
+		/// Metadata for MinPaymentDate  filter property
 		/// </summary>
 		[Display(
-			Name = "PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId",
+			Name = "MinPaymentDate",
 			ResourceType = typeof(Cf.Data.Resources.CashPaymentVwFilter))
 		]
-		[Tooltip("PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceIdTooltip", typeof(Cf.Data.Resources.CashPaymentVwFilter))]
-		[Range(
-			0,
-			2147483647,
-			ErrorMessageResourceName = "RangeCheck",
+		[Tooltip("MinPaymentDateTooltip", typeof(Cf.Data.Resources.CashPaymentVwFilter))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId { get; set; }
+		public Nullable<DateTime>  MinPaymentDate { get; set; }
+
+		/// <summary>
+		/// Metadata for MaxPaymentDate  filter property
+		/// </summary>
+		[Display(
+			Name = "MaxPaymentDate",
+			ResourceType = typeof(Cf.Data.Resources.CashPaymentVwFilter))
+		]
+		[Tooltip("MaxPaymentDateTooltip", typeof(Cf.Data.Resources.CashPaymentVwFilter))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		public Nullable<DateTime>  MaxPaymentDate { get; set; }
 
 		/// <summary>
 		/// Metadata for Number  filter property
@@ -99,7 +113,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of CollectOrderVw class
     /// </summary>
-	public class CollectOrderVwFilterMetaData
+	public partial class CollectOrderVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -155,7 +169,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of DebtVw class
     /// </summary>
-	public class DebtVwFilterMetaData
+	public partial class DebtVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -205,22 +219,6 @@ namespace Cf.Data
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
 		public Nullable<int>  EmployeeDepartmentSalaryWorkPlaceId { get; set; }
-
-		/// <summary>
-		/// Metadata for EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId  filter property
-		/// </summary>
-		[Display(
-			Name = "EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId",
-			ResourceType = typeof(Cf.Data.Resources.DebtVwFilter))
-		]
-		[Tooltip("EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceIdTooltip", typeof(Cf.Data.Resources.DebtVwFilter))]
-		[Range(
-			0,
-			2147483647,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		public Nullable<int>  EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId { get; set; }
 
 		/// <summary>
 		/// Metadata for IssuerId  filter property
@@ -275,7 +273,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of DepartmentVw class
     /// </summary>
-	public class DepartmentVwFilterMetaData
+	public partial class DepartmentVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -349,7 +347,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of DownPaymentVw class
     /// </summary>
-	public class DownPaymentVwFilterMetaData
+	public partial class DownPaymentVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -383,86 +381,6 @@ namespace Cf.Data
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
 		public string  PaymentEmployeeFullNameContains { get; set; }
-
-		/// <summary>
-		/// Metadata for PaymentEmployeeDepartmentId  filter property
-		/// </summary>
-		[Display(
-			Name = "PaymentEmployeeDepartmentId",
-			ResourceType = typeof(Cf.Data.Resources.DownPaymentVwFilter))
-		]
-		[Tooltip("PaymentEmployeeDepartmentIdTooltip", typeof(Cf.Data.Resources.DownPaymentVwFilter))]
-		[Range(
-			0,
-			2147483647,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		public Nullable<int>  PaymentEmployeeDepartmentId { get; set; }
-
-		/// <summary>
-		/// Metadata for PaymentEmployeeDepartmentNameContains  filter property
-		/// </summary>
-		[Display(
-			Name = "PaymentEmployeeDepartmentNameContains",
-			ResourceType = typeof(Cf.Data.Resources.DownPaymentVwFilter))
-		]
-		[Tooltip("PaymentEmployeeDepartmentNameContainsTooltip", typeof(Cf.Data.Resources.DownPaymentVwFilter))]
-		[StringLength(
-			50,
-			MinimumLength = 0,
-			ErrorMessageResourceName = "StringLengthCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		public string  PaymentEmployeeDepartmentNameContains { get; set; }
-
-		/// <summary>
-		/// Metadata for PaymentEmployeeDepartmentSalaryWorkPlaceId  filter property
-		/// </summary>
-		[Display(
-			Name = "PaymentEmployeeDepartmentSalaryWorkPlaceId",
-			ResourceType = typeof(Cf.Data.Resources.DownPaymentVwFilter))
-		]
-		[Tooltip("PaymentEmployeeDepartmentSalaryWorkPlaceIdTooltip", typeof(Cf.Data.Resources.DownPaymentVwFilter))]
-		[Range(
-			0,
-			2147483647,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		public Nullable<int>  PaymentEmployeeDepartmentSalaryWorkPlaceId { get; set; }
-
-		/// <summary>
-		/// Metadata for PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId  filter property
-		/// </summary>
-		[Display(
-			Name = "PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId",
-			ResourceType = typeof(Cf.Data.Resources.DownPaymentVwFilter))
-		]
-		[Tooltip("PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceIdTooltip", typeof(Cf.Data.Resources.DownPaymentVwFilter))]
-		[Range(
-			0,
-			2147483647,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		public Nullable<int>  PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId { get; set; }
-
-		/// <summary>
-		/// Metadata for PaymentEmployeeCategoryId  filter property
-		/// </summary>
-		[Display(
-			Name = "PaymentEmployeeCategoryId",
-			ResourceType = typeof(Cf.Data.Resources.DownPaymentVwFilter))
-		]
-		[Tooltip("PaymentEmployeeCategoryIdTooltip", typeof(Cf.Data.Resources.DownPaymentVwFilter))]
-		[Range(
-			0,
-			127,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		public Nullable<byte>  PaymentEmployeeCategoryId { get; set; }
 
 		/// <summary>
 		/// Metadata for MinPaymentDate  filter property
@@ -517,7 +435,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of EmployeeVw class
     /// </summary>
-	public class EmployeeVwFilterMetaData
+	public partial class EmployeeVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -585,38 +503,6 @@ namespace Cf.Data
 		public string  DepartmentNameContains { get; set; }
 
 		/// <summary>
-		/// Metadata for DepartmentSalaryWorkPlaceId  filter property
-		/// </summary>
-		[Display(
-			Name = "DepartmentSalaryWorkPlaceId",
-			ResourceType = typeof(Cf.Data.Resources.EmployeeVwFilter))
-		]
-		[Tooltip("DepartmentSalaryWorkPlaceIdTooltip", typeof(Cf.Data.Resources.EmployeeVwFilter))]
-		[Range(
-			0,
-			2147483647,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		public Nullable<int>  DepartmentSalaryWorkPlaceId { get; set; }
-
-		/// <summary>
-		/// Metadata for DepartmentSalaryWorkPlaceMainWorkPlaceId  filter property
-		/// </summary>
-		[Display(
-			Name = "DepartmentSalaryWorkPlaceMainWorkPlaceId",
-			ResourceType = typeof(Cf.Data.Resources.EmployeeVwFilter))
-		]
-		[Tooltip("DepartmentSalaryWorkPlaceMainWorkPlaceIdTooltip", typeof(Cf.Data.Resources.EmployeeVwFilter))]
-		[Range(
-			0,
-			2147483647,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		public Nullable<int>  DepartmentSalaryWorkPlaceMainWorkPlaceId { get; set; }
-
-		/// <summary>
 		/// Metadata for CategoryId  filter property
 		/// </summary>
 		[Display(
@@ -639,7 +525,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of ErrorDefinitionVw class
     /// </summary>
-	public class ErrorDefinitionVwFilterMetaData
+	public partial class ErrorDefinitionVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -665,7 +551,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of EventCategoryVw class
     /// </summary>
-	public class EventCategoryVwFilterMetaData
+	public partial class EventCategoryVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -691,25 +577,9 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of EventLogErrorVw class
     /// </summary>
-	public class EventLogErrorVwFilterMetaData
+	public partial class EventLogErrorVwFilterMetaData
 	{
 		#region Public properties
-		/// <summary>
-		/// Metadata for EventLogEventSourceId  filter property
-		/// </summary>
-		[Display(
-			Name = "EventLogEventSourceId",
-			ResourceType = typeof(Cf.Data.Resources.EventLogErrorVwFilter))
-		]
-		[Tooltip("EventLogEventSourceIdTooltip", typeof(Cf.Data.Resources.EventLogErrorVwFilter))]
-		[Range(
-			0,
-			2147483647,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		public Nullable<int>  EventLogEventSourceId { get; set; }
-
 		/// <summary>
 		/// Metadata for EventLogEventCategoryId  filter property
 		/// </summary>
@@ -811,7 +681,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of EventLogVw class
     /// </summary>
-	public class EventLogVwFilterMetaData
+	public partial class EventLogVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -829,22 +699,6 @@ namespace Cf.Data
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
 		public Nullable<long>  Id { get; set; }
-
-		/// <summary>
-		/// Metadata for EventSourceId  filter property
-		/// </summary>
-		[Display(
-			Name = "EventSourceId",
-			ResourceType = typeof(Cf.Data.Resources.EventLogVwFilter))
-		]
-		[Tooltip("EventSourceIdTooltip", typeof(Cf.Data.Resources.EventLogVwFilter))]
-		[Range(
-			0,
-			2147483647,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		public Nullable<int>  EventSourceId { get; set; }
 
 		/// <summary>
 		/// Metadata for EventCategoryId  filter property
@@ -931,7 +785,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of ExternalGrantVw class
     /// </summary>
-	public class ExternalGrantVwFilterMetaData
+	public partial class ExternalGrantVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -1011,22 +865,6 @@ namespace Cf.Data
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
 		public Nullable<byte>  GrantTypeId { get; set; }
-
-		/// <summary>
-		/// Metadata for GrantTypeGrantTypeGroupId  filter property
-		/// </summary>
-		[Display(
-			Name = "GrantTypeGrantTypeGroupId",
-			ResourceType = typeof(Cf.Data.Resources.ExternalGrantVwFilter))
-		]
-		[Tooltip("GrantTypeGrantTypeGroupIdTooltip", typeof(Cf.Data.Resources.ExternalGrantVwFilter))]
-		[Range(
-			0,
-			127,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		public Nullable<byte>  GrantTypeGrantTypeGroupId { get; set; }
 		#endregion
 	}
 	#endregion
@@ -1035,7 +873,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of GrantDecisionVw class
     /// </summary>
-	public class GrantDecisionVwFilterMetaData
+	public partial class GrantDecisionVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -1115,52 +953,6 @@ namespace Cf.Data
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
 		public Nullable<DateTime>  MaxDate { get; set; }
-
-		/// <summary>
-		/// Metadata for PaymentNumber  filter property
-		/// </summary>
-		[Display(
-			Name = "PaymentNumber",
-			ResourceType = typeof(Cf.Data.Resources.GrantDecisionVwFilter))
-		]
-		[Tooltip("PaymentNumberTooltip", typeof(Cf.Data.Resources.GrantDecisionVwFilter))]
-		[StringLength(
-			20,
-			MinimumLength = 0,
-			ErrorMessageResourceName = "StringLengthCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		public string  PaymentNumber { get; set; }
-
-		/// <summary>
-		/// Metadata for MinPaymentDate  filter property
-		/// </summary>
-		[Display(
-			Name = "MinPaymentDate",
-			ResourceType = typeof(Cf.Data.Resources.GrantDecisionVwFilter))
-		]
-		[Tooltip("MinPaymentDateTooltip", typeof(Cf.Data.Resources.GrantDecisionVwFilter))]
-		[DataType(
-			DataType.Date,
-			ErrorMessageResourceName = "DateCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		public Nullable<DateTime>  MinPaymentDate { get; set; }
-
-		/// <summary>
-		/// Metadata for MaxPaymentDate  filter property
-		/// </summary>
-		[Display(
-			Name = "MaxPaymentDate",
-			ResourceType = typeof(Cf.Data.Resources.GrantDecisionVwFilter))
-		]
-		[Tooltip("MaxPaymentDateTooltip", typeof(Cf.Data.Resources.GrantDecisionVwFilter))]
-		[DataType(
-			DataType.Date,
-			ErrorMessageResourceName = "DateCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		public Nullable<DateTime>  MaxPaymentDate { get; set; }
 		#endregion
 	}
 	#endregion
@@ -1169,7 +961,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of GrantPaymentOrderVw class
     /// </summary>
-	public class GrantPaymentOrderVwFilterMetaData
+	public partial class GrantPaymentOrderVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -1241,7 +1033,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of GrantPaymentVw class
     /// </summary>
-	public class GrantPaymentVwFilterMetaData
+	public partial class GrantPaymentVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -1259,22 +1051,6 @@ namespace Cf.Data
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
 		public Nullable<short>  GrantPaymentOrderNumber { get; set; }
-
-		/// <summary>
-		/// Metadata for GrantPaymentOrderYear  filter property
-		/// </summary>
-		[Display(
-			Name = "GrantPaymentOrderYear",
-			ResourceType = typeof(Cf.Data.Resources.GrantPaymentVwFilter))
-		]
-		[Tooltip("GrantPaymentOrderYearTooltip", typeof(Cf.Data.Resources.GrantPaymentVwFilter))]
-		[Range(
-			0,
-			32767,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		public Nullable<short>  GrantPaymentOrderYear { get; set; }
 
 		/// <summary>
 		/// Metadata for MinGrantPaymentOrderDate  filter property
@@ -1381,7 +1157,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of GrantRequestVw class
     /// </summary>
-	public class GrantRequestVwFilterMetaData
+	public partial class GrantRequestVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -1417,22 +1193,6 @@ namespace Cf.Data
 		public string  RequestProductEmployeeFullNameContains { get; set; }
 
 		/// <summary>
-		/// Metadata for RequestProductProductTypePaymentGroupId  filter property
-		/// </summary>
-		[Display(
-			Name = "RequestProductProductTypePaymentGroupId",
-			ResourceType = typeof(Cf.Data.Resources.GrantRequestVwFilter))
-		]
-		[Tooltip("RequestProductProductTypePaymentGroupIdTooltip", typeof(Cf.Data.Resources.GrantRequestVwFilter))]
-		[Range(
-			0,
-			127,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		public Nullable<byte>  RequestProductProductTypePaymentGroupId { get; set; }
-
-		/// <summary>
 		/// Metadata for GrantType  filter property
 		/// </summary>
 		[Display(
@@ -1455,7 +1215,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of GrantVw class
     /// </summary>
-	public class GrantVwFilterMetaData
+	public partial class GrantVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -1489,38 +1249,6 @@ namespace Cf.Data
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
 		public string  ProductEmployeeFullNameContains { get; set; }
-
-		/// <summary>
-		/// Metadata for ProductProductTypeId  filter property
-		/// </summary>
-		[Display(
-			Name = "ProductProductTypeId",
-			ResourceType = typeof(Cf.Data.Resources.GrantVwFilter))
-		]
-		[Tooltip("ProductProductTypeIdTooltip", typeof(Cf.Data.Resources.GrantVwFilter))]
-		[Range(
-			0,
-			32767,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		public Nullable<short>  ProductProductTypeId { get; set; }
-
-		/// <summary>
-		/// Metadata for ProductProductTypePaymentGroupId  filter property
-		/// </summary>
-		[Display(
-			Name = "ProductProductTypePaymentGroupId",
-			ResourceType = typeof(Cf.Data.Resources.GrantVwFilter))
-		]
-		[Tooltip("ProductProductTypePaymentGroupIdTooltip", typeof(Cf.Data.Resources.GrantVwFilter))]
-		[Range(
-			0,
-			127,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		public Nullable<byte>  ProductProductTypePaymentGroupId { get; set; }
 
 		/// <summary>
 		/// Metadata for GrantDecisionNumber  filter property
@@ -1561,7 +1289,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of GuarantorVw class
     /// </summary>
-	public class GuarantorVwFilterMetaData
+	public partial class GuarantorVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -1635,7 +1363,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of HealthLoanDecisionFirstPaymentVw class
     /// </summary>
-	public class HealthLoanDecisionFirstPaymentVwFilterMetaData
+	public partial class HealthLoanDecisionFirstPaymentVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -1669,22 +1397,6 @@ namespace Cf.Data
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
 		public string  EmployeeFullNameContains { get; set; }
-
-		/// <summary>
-		/// Metadata for PaymentStatus  filter property
-		/// </summary>
-		[Display(
-			Name = "PaymentStatus",
-			ResourceType = typeof(Cf.Data.Resources.HealthLoanDecisionFirstPaymentVwFilter))
-		]
-		[Tooltip("PaymentStatusTooltip", typeof(Cf.Data.Resources.HealthLoanDecisionFirstPaymentVwFilter))]
-		[Range(
-			0,
-			127,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		public Nullable<byte>  PaymentStatus { get; set; }
 
 		/// <summary>
 		/// Metadata for HealthLoanDecisionNumber  filter property
@@ -1725,7 +1437,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of HealthLoanDecisionVw class
     /// </summary>
-	public class HealthLoanDecisionVwFilterMetaData
+	public partial class HealthLoanDecisionVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -1789,52 +1501,6 @@ namespace Cf.Data
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
 		public Nullable<DateTime>  MaxDate { get; set; }
-
-		/// <summary>
-		/// Metadata for PaymentNumber  filter property
-		/// </summary>
-		[Display(
-			Name = "PaymentNumber",
-			ResourceType = typeof(Cf.Data.Resources.HealthLoanDecisionVwFilter))
-		]
-		[Tooltip("PaymentNumberTooltip", typeof(Cf.Data.Resources.HealthLoanDecisionVwFilter))]
-		[StringLength(
-			20,
-			MinimumLength = 0,
-			ErrorMessageResourceName = "StringLengthCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		public string  PaymentNumber { get; set; }
-
-		/// <summary>
-		/// Metadata for MinPaymentDate  filter property
-		/// </summary>
-		[Display(
-			Name = "MinPaymentDate",
-			ResourceType = typeof(Cf.Data.Resources.HealthLoanDecisionVwFilter))
-		]
-		[Tooltip("MinPaymentDateTooltip", typeof(Cf.Data.Resources.HealthLoanDecisionVwFilter))]
-		[DataType(
-			DataType.Date,
-			ErrorMessageResourceName = "DateCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		public Nullable<DateTime>  MinPaymentDate { get; set; }
-
-		/// <summary>
-		/// Metadata for MaxPaymentDate  filter property
-		/// </summary>
-		[Display(
-			Name = "MaxPaymentDate",
-			ResourceType = typeof(Cf.Data.Resources.HealthLoanDecisionVwFilter))
-		]
-		[Tooltip("MaxPaymentDateTooltip", typeof(Cf.Data.Resources.HealthLoanDecisionVwFilter))]
-		[DataType(
-			DataType.Date,
-			ErrorMessageResourceName = "DateCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		public Nullable<DateTime>  MaxPaymentDate { get; set; }
 		#endregion
 	}
 	#endregion
@@ -1843,7 +1509,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of IncomingLoanVw class
     /// </summary>
-	public class IncomingLoanVwFilterMetaData
+	public partial class IncomingLoanVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -1879,6 +1545,22 @@ namespace Cf.Data
 		public string  LoanProductEmployeeFullNameContains { get; set; }
 
 		/// <summary>
+		/// Metadata for LoanProductProductTypeId  filter property
+		/// </summary>
+		[Display(
+			Name = "LoanProductProductTypeId",
+			ResourceType = typeof(Cf.Data.Resources.IncomingLoanVwFilter))
+		]
+		[Tooltip("LoanProductProductTypeIdTooltip", typeof(Cf.Data.Resources.IncomingLoanVwFilter))]
+		[Range(
+			0,
+			32767,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		public Nullable<short>  LoanProductProductTypeId { get; set; }
+
+		/// <summary>
 		/// Metadata for LoanLoanDecisionNumber  filter property
 		/// </summary>
 		[Display(
@@ -1909,22 +1591,6 @@ namespace Cf.Data
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
 		public Nullable<short>  LoanLoanDecisionYear { get; set; }
-
-		/// <summary>
-		/// Metadata for MainWorkPlaceId  filter property
-		/// </summary>
-		[Display(
-			Name = "MainWorkPlaceId",
-			ResourceType = typeof(Cf.Data.Resources.IncomingLoanVwFilter))
-		]
-		[Tooltip("MainWorkPlaceIdTooltip", typeof(Cf.Data.Resources.IncomingLoanVwFilter))]
-		[Range(
-			0,
-			2147483647,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		public Nullable<int>  MainWorkPlaceId { get; set; }
 		#endregion
 	}
 	#endregion
@@ -1933,7 +1599,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of InstallmentDecreaseOrderVw class
     /// </summary>
-	public class InstallmentDecreaseOrderVwFilterMetaData
+	public partial class InstallmentDecreaseOrderVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -1973,7 +1639,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of InstallmentDecreaseVw class
     /// </summary>
-	public class InstallmentDecreaseVwFilterMetaData
+	public partial class InstallmentDecreaseVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -2037,22 +1703,6 @@ namespace Cf.Data
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
 		public string  EmployeeFullNameContains { get; set; }
-
-		/// <summary>
-		/// Metadata for DepartmentSalaryWorkPlaceId  filter property
-		/// </summary>
-		[Display(
-			Name = "DepartmentSalaryWorkPlaceId",
-			ResourceType = typeof(Cf.Data.Resources.InstallmentDecreaseVwFilter))
-		]
-		[Tooltip("DepartmentSalaryWorkPlaceIdTooltip", typeof(Cf.Data.Resources.InstallmentDecreaseVwFilter))]
-		[Range(
-			0,
-			2147483647,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		public Nullable<int>  DepartmentSalaryWorkPlaceId { get; set; }
 		#endregion
 	}
 	#endregion
@@ -2061,7 +1711,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of InstallmentVw class
     /// </summary>
-	public class InstallmentVwFilterMetaData
+	public partial class InstallmentVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -2165,7 +1815,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of LoanChangeVw class
     /// </summary>
-	public class LoanChangeVwFilterMetaData
+	public partial class LoanChangeVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -2201,6 +1851,22 @@ namespace Cf.Data
 		public string  LoanProductEmployeeFullNameContains { get; set; }
 
 		/// <summary>
+		/// Metadata for LoanLoanType  filter property
+		/// </summary>
+		[Display(
+			Name = "LoanLoanType",
+			ResourceType = typeof(Cf.Data.Resources.LoanChangeVwFilter))
+		]
+		[Tooltip("LoanLoanTypeTooltip", typeof(Cf.Data.Resources.LoanChangeVwFilter))]
+		[Range(
+			0,
+			32767,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		public Nullable<short>  LoanLoanType { get; set; }
+
+		/// <summary>
 		/// Metadata for FromLoanProductEmployeeId  filter property
 		/// </summary>
 		[Display(
@@ -2231,6 +1897,22 @@ namespace Cf.Data
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
 		public string  FromLoanProductEmployeeFullNameContains { get; set; }
+
+		/// <summary>
+		/// Metadata for FromLoanLoanType  filter property
+		/// </summary>
+		[Display(
+			Name = "FromLoanLoanType",
+			ResourceType = typeof(Cf.Data.Resources.LoanChangeVwFilter))
+		]
+		[Tooltip("FromLoanLoanTypeTooltip", typeof(Cf.Data.Resources.LoanChangeVwFilter))]
+		[Range(
+			0,
+			32767,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		public Nullable<short>  FromLoanLoanType { get; set; }
 		#endregion
 	}
 	#endregion
@@ -2239,7 +1921,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of LoanDecisionVw class
     /// </summary>
-	public class LoanDecisionVwFilterMetaData
+	public partial class LoanDecisionVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -2327,7 +2009,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of LoanRequestVw class
     /// </summary>
-	public class LoanRequestVwFilterMetaData
+	public partial class LoanRequestVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -2377,22 +2059,6 @@ namespace Cf.Data
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
 		public Nullable<short>  RequestProductProductTypeId { get; set; }
-
-		/// <summary>
-		/// Metadata for RequestProductProductTypePaymentGroupId  filter property
-		/// </summary>
-		[Display(
-			Name = "RequestProductProductTypePaymentGroupId",
-			ResourceType = typeof(Cf.Data.Resources.LoanRequestVwFilter))
-		]
-		[Tooltip("RequestProductProductTypePaymentGroupIdTooltip", typeof(Cf.Data.Resources.LoanRequestVwFilter))]
-		[Range(
-			0,
-			127,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		public Nullable<byte>  RequestProductProductTypePaymentGroupId { get; set; }
 
 		/// <summary>
 		/// Metadata for MinRequestDate  filter property
@@ -2447,7 +2113,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of LoanTypeVw class
     /// </summary>
-	public class LoanTypeVwFilterMetaData
+	public partial class LoanTypeVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -2465,6 +2131,22 @@ namespace Cf.Data
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
 		public string  ProductTypeNameContains { get; set; }
+
+		/// <summary>
+		/// Metadata for ProductTypeProfitStrategyId  filter property
+		/// </summary>
+		[Display(
+			Name = "ProductTypeProfitStrategyId",
+			ResourceType = typeof(Cf.Data.Resources.LoanTypeVwFilter))
+		]
+		[Tooltip("ProductTypeProfitStrategyIdTooltip", typeof(Cf.Data.Resources.LoanTypeVwFilter))]
+		[Range(
+			0,
+			127,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		public Nullable<byte>  ProductTypeProfitStrategyId { get; set; }
 
 		/// <summary>
 		/// Metadata for ProductTypePaymentGroupId  filter property
@@ -2489,7 +2171,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of LoanVw class
     /// </summary>
-	public class LoanVwFilterMetaData
+	public partial class LoanVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -2541,22 +2223,6 @@ namespace Cf.Data
 		public Nullable<short>  ProductProductTypeId { get; set; }
 
 		/// <summary>
-		/// Metadata for ProductProductTypePaymentGroupId  filter property
-		/// </summary>
-		[Display(
-			Name = "ProductProductTypePaymentGroupId",
-			ResourceType = typeof(Cf.Data.Resources.LoanVwFilter))
-		]
-		[Tooltip("ProductProductTypePaymentGroupIdTooltip", typeof(Cf.Data.Resources.LoanVwFilter))]
-		[Range(
-			0,
-			127,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		public Nullable<byte>  ProductProductTypePaymentGroupId { get; set; }
-
-		/// <summary>
 		/// Metadata for LoanDecisionNumber  filter property
 		/// </summary>
 		[Display(
@@ -2571,22 +2237,6 @@ namespace Cf.Data
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
 		public Nullable<short>  LoanDecisionNumber { get; set; }
-
-		/// <summary>
-		/// Metadata for LoanDecisionYear  filter property
-		/// </summary>
-		[Display(
-			Name = "LoanDecisionYear",
-			ResourceType = typeof(Cf.Data.Resources.LoanVwFilter))
-		]
-		[Tooltip("LoanDecisionYearTooltip", typeof(Cf.Data.Resources.LoanVwFilter))]
-		[Range(
-			0,
-			32767,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		public Nullable<short>  LoanDecisionYear { get; set; }
 
 		/// <summary>
 		/// Metadata for MinLoanDecisionDate  filter property
@@ -2617,6 +2267,22 @@ namespace Cf.Data
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
 		public Nullable<DateTime>  MaxLoanDecisionDate { get; set; }
+
+		/// <summary>
+		/// Metadata for LoanStatusId  filter property
+		/// </summary>
+		[Display(
+			Name = "LoanStatusId",
+			ResourceType = typeof(Cf.Data.Resources.LoanVwFilter))
+		]
+		[Tooltip("LoanStatusIdTooltip", typeof(Cf.Data.Resources.LoanVwFilter))]
+		[Range(
+			0,
+			127,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		public Nullable<byte>  LoanStatusId { get; set; }
 		#endregion
 	}
 	#endregion
@@ -2625,7 +2291,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of MissingInstallmentDecreaseVw class
     /// </summary>
-	public class MissingInstallmentDecreaseVwFilterMetaData
+	public partial class MissingInstallmentDecreaseVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -2697,7 +2363,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of MonthlyBalanceVw class
     /// </summary>
-	public class MonthlyBalanceVwFilterMetaData
+	public partial class MonthlyBalanceVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -2785,7 +2451,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of OutgoingLoanVw class
     /// </summary>
-	public class OutgoingLoanVwFilterMetaData
+	public partial class OutgoingLoanVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -2837,38 +2503,6 @@ namespace Cf.Data
 		public Nullable<short>  LoanProductProductTypeId { get; set; }
 
 		/// <summary>
-		/// Metadata for LoanProductProductTypePaymentGroupId  filter property
-		/// </summary>
-		[Display(
-			Name = "LoanProductProductTypePaymentGroupId",
-			ResourceType = typeof(Cf.Data.Resources.OutgoingLoanVwFilter))
-		]
-		[Tooltip("LoanProductProductTypePaymentGroupIdTooltip", typeof(Cf.Data.Resources.OutgoingLoanVwFilter))]
-		[Range(
-			0,
-			127,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		public Nullable<byte>  LoanProductProductTypePaymentGroupId { get; set; }
-
-		/// <summary>
-		/// Metadata for LoanLoanStatusId  filter property
-		/// </summary>
-		[Display(
-			Name = "LoanLoanStatusId",
-			ResourceType = typeof(Cf.Data.Resources.OutgoingLoanVwFilter))
-		]
-		[Tooltip("LoanLoanStatusIdTooltip", typeof(Cf.Data.Resources.OutgoingLoanVwFilter))]
-		[Range(
-			0,
-			127,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		public Nullable<byte>  LoanLoanStatusId { get; set; }
-
-		/// <summary>
 		/// Metadata for MainWorkPlaceId  filter property
 		/// </summary>
 		[Display(
@@ -2891,7 +2525,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of PaymentVw class
     /// </summary>
-	public class PaymentVwFilterMetaData
+	public partial class PaymentVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -2971,6 +2605,22 @@ namespace Cf.Data
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
 		public Nullable<byte>  PaymentGroupId { get; set; }
+
+		/// <summary>
+		/// Metadata for PaymentStatusId  filter property
+		/// </summary>
+		[Display(
+			Name = "PaymentStatusId",
+			ResourceType = typeof(Cf.Data.Resources.PaymentVwFilter))
+		]
+		[Tooltip("PaymentStatusIdTooltip", typeof(Cf.Data.Resources.PaymentVwFilter))]
+		[Range(
+			0,
+			127,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		public Nullable<byte>  PaymentStatusId { get; set; }
 		#endregion
 	}
 	#endregion
@@ -2979,7 +2629,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of PayOrderVw class
     /// </summary>
-	public class PayOrderVwFilterMetaData
+	public partial class PayOrderVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -3059,6 +2709,22 @@ namespace Cf.Data
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
 		public Nullable<DateTime>  MaxDate { get; set; }
+
+		/// <summary>
+		/// Metadata for PaymentGroupId  filter property
+		/// </summary>
+		[Display(
+			Name = "PaymentGroupId",
+			ResourceType = typeof(Cf.Data.Resources.PayOrderVwFilter))
+		]
+		[Tooltip("PaymentGroupIdTooltip", typeof(Cf.Data.Resources.PayOrderVwFilter))]
+		[Range(
+			0,
+			127,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		public Nullable<byte>  PaymentGroupId { get; set; }
 		#endregion
 	}
 	#endregion
@@ -3067,7 +2733,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of ProductVw class
     /// </summary>
-	public class ProductVwFilterMetaData
+	public partial class ProductVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -3117,22 +2783,6 @@ namespace Cf.Data
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
 		public Nullable<short>  ProductTypeId { get; set; }
-
-		/// <summary>
-		/// Metadata for ProductTypePaymentGroupId  filter property
-		/// </summary>
-		[Display(
-			Name = "ProductTypePaymentGroupId",
-			ResourceType = typeof(Cf.Data.Resources.ProductVwFilter))
-		]
-		[Tooltip("ProductTypePaymentGroupIdTooltip", typeof(Cf.Data.Resources.ProductVwFilter))]
-		[Range(
-			0,
-			127,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		public Nullable<byte>  ProductTypePaymentGroupId { get; set; }
 		#endregion
 	}
 	#endregion
@@ -3141,7 +2791,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of RefundableProductVw class
     /// </summary>
-	public class RefundableProductVwFilterMetaData
+	public partial class RefundableProductVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -3191,22 +2841,6 @@ namespace Cf.Data
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
 		public Nullable<short>  ProductProductTypeId { get; set; }
-
-		/// <summary>
-		/// Metadata for ProductProductTypePaymentGroupId  filter property
-		/// </summary>
-		[Display(
-			Name = "ProductProductTypePaymentGroupId",
-			ResourceType = typeof(Cf.Data.Resources.RefundableProductVwFilter))
-		]
-		[Tooltip("ProductProductTypePaymentGroupIdTooltip", typeof(Cf.Data.Resources.RefundableProductVwFilter))]
-		[Range(
-			0,
-			127,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		public Nullable<byte>  ProductProductTypePaymentGroupId { get; set; }
 		#endregion
 	}
 	#endregion
@@ -3215,7 +2849,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of RequestVw class
     /// </summary>
-	public class RequestVwFilterMetaData
+	public partial class RequestVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -3319,7 +2953,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of ResourceVw class
     /// </summary>
-	public class ResourceVwFilterMetaData
+	public partial class ResourceVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -3393,7 +3027,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of SalaryPaymentVw class
     /// </summary>
-	public class SalaryPaymentVwFilterMetaData
+	public partial class SalaryPaymentVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -3475,36 +3109,20 @@ namespace Cf.Data
 		public Nullable<byte>  PaymentPaymentGroupId { get; set; }
 
 		/// <summary>
-		/// Metadata for DepartmentSalaryWorkPlaceId  filter property
+		/// Metadata for PaymentPaymentStatusId  filter property
 		/// </summary>
 		[Display(
-			Name = "DepartmentSalaryWorkPlaceId",
+			Name = "PaymentPaymentStatusId",
 			ResourceType = typeof(Cf.Data.Resources.SalaryPaymentVwFilter))
 		]
-		[Tooltip("DepartmentSalaryWorkPlaceIdTooltip", typeof(Cf.Data.Resources.SalaryPaymentVwFilter))]
+		[Tooltip("PaymentPaymentStatusIdTooltip", typeof(Cf.Data.Resources.SalaryPaymentVwFilter))]
 		[Range(
 			0,
-			2147483647,
+			127,
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  DepartmentSalaryWorkPlaceId { get; set; }
-
-		/// <summary>
-		/// Metadata for DepartmentSalaryWorkPlaceMainWorkPlaceId  filter property
-		/// </summary>
-		[Display(
-			Name = "DepartmentSalaryWorkPlaceMainWorkPlaceId",
-			ResourceType = typeof(Cf.Data.Resources.SalaryPaymentVwFilter))
-		]
-		[Tooltip("DepartmentSalaryWorkPlaceMainWorkPlaceIdTooltip", typeof(Cf.Data.Resources.SalaryPaymentVwFilter))]
-		[Range(
-			0,
-			2147483647,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		public Nullable<int>  DepartmentSalaryWorkPlaceMainWorkPlaceId { get; set; }
+		public Nullable<byte>  PaymentPaymentStatusId { get; set; }
 		#endregion
 	}
 	#endregion
@@ -3513,7 +3131,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of SalaryWorkPlaceVw class
     /// </summary>
-	public class SalaryWorkPlaceVwFilterMetaData
+	public partial class SalaryWorkPlaceVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -3539,7 +3157,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of ServiceEndGrantRequestVw class
     /// </summary>
-	public class ServiceEndGrantRequestVwFilterMetaData
+	public partial class ServiceEndGrantRequestVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -3573,6 +3191,22 @@ namespace Cf.Data
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
 		public string  GrantRequestRequestProductEmployeeFullNameContains { get; set; }
+
+		/// <summary>
+		/// Metadata for GrantRequestRequestProductProductTypeId  filter property
+		/// </summary>
+		[Display(
+			Name = "GrantRequestRequestProductProductTypeId",
+			ResourceType = typeof(Cf.Data.Resources.ServiceEndGrantRequestVwFilter))
+		]
+		[Tooltip("GrantRequestRequestProductProductTypeIdTooltip", typeof(Cf.Data.Resources.ServiceEndGrantRequestVwFilter))]
+		[Range(
+			0,
+			32767,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		public Nullable<short>  GrantRequestRequestProductProductTypeId { get; set; }
 		#endregion
 	}
 	#endregion
@@ -3581,7 +3215,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of SettlementVw class
     /// </summary>
-	public class SettlementVwFilterMetaData
+	public partial class SettlementVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -3615,6 +3249,22 @@ namespace Cf.Data
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
 		public string  InstallmentRefundableProductProductEmployeeFullNameContains { get; set; }
+
+		/// <summary>
+		/// Metadata for InstallmentRefundableProductProductProductTypeId  filter property
+		/// </summary>
+		[Display(
+			Name = "InstallmentRefundableProductProductProductTypeId",
+			ResourceType = typeof(Cf.Data.Resources.SettlementVwFilter))
+		]
+		[Tooltip("InstallmentRefundableProductProductProductTypeIdTooltip", typeof(Cf.Data.Resources.SettlementVwFilter))]
+		[Range(
+			0,
+			32767,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		public Nullable<short>  InstallmentRefundableProductProductProductTypeId { get; set; }
 
 		/// <summary>
 		/// Metadata for MinInstallmentSubNumber  filter property
@@ -3725,7 +3375,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of SpecialCaseLoanVw class
     /// </summary>
-	public class SpecialCaseLoanVwFilterMetaData
+	public partial class SpecialCaseLoanVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -3813,7 +3463,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of SubscriptionVw class
     /// </summary>
-	public class SubscriptionVwFilterMetaData
+	public partial class SubscriptionVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -3879,36 +3529,20 @@ namespace Cf.Data
 		public Nullable<DateTime>  MaxMonth { get; set; }
 
 		/// <summary>
-		/// Metadata for DepartmentSalaryWorkPlaceId  filter property
+		/// Metadata for SubscriptionTypeId  filter property
 		/// </summary>
 		[Display(
-			Name = "DepartmentSalaryWorkPlaceId",
+			Name = "SubscriptionTypeId",
 			ResourceType = typeof(Cf.Data.Resources.SubscriptionVwFilter))
 		]
-		[Tooltip("DepartmentSalaryWorkPlaceIdTooltip", typeof(Cf.Data.Resources.SubscriptionVwFilter))]
+		[Tooltip("SubscriptionTypeIdTooltip", typeof(Cf.Data.Resources.SubscriptionVwFilter))]
 		[Range(
 			0,
-			2147483647,
+			127,
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  DepartmentSalaryWorkPlaceId { get; set; }
-
-		/// <summary>
-		/// Metadata for DepartmentSalaryWorkPlaceMainWorkPlaceId  filter property
-		/// </summary>
-		[Display(
-			Name = "DepartmentSalaryWorkPlaceMainWorkPlaceId",
-			ResourceType = typeof(Cf.Data.Resources.SubscriptionVwFilter))
-		]
-		[Tooltip("DepartmentSalaryWorkPlaceMainWorkPlaceIdTooltip", typeof(Cf.Data.Resources.SubscriptionVwFilter))]
-		[Range(
-			0,
-			2147483647,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		public Nullable<int>  DepartmentSalaryWorkPlaceMainWorkPlaceId { get; set; }
+		public Nullable<byte>  SubscriptionTypeId { get; set; }
 		#endregion
 	}
 	#endregion
@@ -3917,7 +3551,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of TransitoryIncomingLoanVw class
     /// </summary>
-	public class TransitoryIncomingLoanVwFilterMetaData
+	public partial class TransitoryIncomingLoanVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>
@@ -3985,7 +3619,7 @@ namespace Cf.Data
     /// <summary>
     /// Metadata for the Filter filter of WarrantVw class
     /// </summary>
-	public class WarrantVwFilterMetaData
+	public partial class WarrantVwFilterMetaData
 	{
 		#region Public properties
 		/// <summary>

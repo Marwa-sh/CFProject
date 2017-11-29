@@ -82,24 +82,46 @@ namespace Cf.Data.Resources
         }
 
         /// <summary>
-        /// Looks up a localized string similar to PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId.
+        /// Looks up a localized string similar to MinPaymentDate.
         /// </summary>
-        public static string PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId
+        public static string MinPaymentDate
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "CashPaymentVwFilter", "PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId");
+                return ResourcesCollection.GetString(Culture, "CashPaymentVwFilter", "MinPaymentDate");
             }
         }
         
         /// <summary>
-        /// Looks up a localized string similar to PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceIdTooltip.
+        /// Looks up a localized string similar to MinPaymentDateTooltip.
         /// </summary>
-        public static string PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceIdTooltip
+        public static string MinPaymentDateTooltip
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "CashPaymentVwFilter", "PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceIdTooltip");
+                return ResourcesCollection.GetString(Culture, "CashPaymentVwFilter", "MinPaymentDateTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to MaxPaymentDate.
+        /// </summary>
+        public static string MaxPaymentDate
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "CashPaymentVwFilter", "MaxPaymentDate");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to MaxPaymentDateTooltip.
+        /// </summary>
+        public static string MaxPaymentDateTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "CashPaymentVwFilter", "MaxPaymentDateTooltip");
             }
         }
 
@@ -284,28 +306,6 @@ namespace Cf.Data.Resources
             get
             {
                 return ResourcesCollection.GetString(Culture, "DebtVwFilter", "EmployeeDepartmentSalaryWorkPlaceIdTooltip");
-            }
-        }
-
-        /// <summary>
-        /// Looks up a localized string similar to EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId.
-        /// </summary>
-        public static string EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "DebtVwFilter", "EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceIdTooltip.
-        /// </summary>
-        public static string EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceIdTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "DebtVwFilter", "EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceIdTooltip");
             }
         }
 
@@ -538,116 +538,6 @@ namespace Cf.Data.Resources
         }
 
         /// <summary>
-        /// Looks up a localized string similar to PaymentEmployeeDepartmentId.
-        /// </summary>
-        public static string PaymentEmployeeDepartmentId
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "DownPaymentVwFilter", "PaymentEmployeeDepartmentId");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to PaymentEmployeeDepartmentIdTooltip.
-        /// </summary>
-        public static string PaymentEmployeeDepartmentIdTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "DownPaymentVwFilter", "PaymentEmployeeDepartmentIdTooltip");
-            }
-        }
-
-        /// <summary>
-        /// Looks up a localized string similar to PaymentEmployeeDepartmentNameContains.
-        /// </summary>
-        public static string PaymentEmployeeDepartmentNameContains
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "DownPaymentVwFilter", "PaymentEmployeeDepartmentNameContains");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to PaymentEmployeeDepartmentNameContainsTooltip.
-        /// </summary>
-        public static string PaymentEmployeeDepartmentNameContainsTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "DownPaymentVwFilter", "PaymentEmployeeDepartmentNameContainsTooltip");
-            }
-        }
-
-        /// <summary>
-        /// Looks up a localized string similar to PaymentEmployeeDepartmentSalaryWorkPlaceId.
-        /// </summary>
-        public static string PaymentEmployeeDepartmentSalaryWorkPlaceId
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "DownPaymentVwFilter", "PaymentEmployeeDepartmentSalaryWorkPlaceId");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to PaymentEmployeeDepartmentSalaryWorkPlaceIdTooltip.
-        /// </summary>
-        public static string PaymentEmployeeDepartmentSalaryWorkPlaceIdTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "DownPaymentVwFilter", "PaymentEmployeeDepartmentSalaryWorkPlaceIdTooltip");
-            }
-        }
-
-        /// <summary>
-        /// Looks up a localized string similar to PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId.
-        /// </summary>
-        public static string PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "DownPaymentVwFilter", "PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceIdTooltip.
-        /// </summary>
-        public static string PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceIdTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "DownPaymentVwFilter", "PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceIdTooltip");
-            }
-        }
-
-        /// <summary>
-        /// Looks up a localized string similar to PaymentEmployeeCategoryId.
-        /// </summary>
-        public static string PaymentEmployeeCategoryId
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "DownPaymentVwFilter", "PaymentEmployeeCategoryId");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to PaymentEmployeeCategoryIdTooltip.
-        /// </summary>
-        public static string PaymentEmployeeCategoryIdTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "DownPaymentVwFilter", "PaymentEmployeeCategoryIdTooltip");
-            }
-        }
-
-        /// <summary>
         /// Looks up a localized string similar to MinPaymentDate.
         /// </summary>
         public static string MinPaymentDate
@@ -817,50 +707,6 @@ namespace Cf.Data.Resources
         }
 
         /// <summary>
-        /// Looks up a localized string similar to DepartmentSalaryWorkPlaceId.
-        /// </summary>
-        public static string DepartmentSalaryWorkPlaceId
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeVwFilter", "DepartmentSalaryWorkPlaceId");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to DepartmentSalaryWorkPlaceIdTooltip.
-        /// </summary>
-        public static string DepartmentSalaryWorkPlaceIdTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeVwFilter", "DepartmentSalaryWorkPlaceIdTooltip");
-            }
-        }
-
-        /// <summary>
-        /// Looks up a localized string similar to DepartmentSalaryWorkPlaceMainWorkPlaceId.
-        /// </summary>
-        public static string DepartmentSalaryWorkPlaceMainWorkPlaceId
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeVwFilter", "DepartmentSalaryWorkPlaceMainWorkPlaceId");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to DepartmentSalaryWorkPlaceMainWorkPlaceIdTooltip.
-        /// </summary>
-        public static string DepartmentSalaryWorkPlaceMainWorkPlaceIdTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EmployeeVwFilter", "DepartmentSalaryWorkPlaceMainWorkPlaceIdTooltip");
-            }
-        }
-
-        /// <summary>
         /// Looks up a localized string similar to CategoryId.
         /// </summary>
         public static string CategoryId
@@ -969,28 +815,6 @@ namespace Cf.Data.Resources
         /// </summary>
         internal EventLogErrorVwFilter()
         {
-        }
-
-        /// <summary>
-        /// Looks up a localized string similar to EventLogEventSourceId.
-        /// </summary>
-        public static string EventLogEventSourceId
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EventLogErrorVwFilter", "EventLogEventSourceId");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to EventLogEventSourceIdTooltip.
-        /// </summary>
-        public static string EventLogEventSourceIdTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EventLogErrorVwFilter", "EventLogEventSourceIdTooltip");
-            }
         }
 
         /// <summary>
@@ -1159,28 +983,6 @@ namespace Cf.Data.Resources
             get
             {
                 return ResourcesCollection.GetString(Culture, "EventLogVwFilter", "IdTooltip");
-            }
-        }
-
-        /// <summary>
-        /// Looks up a localized string similar to EventSourceId.
-        /// </summary>
-        public static string EventSourceId
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EventLogVwFilter", "EventSourceId");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to EventSourceIdTooltip.
-        /// </summary>
-        public static string EventSourceIdTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EventLogVwFilter", "EventSourceIdTooltip");
             }
         }
 
@@ -1418,28 +1220,6 @@ namespace Cf.Data.Resources
                 return ResourcesCollection.GetString(Culture, "ExternalGrantVwFilter", "GrantTypeIdTooltip");
             }
         }
-
-        /// <summary>
-        /// Looks up a localized string similar to GrantTypeGrantTypeGroupId.
-        /// </summary>
-        public static string GrantTypeGrantTypeGroupId
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "ExternalGrantVwFilter", "GrantTypeGrantTypeGroupId");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to GrantTypeGrantTypeGroupIdTooltip.
-        /// </summary>
-        public static string GrantTypeGrantTypeGroupIdTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "ExternalGrantVwFilter", "GrantTypeGrantTypeGroupIdTooltip");
-            }
-        }
     }
     #endregion
 
@@ -1563,72 +1343,6 @@ namespace Cf.Data.Resources
             get
             {
                 return ResourcesCollection.GetString(Culture, "GrantDecisionVwFilter", "MaxDateTooltip");
-            }
-        }
-
-        /// <summary>
-        /// Looks up a localized string similar to PaymentNumber.
-        /// </summary>
-        public static string PaymentNumber
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "GrantDecisionVwFilter", "PaymentNumber");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to PaymentNumberTooltip.
-        /// </summary>
-        public static string PaymentNumberTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "GrantDecisionVwFilter", "PaymentNumberTooltip");
-            }
-        }
-
-        /// <summary>
-        /// Looks up a localized string similar to MinPaymentDate.
-        /// </summary>
-        public static string MinPaymentDate
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "GrantDecisionVwFilter", "MinPaymentDate");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to MinPaymentDateTooltip.
-        /// </summary>
-        public static string MinPaymentDateTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "GrantDecisionVwFilter", "MinPaymentDateTooltip");
-            }
-        }
-
-        /// <summary>
-        /// Looks up a localized string similar to MaxPaymentDate.
-        /// </summary>
-        public static string MaxPaymentDate
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "GrantDecisionVwFilter", "MaxPaymentDate");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to MaxPaymentDateTooltip.
-        /// </summary>
-        public static string MaxPaymentDateTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "GrantDecisionVwFilter", "MaxPaymentDateTooltip");
             }
         }
     }
@@ -1769,28 +1483,6 @@ namespace Cf.Data.Resources
             get
             {
                 return ResourcesCollection.GetString(Culture, "GrantPaymentVwFilter", "GrantPaymentOrderNumberTooltip");
-            }
-        }
-
-        /// <summary>
-        /// Looks up a localized string similar to GrantPaymentOrderYear.
-        /// </summary>
-        public static string GrantPaymentOrderYear
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "GrantPaymentVwFilter", "GrantPaymentOrderYear");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to GrantPaymentOrderYearTooltip.
-        /// </summary>
-        public static string GrantPaymentOrderYearTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "GrantPaymentVwFilter", "GrantPaymentOrderYearTooltip");
             }
         }
 
@@ -2008,28 +1700,6 @@ namespace Cf.Data.Resources
         }
 
         /// <summary>
-        /// Looks up a localized string similar to RequestProductProductTypePaymentGroupId.
-        /// </summary>
-        public static string RequestProductProductTypePaymentGroupId
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "GrantRequestVwFilter", "RequestProductProductTypePaymentGroupId");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to RequestProductProductTypePaymentGroupIdTooltip.
-        /// </summary>
-        public static string RequestProductProductTypePaymentGroupIdTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "GrantRequestVwFilter", "RequestProductProductTypePaymentGroupIdTooltip");
-            }
-        }
-
-        /// <summary>
         /// Looks up a localized string similar to GrantType.
         /// </summary>
         public static string GrantType
@@ -2107,50 +1777,6 @@ namespace Cf.Data.Resources
             get
             {
                 return ResourcesCollection.GetString(Culture, "GrantVwFilter", "ProductEmployeeFullNameContainsTooltip");
-            }
-        }
-
-        /// <summary>
-        /// Looks up a localized string similar to ProductProductTypeId.
-        /// </summary>
-        public static string ProductProductTypeId
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "GrantVwFilter", "ProductProductTypeId");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to ProductProductTypeIdTooltip.
-        /// </summary>
-        public static string ProductProductTypeIdTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "GrantVwFilter", "ProductProductTypeIdTooltip");
-            }
-        }
-
-        /// <summary>
-        /// Looks up a localized string similar to ProductProductTypePaymentGroupId.
-        /// </summary>
-        public static string ProductProductTypePaymentGroupId
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "GrantVwFilter", "ProductProductTypePaymentGroupId");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to ProductProductTypePaymentGroupIdTooltip.
-        /// </summary>
-        public static string ProductProductTypePaymentGroupIdTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "GrantVwFilter", "ProductProductTypePaymentGroupIdTooltip");
             }
         }
 
@@ -2361,28 +1987,6 @@ namespace Cf.Data.Resources
         }
 
         /// <summary>
-        /// Looks up a localized string similar to PaymentStatus.
-        /// </summary>
-        public static string PaymentStatus
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "HealthLoanDecisionFirstPaymentVwFilter", "PaymentStatus");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to PaymentStatusTooltip.
-        /// </summary>
-        public static string PaymentStatusTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "HealthLoanDecisionFirstPaymentVwFilter", "PaymentStatusTooltip");
-            }
-        }
-
-        /// <summary>
         /// Looks up a localized string similar to HealthLoanDecisionNumber.
         /// </summary>
         public static string HealthLoanDecisionNumber
@@ -2528,72 +2132,6 @@ namespace Cf.Data.Resources
                 return ResourcesCollection.GetString(Culture, "HealthLoanDecisionVwFilter", "MaxDateTooltip");
             }
         }
-
-        /// <summary>
-        /// Looks up a localized string similar to PaymentNumber.
-        /// </summary>
-        public static string PaymentNumber
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "HealthLoanDecisionVwFilter", "PaymentNumber");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to PaymentNumberTooltip.
-        /// </summary>
-        public static string PaymentNumberTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "HealthLoanDecisionVwFilter", "PaymentNumberTooltip");
-            }
-        }
-
-        /// <summary>
-        /// Looks up a localized string similar to MinPaymentDate.
-        /// </summary>
-        public static string MinPaymentDate
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "HealthLoanDecisionVwFilter", "MinPaymentDate");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to MinPaymentDateTooltip.
-        /// </summary>
-        public static string MinPaymentDateTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "HealthLoanDecisionVwFilter", "MinPaymentDateTooltip");
-            }
-        }
-
-        /// <summary>
-        /// Looks up a localized string similar to MaxPaymentDate.
-        /// </summary>
-        public static string MaxPaymentDate
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "HealthLoanDecisionVwFilter", "MaxPaymentDate");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to MaxPaymentDateTooltip.
-        /// </summary>
-        public static string MaxPaymentDateTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "HealthLoanDecisionVwFilter", "MaxPaymentDateTooltip");
-            }
-        }
     }
     #endregion
 
@@ -2655,6 +2193,28 @@ namespace Cf.Data.Resources
         }
 
         /// <summary>
+        /// Looks up a localized string similar to LoanProductProductTypeId.
+        /// </summary>
+        public static string LoanProductProductTypeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "IncomingLoanVwFilter", "LoanProductProductTypeId");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to LoanProductProductTypeIdTooltip.
+        /// </summary>
+        public static string LoanProductProductTypeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "IncomingLoanVwFilter", "LoanProductProductTypeIdTooltip");
+            }
+        }
+
+        /// <summary>
         /// Looks up a localized string similar to LoanLoanDecisionNumber.
         /// </summary>
         public static string LoanLoanDecisionNumber
@@ -2695,28 +2255,6 @@ namespace Cf.Data.Resources
             get
             {
                 return ResourcesCollection.GetString(Culture, "IncomingLoanVwFilter", "LoanLoanDecisionYearTooltip");
-            }
-        }
-
-        /// <summary>
-        /// Looks up a localized string similar to MainWorkPlaceId.
-        /// </summary>
-        public static string MainWorkPlaceId
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "IncomingLoanVwFilter", "MainWorkPlaceId");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to MainWorkPlaceIdTooltip.
-        /// </summary>
-        public static string MainWorkPlaceIdTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "IncomingLoanVwFilter", "MainWorkPlaceIdTooltip");
             }
         }
     }
@@ -2879,28 +2417,6 @@ namespace Cf.Data.Resources
             get
             {
                 return ResourcesCollection.GetString(Culture, "InstallmentDecreaseVwFilter", "EmployeeFullNameContainsTooltip");
-            }
-        }
-
-        /// <summary>
-        /// Looks up a localized string similar to DepartmentSalaryWorkPlaceId.
-        /// </summary>
-        public static string DepartmentSalaryWorkPlaceId
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "InstallmentDecreaseVwFilter", "DepartmentSalaryWorkPlaceId");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to DepartmentSalaryWorkPlaceIdTooltip.
-        /// </summary>
-        public static string DepartmentSalaryWorkPlaceIdTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "InstallmentDecreaseVwFilter", "DepartmentSalaryWorkPlaceIdTooltip");
             }
         }
     }
@@ -3111,6 +2627,28 @@ namespace Cf.Data.Resources
         }
 
         /// <summary>
+        /// Looks up a localized string similar to LoanLoanType.
+        /// </summary>
+        public static string LoanLoanType
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanChangeVwFilter", "LoanLoanType");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to LoanLoanTypeTooltip.
+        /// </summary>
+        public static string LoanLoanTypeTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanChangeVwFilter", "LoanLoanTypeTooltip");
+            }
+        }
+
+        /// <summary>
         /// Looks up a localized string similar to FromLoanProductEmployeeId.
         /// </summary>
         public static string FromLoanProductEmployeeId
@@ -3151,6 +2689,28 @@ namespace Cf.Data.Resources
             get
             {
                 return ResourcesCollection.GetString(Culture, "LoanChangeVwFilter", "FromLoanProductEmployeeFullNameContainsTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to FromLoanLoanType.
+        /// </summary>
+        public static string FromLoanLoanType
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanChangeVwFilter", "FromLoanLoanType");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to FromLoanLoanTypeTooltip.
+        /// </summary>
+        public static string FromLoanLoanTypeTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanChangeVwFilter", "FromLoanLoanTypeTooltip");
             }
         }
     }
@@ -3361,28 +2921,6 @@ namespace Cf.Data.Resources
         }
 
         /// <summary>
-        /// Looks up a localized string similar to RequestProductProductTypePaymentGroupId.
-        /// </summary>
-        public static string RequestProductProductTypePaymentGroupId
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "LoanRequestVwFilter", "RequestProductProductTypePaymentGroupId");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to RequestProductProductTypePaymentGroupIdTooltip.
-        /// </summary>
-        public static string RequestProductProductTypePaymentGroupIdTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "LoanRequestVwFilter", "RequestProductProductTypePaymentGroupIdTooltip");
-            }
-        }
-
-        /// <summary>
         /// Looks up a localized string similar to MinRequestDate.
         /// </summary>
         public static string MinRequestDate
@@ -3482,6 +3020,28 @@ namespace Cf.Data.Resources
             get
             {
                 return ResourcesCollection.GetString(Culture, "LoanTypeVwFilter", "ProductTypeNameContainsTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductTypeProfitStrategyId.
+        /// </summary>
+        public static string ProductTypeProfitStrategyId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanTypeVwFilter", "ProductTypeProfitStrategyId");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductTypeProfitStrategyIdTooltip.
+        /// </summary>
+        public static string ProductTypeProfitStrategyIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanTypeVwFilter", "ProductTypeProfitStrategyIdTooltip");
             }
         }
 
@@ -3589,28 +3149,6 @@ namespace Cf.Data.Resources
         }
 
         /// <summary>
-        /// Looks up a localized string similar to ProductProductTypePaymentGroupId.
-        /// </summary>
-        public static string ProductProductTypePaymentGroupId
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "LoanVwFilter", "ProductProductTypePaymentGroupId");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to ProductProductTypePaymentGroupIdTooltip.
-        /// </summary>
-        public static string ProductProductTypePaymentGroupIdTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "LoanVwFilter", "ProductProductTypePaymentGroupIdTooltip");
-            }
-        }
-
-        /// <summary>
         /// Looks up a localized string similar to LoanDecisionNumber.
         /// </summary>
         public static string LoanDecisionNumber
@@ -3629,28 +3167,6 @@ namespace Cf.Data.Resources
             get
             {
                 return ResourcesCollection.GetString(Culture, "LoanVwFilter", "LoanDecisionNumberTooltip");
-            }
-        }
-
-        /// <summary>
-        /// Looks up a localized string similar to LoanDecisionYear.
-        /// </summary>
-        public static string LoanDecisionYear
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "LoanVwFilter", "LoanDecisionYear");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to LoanDecisionYearTooltip.
-        /// </summary>
-        public static string LoanDecisionYearTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "LoanVwFilter", "LoanDecisionYearTooltip");
             }
         }
 
@@ -3695,6 +3211,28 @@ namespace Cf.Data.Resources
             get
             {
                 return ResourcesCollection.GetString(Culture, "LoanVwFilter", "MaxLoanDecisionDateTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to LoanStatusId.
+        /// </summary>
+        public static string LoanStatusId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanVwFilter", "LoanStatusId");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to LoanStatusIdTooltip.
+        /// </summary>
+        public static string LoanStatusIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanVwFilter", "LoanStatusIdTooltip");
             }
         }
     }
@@ -4008,50 +3546,6 @@ namespace Cf.Data.Resources
         }
 
         /// <summary>
-        /// Looks up a localized string similar to LoanProductProductTypePaymentGroupId.
-        /// </summary>
-        public static string LoanProductProductTypePaymentGroupId
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "OutgoingLoanVwFilter", "LoanProductProductTypePaymentGroupId");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to LoanProductProductTypePaymentGroupIdTooltip.
-        /// </summary>
-        public static string LoanProductProductTypePaymentGroupIdTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "OutgoingLoanVwFilter", "LoanProductProductTypePaymentGroupIdTooltip");
-            }
-        }
-
-        /// <summary>
-        /// Looks up a localized string similar to LoanLoanStatusId.
-        /// </summary>
-        public static string LoanLoanStatusId
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "OutgoingLoanVwFilter", "LoanLoanStatusId");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to LoanLoanStatusIdTooltip.
-        /// </summary>
-        public static string LoanLoanStatusIdTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "OutgoingLoanVwFilter", "LoanLoanStatusIdTooltip");
-            }
-        }
-
-        /// <summary>
         /// Looks up a localized string similar to MainWorkPlaceId.
         /// </summary>
         public static string MainWorkPlaceId
@@ -4197,6 +3691,28 @@ namespace Cf.Data.Resources
                 return ResourcesCollection.GetString(Culture, "PaymentVwFilter", "PaymentGroupIdTooltip");
             }
         }
+
+        /// <summary>
+        /// Looks up a localized string similar to PaymentStatusId.
+        /// </summary>
+        public static string PaymentStatusId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "PaymentVwFilter", "PaymentStatusId");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to PaymentStatusIdTooltip.
+        /// </summary>
+        public static string PaymentStatusIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "PaymentVwFilter", "PaymentStatusIdTooltip");
+            }
+        }
     }
     #endregion
 
@@ -4322,6 +3838,28 @@ namespace Cf.Data.Resources
                 return ResourcesCollection.GetString(Culture, "PayOrderVwFilter", "MaxDateTooltip");
             }
         }
+
+        /// <summary>
+        /// Looks up a localized string similar to PaymentGroupId.
+        /// </summary>
+        public static string PaymentGroupId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "PayOrderVwFilter", "PaymentGroupId");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to PaymentGroupIdTooltip.
+        /// </summary>
+        public static string PaymentGroupIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "PayOrderVwFilter", "PaymentGroupIdTooltip");
+            }
+        }
     }
     #endregion
 
@@ -4403,28 +3941,6 @@ namespace Cf.Data.Resources
                 return ResourcesCollection.GetString(Culture, "ProductVwFilter", "ProductTypeIdTooltip");
             }
         }
-
-        /// <summary>
-        /// Looks up a localized string similar to ProductTypePaymentGroupId.
-        /// </summary>
-        public static string ProductTypePaymentGroupId
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "ProductVwFilter", "ProductTypePaymentGroupId");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to ProductTypePaymentGroupIdTooltip.
-        /// </summary>
-        public static string ProductTypePaymentGroupIdTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "ProductVwFilter", "ProductTypePaymentGroupIdTooltip");
-            }
-        }
     }
     #endregion
 
@@ -4504,28 +4020,6 @@ namespace Cf.Data.Resources
             get
             {
                 return ResourcesCollection.GetString(Culture, "RefundableProductVwFilter", "ProductProductTypeIdTooltip");
-            }
-        }
-
-        /// <summary>
-        /// Looks up a localized string similar to ProductProductTypePaymentGroupId.
-        /// </summary>
-        public static string ProductProductTypePaymentGroupId
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "RefundableProductVwFilter", "ProductProductTypePaymentGroupId");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to ProductProductTypePaymentGroupIdTooltip.
-        /// </summary>
-        public static string ProductProductTypePaymentGroupIdTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "RefundableProductVwFilter", "ProductProductTypePaymentGroupIdTooltip");
             }
         }
     }
@@ -4905,46 +4399,24 @@ namespace Cf.Data.Resources
         }
 
         /// <summary>
-        /// Looks up a localized string similar to DepartmentSalaryWorkPlaceId.
+        /// Looks up a localized string similar to PaymentPaymentStatusId.
         /// </summary>
-        public static string DepartmentSalaryWorkPlaceId
+        public static string PaymentPaymentStatusId
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "SalaryPaymentVwFilter", "DepartmentSalaryWorkPlaceId");
+                return ResourcesCollection.GetString(Culture, "SalaryPaymentVwFilter", "PaymentPaymentStatusId");
             }
         }
         
         /// <summary>
-        /// Looks up a localized string similar to DepartmentSalaryWorkPlaceIdTooltip.
+        /// Looks up a localized string similar to PaymentPaymentStatusIdTooltip.
         /// </summary>
-        public static string DepartmentSalaryWorkPlaceIdTooltip
+        public static string PaymentPaymentStatusIdTooltip
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "SalaryPaymentVwFilter", "DepartmentSalaryWorkPlaceIdTooltip");
-            }
-        }
-
-        /// <summary>
-        /// Looks up a localized string similar to DepartmentSalaryWorkPlaceMainWorkPlaceId.
-        /// </summary>
-        public static string DepartmentSalaryWorkPlaceMainWorkPlaceId
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "SalaryPaymentVwFilter", "DepartmentSalaryWorkPlaceMainWorkPlaceId");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to DepartmentSalaryWorkPlaceMainWorkPlaceIdTooltip.
-        /// </summary>
-        public static string DepartmentSalaryWorkPlaceMainWorkPlaceIdTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "SalaryPaymentVwFilter", "DepartmentSalaryWorkPlaceMainWorkPlaceIdTooltip");
+                return ResourcesCollection.GetString(Culture, "SalaryPaymentVwFilter", "PaymentPaymentStatusIdTooltip");
             }
         }
     }
@@ -5043,6 +4515,28 @@ namespace Cf.Data.Resources
                 return ResourcesCollection.GetString(Culture, "ServiceEndGrantRequestVwFilter", "GrantRequestRequestProductEmployeeFullNameContainsTooltip");
             }
         }
+
+        /// <summary>
+        /// Looks up a localized string similar to GrantRequestRequestProductProductTypeId.
+        /// </summary>
+        public static string GrantRequestRequestProductProductTypeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ServiceEndGrantRequestVwFilter", "GrantRequestRequestProductProductTypeId");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to GrantRequestRequestProductProductTypeIdTooltip.
+        /// </summary>
+        public static string GrantRequestRequestProductProductTypeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ServiceEndGrantRequestVwFilter", "GrantRequestRequestProductProductTypeIdTooltip");
+            }
+        }
     }
     #endregion
 
@@ -5100,6 +4594,28 @@ namespace Cf.Data.Resources
             get
             {
                 return ResourcesCollection.GetString(Culture, "SettlementVwFilter", "InstallmentRefundableProductProductEmployeeFullNameContainsTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to InstallmentRefundableProductProductProductTypeId.
+        /// </summary>
+        public static string InstallmentRefundableProductProductProductTypeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "SettlementVwFilter", "InstallmentRefundableProductProductProductTypeId");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to InstallmentRefundableProductProductProductTypeIdTooltip.
+        /// </summary>
+        public static string InstallmentRefundableProductProductProductTypeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "SettlementVwFilter", "InstallmentRefundableProductProductProductTypeIdTooltip");
             }
         }
 
@@ -5508,46 +5024,24 @@ namespace Cf.Data.Resources
         }
 
         /// <summary>
-        /// Looks up a localized string similar to DepartmentSalaryWorkPlaceId.
+        /// Looks up a localized string similar to SubscriptionTypeId.
         /// </summary>
-        public static string DepartmentSalaryWorkPlaceId
+        public static string SubscriptionTypeId
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "SubscriptionVwFilter", "DepartmentSalaryWorkPlaceId");
+                return ResourcesCollection.GetString(Culture, "SubscriptionVwFilter", "SubscriptionTypeId");
             }
         }
         
         /// <summary>
-        /// Looks up a localized string similar to DepartmentSalaryWorkPlaceIdTooltip.
+        /// Looks up a localized string similar to SubscriptionTypeIdTooltip.
         /// </summary>
-        public static string DepartmentSalaryWorkPlaceIdTooltip
+        public static string SubscriptionTypeIdTooltip
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "SubscriptionVwFilter", "DepartmentSalaryWorkPlaceIdTooltip");
-            }
-        }
-
-        /// <summary>
-        /// Looks up a localized string similar to DepartmentSalaryWorkPlaceMainWorkPlaceId.
-        /// </summary>
-        public static string DepartmentSalaryWorkPlaceMainWorkPlaceId
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "SubscriptionVwFilter", "DepartmentSalaryWorkPlaceMainWorkPlaceId");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to DepartmentSalaryWorkPlaceMainWorkPlaceIdTooltip.
-        /// </summary>
-        public static string DepartmentSalaryWorkPlaceMainWorkPlaceIdTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "SubscriptionVwFilter", "DepartmentSalaryWorkPlaceMainWorkPlaceIdTooltip");
+                return ResourcesCollection.GetString(Culture, "SubscriptionVwFilter", "SubscriptionTypeIdTooltip");
             }
         }
     }

@@ -8,9 +8,6 @@ using Cf.Services;
 using Cf.Services.Exceptions;
 using Cf.ViewModels;
 using Cf.Controllers;
-using Portal.ViewModels;
-using System.Linq;
-using System.Web;
 
 namespace Portal.Areas.Repository.Controllers
 {
@@ -18,35 +15,11 @@ namespace Portal.Areas.Repository.Controllers
     {
         private string moduleName = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "LoanDecision", "ModuleName");
         private string index = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "LoanDecision", "ModuleNamePlural");
-        private string insert = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Insert");
-        private string update = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Update");
-        private string delete = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Delete");
-        private string save = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Save");
-        private string back = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Back");
-        private string details = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Details");
-        private string confirmDelete = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "ConfirmDelete");
-        private string yes = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Yes");
-        private string no = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "No");
-        private string search = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Search");
-        private string filterOptions = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "FilterOptions");
-        private string noRecords = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "NoRecords");
 		
 	    public LoanDecisionController()
     	{
             ViewBag.ModuleName = moduleName;
 			ViewBag.Title = index;
-            ViewBag.Insert = insert;
-            ViewBag.Update = update;
-            ViewBag.Delete = delete;
-			ViewBag.Save = save;
-            ViewBag.Back = back;
-			ViewBag.Details = details;
-            ViewBag.ConfirmDelete = confirmDelete;
-            ViewBag.Yes = yes;
-            ViewBag.No = no;
-            ViewBag.Search = search;
-			ViewBag.FilterOptions = filterOptions;
-			ViewBag.NoRecords = noRecords;
 		}
 		
         /// <summary>
@@ -201,75 +174,6 @@ namespace Portal.Areas.Repository.Controllers
             }
             return View(loanDecision);
         }
-
-
-        #region CreateLoanRequestDecision
-        public ActionResult CreateLoanRequestDecision()
-        {
-            ViewBag.ModuleName = moduleName;
-            ViewBag.Action = insert;
-            ViewBag.Save = save;
-            ViewBag.Back = back;
-            ViewBag.Details = details;
-            ViewBag.Update = update;
-            Db db = new Db(DbServices.ConnectionString);
-
-            ManageLoanDecision vm = new ManageLoanDecision();
-            vm.LoanRequestVwViewModel.List = LoanRequestVwServices.List(db).Where(c => c.RequestRequestStatusId.Value == (int)RequestStatusEnum.FinanciallyApproved).ToList();
-
-
-
-            return View(vm);
-        }
-
-        [HttpPost]
-        public ActionResult CreateLoanRequestDecision(ManageLoanDecision model)
-        {
-            try
-            {
-                Db db = new Db(DbServices.ConnectionString);
-
-                if (ModelState.IsValid)
-                {
-                    try
-                    {
-                        // 1- Add Loan Decision
-                        model.LoanDecision.LoanDecisionType = (int)LoanDecisionTypeEnum.Normal;
-                        if (model.LoanDecision.IsPaidFromSalary == null)
-                            model.LoanDecision.IsPaidFromSalary = false;
-                        LoanDecision instance = LoanDecisionServices.Insert(CurrentUser.Id, model.LoanDecision, db);
-
-                        // 2- Add Loans
-                        for (int i = 0; i < model.Requests.Count; i++)
-                        {
-                            if (!model.Requests[i].isChecked) continue;
-                            db.LoanGenerate(model.Requests[i].RequestId, instance.Id, (int)LoanGenerationStatusEnum.LoanRequest);
-                        }
-
-
-                        TempData["Success"] = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "InsertConfirmed");
-
-                    }
-                    catch (CfException cfex)
-                    {
-                        TempData["Failure"] = cfex.ErrorDefinition.LocalizedMessage;
-                    }
-                    catch (Exception ex)
-                    {
-                        TempData["Failure"] = ex.Message;
-                    }
-                }
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-
-        }
-
-        #endregion
 
         // POST: LoanDecision/Delete/5
         [HttpPost, ActionName("Delete")]

@@ -36,10 +36,7 @@
 					                @Html.DisplayNameFor(model => model.Instance.GrantProductEmployeeFullName)
 					            </th>
 					            <th>
-					                @Html.DisplayNameFor(model => model.Instance.GrantProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
-					            </th>
-					            <th>
-					                @Html.DisplayNameFor(model => model.Instance.GrantProductEmployeeCategoryName)
+					                @Html.DisplayNameFor(model => model.Instance.GrantProductEmployeeDepartmentSalaryWorkPlaceName)
 					            </th>
 					            <th>
 					                @Html.DisplayNameFor(model => model.Instance.GrantProductProductTypeName)
@@ -71,10 +68,7 @@
                     				@Html.DisplayFor(modelItem => item.GrantProductEmployeeFullName)
                 				</td>
                 				<td>
-                    				@Html.DisplayFor(modelItem => item.GrantProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
-                				</td>
-                				<td>
-                    				@Html.DisplayFor(modelItem => item.GrantProductEmployeeCategoryName)
+                    				@Html.DisplayFor(modelItem => item.GrantProductEmployeeDepartmentSalaryWorkPlaceName)
                 				</td>
                 				<td>
                     				@Html.DisplayFor(modelItem => item.GrantProductProductTypeName)
@@ -157,7 +151,7 @@
 	        var res = $("#Result");
 	        if (len == 1)
 			{
-                var table = document.getElementById("Result").getElementByTagName('tbody')[0];
+                var table = document.getElementById("Result").tBodies[0];
 
                 // Create an empty <tr> element and add it to the 1st position of the table:
                 var row = table.insertRow(0);

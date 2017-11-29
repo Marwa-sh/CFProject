@@ -2,130 +2,7 @@
 <div class="form-horizontal">
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 </div>
-    @using (Html.BeginForm())
-    {
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">@ViewBag.FilterOptions</h4>
-                    <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
-                    <div class="heading-elements">
-                        <ul class="list-inline mb-0">
-                            <li><a data-action="collapse"><i id="filter" class="icon-minus4"></i></a></li>
-                            <li><a data-action="reload"><i class="icon-reload"></i></a></li>
-                            <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div id="cardOptions" class="card-body collapse in">
-                    <div class="card-block">
-                        <form class="form">
-                            <div class="form-body">
-                                <div class="row">
-									<div class="col-md-4">
-								        <div class="form-group">
-								            @*@Html.LabelFor(model => model.Filter.Id, htmlAttributes: new { @class = "control-label" })*@
-								            @Html.LabelFor(model => model.Filter.Id, new Dictionary<string, Object>
-								                { { "class", "control-label" },
-								                  {"title", Html.ToolTipMessageFor(model => model.Filter.Id)},
-								                  {"data-toggle", "tooltip"},
-								                  {"data-placement", "bottom"}
-								                })
-								            @Html.EditorFor(model => model.Filter.Id, new { htmlAttributes = new { @class = "form-control" } })
-								        </div>
-									</div>
-									<div class="col-md-4">
-								        <div class="form-group">
-								            @*@Html.LabelFor(model => model.Filter.EventSourceId, htmlAttributes: new { @class = "control-label" })*@
-								            @Html.LabelFor(model => model.Filter.EventSourceId, new Dictionary<string, Object>
-								                { { "class", "control-label" },
-								                  {"title", Html.ToolTipMessageFor(model => model.Filter.EventSourceId)},
-								                  {"data-toggle", "tooltip"},
-								                  {"data-placement", "bottom"}
-								                })
-								            @Html.EditorFor(model => model.Filter.EventSourceId, new { htmlAttributes = new { @class = "form-control" } })
-								        </div>
-									</div>
-									<div class="col-md-4">
-								        <div class="form-group">
-								            @*@Html.LabelFor(model => model.Filter.EventCategoryId, htmlAttributes: new { @class = "control-label" })*@
-								            @Html.LabelFor(model => model.Filter.EventCategoryId, new Dictionary<string, Object>
-								                { { "class", "control-label" },
-								                  {"title", Html.ToolTipMessageFor(model => model.Filter.EventCategoryId)},
-								                  {"data-toggle", "tooltip"},
-								                  {"data-placement", "bottom"}
-								                })
-								            @Html.EditorFor(model => model.Filter.EventCategoryId, new { htmlAttributes = new { @class = "form-control" } })
-								        </div>
-									</div>
-								</div>
-                                <div class="row">
-									<div class="col-md-4">
-								        <div class="form-group">
-								            @*@Html.LabelFor(model => model.Filter.EventStatusId, htmlAttributes: new { @class = "control-label" })*@
-								            @Html.LabelFor(model => model.Filter.EventStatusId, new Dictionary<string, Object>
-								                { { "class", "control-label" },
-								                  {"title", Html.ToolTipMessageFor(model => model.Filter.EventStatusId)},
-								                  {"data-toggle", "tooltip"},
-								                  {"data-placement", "bottom"}
-								                })
-								            @Html.EditorFor(model => model.Filter.EventStatusId, new { htmlAttributes = new { @class = "form-control" } })
-								        </div>
-									</div>
-									<div class="col-md-4">
-								        <div class="form-group">
-								            @*@Html.LabelFor(model => model.Filter.MinDate, htmlAttributes: new { @class = "control-label" })*@
-								            @Html.LabelFor(model => model.Filter.MinDate, new Dictionary<string, Object>
-								                { { "class", "control-label" },
-								                  {"title", Html.ToolTipMessageFor(model => model.Filter.MinDate)},
-								                  {"data-toggle", "tooltip"},
-								                  {"data-placement", "bottom"}
-								                })
-								            @Html.EditorFor(model => model.Filter.MinDate, new { htmlAttributes = new { @class = "form-control" } })
-								        </div>
-									</div>
-									<div class="col-md-4">
-								        <div class="form-group">
-								            @*@Html.LabelFor(model => model.Filter.MaxDate, htmlAttributes: new { @class = "control-label" })*@
-								            @Html.LabelFor(model => model.Filter.MaxDate, new Dictionary<string, Object>
-								                { { "class", "control-label" },
-								                  {"title", Html.ToolTipMessageFor(model => model.Filter.MaxDate)},
-								                  {"data-toggle", "tooltip"},
-								                  {"data-placement", "bottom"}
-								                })
-								            @Html.EditorFor(model => model.Filter.MaxDate, new { htmlAttributes = new { @class = "form-control" } })
-								        </div>
-									</div>
-								</div>
-                                <div class="row">
-									<div class="col-md-4">
-								        <div class="form-group">
-								            @*@Html.LabelFor(model => model.Filter.User, htmlAttributes: new { @class = "control-label" })*@
-								            @Html.LabelFor(model => model.Filter.User, new Dictionary<string, Object>
-								                { { "class", "control-label" },
-								                  {"title", Html.ToolTipMessageFor(model => model.Filter.User)},
-								                  {"data-toggle", "tooltip"},
-								                  {"data-placement", "bottom"}
-								                })
-								            @Html.EditorFor(model => model.Filter.User, new { htmlAttributes = new { @class = "form-control" } })
-								        </div>
-									</div>
-								</div>
-                            </div>
-
-                            <div class="form-actions">
-                                <button type="submit" class="btn btn-primary mr-1">
-                                    @ViewBag.Search
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-}
+    @Html.Partial("_Filter", Model)
 <div class="row">
     <div class="col-xs-12">
         <div class="card">
@@ -154,22 +31,19 @@
 					                @Html.DisplayNameFor(model => model.Instance.Id)
 					            </th>
 					            <th>
-					                @Html.DisplayNameFor(model => model.Instance.EventSourceName)
-					            </th>
-					            <th>
 					                @Html.DisplayNameFor(model => model.Instance.EventCategoryName)
 					            </th>
 					            <th>
 					                @Html.DisplayNameFor(model => model.Instance.EventStatusName)
 					            </th>
 					            <th>
-					                @Html.DisplayNameFor(model => model.Instance.Parameters)
-					            </th>
-					            <th>
 					                @Html.DisplayNameFor(model => model.Instance.Date)
 					            </th>
 					            <th>
 					                @Html.DisplayNameFor(model => model.Instance.User)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.Instance.Parameters)
 					            </th>
            
 					            <th></th>
@@ -183,22 +57,19 @@
                     				@Html.DisplayFor(modelItem => item.Id)
                 				</td>
                 				<td>
-                    				@Html.DisplayFor(modelItem => item.EventSourceName)
-                				</td>
-                				<td>
                     				@Html.DisplayFor(modelItem => item.EventCategoryName)
                 				</td>
                 				<td>
                     				@Html.DisplayFor(modelItem => item.EventStatusName)
                 				</td>
                 				<td>
-                    				@Html.DisplayFor(modelItem => item.Parameters)
-                				</td>
-                				<td>
                     				@Html.DisplayFor(modelItem => item.Date)
                 				</td>
                 				<td>
                     				@Html.DisplayFor(modelItem => item.User)
+                				</td>
+                				<td>
+                    				@Html.DisplayFor(modelItem => item.Parameters)
                 				</td>
 				                <td>
 									<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
@@ -269,7 +140,7 @@
 	        var res = $("#Result");
 	        if (len == 1)
 			{
-                var table = document.getElementById("Result").getElementByTagName('tbody')[0];
+                var table = document.getElementById("Result").tBodies[0];
 
                 // Create an empty <tr> element and add it to the 1st position of the table:
                 var row = table.insertRow(0);

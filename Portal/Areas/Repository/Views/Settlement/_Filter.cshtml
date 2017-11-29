@@ -1,0 +1,178 @@
+@model Cf.ViewModels.SettlementVwViewModel
+<div class="form-horizontal">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+</div>
+    @using (Html.BeginForm())
+    {
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">@ViewBag.FilterOptions</h4>
+                    <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i id="filter" class="icon-minus4"></i></a></li>
+                            <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                            <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="cardOptions" class="card-body collapse in">
+                    <div class="card-block">
+                        <form class="form">
+                            <div class="form-body">
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Filter.InstallmentRefundableProductProductEmployeeId, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Filter.InstallmentRefundableProductProductEmployeeId, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Filter.InstallmentRefundableProductProductEmployeeId)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								            @Html.EditorFor(model => model.Filter.InstallmentRefundableProductProductEmployeeId, new { htmlAttributes = new { @class = "form-control" } })
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Filter.InstallmentRefundableProductProductEmployeeFullNameContains, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Filter.InstallmentRefundableProductProductEmployeeFullNameContains, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Filter.InstallmentRefundableProductProductEmployeeFullNameContains)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								            @Html.EditorFor(model => model.Filter.InstallmentRefundableProductProductEmployeeFullNameContains, new { htmlAttributes = new { @class = "form-control" } })
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Filter.InstallmentRefundableProductProductProductTypeId, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Filter.InstallmentRefundableProductProductProductTypeId, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Filter.InstallmentRefundableProductProductProductTypeId)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								            @Html.EditorFor(model => model.Filter.InstallmentRefundableProductProductProductTypeId, new { htmlAttributes = new { @class = "form-control" } })
+								        </div>
+									</div>
+								</div>
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Filter.MinInstallmentSubNumber, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Filter.MinInstallmentSubNumber, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Filter.MinInstallmentSubNumber)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								            @Html.EditorFor(model => model.Filter.MinInstallmentSubNumber, new { htmlAttributes = new { @class = "form-control" } })
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Filter.MaxInstallmentSubNumber, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Filter.MaxInstallmentSubNumber, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Filter.MaxInstallmentSubNumber)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								            @Html.EditorFor(model => model.Filter.MaxInstallmentSubNumber, new { htmlAttributes = new { @class = "form-control" } })
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Filter.MinPaymentDate, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Filter.MinPaymentDate, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Filter.MinPaymentDate)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								            @Html.TextBoxFor(model => model.Filter.MinPaymentDate, htmlAttributes: new { @class = "form-control IsDate" })
+								        </div>
+									</div>
+								</div>
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Filter.MaxPaymentDate, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Filter.MaxPaymentDate, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Filter.MaxPaymentDate)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								            @Html.TextBoxFor(model => model.Filter.MaxPaymentDate, htmlAttributes: new { @class = "form-control IsDate" })
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Filter.MinPaymentAmount, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Filter.MinPaymentAmount, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Filter.MinPaymentAmount)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								            @Html.EditorFor(model => model.Filter.MinPaymentAmount, new { htmlAttributes = new { @class = "form-control" } })
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Filter.MaxPaymentAmount, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Filter.MaxPaymentAmount, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Filter.MaxPaymentAmount)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								            @Html.EditorFor(model => model.Filter.MaxPaymentAmount, new { htmlAttributes = new { @class = "form-control" } })
+								        </div>
+									</div>
+								</div>
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Filter.MinAmount, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Filter.MinAmount, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Filter.MinAmount)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								            @Html.EditorFor(model => model.Filter.MinAmount, new { htmlAttributes = new { @class = "form-control" } })
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Filter.MaxAmount, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Filter.MaxAmount, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Filter.MaxAmount)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								            @Html.EditorFor(model => model.Filter.MaxAmount, new { htmlAttributes = new { @class = "form-control" } })
+								        </div>
+									</div>
+								</div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary mr-1">
+                                    @ViewBag.Search
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

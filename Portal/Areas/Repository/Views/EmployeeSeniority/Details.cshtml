@@ -70,18 +70,6 @@
 									</div>
 									<div class="col-md-4">
 								        <div class="form-group">
-								            @*@Html.LabelFor(model => model.Instance.EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName, htmlAttributes: new { @class = "control-label" })*@
-								            @Html.LabelFor(model => model.Instance.EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName, new Dictionary<string, Object>
-								                { { "class", "control-label" },
-								                  {"title", Html.ToolTipMessageFor(model => model.Instance.EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)},
-								                  {"data-toggle", "tooltip"},
-								                  {"data-placement", "bottom"}
-								                })
-								                 <input type="text" id="txtEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName" class="form-control" value="@Html.DisplayFor(model => model.Instance.EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)" disabled />
-								        </div>
-									</div>
-									<div class="col-md-4">
-								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.EmployeeCategoryName, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.EmployeeCategoryName, new Dictionary<string, Object>
 								                { { "class", "control-label" },
@@ -92,8 +80,6 @@
 								                 <input type="text" id="txtEmployeeCategoryName" class="form-control" value="@Html.DisplayFor(model => model.Instance.EmployeeCategoryName)" disabled />
 								        </div>
 									</div>
-								</div>
-                                <div class="row">
 									<div class="col-md-4">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.ServiceInDays, htmlAttributes: new { @class = "control-label" })*@
@@ -161,9 +147,10 @@
 				var table = $(this).context;
                 var len = table.rows.length;
                 if (len == 1) 
-                {                    
+                {             
+					table = table.tBodies[0];
                     // Create an empty <tr> element
-                    var row = table.insertRow(1);
+                    var row = table.insertRow(0);
 
                     //// Insert new cell
                     var cell1 = row.insertCell(0);

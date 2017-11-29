@@ -1,0 +1,76 @@
+@model Cf.ViewModels.ServiceEndGrantRequestVwViewModel
+<div class="form-horizontal">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+</div>
+    @using (Html.BeginForm())
+    {
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">@ViewBag.FilterOptions</h4>
+                    <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i id="filter" class="icon-minus4"></i></a></li>
+                            <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                            <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="cardOptions" class="card-body collapse in">
+                    <div class="card-block">
+                        <form class="form">
+                            <div class="form-body">
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Filter.GrantRequestRequestProductEmployeeId, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Filter.GrantRequestRequestProductEmployeeId, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Filter.GrantRequestRequestProductEmployeeId)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								            @Html.EditorFor(model => model.Filter.GrantRequestRequestProductEmployeeId, new { htmlAttributes = new { @class = "form-control" } })
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Filter.GrantRequestRequestProductEmployeeFullNameContains, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Filter.GrantRequestRequestProductEmployeeFullNameContains, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Filter.GrantRequestRequestProductEmployeeFullNameContains)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								            @Html.EditorFor(model => model.Filter.GrantRequestRequestProductEmployeeFullNameContains, new { htmlAttributes = new { @class = "form-control" } })
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.Filter.GrantRequestRequestProductProductTypeId, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Filter.GrantRequestRequestProductProductTypeId, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.Filter.GrantRequestRequestProductProductTypeId)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								            @Html.EditorFor(model => model.Filter.GrantRequestRequestProductProductTypeId, new { htmlAttributes = new { @class = "form-control" } })
+								        </div>
+									</div>
+								</div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary mr-1">
+                                    @ViewBag.Search
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

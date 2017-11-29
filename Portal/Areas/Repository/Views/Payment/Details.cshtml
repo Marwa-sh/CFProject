@@ -18,7 +18,7 @@
                         <form class="form">
                             <div class="form-body">
                                 <div class="row">
-									<div class="col-md-4">
+									<div class="col-md-12">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.Id, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.Id, new Dictionary<string, Object>
@@ -30,7 +30,9 @@
 								                 <input type="text" id="txtId" class="form-control" value="@Html.DisplayFor(model => model.Instance.Id)" disabled />
 								        </div>
 									</div>
-									<div class="col-md-4">
+								</div>
+                                <div class="row">
+									<div class="col-md-12">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.EmployeeId, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.EmployeeId, new Dictionary<string, Object>
@@ -42,7 +44,9 @@
 								                 <input type="text" id="txtEmployeeId" class="form-control" value="@Html.DisplayFor(model => model.Instance.EmployeeId)" disabled />
 								        </div>
 									</div>
-									<div class="col-md-4">
+								</div>
+                                <div class="row">
+									<div class="col-md-12">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.EmployeeFullName, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.EmployeeFullName, new Dictionary<string, Object>
@@ -56,7 +60,7 @@
 									</div>
 								</div>
                                 <div class="row">
-									<div class="col-md-4">
+									<div class="col-md-12">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.EmployeeDepartmentName, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.EmployeeDepartmentName, new Dictionary<string, Object>
@@ -68,7 +72,9 @@
 								                 <input type="text" id="txtEmployeeDepartmentName" class="form-control" value="@Html.DisplayFor(model => model.Instance.EmployeeDepartmentName)" disabled />
 								        </div>
 									</div>
-									<div class="col-md-4">
+								</div>
+                                <div class="row">
+									<div class="col-md-12">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.EmployeeDepartmentSalaryWorkPlaceName, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.EmployeeDepartmentSalaryWorkPlaceName, new Dictionary<string, Object>
@@ -80,21 +86,9 @@
 								                 <input type="text" id="txtEmployeeDepartmentSalaryWorkPlaceName" class="form-control" value="@Html.DisplayFor(model => model.Instance.EmployeeDepartmentSalaryWorkPlaceName)" disabled />
 								        </div>
 									</div>
-									<div class="col-md-4">
-								        <div class="form-group">
-								            @*@Html.LabelFor(model => model.Instance.EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName, htmlAttributes: new { @class = "control-label" })*@
-								            @Html.LabelFor(model => model.Instance.EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName, new Dictionary<string, Object>
-								                { { "class", "control-label" },
-								                  {"title", Html.ToolTipMessageFor(model => model.Instance.EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)},
-								                  {"data-toggle", "tooltip"},
-								                  {"data-placement", "bottom"}
-								                })
-								                 <input type="text" id="txtEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName" class="form-control" value="@Html.DisplayFor(model => model.Instance.EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)" disabled />
-								        </div>
-									</div>
 								</div>
                                 <div class="row">
-									<div class="col-md-4">
+									<div class="col-md-12">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.EmployeeCategoryName, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.EmployeeCategoryName, new Dictionary<string, Object>
@@ -106,7 +100,9 @@
 								                 <input type="text" id="txtEmployeeCategoryName" class="form-control" value="@Html.DisplayFor(model => model.Instance.EmployeeCategoryName)" disabled />
 								        </div>
 									</div>
-									<div class="col-md-4">
+								</div>
+                                <div class="row">
+									<div class="col-md-12">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.Date, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.Date, new Dictionary<string, Object>
@@ -118,7 +114,9 @@
 								                 <input type="text" id="txtDate" class="form-control" value="@Html.DisplayFor(model => model.Instance.Date)" disabled />
 								        </div>
 									</div>
-									<div class="col-md-4">
+								</div>
+                                <div class="row">
+									<div class="col-md-12">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.PaymentGroupName, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.PaymentGroupName, new Dictionary<string, Object>
@@ -132,7 +130,7 @@
 									</div>
 								</div>
                                 <div class="row">
-									<div class="col-md-4">
+									<div class="col-md-12">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.Amount, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.Amount, new Dictionary<string, Object>
@@ -144,7 +142,9 @@
 								                 <input type="text" id="txtAmount" class="form-control" value="@Html.DisplayFor(model => model.Instance.Amount)" disabled />
 								        </div>
 									</div>
-									<div class="col-md-4">
+								</div>
+                                <div class="row">
+									<div class="col-md-12">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.PaymentStatusName, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.PaymentStatusName, new Dictionary<string, Object>
@@ -156,7 +156,9 @@
 								                 <input type="text" id="txtPaymentStatusName" class="form-control" value="@Html.DisplayFor(model => model.Instance.PaymentStatusName)" disabled />
 								        </div>
 									</div>
-									<div class="col-md-4">
+								</div>
+                                <div class="row">
+									<div class="col-md-12">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.CollectOrderNumber, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.CollectOrderNumber, new Dictionary<string, Object>
@@ -170,7 +172,7 @@
 									</div>
 								</div>
                                 <div class="row">
-									<div class="col-md-4">
+									<div class="col-md-12">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.CollectOrderDate, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.CollectOrderDate, new Dictionary<string, Object>
@@ -445,10 +447,7 @@
 					                @Html.DisplayNameFor(model => model.SettlementVwViewModel.Instance.InstallmentRefundableProductProductEmployeeFullName)
 					            </th>
 					            <th>
-					                @Html.DisplayNameFor(model => model.SettlementVwViewModel.Instance.InstallmentRefundableProductProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
-					            </th>
-					            <th>
-					                @Html.DisplayNameFor(model => model.SettlementVwViewModel.Instance.InstallmentRefundableProductProductEmployeeCategoryName)
+					                @Html.DisplayNameFor(model => model.SettlementVwViewModel.Instance.InstallmentRefundableProductProductEmployeeDepartmentSalaryWorkPlaceName)
 					            </th>
 					            <th>
 					                @Html.DisplayNameFor(model => model.SettlementVwViewModel.Instance.InstallmentRefundableProductProductProductTypeName)
@@ -486,10 +485,7 @@
                     				 @Html.DisplayFor(modelItem => item.InstallmentRefundableProductProductEmployeeFullName)
                 				</td>
                 				<td>
-                    				 @Html.DisplayFor(modelItem => item.InstallmentRefundableProductProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
-                				</td>
-                				<td>
-                    				 @Html.DisplayFor(modelItem => item.InstallmentRefundableProductProductEmployeeCategoryName)
+                    				 @Html.DisplayFor(modelItem => item.InstallmentRefundableProductProductEmployeeDepartmentSalaryWorkPlaceName)
                 				</td>
                 				<td>
                     				 @Html.DisplayFor(modelItem => item.InstallmentRefundableProductProductProductTypeName)
@@ -573,9 +569,10 @@
 				var table = $(this).context;
                 var len = table.rows.length;
                 if (len == 1) 
-                {                    
+                {             
+					table = table.tBodies[0];
                     // Create an empty <tr> element
-                    var row = table.insertRow(1);
+                    var row = table.insertRow(0);
 
                     //// Insert new cell
                     var cell1 = row.insertCell(0);

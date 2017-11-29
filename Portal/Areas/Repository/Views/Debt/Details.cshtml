@@ -96,18 +96,6 @@
                                 <div class="row">
 									<div class="col-md-4">
 								        <div class="form-group">
-								            @*@Html.LabelFor(model => model.Instance.EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName, htmlAttributes: new { @class = "control-label" })*@
-								            @Html.LabelFor(model => model.Instance.EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName, new Dictionary<string, Object>
-								                { { "class", "control-label" },
-								                  {"title", Html.ToolTipMessageFor(model => model.Instance.EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)},
-								                  {"data-toggle", "tooltip"},
-								                  {"data-placement", "bottom"}
-								                })
-								                 <input type="text" id="txtEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName" class="form-control" value="@Html.DisplayFor(model => model.Instance.EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)" disabled />
-								        </div>
-									</div>
-									<div class="col-md-4">
-								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.EmployeeCategoryName, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.EmployeeCategoryName, new Dictionary<string, Object>
 								                { { "class", "control-label" },
@@ -130,8 +118,6 @@
 								                 <input type="text" id="txtAmount" class="form-control" value="@Html.DisplayFor(model => model.Instance.Amount)" disabled />
 								        </div>
 									</div>
-								</div>
-                                <div class="row">
 									<div class="col-md-4">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.IssuerName, htmlAttributes: new { @class = "control-label" })*@
@@ -144,6 +130,8 @@
 								                 <input type="text" id="txtIssuerName" class="form-control" value="@Html.DisplayFor(model => model.Instance.IssuerName)" disabled />
 								        </div>
 									</div>
+								</div>
+                                <div class="row">
 									<div class="col-md-4">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.ReferenceNumber, htmlAttributes: new { @class = "control-label" })*@
@@ -168,8 +156,6 @@
 								                 <input type="text" id="txtDate" class="form-control" value="@Html.DisplayFor(model => model.Instance.Date)" disabled />
 								        </div>
 									</div>
-								</div>
-                                <div class="row">
 									<div class="col-md-4">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.PeriodInMonths, htmlAttributes: new { @class = "control-label" })*@
@@ -182,6 +168,8 @@
 								                 <input type="text" id="txtPeriodInMonths" class="form-control" value="@Html.DisplayFor(model => model.Instance.PeriodInMonths)" disabled />
 								        </div>
 									</div>
+								</div>
+                                <div class="row">
 									<div class="col-md-4">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.ExceptionalPayment, htmlAttributes: new { @class = "control-label" })*@
@@ -206,8 +194,6 @@
 								                 @Html.CheckBoxFor(model => model.Instance.IsActive, new { @disabled = "disabled" ,@class="form-control" })
 								        </div>
 									</div>
-								</div>
-                                <div class="row">
 									<div class="col-md-4">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.Notes, htmlAttributes: new { @class = "control-label" })*@
@@ -220,6 +206,8 @@
 								                 <input type="text" id="txtNotes" class="form-control" value="@Html.DisplayFor(model => model.Instance.Notes)" disabled />
 								        </div>
 									</div>
+								</div>
+                                <div class="row">
 									<div class="col-md-4">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.IssueDescription, htmlAttributes: new { @class = "control-label" })*@
@@ -294,10 +282,7 @@
 					                @Html.DisplayNameFor(model => model.WarrantVwViewModel.Instance.EmployeeFullName)
 					            </th>
 					            <th>
-					                @Html.DisplayNameFor(model => model.WarrantVwViewModel.Instance.EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
-					            </th>
-					            <th>
-					                @Html.DisplayNameFor(model => model.WarrantVwViewModel.Instance.EmployeeCategoryName)
+					                @Html.DisplayNameFor(model => model.WarrantVwViewModel.Instance.EmployeeDepartmentSalaryWorkPlaceName)
 					            </th>
 					            <th>
 					                @Html.DisplayNameFor(model => model.WarrantVwViewModel.Instance.IsActive)
@@ -317,10 +302,7 @@
                     				 @Html.DisplayFor(modelItem => item.EmployeeFullName)
                 				</td>
                 				<td>
-                    				 @Html.DisplayFor(modelItem => item.EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
-                				</td>
-                				<td>
-                    				 @Html.DisplayFor(modelItem => item.EmployeeCategoryName)
+                    				 @Html.DisplayFor(modelItem => item.EmployeeDepartmentSalaryWorkPlaceName)
                 				</td>
                 				<td>
                     				 @Html.CheckBoxFor(modelItem => item.IsActive, new { @disabled = "disabled" ,@class="form-control" })
@@ -389,9 +371,10 @@
 				var table = $(this).context;
                 var len = table.rows.length;
                 if (len == 1) 
-                {                    
+                {             
+					table = table.tBodies[0];
                     // Create an empty <tr> element
-                    var row = table.insertRow(1);
+                    var row = table.insertRow(0);
 
                     //// Insert new cell
                     var cell1 = row.insertCell(0);

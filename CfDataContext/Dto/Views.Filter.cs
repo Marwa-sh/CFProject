@@ -42,12 +42,12 @@ namespace Cf.Data
             // Select.Columns.Add("[PaymentEmployeeDepartmentId]");
             // Select.Columns.Add("[PaymentEmployeeDepartmentName]");
             // Select.Columns.Add("[PaymentEmployeeDepartmentSalaryWorkPlaceId]");
-            // Select.Columns.Add("[PaymentEmployeeDepartmentSalaryWorkPlaceName]");
+            Select.Columns.Add("[PaymentEmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
-            Select.Columns.Add("[PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
+            // Select.Columns.Add("[PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[PaymentEmployeeNotes]");
             // Select.Columns.Add("[PaymentEmployeeCategoryId]");
-            Select.Columns.Add("[PaymentEmployeeCategoryName]");
+            // Select.Columns.Add("[PaymentEmployeeCategoryName]");
             Select.Columns.Add("[PaymentDate]");
             // Select.Columns.Add("[PaymentPaymentGroupId]");
             Select.Columns.Add("[PaymentPaymentGroupName]");
@@ -60,7 +60,7 @@ namespace Cf.Data
             // Select.Columns.Add("[PaymentCollectOrderDate]");
             // Select.Columns.Add("[PaymentCollectOrderAccountingDocumentNumber]");
             // Select.Columns.Add("[PaymentCollectOrderAccountingDocumentDate]");
-            Select.Columns.Add("[Number]");
+            // Select.Columns.Add("[Number]");
             // Select.Columns.Add("[ReceiptNumber]");
             // Select.Columns.Add("[ReceiptDate]");
             // Select.Columns.Add("[FeeAmount]");
@@ -73,7 +73,8 @@ namespace Cf.Data
 		public Nullable<int> PaymentEmployeeId { get; set; }
 		public string PaymentEmployeeFullNameContains { get; set; }
 		public Nullable<int> PaymentEmployeeDepartmentSalaryWorkPlaceId { get; set; }
-		public Nullable<int> PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId { get; set; }
+		public Nullable<DateTime> MinPaymentDate { get; set; }
+		public Nullable<DateTime> MaxPaymentDate { get; set; }
 		public Nullable<short> Number { get; set; }
 		#endregion
 
@@ -99,8 +100,8 @@ namespace Cf.Data
 			criterion = new SimpleCriterion("[PaymentEmployeeDepartmentSalaryWorkPlaceId]", SqlDbType.Int, OperatorType.Equals, new Parameter("@PaymentEmployeeDepartmentSalaryWorkPlaceId", PaymentEmployeeDepartmentSalaryWorkPlaceId));
 			Criteria.Add(criterion);
 
-			// Add PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId criterion
-			criterion = new SimpleCriterion("[PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]", SqlDbType.Int, OperatorType.Equals, new Parameter("@PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId", PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId));
+			// Add PaymentDateDateBetween criterion
+			criterion = new DateBetweenCriterion("[PaymentDate]", SqlDbType.Date, new Parameter("@MinPaymentDate", MinPaymentDate), new Parameter("@MaxPaymentDate", MaxPaymentDate));
 			Criteria.Add(criterion);
 
 			// Add Number criterion
@@ -197,10 +198,10 @@ namespace Cf.Data
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceId]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
-            Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
+            // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[EmployeeNotes]");
             // Select.Columns.Add("[EmployeeCategoryId]");
-            Select.Columns.Add("[EmployeeCategoryName]");
+            // Select.Columns.Add("[EmployeeCategoryName]");
             Select.Columns.Add("[Amount]");
             // Select.Columns.Add("[IssuerId]");
             Select.Columns.Add("[IssuerName]");
@@ -221,7 +222,6 @@ namespace Cf.Data
 		public Nullable<int> EmployeeId { get; set; }
 		public string EmployeeFullNameContains { get; set; }
 		public Nullable<int> EmployeeDepartmentSalaryWorkPlaceId { get; set; }
-		public Nullable<int> EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId { get; set; }
 		public Nullable<byte> IssuerId { get; set; }
 		public Nullable<DateTime> MinDate { get; set; }
 		public Nullable<DateTime> MaxDate { get; set; }
@@ -247,10 +247,6 @@ namespace Cf.Data
 
 			// Add EmployeeDepartmentSalaryWorkPlaceId criterion
 			criterion = new SimpleCriterion("[EmployeeDepartmentSalaryWorkPlaceId]", SqlDbType.Int, OperatorType.Equals, new Parameter("@EmployeeDepartmentSalaryWorkPlaceId", EmployeeDepartmentSalaryWorkPlaceId));
-			Criteria.Add(criterion);
-
-			// Add EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId criterion
-			criterion = new SimpleCriterion("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]", SqlDbType.Int, OperatorType.Equals, new Parameter("@EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId", EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId));
 			Criteria.Add(criterion);
 
 			// Add IssuerId criterion
@@ -361,10 +357,10 @@ namespace Cf.Data
             // Select.Columns.Add("[PaymentEmployeeDepartmentSalaryWorkPlaceId]");
             // Select.Columns.Add("[PaymentEmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
-            Select.Columns.Add("[PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
+            // Select.Columns.Add("[PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[PaymentEmployeeNotes]");
             // Select.Columns.Add("[PaymentEmployeeCategoryId]");
-            Select.Columns.Add("[PaymentEmployeeCategoryName]");
+            // Select.Columns.Add("[PaymentEmployeeCategoryName]");
             Select.Columns.Add("[PaymentDate]");
             // Select.Columns.Add("[PaymentPaymentGroupId]");
             // Select.Columns.Add("[PaymentPaymentGroupName]");
@@ -433,11 +429,6 @@ namespace Cf.Data
 
 		public Nullable<int> PaymentEmployeeId { get; set; }
 		public string PaymentEmployeeFullNameContains { get; set; }
-		public Nullable<int> PaymentEmployeeDepartmentId { get; set; }
-		public string PaymentEmployeeDepartmentNameContains { get; set; }
-		public Nullable<int> PaymentEmployeeDepartmentSalaryWorkPlaceId { get; set; }
-		public Nullable<int> PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId { get; set; }
-		public Nullable<byte> PaymentEmployeeCategoryId { get; set; }
 		public Nullable<DateTime> MinPaymentDate { get; set; }
 		public Nullable<DateTime> MaxPaymentDate { get; set; }
 		public Nullable<short> RequestProductProductTypeId { get; set; }
@@ -459,26 +450,6 @@ namespace Cf.Data
 
 			// Add PaymentEmployeeFullNameContains criterion
 			criterion = new SimpleCriterion("[PaymentEmployeeFullName]", SqlDbType.VarChar, OperatorType.Contains, new Parameter("@PaymentEmployeeFullNameContains", PaymentEmployeeFullNameContains));
-			Criteria.Add(criterion);
-
-			// Add PaymentEmployeeDepartmentId criterion
-			criterion = new SimpleCriterion("[PaymentEmployeeDepartmentId]", SqlDbType.Int, OperatorType.Equals, new Parameter("@PaymentEmployeeDepartmentId", PaymentEmployeeDepartmentId));
-			Criteria.Add(criterion);
-
-			// Add PaymentEmployeeDepartmentNameContains criterion
-			criterion = new SimpleCriterion("[PaymentEmployeeDepartmentName]", SqlDbType.VarChar, OperatorType.Contains, new Parameter("@PaymentEmployeeDepartmentNameContains", PaymentEmployeeDepartmentNameContains));
-			Criteria.Add(criterion);
-
-			// Add PaymentEmployeeDepartmentSalaryWorkPlaceId criterion
-			criterion = new SimpleCriterion("[PaymentEmployeeDepartmentSalaryWorkPlaceId]", SqlDbType.Int, OperatorType.Equals, new Parameter("@PaymentEmployeeDepartmentSalaryWorkPlaceId", PaymentEmployeeDepartmentSalaryWorkPlaceId));
-			Criteria.Add(criterion);
-
-			// Add PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId criterion
-			criterion = new SimpleCriterion("[PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]", SqlDbType.Int, OperatorType.Equals, new Parameter("@PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId", PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId));
-			Criteria.Add(criterion);
-
-			// Add PaymentEmployeeCategoryId criterion
-			criterion = new SimpleCriterion("[PaymentEmployeeCategoryId]", SqlDbType.TinyInt, OperatorType.Equals, new Parameter("@PaymentEmployeeCategoryId", PaymentEmployeeCategoryId));
 			Criteria.Add(criterion);
 
 			// Add PaymentDateDateBetween criterion
@@ -512,7 +483,7 @@ namespace Cf.Data
             Select.Columns.Add("[FullName]");
             Select.Columns.Add("[FatherName]");
             // Select.Columns.Add("[FullName3]");
-            Select.Columns.Add("[MotherName]");
+            // Select.Columns.Add("[MotherName]");
             // Select.Columns.Add("[BirthDate]");
             // Select.Columns.Add("[ExpectedEndDate]");
             // Select.Columns.Add("[CersStartDate]");
@@ -527,10 +498,10 @@ namespace Cf.Data
             // Select.Columns.Add("[DepartmentSalaryWorkPlaceId]");
             // Select.Columns.Add("[DepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[DepartmentSalaryWorkPlaceMainWorkPlaceId]");
-            Select.Columns.Add("[DepartmentSalaryWorkPlaceMainWorkPlaceName]");
+            // Select.Columns.Add("[DepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[Notes]");
             // Select.Columns.Add("[CategoryId]");
-            Select.Columns.Add("[CategoryName]");
+            // Select.Columns.Add("[CategoryName]");
             FromClause = "[dbo].[EmployeeVw]";
         }
         #endregion
@@ -541,8 +512,6 @@ namespace Cf.Data
 		public string FullNameContains { get; set; }
 		public Nullable<int> DepartmentId { get; set; }
 		public string DepartmentNameContains { get; set; }
-		public Nullable<int> DepartmentSalaryWorkPlaceId { get; set; }
-		public Nullable<int> DepartmentSalaryWorkPlaceMainWorkPlaceId { get; set; }
 		public Nullable<byte> CategoryId { get; set; }
 		#endregion
 
@@ -561,7 +530,7 @@ namespace Cf.Data
 			Criteria.Add(criterion);
 
 			// Add FullNameContains criterion
-			criterion = new SimpleCriterion("[FullName]", SqlDbType.VarChar, OperatorType.Contains, new Parameter("@FullNameContains", FullNameContains));
+			criterion = new SimpleCriterion("[FullName]", SqlDbType.VarChar, OperatorType.ArabicSoundex, new Parameter("@FullNameContains", FullNameContains));
 			Criteria.Add(criterion);
 
 			// Add DepartmentId criterion
@@ -570,14 +539,6 @@ namespace Cf.Data
 
 			// Add DepartmentNameContains criterion
 			criterion = new SimpleCriterion("[DepartmentName]", SqlDbType.VarChar, OperatorType.Contains, new Parameter("@DepartmentNameContains", DepartmentNameContains));
-			Criteria.Add(criterion);
-
-			// Add DepartmentSalaryWorkPlaceId criterion
-			criterion = new SimpleCriterion("[DepartmentSalaryWorkPlaceId]", SqlDbType.Int, OperatorType.Equals, new Parameter("@DepartmentSalaryWorkPlaceId", DepartmentSalaryWorkPlaceId));
-			Criteria.Add(criterion);
-
-			// Add DepartmentSalaryWorkPlaceMainWorkPlaceId criterion
-			criterion = new SimpleCriterion("[DepartmentSalaryWorkPlaceMainWorkPlaceId]", SqlDbType.Int, OperatorType.Equals, new Parameter("@DepartmentSalaryWorkPlaceMainWorkPlaceId", DepartmentSalaryWorkPlaceMainWorkPlaceId));
 			Criteria.Add(criterion);
 
 			// Add CategoryId criterion
@@ -689,7 +650,7 @@ namespace Cf.Data
             // Fill Select clause
             Select.Columns.Add("[EventLogId]");
             // Select.Columns.Add("[EventLogEventSourceId]");
-            Select.Columns.Add("[EventLogEventSourceName]");
+            // Select.Columns.Add("[EventLogEventSourceName]");
             // Select.Columns.Add("[EventLogEventCategoryId]");
             Select.Columns.Add("[EventLogEventCategoryName]");
             // Select.Columns.Add("[EventLogEventStatusId]");
@@ -707,7 +668,6 @@ namespace Cf.Data
 
         #region Public properties
 
-		public Nullable<int> EventLogEventSourceId { get; set; }
 		public Nullable<int> EventLogEventCategoryId { get; set; }
 		public Nullable<int> EventLogEventStatusId { get; set; }
 		public CriterionBase EventLogParametersCustomCriterion { get; set; }
@@ -726,10 +686,6 @@ namespace Cf.Data
             CriterionBase criterion;
             // If you need to use parameters, please uncomment the following line
             // Parameter[] parameters;
-
-			// Add EventLogEventSourceId criterion
-			criterion = new SimpleCriterion("[EventLogEventSourceId]", SqlDbType.Int, OperatorType.Equals, new Parameter("@EventLogEventSourceId", EventLogEventSourceId));
-			Criteria.Add(criterion);
 
 			// Add EventLogEventCategoryId criterion
 			criterion = new SimpleCriterion("[EventLogEventCategoryId]", SqlDbType.Int, OperatorType.Equals, new Parameter("@EventLogEventCategoryId", EventLogEventCategoryId));
@@ -774,15 +730,15 @@ namespace Cf.Data
             // Fill Select clause
             Select.Columns.Add("[Id]");
             // Select.Columns.Add("[EventSourceId]");
-            Select.Columns.Add("[EventSourceName]");
+            // Select.Columns.Add("[EventSourceName]");
             // Select.Columns.Add("[EventCategoryId]");
             Select.Columns.Add("[EventCategoryName]");
             // Select.Columns.Add("[EventStatusId]");
             Select.Columns.Add("[EventStatusName]");
             // Select.Columns.Add("[EventStatusIcon]");
-            Select.Columns.Add("[Parameters]");
             Select.Columns.Add("[Date]");
             Select.Columns.Add("[User]");
+            Select.Columns.Add("[Parameters]");
             FromClause = "[dbo].[EventLogVw]";
         }
         #endregion
@@ -790,13 +746,12 @@ namespace Cf.Data
         #region Public properties
 
 		public Nullable<long> Id { get; set; }
-		public Nullable<int> EventSourceId { get; set; }
 		public Nullable<int> EventCategoryId { get; set; }
 		public Nullable<int> EventStatusId { get; set; }
-		public ParametersCustomCriterion ParametersCustomCriterion { get; set; }
 		public Nullable<DateTime> MinDate { get; set; }
 		public Nullable<DateTime> MaxDate { get; set; }
 		public Nullable<int> User { get; set; }
+		public CriterionBase ParametersCustomCriterion { get; set; }
 		#endregion
 
         #region Overrides
@@ -813,10 +768,6 @@ namespace Cf.Data
 			criterion = new SimpleCriterion("[Id]", SqlDbType.BigInt, OperatorType.Equals, new Parameter("@Id", Id));
 			Criteria.Add(criterion);
 
-			// Add EventSourceId criterion
-			criterion = new SimpleCriterion("[EventSourceId]", SqlDbType.Int, OperatorType.Equals, new Parameter("@EventSourceId", EventSourceId));
-			Criteria.Add(criterion);
-
 			// Add EventCategoryId criterion
 			criterion = new SimpleCriterion("[EventCategoryId]", SqlDbType.Int, OperatorType.Equals, new Parameter("@EventCategoryId", EventCategoryId));
 			Criteria.Add(criterion);
@@ -825,10 +776,6 @@ namespace Cf.Data
 			criterion = new SimpleCriterion("[EventStatusId]", SqlDbType.Int, OperatorType.Equals, new Parameter("@EventStatusId", EventStatusId));
 			Criteria.Add(criterion);
 
-			// Add Parameters custom criterion
-			if (ParametersCustomCriterion != null)
-				Criteria.Add(ParametersCustomCriterion);
-
 			// Add DateDateBetween criterion
 			criterion = new DateBetweenCriterion("[Date]", SqlDbType.DateTime, new Parameter("@MinDate", MinDate), new Parameter("@MaxDate", MaxDate));
 			Criteria.Add(criterion);
@@ -836,6 +783,10 @@ namespace Cf.Data
 			// Add User criterion
 			criterion = new SimpleCriterion("[User]", SqlDbType.Int, OperatorType.Equals, new Parameter("@User", User));
 			Criteria.Add(criterion);
+
+			// Add Parameters custom criterion
+			if (ParametersCustomCriterion != null)
+				Criteria.Add(ParametersCustomCriterion);
 
         }
         #endregion
@@ -876,10 +827,10 @@ namespace Cf.Data
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceId]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
-            Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
+            // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[EmployeeNotes]");
             // Select.Columns.Add("[EmployeeCategoryId]");
-            Select.Columns.Add("[EmployeeCategoryName]");
+            // Select.Columns.Add("[EmployeeCategoryName]");
             Select.Columns.Add("[RequestDate]");
             // Select.Columns.Add("[GrantTypeId]");
             Select.Columns.Add("[GrantTypeName]");
@@ -904,7 +855,6 @@ namespace Cf.Data
 		public Nullable<DateTime> MinRequestDate { get; set; }
 		public Nullable<DateTime> MaxRequestDate { get; set; }
 		public Nullable<byte> GrantTypeId { get; set; }
-		public Nullable<byte> GrantTypeGrantTypeGroupId { get; set; }
 		#endregion
 
         #region Overrides
@@ -931,10 +881,6 @@ namespace Cf.Data
 
 			// Add GrantTypeId criterion
 			criterion = new SimpleCriterion("[GrantTypeId]", SqlDbType.TinyInt, OperatorType.Equals, new Parameter("@GrantTypeId", GrantTypeId));
-			Criteria.Add(criterion);
-
-			// Add GrantTypeGrantTypeGroupId criterion
-			criterion = new SimpleCriterion("[GrantTypeGrantTypeGroupId]", SqlDbType.TinyInt, OperatorType.Equals, new Parameter("@GrantTypeGrantTypeGroupId", GrantTypeGrantTypeGroupId));
 			Criteria.Add(criterion);
 
         }
@@ -982,9 +928,6 @@ namespace Cf.Data
 		public Nullable<byte> GrantTypeGroupId { get; set; }
 		public Nullable<DateTime> MinDate { get; set; }
 		public Nullable<DateTime> MaxDate { get; set; }
-		public string PaymentNumber { get; set; }
-		public Nullable<DateTime> MinPaymentDate { get; set; }
-		public Nullable<DateTime> MaxPaymentDate { get; set; }
 		#endregion
 
         #region Overrides
@@ -1011,14 +954,6 @@ namespace Cf.Data
 
 			// Add DateDateBetween criterion
 			criterion = new DateBetweenCriterion("[Date]", SqlDbType.Date, new Parameter("@MinDate", MinDate), new Parameter("@MaxDate", MaxDate));
-			Criteria.Add(criterion);
-
-			// Add PaymentNumber criterion
-			criterion = new SimpleCriterion("[PaymentNumber]", SqlDbType.VarChar, OperatorType.Equals, new Parameter("@PaymentNumber", PaymentNumber));
-			Criteria.Add(criterion);
-
-			// Add PaymentDateDateBetween criterion
-			criterion = new DateBetweenCriterion("[PaymentDate]", SqlDbType.Date, new Parameter("@MinPaymentDate", MinPaymentDate), new Parameter("@MaxPaymentDate", MaxPaymentDate));
 			Criteria.Add(criterion);
 
         }
@@ -1123,10 +1058,10 @@ namespace Cf.Data
             // Select.Columns.Add("[GrantProductEmployeeDepartmentSalaryWorkPlaceId]");
             // Select.Columns.Add("[GrantProductEmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[GrantProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
-            Select.Columns.Add("[GrantProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
+            // Select.Columns.Add("[GrantProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[GrantProductEmployeeNotes]");
             // Select.Columns.Add("[GrantProductEmployeeCategoryId]");
-            Select.Columns.Add("[GrantProductEmployeeCategoryName]");
+            // Select.Columns.Add("[GrantProductEmployeeCategoryName]");
             // Select.Columns.Add("[GrantProductProductTypeId]");
             Select.Columns.Add("[GrantProductProductTypeName]");
             // Select.Columns.Add("[GrantProductProductTypeRate]");
@@ -1159,7 +1094,7 @@ namespace Cf.Data
             // Select.Columns.Add("[GrantGrantDecisionAdditionalIntroduction]");
             Select.Columns.Add("[GrantAmount]");
             Select.Columns.Add("[Amount]");
-            Select.Columns.Add("[Notes]");
+            // Select.Columns.Add("[Notes]");
             FromClause = "[dbo].[GrantPaymentVw]";
         }
         #endregion
@@ -1167,7 +1102,6 @@ namespace Cf.Data
         #region Public properties
 
 		public Nullable<short> GrantPaymentOrderNumber { get; set; }
-		public Nullable<short> GrantPaymentOrderYear { get; set; }
 		public Nullable<DateTime> MinGrantPaymentOrderDate { get; set; }
 		public Nullable<DateTime> MaxGrantPaymentOrderDate { get; set; }
 		public Nullable<byte> SubNumber { get; set; }
@@ -1189,10 +1123,6 @@ namespace Cf.Data
 
 			// Add GrantPaymentOrderNumber criterion
 			criterion = new SimpleCriterion("[GrantPaymentOrderNumber]", SqlDbType.SmallInt, OperatorType.Equals, new Parameter("@GrantPaymentOrderNumber", GrantPaymentOrderNumber));
-			Criteria.Add(criterion);
-
-			// Add GrantPaymentOrderYear criterion
-			criterion = new SimpleCriterion("[GrantPaymentOrderYear]", SqlDbType.SmallInt, OperatorType.Equals, new Parameter("@GrantPaymentOrderYear", GrantPaymentOrderYear));
 			Criteria.Add(criterion);
 
 			// Add GrantPaymentOrderDateDateBetween criterion
@@ -1254,10 +1184,10 @@ namespace Cf.Data
             // Select.Columns.Add("[RequestProductEmployeeDepartmentSalaryWorkPlaceId]");
             // Select.Columns.Add("[RequestProductEmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[RequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
-            Select.Columns.Add("[RequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
+            // Select.Columns.Add("[RequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[RequestProductEmployeeNotes]");
             // Select.Columns.Add("[RequestProductEmployeeCategoryId]");
-            Select.Columns.Add("[RequestProductEmployeeCategoryName]");
+            // Select.Columns.Add("[RequestProductEmployeeCategoryName]");
             // Select.Columns.Add("[RequestProductProductTypeId]");
             Select.Columns.Add("[RequestProductProductTypeName]");
             // Select.Columns.Add("[RequestProductProductTypeRate]");
@@ -1283,7 +1213,7 @@ namespace Cf.Data
             Select.Columns.Add("[GrantType]");
             Select.Columns.Add("[Description]");
             Select.Columns.Add("[Amount]");
-            Select.Columns.Add("[Notes]");
+            // Select.Columns.Add("[Notes]");
             Select.Columns.Add("[EventDate]");
             Select.Columns.Add("[IsFromOtherBranch]");
             FromClause = "[dbo].[GrantRequestVw]";
@@ -1294,7 +1224,6 @@ namespace Cf.Data
 
 		public Nullable<int> RequestProductEmployeeId { get; set; }
 		public string RequestProductEmployeeFullNameContains { get; set; }
-		public Nullable<byte> RequestProductProductTypePaymentGroupId { get; set; }
 		public Nullable<byte> GrantType { get; set; }
 		#endregion
 
@@ -1314,10 +1243,6 @@ namespace Cf.Data
 
 			// Add RequestProductEmployeeFullNameContains criterion
 			criterion = new SimpleCriterion("[RequestProductEmployeeFullName]", SqlDbType.VarChar, OperatorType.Contains, new Parameter("@RequestProductEmployeeFullNameContains", RequestProductEmployeeFullNameContains));
-			Criteria.Add(criterion);
-
-			// Add RequestProductProductTypePaymentGroupId criterion
-			criterion = new SimpleCriterion("[RequestProductProductTypePaymentGroupId]", SqlDbType.TinyInt, OperatorType.Equals, new Parameter("@RequestProductProductTypePaymentGroupId", RequestProductProductTypePaymentGroupId));
 			Criteria.Add(criterion);
 
 			// Add GrantType criterion
@@ -1363,10 +1288,10 @@ namespace Cf.Data
             // Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceId]");
             Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
-            Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
+            // Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[ProductEmployeeNotes]");
             // Select.Columns.Add("[ProductEmployeeCategoryId]");
-            Select.Columns.Add("[ProductEmployeeCategoryName]");
+            // Select.Columns.Add("[ProductEmployeeCategoryName]");
             // Select.Columns.Add("[ProductProductTypeId]");
             Select.Columns.Add("[ProductProductTypeName]");
             // Select.Columns.Add("[ProductProductTypeRate]");
@@ -1406,8 +1331,6 @@ namespace Cf.Data
 
 		public Nullable<int> ProductEmployeeId { get; set; }
 		public string ProductEmployeeFullNameContains { get; set; }
-		public Nullable<short> ProductProductTypeId { get; set; }
-		public Nullable<byte> ProductProductTypePaymentGroupId { get; set; }
 		public Nullable<short> GrantDecisionNumber { get; set; }
 		public Nullable<short> GrantDecisionYear { get; set; }
 		#endregion
@@ -1428,14 +1351,6 @@ namespace Cf.Data
 
 			// Add ProductEmployeeFullNameContains criterion
 			criterion = new SimpleCriterion("[ProductEmployeeFullName]", SqlDbType.VarChar, OperatorType.Contains, new Parameter("@ProductEmployeeFullNameContains", ProductEmployeeFullNameContains));
-			Criteria.Add(criterion);
-
-			// Add ProductProductTypeId criterion
-			criterion = new SimpleCriterion("[ProductProductTypeId]", SqlDbType.SmallInt, OperatorType.Equals, new Parameter("@ProductProductTypeId", ProductProductTypeId));
-			Criteria.Add(criterion);
-
-			// Add ProductProductTypePaymentGroupId criterion
-			criterion = new SimpleCriterion("[ProductProductTypePaymentGroupId]", SqlDbType.TinyInt, OperatorType.Equals, new Parameter("@ProductProductTypePaymentGroupId", ProductProductTypePaymentGroupId));
 			Criteria.Add(criterion);
 
 			// Add GrantDecisionNumber criterion
@@ -1486,10 +1401,10 @@ namespace Cf.Data
             // Select.Columns.Add("[RefundableProductProductEmployeeDepartmentSalaryWorkPlaceId]");
             // Select.Columns.Add("[RefundableProductProductEmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[RefundableProductProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
-            Select.Columns.Add("[RefundableProductProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
+            // Select.Columns.Add("[RefundableProductProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[RefundableProductProductEmployeeNotes]");
             // Select.Columns.Add("[RefundableProductProductEmployeeCategoryId]");
-            Select.Columns.Add("[RefundableProductProductEmployeeCategoryName]");
+            // Select.Columns.Add("[RefundableProductProductEmployeeCategoryName]");
             // Select.Columns.Add("[RefundableProductProductProductTypeId]");
             Select.Columns.Add("[RefundableProductProductProductTypeName]");
             // Select.Columns.Add("[RefundableProductProductProductTypeRate]");
@@ -1508,7 +1423,7 @@ namespace Cf.Data
             // Select.Columns.Add("[RefundableProductNetAmount]");
             // Select.Columns.Add("[RefundableProductProfitAmount]");
             // Select.Columns.Add("[RefundableProductSyrianPoundRounds]");
-            Select.Columns.Add("[SubNumber]");
+            // Select.Columns.Add("[SubNumber]");
             Select.Columns.Add("[EmployeeId]");
             // Select.Columns.Add("[EmployeeFirstName]");
             // Select.Columns.Add("[EmployeeLastName]");
@@ -1533,7 +1448,7 @@ namespace Cf.Data
             Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[EmployeeNotes]");
             // Select.Columns.Add("[EmployeeCategoryId]");
-            Select.Columns.Add("[EmployeeCategoryName]");
+            // Select.Columns.Add("[EmployeeCategoryName]");
             // Select.Columns.Add("[GuarantorStatusId]");
             Select.Columns.Add("[GuarantorStatusName]");
             // Select.Columns.Add("[Notes]");
@@ -1614,10 +1529,10 @@ namespace Cf.Data
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceId]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
-            Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
+            // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[EmployeeNotes]");
             // Select.Columns.Add("[EmployeeCategoryId]");
-            Select.Columns.Add("[EmployeeCategoryName]");
+            // Select.Columns.Add("[EmployeeCategoryName]");
             Select.Columns.Add("[PaymentDate]");
             Select.Columns.Add("[PaymentAmount]");
             // Select.Columns.Add("[PaymentNotes]");
@@ -1658,7 +1573,6 @@ namespace Cf.Data
 
 		public Nullable<int> EmployeeId { get; set; }
 		public string EmployeeFullNameContains { get; set; }
-		public Nullable<byte> PaymentStatus { get; set; }
 		public Nullable<short> HealthLoanDecisionNumber { get; set; }
 		public Nullable<short> HealthLoanDecisionYear { get; set; }
 		#endregion
@@ -1679,10 +1593,6 @@ namespace Cf.Data
 
 			// Add EmployeeFullNameContains criterion
 			criterion = new SimpleCriterion("[EmployeeFullName]", SqlDbType.VarChar, OperatorType.Contains, new Parameter("@EmployeeFullNameContains", EmployeeFullNameContains));
-			Criteria.Add(criterion);
-
-			// Add PaymentStatus criterion
-			criterion = new SimpleCriterion("[PaymentStatus]", SqlDbType.TinyInt, OperatorType.Equals, new Parameter("@PaymentStatus", PaymentStatus));
 			Criteria.Add(criterion);
 
 			// Add HealthLoanDecisionNumber criterion
@@ -1729,9 +1639,6 @@ namespace Cf.Data
 		public Nullable<short> Year { get; set; }
 		public Nullable<DateTime> MinDate { get; set; }
 		public Nullable<DateTime> MaxDate { get; set; }
-		public string PaymentNumber { get; set; }
-		public Nullable<DateTime> MinPaymentDate { get; set; }
-		public Nullable<DateTime> MaxPaymentDate { get; set; }
 		#endregion
 
         #region Overrides
@@ -1754,14 +1661,6 @@ namespace Cf.Data
 
 			// Add DateDateBetween criterion
 			criterion = new DateBetweenCriterion("[Date]", SqlDbType.Date, new Parameter("@MinDate", MinDate), new Parameter("@MaxDate", MaxDate));
-			Criteria.Add(criterion);
-
-			// Add PaymentNumber criterion
-			criterion = new SimpleCriterion("[PaymentNumber]", SqlDbType.VarChar, OperatorType.Equals, new Parameter("@PaymentNumber", PaymentNumber));
-			Criteria.Add(criterion);
-
-			// Add PaymentDateDateBetween criterion
-			criterion = new DateBetweenCriterion("[PaymentDate]", SqlDbType.Date, new Parameter("@MinPaymentDate", MinPaymentDate), new Parameter("@MaxPaymentDate", MaxPaymentDate));
 			Criteria.Add(criterion);
 
         }
@@ -1803,10 +1702,10 @@ namespace Cf.Data
             // Select.Columns.Add("[LoanProductEmployeeDepartmentSalaryWorkPlaceId]");
             // Select.Columns.Add("[LoanProductEmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[LoanProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
-            Select.Columns.Add("[LoanProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
+            // Select.Columns.Add("[LoanProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[LoanProductEmployeeNotes]");
             // Select.Columns.Add("[LoanProductEmployeeCategoryId]");
-            Select.Columns.Add("[LoanProductEmployeeCategoryName]");
+            // Select.Columns.Add("[LoanProductEmployeeCategoryName]");
             // Select.Columns.Add("[LoanProductProductTypeId]");
             Select.Columns.Add("[LoanProductProductTypeName]");
             // Select.Columns.Add("[LoanProductProductTypeRate]");
@@ -1851,9 +1750,9 @@ namespace Cf.Data
 
 		public Nullable<int> LoanProductEmployeeId { get; set; }
 		public string LoanProductEmployeeFullNameContains { get; set; }
+		public Nullable<short> LoanProductProductTypeId { get; set; }
 		public Nullable<short> LoanLoanDecisionNumber { get; set; }
 		public Nullable<short> LoanLoanDecisionYear { get; set; }
-		public Nullable<int> MainWorkPlaceId { get; set; }
 		#endregion
 
         #region Overrides
@@ -1874,16 +1773,16 @@ namespace Cf.Data
 			criterion = new SimpleCriterion("[LoanProductEmployeeFullName]", SqlDbType.VarChar, OperatorType.Contains, new Parameter("@LoanProductEmployeeFullNameContains", LoanProductEmployeeFullNameContains));
 			Criteria.Add(criterion);
 
+			// Add LoanProductProductTypeId criterion
+			criterion = new SimpleCriterion("[LoanProductProductTypeId]", SqlDbType.SmallInt, OperatorType.Equals, new Parameter("@LoanProductProductTypeId", LoanProductProductTypeId));
+			Criteria.Add(criterion);
+
 			// Add LoanLoanDecisionNumber criterion
 			criterion = new SimpleCriterion("[LoanLoanDecisionNumber]", SqlDbType.SmallInt, OperatorType.Equals, new Parameter("@LoanLoanDecisionNumber", LoanLoanDecisionNumber));
 			Criteria.Add(criterion);
 
 			// Add LoanLoanDecisionYear criterion
 			criterion = new SimpleCriterion("[LoanLoanDecisionYear]", SqlDbType.SmallInt, OperatorType.Equals, new Parameter("@LoanLoanDecisionYear", LoanLoanDecisionYear));
-			Criteria.Add(criterion);
-
-			// Add MainWorkPlaceId criterion
-			criterion = new SimpleCriterion("[MainWorkPlaceId]", SqlDbType.Int, OperatorType.Equals, new Parameter("@MainWorkPlaceId", MainWorkPlaceId));
 			Criteria.Add(criterion);
 
         }
@@ -1976,12 +1875,12 @@ namespace Cf.Data
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceId]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
-            Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
+            // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[EmployeeNotes]");
             // Select.Columns.Add("[EmployeeCategoryId]");
-            Select.Columns.Add("[EmployeeCategoryName]");
+            // Select.Columns.Add("[EmployeeCategoryName]");
             // Select.Columns.Add("[DepartmentId]");
-            Select.Columns.Add("[DepartmentName]");
+            // Select.Columns.Add("[DepartmentName]");
             // Select.Columns.Add("[DepartmentSalaryWorkPlaceId]");
             // Select.Columns.Add("[DepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[DepartmentSalaryWorkPlaceMainWorkPlaceId]");
@@ -1999,7 +1898,6 @@ namespace Cf.Data
 		public Nullable<DateTime> MaxInstallmentDecreaseOrderMonth { get; set; }
 		public Nullable<int> EmployeeId { get; set; }
 		public string EmployeeFullNameContains { get; set; }
-		public Nullable<int> DepartmentSalaryWorkPlaceId { get; set; }
 		#endregion
 
         #region Overrides
@@ -2022,10 +1920,6 @@ namespace Cf.Data
 
 			// Add EmployeeFullNameContains criterion
 			criterion = new SimpleCriterion("[EmployeeFullName]", SqlDbType.VarChar, OperatorType.Contains, new Parameter("@EmployeeFullNameContains", EmployeeFullNameContains));
-			Criteria.Add(criterion);
-
-			// Add DepartmentSalaryWorkPlaceId criterion
-			criterion = new SimpleCriterion("[DepartmentSalaryWorkPlaceId]", SqlDbType.Int, OperatorType.Equals, new Parameter("@DepartmentSalaryWorkPlaceId", DepartmentSalaryWorkPlaceId));
 			Criteria.Add(criterion);
 
         }
@@ -2068,10 +1962,10 @@ namespace Cf.Data
             // Select.Columns.Add("[RefundableProductProductEmployeeDepartmentSalaryWorkPlaceId]");
             // Select.Columns.Add("[RefundableProductProductEmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[RefundableProductProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
-            Select.Columns.Add("[RefundableProductProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
+            // Select.Columns.Add("[RefundableProductProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[RefundableProductProductEmployeeNotes]");
             // Select.Columns.Add("[RefundableProductProductEmployeeCategoryId]");
-            Select.Columns.Add("[RefundableProductProductEmployeeCategoryName]");
+            // Select.Columns.Add("[RefundableProductProductEmployeeCategoryName]");
             // Select.Columns.Add("[RefundableProductProductProductTypeId]");
             Select.Columns.Add("[RefundableProductProductProductTypeName]");
             // Select.Columns.Add("[RefundableProductProductProductTypeRate]");
@@ -2178,10 +2072,10 @@ namespace Cf.Data
             // Select.Columns.Add("[LoanProductEmployeeDepartmentSalaryWorkPlaceId]");
             // Select.Columns.Add("[LoanProductEmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[LoanProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
-            Select.Columns.Add("[LoanProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
+            // Select.Columns.Add("[LoanProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[LoanProductEmployeeNotes]");
             // Select.Columns.Add("[LoanProductEmployeeCategoryId]");
-            Select.Columns.Add("[LoanProductEmployeeCategoryName]");
+            // Select.Columns.Add("[LoanProductEmployeeCategoryName]");
             // Select.Columns.Add("[LoanProductProductTypeId]");
             Select.Columns.Add("[LoanProductProductTypeName]");
             // Select.Columns.Add("[LoanProductProductTypeRate]");
@@ -2284,8 +2178,10 @@ namespace Cf.Data
 
 		public Nullable<int> LoanProductEmployeeId { get; set; }
 		public string LoanProductEmployeeFullNameContains { get; set; }
+		public Nullable<short> LoanLoanType { get; set; }
 		public Nullable<int> FromLoanProductEmployeeId { get; set; }
 		public string FromLoanProductEmployeeFullNameContains { get; set; }
+		public Nullable<short> FromLoanLoanType { get; set; }
 		#endregion
 
         #region Overrides
@@ -2306,12 +2202,20 @@ namespace Cf.Data
 			criterion = new SimpleCriterion("[LoanProductEmployeeFullName]", SqlDbType.VarChar, OperatorType.Contains, new Parameter("@LoanProductEmployeeFullNameContains", LoanProductEmployeeFullNameContains));
 			Criteria.Add(criterion);
 
+			// Add LoanLoanType criterion
+			criterion = new SimpleCriterion("[LoanLoanType]", SqlDbType.SmallInt, OperatorType.Equals, new Parameter("@LoanLoanType", LoanLoanType));
+			Criteria.Add(criterion);
+
 			// Add FromLoanProductEmployeeId criterion
 			criterion = new SimpleCriterion("[FromLoanProductEmployeeId]", SqlDbType.Int, OperatorType.Equals, new Parameter("@FromLoanProductEmployeeId", FromLoanProductEmployeeId));
 			Criteria.Add(criterion);
 
 			// Add FromLoanProductEmployeeFullNameContains criterion
 			criterion = new SimpleCriterion("[FromLoanProductEmployeeFullName]", SqlDbType.VarChar, OperatorType.Contains, new Parameter("@FromLoanProductEmployeeFullNameContains", FromLoanProductEmployeeFullNameContains));
+			Criteria.Add(criterion);
+
+			// Add FromLoanLoanType criterion
+			criterion = new SimpleCriterion("[FromLoanLoanType]", SqlDbType.SmallInt, OperatorType.Equals, new Parameter("@FromLoanLoanType", FromLoanLoanType));
 			Criteria.Add(criterion);
 
         }
@@ -2343,7 +2247,7 @@ namespace Cf.Data
             Select.Columns.Add("[LoanDecisionTypeName]");
             // Select.Columns.Add("[PaymentNumber]");
             // Select.Columns.Add("[PaymentDate]");
-            Select.Columns.Add("[IsPaidFromSalary]");
+            // Select.Columns.Add("[IsPaidFromSalary]");
             Select.Columns.Add("[Reason]");
             // Select.Columns.Add("[AdditionalClause]");
             // Select.Columns.Add("[AdditionalIntroduction]");
@@ -2425,10 +2329,10 @@ namespace Cf.Data
             // Select.Columns.Add("[RequestProductEmployeeDepartmentSalaryWorkPlaceId]");
             // Select.Columns.Add("[RequestProductEmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[RequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
-            Select.Columns.Add("[RequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
+            // Select.Columns.Add("[RequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[RequestProductEmployeeNotes]");
             // Select.Columns.Add("[RequestProductEmployeeCategoryId]");
-            Select.Columns.Add("[RequestProductEmployeeCategoryName]");
+            // Select.Columns.Add("[RequestProductEmployeeCategoryName]");
             // Select.Columns.Add("[RequestProductProductTypeId]");
             Select.Columns.Add("[RequestProductProductTypeName]");
             // Select.Columns.Add("[RequestProductProductTypeRate]");
@@ -2462,7 +2366,6 @@ namespace Cf.Data
 		public Nullable<int> RequestProductEmployeeId { get; set; }
 		public string RequestProductEmployeeFullNameContains { get; set; }
 		public Nullable<short> RequestProductProductTypeId { get; set; }
-		public Nullable<byte> RequestProductProductTypePaymentGroupId { get; set; }
 		public Nullable<DateTime> MinRequestDate { get; set; }
 		public Nullable<DateTime> MaxRequestDate { get; set; }
 		public Nullable<byte> RequestRequestStatusId { get; set; }
@@ -2488,10 +2391,6 @@ namespace Cf.Data
 
 			// Add RequestProductProductTypeId criterion
 			criterion = new SimpleCriterion("[RequestProductProductTypeId]", SqlDbType.SmallInt, OperatorType.Equals, new Parameter("@RequestProductProductTypeId", RequestProductProductTypeId));
-			Criteria.Add(criterion);
-
-			// Add RequestProductProductTypePaymentGroupId criterion
-			criterion = new SimpleCriterion("[RequestProductProductTypePaymentGroupId]", SqlDbType.TinyInt, OperatorType.Equals, new Parameter("@RequestProductProductTypePaymentGroupId", RequestProductProductTypePaymentGroupId));
 			Criteria.Add(criterion);
 
 			// Add RequestDateDateBetween criterion
@@ -2529,7 +2428,7 @@ namespace Cf.Data
             Select.Columns.Add("[ProductTypeProfitStrategyName]");
             // Select.Columns.Add("[ProductTypePaymentGroupId]");
             Select.Columns.Add("[ProductTypePaymentGroupName]");
-            Select.Columns.Add("[ProductTypeIsActive]");
+            // Select.Columns.Add("[ProductTypeIsActive]");
             FromClause = "[dbo].[LoanTypeVw]";
         }
         #endregion
@@ -2537,6 +2436,7 @@ namespace Cf.Data
         #region Public properties
 
 		public string ProductTypeNameContains { get; set; }
+		public Nullable<byte> ProductTypeProfitStrategyId { get; set; }
 		public Nullable<byte> ProductTypePaymentGroupId { get; set; }
 		#endregion
 
@@ -2552,6 +2452,10 @@ namespace Cf.Data
 
 			// Add ProductTypeNameContains criterion
 			criterion = new SimpleCriterion("[ProductTypeName]", SqlDbType.VarChar, OperatorType.Contains, new Parameter("@ProductTypeNameContains", ProductTypeNameContains));
+			Criteria.Add(criterion);
+
+			// Add ProductTypeProfitStrategyId criterion
+			criterion = new SimpleCriterion("[ProductTypeProfitStrategyId]", SqlDbType.TinyInt, OperatorType.Equals, new Parameter("@ProductTypeProfitStrategyId", ProductTypeProfitStrategyId));
 			Criteria.Add(criterion);
 
 			// Add ProductTypePaymentGroupId criterion
@@ -2597,10 +2501,10 @@ namespace Cf.Data
             // Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceId]");
             // Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
-            Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
+            // Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[ProductEmployeeNotes]");
             // Select.Columns.Add("[ProductEmployeeCategoryId]");
-            Select.Columns.Add("[ProductEmployeeCategoryName]");
+            // Select.Columns.Add("[ProductEmployeeCategoryName]");
             // Select.Columns.Add("[ProductProductTypeId]");
             Select.Columns.Add("[ProductProductTypeName]");
             Select.Columns.Add("[ProductProductTypeRate]");
@@ -2644,11 +2548,10 @@ namespace Cf.Data
 		public Nullable<int> ProductEmployeeId { get; set; }
 		public string ProductEmployeeFullNameContains { get; set; }
 		public Nullable<short> ProductProductTypeId { get; set; }
-		public Nullable<byte> ProductProductTypePaymentGroupId { get; set; }
 		public Nullable<short> LoanDecisionNumber { get; set; }
-		public Nullable<short> LoanDecisionYear { get; set; }
 		public Nullable<DateTime> MinLoanDecisionDate { get; set; }
 		public Nullable<DateTime> MaxLoanDecisionDate { get; set; }
+		public Nullable<byte> LoanStatusId { get; set; }
 		#endregion
 
         #region Overrides
@@ -2673,20 +2576,16 @@ namespace Cf.Data
 			criterion = new SimpleCriterion("[ProductProductTypeId]", SqlDbType.SmallInt, OperatorType.Equals, new Parameter("@ProductProductTypeId", ProductProductTypeId));
 			Criteria.Add(criterion);
 
-			// Add ProductProductTypePaymentGroupId criterion
-			criterion = new SimpleCriterion("[ProductProductTypePaymentGroupId]", SqlDbType.TinyInt, OperatorType.Equals, new Parameter("@ProductProductTypePaymentGroupId", ProductProductTypePaymentGroupId));
-			Criteria.Add(criterion);
-
 			// Add LoanDecisionNumber criterion
 			criterion = new SimpleCriterion("[LoanDecisionNumber]", SqlDbType.SmallInt, OperatorType.Equals, new Parameter("@LoanDecisionNumber", LoanDecisionNumber));
 			Criteria.Add(criterion);
 
-			// Add LoanDecisionYear criterion
-			criterion = new SimpleCriterion("[LoanDecisionYear]", SqlDbType.SmallInt, OperatorType.Equals, new Parameter("@LoanDecisionYear", LoanDecisionYear));
-			Criteria.Add(criterion);
-
 			// Add LoanDecisionDateDateBetween criterion
 			criterion = new DateBetweenCriterion("[LoanDecisionDate]", SqlDbType.Date, new Parameter("@MinLoanDecisionDate", MinLoanDecisionDate), new Parameter("@MaxLoanDecisionDate", MaxLoanDecisionDate));
+			Criteria.Add(criterion);
+
+			// Add LoanStatusId criterion
+			criterion = new SimpleCriterion("[LoanStatusId]", SqlDbType.TinyInt, OperatorType.Equals, new Parameter("@LoanStatusId", LoanStatusId));
 			Criteria.Add(criterion);
 
         }
@@ -2727,10 +2626,10 @@ namespace Cf.Data
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceId]");
             Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
-            Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
+            // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[EmployeeNotes]");
             // Select.Columns.Add("[EmployeeCategoryId]");
-            Select.Columns.Add("[EmployeeCategoryName]");
+            // Select.Columns.Add("[EmployeeCategoryName]");
             Select.Columns.Add("[SalaryAmount]");
             Select.Columns.Add("[TransferMonth]");
             Select.Columns.Add("[FinishedInstallmentsAmount]");
@@ -2809,10 +2708,10 @@ namespace Cf.Data
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceId]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
-            Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
+            // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[EmployeeNotes]");
             // Select.Columns.Add("[EmployeeCategoryId]");
-            Select.Columns.Add("[EmployeeCategoryName]");
+            // Select.Columns.Add("[EmployeeCategoryName]");
             // Select.Columns.Add("[PaymentGroupId]");
             Select.Columns.Add("[PaymentGroupName]");
             Select.Columns.Add("[Month]");
@@ -2901,7 +2800,7 @@ namespace Cf.Data
             // Select.Columns.Add("[LoanProductEmployeeDepartmentSalaryWorkPlaceId]");
             // Select.Columns.Add("[LoanProductEmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[LoanProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
-            Select.Columns.Add("[LoanProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
+            // Select.Columns.Add("[LoanProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[LoanProductEmployeeNotes]");
             // Select.Columns.Add("[LoanProductEmployeeCategoryId]");
             // Select.Columns.Add("[LoanProductEmployeeCategoryName]");
@@ -2969,8 +2868,6 @@ namespace Cf.Data
 		public Nullable<int> LoanProductEmployeeId { get; set; }
 		public string LoanProductEmployeeFullNameContains { get; set; }
 		public Nullable<short> LoanProductProductTypeId { get; set; }
-		public Nullable<byte> LoanProductProductTypePaymentGroupId { get; set; }
-		public Nullable<byte> LoanLoanStatusId { get; set; }
 		public Nullable<int> MainWorkPlaceId { get; set; }
 		#endregion
 
@@ -2994,14 +2891,6 @@ namespace Cf.Data
 
 			// Add LoanProductProductTypeId criterion
 			criterion = new SimpleCriterion("[LoanProductProductTypeId]", SqlDbType.SmallInt, OperatorType.Equals, new Parameter("@LoanProductProductTypeId", LoanProductProductTypeId));
-			Criteria.Add(criterion);
-
-			// Add LoanProductProductTypePaymentGroupId criterion
-			criterion = new SimpleCriterion("[LoanProductProductTypePaymentGroupId]", SqlDbType.TinyInt, OperatorType.Equals, new Parameter("@LoanProductProductTypePaymentGroupId", LoanProductProductTypePaymentGroupId));
-			Criteria.Add(criterion);
-
-			// Add LoanLoanStatusId criterion
-			criterion = new SimpleCriterion("[LoanLoanStatusId]", SqlDbType.TinyInt, OperatorType.Equals, new Parameter("@LoanLoanStatusId", LoanLoanStatusId));
 			Criteria.Add(criterion);
 
 			// Add MainWorkPlaceId criterion
@@ -3047,10 +2936,10 @@ namespace Cf.Data
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceId]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
-            Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
+            // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[EmployeeNotes]");
             // Select.Columns.Add("[EmployeeCategoryId]");
-            Select.Columns.Add("[EmployeeCategoryName]");
+            // Select.Columns.Add("[EmployeeCategoryName]");
             // Select.Columns.Add("[Date]");
             // Select.Columns.Add("[PaymentGroupId]");
             Select.Columns.Add("[PaymentGroupName]");
@@ -3074,6 +2963,7 @@ namespace Cf.Data
 		public Nullable<DateTime> MinDate { get; set; }
 		public Nullable<DateTime> MaxDate { get; set; }
 		public Nullable<byte> PaymentGroupId { get; set; }
+		public Nullable<byte> PaymentStatusId { get; set; }
 		#endregion
 
         #region Overrides
@@ -3100,6 +2990,10 @@ namespace Cf.Data
 
 			// Add PaymentGroupId criterion
 			criterion = new SimpleCriterion("[PaymentGroupId]", SqlDbType.TinyInt, OperatorType.Equals, new Parameter("@PaymentGroupId", PaymentGroupId));
+			Criteria.Add(criterion);
+
+			// Add PaymentStatusId criterion
+			criterion = new SimpleCriterion("[PaymentStatusId]", SqlDbType.TinyInt, OperatorType.Equals, new Parameter("@PaymentStatusId", PaymentStatusId));
 			Criteria.Add(criterion);
 
         }
@@ -3141,10 +3035,10 @@ namespace Cf.Data
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceId]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
-            Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
+            // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[EmployeeNotes]");
             // Select.Columns.Add("[EmployeeCategoryId]");
-            Select.Columns.Add("[EmployeeCategoryName]");
+            // Select.Columns.Add("[EmployeeCategoryName]");
             Select.Columns.Add("[Number]");
             Select.Columns.Add("[Date]");
             // Select.Columns.Add("[VoucherNumber]");
@@ -3170,6 +3064,7 @@ namespace Cf.Data
 		public Nullable<short> Number { get; set; }
 		public Nullable<DateTime> MinDate { get; set; }
 		public Nullable<DateTime> MaxDate { get; set; }
+		public Nullable<byte> PaymentGroupId { get; set; }
 		#endregion
 
         #region Overrides
@@ -3196,6 +3091,10 @@ namespace Cf.Data
 
 			// Add DateDateBetween criterion
 			criterion = new DateBetweenCriterion("[Date]", SqlDbType.Date, new Parameter("@MinDate", MinDate), new Parameter("@MaxDate", MaxDate));
+			Criteria.Add(criterion);
+
+			// Add PaymentGroupId criterion
+			criterion = new SimpleCriterion("[PaymentGroupId]", SqlDbType.TinyInt, OperatorType.Equals, new Parameter("@PaymentGroupId", PaymentGroupId));
 			Criteria.Add(criterion);
 
         }
@@ -3237,10 +3136,10 @@ namespace Cf.Data
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceId]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
-            Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
+            // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[EmployeeNotes]");
             // Select.Columns.Add("[EmployeeCategoryId]");
-            Select.Columns.Add("[EmployeeCategoryName]");
+            // Select.Columns.Add("[EmployeeCategoryName]");
             // Select.Columns.Add("[ProductTypeId]");
             Select.Columns.Add("[ProductTypeName]");
             // Select.Columns.Add("[ProductTypeRate]");
@@ -3263,7 +3162,6 @@ namespace Cf.Data
 		public Nullable<int> EmployeeId { get; set; }
 		public string EmployeeFullNameContains { get; set; }
 		public Nullable<short> ProductTypeId { get; set; }
-		public Nullable<byte> ProductTypePaymentGroupId { get; set; }
 		#endregion
 
         #region Overrides
@@ -3286,10 +3184,6 @@ namespace Cf.Data
 
 			// Add ProductTypeId criterion
 			criterion = new SimpleCriterion("[ProductTypeId]", SqlDbType.SmallInt, OperatorType.Equals, new Parameter("@ProductTypeId", ProductTypeId));
-			Criteria.Add(criterion);
-
-			// Add ProductTypePaymentGroupId criterion
-			criterion = new SimpleCriterion("[ProductTypePaymentGroupId]", SqlDbType.TinyInt, OperatorType.Equals, new Parameter("@ProductTypePaymentGroupId", ProductTypePaymentGroupId));
 			Criteria.Add(criterion);
 
         }
@@ -3331,10 +3225,10 @@ namespace Cf.Data
             // Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceId]");
             // Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
-            Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
+            // Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[ProductEmployeeNotes]");
             // Select.Columns.Add("[ProductEmployeeCategoryId]");
-            Select.Columns.Add("[ProductEmployeeCategoryName]");
+            // Select.Columns.Add("[ProductEmployeeCategoryName]");
             // Select.Columns.Add("[ProductProductTypeId]");
             Select.Columns.Add("[ProductProductTypeName]");
             // Select.Columns.Add("[ProductProductTypeRate]");
@@ -3344,7 +3238,7 @@ namespace Cf.Data
             // Select.Columns.Add("[ProductProductTypeProfitStrategyId]");
             // Select.Columns.Add("[ProductProductTypeProfitStrategyName]");
             // Select.Columns.Add("[ProductProductTypePaymentGroupId]");
-            Select.Columns.Add("[ProductProductTypePaymentGroupName]");
+            // Select.Columns.Add("[ProductProductTypePaymentGroupName]");
             // Select.Columns.Add("[ProductProductTypeIsActive]");
             Select.Columns.Add("[ProductAmount]");
             // Select.Columns.Add("[ProductNotes]");
@@ -3362,7 +3256,6 @@ namespace Cf.Data
 		public Nullable<int> ProductEmployeeId { get; set; }
 		public string ProductEmployeeFullNameContains { get; set; }
 		public Nullable<short> ProductProductTypeId { get; set; }
-		public Nullable<byte> ProductProductTypePaymentGroupId { get; set; }
 		#endregion
 
         #region Overrides
@@ -3385,10 +3278,6 @@ namespace Cf.Data
 
 			// Add ProductProductTypeId criterion
 			criterion = new SimpleCriterion("[ProductProductTypeId]", SqlDbType.SmallInt, OperatorType.Equals, new Parameter("@ProductProductTypeId", ProductProductTypeId));
-			Criteria.Add(criterion);
-
-			// Add ProductProductTypePaymentGroupId criterion
-			criterion = new SimpleCriterion("[ProductProductTypePaymentGroupId]", SqlDbType.TinyInt, OperatorType.Equals, new Parameter("@ProductProductTypePaymentGroupId", ProductProductTypePaymentGroupId));
 			Criteria.Add(criterion);
 
         }
@@ -3426,14 +3315,14 @@ namespace Cf.Data
             // Select.Columns.Add("[ProductEmployeeEmployeeStatusName]");
             // Select.Columns.Add("[ProductEmployeeEmployeeStatusIsActive]");
             // Select.Columns.Add("[ProductEmployeeDepartmentId]");
-            Select.Columns.Add("[ProductEmployeeDepartmentName]");
+            // Select.Columns.Add("[ProductEmployeeDepartmentName]");
             // Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceId]");
             // Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
             // Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[ProductEmployeeNotes]");
             // Select.Columns.Add("[ProductEmployeeCategoryId]");
-            Select.Columns.Add("[ProductEmployeeCategoryName]");
+            // Select.Columns.Add("[ProductEmployeeCategoryName]");
             // Select.Columns.Add("[ProductProductTypeId]");
             Select.Columns.Add("[ProductProductTypeName]");
             // Select.Columns.Add("[ProductProductTypeRate]");
@@ -3634,8 +3523,7 @@ namespace Cf.Data
 		public Nullable<DateTime> MinPaymentDate { get; set; }
 		public Nullable<DateTime> MaxPaymentDate { get; set; }
 		public Nullable<byte> PaymentPaymentGroupId { get; set; }
-		public Nullable<int> DepartmentSalaryWorkPlaceId { get; set; }
-		public Nullable<int> DepartmentSalaryWorkPlaceMainWorkPlaceId { get; set; }
+		public Nullable<byte> PaymentPaymentStatusId { get; set; }
 		#endregion
 
         #region Overrides
@@ -3664,12 +3552,8 @@ namespace Cf.Data
 			criterion = new SimpleCriterion("[PaymentPaymentGroupId]", SqlDbType.TinyInt, OperatorType.Equals, new Parameter("@PaymentPaymentGroupId", PaymentPaymentGroupId));
 			Criteria.Add(criterion);
 
-			// Add DepartmentSalaryWorkPlaceId criterion
-			criterion = new SimpleCriterion("[DepartmentSalaryWorkPlaceId]", SqlDbType.Int, OperatorType.Equals, new Parameter("@DepartmentSalaryWorkPlaceId", DepartmentSalaryWorkPlaceId));
-			Criteria.Add(criterion);
-
-			// Add DepartmentSalaryWorkPlaceMainWorkPlaceId criterion
-			criterion = new SimpleCriterion("[DepartmentSalaryWorkPlaceMainWorkPlaceId]", SqlDbType.Int, OperatorType.Equals, new Parameter("@DepartmentSalaryWorkPlaceMainWorkPlaceId", DepartmentSalaryWorkPlaceMainWorkPlaceId));
+			// Add PaymentPaymentStatusId criterion
+			criterion = new SimpleCriterion("[PaymentPaymentStatusId]", SqlDbType.TinyInt, OperatorType.Equals, new Parameter("@PaymentPaymentStatusId", PaymentPaymentStatusId));
 			Criteria.Add(criterion);
 
         }
@@ -3755,10 +3639,10 @@ namespace Cf.Data
             // Select.Columns.Add("[GrantRequestRequestProductEmployeeDepartmentSalaryWorkPlaceId]");
             // Select.Columns.Add("[GrantRequestRequestProductEmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[GrantRequestRequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
-            Select.Columns.Add("[GrantRequestRequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
+            // Select.Columns.Add("[GrantRequestRequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[GrantRequestRequestProductEmployeeNotes]");
             // Select.Columns.Add("[GrantRequestRequestProductEmployeeCategoryId]");
-            Select.Columns.Add("[GrantRequestRequestProductEmployeeCategoryName]");
+            // Select.Columns.Add("[GrantRequestRequestProductEmployeeCategoryName]");
             // Select.Columns.Add("[GrantRequestRequestProductProductTypeId]");
             Select.Columns.Add("[GrantRequestRequestProductProductTypeName]");
             // Select.Columns.Add("[GrantRequestRequestProductProductTypeRate]");
@@ -3798,6 +3682,7 @@ namespace Cf.Data
 
 		public Nullable<int> GrantRequestRequestProductEmployeeId { get; set; }
 		public string GrantRequestRequestProductEmployeeFullNameContains { get; set; }
+		public Nullable<short> GrantRequestRequestProductProductTypeId { get; set; }
 		#endregion
 
         #region Overrides
@@ -3816,6 +3701,10 @@ namespace Cf.Data
 
 			// Add GrantRequestRequestProductEmployeeFullNameContains criterion
 			criterion = new SimpleCriterion("[GrantRequestRequestProductEmployeeFullName]", SqlDbType.VarChar, OperatorType.Contains, new Parameter("@GrantRequestRequestProductEmployeeFullNameContains", GrantRequestRequestProductEmployeeFullNameContains));
+			Criteria.Add(criterion);
+
+			// Add GrantRequestRequestProductProductTypeId criterion
+			criterion = new SimpleCriterion("[GrantRequestRequestProductProductTypeId]", SqlDbType.SmallInt, OperatorType.Equals, new Parameter("@GrantRequestRequestProductProductTypeId", GrantRequestRequestProductProductTypeId));
 			Criteria.Add(criterion);
 
         }
@@ -3859,10 +3748,10 @@ namespace Cf.Data
             // Select.Columns.Add("[InstallmentRefundableProductProductEmployeeDepartmentSalaryWorkPlaceId]");
             // Select.Columns.Add("[InstallmentRefundableProductProductEmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[InstallmentRefundableProductProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
-            Select.Columns.Add("[InstallmentRefundableProductProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
+            // Select.Columns.Add("[InstallmentRefundableProductProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[InstallmentRefundableProductProductEmployeeNotes]");
             // Select.Columns.Add("[InstallmentRefundableProductProductEmployeeCategoryId]");
-            Select.Columns.Add("[InstallmentRefundableProductProductEmployeeCategoryName]");
+            // Select.Columns.Add("[InstallmentRefundableProductProductEmployeeCategoryName]");
             // Select.Columns.Add("[InstallmentRefundableProductProductProductTypeId]");
             Select.Columns.Add("[InstallmentRefundableProductProductProductTypeName]");
             // Select.Columns.Add("[InstallmentRefundableProductProductProductTypeRate]");
@@ -3933,6 +3822,7 @@ namespace Cf.Data
 
 		public Nullable<int> InstallmentRefundableProductProductEmployeeId { get; set; }
 		public string InstallmentRefundableProductProductEmployeeFullNameContains { get; set; }
+		public Nullable<short> InstallmentRefundableProductProductProductTypeId { get; set; }
 		public Nullable<short> MinInstallmentSubNumber { get; set; }
 		public Nullable<short> MaxInstallmentSubNumber { get; set; }
 		public Nullable<DateTime> MinPaymentDate { get; set; }
@@ -3959,6 +3849,10 @@ namespace Cf.Data
 
 			// Add InstallmentRefundableProductProductEmployeeFullNameContains criterion
 			criterion = new SimpleCriterion("[InstallmentRefundableProductProductEmployeeFullName]", SqlDbType.VarChar, OperatorType.Contains, new Parameter("@InstallmentRefundableProductProductEmployeeFullNameContains", InstallmentRefundableProductProductEmployeeFullNameContains));
+			Criteria.Add(criterion);
+
+			// Add InstallmentRefundableProductProductProductTypeId criterion
+			criterion = new SimpleCriterion("[InstallmentRefundableProductProductProductTypeId]", SqlDbType.SmallInt, OperatorType.Equals, new Parameter("@InstallmentRefundableProductProductProductTypeId", InstallmentRefundableProductProductProductTypeId));
 			Criteria.Add(criterion);
 
 			// Add InstallmentSubNumberBetween criterion
@@ -4016,10 +3910,10 @@ namespace Cf.Data
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceId]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
-            Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
+            // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[EmployeeNotes]");
             // Select.Columns.Add("[EmployeeCategoryId]");
-            Select.Columns.Add("[EmployeeCategoryName]");
+            // Select.Columns.Add("[EmployeeCategoryName]");
             Select.Columns.Add("[Date]");
             // Select.Columns.Add("[LoanTypeProductTypeId]");
             Select.Columns.Add("[LoanTypeProductTypeName]");
@@ -4115,14 +4009,14 @@ namespace Cf.Data
             Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[EmployeeNotes]");
             // Select.Columns.Add("[EmployeeCategoryId]");
-            Select.Columns.Add("[EmployeeCategoryName]");
+            // Select.Columns.Add("[EmployeeCategoryName]");
             Select.Columns.Add("[Month]");
             // Select.Columns.Add("[DepartmentId]");
             // Select.Columns.Add("[DepartmentName]");
             // Select.Columns.Add("[DepartmentSalaryWorkPlaceId]");
             // Select.Columns.Add("[DepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[DepartmentSalaryWorkPlaceMainWorkPlaceId]");
-            Select.Columns.Add("[DepartmentSalaryWorkPlaceMainWorkPlaceName]");
+            // Select.Columns.Add("[DepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[SubscriptionTypeId]");
             Select.Columns.Add("[SubscriptionTypeName]");
             Select.Columns.Add("[Amount]");
@@ -4138,8 +4032,7 @@ namespace Cf.Data
 		public string EmployeeFullNameContains { get; set; }
 		public Nullable<DateTime> MinMonth { get; set; }
 		public Nullable<DateTime> MaxMonth { get; set; }
-		public Nullable<int> DepartmentSalaryWorkPlaceId { get; set; }
-		public Nullable<int> DepartmentSalaryWorkPlaceMainWorkPlaceId { get; set; }
+		public Nullable<byte> SubscriptionTypeId { get; set; }
 		#endregion
 
         #region Overrides
@@ -4164,16 +4057,8 @@ namespace Cf.Data
 			criterion = new DateBetweenCriterion("[Month]", SqlDbType.Date, new Parameter("@MinMonth", MinMonth), new Parameter("@MaxMonth", MaxMonth));
 			Criteria.Add(criterion);
 
-			// Add DepartmentSalaryWorkPlaceId criterion
-			criterion = new SimpleCriterion("[DepartmentSalaryWorkPlaceId]", SqlDbType.Int, OperatorType.Equals, new Parameter("@DepartmentSalaryWorkPlaceId", DepartmentSalaryWorkPlaceId));
-			Criteria.Add(criterion);
-
-			// Add DepartmentSalaryWorkPlaceMainWorkPlaceId criterion
-			criterion = new SimpleCriterion("[DepartmentSalaryWorkPlaceMainWorkPlaceId]", SqlDbType.Int, OperatorType.Equals, new Parameter("@DepartmentSalaryWorkPlaceMainWorkPlaceId", DepartmentSalaryWorkPlaceMainWorkPlaceId));
-			Criteria.Add(criterion);
-
-			// Add DepartmentSalaryWorkPlaceMainWorkPlaceId criterion
-			criterion = new SimpleCriterion("[DepartmentSalaryWorkPlaceMainWorkPlaceId]", SqlDbType.Int, OperatorType.Equals, new Parameter("@DepartmentSalaryWorkPlaceMainWorkPlaceId", DepartmentSalaryWorkPlaceMainWorkPlaceId));
+			// Add SubscriptionTypeId criterion
+			criterion = new SimpleCriterion("[SubscriptionTypeId]", SqlDbType.TinyInt, OperatorType.Equals, new Parameter("@SubscriptionTypeId", SubscriptionTypeId));
 			Criteria.Add(criterion);
 
         }
@@ -4214,10 +4099,10 @@ namespace Cf.Data
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceId]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
-            Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
+            // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[EmployeeNotes]");
             // Select.Columns.Add("[EmployeeCategoryId]");
-            Select.Columns.Add("[EmployeeCategoryName]");
+            // Select.Columns.Add("[EmployeeCategoryName]");
             // Select.Columns.Add("[MainWorkPlaceId]");
             Select.Columns.Add("[MainWorkPlaceName]");
             Select.Columns.Add("[ApprovedAmount]");
@@ -4302,10 +4187,10 @@ namespace Cf.Data
             // Select.Columns.Add("[DebtEmployeeDepartmentSalaryWorkPlaceId]");
             // Select.Columns.Add("[DebtEmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[DebtEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
-            Select.Columns.Add("[DebtEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
+            // Select.Columns.Add("[DebtEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[DebtEmployeeNotes]");
             // Select.Columns.Add("[DebtEmployeeCategoryId]");
-            Select.Columns.Add("[DebtEmployeeCategoryName]");
+            // Select.Columns.Add("[DebtEmployeeCategoryName]");
             Select.Columns.Add("[DebtAmount]");
             // Select.Columns.Add("[DebtIssuerId]");
             Select.Columns.Add("[DebtIssuerName]");
@@ -4338,10 +4223,10 @@ namespace Cf.Data
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceId]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
-            Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
+            // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[EmployeeNotes]");
             // Select.Columns.Add("[EmployeeCategoryId]");
-            Select.Columns.Add("[EmployeeCategoryName]");
+            // Select.Columns.Add("[EmployeeCategoryName]");
             Select.Columns.Add("[IsActive]");
             // Select.Columns.Add("[Notes]");
             FromClause = "[dbo].[WarrantVw]";

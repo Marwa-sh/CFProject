@@ -234,32 +234,6 @@
 									</div>
 									<div class="col-md-4">
 								        <div class="form-group">
-								            @*@Html.LabelFor(model => model.Instance.DepartmentSalaryWorkPlaceMainWorkPlaceId, htmlAttributes: new { @class = "control-label" })*@
-								            @Html.LabelFor(model => model.Instance.DepartmentSalaryWorkPlaceMainWorkPlaceId, new Dictionary<string, Object>
-								                { { "class", "control-label" },
-								                  {"title", Html.ToolTipMessageFor(model => model.Instance.DepartmentSalaryWorkPlaceMainWorkPlaceId)},
-								                  {"data-toggle", "tooltip"},
-								                  {"data-placement", "bottom"}
-								                })
-								                 <input type="text" id="txtDepartmentSalaryWorkPlaceMainWorkPlaceId" class="form-control" value="@Html.DisplayFor(model => model.Instance.DepartmentSalaryWorkPlaceMainWorkPlaceId)" disabled />
-								        </div>
-									</div>
-								</div>
-                                <div class="row">
-									<div class="col-md-4">
-								        <div class="form-group">
-								            @*@Html.LabelFor(model => model.Instance.DepartmentSalaryWorkPlaceMainWorkPlaceName, htmlAttributes: new { @class = "control-label" })*@
-								            @Html.LabelFor(model => model.Instance.DepartmentSalaryWorkPlaceMainWorkPlaceName, new Dictionary<string, Object>
-								                { { "class", "control-label" },
-								                  {"title", Html.ToolTipMessageFor(model => model.Instance.DepartmentSalaryWorkPlaceMainWorkPlaceName)},
-								                  {"data-toggle", "tooltip"},
-								                  {"data-placement", "bottom"}
-								                })
-								                 <input type="text" id="txtDepartmentSalaryWorkPlaceMainWorkPlaceName" class="form-control" value="@Html.DisplayFor(model => model.Instance.DepartmentSalaryWorkPlaceMainWorkPlaceName)" disabled />
-								        </div>
-									</div>
-									<div class="col-md-4">
-								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.Notes, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.Notes, new Dictionary<string, Object>
 								                { { "class", "control-label" },
@@ -270,6 +244,8 @@
 								                 <input type="text" id="txtNotes" class="form-control" value="@Html.DisplayFor(model => model.Instance.Notes)" disabled />
 								        </div>
 									</div>
+								</div>
+                                <div class="row">
 									<div class="col-md-4">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.CategoryId, htmlAttributes: new { @class = "control-label" })*@
@@ -282,8 +258,6 @@
 								                 <input type="text" id="txtCategoryId" class="form-control" value="@Html.DisplayFor(model => model.Instance.CategoryId)" disabled />
 								        </div>
 									</div>
-								</div>
-                                <div class="row">
 									<div class="col-md-4">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.CategoryName, htmlAttributes: new { @class = "control-label" })*@
@@ -442,19 +416,13 @@
 					                @Html.DisplayNameFor(model => model.GuarantorVwViewModel.Instance.RefundableProductProductEmployeeFullName)
 					            </th>
 					            <th>
-					                @Html.DisplayNameFor(model => model.GuarantorVwViewModel.Instance.RefundableProductProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
-					            </th>
-					            <th>
-					                @Html.DisplayNameFor(model => model.GuarantorVwViewModel.Instance.RefundableProductProductEmployeeCategoryName)
+					                @Html.DisplayNameFor(model => model.GuarantorVwViewModel.Instance.RefundableProductProductEmployeeDepartmentSalaryWorkPlaceName)
 					            </th>
 					            <th>
 					                @Html.DisplayNameFor(model => model.GuarantorVwViewModel.Instance.RefundableProductProductProductTypeName)
 					            </th>
 					            <th>
 					                @Html.DisplayNameFor(model => model.GuarantorVwViewModel.Instance.RefundableProductProductAmount)
-					            </th>
-					            <th>
-					                @Html.DisplayNameFor(model => model.GuarantorVwViewModel.Instance.SubNumber)
 					            </th>
 					            <th>
 					                @Html.DisplayNameFor(model => model.GuarantorVwViewModel.Instance.GuarantorStatusName)
@@ -474,19 +442,13 @@
                     				 @Html.DisplayFor(modelItem => item.RefundableProductProductEmployeeFullName)
                 				</td>
                 				<td>
-                    				 @Html.DisplayFor(modelItem => item.RefundableProductProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
-                				</td>
-                				<td>
-                    				 @Html.DisplayFor(modelItem => item.RefundableProductProductEmployeeCategoryName)
+                    				 @Html.DisplayFor(modelItem => item.RefundableProductProductEmployeeDepartmentSalaryWorkPlaceName)
                 				</td>
                 				<td>
                     				 @Html.DisplayFor(modelItem => item.RefundableProductProductProductTypeName)
                 				</td>
                 				<td>
                     				 @Html.DisplayFor(modelItem => item.RefundableProductProductAmount)
-                				</td>
-                				<td>
-                    				 @Html.DisplayFor(modelItem => item.SubNumber)
                 				</td>
                 				<td>
                     				 @Html.DisplayFor(modelItem => item.GuarantorStatusName)
@@ -835,6 +797,9 @@
 					                @Html.DisplayNameFor(model => model.ProductVwViewModel.Instance.ProductTypeName)
 					            </th>
 					            <th>
+					                @Html.DisplayNameFor(model => model.ProductVwViewModel.Instance.ProductTypeProfitStrategyName)
+					            </th>
+					            <th>
 					                @Html.DisplayNameFor(model => model.ProductVwViewModel.Instance.Amount)
 					            </th>
            
@@ -847,6 +812,9 @@
 				            <tr>
                 				<td>
                     				 @Html.DisplayFor(modelItem => item.ProductTypeName)
+                				</td>
+                				<td>
+                    				 @Html.DisplayFor(modelItem => item.ProductTypeProfitStrategyName)
                 				</td>
                 				<td>
                     				 @Html.DisplayFor(modelItem => item.Amount)
@@ -985,7 +953,7 @@
 					                @Html.DisplayNameFor(model => model.SubscriptionVwViewModel.Instance.Month)
 					            </th>
 					            <th>
-					                @Html.DisplayNameFor(model => model.SubscriptionVwViewModel.Instance.DepartmentSalaryWorkPlaceMainWorkPlaceName)
+					                @Html.DisplayNameFor(model => model.SubscriptionVwViewModel.Instance.DepartmentSalaryWorkPlaceName)
 					            </th>
 					            <th>
 					                @Html.DisplayNameFor(model => model.SubscriptionVwViewModel.Instance.SubscriptionTypeName)
@@ -1008,7 +976,7 @@
                     				 @Html.DisplayFor(modelItem => item.Month)
                 				</td>
                 				<td>
-                    				 @Html.DisplayFor(modelItem => item.DepartmentSalaryWorkPlaceMainWorkPlaceName)
+                    				 @Html.DisplayFor(modelItem => item.DepartmentSalaryWorkPlaceName)
                 				</td>
                 				<td>
                     				 @Html.DisplayFor(modelItem => item.SubscriptionTypeName)
@@ -1083,9 +1051,10 @@
 				var table = $(this).context;
                 var len = table.rows.length;
                 if (len == 1) 
-                {                    
+                {             
+					table = table.tBodies[0];
                     // Create an empty <tr> element
-                    var row = table.insertRow(1);
+                    var row = table.insertRow(0);
 
                     //// Insert new cell
                     var cell1 = row.insertCell(0);

@@ -2,168 +2,7 @@
 <div class="form-horizontal">
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 </div>
-    @using (Html.BeginForm())
-    {
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">@ViewBag.FilterOptions</h4>
-                    <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
-                    <div class="heading-elements">
-                        <ul class="list-inline mb-0">
-                            <li><a data-action="collapse"><i id="filter" class="icon-minus4"></i></a></li>
-                            <li><a data-action="reload"><i class="icon-reload"></i></a></li>
-                            <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div id="cardOptions" class="card-body collapse in">
-                    <div class="card-block">
-                        <form class="form">
-                            <div class="form-body">
-                                <div class="row">
-									<div class="col-md-4">
-								        <div class="form-group">
-								            @*@Html.LabelFor(model => model.Filter.PaymentEmployeeId, htmlAttributes: new { @class = "control-label" })*@
-								            @Html.LabelFor(model => model.Filter.PaymentEmployeeId, new Dictionary<string, Object>
-								                { { "class", "control-label" },
-								                  {"title", Html.ToolTipMessageFor(model => model.Filter.PaymentEmployeeId)},
-								                  {"data-toggle", "tooltip"},
-								                  {"data-placement", "bottom"}
-								                })
-								            @Html.EditorFor(model => model.Filter.PaymentEmployeeId, new { htmlAttributes = new { @class = "form-control" } })
-								        </div>
-									</div>
-									<div class="col-md-4">
-								        <div class="form-group">
-								            @*@Html.LabelFor(model => model.Filter.PaymentEmployeeFullNameContains, htmlAttributes: new { @class = "control-label" })*@
-								            @Html.LabelFor(model => model.Filter.PaymentEmployeeFullNameContains, new Dictionary<string, Object>
-								                { { "class", "control-label" },
-								                  {"title", Html.ToolTipMessageFor(model => model.Filter.PaymentEmployeeFullNameContains)},
-								                  {"data-toggle", "tooltip"},
-								                  {"data-placement", "bottom"}
-								                })
-								            @Html.EditorFor(model => model.Filter.PaymentEmployeeFullNameContains, new { htmlAttributes = new { @class = "form-control" } })
-								        </div>
-									</div>
-									<div class="col-md-4">
-								        <div class="form-group">
-								            @*@Html.LabelFor(model => model.Filter.PaymentEmployeeDepartmentId, htmlAttributes: new { @class = "control-label" })*@
-								            @Html.LabelFor(model => model.Filter.PaymentEmployeeDepartmentId, new Dictionary<string, Object>
-								                { { "class", "control-label" },
-								                  {"title", Html.ToolTipMessageFor(model => model.Filter.PaymentEmployeeDepartmentId)},
-								                  {"data-toggle", "tooltip"},
-								                  {"data-placement", "bottom"}
-								                })
-								            @Html.EditorFor(model => model.Filter.PaymentEmployeeDepartmentId, new { htmlAttributes = new { @class = "form-control" } })
-								        </div>
-									</div>
-								</div>
-                                <div class="row">
-									<div class="col-md-4">
-								        <div class="form-group">
-								            @*@Html.LabelFor(model => model.Filter.PaymentEmployeeDepartmentNameContains, htmlAttributes: new { @class = "control-label" })*@
-								            @Html.LabelFor(model => model.Filter.PaymentEmployeeDepartmentNameContains, new Dictionary<string, Object>
-								                { { "class", "control-label" },
-								                  {"title", Html.ToolTipMessageFor(model => model.Filter.PaymentEmployeeDepartmentNameContains)},
-								                  {"data-toggle", "tooltip"},
-								                  {"data-placement", "bottom"}
-								                })
-								            @Html.EditorFor(model => model.Filter.PaymentEmployeeDepartmentNameContains, new { htmlAttributes = new { @class = "form-control" } })
-								        </div>
-									</div>
-									<div class="col-md-4">
-								        <div class="form-group">
-								            @*@Html.LabelFor(model => model.Filter.PaymentEmployeeDepartmentSalaryWorkPlaceId, htmlAttributes: new { @class = "control-label" })*@
-								            @Html.LabelFor(model => model.Filter.PaymentEmployeeDepartmentSalaryWorkPlaceId, new Dictionary<string, Object>
-								                { { "class", "control-label" },
-								                  {"title", Html.ToolTipMessageFor(model => model.Filter.PaymentEmployeeDepartmentSalaryWorkPlaceId)},
-								                  {"data-toggle", "tooltip"},
-								                  {"data-placement", "bottom"}
-								                })
-								            @Html.EditorFor(model => model.Filter.PaymentEmployeeDepartmentSalaryWorkPlaceId, new { htmlAttributes = new { @class = "form-control" } })
-								        </div>
-									</div>
-									<div class="col-md-4">
-								        <div class="form-group">
-								            @*@Html.LabelFor(model => model.Filter.PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId, htmlAttributes: new { @class = "control-label" })*@
-								            @Html.LabelFor(model => model.Filter.PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId, new Dictionary<string, Object>
-								                { { "class", "control-label" },
-								                  {"title", Html.ToolTipMessageFor(model => model.Filter.PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId)},
-								                  {"data-toggle", "tooltip"},
-								                  {"data-placement", "bottom"}
-								                })
-								            @Html.EditorFor(model => model.Filter.PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId, new { htmlAttributes = new { @class = "form-control" } })
-								        </div>
-									</div>
-								</div>
-                                <div class="row">
-									<div class="col-md-4">
-								        <div class="form-group">
-								            @*@Html.LabelFor(model => model.Filter.PaymentEmployeeCategoryId, htmlAttributes: new { @class = "control-label" })*@
-								            @Html.LabelFor(model => model.Filter.PaymentEmployeeCategoryId, new Dictionary<string, Object>
-								                { { "class", "control-label" },
-								                  {"title", Html.ToolTipMessageFor(model => model.Filter.PaymentEmployeeCategoryId)},
-								                  {"data-toggle", "tooltip"},
-								                  {"data-placement", "bottom"}
-								                })
-								            @Html.EditorFor(model => model.Filter.PaymentEmployeeCategoryId, new { htmlAttributes = new { @class = "form-control" } })
-								        </div>
-									</div>
-									<div class="col-md-4">
-								        <div class="form-group">
-								            @*@Html.LabelFor(model => model.Filter.MinPaymentDate, htmlAttributes: new { @class = "control-label" })*@
-								            @Html.LabelFor(model => model.Filter.MinPaymentDate, new Dictionary<string, Object>
-								                { { "class", "control-label" },
-								                  {"title", Html.ToolTipMessageFor(model => model.Filter.MinPaymentDate)},
-								                  {"data-toggle", "tooltip"},
-								                  {"data-placement", "bottom"}
-								                })
-								            @Html.TextBoxFor(model => model.Filter.MinPaymentDate, htmlAttributes: new { @class = "form-control IsDate" })
-								        </div>
-									</div>
-									<div class="col-md-4">
-								        <div class="form-group">
-								            @*@Html.LabelFor(model => model.Filter.MaxPaymentDate, htmlAttributes: new { @class = "control-label" })*@
-								            @Html.LabelFor(model => model.Filter.MaxPaymentDate, new Dictionary<string, Object>
-								                { { "class", "control-label" },
-								                  {"title", Html.ToolTipMessageFor(model => model.Filter.MaxPaymentDate)},
-								                  {"data-toggle", "tooltip"},
-								                  {"data-placement", "bottom"}
-								                })
-								            @Html.TextBoxFor(model => model.Filter.MaxPaymentDate, htmlAttributes: new { @class = "form-control IsDate" })
-								        </div>
-									</div>
-								</div>
-                                <div class="row">
-									<div class="col-md-4">
-								        <div class="form-group">
-								            @*@Html.LabelFor(model => model.Filter.RequestProductProductTypeId, htmlAttributes: new { @class = "control-label" })*@
-								            @Html.LabelFor(model => model.Filter.RequestProductProductTypeId, new Dictionary<string, Object>
-								                { { "class", "control-label" },
-								                  {"title", Html.ToolTipMessageFor(model => model.Filter.RequestProductProductTypeId)},
-								                  {"data-toggle", "tooltip"},
-								                  {"data-placement", "bottom"}
-								                })
-								            @Html.EditorFor(model => model.Filter.RequestProductProductTypeId, new { htmlAttributes = new { @class = "form-control" } })
-								        </div>
-									</div>
-								</div>
-                            </div>
-
-                            <div class="form-actions">
-                                <button type="submit" class="btn btn-primary mr-1">
-                                    @ViewBag.Search
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-}
+    @Html.Partial("_Filter", Model)
 <div class="row">
     <div class="col-xs-12">
         <div class="card">
@@ -198,10 +37,7 @@
 					                @Html.DisplayNameFor(model => model.Instance.PaymentEmployeeFullName)
 					            </th>
 					            <th>
-					                @Html.DisplayNameFor(model => model.Instance.PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
-					            </th>
-					            <th>
-					                @Html.DisplayNameFor(model => model.Instance.PaymentEmployeeCategoryName)
+					                @Html.DisplayNameFor(model => model.Instance.PaymentEmployeeDepartmentSalaryWorkPlaceName)
 					            </th>
 					            <th>
 					                @Html.DisplayNameFor(model => model.Instance.PaymentDate)
@@ -239,10 +75,7 @@
                     				@Html.DisplayFor(modelItem => item.PaymentEmployeeFullName)
                 				</td>
                 				<td>
-                    				@Html.DisplayFor(modelItem => item.PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)
-                				</td>
-                				<td>
-                    				@Html.DisplayFor(modelItem => item.PaymentEmployeeCategoryName)
+                    				@Html.DisplayFor(modelItem => item.PaymentEmployeeDepartmentSalaryWorkPlaceName)
                 				</td>
                 				<td>
                     				@Html.DisplayFor(modelItem => item.PaymentDate)
@@ -331,7 +164,7 @@
 	        var res = $("#Result");
 	        if (len == 1)
 			{
-                var table = document.getElementById("Result").getElementByTagName('tbody')[0];
+                var table = document.getElementById("Result").tBodies[0];
 
                 // Create an empty <tr> element and add it to the 1st position of the table:
                 var row = table.insertRow(0);

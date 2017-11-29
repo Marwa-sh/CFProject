@@ -18,7 +18,7 @@
                         <form class="form">
                             <div class="form-body">
                                 <div class="row">
-									<div class="col-md-4">
+									<div class="col-md-12">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.GrantRequestRequestProductId, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.GrantRequestRequestProductId, new Dictionary<string, Object>
@@ -30,7 +30,9 @@
 								                 <input type="text" id="txtGrantRequestRequestProductId" class="form-control" value="@Html.DisplayFor(model => model.Instance.GrantRequestRequestProductId)" disabled />
 								        </div>
 									</div>
-									<div class="col-md-4">
+								</div>
+                                <div class="row">
+									<div class="col-md-12">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.GrantRequestRequestProductEmployeeId, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.GrantRequestRequestProductEmployeeId, new Dictionary<string, Object>
@@ -42,7 +44,9 @@
 								                 <input type="text" id="txtGrantRequestRequestProductEmployeeId" class="form-control" value="@Html.DisplayFor(model => model.Instance.GrantRequestRequestProductEmployeeId)" disabled />
 								        </div>
 									</div>
-									<div class="col-md-4">
+								</div>
+                                <div class="row">
+									<div class="col-md-12">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.GrantRequestRequestProductEmployeeFullName, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.GrantRequestRequestProductEmployeeFullName, new Dictionary<string, Object>
@@ -56,19 +60,21 @@
 									</div>
 								</div>
                                 <div class="row">
-									<div class="col-md-4">
+									<div class="col-md-12">
 								        <div class="form-group">
-								            @*@Html.LabelFor(model => model.Instance.GrantRequestRequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName, htmlAttributes: new { @class = "control-label" })*@
-								            @Html.LabelFor(model => model.Instance.GrantRequestRequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName, new Dictionary<string, Object>
+								            @*@Html.LabelFor(model => model.Instance.GrantRequestRequestProductEmployeeDepartmentSalaryWorkPlaceName, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.Instance.GrantRequestRequestProductEmployeeDepartmentSalaryWorkPlaceName, new Dictionary<string, Object>
 								                { { "class", "control-label" },
-								                  {"title", Html.ToolTipMessageFor(model => model.Instance.GrantRequestRequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)},
+								                  {"title", Html.ToolTipMessageFor(model => model.Instance.GrantRequestRequestProductEmployeeDepartmentSalaryWorkPlaceName)},
 								                  {"data-toggle", "tooltip"},
 								                  {"data-placement", "bottom"}
 								                })
-								                 <input type="text" id="txtGrantRequestRequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName" class="form-control" value="@Html.DisplayFor(model => model.Instance.GrantRequestRequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName)" disabled />
+								                 <input type="text" id="txtGrantRequestRequestProductEmployeeDepartmentSalaryWorkPlaceName" class="form-control" value="@Html.DisplayFor(model => model.Instance.GrantRequestRequestProductEmployeeDepartmentSalaryWorkPlaceName)" disabled />
 								        </div>
 									</div>
-									<div class="col-md-4">
+								</div>
+                                <div class="row">
+									<div class="col-md-12">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.GrantRequestRequestProductEmployeeCategoryName, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.GrantRequestRequestProductEmployeeCategoryName, new Dictionary<string, Object>
@@ -80,7 +86,9 @@
 								                 <input type="text" id="txtGrantRequestRequestProductEmployeeCategoryName" class="form-control" value="@Html.DisplayFor(model => model.Instance.GrantRequestRequestProductEmployeeCategoryName)" disabled />
 								        </div>
 									</div>
-									<div class="col-md-4">
+								</div>
+                                <div class="row">
+									<div class="col-md-12">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.GrantRequestRequestProductProductTypeName, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.GrantRequestRequestProductProductTypeName, new Dictionary<string, Object>
@@ -94,7 +102,7 @@
 									</div>
 								</div>
                                 <div class="row">
-									<div class="col-md-4">
+									<div class="col-md-12">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.GrantRequestRequestProductProductTypeRate, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.GrantRequestRequestProductProductTypeRate, new Dictionary<string, Object>
@@ -106,7 +114,9 @@
 								                 <input type="text" id="txtGrantRequestRequestProductProductTypeRate" class="form-control" value="@Html.DisplayFor(model => model.Instance.GrantRequestRequestProductProductTypeRate)" disabled />
 								        </div>
 									</div>
-									<div class="col-md-4">
+								</div>
+                                <div class="row">
+									<div class="col-md-12">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.GrantRequestRequestProductProductTypeGuarantorsCount, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.GrantRequestRequestProductProductTypeGuarantorsCount, new Dictionary<string, Object>
@@ -118,7 +128,9 @@
 								                 <input type="text" id="txtGrantRequestRequestProductProductTypeGuarantorsCount" class="form-control" value="@Html.DisplayFor(model => model.Instance.GrantRequestRequestProductProductTypeGuarantorsCount)" disabled />
 								        </div>
 									</div>
-									<div class="col-md-4">
+								</div>
+                                <div class="row">
+									<div class="col-md-12">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.GrantRequestRequestDate, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.GrantRequestRequestDate, new Dictionary<string, Object>
@@ -132,7 +144,7 @@
 									</div>
 								</div>
                                 <div class="row">
-									<div class="col-md-4">
+									<div class="col-md-12">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.GrantRequestRequestRequestStatusName, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.GrantRequestRequestRequestStatusName, new Dictionary<string, Object>
@@ -144,7 +156,9 @@
 								                 <input type="text" id="txtGrantRequestRequestRequestStatusName" class="form-control" value="@Html.DisplayFor(model => model.Instance.GrantRequestRequestRequestStatusName)" disabled />
 								        </div>
 									</div>
-									<div class="col-md-4">
+								</div>
+                                <div class="row">
+									<div class="col-md-12">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.GrantRequestAmount, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.GrantRequestAmount, new Dictionary<string, Object>
@@ -156,7 +170,9 @@
 								                 <input type="text" id="txtGrantRequestAmount" class="form-control" value="@Html.DisplayFor(model => model.Instance.GrantRequestAmount)" disabled />
 								        </div>
 									</div>
-									<div class="col-md-4">
+								</div>
+                                <div class="row">
+									<div class="col-md-12">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.GrantRequestNotes, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.GrantRequestNotes, new Dictionary<string, Object>
@@ -170,7 +186,7 @@
 									</div>
 								</div>
                                 <div class="row">
-									<div class="col-md-4">
+									<div class="col-md-12">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.AverageIncome, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.AverageIncome, new Dictionary<string, Object>
@@ -182,7 +198,9 @@
 								                 <input type="text" id="txtAverageIncome" class="form-control" value="@Html.DisplayFor(model => model.Instance.AverageIncome)" disabled />
 								        </div>
 									</div>
-									<div class="col-md-4">
+								</div>
+                                <div class="row">
+									<div class="col-md-12">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.GrantPercentage, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.GrantPercentage, new Dictionary<string, Object>
@@ -194,7 +212,9 @@
 								                 <input type="text" id="txtGrantPercentage" class="form-control" value="@Html.DisplayFor(model => model.Instance.GrantPercentage)" disabled />
 								        </div>
 									</div>
-									<div class="col-md-4">
+								</div>
+                                <div class="row">
+									<div class="col-md-12">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.ServiceInMonthes, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.ServiceInMonthes, new Dictionary<string, Object>
@@ -261,9 +281,10 @@
 				var table = $(this).context;
                 var len = table.rows.length;
                 if (len == 1) 
-                {                    
+                {             
+					table = table.tBodies[0];
                     // Create an empty <tr> element
-                    var row = table.insertRow(1);
+                    var row = table.insertRow(0);
 
                     //// Insert new cell
                     var cell1 = row.insertCell(0);

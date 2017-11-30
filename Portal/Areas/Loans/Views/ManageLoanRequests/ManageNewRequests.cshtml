@@ -1,7 +1,7 @@
 ﻿@model Cf.ViewModels.LoanRequestVwViewModel
 @using Cf.Data;
 @using Cf.Services;
- 
+
 
 <div class="row">
     <div class="col-xs-12">
@@ -26,7 +26,6 @@
             </div>
             <div class="card-body collapse  in">
                 <div class="card-block card-dashboard">
-                 
 
                 </div>
                 <div class="table-responsive">
@@ -50,9 +49,9 @@
                                     @Html.DisplayNameFor(model => model.Instance.RequestAmount)
                                 </th>
 
+                                <th>عدد الكفلاء</th>
                                 <th></th>
-                                <th></th>
-                                <th></th>
+
                             </tr>
                         </thead>
                         <tbody>
@@ -77,6 +76,47 @@
                                     <td>
                                         @Html.DisplayFor(modelItem => item.RequestAmount)
                                     </td>
+
+
+                                    @{
+                                        int numOfNeededGuarantors = item.RequestProductProductTypeGuarantorsCount;
+                                        int numOfGuarantors = GuarantorVwServices.GetByRefundableProductProductId(item.RequestProductId).Count;
+                                    }
+                                    @if (numOfGuarantors == 0)
+                                    {
+                                        <td style="color:red">
+                                            @numOfGuarantors
+
+                                        </td>
+                                    }
+                                    else if (numOfGuarantors == numOfNeededGuarantors)
+                                    {
+                                        <td style="color:green">
+                                            @numOfGuarantors
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td>
+                                            @numOfGuarantors / numOfNeededGuarantors                                            
+                                        </td>
+                                    }
+                                    @*<td>
+                                            <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+
+                                                <a class="btn btn-success" href="@Url.Action("Validate",new   {   id = item.RequestProductId  })">
+                                                    <i class="icon-check-circle"></i>
+                                                </a>
+                                                <a class="btn btn-danger" href="@Url.Action("Reject",new   {   id = item.RequestProductId  })">
+                                                    <i class="icon-times-circle"></i>
+                                                </a>
+                                                <a class="btn btn-warning" href="@Url.Action("Exception",new   {   id = item.RequestProductId  })">
+                                                    <i class="icon-magic"></i>
+                                                </a>
+
+
+                                            </div>
+                                        </td>*@
                                     <td>
                                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                                             <button type="button" class="btn btn-info details" data-id="@item.RequestProductId">
@@ -85,42 +125,9 @@
 
                                         </div>
                                     </td>
-                                    
-                                    @{
-                                        int numOfGuarantors = GuarantorVwServices.GetByRefundableProductProductId(item.RequestProductId).Count;
-                                     }
-                                    @if (numOfGuarantors == 0)
-                                    {
-                                    <td>
-                                        @numOfGuarantors
-                                    </td>
-                                    }
-                                    else
-                                    {
-                                    <td>
-                                        @numOfGuarantors
-                                    </td>
-                                    }
-                                    @*<td>
-                                        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-
-                                            <a class="btn btn-success" href="@Url.Action("Validate",new   {   id = item.RequestProductId  })">
-                                                <i class="icon-check-circle"></i>
-                                            </a>
-                                            <a class="btn btn-danger" href="@Url.Action("Reject",new   {   id = item.RequestProductId  })">
-                                                <i class="icon-times-circle"></i>
-                                            </a>
-                                            <a class="btn btn-warning" href="@Url.Action("Exception",new   {   id = item.RequestProductId  })">
-                                                <i class="icon-magic"></i>
-                                            </a>
-
-
-                                        </div>
-                                    </td>*@
-                                     
 
                                 </tr>
-                            }
+                                        }
                         </tbody>
                     </table>
                 </div>
@@ -136,7 +143,7 @@
                 <h4 class="modal-title" id="deleteModalLabel"> @ViewBag.ModuleName</h4>
             </div>
             <div id="detailsModalBody" class="modal-body"></div>
-            
+
         </div>
     </div>
 </div>

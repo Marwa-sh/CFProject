@@ -10,6 +10,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
+            <input type="hidden" value="@ViewBag.ProductId" name="ProductId" />
             <input type="submit" value="@ViewBag.Yes" class="btn btn-danger" />
             <input type="button" onclick="location.href='@Url.Action("Index")'" value="@ViewBag.No" class="btn btn-default" />
         </div>

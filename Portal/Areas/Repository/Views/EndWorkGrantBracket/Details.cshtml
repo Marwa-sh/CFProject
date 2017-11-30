@@ -18,7 +18,7 @@
                         <form class="form">
                             <div class="form-body">
                                 <div class="row">
-									<div class="col-md-12">
+									<div class="col-md-4">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.FromYear, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.FromYear, new Dictionary<string, Object>
@@ -30,9 +30,7 @@
 								                 <input type="text" id="txtFromYear" class="form-control" value="@Html.DisplayFor(model => model.Instance.FromYear)" disabled />
 								        </div>
 									</div>
-								</div>
-                                <div class="row">
-									<div class="col-md-12">
+									<div class="col-md-4">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Instance.Percentage, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Instance.Percentage, new Dictionary<string, Object>

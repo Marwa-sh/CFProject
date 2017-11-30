@@ -783,7 +783,7 @@
 
                 $(".deleteLink").on("click", function () {
                     var url = $(this).data("url");
-                    $.get(url, { id: $(this).data("id") }, function (data) {
+                    $.get(url, { id: $(this).data("id"), ProductId: $("#txtProductId").val() }, function (data) {
                         $("#deleteModalBody").html(data);
 
                         $("#deleteModal").modal("show");  // shows the modal pop-up now that we have our partial view

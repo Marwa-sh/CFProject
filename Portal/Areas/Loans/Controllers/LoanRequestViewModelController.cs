@@ -18,17 +18,6 @@ namespace Portal.Areas.Loans.Controllers
     {
         private string moduleName = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "LoanRequestViewModel", "ModuleName");
         private string index = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "LoanRequestViewModel", "ModuleNamePlural");
-        private string insert = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Insert");
-        private string update = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Update");
-        private string delete = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Delete");
-        private string save = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Save");
-        private string back = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Back");
-        private string details = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Details");
-        private string confirmDelete = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "ConfirmDelete");
-        private string yes = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Yes");
-        private string no = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "No");
-        private string search = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Search");
-        private string filterOptions = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "FilterOptions");
         private string approve = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Approve");
 
         private string TitleGuarantor = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "Guarantor", "ModuleNamePlural");
@@ -40,13 +29,11 @@ namespace Portal.Areas.Loans.Controllers
 
 
         private string LoanDecision = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "LoanDecision", "ModuleName");
-        private string noRecords = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "NoRecords");
         private string discover = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Discover");
 
         private string loan = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "Loan", "ModuleName");
         private string employee = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "Employee", "ModuleName");
 
-        private string select = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Select");
         private string exceeds = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Exceeds");
         private string good = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Good");
         private string result = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Result");
@@ -64,25 +51,12 @@ namespace Portal.Areas.Loans.Controllers
         {
             ViewBag.Title = index;
             ViewBag.ModuleName = moduleName;
-            ViewBag.Insert = insert;
-            ViewBag.Update = update;
-            ViewBag.Delete = delete;
-            ViewBag.Details = details;
-            ViewBag.ConfirmDelete = confirmDelete;
-            ViewBag.Yes = yes;
-            ViewBag.No = no;
-            ViewBag.Search = search;
-            ViewBag.FilterOptions = filterOptions;
-            ViewBag.Back = back;
-            ViewBag.Save = save;
-            ViewBag.NoRecords = noRecords;
 
             ViewBag.Discover = discover;
             ViewBag.Loan = loan;
             ViewBag.Employee = employee;
 
             ViewBag.Action = update;
-            ViewBag.Select = select;
             ViewBag.Exceeds = exceeds;
             ViewBag.Good = good;
             ViewBag.Result = result;
@@ -94,7 +68,6 @@ namespace Portal.Areas.Loans.Controllers
             ViewBag.AmountSituationRejected = amountSituationRejected;
             ViewBag.DebtsSituationRejected = debtsSituationRejected;
             ViewBag.InstallmentSituationRejected = installmentSituationRejected;
-
 
         }
 
@@ -108,7 +81,6 @@ namespace Portal.Areas.Loans.Controllers
 
             if (Model.Filter.HasCriteria)
             {
-                //Model.Filter.RequestRequestStatusId = (int)RequestStatusEnum.New;               
                 Model.List = LoanRequestVwServices.Get(Model.Filter, db);
             }
             else
@@ -122,21 +94,30 @@ namespace Portal.Areas.Loans.Controllers
         [HttpGet]
         public ActionResult Create()
         {
+            try
+            {                
+                Db db = new Db(DbServices.ConnectionString);
+                // For Product
+                //ViewBag.EmployeeList = new SelectList(EmployeeServices.List(db), "Id", "Id_Name");
 
-            Db db = new Db(DbServices.ConnectionString);
-            // For Product
-            //ViewBag.EmployeeList = new SelectList(EmployeeServices.List(db), "Id", "Id_Name");
+                //Just Show Loan Type            
+                ViewBag.ProductTypeList = new SelectList(LoanTypeVwServices.List(db), "ProductTypeId", "ProductTypeName");
 
-            //Just Show Loan Type            
-            ViewBag.ProductTypeList = new SelectList(LoanTypeVwServices.List(db), "ProductTypeId", "ProductTypeName");
+                // For Request
+                //We need to customise the droplist for two options
+                ViewBag.BypassStatusList = new SelectList(BypassStatusServices.List(db).Where((c => (c.Id == 0 || c.Id == 2))), "Id", "Name");
 
-
-            // For Request
-            //We need to customise the droplist for two options
-            ViewBag.BypassStatusList = new SelectList(BypassStatusServices.List(db).Where((c => (c.Id == 0 || c.Id == 2))), "Id", "Name");
-
-
+            }
+            catch (CfException cfex)
+            {
+                TempData["Failure"] = cfex.ErrorDefinition.LocalizedMessage;
+            }
+            catch (Exception ex)
+            {
+                TempData["Failure"] = ex.Message;
+            }
             return View();
+
         }
 
         [HttpPost]
@@ -203,10 +184,15 @@ namespace Portal.Areas.Loans.Controllers
                 if (db.Transaction != null) db.Transaction.Commit();
                 return RedirectToAction("Details", new { id = productId });
             }
-            catch
+            catch (CfException cfex)
             {
-                return View();
+                TempData["Failure"] = cfex.ErrorDefinition.LocalizedMessage;
             }
+            catch (Exception ex)
+            {
+                TempData["Failure"] = ex.Message;
+            }
+            return View();
         }
 
         #endregion
@@ -215,47 +201,57 @@ namespace Portal.Areas.Loans.Controllers
         [HttpGet]
         public ActionResult Edit(int? id)
         {
-            Db db = new Db(DbServices.ConnectionString);
-
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Product product = ProductServices.Get(id.Value, db);
-            Request request = RequestServices.Get(id.Value, db);
-            LoanRequest loanRequest = LoanRequestServices.Get(id.Value, db);
-            RefundableProduct refundableProduct = RefundableProductServices.Get(id.Value, db);
-
-            if (product == null || request == null || loanRequest == null || refundableProduct == null)
-            {
-                return HttpNotFound();
-            }
-
-            // For Product
-            //ViewBag.EmployeeList = new SelectList(EmployeeServices.List(db), "Id", "Id_Name", product.Employee);
-            ViewBag.ProductTypeList = new SelectList(ProductTypeServices.List(db), "Id", "Name", product.ProductType);
-
-            // For Request
-            //We need to customise the droplist for two options
-            ViewBag.BypassStatusList = new SelectList(BypassStatusServices.List(db).Where((c => (c.Id == 0 || c.Id == 2))), "Id", "Name");
-
-
-            EmployeeProductCalculatorFilter f = new EmployeeProductCalculatorFilter();
-            f.EmployeeId = product.Employee; f.ProductTypeId = (short)product.ProductType;
-            f.Amount = (decimal)request.Amount; f.Period = (short)refundableProduct.PaymentPeriod;
-            EmployeeProductCalculatorResult result = db.EmployeeProductCalculatorFirstOrDefault(f);
-            if (result != null)
-            {
-                ViewBag.Calculations = result;
-            }
-
-
             LoanRequestViewModel vm = new LoanRequestViewModel();
-            vm.RequestProduct = product;
-            vm.Request = request;
-            vm.LoanRequest = loanRequest;
-            vm.RequestProductProductRefundableProduct = refundableProduct;
+            try
+            {
+                Db db = new Db(DbServices.ConnectionString);
 
+                if (id == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+                Product product = ProductServices.Get(id.Value, db);
+                Request request = RequestServices.Get(id.Value, db);
+                LoanRequest loanRequest = LoanRequestServices.Get(id.Value, db);
+                RefundableProduct refundableProduct = RefundableProductServices.Get(id.Value, db);
+
+                if (product == null || request == null || loanRequest == null || refundableProduct == null)
+                {
+                    return HttpNotFound();
+                }
+
+                // For Product
+                //ViewBag.EmployeeList = new SelectList(EmployeeServices.List(db), "Id", "Id_Name", product.Employee);
+                ViewBag.ProductTypeList = new SelectList(ProductTypeServices.List(db), "Id", "Name", product.ProductType);
+
+                // For Request
+                //We need to customise the droplist for two options
+                ViewBag.BypassStatusList = new SelectList(BypassStatusServices.List(db).Where((c => (c.Id == 0 || c.Id == 2))), "Id", "Name");
+
+
+                EmployeeProductCalculatorFilter f = new EmployeeProductCalculatorFilter();
+                f.EmployeeId = product.Employee; f.ProductTypeId = (short)product.ProductType;
+                f.Amount = (decimal)request.Amount; f.Period = (short)refundableProduct.PaymentPeriod;
+                EmployeeProductCalculatorResult result = db.EmployeeProductCalculatorFirstOrDefault(f);
+                if (result != null)
+                {
+                    ViewBag.Calculations = result;
+                }
+                
+                vm.RequestProduct = product;
+                vm.Request = request;
+                vm.LoanRequest = loanRequest;
+                vm.RequestProductProductRefundableProduct = refundableProduct;
+
+            }
+            catch (CfException cfex)
+            {
+                TempData["Failure"] = cfex.ErrorDefinition.LocalizedMessage;
+            }
+            catch (Exception ex)
+            {
+                TempData["Failure"] = ex.Message;
+            }
             return View(vm);
         }
 
@@ -430,37 +426,49 @@ namespace Portal.Areas.Loans.Controllers
         [HttpPost]
         public JsonResult Calculate(int employeeId, int productTypeId, float amount, int period, float netAmount, float deductions)
         {
-            Db db = new Db(DbServices.ConnectionString);
-            EmployeeProductCalculatorFilter f = new EmployeeProductCalculatorFilter()
+            try
             {
-                EmployeeId = employeeId,
-                ProductTypeId = (short)productTypeId,
-                Amount = (decimal)amount,
-                Period = (short)period
-            };
-
-            EmployeeProductCalculatorResult result = db.EmployeeProductCalculatorFirstOrDefault(f);
-            if (result == null)
-            {
-                return Json("Error", JsonRequestBehavior.AllowGet);
-            }
-            else
-            {
-                GetEmployeeSolvencyFilter filter = new GetEmployeeSolvencyFilter()
+                Db db = new Db(DbServices.ConnectionString);
+                EmployeeProductCalculatorFilter f = new EmployeeProductCalculatorFilter()
                 {
                     EmployeeId = employeeId,
+                    ProductTypeId = (short)productTypeId,
                     Amount = (decimal)amount,
-                    Date = System.DateTime.Now,
-                    Installment = result.Installment,
-                    GrossSalary = (decimal)netAmount,
-                    NetSalary = (decimal)netAmount
-
+                    Period = (short)period
                 };
-                GetEmployeeSolvencyResult solvencyResult = db.GetEmployeeSolvencyFirstOrDefault(filter);
 
-                return Json(new { Calculator = result, Solevency = solvencyResult }, JsonRequestBehavior.AllowGet);
+                EmployeeProductCalculatorResult result = db.EmployeeProductCalculatorFirstOrDefault(f);
+                if (result == null)
+                {
+                    return Json("Error", JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+                    GetEmployeeSolvencyFilter filter = new GetEmployeeSolvencyFilter()
+                    {
+                        EmployeeId = employeeId,
+                        Amount = (decimal)amount,
+                        Date = System.DateTime.Now,
+                        Installment = result.Installment,
+                        GrossSalary = (decimal)netAmount,
+                        NetSalary = (decimal)netAmount
+
+                    };
+                    GetEmployeeSolvencyResult solvencyResult = db.GetEmployeeSolvencyFirstOrDefault(filter);
+
+                    return Json(new { Calculator = result, Solevency = solvencyResult }, JsonRequestBehavior.AllowGet);
+                }
+            }
+            catch (CfException cfex)
+            {
+                TempData["Failure"] = cfex.ErrorDefinition.LocalizedMessage;
+            }
+            catch (Exception ex)
+            {
+                TempData["Failure"] = ex.Message;
             }
 
+            return Json("Error", JsonRequestBehavior.AllowGet);
         }
 
 
@@ -551,7 +559,7 @@ namespace Portal.Areas.Loans.Controllers
             string result = "";
             if (solvencyResult.IncomeSolvency < solvencyResult.MaxAllowedDebt)
             {
-                result += debtsSituationAccepted+". /n";
+                result += debtsSituationAccepted + ". /n";
             }
             else
             {
@@ -651,7 +659,7 @@ namespace Portal.Areas.Loans.Controllers
 
 
         // GET: Guarantor/Delete/5
-        public ActionResult DeleteGuarantorWithStatement(Nullable<int> id)
+        public ActionResult DeleteGuarantorWithStatement(Nullable<int> id, int ProductId)
         {
             //ViewBag.ModuleName = moduleName;
             ViewBag.Title = delete;
@@ -674,12 +682,13 @@ namespace Portal.Areas.Loans.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.ProductId = ProductId;
             return PartialView(guarantor);
         }
 
         // POST: Guarantor/Delete/5
         [HttpPost, ActionName("DeleteGuarantorWithStatement")]
-        public ActionResult DeleteConfirmedGuarantorWithStatement(int id)
+        public ActionResult DeleteConfirmedGuarantorWithStatement(int id, int ProductId)
         {
             try
             {
@@ -697,10 +706,9 @@ namespace Portal.Areas.Loans.Controllers
             {
                 TempData["Failure"] = ex.Message;
             }
-            //return RedirectToAction("Details", new { id = model.Guarantor.RefundableProduct });
-            // return View(guarantor);
-            return RedirectToAction("Index");
 
+            //return RedirectToAction("Index");
+            return RedirectToAction("Details", new { id = ProductId });
         }
 
 
@@ -824,7 +832,7 @@ namespace Portal.Areas.Loans.Controllers
         }
 
         // GET: Guarantor/Delete/5
-        public ActionResult DeleteExceptionalAmount(Nullable<int> id)
+        public ActionResult DeleteExceptionalAmount(Nullable<int> id, int ProductId)
         {
             ViewBag.ModuleName = moduleName;
             ViewBag.Title = delete;
@@ -845,12 +853,13 @@ namespace Portal.Areas.Loans.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.ProductId = ProductId;
             return PartialView(expAmount);
         }
 
         // POST: Guarantor/Delete/5
         [HttpPost, ActionName("DeleteExceptionalAmount")]
-        public ActionResult DeleteConfirmedExceptionalAmount(int id)
+        public ActionResult DeleteConfirmedExceptionalAmount(int id, int ProductId)
         {
             try
             {
@@ -868,7 +877,8 @@ namespace Portal.Areas.Loans.Controllers
                 TempData["Failure"] = ex.Message;
             }
             // return View(guarantor);
-            return RedirectToAction("Index");
+            //return RedirectToAction("Index");
+            return RedirectToAction("Details", new { id = ProductId });
 
         }
 

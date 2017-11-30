@@ -28,9 +28,11 @@ namespace Portal.Areas.Repository.Controllers
         /// <returns></returns>
         public ActionResult Index(ExternalGrantVwViewModel Model)
         {
+            Db db = new Db(DbServices.ConnectionString);
+            ViewBag.GrantType = new SelectList(GrantTypeServices.List(db),"Id","Name");
+
             if (Model.Filter.HasCriteria)
 	        {
-				Db db = new Db(DbServices.ConnectionString);
                 Model.List = ExternalGrantVwServices.Get(Model.Filter, db);
             }
 			else

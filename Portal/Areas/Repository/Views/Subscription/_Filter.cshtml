@@ -82,7 +82,8 @@
 								                  {"data-toggle", "tooltip"},
 								                  {"data-placement", "bottom"}
 								                })
-								            @Html.EditorFor(model => model.Filter.SubscriptionTypeId, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.DropDownListFor(model => model.Filter.SubscriptionTypeId, (SelectList)@ViewBag.SubscriptionTypeList, (string)@ViewBag.Select, htmlAttributes: new { @class = "form-control" })
+								            @*@Html.EditorFor(model => model.Filter.SubscriptionTypeId, new { htmlAttributes = new { @class = "form-control" } })*@
 								        </div>
 									</div>
 								</div>

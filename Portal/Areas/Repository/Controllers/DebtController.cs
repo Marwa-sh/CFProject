@@ -28,9 +28,11 @@ namespace Portal.Areas.Repository.Controllers
         /// <returns></returns>
         public ActionResult Index(DebtVwViewModel Model)
         {
+            Db db = new Db(DbServices.ConnectionString);
+            ViewBag.EmployeeDepartmentSalaryWorkPlaceId = new SelectList(SalaryWorkPlaceServices.List(db), "Id", "Name");
+            ViewBag.Issuer = new SelectList(IssuerServices.List(db), "Id", "Name");
             if (Model.Filter.HasCriteria)
-	        {
-				Db db = new Db(DbServices.ConnectionString);
+	        {				
                 Model.List = DebtVwServices.Get(Model.Filter, db);
             }
 			else

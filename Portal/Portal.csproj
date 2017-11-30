@@ -1735,7 +1735,6 @@
     <Content Include="Areas\Repository\Views\Home\LogOff.cshtml" />
     <Content Include="Areas\Loans\Views\LoanReport\Index.cshtml" />
     <Content Include="Areas\Repository\Views\LoanDecision\CreateLoanRequestDecision.cshtml" />
-    <Content Include="Areas\Repository\Views\CashPayment\_FilterOptions.cshtml" />
     <Content Include="Areas\Repository\Views\EventCategory\_Filter.cshtml" />
     <Content Include="Areas\Repository\Views\CashPayment\_Filter.cshtml" />
     <Content Include="Areas\Repository\Views\CollectOrder\_Filter.cshtml" />

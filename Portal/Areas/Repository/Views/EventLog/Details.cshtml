@@ -153,7 +153,8 @@
 								                  {"data-toggle", "tooltip"},
 								                  {"data-placement", "bottom"}
 								                })
-								                 <input type="text" id="txtParameters" class="form-control" value="@Html.DisplayFor(model => model.Instance.Parameters)" disabled />
+                                            @Html.Raw(Model.Instance.Html)
+								                 @*<input type="text" id="txtParameters" class="form-control" value="@Html.DisplayFor(model => model.Instance.Parameters)" disabled />*@
 								        </div>
 									</div>
 								</div>

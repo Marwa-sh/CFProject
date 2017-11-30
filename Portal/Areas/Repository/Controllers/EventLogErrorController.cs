@@ -28,9 +28,12 @@ namespace Portal.Areas.Repository.Controllers
         /// <returns></returns>
         public ActionResult Index(EventLogErrorVwViewModel Model)
         {
+            Db db = new Db(DbServices.ConnectionString);
+            ViewBag.EventCategoryList = new SelectList(EventCategoryServices.List(db), "Id", "Name");
+            ViewBag.EventStatusList = new SelectList(EventStatusServices.List(db), "Id", "Name");
+
             if (Model.Filter.HasCriteria)
 	        {
-				Db db = new Db(DbServices.ConnectionString);
                 Model.List = EventLogErrorVwServices.Get(Model.Filter, db);
             }
 			else

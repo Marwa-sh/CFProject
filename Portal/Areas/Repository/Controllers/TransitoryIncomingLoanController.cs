@@ -28,9 +28,10 @@ namespace Portal.Areas.Repository.Controllers
         /// <returns></returns>
         public ActionResult Index(TransitoryIncomingLoanVwViewModel Model)
         {
+            Db db = new Db(DbServices.ConnectionString);
+            ViewBag.MainWorkPlaceList = new SelectList(MainWorkPlaceServices.List(db), "Id", "Name");
             if (Model.Filter.HasCriteria)
 	        {
-				Db db = new Db(DbServices.ConnectionString);
                 Model.List = TransitoryIncomingLoanVwServices.Get(Model.Filter, db);
             }
 			else

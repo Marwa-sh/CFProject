@@ -28,9 +28,10 @@ namespace Portal.Areas.Repository.Controllers
         /// <returns></returns>
         public ActionResult Index(DownPaymentVwViewModel Model)
         {
+            Db db = new Db(DbServices.ConnectionString);
+            ViewBag.RequestProductProductTypeId = new SelectList(ProductTypeServices.List(db), "Id", "Name");
             if (Model.Filter.HasCriteria)
 	        {
-				Db db = new Db(DbServices.ConnectionString);
                 Model.List = DownPaymentVwServices.Get(Model.Filter, db);
             }
 			else

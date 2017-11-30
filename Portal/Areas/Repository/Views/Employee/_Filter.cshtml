@@ -56,7 +56,8 @@
 								                  {"data-toggle", "tooltip"},
 								                  {"data-placement", "bottom"}
 								                })
-								            @Html.EditorFor(model => model.Filter.DepartmentId, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.DropDownListFor(model => model.Filter.DepartmentId, (SelectList)@ViewBag.Department, (string)@ViewBag.Select, htmlAttributes: new { @class = "form-control" })
+								            @*@Html.EditorFor(model => model.Filter.DepartmentId, new { htmlAttributes = new { @class = "form-control" } })*@
 								        </div>
 									</div>
 								</div>
@@ -82,7 +83,8 @@
 								                  {"data-toggle", "tooltip"},
 								                  {"data-placement", "bottom"}
 								                })
-								            @Html.EditorFor(model => model.Filter.CategoryId, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.DropDownListFor(model => model.Filter.CategoryId, (SelectList)@ViewBag.Category, (string)@ViewBag.Select, htmlAttributes: new { @class = "form-control" })
+								            @*@Html.EditorFor(model => model.Filter.CategoryId, new { htmlAttributes = new { @class = "form-control" } })*@
 								        </div>
 									</div>
 								</div>

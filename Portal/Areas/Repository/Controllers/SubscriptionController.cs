@@ -28,9 +28,10 @@ namespace Portal.Areas.Repository.Controllers
         /// <returns></returns>
         public ActionResult Index(SubscriptionVwViewModel Model)
         {
+            Db db = new Db(DbServices.ConnectionString);
+            ViewBag.SubscriptionTypeList = new SelectList(SubscriptionTypeServices.List(db), "Id", "Name");
             if (Model.Filter.HasCriteria)
 	        {
-				Db db = new Db(DbServices.ConnectionString);
                 Model.List = SubscriptionVwServices.Get(Model.Filter, db);
             }
 			else

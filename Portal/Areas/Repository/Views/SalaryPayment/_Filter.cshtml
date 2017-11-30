@@ -82,7 +82,8 @@
 								                  {"data-toggle", "tooltip"},
 								                  {"data-placement", "bottom"}
 								                })
-								            @Html.EditorFor(model => model.Filter.PaymentPaymentGroupId, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.DropDownListFor(model => model.Filter.PaymentPaymentGroupId, (SelectList)@ViewBag.PaymentPaymentGroupList, (string)@ViewBag.Select, htmlAttributes: new { @class = "form-control" })
+								            @*@Html.EditorFor(model => model.Filter.PaymentPaymentGroupId, new { htmlAttributes = new { @class = "form-control" } })*@
 								        </div>
 									</div>
 									<div class="col-md-4">
@@ -94,7 +95,8 @@
 								                  {"data-toggle", "tooltip"},
 								                  {"data-placement", "bottom"}
 								                })
-								            @Html.EditorFor(model => model.Filter.PaymentPaymentStatusId, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.DropDownListFor(model => model.Filter.PaymentPaymentGroupId, (SelectList)@ViewBag.PaymentPaymentStatusList, (string)@ViewBag.Select, htmlAttributes: new { @class = "form-control" })
+								            @*@Html.EditorFor(model => model.Filter.PaymentPaymentGroupId, new { htmlAttributes = new { @class = "form-control" } })*@
 								        </div>
 									</div>
 								</div>

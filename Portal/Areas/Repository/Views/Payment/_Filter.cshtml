@@ -94,7 +94,8 @@
 								                  {"data-toggle", "tooltip"},
 								                  {"data-placement", "bottom"}
 								                })
-								            @Html.EditorFor(model => model.Filter.PaymentStatusId, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.DropDownListFor(model => model.Filter.PaymentStatusId, (SelectList)@ViewBag.PaymentStatusList, (string)@ViewBag.Select, htmlAttributes: new { @class = "form-control" })
+								            @*@Html.EditorFor(model => model.Filter.PaymentStatusId, new { htmlAttributes = new { @class = "form-control" } })*@
 								        </div>
 									</div>
 								</div>

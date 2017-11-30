@@ -28,9 +28,10 @@ namespace Portal.Areas.Repository.Controllers
         /// <returns></returns>
         public ActionResult Index(CashPaymentVwViewModel Model)
         {
+            Db db = new Db(DbServices.ConnectionString);
+            ViewBag.PaymentEmployeeDepartmentSalaryWorkPlaceId = new SelectList(SalaryWorkPlaceServices.List(db),"Id","Name");
             if (Model.Filter.HasCriteria)
-	        {
-				Db db = new Db(DbServices.ConnectionString);
+	        {				
                 Model.List = CashPaymentVwServices.Get(Model.Filter, db);
             }
 			else

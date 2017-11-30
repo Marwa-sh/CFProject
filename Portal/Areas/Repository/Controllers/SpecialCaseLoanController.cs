@@ -28,9 +28,10 @@ namespace Portal.Areas.Repository.Controllers
         /// <returns></returns>
         public ActionResult Index(SpecialCaseLoanVwViewModel Model)
         {
+            Db db = new Db(DbServices.ConnectionString);
+            ViewBag.LoanTypeProductTypeList = new SelectList(ProductTypeServices.List(db), "Id", "Name");
             if (Model.Filter.HasCriteria)
 	        {
-				Db db = new Db(DbServices.ConnectionString);
                 Model.List = SpecialCaseLoanVwServices.Get(Model.Filter, db);
             }
 			else

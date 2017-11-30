@@ -56,7 +56,8 @@
 								                  {"data-toggle", "tooltip"},
 								                  {"data-placement", "bottom"}
 								                })
-								            @Html.EditorFor(model => model.Filter.LoanLoanType, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.DropDownListFor(model => model.Filter.LoanLoanType, (SelectList)@ViewBag.LoanTypeList, (string)@ViewBag.Select, htmlAttributes: new { @class = "form-control" })
+								            @*@Html.EditorFor(model => model.Filter.LoanLoanType, new { htmlAttributes = new { @class = "form-control" } })*@
 								        </div>
 									</div>
 								</div>
@@ -88,13 +89,14 @@
 									<div class="col-md-4">
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Filter.FromLoanLoanType, htmlAttributes: new { @class = "control-label" })*@
-								            @Html.LabelFor(model => model.Filter.FromLoanLoanType, new Dictionary<string, Object>
+								            @*@Html.LabelFor(model => model.Filter.FromLoanLoanType, new Dictionary<string, Object>
 								                { { "class", "control-label" },
 								                  {"title", Html.ToolTipMessageFor(model => model.Filter.FromLoanLoanType)},
 								                  {"data-toggle", "tooltip"},
 								                  {"data-placement", "bottom"}
 								                })
-								            @Html.EditorFor(model => model.Filter.FromLoanLoanType, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.DropDownListFor(model => model.Filter.FromLoanLoanType, (SelectList)@ViewBag.LoanTypeList, (string)@ViewBag.Select, htmlAttributes: new { @class = "form-control" })*@
+								            @*@Html.EditorFor(model => model.Filter.FromLoanLoanType, new { htmlAttributes = new { @class = "form-control" } })*@
 								        </div>
 									</div>
 								</div>

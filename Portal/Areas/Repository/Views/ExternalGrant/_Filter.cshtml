@@ -77,12 +77,13 @@
 								        <div class="form-group">
 								            @*@Html.LabelFor(model => model.Filter.GrantTypeId, htmlAttributes: new { @class = "control-label" })*@
 								            @Html.LabelFor(model => model.Filter.GrantTypeId, new Dictionary<string, Object>
-								                { { "class", "control-label" },
-								                  {"title", Html.ToolTipMessageFor(model => model.Filter.GrantTypeId)},
-								                  {"data-toggle", "tooltip"},
-								                  {"data-placement", "bottom"}
-								                })
-								            @Html.EditorFor(model => model.Filter.GrantTypeId, new { htmlAttributes = new { @class = "form-control" } })
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Filter.GrantTypeId)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                }) 
+                                            @Html.DropDownListFor(model => model.Filter.GrantTypeId, (SelectList)@ViewBag.GrantType, (string)@ViewBag.Select, htmlAttributes: new { @class = "form-control" })
+								            @*@Html.EditorFor(model => model.Filter.GrantTypeId, new { htmlAttributes = new { @class = "form-control" } })*@
 								        </div>
 									</div>
 								</div>

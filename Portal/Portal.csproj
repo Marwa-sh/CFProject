@@ -1292,10 +1292,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\LoanDecision\Create.cshtml" />
-    <Content Include="Views\LoanDecision\Details.cshtml" />
-    <Content Include="Views\LoanDecision\Edit.cshtml" />
-    <Content Include="Views\LoanDecision\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
@@ -1807,7 +1803,6 @@
     <Content Include="Areas\Loans\Views\LoanRequestViewModel\DeleteGuarantorWithStatement.cshtml" />
     <Content Include="Areas\Loans\Views\LoanRequestViewModel\EditExceptionalAmount.cshtml" />
     <Content Include="Areas\Loans\Views\LoanRequestViewModel\EditGuarantorWithStatement.cshtml" />
-    <Content Include="Views\LoanDecision\CreateLoanRequestDecision.cshtml" />
     <Content Include="Areas\Loans\Views\LoanRequestViewModel\EmployeeCalculator.cshtml" />
     <Content Include="Areas\Grants\Views\GrantRequestViewModel\Create.cshtml" />
     <Content Include="Areas\Loans\Views\ManageLoanRequests\ManageNewRequests.cshtml" />
@@ -1817,6 +1812,12 @@
     <Content Include="Areas\Loans\Views\ManageLoanRequests\ManageExceptionalRequest.cshtml" />
     <Content Include="Areas\Loans\Views\ManageLoanRequests\ManageRejectedRequest.cshtml" />
     <Content Include="Areas\Loans\Views\ManageLoanRequests\_FiltersSection.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\AccessDenied.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\LogOff.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CfDataContext\CfDataContext.csproj">

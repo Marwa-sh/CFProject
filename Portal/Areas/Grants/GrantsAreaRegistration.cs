@@ -17,7 +17,7 @@ namespace Portal.Areas.Grants
             context.MapRoute(
                 "Grants_default",
                 "Grants/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new {area= "Grants", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

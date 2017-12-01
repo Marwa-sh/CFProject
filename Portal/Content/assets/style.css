@@ -173,3 +173,9 @@ ul.navbar-nav {
 {
     color:white
 }
+
+button a,
+button a:hover,
+button a:visited{
+    color: #fff !important;
+}

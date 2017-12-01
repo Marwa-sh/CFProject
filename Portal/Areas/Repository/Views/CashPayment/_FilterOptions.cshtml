@@ -63,19 +63,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            @*@Html.LabelFor(model => model.Filter.PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId, htmlAttributes: new { @class = "control-label" })*@
-                                            @Html.LabelFor(model => model.Filter.PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId, new Dictionary<string, Object>
-                                                { { "class", "control-label" },
-                                                  {"title", Html.ToolTipMessageFor(model => model.Filter.PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId)},
-                                                  {"data-toggle", "tooltip"},
-                                                  {"data-placement", "bottom"}
-                                                })
-                                            @Html.DropDownListFor(model => model.Filter.PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId, (SelectList)@ViewBag.PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId, (string)@ViewBag.Select, htmlAttributes: new { @class = "form-control" })
-                                            @*@Html.EditorFor(model => model.Filter.PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId, new { htmlAttributes = new { @class = "form-control" } })*@
-                                        </div>
-                                    </div>
+                                     
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             @*@Html.LabelFor(model => model.Filter.Number, htmlAttributes: new { @class = "control-label" })*@

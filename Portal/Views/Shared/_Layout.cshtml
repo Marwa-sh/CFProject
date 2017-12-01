@@ -102,55 +102,6 @@
         <!-- main menu content-->
         <div class="main-menu-content">
             <ul id="main-menu-navigation" data-menu="menu-navigation" class="navigation navigation-main">
-                <li class=" nav-item"><a href="#"><i class="icon-home3"></i><span data-i18n="nav.dash.main" class="menu-title">المعلومات العامة</span></a>
-                    <ul class="menu-content">
-                        <li class="">
-                            @Html.ActionLink("مجموعات الإعانات", "Index", "GrantTypeGroup" , new   { Area= "Repository"}, new { })
-                        </li>
-                        <li>
-                            @Html.ActionLink("الهيئات", "Index", "Category", new { Area = "Repository" }, new { })
-                        </li>
-                        <li>
-                            @Html.ActionLink("الفعاليات", "Index", "MainWorkPlace", new { Area = "Repository" }, new { })
-                        </li>
-                        <li>
-                            @Html.ActionLink("الأوضاع الوظيفية", "Index", "EmployeeStatus", new { Area = "Repository" }, new { })
-                        </li>
-                        <li>
-                            @Html.ActionLink("قواعد استخدام المنتجات", "Index", "Availability", new { Area = "Repository" }, new { })
-                        </li>
-                        <li>
-                            @Html.ActionLink("حالات الطلبات", "Index", "RequestStatus", new { Area = "Repository" }, new { })
-                        </li>
-                        <li>
-                            @Html.ActionLink("أنواع السلف", "Index", "LoanType", new { Area = "Repository" }, new { })
-                        </li>
-                        <li>
-                            @Html.ActionLink("أنواع قرارات السلف", "Index", "LoanDecisionType", new { Area = "Repository" }, new { })
-                        </li>
-                        <li>
-                            @Html.ActionLink("حالات السلف", "Index", "LoanStatus", new { Area = "Repository" }, new { })
-                        </li>
-                        <li>
-                            @Html.ActionLink("حالات توليد السلف", "Index", "LoanGenerationStatus", new { Area = "Repository" }, new { })
-                        </li>
-                        <li>
-                            @Html.ActionLink("حالات التجاوز", "Index", "BypassStatus", new { Area = "Repository" }, new { })
-                        </li>
-                        <li>
-                            @Html.ActionLink("حالات الكفلاء", "Index", "GuarantorStatus", new { Area = "Repository" }, new { })
-                        </li>
-                        <li>
-                            @Html.ActionLink("أنواع المبالغ الاستثنائية", "Index", "ExceptionalAmountType", new { Area = "Repository" }, new { })
-                        </li>
-                        <li>
-                            @Html.ActionLink("قواعد إغلاق السلف", "Index", "LoanTypeClosure", new { Area = "Repository" }, new { })
-                        </li>
-                        <li>
-                            @Html.ActionLink("أنواع الاشتراكات", "Index", "SubscriptionType", new { Area = "Repository" }, new { })
-                        </li>
-                    </ul>
-                </li>
                 <li class=" nav-item">
                     <a href="#"><i class="icon-home3"></i>
                     <span data-i18n="nav.dash.main" class="menu-title">أقسام جديدة</span>
@@ -186,10 +137,6 @@
                             @Html.ActionLink("تقارير السلف", "Index", "LoanReport", new { Area = "Loans" }, new { })
                         </li>
                         <li>
-                            @Html.ActionLink("مجموعات الدفع", "Index", "PaymentGroup", new { Area = "Repository" }, new { })
-                        </li>
-                        
-                        <li>
                             @Html.ActionLink("السلف الممنوحة", "Index", "Loan", new { Area = "Repository" }, new { })
                         </li>                      
                         <li>
@@ -224,9 +171,6 @@
                             @Html.ActionLink("أوامر دفع الإعانات", "Index", "GrantPaymentOrder", new { Area = "Repository" }, new { })
                         </li>
                         <li>
-                            @Html.ActionLink("نسب الصرف لإعانة نهاية الخدمة", "Index", "EndWorkGrantBracket", new { Area = "Repository" }, new { })
-                        </li>
-                        <li>
                             @Html.ActionLink("الإعانات الخارجية", "Index", "ExternalGrant", new { Area = "Repository" }, new { })
                         </li>
                         <li>
@@ -251,9 +195,6 @@
                         </li>
                         <li>
                             @Html.ActionLink("الكفالات", "Index", "Warrant", new { Area = "Repository" }, new { })
-                        </li>
-                        <li>
-                            @Html.ActionLink("الجهات المصدرة للمديونية", "Index", "Issuer", new { Area = "Repository" }, new { })
                         </li>
                     </ul>
                 </li>
@@ -311,7 +252,69 @@
                             @Html.ActionLink("سجل الأحداث", "Index", "EventLog", new { Area = "Repository" }, new { })
                         </li>
                         <li>
+                            @Html.ActionLink("سجل الأخطاء", "Index", "EventLogError", new { Area = "Repository" }, new { })
+                        </li>
+                        <li>
                             @Html.ActionLink("تعريب الأخطاء", "Index", "ErrorDefinition", new { Area = "Repository" }, new { })
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nav-item">
+                    <a href="#"><i class="icon-home3"></i><span data-i18n="nav.dash.main" class="menu-title">إعدادات عامة</span></a>
+                    <ul class="menu-content">
+                        <li class="">
+                            @Html.ActionLink("مجموعات الإعانات", "Index", "GrantTypeGroup", new { Area = "Repository" }, new { })
+                        </li>
+                        <li>
+                            @Html.ActionLink("مجموعات الدفع", "Index", "PaymentGroup", new { Area = "Repository" }, new { })
+                        </li>
+                        <li>
+                            @Html.ActionLink("الهيئات", "Index", "Category", new { Area = "Repository" }, new { })
+                        </li>
+                        <li>
+                            @Html.ActionLink("الفعاليات", "Index", "MainWorkPlace", new { Area = "Repository" }, new { })
+                        </li>
+                        <li>
+                            @Html.ActionLink("الأوضاع الوظيفية", "Index", "EmployeeStatus", new { Area = "Repository" }, new { })
+                        </li>
+                        <li>
+                            @Html.ActionLink("قواعد استخدام المنتجات", "Index", "Availability", new { Area = "Repository" }, new { })
+                        </li>
+                        <li>
+                            @Html.ActionLink("حالات الطلبات", "Index", "RequestStatus", new { Area = "Repository" }, new { })
+                        </li>
+                        <li>
+                            @Html.ActionLink("أنواع السلف", "Index", "LoanType", new { Area = "Repository" }, new { })
+                        </li>
+                        <li>
+                            @Html.ActionLink("أنواع قرارات السلف", "Index", "LoanDecisionType", new { Area = "Repository" }, new { })
+                        </li>
+                        <li>
+                            @Html.ActionLink("حالات السلف", "Index", "LoanStatus", new { Area = "Repository" }, new { })
+                        </li>
+                        <li>
+                            @Html.ActionLink("حالات توليد السلف", "Index", "LoanGenerationStatus", new { Area = "Repository" }, new { })
+                        </li>
+                        <li>
+                            @Html.ActionLink("حالات التجاوز", "Index", "BypassStatus", new { Area = "Repository" }, new { })
+                        </li>
+                        <li>
+                            @Html.ActionLink("حالات الكفلاء", "Index", "GuarantorStatus", new { Area = "Repository" }, new { })
+                        </li>
+                        <li>
+                            @Html.ActionLink("أنواع المبالغ الاستثنائية", "Index", "ExceptionalAmountType", new { Area = "Repository" }, new { })
+                        </li>
+                        <li>
+                            @Html.ActionLink("قواعد إغلاق السلف", "Index", "LoanTypeClosure", new { Area = "Repository" }, new { })
+                        </li>
+                        <li>
+                            @Html.ActionLink("أنواع الاشتراكات", "Index", "SubscriptionType", new { Area = "Repository" }, new { })
+                        </li>
+                        <li>
+                            @Html.ActionLink("نسب الصرف لإعانة نهاية الخدمة", "Index", "EndWorkGrantBracket", new { Area = "Repository" }, new { })
+                        </li>
+                        <li>
+                            @Html.ActionLink("الجهات المصدرة للمديونية", "Index", "Issuer", new { Area = "Repository" }, new { })
                         </li>
                     </ul>
                 </li>

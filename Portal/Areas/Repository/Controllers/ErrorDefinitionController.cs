@@ -15,8 +15,8 @@ namespace Portal.Areas.Repository.Controllers
     {
         private string moduleName = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ErrorDefinition", "ModuleName");
         private string index = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ErrorDefinition", "ModuleNamePlural");
-		
-	    public ErrorDefinitionController()
+
+		public ErrorDefinitionController()
     	{
             ViewBag.ModuleName = moduleName;
 			ViewBag.Title = index;
@@ -38,12 +38,12 @@ namespace Portal.Areas.Repository.Controllers
             return View(Model);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public ActionResult Details(Nullable<int>  id)
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="id"></param>
+		/// <returns></returns>
+		public ActionResult Details(Nullable<int>  id)
         {
             if (id == null)
             {

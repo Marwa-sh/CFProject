@@ -7,7 +7,7 @@
     <div class="col-xs-12">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">@ViewBag.Title</h4>
+                <h4 class="card-title">@ViewBag.Title @if(Model.List.Count == 0) {<span class="tag tag-default">@Model.List.Count</span>} else {<span class="tag tag-danger">@Model.List.Count</span> }</h4>
                 <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
                 <div class="heading-elements">
                     <ul class="list-inline mb-0">
@@ -69,7 +69,7 @@
                     				@Html.DisplayFor(modelItem => item.User)
                 				</td>
                 				<td>
-                    				@Html.DisplayFor(modelItem => item.Parameters)
+                    				@Html.Raw(item.Html)
                 				</td>
 				                <td>
 									<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">

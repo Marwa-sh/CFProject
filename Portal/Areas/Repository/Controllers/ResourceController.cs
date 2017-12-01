@@ -15,37 +15,14 @@ namespace Portal.Areas.Repository.Controllers
     {
         private string moduleName = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "Resource", "ModuleName");
         private string index = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "Resource", "ModuleNamePlural");
-        private string insert = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Insert");
-        private string update = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Update");
-        private string delete = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Delete");
-        private string save = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Save");
-        private string back = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Back");
-        private string details = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Details");
-        private string confirmDelete = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "ConfirmDelete");
-        private string yes = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Yes");
-        private string no = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "No");
-        private string search = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Search");
-        private string filterOptions = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "FilterOptions");
-        private string noRecords = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "NoRecords");
-        private string reload = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Reload");
+		private string reloadResources = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "Resource", "ReloadResources");
 
-        public ResourceController()
+		public ResourceController()
     	{
-            ViewBag.ModuleName = moduleName;
+			ResourceServices.ReloadResources();
+			ViewBag.ModuleName = moduleName;
 			ViewBag.Title = index;
-            ViewBag.Insert = insert;
-            ViewBag.Update = update;
-            ViewBag.Delete = delete;
-			ViewBag.Save = save;
-            ViewBag.Back = back;
-			ViewBag.Details = details;
-            ViewBag.ConfirmDelete = confirmDelete;
-            ViewBag.Yes = yes;
-            ViewBag.No = no;
-            ViewBag.Search = search;
-			ViewBag.FilterOptions = filterOptions;
-			ViewBag.NoRecords = noRecords;
-            ViewBag.Reload = reload;
+            ViewBag.ReloadResources = reloadResources;
         }
 		
         /// <summary>
@@ -78,7 +55,7 @@ namespace Portal.Areas.Repository.Controllers
             }
             else
                 Model.List = new List<ResourceVw>();
-            return View("Index",Model);
+            return View("Index", Model);
         }
 
 

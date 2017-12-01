@@ -455,20 +455,20 @@ namespace Cf.Data
 		public Nullable<int>  Id { get; set; }
 
 		/// <summary>
-		/// Metadata for FullNameContains  filter property
+		/// Metadata for FullNameArabicSoundex  filter property
 		/// </summary>
 		[Display(
-			Name = "FullNameContains",
+			Name = "FullNameArabicSoundex",
 			ResourceType = typeof(Cf.Data.Resources.EmployeeVwFilter))
 		]
-		[Tooltip("FullNameContainsTooltip", typeof(Cf.Data.Resources.EmployeeVwFilter))]
+		[Tooltip("FullNameArabicSoundexTooltip", typeof(Cf.Data.Resources.EmployeeVwFilter))]
 		[StringLength(
 			101,
 			MinimumLength = 0,
 			ErrorMessageResourceName = "StringLengthCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public string  FullNameContains { get; set; }
+		public string  FullNameArabicSoundex { get; set; }
 
 		/// <summary>
 		/// Metadata for DepartmentId  filter property
@@ -543,6 +543,22 @@ namespace Cf.Data
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
 		public string  MessageContains { get; set; }
+
+		/// <summary>
+		/// Metadata for LocalizedMessageArabicSoundex  filter property
+		/// </summary>
+		[Display(
+			Name = "LocalizedMessageArabicSoundex",
+			ResourceType = typeof(Cf.Data.Resources.ErrorDefinitionVwFilter))
+		]
+		[Tooltip("LocalizedMessageArabicSoundexTooltip", typeof(Cf.Data.Resources.ErrorDefinitionVwFilter))]
+		[StringLength(
+			1024,
+			MinimumLength = 0,
+			ErrorMessageResourceName = "StringLengthCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		public string  LocalizedMessageArabicSoundex { get; set; }
 		#endregion
 	}
 	#endregion
@@ -3191,22 +3207,6 @@ namespace Cf.Data
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
 		public string  GrantRequestRequestProductEmployeeFullNameContains { get; set; }
-
-		/// <summary>
-		/// Metadata for GrantRequestRequestProductProductTypeId  filter property
-		/// </summary>
-		[Display(
-			Name = "GrantRequestRequestProductProductTypeId",
-			ResourceType = typeof(Cf.Data.Resources.ServiceEndGrantRequestVwFilter))
-		]
-		[Tooltip("GrantRequestRequestProductProductTypeIdTooltip", typeof(Cf.Data.Resources.ServiceEndGrantRequestVwFilter))]
-		[Range(
-			0,
-			32767,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		public Nullable<short>  GrantRequestRequestProductProductTypeId { get; set; }
 		#endregion
 	}
 	#endregion

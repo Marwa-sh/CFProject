@@ -641,24 +641,24 @@ namespace Cf.Data.Resources
         }
 
         /// <summary>
-        /// Looks up a localized string similar to FullNameContains.
+        /// Looks up a localized string similar to FullNameArabicSoundex.
         /// </summary>
-        public static string FullNameContains
+        public static string FullNameArabicSoundex
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "EmployeeVwFilter", "FullNameContains");
+                return ResourcesCollection.GetString(Culture, "EmployeeVwFilter", "FullNameArabicSoundex");
             }
         }
         
         /// <summary>
-        /// Looks up a localized string similar to FullNameContainsTooltip.
+        /// Looks up a localized string similar to FullNameArabicSoundexTooltip.
         /// </summary>
-        public static string FullNameContainsTooltip
+        public static string FullNameArabicSoundexTooltip
         {
             get
             {
-                return ResourcesCollection.GetString(Culture, "EmployeeVwFilter", "FullNameContainsTooltip");
+                return ResourcesCollection.GetString(Culture, "EmployeeVwFilter", "FullNameArabicSoundexTooltip");
             }
         }
 
@@ -762,6 +762,28 @@ namespace Cf.Data.Resources
             get
             {
                 return ResourcesCollection.GetString(Culture, "ErrorDefinitionVwFilter", "MessageContainsTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to LocalizedMessageArabicSoundex.
+        /// </summary>
+        public static string LocalizedMessageArabicSoundex
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ErrorDefinitionVwFilter", "LocalizedMessageArabicSoundex");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to LocalizedMessageArabicSoundexTooltip.
+        /// </summary>
+        public static string LocalizedMessageArabicSoundexTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ErrorDefinitionVwFilter", "LocalizedMessageArabicSoundexTooltip");
             }
         }
     }
@@ -4513,28 +4535,6 @@ namespace Cf.Data.Resources
             get
             {
                 return ResourcesCollection.GetString(Culture, "ServiceEndGrantRequestVwFilter", "GrantRequestRequestProductEmployeeFullNameContainsTooltip");
-            }
-        }
-
-        /// <summary>
-        /// Looks up a localized string similar to GrantRequestRequestProductProductTypeId.
-        /// </summary>
-        public static string GrantRequestRequestProductProductTypeId
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "ServiceEndGrantRequestVwFilter", "GrantRequestRequestProductProductTypeId");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to GrantRequestRequestProductProductTypeIdTooltip.
-        /// </summary>
-        public static string GrantRequestRequestProductProductTypeIdTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "ServiceEndGrantRequestVwFilter", "GrantRequestRequestProductProductTypeIdTooltip");
             }
         }
     }

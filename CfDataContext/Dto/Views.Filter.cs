@@ -196,7 +196,7 @@ namespace Cf.Data
             // Select.Columns.Add("[EmployeeDepartmentId]");
             // Select.Columns.Add("[EmployeeDepartmentName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceId]");
-            // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
+            Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[EmployeeNotes]");
@@ -355,7 +355,7 @@ namespace Cf.Data
             // Select.Columns.Add("[PaymentEmployeeDepartmentId]");
             // Select.Columns.Add("[PaymentEmployeeDepartmentName]");
             // Select.Columns.Add("[PaymentEmployeeDepartmentSalaryWorkPlaceId]");
-            // Select.Columns.Add("[PaymentEmployeeDepartmentSalaryWorkPlaceName]");
+            Select.Columns.Add("[PaymentEmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
             // Select.Columns.Add("[PaymentEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[PaymentEmployeeNotes]");
@@ -496,7 +496,7 @@ namespace Cf.Data
             // Select.Columns.Add("[DepartmentId]");
             Select.Columns.Add("[DepartmentName]");
             // Select.Columns.Add("[DepartmentSalaryWorkPlaceId]");
-            // Select.Columns.Add("[DepartmentSalaryWorkPlaceName]");
+            Select.Columns.Add("[DepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[DepartmentSalaryWorkPlaceMainWorkPlaceId]");
             // Select.Columns.Add("[DepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[Notes]");
@@ -509,7 +509,7 @@ namespace Cf.Data
         #region Public properties
 
 		public Nullable<int> Id { get; set; }
-		public string FullNameContains { get; set; }
+		public string FullNameArabicSoundex { get; set; }
 		public Nullable<int> DepartmentId { get; set; }
 		public string DepartmentNameContains { get; set; }
 		public Nullable<byte> CategoryId { get; set; }
@@ -529,8 +529,8 @@ namespace Cf.Data
 			criterion = new SimpleCriterion("[Id]", SqlDbType.Int, OperatorType.Equals, new Parameter("@Id", Id));
 			Criteria.Add(criterion);
 
-			// Add FullNameContains criterion
-			criterion = new SimpleCriterion("[FullName]", SqlDbType.VarChar, OperatorType.ArabicSoundex, new Parameter("@FullNameContains", FullNameContains));
+			// Add FullNameArabicSoundex criterion
+			criterion = new SimpleCriterion("[FullName]", SqlDbType.VarChar, OperatorType.ArabicSoundex, new Parameter("@FullNameArabicSoundex", FullNameArabicSoundex));
 			Criteria.Add(criterion);
 
 			// Add DepartmentId criterion
@@ -573,6 +573,7 @@ namespace Cf.Data
         #region Public properties
 
 		public string MessageContains { get; set; }
+		public string LocalizedMessageArabicSoundex { get; set; }
 		#endregion
 
         #region Overrides
@@ -587,6 +588,10 @@ namespace Cf.Data
 
 			// Add MessageContains criterion
 			criterion = new SimpleCriterion("[Message]", SqlDbType.NVarChar, OperatorType.Contains, new Parameter("@MessageContains", MessageContains));
+			Criteria.Add(criterion);
+
+			// Add LocalizedMessageArabicSoundex criterion
+			criterion = new SimpleCriterion("[LocalizedMessage]", SqlDbType.NVarChar, OperatorType.ArabicSoundex, new Parameter("@LocalizedMessageArabicSoundex", LocalizedMessageArabicSoundex));
 			Criteria.Add(criterion);
 
         }
@@ -825,7 +830,7 @@ namespace Cf.Data
             // Select.Columns.Add("[EmployeeDepartmentId]");
             // Select.Columns.Add("[EmployeeDepartmentName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceId]");
-            // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
+            Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[EmployeeNotes]");
@@ -1056,7 +1061,7 @@ namespace Cf.Data
             // Select.Columns.Add("[GrantProductEmployeeDepartmentId]");
             // Select.Columns.Add("[GrantProductEmployeeDepartmentName]");
             // Select.Columns.Add("[GrantProductEmployeeDepartmentSalaryWorkPlaceId]");
-            // Select.Columns.Add("[GrantProductEmployeeDepartmentSalaryWorkPlaceName]");
+            Select.Columns.Add("[GrantProductEmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[GrantProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
             // Select.Columns.Add("[GrantProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[GrantProductEmployeeNotes]");
@@ -1182,7 +1187,7 @@ namespace Cf.Data
             // Select.Columns.Add("[RequestProductEmployeeDepartmentId]");
             // Select.Columns.Add("[RequestProductEmployeeDepartmentName]");
             // Select.Columns.Add("[RequestProductEmployeeDepartmentSalaryWorkPlaceId]");
-            // Select.Columns.Add("[RequestProductEmployeeDepartmentSalaryWorkPlaceName]");
+            Select.Columns.Add("[RequestProductEmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[RequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
             // Select.Columns.Add("[RequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[RequestProductEmployeeNotes]");
@@ -1399,7 +1404,7 @@ namespace Cf.Data
             // Select.Columns.Add("[RefundableProductProductEmployeeDepartmentId]");
             // Select.Columns.Add("[RefundableProductProductEmployeeDepartmentName]");
             // Select.Columns.Add("[RefundableProductProductEmployeeDepartmentSalaryWorkPlaceId]");
-            // Select.Columns.Add("[RefundableProductProductEmployeeDepartmentSalaryWorkPlaceName]");
+            Select.Columns.Add("[RefundableProductProductEmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[RefundableProductProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
             // Select.Columns.Add("[RefundableProductProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[RefundableProductProductEmployeeNotes]");
@@ -1527,7 +1532,7 @@ namespace Cf.Data
             // Select.Columns.Add("[EmployeeDepartmentId]");
             // Select.Columns.Add("[EmployeeDepartmentName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceId]");
-            // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
+            Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[EmployeeNotes]");
@@ -1700,7 +1705,7 @@ namespace Cf.Data
             // Select.Columns.Add("[LoanProductEmployeeDepartmentId]");
             // Select.Columns.Add("[LoanProductEmployeeDepartmentName]");
             // Select.Columns.Add("[LoanProductEmployeeDepartmentSalaryWorkPlaceId]");
-            // Select.Columns.Add("[LoanProductEmployeeDepartmentSalaryWorkPlaceName]");
+            Select.Columns.Add("[LoanProductEmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[LoanProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
             // Select.Columns.Add("[LoanProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[LoanProductEmployeeNotes]");
@@ -1873,7 +1878,7 @@ namespace Cf.Data
             // Select.Columns.Add("[EmployeeDepartmentId]");
             // Select.Columns.Add("[EmployeeDepartmentName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceId]");
-            // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
+            Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[EmployeeNotes]");
@@ -1884,7 +1889,7 @@ namespace Cf.Data
             // Select.Columns.Add("[DepartmentSalaryWorkPlaceId]");
             // Select.Columns.Add("[DepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[DepartmentSalaryWorkPlaceMainWorkPlaceId]");
-            // Select.Columns.Add("[DepartmentSalaryWorkPlaceMainWorkPlaceName]");
+            Select.Columns.Add("[DepartmentSalaryWorkPlaceMainWorkPlaceName]");
             Select.Columns.Add("[DecreaseAmount]");
             Select.Columns.Add("[NewInstallmentAmount]");
             // Select.Columns.Add("[Notes]");
@@ -1960,7 +1965,7 @@ namespace Cf.Data
             // Select.Columns.Add("[RefundableProductProductEmployeeDepartmentId]");
             // Select.Columns.Add("[RefundableProductProductEmployeeDepartmentName]");
             // Select.Columns.Add("[RefundableProductProductEmployeeDepartmentSalaryWorkPlaceId]");
-            // Select.Columns.Add("[RefundableProductProductEmployeeDepartmentSalaryWorkPlaceName]");
+            Select.Columns.Add("[RefundableProductProductEmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[RefundableProductProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
             // Select.Columns.Add("[RefundableProductProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[RefundableProductProductEmployeeNotes]");
@@ -2070,7 +2075,7 @@ namespace Cf.Data
             // Select.Columns.Add("[LoanProductEmployeeDepartmentId]");
             // Select.Columns.Add("[LoanProductEmployeeDepartmentName]");
             // Select.Columns.Add("[LoanProductEmployeeDepartmentSalaryWorkPlaceId]");
-            // Select.Columns.Add("[LoanProductEmployeeDepartmentSalaryWorkPlaceName]");
+            Select.Columns.Add("[LoanProductEmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[LoanProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
             // Select.Columns.Add("[LoanProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[LoanProductEmployeeNotes]");
@@ -2327,7 +2332,7 @@ namespace Cf.Data
             // Select.Columns.Add("[RequestProductEmployeeDepartmentId]");
             // Select.Columns.Add("[RequestProductEmployeeDepartmentName]");
             // Select.Columns.Add("[RequestProductEmployeeDepartmentSalaryWorkPlaceId]");
-            // Select.Columns.Add("[RequestProductEmployeeDepartmentSalaryWorkPlaceName]");
+            Select.Columns.Add("[RequestProductEmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[RequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
             // Select.Columns.Add("[RequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[RequestProductEmployeeNotes]");
@@ -2336,7 +2341,7 @@ namespace Cf.Data
             // Select.Columns.Add("[RequestProductProductTypeId]");
             Select.Columns.Add("[RequestProductProductTypeName]");
             // Select.Columns.Add("[RequestProductProductTypeRate]");
-            // Select.Columns.Add("[RequestProductProductTypeGuarantorsCount]");
+            Select.Columns.Add("[RequestProductProductTypeGuarantorsCount]");
             // Select.Columns.Add("[RequestProductProductTypeAccountNumber]");
             // Select.Columns.Add("[RequestProductProductTypePrintLabel]");
             // Select.Columns.Add("[RequestProductProductTypeProfitStrategyId]");
@@ -2499,7 +2504,7 @@ namespace Cf.Data
             // Select.Columns.Add("[ProductEmployeeDepartmentId]");
             // Select.Columns.Add("[ProductEmployeeDepartmentName]");
             // Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceId]");
-            // Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceName]");
+            Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
             // Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[ProductEmployeeNotes]");
@@ -2706,7 +2711,7 @@ namespace Cf.Data
             // Select.Columns.Add("[EmployeeDepartmentId]");
             // Select.Columns.Add("[EmployeeDepartmentName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceId]");
-            // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
+            Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[EmployeeNotes]");
@@ -2798,7 +2803,7 @@ namespace Cf.Data
             // Select.Columns.Add("[LoanProductEmployeeDepartmentId]");
             // Select.Columns.Add("[LoanProductEmployeeDepartmentName]");
             // Select.Columns.Add("[LoanProductEmployeeDepartmentSalaryWorkPlaceId]");
-            // Select.Columns.Add("[LoanProductEmployeeDepartmentSalaryWorkPlaceName]");
+            Select.Columns.Add("[LoanProductEmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[LoanProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
             // Select.Columns.Add("[LoanProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[LoanProductEmployeeNotes]");
@@ -2934,7 +2939,7 @@ namespace Cf.Data
             // Select.Columns.Add("[EmployeeDepartmentId]");
             // Select.Columns.Add("[EmployeeDepartmentName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceId]");
-            // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
+            Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[EmployeeNotes]");
@@ -3033,7 +3038,7 @@ namespace Cf.Data
             // Select.Columns.Add("[EmployeeDepartmentId]");
             // Select.Columns.Add("[EmployeeDepartmentName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceId]");
-            // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
+            Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[EmployeeNotes]");
@@ -3134,7 +3139,7 @@ namespace Cf.Data
             // Select.Columns.Add("[EmployeeDepartmentId]");
             // Select.Columns.Add("[EmployeeDepartmentName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceId]");
-            // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
+            Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[EmployeeNotes]");
@@ -3147,7 +3152,7 @@ namespace Cf.Data
             // Select.Columns.Add("[ProductTypeAccountNumber]");
             // Select.Columns.Add("[ProductTypePrintLabel]");
             // Select.Columns.Add("[ProductTypeProfitStrategyId]");
-            // Select.Columns.Add("[ProductTypeProfitStrategyName]");
+            Select.Columns.Add("[ProductTypeProfitStrategyName]");
             // Select.Columns.Add("[ProductTypePaymentGroupId]");
             // Select.Columns.Add("[ProductTypePaymentGroupName]");
             // Select.Columns.Add("[ProductTypeIsActive]");
@@ -3223,7 +3228,7 @@ namespace Cf.Data
             // Select.Columns.Add("[ProductEmployeeDepartmentId]");
             // Select.Columns.Add("[ProductEmployeeDepartmentName]");
             // Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceId]");
-            // Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceName]");
+            Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
             // Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[ProductEmployeeNotes]");
@@ -3317,7 +3322,7 @@ namespace Cf.Data
             // Select.Columns.Add("[ProductEmployeeDepartmentId]");
             // Select.Columns.Add("[ProductEmployeeDepartmentName]");
             // Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceId]");
-            // Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceName]");
+            Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
             // Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[ProductEmployeeNotes]");
@@ -3637,14 +3642,14 @@ namespace Cf.Data
             // Select.Columns.Add("[GrantRequestRequestProductEmployeeDepartmentId]");
             // Select.Columns.Add("[GrantRequestRequestProductEmployeeDepartmentName]");
             // Select.Columns.Add("[GrantRequestRequestProductEmployeeDepartmentSalaryWorkPlaceId]");
-            // Select.Columns.Add("[GrantRequestRequestProductEmployeeDepartmentSalaryWorkPlaceName]");
+            Select.Columns.Add("[GrantRequestRequestProductEmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[GrantRequestRequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
             // Select.Columns.Add("[GrantRequestRequestProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[GrantRequestRequestProductEmployeeNotes]");
             // Select.Columns.Add("[GrantRequestRequestProductEmployeeCategoryId]");
             // Select.Columns.Add("[GrantRequestRequestProductEmployeeCategoryName]");
             // Select.Columns.Add("[GrantRequestRequestProductProductTypeId]");
-            Select.Columns.Add("[GrantRequestRequestProductProductTypeName]");
+            // Select.Columns.Add("[GrantRequestRequestProductProductTypeName]");
             // Select.Columns.Add("[GrantRequestRequestProductProductTypeRate]");
             // Select.Columns.Add("[GrantRequestRequestProductProductTypeGuarantorsCount]");
             // Select.Columns.Add("[GrantRequestRequestProductProductTypeAccountNumber]");
@@ -3682,7 +3687,6 @@ namespace Cf.Data
 
 		public Nullable<int> GrantRequestRequestProductEmployeeId { get; set; }
 		public string GrantRequestRequestProductEmployeeFullNameContains { get; set; }
-		public Nullable<short> GrantRequestRequestProductProductTypeId { get; set; }
 		#endregion
 
         #region Overrides
@@ -3701,10 +3705,6 @@ namespace Cf.Data
 
 			// Add GrantRequestRequestProductEmployeeFullNameContains criterion
 			criterion = new SimpleCriterion("[GrantRequestRequestProductEmployeeFullName]", SqlDbType.VarChar, OperatorType.Contains, new Parameter("@GrantRequestRequestProductEmployeeFullNameContains", GrantRequestRequestProductEmployeeFullNameContains));
-			Criteria.Add(criterion);
-
-			// Add GrantRequestRequestProductProductTypeId criterion
-			criterion = new SimpleCriterion("[GrantRequestRequestProductProductTypeId]", SqlDbType.SmallInt, OperatorType.Equals, new Parameter("@GrantRequestRequestProductProductTypeId", GrantRequestRequestProductProductTypeId));
 			Criteria.Add(criterion);
 
         }
@@ -3746,7 +3746,7 @@ namespace Cf.Data
             // Select.Columns.Add("[InstallmentRefundableProductProductEmployeeDepartmentId]");
             // Select.Columns.Add("[InstallmentRefundableProductProductEmployeeDepartmentName]");
             // Select.Columns.Add("[InstallmentRefundableProductProductEmployeeDepartmentSalaryWorkPlaceId]");
-            // Select.Columns.Add("[InstallmentRefundableProductProductEmployeeDepartmentSalaryWorkPlaceName]");
+            Select.Columns.Add("[InstallmentRefundableProductProductEmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[InstallmentRefundableProductProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
             // Select.Columns.Add("[InstallmentRefundableProductProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[InstallmentRefundableProductProductEmployeeNotes]");
@@ -3908,7 +3908,7 @@ namespace Cf.Data
             // Select.Columns.Add("[EmployeeDepartmentId]");
             // Select.Columns.Add("[EmployeeDepartmentName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceId]");
-            // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
+            Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[EmployeeNotes]");
@@ -4004,9 +4004,9 @@ namespace Cf.Data
             // Select.Columns.Add("[EmployeeDepartmentId]");
             // Select.Columns.Add("[EmployeeDepartmentName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceId]");
-            // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
+            Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
-            Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
+            // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[EmployeeNotes]");
             // Select.Columns.Add("[EmployeeCategoryId]");
             // Select.Columns.Add("[EmployeeCategoryName]");
@@ -4014,7 +4014,7 @@ namespace Cf.Data
             // Select.Columns.Add("[DepartmentId]");
             // Select.Columns.Add("[DepartmentName]");
             // Select.Columns.Add("[DepartmentSalaryWorkPlaceId]");
-            // Select.Columns.Add("[DepartmentSalaryWorkPlaceName]");
+            Select.Columns.Add("[DepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[DepartmentSalaryWorkPlaceMainWorkPlaceId]");
             // Select.Columns.Add("[DepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[SubscriptionTypeId]");
@@ -4097,7 +4097,7 @@ namespace Cf.Data
             // Select.Columns.Add("[EmployeeDepartmentId]");
             // Select.Columns.Add("[EmployeeDepartmentName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceId]");
-            // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
+            Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[EmployeeNotes]");
@@ -4185,7 +4185,7 @@ namespace Cf.Data
             // Select.Columns.Add("[DebtEmployeeDepartmentId]");
             // Select.Columns.Add("[DebtEmployeeDepartmentName]");
             // Select.Columns.Add("[DebtEmployeeDepartmentSalaryWorkPlaceId]");
-            // Select.Columns.Add("[DebtEmployeeDepartmentSalaryWorkPlaceName]");
+            Select.Columns.Add("[DebtEmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[DebtEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
             // Select.Columns.Add("[DebtEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[DebtEmployeeNotes]");
@@ -4221,7 +4221,7 @@ namespace Cf.Data
             // Select.Columns.Add("[EmployeeDepartmentId]");
             // Select.Columns.Add("[EmployeeDepartmentName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceId]");
-            // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
+            Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceName]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
             // Select.Columns.Add("[EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
             // Select.Columns.Add("[EmployeeNotes]");

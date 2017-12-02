@@ -246,6 +246,7 @@
     <Compile Include="ViewModels\Resource.cs" />
     <Compile Include="ViewModels\Tables.cs" />
     <Compile Include="ViewModels\Views.cs" />
+    <Compile Include="ViewModels\Views.Extended.cs" />
     <Compile Include="ViewModels\Views.Filter.cs" />
   </ItemGroup>
   <ItemGroup>

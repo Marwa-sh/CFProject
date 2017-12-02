@@ -207,7 +207,7 @@ namespace Cf.Data
     #region GetDebtScalar result class
     public partial class GetDebtScalarResult
     {
-        internal GetDebtScalarResult
+        public GetDebtScalarResult
         (
         )
         {
@@ -296,7 +296,7 @@ namespace Cf.Data
     #region GetDueProfit result class
     public partial class GetDueProfitResult
     {
-        internal GetDueProfitResult
+        public GetDueProfitResult
         (
         )
         {
@@ -546,7 +546,7 @@ namespace Cf.Data
     #region GetFinancialRatio result class
     public partial class GetFinancialRatioResult
     {
-        internal GetFinancialRatioResult
+        public GetFinancialRatioResult
         (
         )
         {
@@ -589,7 +589,7 @@ namespace Cf.Data
     #region GetInstallment result class
     public partial class GetInstallmentResult
     {
-        internal GetInstallmentResult
+        public GetInstallmentResult
         (
         )
         {
@@ -714,7 +714,7 @@ namespace Cf.Data
     #region GetPresentValue result class
     public partial class GetPresentValueResult
     {
-        internal GetPresentValueResult
+        public GetPresentValueResult
         (
         )
         {
@@ -897,7 +897,7 @@ namespace Cf.Data
     #region LoanGenerate result class
     public partial class LoanGenerateResult
     {
-        internal LoanGenerateResult
+        public LoanGenerateResult
         (
         )
         {
@@ -935,7 +935,7 @@ namespace Cf.Data
     #region LoanMoveToEmployee result class
     public partial class LoanMoveToEmployeeResult
     {
-        internal LoanMoveToEmployeeResult
+        public LoanMoveToEmployeeResult
         (
         )
         {

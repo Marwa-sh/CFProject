@@ -82,8 +82,19 @@ namespace Portal.Areas.Repository.Controllers
             @ViewBag.OutgoingLoanVwTitle = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "OutgoingLoan", "ModuleName");
             if (loanVwViewModel.Instance.OutgoingLoanVw != null)
                 loanVwViewModel.OutgoingLoanVwViewModel.List.Add(loanVwViewModel.Instance.OutgoingLoanVw);
-                // loanVwViewModel.OutgoingLoanVwViewModel.Instance = loanVwViewModel.Instance.OutgoingLoanVw;
+            // loanVwViewModel.OutgoingLoanVwViewModel.Instance = loanVwViewModel.Instance.OutgoingLoanVw;
+
+            //loanVwViewModel.Instance.ProductVw =  ProductVwServices.Get(loanVwViewModel.Instance.ProductId);
+            //loanVwViewModel.Instance.ProductVw.RefundableProductVw = RefundableProductVwServices.GetChildren(loanVwViewModel.Instance.ProductId);
+
+            @ViewBag.InstallmentVwTitle = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "Installment", "ModuleNamePlural");
+            // refundableProductVwViewModel.InstallmentVwViewModel.List = InstallmentVwServices.GetByRefundableProductId(product.Value, db);
+            //loanVwViewModel.Instance.ProductVw.RefundableProductVw.InstallmentVwList = loanVwViewModel.Instance.ProductVw.RefundableProductVw.InstallmentVwList;//InstallmentVwServices.GetByRefundableProductProductId(loanVwViewModel.Instance.ProductId);
+
             
+            loanVwViewModel.InstallmentsResultList = DbServices.GetInstallments(loanVwViewModel.Instance.ProductId);
+
+
             return View(loanVwViewModel);
         }
 

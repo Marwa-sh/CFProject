@@ -255,6 +255,100 @@
     <div class="col-xs-12">
         <div class="card">
             <div class="card-header">
+                <h4 class="card-title">@ViewBag.InstallmentVwTitle @if (Model.InstallmentsResultList.Count == 0)
+                {<span class="tag tag-default">@Model.InstallmentsResultList.Count</span>}
+                else
+                {<span class="tag tag-danger">@Model.InstallmentsResultList.Count</span> }</h4>
+                <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li><a data-action="collapse"><i class="icon-plus4"></i></a></li>
+                        <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                        <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-body collapse out">
+                <div class="card-block card-dashboard">
+                    <button class="btn btn-success" type="button">
+                        @Html.ActionLink((string)ViewBag.Insert + " " + (string)ViewBag.InstallmentVwTitle, "Create", "Installment")
+                    </button>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered mb-0">
+                        <thead class="bg-primary table-head-color">
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.InstallmentResultInstance.SubNumber)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.InstallmentResultInstance.DueDate)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.InstallmentResultInstance.DueCapital)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.InstallmentResultInstance.DueProfit)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.InstallmentResultInstance.PaidAmount)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.InstallmentsResultList)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.SubNumber)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DueDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DueCapital)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DueProfit)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PaidAmount)
+                                    </td>
+                                    <td>
+                                        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                            <button type="button" class="btn btn-info">
+                                                @Html.ActionLink((string)ViewBag.Details, "Details", "Installment",
+                                            new
+                                            {
+                                                id = item.Id
+                                            }, null)
+                                            </button>
+                                            <button type="button" class="btn btn-warning">
+                                                @Html.ActionLink((string)ViewBag.Update, "Edit", "Installment",
+                                            new
+                                            {
+                                                id = item.Id
+                                            }, null)
+                                            </button>
+                                            <button type="button" class="btn btn-danger deleteLink" data-original-title="@ViewBag.Delete" id="delete" data-id="@item.Id" data-url="@Url.Action("Delete", "Installment")">@ViewBag.Delete</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="card">
+            <div class="card-header">
                 <h4 class="card-title">@ViewBag.IncomingLoanVwTitle @if(Model.IncomingLoanVwViewModel.List.Count == 0) {<span class="tag tag-default">@Model.IncomingLoanVwViewModel.List.Count</span>} else {<span class="tag tag-danger">@Model.IncomingLoanVwViewModel.List.Count</span> }</h4>
                 <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
                 <div class="heading-elements">

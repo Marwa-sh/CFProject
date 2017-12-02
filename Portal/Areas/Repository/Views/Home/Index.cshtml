@@ -1,1 +1,218 @@
-﻿
+﻿<div class="row">
+    <div class="col-xl-3 col-lg-6 col-xs-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="media">
+                    <div class="p-2 text-xs-center bg-cyan bg-darken-2 media-left media-middle">
+                        <i class="icon-camera7 font-large-2 white"></i>
+                    </div>
+                    <div class="p-2 bg-cyan white media-body">
+                        <h5>New Products</h5>
+                        <h5 class="text-bold-400">28</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-6 col-xs-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="media">
+                    <div class="p-2 text-xs-center bg-deep-orange bg-darken-2 media-left media-middle">
+                        <i class="icon-user1 font-large-2 white"></i>
+                    </div>
+                    <div class="p-2 bg-deep-orange white media-body">
+                        <h5>New Users</h5>
+                        <h5 class="text-bold-400">1,22,356</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-6 col-xs-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="media">
+                    <div class="p-2 text-xs-center bg-teal bg-darken-2 media-left media-middle">
+                        <i class="icon-cart font-large-2 white"></i>
+                    </div>
+                    <div class="p-2 bg-teal white media-body">
+                        <h5>New Orders</h5>
+                        <h5 class="text-bold-400">4,65,879</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-6 col-xs-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="media">
+                    <div class="p-2 text-xs-center bg-pink bg-darken-2 media-left media-middle">
+                        <i class="icon-banknote font-large-2 white"></i>
+                    </div>
+                    <div class="p-2 bg-pink white media-body">
+                        <h5>Total Profit</h5>
+                        <h5 class="text-bold-400">5.6 M</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">سداد الأقساط</h4>
+                <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
+                        <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                        <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                        <li><a data-action="close"><i class="icon-cross2"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-body collapse in">
+                <div class="card-block">
+                    @{
+                        string monthsNames = (string)ViewBag.Months;
+                        string paidAmounts = (string)ViewBag.PaidAmounts;
+                        string incomingAmounts = (string)ViewBag.IncomingAmounts;
+                    }
+                    <input type="hidden" value="@monthsNames" id="monthsNames" />
+                    <input type="hidden" value="@paidAmounts" id="paidAmounts" />
+                    <input type="hidden" value="@incomingAmounts" id="incomingAmounts" />
+
+                    <canvas id="column-chart" height="400"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts
+{
+    <script>
+
+        // Column chart
+        // ------------------------------
+        $(window).on("load", function () {
+
+            //var monthsNames = ["January", "February", "March", "April", "May"];
+            //var paidAmounts = [65, 59, 80, 81, 56];
+            //var incomingAmounts = [28, 48, 40, 19, 86];
+            var g = "10,2,13";
+            var hh = g.split(',').map(Number);
+
+            var monthsNames = $("#monthsNames").val().split(',');
+            var paidAmounts = $("#paidAmounts").val().split(',').map(Number);
+            var incomingAmounts = $("#incomingAmounts").val().split(',').map(Number);
+
+
+            @*$.ajax({
+            type: "POST",
+            url: '@Url.Action( "Calculate", "LoanRequestViewModel")',
+            data:'{ }',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+
+            },
+            failure: function (response) {
+                alert(response.responseText);
+            },
+            error: function (response) {
+                alert(response.responseText);
+            }
+        });*@
+
+
+
+
+
+            //Get the context of the Chart canvas element we want to select
+            var ctx = $("#column-chart");
+
+            // Chart Options
+            var chartOptions = {
+                // Elements options apply to all of the options unless overridden in a dataset
+                // In this case, we are setting the border of each bar to be 2px wide and green
+                elements: {
+                    rectangle: {
+                        borderWidth: 2,
+                        borderColor: 'rgb(0, 255, 0)',
+                        borderSkipped: 'bottom'
+                    }
+                },
+                responsive: true,
+                maintainAspectRatio: false,
+                responsiveAnimationDuration: 500,
+                legend: {
+                    position: 'top',
+                },
+                scales: {
+                    xAxes: [{
+                        display: true,
+                        gridLines: {
+                            color: "#f3f3f3",
+                            drawTicks: false,
+                        },
+                        scaleLabel: {
+                            display: true,
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                        gridLines: {
+                            color: "#f3f3f3",
+                            drawTicks: false,
+                        },
+                        scaleLabel: {
+                            display: true,
+                        }
+                    }]
+                },
+                title: {
+                    display: true,
+                    text: 'سداد الأقساط'
+                }
+            };
+
+            // Chart Data
+            var chartData = {
+                labels: monthsNames,
+                datasets: [{
+                    label: "Paid Amounts",
+                    data: paidAmounts,
+                    backgroundColor: "#673AB7",
+                    hoverBackgroundColor: "rgba(103,58,183,.9)",
+                    borderColor: "transparent"
+                }, {
+                    label: "Incoming Amounts",
+                    data: incomingAmounts,
+                    backgroundColor: "#E91E63",
+                    hoverBackgroundColor: "rgba(233,30,99,.9)",
+                    borderColor: "transparent"
+                }]
+            };
+
+            var config = {
+                type: 'bar',
+
+                // Chart Options
+                options: chartOptions,
+
+                data: chartData
+            };
+
+            // Create the chart
+            var lineChart = new Chart(ctx, config);
+        });
+    </script>
+}

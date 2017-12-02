@@ -1,4 +1,8 @@
-﻿using Portal.ViewModels;
+﻿using Cf.Controllers;
+using Cf.Data;
+using Cf.Services;
+using Cf.ViewModels;
+using Portal.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,38 +11,65 @@ using System.Web.Mvc;
 
 namespace Portal.Areas.Loans.Controllers
 {
-    public class LoanReportController : Controller
+    public class LoanReportController : BaseController
     {
-        // GET: Loans/LoanReport
-        public ActionResult Index()
+        private string moduleName = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "LoanReport", "ModuleName");
+        private string index = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "LoanReport", "ModuleNamePlural");
+
+        public LoanReportController()
         {
+            ViewBag.ModuleName = moduleName;
+            ViewBag.Title = index;
+        }
+        // GET: Loans/LoanReport
+        public ActionResult Index(LoanRequestVwViewModel model)
+        { 
             EmployeeLoansReport report = new EmployeeLoansReport();
+
+            Db db = new Db(DbServices.ConnectionString);
+            List<GetRefundableProductsResult> result= db.GetRefundableProducts(model.Filter.RequestProductEmployeeId);
+
 
             List<string> LoansTypesNames = new List<string>();
             List<decimal> OriginalAmounts = new List<decimal>();
             List<decimal> RemainingAmounts = new List<decimal>();
             List<decimal> PaidAmounts = new List<decimal>();
 
-            LoansTypesNames.Add("سلفة استثمارية");
-            LoansTypesNames.Add("سلفة دراسية");
 
-            OriginalAmounts.Add(30000);
-            OriginalAmounts.Add(50000);
+            foreach (GetRefundableProductsResult item in result)
+            {
+                LoansTypesNames.Add(item.ProductId.ToString());
+                OriginalAmounts.Add(item.DueAmount.Value);
+                PaidAmounts.Add(item.PaidAmount.Value);
+                RemainingAmounts.Add(item.DueAmount.Value- item.PaidAmount.Value);
+            }
 
 
-            RemainingAmounts.Add(20000);
-            RemainingAmounts.Add(15000);
+            //LoansTypesNames.Add("سلفة استثمارية");
+            //LoansTypesNames.Add("سلفة دراسية");
+
+            //OriginalAmounts.Add(30000);
+            //OriginalAmounts.Add(50000);
 
 
-            PaidAmounts.Add(10000);
-            PaidAmounts.Add(35000);
+            //RemainingAmounts.Add(20000);
+            //RemainingAmounts.Add(15000);
 
-            report.LoansTypesNames = LoansTypesNames;
-            report.OriginalAmounts = OriginalAmounts;
-            report.PaidAmounts = PaidAmounts;
-            report.RemainingAmounts = RemainingAmounts;
 
-            ViewBag.Names= "'January', 'February', 'March', 'April'";
+            //PaidAmounts.Add(10000);
+            //PaidAmounts.Add(35000);
+
+            var loansTypesNames = String.Join(",", LoansTypesNames);
+            ViewBag.LoansTypesNames = loansTypesNames;
+
+            var remainingAmounts = String.Join(",", RemainingAmounts);
+            ViewBag.RemainingAmounts = remainingAmounts;
+
+            var paidAmounts = String.Join(",", PaidAmounts);
+            ViewBag.PaidAmounts = paidAmounts;
+
+          
+            
             return View();
         }
     }

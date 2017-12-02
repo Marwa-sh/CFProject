@@ -51,19 +51,7 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            @*@Html.LabelFor(model => model.Notes, htmlAttributes: new { @class = "control-label" })*@
-                                            @Html.LabelFor(model => model.Guarantor.Notes, new Dictionary<string, Object>
-                                                { { "class", "control-label" },
-                                                  {"title", Html.ToolTipMessageFor(model => model.Guarantor.Notes)},
-                                                  {"data-toggle", "tooltip"},
-                                                  {"data-placement", "bottom"}
-                                                })
-                                            @Html.EditorFor(model => model.Guarantor.Notes, new { htmlAttributes = new { @class = "form-control" } })
-                                            @Html.ValidationMessageFor(model => model.Guarantor.Notes, "", new { @class = "text-danger" })
-                                        </div>
-                                    </div>
+
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             @*@Html.LabelFor(model => model.GrossSalary, htmlAttributes: new { @class = "control-label" })*@
@@ -90,9 +78,6 @@
                                             @Html.ValidationMessageFor(model => model.GuarantorStatement.DeductionsAmount, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             @*@Html.LabelFor(model => model.NetSalary, htmlAttributes: new { @class = "control-label" })*@
@@ -106,6 +91,10 @@
                                             @Html.ValidationMessageFor(model => model.GuarantorStatement.NetSalary, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
+                                </div>
+                                <div class="row">
+
+
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             @*@Html.LabelFor(model => model.ExceptionalIncome, htmlAttributes: new { @class = "control-label" })*@
@@ -117,6 +106,19 @@
                                                 })
                                             @Html.EditorFor(model => model.GuarantorStatement.ExceptionalIncome, new { htmlAttributes = new { @class = "form-control" } })
                                             @Html.ValidationMessageFor(model => model.GuarantorStatement.ExceptionalIncome, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            @*@Html.LabelFor(model => model.Notes, htmlAttributes: new { @class = "control-label" })*@
+                                            @Html.LabelFor(model => model.Guarantor.Notes, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Guarantor.Notes)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                            @Html.EditorFor(model => model.Guarantor.Notes, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Guarantor.Notes, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
                                 </div>

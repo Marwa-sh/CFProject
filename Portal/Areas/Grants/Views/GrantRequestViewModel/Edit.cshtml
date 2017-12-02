@@ -22,6 +22,18 @@
 
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         <div class="form-body">
+                            <input type="hidden" name="RequestProduct.Id" id="txtProductId" class="form-control" value="@Html.DisplayFor(model => model.RequestProduct.Id)" />
+                            <input type="hidden" name="RequestProduct.Amount" id="txtProductAmount" class="form-control" value="@Html.DisplayFor(model => model.RequestProduct.Amount)" />
+                            <input type="hidden" name="RequestProduct.ProductType" id="txtProductType" class="form-control" value="@Html.DisplayFor(model => model.RequestProduct.ProductType)" />
+
+                            <input type="hidden" name="Request.Product" id="txtRequestProduct" class="form-control" value="@Html.DisplayFor(model => model.Request.Product)" />
+                            <input type="hidden" name="Request.Cost" id="txtRequestCost" class="form-control" value="@Html.DisplayFor(model => model.Request.Cost)" />
+                            <input type="hidden" name="Request.RequestStatus" id="txtRequestStatus" class="form-control" value="@Html.DisplayFor(model => model.Request.RequestStatus)" />
+                            <input type="hidden" name="Request.BypassStatus" id="txtRequestBypassStatus" class="form-control" value="@Html.DisplayFor(model => model.Request.BypassStatus)" />
+
+                            <input type="hidden" name="GrantRequest.Request" id="txtRequest" class="form-control" value="@Html.DisplayFor(model => model.GrantRequest.Request)" />
+                            
+
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="form-group">

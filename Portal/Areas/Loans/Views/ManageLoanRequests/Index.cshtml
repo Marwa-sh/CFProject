@@ -9,7 +9,7 @@
             <div class="card-header">
                 
                 <h4 class="card-title">
-                    DashBoard
+                    @ViewBag.ManageLoanRequests
                 </h4>
 
                 <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
@@ -32,8 +32,8 @@
                                     <div class="card-block">
                                         <div class="media">
                                             <div class="media-body text-xs-left">
-                                                <h3 class="pink">278</h3>
-                                                @Html.ActionLink("New Requests", "ManageNewRequests")
+                                                <h3 class="pink">@ViewBag.NewLoanRequestsCount</h3>
+                                                @Html.ActionLink((string)ViewBag.NewLoanRequests, "ManageNewRequests")
                                             </div>
                                             <div class="media-right media-middle">
                                                 <i class="icon-bag2 pink font-large-2 float-xs-right"></i>
@@ -49,8 +49,8 @@
                                     <div class="card-block">
                                         <div class="media">
                                             <div class="media-body text-xs-left">
-                                                <h3 class="teal">156</h3>
-                                               @Html.ActionLink("Valid Requests", "ManageValidRequests")
+                                                <h3 class="teal">@ViewBag.ValidLoanRequestsCount</h3>
+                                               @Html.ActionLink((string)ViewBag.ValidLoanRequests, "ManageValidRequests")
                                             </div>
                                             <div class="media-right media-middle">
                                                 <i class="icon-user1 teal font-large-2 float-xs-right"></i>
@@ -66,8 +66,8 @@
                                     <div class="card-block">
                                         <div class="media">
                                             <div class="media-body text-xs-left">
-                                                <h3 class="deep-orange">64.89 %</h3>
-                                                @Html.ActionLink("Approved Requests", "ManageApprovedRequests")
+                                                <h3 class="deep-orange">@ViewBag.ApprovedLoanRequestsCount</h3>
+                                                @Html.ActionLink((string)ViewBag.ApprovedLoanRequests, "ManageApprovedRequests")
                                             </div>
                                             <div class="media-right media-middle">
                                                 <i class="icon-diagram deep-orange font-large-2 float-xs-right"></i>
@@ -83,8 +83,8 @@
                                     <div class="card-block">
                                         <div class="media">
                                             <div class="media-body text-xs-left">
-                                                <h3 class="cyan">423</h3>
-                                                @Html.ActionLink("Rejected Request", "ManageRejectedRequest")
+                                                <h3 class="cyan">@ViewBag.ExceptionalLoanRequestsCount</h3>
+                                                @Html.ActionLink((string)ViewBag.RejectedLoanRequests, "ManageRejectedRequest")
                                             </div>
                                             <div class="media-right media-middle">
                                                 <i class="icon-ios-help-outline cyan font-large-2 float-xs-right"></i>
@@ -102,8 +102,8 @@
                                     <div class="card-block">
                                         <div class="media">
                                             <div class="media-body text-xs-left">
-                                                <h3 class="cyan">423</h3>
-                                                @Html.ActionLink("Exceptional Request", "ManageExceptionalRequest")
+                                                <h3 class="cyan">@ViewBag.RejectedLoanRequestsCount</h3>
+                                                @Html.ActionLink((string)ViewBag.ExceptionalLoanRequests, "ManageExceptionalRequest")
                                             </div>
                                             <div class="media-right media-middle">
                                                 <i class="icon-ios-help-outline cyan font-large-2 float-xs-right"></i>

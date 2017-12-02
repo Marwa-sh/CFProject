@@ -20,6 +20,8 @@ namespace Portal.Areas.Loans.Controllers
         private string index = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "LoanRequestViewModel", "ModuleNamePlural");
         private string approve = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Approve");
 
+        private string validateDiscover = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "ValidateDiscover");
+
         private string TitleGuarantor = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "Guarantor", "ModuleNamePlural");
         private string TitleExceptionalAount = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ExceptionalAmount", "ModuleNamePlural");
 
@@ -34,8 +36,8 @@ namespace Portal.Areas.Loans.Controllers
         private string loan = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "Loan", "ModuleName");
         private string employee = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "Employee", "ModuleName");
 
-        private string exceeds = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Exceeds");
-        private string good = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Good");
+        private string exceeds = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "EmployeeCalculator", "AmountExceeds");
+        private string good = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "EmployeeCalculator", "AmountAccepted");
         private string result = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Result");
 
         private string amountSituationAccepted = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "AmountSituationAccepted");
@@ -52,6 +54,7 @@ namespace Portal.Areas.Loans.Controllers
             ViewBag.Title = index;
             ViewBag.ModuleName = moduleName;
 
+            ViewBag.ValidateDiscover = validateDiscover;
             ViewBag.Discover = discover;
             ViewBag.Loan = loan;
             ViewBag.Employee = employee;
@@ -76,8 +79,8 @@ namespace Portal.Areas.Loans.Controllers
         {
             Db db = new Db(DbServices.ConnectionString);
 
-            ViewBag.ProductTypeList = new SelectList(LoanTypeVwServices.List(db), "ProductTypeId", "ProductTypeName");
-            ViewBag.PaymentGroupList = new SelectList(PaymentGroupServices.List(db), "Id", "Name");
+            ViewBag.ProductTypeList = new SelectList(LoanTypeVwServices.List(db), "ProductTypeId", "ProductTypeName");            
+            ViewBag.RequestStatusList= new SelectList(RequestStatusServices.List(db), "Id", "Name");
 
             if (Model.Filter.HasCriteria)
             {

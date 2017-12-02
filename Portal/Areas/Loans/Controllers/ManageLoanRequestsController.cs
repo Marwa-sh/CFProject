@@ -18,52 +18,29 @@ namespace Portal.Areas.Loans.Controllers
 
         private string moduleName = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ManageLoanRequest", "ModuleName");
         private string index = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "LoanRequest", "ModuleNamePlural");
-        private string insert = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Insert");
-        private string update = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Update");
-        private string delete = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Delete");
-        private string save = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Save");
-        private string back = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Back");
-        private string details = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Details");
-        private string confirmDelete = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "ConfirmDelete");
-        private string yes = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Yes");
-        private string no = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "No");
-        private string search = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Search");
-        private string filterOptions = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "FilterOptions");
-
+        
         private string TitleGuarantor = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "Guarantor", "ModuleNamePlural");
         private string TitleExceptionalAount = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ExceptionalAmount", "ModuleNamePlural");
         private string LoanDecision = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "LoanDecision", "ModuleName");
-        private string noRecords = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "NoRecords");
 
         private string approve = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Approve");
         private string reject = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Reject");
         private string exception = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Exception");
         private string validate = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Validate");
 
-        private string newLoanRequests = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "NewLoanRequests");
-        private string validLoanRequests = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "ValidLoanRequests");
-        private string approvedLoanRequests = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "ApprovedLoanRequests");
-        private string exceptionalLoanRequests = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "ExceptionalLoanRequests");
-        private string rejectedLoanRequests = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "RejectedLoanRequests");
-        
+        private string newLoanRequests = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ManageLoanRequest", "NewLoanRequests");
+        private string validLoanRequests = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ManageLoanRequest", "ValidLoanRequests");
+        private string approvedLoanRequests = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ManageLoanRequest", "ApprovedLoanRequests");
+        private string exceptionalLoanRequests = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ManageLoanRequest", "ExceptionalLoanRequests");
+        private string rejectedLoanRequests = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ManageLoanRequest", "RejectedLoanRequests");
+
+        private string manageLoanRequests = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ManageLoanRequest", "ManageLoanRequests");
 
         public ManageLoanRequestsController()
         {           
             ViewBag.ModuleName = moduleName;
-            ViewBag.Action = details;
-            ViewBag.Details = details;
-            ViewBag.Update = update;
-            ViewBag.Back = back;
-            ViewBag.Insert = insert;
-            ViewBag.Delete = delete;
             ViewBag.Title = index;
-            ViewBag.NoRecords = noRecords;
-
-            ViewBag.ConfirmDelete = confirmDelete;
-            ViewBag.Yes = yes;
-            ViewBag.No = no;
-            ViewBag.Search = search;
-            ViewBag.FilterOptions = filterOptions;
+            ViewBag.ManageLoanRequests= manageLoanRequests;
 
             ViewBag.Approve = approve;
             ViewBag.Reject = reject;
@@ -84,41 +61,15 @@ namespace Portal.Areas.Loans.Controllers
             List<LoanRequestVw> requests = null;
             requests = LoanRequestVwServices.List(db);
 
-            for (int i = 0; i < requests.Count; i++)
-            {
-                int productId = requests[i].RequestProductId;
-                //int numOfGuarantors = GuarantorVwServices.GetByRefundableProductProductId(productId).Count;
-                //if(numOfGuarantors==0)
-
-            }
-
-            string roleName = "Manager";
-            //switch (roleName)
-            //{
-            //    case "Employee" :
-            //        {
-            //            requests=LoanRequestVwServices.List(db).Where(c => c.RequestRequestStatusId.Value == (int)RequestStatusEnum.New).ToList();
-            //            break;
-            //        }
-            //    case  "Manager":
-            //        {
-            //            requests = LoanRequestVwServices.List(db).Where(c => (c.RequestRequestStatusId.Value == (int)RequestStatusEnum.ExcludedFromValidation || c.RequestRequestStatusId.Value == (int)RequestStatusEnum.Valid || c.RequestRequestStatusId.Value == (int)RequestStatusEnum.New)).ToList();
-            //            break;
-            //        }
-            //    case "FinancialManager":
-            //        {
-            //            requests = LoanRequestVwServices.List(db).Where(c => (c.RequestRequestStatusId.Value == (int)RequestStatusEnum.New || c.RequestRequestStatusId.Value == (int)RequestStatusEnum.Valid)).ToList();
-            //            break;
-            //        }
-
-            //    default:
-            //        break;
-            //}
-
-
+           
             ViewBag.DecisionType = (int)LoanDecisionTypeEnum.Normal;
 
-            ViewBag.RoleName = roleName;
+            ViewBag.NewLoanRequestsCount = requests.Where(c=>(c.RequestRequestStatusId==(int)RequestStatusEnum.New)).ToList().Count;
+            ViewBag.ValidLoanRequestsCount = requests.Where(c => (c.RequestRequestStatusId == (int)RequestStatusEnum.Valid)).ToList().Count;
+            ViewBag.ApprovedLoanRequestsCount = requests.Where(c => (c.RequestRequestStatusId == (int)RequestStatusEnum.Approved)).ToList().Count;
+            ViewBag.ExceptionalLoanRequestsCount = requests.Where(c => (c.RequestRequestStatusId == (int)RequestStatusEnum.ExcludedFromValidation)).ToList().Count;
+            ViewBag.RejectedLoanRequestsCount = requests.Where(c => (c.RequestRequestStatusId == (int)RequestStatusEnum.Invalid)).ToList().Count;
+
             LoanRequestVwViewModel vm = new LoanRequestVwViewModel();
             vm.List = requests;
             return View(vm);

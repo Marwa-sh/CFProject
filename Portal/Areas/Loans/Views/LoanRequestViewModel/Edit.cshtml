@@ -788,7 +788,7 @@
 
                 if (productId == '' || employeeId == '' || amount == '' || period == '' || netAmount == '' || deductions == '')
                 {
-                    swal("", "الحقول التالية مطلوبة: اسم الموظف، نوع السلفة، المبلغ والمدة", "error");
+                    swal("", '@ViewBag.ValidateDiscover', "error");
                 }
                 else {
                     $.ajax({

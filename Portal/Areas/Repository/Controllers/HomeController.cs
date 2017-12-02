@@ -31,8 +31,55 @@ namespace Portal.Areas.Repository.Controllers
         private string no = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "No");
         private string search = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Search");
 
+
+        class test
+        {
+            public DateTime Name { get; set; } = System.DateTime.Now;
+            public int Income { get; set; }
+            public int Outgoing { get; set; }
+
+        }
+
         public ActionResult Index()
         {
+            List<test> result = new List<test>();
+
+            List<string> Months = new List<string>();
+            List<int> paidAmounts = new List<int>();
+            List<int> incomingAmounts = new List<int>();
+             
+            foreach (test line in result)
+            {                 
+                Months.Add(line.Name.Date.ToString("MMMM"));
+                paidAmounts.Add(line.Outgoing);
+                incomingAmounts.Add(line.Income);
+            }
+            
+            Months.Add("January"); Months.Add("February");
+            Months.Add("March"); Months.Add("April");
+            Months.Add("May");
+            Months.Add("January"); Months.Add("February");
+            Months.Add("March"); Months.Add("April");
+            Months.Add("May");
+            var months = String.Join(",", Months);
+            ViewBag.Months = months;
+
+            
+            paidAmounts.Add(65); paidAmounts.Add(59); paidAmounts.Add(80);
+            paidAmounts.Add(81); paidAmounts.Add(56);
+            paidAmounts.Add(65); paidAmounts.Add(59); paidAmounts.Add(80);
+            paidAmounts.Add(81); paidAmounts.Add(56);
+            var paid = String.Join(",", paidAmounts);
+            ViewBag.PaidAmounts = paid;
+
+            
+            incomingAmounts.Add(28); incomingAmounts.Add(48); incomingAmounts.Add(40);
+            incomingAmounts.Add(19); incomingAmounts.Add(86);
+            incomingAmounts.Add(28); incomingAmounts.Add(48); incomingAmounts.Add(40);
+            incomingAmounts.Add(19); incomingAmounts.Add(86);
+            var incoming = String.Join(",", incomingAmounts);
+            ViewBag.IncomingAmounts = incoming;
+
             return View();
         }
        
@@ -161,7 +208,7 @@ namespace Portal.Areas.Repository.Controllers
                 var x = Session["user"] as CfMembership.User;
                 Session["userName"] = x.fName + " " + x.lName;
                 Session["userId"] = x.Id;
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","Home", new { area="Repository" });
 
             }
 
@@ -187,7 +234,7 @@ namespace Portal.Areas.Repository.Controllers
             {
                 Session["user"] = null;
                 Session["userName"] = null;
-                return RedirectToAction("Login");
+                return RedirectToAction("Login" , "Home", new { area = "Repository" });
 
             }
 

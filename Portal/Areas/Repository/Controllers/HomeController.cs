@@ -31,54 +31,114 @@ namespace Portal.Areas.Repository.Controllers
         private string no = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "No");
         private string search = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "Search");
 
+        private string newLoanRequests = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ManageLoanRequest", "NewLoanRequests");
+        private string validLoanRequests = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ManageLoanRequest", "ValidLoanRequests");
+        private string approvedLoanRequests = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ManageLoanRequest", "ApprovedLoanRequests");
+        private string exceptionalLoanRequests = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ManageLoanRequest", "ExceptionalLoanRequests");
+        private string rejectedLoanRequests = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ManageLoanRequest", "RejectedLoanRequests");
+        private string executedLoanRequests = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ManageLoanRequest", "ExecutedLoanRequests");
 
-        class test
+
+        public HomeController()
         {
-            public DateTime Name { get; set; } = System.DateTime.Now;
-            public int Income { get; set; }
-            public int Outgoing { get; set; }
-
+            ViewBag.NewLoanRequests = newLoanRequests;
+            ViewBag.ValidLoanRequests = validLoanRequests;
+            ViewBag.ApprovedLoanRequests = approvedLoanRequests;
+            ViewBag.ExceptionalLoanRequests = exceptionalLoanRequests;
+            ViewBag.RejectedLoanRequests = rejectedLoanRequests;
+            ViewBag.ExecutedLoanRequests = executedLoanRequests;
         }
+
 
         public ActionResult Index()
         {
-            List<test> result = new List<test>();
+            // Call Monthly Balance Function 
+            MonthlyBalanceSumFilter filter = new MonthlyBalanceSumFilter();
+            DateTime Now = System.DateTime.Now.AddYears(-3);
+            filter.MinMonth = System.DateTime.Now.AddYears(-4);
+            filter.MaxMonth = Now;
 
+            List<MonthlyBalanceSumResult> result= DbServices.MonthlyBalanceSum(filter);
+ 
             List<string> Months = new List<string>();
-            List<int> paidAmounts = new List<int>();
-            List<int> incomingAmounts = new List<int>();
+            List<decimal> paidAmounts = new List<decimal>();
+            List<decimal> incomingAmounts = new List<decimal>();
              
-            foreach (test line in result)
+            foreach (MonthlyBalanceSumResult line in result)
             {                 
-                Months.Add(line.Name.Date.ToString("MMMM"));
-                paidAmounts.Add(line.Outgoing);
-                incomingAmounts.Add(line.Income);
+                Months.Add(line.Month.Date.ToString("MMMM"));
+                paidAmounts.Add(line.AllLoans.Value);
+                incomingAmounts.Add(line.AllPayments.Value);
             }
-            
-            Months.Add("January"); Months.Add("February");
-            Months.Add("March"); Months.Add("April");
-            Months.Add("May");
-            Months.Add("January"); Months.Add("February");
-            Months.Add("March"); Months.Add("April");
-            Months.Add("May");
+       
             var months = String.Join(",", Months);
             ViewBag.Months = months;
-
-            
-            paidAmounts.Add(65); paidAmounts.Add(59); paidAmounts.Add(80);
-            paidAmounts.Add(81); paidAmounts.Add(56);
-            paidAmounts.Add(65); paidAmounts.Add(59); paidAmounts.Add(80);
-            paidAmounts.Add(81); paidAmounts.Add(56);
+      
             var paid = String.Join(",", paidAmounts);
             ViewBag.PaidAmounts = paid;
 
-            
-            incomingAmounts.Add(28); incomingAmounts.Add(48); incomingAmounts.Add(40);
-            incomingAmounts.Add(19); incomingAmounts.Add(86);
-            incomingAmounts.Add(28); incomingAmounts.Add(48); incomingAmounts.Add(40);
-            incomingAmounts.Add(19); incomingAmounts.Add(86);
             var incoming = String.Join(",", incomingAmounts);
             ViewBag.IncomingAmounts = incoming;
+
+            // 
+
+            RequestStatisticsFilter filterRequest = new RequestStatisticsFilter();
+            filterRequest.MinDate = System.DateTime.Now.AddYears(-3);
+            filterRequest.MaxDate = System.DateTime.Now;
+            List<RequestStatisticsResult> resultRequest = DbServices.RequestStatistics(filterRequest);
+
+            foreach (RequestStatisticsResult item in resultRequest)
+            {
+                if (item.RequestStatusId == RequestStatusEnum.New.GetHashCode())
+                {
+                    ViewBag.NewRequestCount = item.RequestCount;
+                    ViewBag.NewRequestSum = item.RequestSum;
+                    continue;
+                }
+                //else
+                //{
+                //    ViewBag.NewRequestCount = 0;
+                //    ViewBag.NewRequestSum = 0;
+                //    continue;
+                //}
+                if (item.RequestStatusId == RequestStatusEnum.Executed.GetHashCode())
+                {
+                    ViewBag.ExecutedRequestCount = item.RequestCount;
+                    ViewBag.ExecutedRequestSum = item.RequestSum;
+                    continue;
+                }
+                //else
+                //{
+                //    ViewBag.ExecutedRequestCount = 0;
+                //    ViewBag.ExecutedRequestSum =0;
+                //    continue;
+                //}
+                if (item.RequestStatusId == RequestStatusEnum.FinanciallyApproved.GetHashCode())
+                {
+                    ViewBag.FinanciallyApprovedRequestCount = item.RequestCount;
+                    ViewBag.FinanciallyApprovedRequestSum = item.RequestSum;
+                    continue;
+                }
+                //else
+                //{
+                //    ViewBag.FinanciallyApprovedRequestCount = 0;
+                //    ViewBag.FinanciallyApprovedRequestSum = 0;
+                //    continue;
+                //}
+                if (item.RequestStatusId == RequestStatusEnum.Canceled.GetHashCode())
+                {
+                    ViewBag.CanceledRequestCount = item.RequestCount;
+                    ViewBag.CanceledRequestSum = item.RequestSum;
+                    continue;
+                }
+                //else
+                //{
+                //    ViewBag.CanceledRequestCount = 0;
+                //    ViewBag.CanceledRequestSum = 0;
+                //    continue;
+                //}
+            }
+
 
             return View();
         }

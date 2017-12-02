@@ -906,6 +906,97 @@ namespace Cf.Data
     #endregion
     #endregion
 
+	#region LoanMoveToEmployee filter and result classes
+    #region LoanMoveToEmployeeFilter class definition
+	/// <summary>
+    /// Filter class for LoanMoveToEmployee.
+	/// </summary>
+    [MetadataType(typeof(LoanMoveToEmployeeFilterMetaData))]
+	public partial class LoanMoveToEmployeeFilter
+	{
+		#region Public properties
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<int> Loan {get; set; }
+		
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<int> EmployeeId {get; set; }
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<int> LoanDecisionId {get; set; }
+		#endregion
+	}
+	#endregion
+
+    #region LoanMoveToEmployee result class
+    public partial class LoanMoveToEmployeeResult
+    {
+        internal LoanMoveToEmployeeResult
+        (
+        )
+        {
+        }
+    }
+    #endregion
+    #endregion
+
+	#region MonthlyBalanceSum filter and result classes
+    #region MonthlyBalanceSumFilter class definition
+	/// <summary>
+    /// Filter class for MonthlyBalanceSum.
+	/// </summary>
+    [MetadataType(typeof(MonthlyBalanceSumFilterMetaData))]
+	public partial class MonthlyBalanceSumFilter
+	{
+		#region Public properties
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<DateTime> MinMonth {get; set; }
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<DateTime> MaxMonth {get; set; }
+		#endregion
+	}
+	#endregion
+
+    #region MonthlyBalanceSumResult class definition
+	/// <summary>
+    /// Result class for MonthlyBalanceSum.
+	/// </summary>
+    [MetadataType(typeof(MonthlyBalanceSumResultMetaData))]
+	public partial class MonthlyBalanceSumResult
+	{
+		#region Public properties
+        public DateTime Month {get; set; }
+		
+        public Nullable<decimal> Opening {get; set; }
+		
+        public Nullable<decimal> NormalLoans {get; set; }
+		
+        public Nullable<decimal> IncomingLoans {get; set; }
+		
+        public Nullable<decimal> OutgoingLoans {get; set; }
+		
+        public Nullable<decimal> Restitutions {get; set; }
+		
+        public Nullable<decimal> SalaryPayments {get; set; }
+		
+        public Nullable<decimal> CashPayments {get; set; }
+		
+        public Nullable<decimal> AllLoans {get; set; }
+		
+        public Nullable<decimal> AllPayments {get; set; }
+		#endregion
+	}
+	#endregion
+    #endregion
+
 	#region ProductCalculator filter and result classes
     #region ProductCalculatorFilter class definition
 	/// <summary>
@@ -955,6 +1046,47 @@ namespace Cf.Data
         public Nullable<decimal> AnnualRate {get; set; }
 		
         public Nullable<byte> GuarantorsCount {get; set; }
+		#endregion
+	}
+	#endregion
+    #endregion
+
+	#region RequestStatistics filter and result classes
+    #region RequestStatisticsFilter class definition
+	/// <summary>
+    /// Filter class for RequestStatistics.
+	/// </summary>
+    [MetadataType(typeof(RequestStatisticsFilterMetaData))]
+	public partial class RequestStatisticsFilter
+	{
+		#region Public properties
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<DateTime> MinDate {get; set; }
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<DateTime> MaxDate {get; set; }
+		#endregion
+	}
+	#endregion
+
+    #region RequestStatisticsResult class definition
+	/// <summary>
+    /// Result class for RequestStatistics.
+	/// </summary>
+    [MetadataType(typeof(RequestStatisticsResultMetaData))]
+	public partial class RequestStatisticsResult
+	{
+		#region Public properties
+        public Nullable<byte> RequestStatusId {get; set; }
+		
+        public string RequestStatusName {get; set; }
+		
+        public Nullable<int> RequestCount {get; set; }
+		
+        public Nullable<decimal> RequestSum {get; set; }
 		#endregion
 	}
 	#endregion

@@ -32,11 +32,11 @@
                                     <div class="card-block">
                                         <div class="media">
                                             <div class="media-body text-xs-left">
-                                                <h3 class="pink">@ViewBag.NewLoanRequestsCount</h3>
+                                                <h3 class="blue">@ViewBag.NewLoanRequestsCount</h3>
                                                 @Html.ActionLink((string)ViewBag.NewLoanRequests, "ManageNewRequests")
                                             </div>
                                             <div class="media-right media-middle">
-                                                <i class="icon-bag2 pink font-large-2 float-xs-right"></i>
+                                                <i class="icon-ios-list blue font-large-2 float-xs-right"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -66,11 +66,11 @@
                                     <div class="card-block">
                                         <div class="media">
                                             <div class="media-body text-xs-left">
-                                                <h3 class="deep-orange">@ViewBag.ApprovedLoanRequestsCount</h3>
+                                                <h3 class="green">@ViewBag.ApprovedLoanRequestsCount</h3>
                                                 @Html.ActionLink((string)ViewBag.ApprovedLoanRequests, "ManageApprovedRequests")
                                             </div>
                                             <div class="media-right media-middle">
-                                                <i class="icon-diagram deep-orange font-large-2 float-xs-right"></i>
+                                                <i class="icon-diagram green font-large-2 float-xs-right"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -83,11 +83,11 @@
                                     <div class="card-block">
                                         <div class="media">
                                             <div class="media-body text-xs-left">
-                                                <h3 class="cyan">@ViewBag.ExceptionalLoanRequestsCount</h3>
+                                                <h3 class="red">@ViewBag.ExceptionalLoanRequestsCount</h3>
                                                 @Html.ActionLink((string)ViewBag.RejectedLoanRequests, "ManageRejectedRequest")
                                             </div>
                                             <div class="media-right media-middle">
-                                                <i class="icon-ios-help-outline cyan font-large-2 float-xs-right"></i>
+                                                <i class="icon-ios-close-outline red font-large-2 float-xs-right"></i>
                                             </div>
                                         </div>
                                     </div>

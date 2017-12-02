@@ -1006,6 +1006,98 @@ namespace Cf.Data
 		}
 		#endregion
 
+		#region LoanMoveToEmployee procedure.
+
+		[Function(Name = "dbo.LoanMoveToEmployee")]
+		private int _LoanMoveToEmployee([Parameter(Name = "@Loan")] Nullable<int> _loan, [Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@LoanDecisionId")] Nullable<int> _loanDecisionId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _loan, _employeeId, _loanDecisionId);
+			return (int) (result.ReturnValue);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_loan"></param>
+		/// <param name="_employeeId"></param>
+		/// <param name="_loanDecisionId"></param>
+		public void LoanMoveToEmployee([Parameter(Name = "@Loan")] Nullable<int> _loan, [Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@LoanDecisionId")] Nullable<int> _loanDecisionId)
+		{
+			_LoanMoveToEmployee(_loan, _employeeId, _loanDecisionId);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of LoanMoveToEmployeeFilter that defines filtering options.</param>
+		public void LoanMoveToEmployee(LoanMoveToEmployeeFilter filterInstance)
+		{
+			_LoanMoveToEmployee(filterInstance.Loan, filterInstance.EmployeeId, filterInstance.LoanDecisionId);
+		}
+		#endregion
+
+		#region MonthlyBalanceSum procedure.
+
+
+		[FunctionAttribute(Name = "dbo.MonthlyBalanceSum", IsComposable = true)]
+		private IQueryable<MonthlyBalanceSumResult> _MonthlyBalanceSum([Parameter(Name = "@MinMonth")] Nullable<DateTime> _minMonth, [Parameter(Name = "@MaxMonth")] Nullable<DateTime> _maxMonth)
+		{
+			return this.CreateMethodCallQuery<MonthlyBalanceSumResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _minMonth, _maxMonth);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_minMonth"></param>
+		/// <param name="_maxMonth"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>A list of MonthlyBalanceSumResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<MonthlyBalanceSumResult> MonthlyBalanceSum([Parameter(Name = "@MinMonth")] Nullable<DateTime> _minMonth, [Parameter(Name = "@MaxMonth")] Nullable<DateTime> _maxMonth)
+		{
+			IQueryable<MonthlyBalanceSumResult> list = _MonthlyBalanceSum(_minMonth, _maxMonth);
+            return list.ToList<MonthlyBalanceSumResult>();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of MonthlyBalanceSumFilter that defines filtering options.</param>
+        /// <returns>A list of MonthlyBalanceSumResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<MonthlyBalanceSumResult> MonthlyBalanceSum(MonthlyBalanceSumFilter filterInstance)
+		{
+			IQueryable<MonthlyBalanceSumResult> list = _MonthlyBalanceSum(filterInstance.MinMonth, filterInstance.MaxMonth);
+            return list.ToList<MonthlyBalanceSumResult>();
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_minMonth"></param>
+		/// <param name="_maxMonth"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>An instance of MonthlyBalanceSumResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public MonthlyBalanceSumResult MonthlyBalanceSumFirstOrDefault([Parameter(Name = "@MinMonth")] Nullable<DateTime> _minMonth, [Parameter(Name = "@MaxMonth")] Nullable<DateTime> _maxMonth)
+		{
+			return MonthlyBalanceSum(_minMonth, _maxMonth).FirstOrDefault();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of MonthlyBalanceSumFilter that defines filtering options.</param>
+		/// <returns>An instance of MonthlyBalanceSumResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public MonthlyBalanceSumResult MonthlyBalanceSumFirstOrDefault(MonthlyBalanceSumFilter filterInstance)
+		{
+			return MonthlyBalanceSum(filterInstance.MinMonth, filterInstance.MaxMonth).FirstOrDefault();
+		}
+		#endregion
+
 		#region ProductCalculator procedure.
 
 
@@ -1067,6 +1159,68 @@ namespace Cf.Data
 		public ProductCalculatorResult ProductCalculatorFirstOrDefault(ProductCalculatorFilter filterInstance)
 		{
 			return ProductCalculator(filterInstance.ProductType, filterInstance.Amount, filterInstance.Period).FirstOrDefault();
+		}
+		#endregion
+
+		#region RequestStatistics procedure.
+
+
+		[FunctionAttribute(Name = "dbo.RequestStatistics", IsComposable = true)]
+		private IQueryable<RequestStatisticsResult> _RequestStatistics([Parameter(Name = "@MinDate")] Nullable<DateTime> _minDate, [Parameter(Name = "@MaxDate")] Nullable<DateTime> _maxDate)
+		{
+			return this.CreateMethodCallQuery<RequestStatisticsResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _minDate, _maxDate);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_minDate"></param>
+		/// <param name="_maxDate"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>A list of RequestStatisticsResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<RequestStatisticsResult> RequestStatistics([Parameter(Name = "@MinDate")] Nullable<DateTime> _minDate, [Parameter(Name = "@MaxDate")] Nullable<DateTime> _maxDate)
+		{
+			IQueryable<RequestStatisticsResult> list = _RequestStatistics(_minDate, _maxDate);
+            return list.ToList<RequestStatisticsResult>();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of RequestStatisticsFilter that defines filtering options.</param>
+        /// <returns>A list of RequestStatisticsResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<RequestStatisticsResult> RequestStatistics(RequestStatisticsFilter filterInstance)
+		{
+			IQueryable<RequestStatisticsResult> list = _RequestStatistics(filterInstance.MinDate, filterInstance.MaxDate);
+            return list.ToList<RequestStatisticsResult>();
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_minDate"></param>
+		/// <param name="_maxDate"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>An instance of RequestStatisticsResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public RequestStatisticsResult RequestStatisticsFirstOrDefault([Parameter(Name = "@MinDate")] Nullable<DateTime> _minDate, [Parameter(Name = "@MaxDate")] Nullable<DateTime> _maxDate)
+		{
+			return RequestStatistics(_minDate, _maxDate).FirstOrDefault();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of RequestStatisticsFilter that defines filtering options.</param>
+		/// <returns>An instance of RequestStatisticsResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public RequestStatisticsResult RequestStatisticsFirstOrDefault(RequestStatisticsFilter filterInstance)
+		{
+			return RequestStatistics(filterInstance.MinDate, filterInstance.MaxDate).FirstOrDefault();
 		}
 		#endregion
 	}

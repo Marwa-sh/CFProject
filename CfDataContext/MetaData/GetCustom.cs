@@ -2258,6 +2258,199 @@ namespace Cf.Data
 
 	#endregion
 
+	#region LoanMoveToEmployee filter and result classes
+	#region LoanMoveToEmployeeFilter meta data class definition
+    /// <summary>
+    /// Metadata for LoanMoveToEmployeeFilter class
+    /// </summary>
+	public partial class LoanMoveToEmployeeFilterMetaData
+	{
+		#region Public properties
+        /// <summary>
+        /// Metadata for LoanMoveToEmployeeFilter.Loan property
+        /// </summary>
+		[Display(
+			Name = "Loan",
+			ResourceType = typeof(Cf.Data.Resources.LoanMoveToEmployeeFilter))
+		]
+		[Tooltip("LoanTooltip", typeof(Cf.Data.Resources.LoanMoveToEmployeeFilter))]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<int> Loan { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanMoveToEmployeeFilter.EmployeeId property
+        /// </summary>
+		[Display(
+			Name = "EmployeeId",
+			ResourceType = typeof(Cf.Data.Resources.LoanMoveToEmployeeFilter))
+		]
+		[Tooltip("EmployeeIdTooltip", typeof(Cf.Data.Resources.LoanMoveToEmployeeFilter))]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<int> EmployeeId { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanMoveToEmployeeFilter.LoanDecisionId property
+        /// </summary>
+		[Display(
+			Name = "LoanDecisionId",
+			ResourceType = typeof(Cf.Data.Resources.LoanMoveToEmployeeFilter))
+		]
+		[Tooltip("LoanDecisionIdTooltip", typeof(Cf.Data.Resources.LoanMoveToEmployeeFilter))]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<int> LoanDecisionId { get; set; }
+		#endregion
+	}
+	#endregion
+
+	#endregion
+
+	#region MonthlyBalanceSum filter and result classes
+	#region MonthlyBalanceSumFilter meta data class definition
+    /// <summary>
+    /// Metadata for MonthlyBalanceSumFilter class
+    /// </summary>
+	public partial class MonthlyBalanceSumFilterMetaData
+	{
+		#region Public properties
+        /// <summary>
+        /// Metadata for MonthlyBalanceSumFilter.MinMonth property
+        /// </summary>
+		[Display(
+			Name = "MinMonth",
+			ResourceType = typeof(Cf.Data.Resources.MonthlyBalanceSumFilter))
+		]
+		[Tooltip("MinMonthTooltip", typeof(Cf.Data.Resources.MonthlyBalanceSumFilter))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<DateTime> MinMonth { get; set; }
+		
+        /// <summary>
+        /// Metadata for MonthlyBalanceSumFilter.MaxMonth property
+        /// </summary>
+		[Display(
+			Name = "MaxMonth",
+			ResourceType = typeof(Cf.Data.Resources.MonthlyBalanceSumFilter))
+		]
+		[Tooltip("MaxMonthTooltip", typeof(Cf.Data.Resources.MonthlyBalanceSumFilter))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<DateTime> MaxMonth { get; set; }
+		#endregion
+	}
+	#endregion
+
+
+    #region MonthlyBalanceSumResultMetaData class definition
+	/// <summary>
+    /// Result class for MonthlyBalanceSum.
+	/// </summary>
+	public partial class MonthlyBalanceSumResultMetaData
+	{
+		#region Public properties
+		[Display(
+			Name = "Month",
+			ResourceType = typeof(Cf.Data.Resources.MonthlyBalanceSumResult))
+		]
+		[Tooltip("MonthTooltip", typeof(Cf.Data.Resources.MonthlyBalanceSumResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public DateTime Month {get; set; }
+		
+		[Display(
+			Name = "Opening",
+			ResourceType = typeof(Cf.Data.Resources.MonthlyBalanceSumResult))
+		]
+		[Tooltip("OpeningTooltip", typeof(Cf.Data.Resources.MonthlyBalanceSumResult))]
+        public Nullable<decimal> Opening {get; set; }
+		
+		[Display(
+			Name = "NormalLoans",
+			ResourceType = typeof(Cf.Data.Resources.MonthlyBalanceSumResult))
+		]
+		[Tooltip("NormalLoansTooltip", typeof(Cf.Data.Resources.MonthlyBalanceSumResult))]
+        public Nullable<decimal> NormalLoans {get; set; }
+		
+		[Display(
+			Name = "IncomingLoans",
+			ResourceType = typeof(Cf.Data.Resources.MonthlyBalanceSumResult))
+		]
+		[Tooltip("IncomingLoansTooltip", typeof(Cf.Data.Resources.MonthlyBalanceSumResult))]
+        public Nullable<decimal> IncomingLoans {get; set; }
+		
+		[Display(
+			Name = "OutgoingLoans",
+			ResourceType = typeof(Cf.Data.Resources.MonthlyBalanceSumResult))
+		]
+		[Tooltip("OutgoingLoansTooltip", typeof(Cf.Data.Resources.MonthlyBalanceSumResult))]
+        public Nullable<decimal> OutgoingLoans {get; set; }
+		
+		[Display(
+			Name = "Restitutions",
+			ResourceType = typeof(Cf.Data.Resources.MonthlyBalanceSumResult))
+		]
+		[Tooltip("RestitutionsTooltip", typeof(Cf.Data.Resources.MonthlyBalanceSumResult))]
+        public Nullable<decimal> Restitutions {get; set; }
+		
+		[Display(
+			Name = "SalaryPayments",
+			ResourceType = typeof(Cf.Data.Resources.MonthlyBalanceSumResult))
+		]
+		[Tooltip("SalaryPaymentsTooltip", typeof(Cf.Data.Resources.MonthlyBalanceSumResult))]
+        public Nullable<decimal> SalaryPayments {get; set; }
+		
+		[Display(
+			Name = "CashPayments",
+			ResourceType = typeof(Cf.Data.Resources.MonthlyBalanceSumResult))
+		]
+		[Tooltip("CashPaymentsTooltip", typeof(Cf.Data.Resources.MonthlyBalanceSumResult))]
+        public Nullable<decimal> CashPayments {get; set; }
+		
+		[Display(
+			Name = "AllLoans",
+			ResourceType = typeof(Cf.Data.Resources.MonthlyBalanceSumResult))
+		]
+		[Tooltip("AllLoansTooltip", typeof(Cf.Data.Resources.MonthlyBalanceSumResult))]
+        public Nullable<decimal> AllLoans {get; set; }
+		
+		[Display(
+			Name = "AllPayments",
+			ResourceType = typeof(Cf.Data.Resources.MonthlyBalanceSumResult))
+		]
+		[Tooltip("AllPaymentsTooltip", typeof(Cf.Data.Resources.MonthlyBalanceSumResult))]
+        public Nullable<decimal> AllPayments {get; set; }
+		#endregion
+	}
+	#endregion
+	#endregion
+
 	#region ProductCalculator filter and result classes
 	#region ProductCalculatorFilter meta data class definition
     /// <summary>
@@ -2386,6 +2579,105 @@ namespace Cf.Data
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
         public Nullable<byte> GuarantorsCount {get; set; }
+		#endregion
+	}
+	#endregion
+	#endregion
+
+	#region RequestStatistics filter and result classes
+	#region RequestStatisticsFilter meta data class definition
+    /// <summary>
+    /// Metadata for RequestStatisticsFilter class
+    /// </summary>
+	public partial class RequestStatisticsFilterMetaData
+	{
+		#region Public properties
+        /// <summary>
+        /// Metadata for RequestStatisticsFilter.MinDate property
+        /// </summary>
+		[Display(
+			Name = "MinDate",
+			ResourceType = typeof(Cf.Data.Resources.RequestStatisticsFilter))
+		]
+		[Tooltip("MinDateTooltip", typeof(Cf.Data.Resources.RequestStatisticsFilter))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<DateTime> MinDate { get; set; }
+		
+        /// <summary>
+        /// Metadata for RequestStatisticsFilter.MaxDate property
+        /// </summary>
+		[Display(
+			Name = "MaxDate",
+			ResourceType = typeof(Cf.Data.Resources.RequestStatisticsFilter))
+		]
+		[Tooltip("MaxDateTooltip", typeof(Cf.Data.Resources.RequestStatisticsFilter))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<DateTime> MaxDate { get; set; }
+		#endregion
+	}
+	#endregion
+
+
+    #region RequestStatisticsResultMetaData class definition
+	/// <summary>
+    /// Result class for RequestStatistics.
+	/// </summary>
+	public partial class RequestStatisticsResultMetaData
+	{
+		#region Public properties
+		[Display(
+			Name = "RequestStatusId",
+			ResourceType = typeof(Cf.Data.Resources.RequestStatisticsResult))
+		]
+		[Tooltip("RequestStatusIdTooltip", typeof(Cf.Data.Resources.RequestStatisticsResult))]
+		[Range(
+			0,
+			127,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<byte> RequestStatusId {get; set; }
+		
+		[Display(
+			Name = "RequestStatusName",
+			ResourceType = typeof(Cf.Data.Resources.RequestStatisticsResult))
+		]
+		[Tooltip("RequestStatusNameTooltip", typeof(Cf.Data.Resources.RequestStatisticsResult))]
+		[StringLength(
+			50,
+			MinimumLength = 0,
+			ErrorMessageResourceName = "StringLengthCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public string RequestStatusName {get; set; }
+		
+		[Display(
+			Name = "RequestCount",
+			ResourceType = typeof(Cf.Data.Resources.RequestStatisticsResult))
+		]
+		[Tooltip("RequestCountTooltip", typeof(Cf.Data.Resources.RequestStatisticsResult))]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<int> RequestCount {get; set; }
+		
+		[Display(
+			Name = "RequestSum",
+			ResourceType = typeof(Cf.Data.Resources.RequestStatisticsResult))
+		]
+		[Tooltip("RequestSumTooltip", typeof(Cf.Data.Resources.RequestStatisticsResult))]
+        public Nullable<decimal> RequestSum {get; set; }
 		#endregion
 	}
 	#endregion

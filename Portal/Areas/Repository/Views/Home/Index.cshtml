@@ -1,13 +1,13 @@
 ﻿<div class="row">
     <div class="col-xl-3 col-lg-6 col-xs-12">
-        <div class="card">
+        <div class="card" style="height:230px;">
             <div class="card-body">
-                <div class="media">
-                    <div class="p-2 text-xs-center bg-cyan bg-darken-2 media-left media-middle">
-                        <i class="icon-camera7 font-large-2 white"></i>
+                <div class="p-1 media">
+                    <div class="text-xs-center media-middle">
+                        <i class="icon-diagram font-large-2" style="color: #894c9e;"></i>
                     </div>
-                    <div class="p-2 bg-cyan white media-body">
-                        <h5>@ViewBag.NewLoanRequests</h5>
+                    <div class="text-xs-center media-body">
+                        <h4 style="color: #1b557c;">@ViewBag.NewLoanRequests</h4>
                         <h5 class="text-bold-400">@ViewBag.NewRequestCount</h5>
                         <h5 class="text-bold-400">@ViewBag.NewRequestSum</h5>
                     </div>
@@ -16,14 +16,14 @@
         </div>
     </div>
     <div class="col-xl-3 col-lg-6 col-xs-12">
-        <div class="card">
+        <div class="card" style="height:230px;">
             <div class="card-body">
-                <div class="media">
-                    <div class="p-2 text-xs-center bg-deep-orange bg-darken-2 media-left media-middle">
-                        <i class="icon-user1 font-large-2 white"></i>
+                <div class="p-1 media">
+                    <div class="text-xs-center media-middle">
+                        <i class="icon-diagram font-large-2" style="color: #894c9e;"></i>
                     </div>
-                    <div class="p-2 bg-deep-orange white media-body">
-                        <h5>@ViewBag.ExecutedLoanRequests</h5>
+                    <div class="text-xs-center media-body">
+                        <h4 style="color: #1b557c;">@ViewBag.ExecutedLoanRequests</h4>
                         <h5 class="text-bold-400">@ViewBag.ExecutedRequestCount</h5>
                         <h5 class="text-bold-400">@ViewBag.ExecutedRequestSum</h5>
                     </div>
@@ -32,14 +32,14 @@
         </div>
     </div>
     <div class="col-xl-3 col-lg-6 col-xs-12">
-        <div class="card">
+        <div class="card" style="height:230px;">
             <div class="card-body">
-                <div class="media">
-                    <div class="p-2 text-xs-center bg-teal bg-darken-2 media-left media-middle">
-                        <i class="icon-cart font-large-2 white"></i>
+                <div class="p-1 media">
+                    <div class="text-xs-center media-middle">
+                        <i class="icon-diagram font-large-2" style="color: #894c9e;"></i>
                     </div>
-                    <div class="p-2 bg-teal white media-body">
-                        <h5>@ViewBag.ApprovedLoanRequests</h5>
+                    <div class="text-xs-center media-body">
+                        <h4 style="color: #1b557c;">@ViewBag.ApprovedLoanRequests</h4>
                         <h5 class="text-bold-400">@ViewBag.FinanciallyApprovedRequestCount</h5>
                         <h5 class="text-bold-400">@ViewBag.FinanciallyApprovedRequestSum</h5>
                     </div>
@@ -48,14 +48,14 @@
         </div>
     </div>
     <div class="col-xl-3 col-lg-6 col-xs-12">
-        <div class="card">
+        <div class="card" style="height:230px;">
             <div class="card-body">
-                <div class="media">
-                    <div class="p-2 text-xs-center bg-pink bg-darken-2 media-left media-middle">
-                        <i class="icon-banknote font-large-2 white"></i>
+                <div class="p-1 media">
+                    <div class="text-xs-center media-middle">
+                        <i class="icon-diagram font-large-2" style="color: #894c9e;"></i>
                     </div>
-                    <div class="p-2 bg-pink white media-body">
-                        <h5>@ViewBag.RejectedLoanRequests</h5>
+                    <div class="text-xs-center media-body">
+                        <h4 style="color: #1b557c;">@ViewBag.RejectedLoanRequests</h4>
                         <h5 class="text-bold-400">@ViewBag.CanceledRequestCount</h5>
                         <h5 class="text-bold-400">@ViewBag.CanceledRequestSum</h5>
                     </div>
@@ -77,7 +77,7 @@
                         <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
                         <li><a data-action="reload"><i class="icon-reload"></i></a></li>
                         <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
-                        <li><a data-action="close"><i class="icon-cross2"></i></a></li>
+
                     </ul>
                 </div>
             </div>
@@ -194,14 +194,14 @@
                 datasets: [{
                     label: "Paid Amounts",
                     data: paidAmounts,
-                    backgroundColor: "#673AB7",
-                    hoverBackgroundColor: "rgba(103,58,183,.9)",
+                    backgroundColor: "#894c9e",
+                    hoverBackgroundColor: "#894c9e",
                     borderColor: "transparent"
                 }, {
                     label: "Incoming Amounts",
                     data: incomingAmounts,
-                    backgroundColor: "#E91E63",
-                    hoverBackgroundColor: "rgba(233,30,99,.9)",
+                    backgroundColor: "#1b557c",
+                    hoverBackgroundColor: "#1b557c",
                     borderColor: "transparent"
                 }]
             };

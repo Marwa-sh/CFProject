@@ -169,6 +169,11 @@ ul.navbar-nav {
    }
 }
 
+.menu-collapsed .logo-object{
+    margin: 8px -8px 0 0;
+    height: 40px;
+   }
+
 .table-head-color
 {
     color:white

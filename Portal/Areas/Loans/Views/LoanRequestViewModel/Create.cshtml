@@ -387,9 +387,9 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                @Html.LabelFor(model => model.EmployeeProductCalculatorResult.Rate, new Dictionary<string, Object>
+                                                @Html.LabelFor(model => model.EmployeeProductCalculatorResult.AnnualRate, new Dictionary<string, Object>
                                                 { { "class", "control-label" },
-                                                  {"title", Html.ToolTipMessageFor(model => model.EmployeeProductCalculatorResult.Rate)},
+                                                  {"title", Html.ToolTipMessageFor(model => model.EmployeeProductCalculatorResult.AnnualRate)},
                                                   {"data-toggle", "tooltip"},
                                                   {"data-placement", "bottom"}
                                                 })
@@ -650,7 +650,7 @@
                             $("#Installment").val(Calculator.Installment);
                             $("#NetAmount").val(Calculator.NetAmount);
                             $("#ProfitAmount").val(Calculator.ProfitAmount);
-                            $("#Rate").val(Calculator.Rate);
+                            $("#Rate").val(Calculator.AnnualRate);
                             $("#GuarantorsCount").val(Calculator.GuarantorsCount);
  
                             if (amount > Calculator.MaxAmount) {

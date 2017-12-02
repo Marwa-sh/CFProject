@@ -64,7 +64,7 @@ namespace Portal.Areas.Loans.Controllers
            
             ViewBag.DecisionType = (int)LoanDecisionTypeEnum.Normal;
 
-            ViewBag.NewLoanRequestsCount = requests.Where(c=>(c.RequestRequestStatusId==(int)RequestStatusEnum.New)).ToList().Count;
+            ViewBag.NewLoanRequestsCount = requests.Where(c=>(c.RequestRequestStatusId==(int)RequestStatusEnum.New) && c.RequestDate>=new DateTime(2017,11,1)).ToList().Count;
             ViewBag.ValidLoanRequestsCount = requests.Where(c => (c.RequestRequestStatusId == (int)RequestStatusEnum.Valid)).ToList().Count;
             ViewBag.ApprovedLoanRequestsCount = requests.Where(c => (c.RequestRequestStatusId == (int)RequestStatusEnum.Approved)).ToList().Count;
             ViewBag.ExceptionalLoanRequestsCount = requests.Where(c => (c.RequestRequestStatusId == (int)RequestStatusEnum.ExcludedFromValidation)).ToList().Count;
@@ -320,7 +320,7 @@ namespace Portal.Areas.Loans.Controllers
             {
                 Db db = new Db(DbServices.ConnectionString);
                 List<LoanRequestVw> requests = null;
-                requests = LoanRequestVwServices.List(db).Where(c => c.RequestRequestStatusId == RequestStatusEnum.New.GetHashCode()).ToList();              
+                requests = LoanRequestVwServices.List(db).Where(c =>( c.RequestRequestStatusId == RequestStatusEnum.New.GetHashCode()) && c.RequestDate >= new DateTime(2017, 11, 1)).ToList();              
                 vm.List = requests;
             }
             catch (Exception exc)

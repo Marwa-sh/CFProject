@@ -1,0 +1,114 @@
+﻿@model Cf.Data.EmployeeProductCalculatorResult
+
+@{
+    ViewBag.Title = "Test";
+}
+
+<h2>Test</h2>
+
+<div>
+    <h4>EmployeeProductCalculatorResult</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Seniority)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Seniority)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinSeniority)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinSeniority)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinReusePeriod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinReusePeriod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductTypeId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductTypeId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NetAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NetAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProfitAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProfitAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Installment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Installment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GuarantorsCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GuarantorsCount)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

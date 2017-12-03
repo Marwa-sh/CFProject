@@ -11,104 +11,102 @@
                     <div class="form-body">
 
                         <script>
-                                $(".AcceptGuarantor").click(function () {
-                                    var url = $(this).data("url");
-                                    var guarantor_id = $(this).data("id");
-                                    var parentElemnt = $(this).parent();
-                                    $.ajax({
-                                        type: "POST",
-                                        url: url,
-                                        data: '{id: "' + guarantor_id + '" }',
-                                        contentType: "application/json; charset=utf-8",
-                                        dataType: "html",
-                                        success: function (response) {
-                                            if (response == "Error") {
-                                                console.log(response);
-                                            }
-                                            else {
-                                                parentElemnt.html("" + response);
-                                            }
-
-                                        },
-                                        failure: function (response) {
-                                            alert(response.responseText);
-                                        },
-                                        error: function (response) {
-                                            alert(response.responseText);
+                            $(".AcceptGuarantor").click(function () {
+                                var url = $(this).data("url");
+                                var guarantor_id = $(this).data("id");
+                                var parentElemnt = $(this).parent();
+                                $.ajax({
+                                    type: "POST",
+                                    url: url,
+                                    data: '{id: "' + guarantor_id + '" }',
+                                    contentType: "application/json; charset=utf-8",
+                                    dataType: "html",
+                                    success: function (response) {
+                                        if (response == "Error") {
+                                            console.log(response);
                                         }
-                                    });
-
-                                });
-                                $(".RejectGuarantor").click(function () {
-                                    var url = $(this).data("url");
-                                    var guarantor_id = $(this).data("id");
-                                    var parentElemnt = $(this).parent();
-                                    console.log("Elll: " + parentElemnt);
-                                    $.ajax({
-                                        type: "POST",
-                                        url: url,
-                                        data: '{id: "' + guarantor_id + '" }',
-                                        contentType: "application/json; charset=utf-8",
-                                        dataType: "html",
-                                        success: function (response) {
-
-                                            if (response == "Error") {
-                                                console.log(response);
-                                            }
-                                            else {
-                                                parentElemnt.html("" + response);
-                                            }
-                                        },
-                                        failure: function (response) {
-                                            alert(response.responseText);
-                                        },
-                                        error: function (response) {
-                                            alert(response.responseText);
+                                        else {
+                                            parentElemnt.html("" + response);
                                         }
-                                    });
 
+                                    },
+                                    failure: function (response) {
+                                        alert(response.responseText);
+                                    },
+                                    error: function (response) {
+                                        alert(response.responseText);
+                                    }
                                 });
-                                $("#validate").click(function () {
-                                    
-                                    var requestId = $(this).data("id");
-                                    var amount = $("#txtAmount").val();
-                                    console.log("dd="+amount);
-                                    $.ajax({
-                                        type: "POST",
-                                        url: '@Url.Action("Validate")',
-                                        data: '{  Amount:' + amount + ' , RequestId: "' + requestId + '"}',
-                                        contentType: "application/json; charset=utf-8",
-                                        dataType: "html",
-                                        success: function (response) {
-                                             
-                                            if(response=="Success")
-                                            {
-                                                swal("", response, "success");
-                                            }
-                                            else  
-                                            {
-                                                swal("", response, "error");
-                                            }
-                                             
-                                        },
-                                        failure: function (response) {
-                                            alert("Error: "+response.responseText);
-                                        },
-                                        error: function (response) {
-                                            alert("Error: " + response.responseText);
+
+                            });
+                            $(".RejectGuarantor").click(function () {
+                                var url = $(this).data("url");
+                                var guarantor_id = $(this).data("id");
+                                var parentElemnt = $(this).parent();
+                                console.log("Elll: " + parentElemnt);
+                                $.ajax({
+                                    type: "POST",
+                                    url: url,
+                                    data: '{id: "' + guarantor_id + '" }',
+                                    contentType: "application/json; charset=utf-8",
+                                    dataType: "html",
+                                    success: function (response) {
+
+                                        if (response == "Error") {
+                                            console.log(response);
                                         }
-                                    });
-
+                                        else {
+                                            parentElemnt.html("" + response);
+                                        }
+                                    },
+                                    failure: function (response) {
+                                        alert(response.responseText);
+                                    },
+                                    error: function (response) {
+                                        alert(response.responseText);
+                                    }
                                 });
+
+                            });
+                            $("#validate").click(function () {
+
+                                var requestId = $(this).data("id");
+                                var amount = $("#txtAmount").val();
+                                console.log("dd=" + amount);
+                                $.ajax({
+                                    type: "POST",
+                                    url: '@Url.Action("Validate")',
+                                    data: '{  Amount:' + amount + ' , RequestId: "' + requestId + '"}',
+                                    contentType: "application/json; charset=utf-8",
+                                    dataType: "html",
+                                    success: function (response) {
+
+                                        if (response == "Success") {
+                                            swal("", response, "success");
+                                        }
+                                        else {
+                                            swal("", response, "error");
+                                        }
+
+                                    },
+                                    failure: function (response) {
+                                        alert("Error: " + response.responseText);
+                                    },
+                                    error: function (response) {
+                                        alert("Error: " + response.responseText);
+                                    }
+                                });
+
+                            });
                         </script>
 
                         <ul class="nav nav-pills  ">
 
                             <li class="nav-item">
-                                <a class="nav-link active" id="link-tab" data-toggle="tab" href="#Loan" aria-controls="link" aria-expanded="true">Loan</a>
+                                <a class="nav-link active" id="link-tab" data-toggle="tab" href="#Loan" aria-controls="link" aria-expanded="true">@ViewBag.LoanName</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link " id="active-tab" data-toggle="tab" href="#Guarantors" aria-controls="active" aria-expanded="false">Guarantors</a>
+                                <a class="nav-link " id="active-tab" data-toggle="tab" href="#Guarantors" aria-controls="active" aria-expanded="false">@ViewBag.GuarantorName</a>
                             </li>
                         </ul>
                         <div class="tab-content px-1 pt-1">
@@ -155,7 +153,7 @@
                                     </tr>
 
                                     @foreach (var item in Model.RefundableProductVwViewModel.GuarantorVwViewModel.List)
-                                        {
+                                    {
                                         <tr>
 
                                             @*<td>
@@ -200,13 +198,13 @@
                                                     @*@if (ViewBag.RoleName == "FinantialEmployee")*@
                                                     @*  {*@
                                                     @*<div>
-                                                        <button type="button" class="btn btn-success btn-sm AcceptGuarantor" data-url="@Url.Action("AcceptGuarantor")" data-id="@item.Id">
-                                                            <i class="icon-check-circle"></i>
-                                                        </button>
-                                                        <button type="button" class="btn btn-danger btn-sm RejectGuarantor" data-url="@Url.Action("RejectGuarantor")" data-id="@item.Id">
-                                                            <i class="icon-times-circle"></i>
-                                                        </button>
-                                                    </div>*@
+                                                            <button type="button" class="btn btn-success btn-sm AcceptGuarantor" data-url="@Url.Action("AcceptGuarantor")" data-id="@item.Id">
+                                                                <i class="icon-check-circle"></i>
+                                                            </button>
+                                                            <button type="button" class="btn btn-danger btn-sm RejectGuarantor" data-url="@Url.Action("RejectGuarantor")" data-id="@item.Id">
+                                                                <i class="icon-times-circle"></i>
+                                                            </button>
+                                                        </div>*@
                                                     @* }*@
                                                     }
                                                     else
@@ -245,7 +243,9 @@
 
                                             </td>
                                         </tr>
-                                                    }
+                                                }
+
+
                                 </table>
 
 
@@ -436,8 +436,8 @@
                                     <div class="col-md-4">
                                         <button id="validate" class="btn btn-success btn-sm" data-id="@Model.Instance.Id" name="validate"><i class="icon-check-circle"></i></button>
                                         @*<a class="btn btn-success" href="@Url.Action("Validate",new {})">
-                                            <i class="icon-check-circle"></i>
-                                        </a>*@
+                                                <i class="icon-check-circle"></i>
+                                            </a>*@
                                         <a class="btn btn-danger btn-sm" href="@Url.Action("Reject",new   {   id = Model.Instance.Id  })">
                                             <i class="icon-times-circle"></i>
                                         </a>
@@ -446,7 +446,7 @@
                                         </a>
                                     </div>
                                     <div class="col-md-4"></div>
-                                    
+
 
                                 </div>
                             </div>
@@ -460,4 +460,3 @@
         </div>
     </div>
 </div>
-

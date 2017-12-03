@@ -83,7 +83,7 @@
                                     <div class="card-block">
                                         <div class="media">
                                             <div class="media-body text-xs-left">
-                                                <h3 class="red">@ViewBag.ExceptionalLoanRequestsCount</h3>
+                                                <h3 class="red">@ViewBag.RejectedLoanRequestsCount</h3>
                                                 @Html.ActionLink((string)ViewBag.RejectedLoanRequests, "ManageRejectedRequest")
                                             </div>
                                             <div class="media-right media-middle">
@@ -102,7 +102,7 @@
                                     <div class="card-block">
                                         <div class="media">
                                             <div class="media-body text-xs-left">
-                                                <h3 class="cyan">@ViewBag.RejectedLoanRequestsCount</h3>
+                                                <h3 class="cyan">@ViewBag.ExceptionalLoanRequestsCount</h3>
                                                 @Html.ActionLink((string)ViewBag.ExceptionalLoanRequests, "ManageExceptionalRequest")
                                             </div>
                                             <div class="media-right media-middle">

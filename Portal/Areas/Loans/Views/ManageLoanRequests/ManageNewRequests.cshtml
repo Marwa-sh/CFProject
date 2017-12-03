@@ -98,7 +98,7 @@
                                     else
                                     {
                                         <td>
-                                            @numOfGuarantors / @numOfNeededGuarantors                                            
+                                            @numOfGuarantors 
                                         </td>
                                     }
                                     @*<td>
@@ -150,6 +150,33 @@
 
 @section Scripts
 {
+    <script>
+        $(document).ready(function () {
+            var len = $('#Result tr').length;
+            var res = $("#Result");
+            if (len == 1)
+            {
+                var table = document.getElementById("Result").tBodies[0];
+
+                // Create an empty <tr> element and add it to the 1st position of the table:
+                var row = table.insertRow(0);
+
+                //// Insert new cell
+                var cell1 = row.insertCell(0);
+                cell1.colSpan = 12;
+                cell1.innerText = '@ViewBag.NoRecords';
+                cell1.align="center";
+
+            }
+            else {
+                //var value = $("#cardOptions").attr("class").replace("in", "");
+               // $("#cardOptions").attr("class", value);
+               // $("#filter").attr("class", "icon-plus4");
+            }
+        });
+
+         
+    </script>
     <script>
         $(function () {
             $(".details").click(function () {

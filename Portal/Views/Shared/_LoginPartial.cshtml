@@ -1,7 +1,7 @@
 ﻿@*edit by Mohammad Ahmad 23/10/2017*@
 @if (HttpContext.Current.Session["user"] != null)
 {
-    using (Html.BeginForm("LogOff", "Home", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    using (Html.BeginForm("LogOff", "Home", new { area = "Repository" }, FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
         <li class="dropdown dropdown-user nav-item" style="margin-top:8px;">
             <a href="#" data-toggle="dropdown" class="dropdown-toggle nav-link dropdown-user-link" aria-expanded="false">
@@ -19,7 +19,7 @@
 else
 {
     <li class="dropdown dropdown-user nav-item">
-        <a href="@Url.Action("Login")" id="loginLink" class="nav-link nav-link-label">
+        <a href="@Url.Action("Login","Home", new { Area="Repository" })" id="loginLink" class="nav-link nav-link-label">
             <i class="ficon icon-sign-in"></i>
             <span>تسجيل الدخول</span>
         </a>

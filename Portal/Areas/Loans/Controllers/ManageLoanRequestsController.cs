@@ -36,6 +36,9 @@ namespace Portal.Areas.Loans.Controllers
 
         private string manageLoanRequests = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ManageLoanRequest", "ManageLoanRequests");
 
+        private string loanName = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ManageLoanRequest", "LoanName");
+        private string guarantorName = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "ManageLoanRequest", "GuarantorName");
+
         public ManageLoanRequestsController()
         {           
             ViewBag.ModuleName = moduleName;
@@ -52,6 +55,10 @@ namespace Portal.Areas.Loans.Controllers
             ViewBag.ApprovedLoanRequests = approvedLoanRequests;
             ViewBag.ExceptionalLoanRequests = exceptionalLoanRequests;
             ViewBag.RejectedLoanRequests = rejectedLoanRequests;
+
+            ViewBag.LoanName = loanName;
+            ViewBag.GuarantorName = guarantorName;
+
         }
 
         // GET: ManageLoanRequests

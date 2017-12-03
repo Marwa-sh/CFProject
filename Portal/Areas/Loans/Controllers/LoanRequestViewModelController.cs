@@ -562,19 +562,19 @@ namespace Portal.Areas.Loans.Controllers
             string result = "";
             if (solvencyResult.IncomeSolvency < solvencyResult.MaxAllowedDebt)
             {
-                result += debtsSituationAccepted + ". /n";
+                result += debtsSituationAccepted + ".";
             }
             else
             {
-                result += debtsSituationRejected + ". /n";
+                result += debtsSituationRejected + ".";
             }
             if (solvencyResult.NetSalarySolvency > 0)
             {
-                result += installmentSituationAccepted + ". /n";
+                result += installmentSituationAccepted + ".";
             }
             else
             {
-                result += installmentSituationRejected + ". /n";
+                result += installmentSituationRejected + ". ";
             }
 
             return result;

@@ -52,4 +52,13 @@ namespace Cf.Data.Resources
 			}
 		}
 	}
+
+
+
+    #region LoanVw
+    public partial class LoanVw
+    {
+        public bool IsChecked { get; set; }
+    }
+    #endregion
 }

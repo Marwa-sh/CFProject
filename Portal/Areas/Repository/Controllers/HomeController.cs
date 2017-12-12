@@ -59,7 +59,7 @@ namespace Portal.Areas.Repository.Controllers
             filter.MaxMonth = Now;
 
             List<MonthlyBalanceSumResult> result= DbServices.MonthlyBalanceSum(filter);
- 
+            result=result.OrderBy(c => c.Month).ToList();
             List<string> Months = new List<string>();
             List<decimal> paidAmounts = new List<decimal>();
             List<decimal> incomingAmounts = new List<decimal>();
@@ -232,7 +232,7 @@ namespace Portal.Areas.Repository.Controllers
                 return RedirectToAction("AccessDenied", "Home" ,new  { area="Repository"});
             }
             ViewBag.ReturnUrl = returnUrl;
-            return View();
+            return View();            
         }
         [AllowAnonymous]
         public ActionResult AccessDenied()

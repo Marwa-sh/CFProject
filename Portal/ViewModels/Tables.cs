@@ -1108,7 +1108,7 @@ namespace Cf.ViewModels
 		/// <summary>
         /// An instance of LoanDecision
 		/// </summary>
-		public LoanDecision LoanDecision = new LoanDecision();
+		public LoanDecision LoanDecision { get; set; } = new LoanDecision() ;
 
 
 

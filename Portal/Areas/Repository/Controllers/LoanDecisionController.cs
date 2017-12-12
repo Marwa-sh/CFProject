@@ -18,13 +18,13 @@ namespace Portal.Areas.Repository.Controllers
     {
         private string moduleName = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "LoanDecision", "ModuleName");
         private string index = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "LoanDecision", "ModuleNamePlural");
-		
-	    public LoanDecisionController()
-    	{
+
+        public LoanDecisionController()
+        {
             ViewBag.ModuleName = moduleName;
-			ViewBag.Title = index;
-		}
-		
+            ViewBag.Title = index;
+        }
+
         /// <summary>
         /// Returns a list of LoanDecisionVw objects
         /// </summary>
@@ -34,10 +34,10 @@ namespace Portal.Areas.Repository.Controllers
             Db db = new Db(DbServices.ConnectionString);
             ViewBag.DecisionTypeList = new SelectList(LoanDecisionTypeServices.List(db), "Id", "Name");
             if (Model.Filter.HasCriteria)
-	        {
+            {
                 Model.List = LoanDecisionVwServices.Get(Model.Filter, db);
             }
-			else
+            else
                 Model.List = new List<LoanDecisionVw>();
             return View(Model);
         }
@@ -47,7 +47,7 @@ namespace Portal.Areas.Repository.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public ActionResult Details(Nullable<int>  id)
+        public ActionResult Details(Nullable<int> id)
         {
             if (id == null)
             {
@@ -57,7 +57,7 @@ namespace Portal.Areas.Repository.Controllers
 
             Db db = new Db(DbServices.ConnectionString);
 
-			// loanDecisionVwViewModel.Instance = LoanDecisionVwServices.Get(id.Value, db);
+            // loanDecisionVwViewModel.Instance = LoanDecisionVwServices.Get(id.Value, db);
             loanDecisionVwViewModel.Instance = LoanDecisionVwServices.GetChildren(id.Value, db);
             if (loanDecisionVwViewModel.Instance == null)
             {
@@ -68,22 +68,22 @@ namespace Portal.Areas.Repository.Controllers
             @ViewBag.LoanVwTitle = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "Loan", "ModuleNamePlural");
             // loanDecisionVwViewModel.LoanVwViewModel.List = LoanVwServices.GetByLoanDecisionId(id.Value, db);
             loanDecisionVwViewModel.LoanVwViewModel.List = loanDecisionVwViewModel.Instance.LoanVwList;
-            
+
 
             @ViewBag.OutgoingLoanVwTitle = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "OutgoingLoan", "ModuleNamePlural");
             // loanDecisionVwViewModel.OutgoingLoanVwViewModel.List = OutgoingLoanVwServices.GetByLoanDecisionId(id.Value, db);
             loanDecisionVwViewModel.OutgoingLoanVwViewModel.List = loanDecisionVwViewModel.Instance.OutgoingLoanVwList;
-            
-            
+
+
             return View(loanDecisionVwViewModel);
         }
 
         public ActionResult Create()
         {
-			Db db = new Db(DbServices.ConnectionString);
+            Db db = new Db(DbServices.ConnectionString);
 
             ViewBag.LoanDecisionTypeList = new SelectList(LoanDecisionTypeServices.List(db), "Id", "Name");
-			return View();
+            return View();
         }
 
         // POST: loanDecisionVw/Create
@@ -92,23 +92,23 @@ namespace Portal.Areas.Repository.Controllers
         [HttpPost]
         public ActionResult Create([Bind(Include = "Id, Number, Year, Date, DeductionStartDate, CersNumber, CersDate, Notes, LoanDecisionType, PaymentNumber, PaymentDate, IsPaidFromSalary, Reason, AdditionalClause, AdditionalIntroduction")] LoanDecision loanDecision)
         {
-			Db db = new Db(DbServices.ConnectionString);
+            Db db = new Db(DbServices.ConnectionString);
             if (ModelState.IsValid)
             {
-				try
-				{
-	                LoanDecisionServices.Insert(CurrentUser.Id, loanDecision, db);
-					TempData["Success"] = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "InsertConfirmed");
-					return RedirectToAction("Index");
-				}
-				catch(CfException cfex)
-				{
-					TempData["Failure"] = cfex.ErrorDefinition.LocalizedMessage;
-				}
-				catch(Exception ex)
-				{
-					TempData["Failure"] = ex.Message;
-				}
+                try
+                {
+                    LoanDecisionServices.Insert(CurrentUser.Id, loanDecision, db);
+                    TempData["Success"] = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "InsertConfirmed");
+                    return RedirectToAction("Index");
+                }
+                catch (CfException cfex)
+                {
+                    TempData["Failure"] = cfex.ErrorDefinition.LocalizedMessage;
+                }
+                catch (Exception ex)
+                {
+                    TempData["Failure"] = ex.Message;
+                }
             }
 
             ViewBag.LoanDecisionTypeList = new SelectList(LoanDecisionTypeServices.List(db), "Id", "Name");
@@ -116,7 +116,7 @@ namespace Portal.Areas.Repository.Controllers
         }
 
         // GET: LoanDecision/Edit/5
-        public ActionResult Edit(Nullable<int>  id)
+        public ActionResult Edit(Nullable<int> id)
         {
             Db db = new Db(DbServices.ConnectionString);
 
@@ -140,23 +140,23 @@ namespace Portal.Areas.Repository.Controllers
         [HttpPost]
         public ActionResult Edit([Bind(Include = "Id, Number, Year, Date, DeductionStartDate, CersNumber, CersDate, Notes, LoanDecisionType, PaymentNumber, PaymentDate, IsPaidFromSalary, Reason, AdditionalClause, AdditionalIntroduction")] LoanDecision loanDecision)
         {
-			Db db = new Db(DbServices.ConnectionString);
+            Db db = new Db(DbServices.ConnectionString);
             if (ModelState.IsValid)
             {
-				try
-				{
-	                LoanDecisionServices.Update(CurrentUser.Id, loanDecision, db);
-					TempData["Success"] = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "UpdateConfirmed");
-					return RedirectToAction("Index");
-				}
-				catch(CfException cfex)
-				{
-					TempData["Failure"] = cfex.ErrorDefinition.LocalizedMessage;
-				}
-				catch(Exception ex)
-				{
-					TempData["Failure"] = ex.Message;
-				}
+                try
+                {
+                    LoanDecisionServices.Update(CurrentUser.Id, loanDecision, db);
+                    TempData["Success"] = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "UpdateConfirmed");
+                    return RedirectToAction("Index");
+                }
+                catch (CfException cfex)
+                {
+                    TempData["Failure"] = cfex.ErrorDefinition.LocalizedMessage;
+                }
+                catch (Exception ex)
+                {
+                    TempData["Failure"] = ex.Message;
+                }
             }
 
             ViewBag.LoanDecisionTypeList = new SelectList(LoanDecisionTypeServices.List(db), "Id", "Name", loanDecision.LoanDecisionType);
@@ -165,8 +165,8 @@ namespace Portal.Areas.Repository.Controllers
         // GET: LoanDecision/Delete/5
         public ActionResult Delete(Nullable<int> id)
         {
-			if (id == null)
-			{
+            if (id == null)
+            {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
@@ -181,25 +181,25 @@ namespace Portal.Areas.Repository.Controllers
 
         // POST: LoanDecision/Delete/5
         [HttpPost, ActionName("Delete")]
-        public ActionResult DeleteConfirmed(int  id)
+        public ActionResult DeleteConfirmed(int id)
         {
-			try
-			{
-				Db db = new Db(DbServices.ConnectionString);
-	            LoanDecisionServices.Delete(CurrentUser.Id, id, db);
-				TempData["Success"] = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "DeleteConfirmed");
-				// return RedirectToAction("Index");
-			}
-			catch(CfException cfex)
-			{
-				TempData["Failure"] = cfex.ErrorDefinition.LocalizedMessage;
-			}
-			catch(Exception ex)
-			{
-				TempData["Failure"] = ex.Message;
-			}
+            try
+            {
+                Db db = new Db(DbServices.ConnectionString);
+                LoanDecisionServices.Delete(CurrentUser.Id, id, db);
+                TempData["Success"] = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "DeleteConfirmed");
+                // return RedirectToAction("Index");
+            }
+            catch (CfException cfex)
+            {
+                TempData["Failure"] = cfex.ErrorDefinition.LocalizedMessage;
+            }
+            catch (Exception ex)
+            {
+                TempData["Failure"] = ex.Message;
+            }
             // return View(loanDecision);
-			return RedirectToAction("Index");
+            return RedirectToAction("Index");
 
         }
 
@@ -225,21 +225,28 @@ namespace Portal.Areas.Repository.Controllers
                 {
                     try
                     {
-                        // 1- Add Loan Decision
-                        model.LoanDecision.LoanDecisionType = (int)LoanDecisionTypeEnum.Normal;
-                        if (model.LoanDecision.IsPaidFromSalary == null)
-                            model.LoanDecision.IsPaidFromSalary = false;
-                        LoanDecision instance = LoanDecisionServices.Insert(CurrentUser.Id, model.LoanDecision, db);
+                        int numberOfCheckedRequests = model.Requests.Where(c => c.isChecked).Count();
 
-                        // 2- Add Loans
-                        for (int i = 0; i < model.Requests.Count; i++)
+                        if (numberOfCheckedRequests != 0)
                         {
-                            if (!model.Requests[i].isChecked) continue;
-                            db.LoanGenerate(model.Requests[i].RequestId, instance.Id, (int)LoanGenerationStatusEnum.LoanRequest);
+                            // 1- Add Loan Decision
+                            model.LoanDecision.LoanDecisionType = (int)LoanDecisionTypeEnum.Normal;
+                            if (model.LoanDecision.IsPaidFromSalary == null)
+                                model.LoanDecision.IsPaidFromSalary = false;
+                            LoanDecision instance = LoanDecisionServices.Insert(CurrentUser.Id, model.LoanDecision, db);
+
+                            // 2- Add Loans
+                            for (int i = 0; i < model.Requests.Count; i++)
+                            {
+                                if (!model.Requests[i].isChecked) continue;
+                                db.LoanGenerate(model.Requests[i].RequestId, instance.Id, (int)LoanGenerationStatusEnum.LoanRequest);
+                            }
+                            TempData["Success"] = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "InsertConfirmed");
                         }
-
-
-                        TempData["Success"] = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "InsertConfirmed");
+                        else
+                        {
+                            return RedirectToAction("Index");
+                        }
 
                     }
                     catch (CfException cfex)

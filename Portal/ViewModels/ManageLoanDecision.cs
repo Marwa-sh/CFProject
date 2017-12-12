@@ -11,7 +11,6 @@ namespace Portal.ViewModels
     {
         public LoanDecision LoanDecision { get; set; }
         public List<RequestCustomized> Requests { get; set; } = new List<RequestCustomized>();
-
         public LoanRequestVwViewModel LoanRequestVwViewModel { get; set; }
         
 

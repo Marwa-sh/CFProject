@@ -44,5 +44,13 @@ namespace Cf.Data
 		public string FullName3 { get; set; }
 		#endregion
 	}
-	#endregion
+    #endregion
+
+    #region LoanVw
+    public partial class LoanVw
+    {
+        public bool IsChecked { get; set; }
+    }
+    #endregion
+
 }

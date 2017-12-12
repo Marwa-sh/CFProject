@@ -146,6 +146,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Grants\GrantsAreaRegistration.cs" />
     <Compile Include="Areas\Grants\Controllers\GrantRequestViewModelController.cs" />
+    <Compile Include="Areas\Loans\Controllers\LoanDecisionViewModelController.cs" />
     <Compile Include="Areas\Loans\Controllers\LoanReportController.cs" />
     <Compile Include="Areas\Loans\LoansAreaRegistration.cs" />
     <Compile Include="Areas\Repository\Controllers\AvailabilityCeilingController.cs" />
@@ -1780,6 +1781,7 @@
     <Content Include="Areas\Repository\Views\Subscription\_Filter.cshtml" />
     <Content Include="Areas\Repository\Views\TransitoryIncomingLoan\_Filter.cshtml" />
     <Content Include="Areas\Repository\Views\Warrant\_Filter.cshtml" />
+    <Content Include="Areas\Loans\Views\LoanDecisionViewModel\LoanDeciosionMoveToEmployee.cshtml" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Scripts\bootstrap-datepicker\build\build.less" />
@@ -1818,6 +1820,12 @@
     <Content Include="Areas\Loans\Views\ManageLoanRequests\ManageExceptionalRequest.cshtml" />
     <Content Include="Areas\Loans\Views\ManageLoanRequests\ManageRejectedRequest.cshtml" />
     <Content Include="Areas\Loans\Views\ManageLoanRequests\_FiltersSection.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\AccessDenied.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\LogOff.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CfDataContext\CfDataContext.csproj">

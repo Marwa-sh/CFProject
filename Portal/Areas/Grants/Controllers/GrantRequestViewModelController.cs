@@ -94,7 +94,7 @@ namespace Portal.Areas.Grants.Controllers
                         model.Request.Cost = 5;
                         Request r = RequestServices.Insert(CurrentUser.Id, model.Request, db);
 
-                        //3-Add LoanRequest
+                        //3-Add GrantRequest
                         model.GrantRequest.Request = p.Id;
                         model.GrantRequest.Amount = model.Request.Amount;
                        

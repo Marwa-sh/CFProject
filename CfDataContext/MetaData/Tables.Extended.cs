@@ -40,4 +40,13 @@ namespace Cf.Data
 		]
 		public string FullName3 { get; set; }
 	}
+
+    #region LoanVwMetaData
+    public partial class LoanVwMetaData
+    {
+        public bool IsChecked { get; set; }
+    }
+    #endregion
+
+
 }

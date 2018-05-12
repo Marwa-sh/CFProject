@@ -2,11 +2,14 @@
 <div class="form-horizontal">
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 </div>
-<div class="row">
+<div class="row" id="ListOfAvailability">
     <div class="col-xs-12">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">@ViewBag.Title @if(Model.List.Count == 0) {<span class="tag tag-default">@Model.List.Count</span>} else {<span class="tag tag-danger">@Model.List.Count</span> }</h4>
+                <h4 class="card-title">@ViewBag.Title @if (Model.List.Count == 0)
+                {<span class="tag tag-default">@Model.List.Count</span>}
+                else
+                {<span class="tag tag-danger">@Model.List.Count</span> }</h4>
                 <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
                 <div class="heading-elements">
                     <ul class="list-inline mb-0">
@@ -17,69 +20,70 @@
                 </div>
             </div>
             <div class="card-body collapse in">
-				<div class="card-block card-dashboard">
-                    <button class="btn btn-success" type="button">
-                        @Html.ActionLink((string)ViewBag.Insert + " " + (string)ViewBag.ModuleName, "Create")
-                    </button>
+                <div class="card-block card-dashboard">
+                    @*<button class="btn btn-success" type="button">
+                            @Html.ActionLink((string)ViewBag.Insert + " " + (string)ViewBag.ModuleName, "Create")
+                        </button>*@
+                    <button type="button" class="btn btn-danger insertLink" data-original-title="@ViewBag.Insert" id="insertBtn">@ViewBag.Insert</button>
                 </div>
                 <div class="table-responsive">
                     <table id="Result" class="table table-bordered mb-0">
                         <thead class="bg-primary table-head-color">
-					        <tr>
-					            <th>
-					                @Html.DisplayNameFor(model => model.Instance.Id)
-					            </th>
-					            <th>
-					                @Html.DisplayNameFor(model => model.Instance.Name)
-					            </th>
-					            <th>
-					                @Html.DisplayNameFor(model => model.Instance.MinSeniority)
-					            </th>
-					            <th>
-					                @Html.DisplayNameFor(model => model.Instance.MinReusePeriod)
-					            </th>
-           
-					            <th></th>
-					        </tr>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Instance.Id)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Instance.Name)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Instance.MinSeniority)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Instance.MinReusePeriod)
+                                </th>
+
+                                <th></th>
+                            </tr>
                         </thead>
                         <tbody>
-        @foreach (var item in Model.List)
-        {
-				            <tr>
-                				<td>
-                    				@Html.DisplayFor(modelItem => item.Id)
-                				</td>
-                				<td>
-                    				@Html.DisplayFor(modelItem => item.Name)
-                				</td>
-                				<td>
-                    				@Html.DisplayFor(modelItem => item.MinSeniority)
-                				</td>
-                				<td>
-                    				@Html.DisplayFor(modelItem => item.MinReusePeriod)
-                				</td>
-				                <td>
-									<div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-										<button type="button" class="btn btn-info">
-					                    	@Html.ActionLink((string)ViewBag.Details, "Details",
-                        					new
-											{
-												id = item.Id
-                        					})
-                                        </button>
-                                        <button type="button" class="btn btn-warning">
-											@Html.ActionLink((string)ViewBag.Update, "Edit",
-						                    new
-						                    {
-													id = item.Id
-											})
+                            @foreach (var item in Model.List)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Id)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.MinSeniority)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.MinReusePeriod)
+                                    </td>
+                                    <td>
+                                        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                            <button type="button" class="btn btn-info">
+                                                @Html.ActionLink((string)ViewBag.Details, "Details",
+                                            new
+                                            {
+                                                id = item.Id
+                                            })
+                                            </button>
+                                            <button type="button" class="btn btn-warning">
+                                                @Html.ActionLink((string)ViewBag.Update, "Edit",
+                                            new
+                                            {
+                                                id = item.Id
+                                            })
 
-                                        </button>
-                                        <button type="button" class="btn btn-danger deleteLink" data-original-title="@ViewBag.Delete" id="delete" data-id="@item.Id">@ViewBag.Delete</button>
-                                    </div>
-                                </td>
-                            </tr>
-				        }
+                                            </button>
+                                            <button type="button" class="btn btn-danger deleteLink" data-original-title="@ViewBag.Delete" id="delete" data-id="@item.Id">@ViewBag.Delete</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
                         </tbody>
                     </table>
                 </div>
@@ -87,6 +91,22 @@
         </div>
     </div>
 </div>
+
+@*<div class="modal fade" id="insertModal" tabindex="-1" role="dialog" aria-labelledby="insertModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">@ViewBag.No</span></button>
+                <h4 class="modal-title" id="insertModalLabel">  </h4>
+            </div>
+            <div id="insertModalBody" class="modal-body">
+                @Html.Partial("_Create")
+            </div>
+
+        </div>
+    </div>
+</div>*@
+
 
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -96,7 +116,7 @@
                 <h4 class="modal-title" id="deleteModalLabel">@ViewBag.Delete @ViewBag.ModuleName</h4>
             </div>
             <div id="deleteModalBody" class="modal-body"></div>
-           
+
         </div>
     </div>
 </div>
@@ -121,7 +141,19 @@
         });
     </script>
 
-	<script>
+    @*<script>
+        $(function () {
+            $("#insertModal").modal("hide");  // initially hides the modal pop-up until needed
+
+            $(".insertLink").on("click", function () {
+
+                $("#insertModal").modal("show");
+
+            });
+        });
+    </script>*@
+
+    <script>
 	$(document).ready(function () {
 	        var len = $('#Result tr').length;
 	        var res = $("#Result");
@@ -132,12 +164,12 @@
                 // Create an empty <tr> element and add it to the 1st position of the table:
                 var row = table.insertRow(0);
 
-                //// Insert new cell 
+                //// Insert new cell
                 var cell1 = row.insertCell(0);
                 cell1.colSpan = 12;
                 cell1.innerText = '@ViewBag.NoRecords';
                 cell1.align="center";
-			
+
 	        }
 	        else {
 	            var value = $("#cardOptions").attr("class").replace("in", "");
@@ -157,5 +189,6 @@
 
 	        });
 	    });
-	</script>
+    </script>
+
 }

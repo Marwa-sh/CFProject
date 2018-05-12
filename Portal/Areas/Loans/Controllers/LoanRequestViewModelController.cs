@@ -443,7 +443,7 @@ namespace Portal.Areas.Loans.Controllers
                 EmployeeProductCalculatorResult result = db.EmployeeProductCalculatorFirstOrDefault(f);
                 if (result == null)
                 {
-                    return Json("Error", JsonRequestBehavior.AllowGet);
+                    return Json(new { error="Error", message = "Invalide Id" }, JsonRequestBehavior.AllowGet);
                 }
                 else
                 {

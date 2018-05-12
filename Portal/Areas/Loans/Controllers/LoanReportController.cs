@@ -72,5 +72,13 @@ namespace Portal.Areas.Loans.Controllers
             
             return View();
         }
+
+        #region SubscriptionsBetweenDates
+        public ActionResult SubscriptionsBetweenDates()
+        {
+            return View();
+        }
+        #endregion
+
     }
 }

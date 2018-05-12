@@ -58,7 +58,6 @@ namespace Portal.Areas.Loans.Controllers
 
             ViewBag.LoanName = loanName;
             ViewBag.GuarantorName = guarantorName;
-
         }
 
         // GET: ManageLoanRequests
@@ -88,6 +87,7 @@ namespace Portal.Areas.Loans.Controllers
         {           
             ViewBag.TitleGuarantor = TitleGuarantor;
             ViewBag.TitleExceptionalAount = TitleExceptionalAount;
+            
             // Details Of Products
 
             if (id == null)

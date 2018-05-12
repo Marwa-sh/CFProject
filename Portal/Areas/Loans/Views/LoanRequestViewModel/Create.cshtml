@@ -608,14 +608,14 @@
                         contentType: "application/json; charset=utf-8",
                         dataType: "json",
                         success: function (response) {
-                            if (response == "Error")
+                            if (response.error == "Error")
                             {
-
+                                swal(response.message);
                             }
                             else
                             {
 
-                            }
+                            
                             
                             var Calculator = response.Calculator;
                             var Solevency = response.Solevency;
@@ -688,6 +688,7 @@
                             else
                             {
                                 $("#NetSalarySolvency").css("color", "red");
+                            }
                             }
  
                         },

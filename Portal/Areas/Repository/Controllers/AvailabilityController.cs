@@ -69,6 +69,12 @@ namespace Portal.Areas.Repository.Controllers
             return View(availabilityVwViewModel);
         }
 
+
+        public ActionResult CreateTest()
+        {           
+            return PartialView("_Create");
+        }
+
         public ActionResult Create()
         {
 			return View();

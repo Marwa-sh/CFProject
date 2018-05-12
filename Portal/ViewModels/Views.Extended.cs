@@ -11,4 +11,9 @@ namespace Cf.ViewModels
         public GetInstallmentsResult InstallmentResultInstance { get; set; } = new GetInstallmentsResult();
         public List<GetInstallmentsResult> InstallmentsResultList { get; set; } = new List<GetInstallmentsResult>();
     }
+
+    public partial class AvailabilityVwViewModel
+    {
+        public Availability Availability { get; set; }
+    }
 }

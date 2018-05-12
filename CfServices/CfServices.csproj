@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Db.PrivateMembers.cs" />
+    <Compile Include="DebtsHelpers\DebtsHelper.cs" />
     <Compile Include="Enumerations.cs" />
     <Compile Include="Exceptions\CfExceptionBase.cs" />
     <Compile Include="Exceptions\Exceptions.cs" />

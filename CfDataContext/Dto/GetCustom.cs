@@ -912,45 +912,6 @@ namespace Cf.Data
 	#endregion
 	#endregion
 
-	#region LoansBetweenTwoDates filter and result classes
-    #region LoansBetweenTwoDatesFilter class definition
-	/// <summary>
-    /// Filter class for LoansBetweenTwoDates.
-	/// </summary>
-    [MetadataType(typeof(LoansBetweenTwoDatesFilterMetaData))]
-	public partial class LoansBetweenTwoDatesFilter
-	{
-		#region Public properties
-		/// <summary>
-		/// Needs summary!
-		/// </summary>
-		public Nullable<DateTime> FromDate {get; set; }
-		/// <summary>
-		/// Needs summary!
-		/// </summary>
-		public Nullable<DateTime> ToDate {get; set; }
-		#endregion
-	}
-	#endregion
-
-	#region LoansBetweenTwoDatesResult class definition
-	/// <summary>
-    /// Result class for LoansBetweenTwoDates.
-	/// </summary>
-    [MetadataType(typeof(LoansBetweenTwoDatesResultMetaData))]
-	public partial class LoansBetweenTwoDatesResult
-	{
-		#region Public properties
-        public short ProductProductTypeId {get; set; }
-		
-        public string ProductProductTypeName {get; set; }
-		
-        public string Count_Amount {get; set; }
-		#endregion
-	}
-	#endregion
-    #endregion
-
 	#region MonthlyBalanceSum filter and result classes
     #region MonthlyBalanceSumFilter class definition
 	/// <summary>
@@ -1090,6 +1051,187 @@ namespace Cf.Data
         public Nullable<decimal> AnnualRate {get; set; }
 		
         public Nullable<byte> GuarantorsCount {get; set; }
+		#endregion
+	}
+	#endregion
+    #endregion
+
+	#region ReportLoansBetweenTwoDates filter and result classes
+    #region ReportLoansBetweenTwoDatesFilter class definition
+	/// <summary>
+    /// Filter class for ReportLoansBetweenTwoDates.
+	/// </summary>
+    [MetadataType(typeof(ReportLoansBetweenTwoDatesFilterMetaData))]
+	public partial class ReportLoansBetweenTwoDatesFilter
+	{
+		#region Public properties
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<DateTime> FromDate {get; set; }
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<DateTime> ToDate {get; set; }
+		#endregion
+	}
+	#endregion
+
+	#region ReportLoansBetweenTwoDatesResult class definition
+	/// <summary>
+    /// Result class for ReportLoansBetweenTwoDates.
+	/// </summary>
+    [MetadataType(typeof(ReportLoansBetweenTwoDatesResultMetaData))]
+	public partial class ReportLoansBetweenTwoDatesResult
+	{
+		#region Public properties
+        public short ProductProductTypeId {get; set; }
+		
+        public string ProductProductTypeName {get; set; }
+		
+        public Nullable<decimal> Amounts {get; set; }
+		
+        public Nullable<int> LoanCounts {get; set; }
+		
+        public Nullable<decimal> ProfitAmount {get; set; }
+		#endregion
+	}
+	#endregion
+    #endregion
+
+	#region ReportPaymentsBetweenTwoDates filter and result classes
+    #region ReportPaymentsBetweenTwoDatesFilter class definition
+	/// <summary>
+    /// Filter class for ReportPaymentsBetweenTwoDates.
+	/// </summary>
+    [MetadataType(typeof(ReportPaymentsBetweenTwoDatesFilterMetaData))]
+	public partial class ReportPaymentsBetweenTwoDatesFilter
+	{
+		#region Public properties
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<DateTime> FirstMonth {get; set; }
+		
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<DateTime> SecondMonth {get; set; }
+		
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<double> Limit {get; set; }
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<int> PaymentDiff {get; set; }
+		#endregion
+	}
+	#endregion
+
+	#region ReportPaymentsBetweenTwoDatesResult class definition
+	/// <summary>
+    /// Result class for ReportPaymentsBetweenTwoDates.
+	/// </summary>
+    [MetadataType(typeof(ReportPaymentsBetweenTwoDatesResultMetaData))]
+	public partial class ReportPaymentsBetweenTwoDatesResult
+	{
+		#region Public properties
+        public Nullable<int> FirstEmployeeId {get; set; }
+		
+        public string FirstEmployeeFullName {get; set; }
+		
+        public string FirstSalaryWorkPlaceName {get; set; }
+		
+        public Nullable<decimal> FirstAmount {get; set; }
+		
+        public Nullable<DateTime> FirstDate {get; set; }
+		
+        public Nullable<int> FirstPaymentGroupId {get; set; }
+		
+        public string FirstPaymentGroupName {get; set; }
+		
+        public Nullable<int> SecondEmployeeId {get; set; }
+		
+        public string SecondEmployeeFullName {get; set; }
+		
+        public string SecondSalaryWorkPlaceName {get; set; }
+		
+        public Nullable<decimal> SecondAmount {get; set; }
+		
+        public Nullable<DateTime> SecondDate {get; set; }
+		
+        public Nullable<int> SecondPaymentGroupId {get; set; }
+		
+        public string SecondPaymentGroupName {get; set; }
+		
+        public Nullable<int> PaymentDiffrence {get; set; }
+		#endregion
+	}
+	#endregion
+    #endregion
+
+	#region ReportSubscriptionsBetweenTwoDates filter and result classes
+    #region ReportSubscriptionsBetweenTwoDatesFilter class definition
+	/// <summary>
+    /// Filter class for ReportSubscriptionsBetweenTwoDates.
+	/// </summary>
+    [MetadataType(typeof(ReportSubscriptionsBetweenTwoDatesFilterMetaData))]
+	public partial class ReportSubscriptionsBetweenTwoDatesFilter
+	{
+		#region Public properties
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<DateTime> FirstMonth {get; set; }
+		
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<DateTime> SecondMonth {get; set; }
+		
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<double> Limit {get; set; }
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<int> SubscriptionDiff {get; set; }
+		#endregion
+	}
+	#endregion
+
+	#region ReportSubscriptionsBetweenTwoDatesResult class definition
+	/// <summary>
+    /// Result class for ReportSubscriptionsBetweenTwoDates.
+	/// </summary>
+    [MetadataType(typeof(ReportSubscriptionsBetweenTwoDatesResultMetaData))]
+	public partial class ReportSubscriptionsBetweenTwoDatesResult
+	{
+		#region Public properties
+        public Nullable<int> FirstEmployeeId {get; set; }
+		
+        public string FirstEmployeeFullName {get; set; }
+		
+        public string FirstSalaryWorkPlaceName {get; set; }
+		
+        public Nullable<decimal> FirstAmount {get; set; }
+		
+        public Nullable<DateTime> FirstMonth {get; set; }
+		
+        public Nullable<int> SecondEmployeeId {get; set; }
+		
+        public string SecondEmployeeFullName {get; set; }
+		
+        public string SecondSalaryWorkPlaceName {get; set; }
+		
+        public Nullable<decimal> SecondAmount {get; set; }
+		
+        public Nullable<DateTime> SecondMonth {get; set; }
+		
+        public Nullable<int> SubscriptionDiffrence {get; set; }
 		#endregion
 	}
 	#endregion

@@ -1096,68 +1096,6 @@ namespace Cf.Data
 		}
 		#endregion
 
-		#region LoansBetweenTwoDates procedure.
-
-
-		[FunctionAttribute(Name = "dbo.LoansBetweenTwoDates", IsComposable = true)]
-		private IQueryable<LoansBetweenTwoDatesResult> _LoansBetweenTwoDates([Parameter(Name = "@FromDate")] Nullable<DateTime> _fromDate, [Parameter(Name = "@ToDate")] Nullable<DateTime> _toDate)
-		{
-			return this.CreateMethodCallQuery<LoansBetweenTwoDatesResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _fromDate, _toDate);
-		}
-
-		/// <summary>
-		/// Needs summary!
-		/// </summary>
-		/// <param name="_fromDate"></param>
-		/// <param name="_toDate"></param>
-        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
-		/// <returns>A list of LoansBetweenTwoDatesResult instances.</returns>
-		/// <remarks>This method never returns null, 
-		///	if no records are available, length of the list will be 0.</remarks>
-		public List<LoansBetweenTwoDatesResult> LoansBetweenTwoDates([Parameter(Name = "@FromDate")] Nullable<DateTime> _fromDate, [Parameter(Name = "@ToDate")] Nullable<DateTime> _toDate)
-		{
-			IQueryable<LoansBetweenTwoDatesResult> list = _LoansBetweenTwoDates(_fromDate, _toDate);
-            return list.ToList<LoansBetweenTwoDatesResult>();
-		}
-
-        /// <summary>
-		/// Needs summary!
-		/// </summary>
-        /// <param name="filterInstance">An instance of LoansBetweenTwoDatesFilter that defines filtering options.</param>
-        /// <returns>A list of LoansBetweenTwoDatesResult instances.</returns>
-		/// <remarks>This method never returns null, 
-		///	if no records are available, length of the list will be 0.</remarks>
-		public List<LoansBetweenTwoDatesResult> LoansBetweenTwoDates(LoansBetweenTwoDatesFilter filterInstance)
-		{
-			IQueryable<LoansBetweenTwoDatesResult> list = _LoansBetweenTwoDates(filterInstance.FromDate, filterInstance.ToDate);
-            return list.ToList<LoansBetweenTwoDatesResult>();
-		}
-
-		/// <summary>
-		/// Needs summary!
-		/// </summary>
-		/// <param name="_fromDate"></param>
-		/// <param name="_toDate"></param>
-        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
-		/// <returns>An instance of LoansBetweenTwoDatesResult.</returns>
-		/// <remarks>If no instances the method returns null.</remarks>
-		public LoansBetweenTwoDatesResult LoansBetweenTwoDatesFirstOrDefault([Parameter(Name = "@FromDate")] Nullable<DateTime> _fromDate, [Parameter(Name = "@ToDate")] Nullable<DateTime> _toDate)
-		{
-			return LoansBetweenTwoDates(_fromDate, _toDate).FirstOrDefault();
-		}
-
-        /// <summary>
-		/// Needs summary!
-		/// </summary>
-        /// <param name="filterInstance">An instance of LoansBetweenTwoDatesFilter that defines filtering options.</param>
-		/// <returns>An instance of LoansBetweenTwoDatesResult.</returns>
-		/// <remarks>If no instances the method returns null.</remarks>
-		public LoansBetweenTwoDatesResult LoansBetweenTwoDatesFirstOrDefault(LoansBetweenTwoDatesFilter filterInstance)
-		{
-			return LoansBetweenTwoDates(filterInstance.FromDate, filterInstance.ToDate).FirstOrDefault();
-		}
-		#endregion
-
 		#region MonthlyBalanceSum procedure.
 
 
@@ -1320,6 +1258,150 @@ namespace Cf.Data
 		public ProductCalculatorResult ProductCalculatorFirstOrDefault(ProductCalculatorFilter filterInstance)
 		{
 			return ProductCalculator(filterInstance.ProductType, filterInstance.Amount, filterInstance.Period).FirstOrDefault();
+		}
+		#endregion
+
+		#region ReportLoansBetweenTwoDates procedure.
+
+
+		[FunctionAttribute(Name = "dbo.ReportLoansBetweenTwoDates", IsComposable = true)]
+		private IQueryable<ReportLoansBetweenTwoDatesResult> _ReportLoansBetweenTwoDates([Parameter(Name = "@FromDate")] Nullable<DateTime> _fromDate, [Parameter(Name = "@ToDate")] Nullable<DateTime> _toDate)
+		{
+			return this.CreateMethodCallQuery<ReportLoansBetweenTwoDatesResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _fromDate, _toDate);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_fromDate"></param>
+		/// <param name="_toDate"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>A list of ReportLoansBetweenTwoDatesResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<ReportLoansBetweenTwoDatesResult> ReportLoansBetweenTwoDates([Parameter(Name = "@FromDate")] Nullable<DateTime> _fromDate, [Parameter(Name = "@ToDate")] Nullable<DateTime> _toDate)
+		{
+			IQueryable<ReportLoansBetweenTwoDatesResult> list = _ReportLoansBetweenTwoDates(_fromDate, _toDate);
+            return list.ToList<ReportLoansBetweenTwoDatesResult>();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of ReportLoansBetweenTwoDatesFilter that defines filtering options.</param>
+        /// <returns>A list of ReportLoansBetweenTwoDatesResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<ReportLoansBetweenTwoDatesResult> ReportLoansBetweenTwoDates(ReportLoansBetweenTwoDatesFilter filterInstance)
+		{
+			IQueryable<ReportLoansBetweenTwoDatesResult> list = _ReportLoansBetweenTwoDates(filterInstance.FromDate, filterInstance.ToDate);
+            return list.ToList<ReportLoansBetweenTwoDatesResult>();
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_fromDate"></param>
+		/// <param name="_toDate"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>An instance of ReportLoansBetweenTwoDatesResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public ReportLoansBetweenTwoDatesResult ReportLoansBetweenTwoDatesFirstOrDefault([Parameter(Name = "@FromDate")] Nullable<DateTime> _fromDate, [Parameter(Name = "@ToDate")] Nullable<DateTime> _toDate)
+		{
+			return ReportLoansBetweenTwoDates(_fromDate, _toDate).FirstOrDefault();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of ReportLoansBetweenTwoDatesFilter that defines filtering options.</param>
+		/// <returns>An instance of ReportLoansBetweenTwoDatesResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public ReportLoansBetweenTwoDatesResult ReportLoansBetweenTwoDatesFirstOrDefault(ReportLoansBetweenTwoDatesFilter filterInstance)
+		{
+			return ReportLoansBetweenTwoDates(filterInstance.FromDate, filterInstance.ToDate).FirstOrDefault();
+		}
+		#endregion
+
+		#region ReportPaymentsBetweenTwoDates procedure.
+
+
+		[Function(Name = "dbo.ReportPaymentsBetweenTwoDates")]
+		private ISingleResult<ReportPaymentsBetweenTwoDatesResult> _ReportPaymentsBetweenTwoDates([Parameter(Name = "@FirstMonth")] Nullable<DateTime> _firstMonth, [Parameter(Name = "@SecondMonth")] Nullable<DateTime> _secondMonth, [Parameter(Name = "@Limit")] Nullable<double> _limit, [Parameter(Name = "@PaymentDiff")] Nullable<int> _paymentDiff)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _firstMonth, _secondMonth, _limit, _paymentDiff);
+			return (result.ReturnValue as ISingleResult<ReportPaymentsBetweenTwoDatesResult>);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_firstMonth"></param>
+		/// <param name="_secondMonth"></param>
+		/// <param name="_limit"></param>
+		/// <param name="_paymentDiff"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>A list of ReportPaymentsBetweenTwoDatesResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<ReportPaymentsBetweenTwoDatesResult> ReportPaymentsBetweenTwoDates([Parameter(Name = "@FirstMonth")] Nullable<DateTime> _firstMonth, [Parameter(Name = "@SecondMonth")] Nullable<DateTime> _secondMonth, [Parameter(Name = "@Limit")] Nullable<double> _limit, [Parameter(Name = "@PaymentDiff")] Nullable<int> _paymentDiff)
+		{
+			ISingleResult<ReportPaymentsBetweenTwoDatesResult> list = _ReportPaymentsBetweenTwoDates(_firstMonth, _secondMonth, _limit, _paymentDiff);
+            return list.ToList<ReportPaymentsBetweenTwoDatesResult>();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of ReportPaymentsBetweenTwoDatesFilter that defines filtering options.</param>
+        /// <returns>A list of ReportPaymentsBetweenTwoDatesResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<ReportPaymentsBetweenTwoDatesResult> ReportPaymentsBetweenTwoDates(ReportPaymentsBetweenTwoDatesFilter filterInstance)
+		{
+			ISingleResult<ReportPaymentsBetweenTwoDatesResult> list = _ReportPaymentsBetweenTwoDates(filterInstance.FirstMonth, filterInstance.SecondMonth, filterInstance.Limit, filterInstance.PaymentDiff);
+            return list.ToList<ReportPaymentsBetweenTwoDatesResult>();
+		}
+		#endregion
+
+		#region ReportSubscriptionsBetweenTwoDates procedure.
+
+
+		[Function(Name = "dbo.ReportSubscriptionsBetweenTwoDates")]
+		private ISingleResult<ReportSubscriptionsBetweenTwoDatesResult> _ReportSubscriptionsBetweenTwoDates([Parameter(Name = "@FirstMonth")] Nullable<DateTime> _firstMonth, [Parameter(Name = "@SecondMonth")] Nullable<DateTime> _secondMonth, [Parameter(Name = "@Limit")] Nullable<double> _limit, [Parameter(Name = "@SubscriptionDiff")] Nullable<int> _subscriptionDiff)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _firstMonth, _secondMonth, _limit, _subscriptionDiff);
+			return (result.ReturnValue as ISingleResult<ReportSubscriptionsBetweenTwoDatesResult>);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_firstMonth"></param>
+		/// <param name="_secondMonth"></param>
+		/// <param name="_limit"></param>
+		/// <param name="_subscriptionDiff"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>A list of ReportSubscriptionsBetweenTwoDatesResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<ReportSubscriptionsBetweenTwoDatesResult> ReportSubscriptionsBetweenTwoDates([Parameter(Name = "@FirstMonth")] Nullable<DateTime> _firstMonth, [Parameter(Name = "@SecondMonth")] Nullable<DateTime> _secondMonth, [Parameter(Name = "@Limit")] Nullable<double> _limit, [Parameter(Name = "@SubscriptionDiff")] Nullable<int> _subscriptionDiff)
+		{
+			ISingleResult<ReportSubscriptionsBetweenTwoDatesResult> list = _ReportSubscriptionsBetweenTwoDates(_firstMonth, _secondMonth, _limit, _subscriptionDiff);
+            return list.ToList<ReportSubscriptionsBetweenTwoDatesResult>();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of ReportSubscriptionsBetweenTwoDatesFilter that defines filtering options.</param>
+        /// <returns>A list of ReportSubscriptionsBetweenTwoDatesResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<ReportSubscriptionsBetweenTwoDatesResult> ReportSubscriptionsBetweenTwoDates(ReportSubscriptionsBetweenTwoDatesFilter filterInstance)
+		{
+			ISingleResult<ReportSubscriptionsBetweenTwoDatesResult> list = _ReportSubscriptionsBetweenTwoDates(filterInstance.FirstMonth, filterInstance.SecondMonth, filterInstance.Limit, filterInstance.SubscriptionDiff);
+            return list.ToList<ReportSubscriptionsBetweenTwoDatesResult>();
 		}
 		#endregion
 

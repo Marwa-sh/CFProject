@@ -11,6 +11,103 @@ namespace Cf.Services
 	#region Db class definition
     public static partial class DbServices
     {
+		#region EmployeeLoans procedure.
+
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_employeeId"></param>
+		/// <returns>A list of EmployeeLoansResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public static List<EmployeeLoansResult> EmployeeLoans([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
+		{
+			Db db = new Db(DbServices.ConnectionString);
+			return db.EmployeeLoans(_employeeId);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_employeeId"></param>
+		/// <returns>A list of EmployeeLoansResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public static List<EmployeeLoansResult> EmployeeLoans([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, Db db)
+		{
+			return db.EmployeeLoans(_employeeId);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of EmployeeLoansFilter that defines filtering options.</param>
+        /// <returns>A list of EmployeeLoansResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public static List<EmployeeLoansResult> EmployeeLoans(EmployeeLoansFilter filterInstance)
+		{
+			Db db = new Db(DbServices.ConnectionString);
+			return db.EmployeeLoans(filterInstance.EmployeeId);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of EmployeeLoansFilter that defines filtering options.</param>
+        /// <returns>A list of EmployeeLoansResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public static List<EmployeeLoansResult> EmployeeLoans(EmployeeLoansFilter filterInstance, Db db)
+		{
+			return db.EmployeeLoans(filterInstance.EmployeeId);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_employeeId"></param>
+		/// <returns>An instance of EmployeeLoansResult or null.</returns>
+		public static EmployeeLoansResult EmployeeLoansFirstOrDefault([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
+		{
+			Db db = new Db(DbServices.ConnectionString);
+			return db.EmployeeLoansFirstOrDefault(_employeeId);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_employeeId"></param>
+		/// <returns>An instance of EmployeeLoansResult or null.</returns>
+		public static EmployeeLoansResult EmployeeLoansFirstOrDefault([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, Db db)
+		{
+			return db.EmployeeLoansFirstOrDefault(_employeeId);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of EmployeeLoansFilter that defines filtering options.</param>
+        /// <returns>An instance of EmployeeLoansResult or null.</returns>
+		public static EmployeeLoansResult EmployeeLoansFirstOrDefault(EmployeeLoansFilter filterInstance)
+		{
+			Db db = new Db(DbServices.ConnectionString);
+			return db.EmployeeLoansFirstOrDefault(filterInstance.EmployeeId);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of EmployeeLoansFilter that defines filtering options.</param>
+        /// <returns>An instance of EmployeeLoansResult or null.</returns>
+		public static EmployeeLoansResult EmployeeLoansFirstOrDefault(EmployeeLoansFilter filterInstance, Db db)
+		{
+			return db.EmployeeLoansFirstOrDefault(filterInstance.EmployeeId);
+		}
+
+		#endregion
+
 		#region EmployeeProductCalculator procedure.
 
 
@@ -1750,6 +1847,35 @@ namespace Cf.Services
 
 		#endregion
 
+		#region PaymentBetweenTwoDates procedure.
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_minDate"></param>
+		/// <param name="_maxDate"></param>
+		/// <returns>A list of PaymentBetweenTwoDatesResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public static List<PaymentBetweenTwoDatesResult> PaymentBetweenTwoDates([Parameter(Name = "@MinDate")] Nullable<DateTime> _minDate, [Parameter(Name = "@MaxDate")] Nullable<DateTime> _maxDate)
+		{
+			Db db = new Db(DbServices.ConnectionString);
+			return db.PaymentBetweenTwoDates(_minDate, _maxDate);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of PaymentBetweenTwoDatesFilter that defines filtering options.</param>
+        /// <returns>A list of PaymentBetweenTwoDatesResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public static List<PaymentBetweenTwoDatesResult> PaymentBetweenTwoDates(PaymentBetweenTwoDatesFilter filterInstance, Db db)
+		{
+			return db.PaymentBetweenTwoDates(filterInstance.MinDate, filterInstance.MaxDate);
+		}
+		#endregion
+
 		#region ProductCalculator procedure.
 
 
@@ -1855,6 +1981,169 @@ namespace Cf.Services
 
 		#endregion
 
+		#region ReportLoansBetweenTwoDates procedure.
+
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_fromDate"></param>
+		/// <param name="_toDate"></param>
+		/// <returns>A list of ReportLoansBetweenTwoDatesResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public static List<ReportLoansBetweenTwoDatesResult> ReportLoansBetweenTwoDates([Parameter(Name = "@FromDate")] Nullable<DateTime> _fromDate, [Parameter(Name = "@ToDate")] Nullable<DateTime> _toDate)
+		{
+			Db db = new Db(DbServices.ConnectionString);
+			return db.ReportLoansBetweenTwoDates(_fromDate, _toDate);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_fromDate"></param>
+		/// <param name="_toDate"></param>
+		/// <returns>A list of ReportLoansBetweenTwoDatesResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public static List<ReportLoansBetweenTwoDatesResult> ReportLoansBetweenTwoDates([Parameter(Name = "@FromDate")] Nullable<DateTime> _fromDate, [Parameter(Name = "@ToDate")] Nullable<DateTime> _toDate, Db db)
+		{
+			return db.ReportLoansBetweenTwoDates(_fromDate, _toDate);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of ReportLoansBetweenTwoDatesFilter that defines filtering options.</param>
+        /// <returns>A list of ReportLoansBetweenTwoDatesResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public static List<ReportLoansBetweenTwoDatesResult> ReportLoansBetweenTwoDates(ReportLoansBetweenTwoDatesFilter filterInstance)
+		{
+			Db db = new Db(DbServices.ConnectionString);
+			return db.ReportLoansBetweenTwoDates(filterInstance.FromDate, filterInstance.ToDate);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of ReportLoansBetweenTwoDatesFilter that defines filtering options.</param>
+        /// <returns>A list of ReportLoansBetweenTwoDatesResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public static List<ReportLoansBetweenTwoDatesResult> ReportLoansBetweenTwoDates(ReportLoansBetweenTwoDatesFilter filterInstance, Db db)
+		{
+			return db.ReportLoansBetweenTwoDates(filterInstance.FromDate, filterInstance.ToDate);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_fromDate"></param>
+		/// <param name="_toDate"></param>
+		/// <returns>An instance of ReportLoansBetweenTwoDatesResult or null.</returns>
+		public static ReportLoansBetweenTwoDatesResult ReportLoansBetweenTwoDatesFirstOrDefault([Parameter(Name = "@FromDate")] Nullable<DateTime> _fromDate, [Parameter(Name = "@ToDate")] Nullable<DateTime> _toDate)
+		{
+			Db db = new Db(DbServices.ConnectionString);
+			return db.ReportLoansBetweenTwoDatesFirstOrDefault(_fromDate, _toDate);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_fromDate"></param>
+		/// <param name="_toDate"></param>
+		/// <returns>An instance of ReportLoansBetweenTwoDatesResult or null.</returns>
+		public static ReportLoansBetweenTwoDatesResult ReportLoansBetweenTwoDatesFirstOrDefault([Parameter(Name = "@FromDate")] Nullable<DateTime> _fromDate, [Parameter(Name = "@ToDate")] Nullable<DateTime> _toDate, Db db)
+		{
+			return db.ReportLoansBetweenTwoDatesFirstOrDefault(_fromDate, _toDate);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of ReportLoansBetweenTwoDatesFilter that defines filtering options.</param>
+        /// <returns>An instance of ReportLoansBetweenTwoDatesResult or null.</returns>
+		public static ReportLoansBetweenTwoDatesResult ReportLoansBetweenTwoDatesFirstOrDefault(ReportLoansBetweenTwoDatesFilter filterInstance)
+		{
+			Db db = new Db(DbServices.ConnectionString);
+			return db.ReportLoansBetweenTwoDatesFirstOrDefault(filterInstance.FromDate, filterInstance.ToDate);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of ReportLoansBetweenTwoDatesFilter that defines filtering options.</param>
+        /// <returns>An instance of ReportLoansBetweenTwoDatesResult or null.</returns>
+		public static ReportLoansBetweenTwoDatesResult ReportLoansBetweenTwoDatesFirstOrDefault(ReportLoansBetweenTwoDatesFilter filterInstance, Db db)
+		{
+			return db.ReportLoansBetweenTwoDatesFirstOrDefault(filterInstance.FromDate, filterInstance.ToDate);
+		}
+
+		#endregion
+
+		#region ReportPaymentsBetweenTwoDates procedure.
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_firstMonth"></param>
+		/// <param name="_secondMonth"></param>
+		/// <param name="_limit"></param>
+		/// <param name="_paymentDiff"></param>
+		/// <returns>A list of ReportPaymentsBetweenTwoDatesResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public static List<ReportPaymentsBetweenTwoDatesResult> ReportPaymentsBetweenTwoDates([Parameter(Name = "@FirstMonth")] Nullable<DateTime> _firstMonth, [Parameter(Name = "@SecondMonth")] Nullable<DateTime> _secondMonth, [Parameter(Name = "@Limit")] Nullable<double> _limit, [Parameter(Name = "@PaymentDiff")] Nullable<int> _paymentDiff)
+		{
+			Db db = new Db(DbServices.ConnectionString);
+			return db.ReportPaymentsBetweenTwoDates(_firstMonth, _secondMonth, _limit, _paymentDiff);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of ReportPaymentsBetweenTwoDatesFilter that defines filtering options.</param>
+        /// <returns>A list of ReportPaymentsBetweenTwoDatesResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public static List<ReportPaymentsBetweenTwoDatesResult> ReportPaymentsBetweenTwoDates(ReportPaymentsBetweenTwoDatesFilter filterInstance, Db db)
+		{
+			return db.ReportPaymentsBetweenTwoDates(filterInstance.FirstMonth, filterInstance.SecondMonth, filterInstance.Limit, filterInstance.PaymentDiff);
+		}
+		#endregion
+
+		#region ReportSubscriptionsBetweenTwoDates procedure.
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_firstMonth"></param>
+		/// <param name="_secondMonth"></param>
+		/// <param name="_limit"></param>
+		/// <param name="_subscriptionDiff"></param>
+		/// <returns>A list of ReportSubscriptionsBetweenTwoDatesResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public static List<ReportSubscriptionsBetweenTwoDatesResult> ReportSubscriptionsBetweenTwoDates([Parameter(Name = "@FirstMonth")] Nullable<DateTime> _firstMonth, [Parameter(Name = "@SecondMonth")] Nullable<DateTime> _secondMonth, [Parameter(Name = "@Limit")] Nullable<double> _limit, [Parameter(Name = "@SubscriptionDiff")] Nullable<int> _subscriptionDiff)
+		{
+			Db db = new Db(DbServices.ConnectionString);
+			return db.ReportSubscriptionsBetweenTwoDates(_firstMonth, _secondMonth, _limit, _subscriptionDiff);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of ReportSubscriptionsBetweenTwoDatesFilter that defines filtering options.</param>
+        /// <returns>A list of ReportSubscriptionsBetweenTwoDatesResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public static List<ReportSubscriptionsBetweenTwoDatesResult> ReportSubscriptionsBetweenTwoDates(ReportSubscriptionsBetweenTwoDatesFilter filterInstance, Db db)
+		{
+			return db.ReportSubscriptionsBetweenTwoDates(filterInstance.FirstMonth, filterInstance.SecondMonth, filterInstance.Limit, filterInstance.SubscriptionDiff);
+		}
+		#endregion
+
 		#region RequestStatistics procedure.
 
 
@@ -1954,6 +2243,35 @@ namespace Cf.Services
 			return db.RequestStatisticsFirstOrDefault(filterInstance.MinDate, filterInstance.MaxDate);
 		}
 
+		#endregion
+
+		#region SubscriptionsBetweenTwoDates procedure.
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_minDate"></param>
+		/// <param name="_maxDate"></param>
+		/// <returns>A list of SubscriptionsBetweenTwoDatesResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public static List<SubscriptionsBetweenTwoDatesResult> SubscriptionsBetweenTwoDates([Parameter(Name = "@MinDate")] Nullable<DateTime> _minDate, [Parameter(Name = "@MaxDate")] Nullable<DateTime> _maxDate)
+		{
+			Db db = new Db(DbServices.ConnectionString);
+			return db.SubscriptionsBetweenTwoDates(_minDate, _maxDate);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of SubscriptionsBetweenTwoDatesFilter that defines filtering options.</param>
+        /// <returns>A list of SubscriptionsBetweenTwoDatesResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public static List<SubscriptionsBetweenTwoDatesResult> SubscriptionsBetweenTwoDates(SubscriptionsBetweenTwoDatesFilter filterInstance, Db db)
+		{
+			return db.SubscriptionsBetweenTwoDates(filterInstance.MinDate, filterInstance.MaxDate);
+		}
 		#endregion
 	}
 	#endregion

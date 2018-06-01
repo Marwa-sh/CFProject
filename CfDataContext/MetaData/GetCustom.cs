@@ -2449,101 +2449,6 @@ namespace Cf.Data
 	#endregion
 	#endregion
 
-	#region LoansBetweenTwoDates filter and result classes
-	#region LoansBetweenTwoDatesFilter meta data class definition
-    /// <summary>
-    /// Metadata for LoansBetweenTwoDatesFilter class
-    /// </summary>
-	public partial class LoansBetweenTwoDatesFilterMetaData
-	{
-		#region Public properties
-        /// <summary>
-        /// Metadata for LoansBetweenTwoDatesFilter.FromDate property
-        /// </summary>
-		[Display(
-			Name = "FromDate",
-			ResourceType = typeof(Cf.Data.Resources.LoansBetweenTwoDatesFilter))
-		]
-		[Tooltip("FromDateTooltip", typeof(Cf.Data.Resources.LoansBetweenTwoDatesFilter))]
-		[DataType(
-			DataType.Date,
-			ErrorMessageResourceName = "DateCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-        public Nullable<DateTime> FromDate { get; set; }
-		
-        /// <summary>
-        /// Metadata for LoansBetweenTwoDatesFilter.ToDate property
-        /// </summary>
-		[Display(
-			Name = "ToDate",
-			ResourceType = typeof(Cf.Data.Resources.LoansBetweenTwoDatesFilter))
-		]
-		[Tooltip("ToDateTooltip", typeof(Cf.Data.Resources.LoansBetweenTwoDatesFilter))]
-		[DataType(
-			DataType.Date,
-			ErrorMessageResourceName = "DateCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-        public Nullable<DateTime> ToDate { get; set; }
-		#endregion
-	}
-	#endregion
-
-    #region LoansBetweenTwoDatesResultMetaData class definition
-	/// <summary>
-    /// Result class for LoansBetweenTwoDates.
-	/// </summary>
-	public partial class LoansBetweenTwoDatesResultMetaData
-	{
-		#region Public properties
-		[Display(
-			Name = "ProductProductTypeId",
-			ResourceType = typeof(Cf.Data.Resources.LoansBetweenTwoDatesResult))
-		]
-		[Tooltip("ProductProductTypeIdTooltip", typeof(Cf.Data.Resources.LoansBetweenTwoDatesResult))]
-		[Required(
-			ErrorMessageResourceName = "RequiredCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-		[Range(
-			0,
-			32767,
-			ErrorMessageResourceName = "RangeCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-        public short ProductProductTypeId {get; set; }
-		
-		[Display(
-			Name = "ProductProductTypeName",
-			ResourceType = typeof(Cf.Data.Resources.LoansBetweenTwoDatesResult))
-		]
-		[Tooltip("ProductProductTypeNameTooltip", typeof(Cf.Data.Resources.LoansBetweenTwoDatesResult))]
-		[StringLength(
-			50,
-			MinimumLength = 0,
-			ErrorMessageResourceName = "StringLengthCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-        public string ProductProductTypeName {get; set; }
-		
-		[Display(
-			Name = "Count_Amount",
-			ResourceType = typeof(Cf.Data.Resources.LoansBetweenTwoDatesResult))
-		]
-		[Tooltip("Count_AmountTooltip", typeof(Cf.Data.Resources.LoansBetweenTwoDatesResult))]
-		[StringLength(
-			55,
-			MinimumLength = 0,
-			ErrorMessageResourceName = "StringLengthCheck",
-			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
-		]
-        public string Count_Amount {get; set; }
-		#endregion
-	}
-	#endregion
-	#endregion
-
 	#region MonthlyBalanceSum filter and result classes
 	#region MonthlyBalanceSumFilter meta data class definition
     /// <summary>
@@ -2868,6 +2773,581 @@ namespace Cf.Data
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
         public Nullable<byte> GuarantorsCount {get; set; }
+		#endregion
+	}
+	#endregion
+	#endregion
+
+	#region ReportLoansBetweenTwoDates filter and result classes
+	#region ReportLoansBetweenTwoDatesFilter meta data class definition
+    /// <summary>
+    /// Metadata for ReportLoansBetweenTwoDatesFilter class
+    /// </summary>
+	public partial class ReportLoansBetweenTwoDatesFilterMetaData
+	{
+		#region Public properties
+        /// <summary>
+        /// Metadata for ReportLoansBetweenTwoDatesFilter.FromDate property
+        /// </summary>
+		[Display(
+			Name = "FromDate",
+			ResourceType = typeof(Cf.Data.Resources.ReportLoansBetweenTwoDatesFilter))
+		]
+		[Tooltip("FromDateTooltip", typeof(Cf.Data.Resources.ReportLoansBetweenTwoDatesFilter))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<DateTime> FromDate { get; set; }
+		
+        /// <summary>
+        /// Metadata for ReportLoansBetweenTwoDatesFilter.ToDate property
+        /// </summary>
+		[Display(
+			Name = "ToDate",
+			ResourceType = typeof(Cf.Data.Resources.ReportLoansBetweenTwoDatesFilter))
+		]
+		[Tooltip("ToDateTooltip", typeof(Cf.Data.Resources.ReportLoansBetweenTwoDatesFilter))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<DateTime> ToDate { get; set; }
+		#endregion
+	}
+	#endregion
+
+    #region ReportLoansBetweenTwoDatesResultMetaData class definition
+	/// <summary>
+    /// Result class for ReportLoansBetweenTwoDates.
+	/// </summary>
+	public partial class ReportLoansBetweenTwoDatesResultMetaData
+	{
+		#region Public properties
+		[Display(
+			Name = "ProductProductTypeId",
+			ResourceType = typeof(Cf.Data.Resources.ReportLoansBetweenTwoDatesResult))
+		]
+		[Tooltip("ProductProductTypeIdTooltip", typeof(Cf.Data.Resources.ReportLoansBetweenTwoDatesResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		[Range(
+			0,
+			32767,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public short ProductProductTypeId {get; set; }
+		
+		[Display(
+			Name = "ProductProductTypeName",
+			ResourceType = typeof(Cf.Data.Resources.ReportLoansBetweenTwoDatesResult))
+		]
+		[Tooltip("ProductProductTypeNameTooltip", typeof(Cf.Data.Resources.ReportLoansBetweenTwoDatesResult))]
+		[StringLength(
+			50,
+			MinimumLength = 0,
+			ErrorMessageResourceName = "StringLengthCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public string ProductProductTypeName {get; set; }
+		
+		[Display(
+			Name = "Amounts",
+			ResourceType = typeof(Cf.Data.Resources.ReportLoansBetweenTwoDatesResult))
+		]
+		[Tooltip("AmountsTooltip", typeof(Cf.Data.Resources.ReportLoansBetweenTwoDatesResult))]
+        public Nullable<decimal> Amounts {get; set; }
+		
+		[Display(
+			Name = "LoanCounts",
+			ResourceType = typeof(Cf.Data.Resources.ReportLoansBetweenTwoDatesResult))
+		]
+		[Tooltip("LoanCountsTooltip", typeof(Cf.Data.Resources.ReportLoansBetweenTwoDatesResult))]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<int> LoanCounts {get; set; }
+		
+		[Display(
+			Name = "ProfitAmount",
+			ResourceType = typeof(Cf.Data.Resources.ReportLoansBetweenTwoDatesResult))
+		]
+		[Tooltip("ProfitAmountTooltip", typeof(Cf.Data.Resources.ReportLoansBetweenTwoDatesResult))]
+        public Nullable<decimal> ProfitAmount {get; set; }
+		#endregion
+	}
+	#endregion
+	#endregion
+
+	#region ReportPaymentsBetweenTwoDates filter and result classes
+	#region ReportPaymentsBetweenTwoDatesFilter meta data class definition
+    /// <summary>
+    /// Metadata for ReportPaymentsBetweenTwoDatesFilter class
+    /// </summary>
+	public partial class ReportPaymentsBetweenTwoDatesFilterMetaData
+	{
+		#region Public properties
+        /// <summary>
+        /// Metadata for ReportPaymentsBetweenTwoDatesFilter.FirstMonth property
+        /// </summary>
+		[Display(
+			Name = "FirstMonth",
+			ResourceType = typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesFilter))
+		]
+		[Tooltip("FirstMonthTooltip", typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesFilter))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<DateTime> FirstMonth { get; set; }
+		
+        /// <summary>
+        /// Metadata for ReportPaymentsBetweenTwoDatesFilter.SecondMonth property
+        /// </summary>
+		[Display(
+			Name = "SecondMonth",
+			ResourceType = typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesFilter))
+		]
+		[Tooltip("SecondMonthTooltip", typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesFilter))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<DateTime> SecondMonth { get; set; }
+		
+        /// <summary>
+        /// Metadata for ReportPaymentsBetweenTwoDatesFilter.Limit property
+        /// </summary>
+		[Display(
+			Name = "Limit",
+			ResourceType = typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesFilter))
+		]
+		[Tooltip("LimitTooltip", typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesFilter))]
+        public Nullable<double> Limit { get; set; }
+		
+        /// <summary>
+        /// Metadata for ReportPaymentsBetweenTwoDatesFilter.PaymentDiff property
+        /// </summary>
+		[Display(
+			Name = "PaymentDiff",
+			ResourceType = typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesFilter))
+		]
+		[Tooltip("PaymentDiffTooltip", typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesFilter))]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<int> PaymentDiff { get; set; }
+		#endregion
+	}
+	#endregion
+
+    #region ReportPaymentsBetweenTwoDatesResultMetaData class definition
+	/// <summary>
+    /// Result class for ReportPaymentsBetweenTwoDates.
+	/// </summary>
+	public partial class ReportPaymentsBetweenTwoDatesResultMetaData
+	{
+		#region Public properties
+		[Display(
+			Name = "FirstEmployeeId",
+			ResourceType = typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))
+		]
+		[Tooltip("FirstEmployeeIdTooltip", typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<int> FirstEmployeeId {get; set; }
+		
+		[Display(
+			Name = "FirstEmployeeFullName",
+			ResourceType = typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))
+		]
+		[Tooltip("FirstEmployeeFullNameTooltip", typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))]
+		[StringLength(
+			64,
+			MinimumLength = 0,
+			ErrorMessageResourceName = "StringLengthCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public string FirstEmployeeFullName {get; set; }
+		
+		[Display(
+			Name = "FirstSalaryWorkPlaceName",
+			ResourceType = typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))
+		]
+		[Tooltip("FirstSalaryWorkPlaceNameTooltip", typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))]
+		[StringLength(
+			32,
+			MinimumLength = 0,
+			ErrorMessageResourceName = "StringLengthCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public string FirstSalaryWorkPlaceName {get; set; }
+		
+		[Display(
+			Name = "FirstAmount",
+			ResourceType = typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))
+		]
+		[Tooltip("FirstAmountTooltip", typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))]
+        public Nullable<decimal> FirstAmount {get; set; }
+		
+		[Display(
+			Name = "FirstDate",
+			ResourceType = typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))
+		]
+		[Tooltip("FirstDateTooltip", typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<DateTime> FirstDate {get; set; }
+		
+		[Display(
+			Name = "FirstPaymentGroupId",
+			ResourceType = typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))
+		]
+		[Tooltip("FirstPaymentGroupIdTooltip", typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<int> FirstPaymentGroupId {get; set; }
+		
+		[Display(
+			Name = "FirstPaymentGroupName",
+			ResourceType = typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))
+		]
+		[Tooltip("FirstPaymentGroupNameTooltip", typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))]
+		[StringLength(
+			50,
+			MinimumLength = 0,
+			ErrorMessageResourceName = "StringLengthCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public string FirstPaymentGroupName {get; set; }
+		
+		[Display(
+			Name = "SecondEmployeeId",
+			ResourceType = typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))
+		]
+		[Tooltip("SecondEmployeeIdTooltip", typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<int> SecondEmployeeId {get; set; }
+		
+		[Display(
+			Name = "SecondEmployeeFullName",
+			ResourceType = typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))
+		]
+		[Tooltip("SecondEmployeeFullNameTooltip", typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))]
+		[StringLength(
+			64,
+			MinimumLength = 0,
+			ErrorMessageResourceName = "StringLengthCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public string SecondEmployeeFullName {get; set; }
+		
+		[Display(
+			Name = "SecondSalaryWorkPlaceName",
+			ResourceType = typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))
+		]
+		[Tooltip("SecondSalaryWorkPlaceNameTooltip", typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))]
+		[StringLength(
+			32,
+			MinimumLength = 0,
+			ErrorMessageResourceName = "StringLengthCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public string SecondSalaryWorkPlaceName {get; set; }
+		
+		[Display(
+			Name = "SecondAmount",
+			ResourceType = typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))
+		]
+		[Tooltip("SecondAmountTooltip", typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))]
+        public Nullable<decimal> SecondAmount {get; set; }
+		
+		[Display(
+			Name = "SecondDate",
+			ResourceType = typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))
+		]
+		[Tooltip("SecondDateTooltip", typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<DateTime> SecondDate {get; set; }
+		
+		[Display(
+			Name = "SecondPaymentGroupId",
+			ResourceType = typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))
+		]
+		[Tooltip("SecondPaymentGroupIdTooltip", typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<int> SecondPaymentGroupId {get; set; }
+		
+		[Display(
+			Name = "SecondPaymentGroupName",
+			ResourceType = typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))
+		]
+		[Tooltip("SecondPaymentGroupNameTooltip", typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))]
+		[StringLength(
+			50,
+			MinimumLength = 0,
+			ErrorMessageResourceName = "StringLengthCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public string SecondPaymentGroupName {get; set; }
+		
+		[Display(
+			Name = "PaymentDiffrence",
+			ResourceType = typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))
+		]
+		[Tooltip("PaymentDiffrenceTooltip", typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<int> PaymentDiffrence {get; set; }
+		#endregion
+	}
+	#endregion
+	#endregion
+
+	#region ReportSubscriptionsBetweenTwoDates filter and result classes
+	#region ReportSubscriptionsBetweenTwoDatesFilter meta data class definition
+    /// <summary>
+    /// Metadata for ReportSubscriptionsBetweenTwoDatesFilter class
+    /// </summary>
+	public partial class ReportSubscriptionsBetweenTwoDatesFilterMetaData
+	{
+		#region Public properties
+        /// <summary>
+        /// Metadata for ReportSubscriptionsBetweenTwoDatesFilter.FirstMonth property
+        /// </summary>
+		[Display(
+			Name = "FirstMonth",
+			ResourceType = typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesFilter))
+		]
+		[Tooltip("FirstMonthTooltip", typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesFilter))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<DateTime> FirstMonth { get; set; }
+		
+        /// <summary>
+        /// Metadata for ReportSubscriptionsBetweenTwoDatesFilter.SecondMonth property
+        /// </summary>
+		[Display(
+			Name = "SecondMonth",
+			ResourceType = typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesFilter))
+		]
+		[Tooltip("SecondMonthTooltip", typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesFilter))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<DateTime> SecondMonth { get; set; }
+		
+        /// <summary>
+        /// Metadata for ReportSubscriptionsBetweenTwoDatesFilter.Limit property
+        /// </summary>
+		[Display(
+			Name = "Limit",
+			ResourceType = typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesFilter))
+		]
+		[Tooltip("LimitTooltip", typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesFilter))]
+        public Nullable<double> Limit { get; set; }
+		
+        /// <summary>
+        /// Metadata for ReportSubscriptionsBetweenTwoDatesFilter.SubscriptionDiff property
+        /// </summary>
+		[Display(
+			Name = "SubscriptionDiff",
+			ResourceType = typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesFilter))
+		]
+		[Tooltip("SubscriptionDiffTooltip", typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesFilter))]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<int> SubscriptionDiff { get; set; }
+		#endregion
+	}
+	#endregion
+
+    #region ReportSubscriptionsBetweenTwoDatesResultMetaData class definition
+	/// <summary>
+    /// Result class for ReportSubscriptionsBetweenTwoDates.
+	/// </summary>
+	public partial class ReportSubscriptionsBetweenTwoDatesResultMetaData
+	{
+		#region Public properties
+		[Display(
+			Name = "FirstEmployeeId",
+			ResourceType = typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesResult))
+		]
+		[Tooltip("FirstEmployeeIdTooltip", typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesResult))]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<int> FirstEmployeeId {get; set; }
+		
+		[Display(
+			Name = "FirstEmployeeFullName",
+			ResourceType = typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesResult))
+		]
+		[Tooltip("FirstEmployeeFullNameTooltip", typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesResult))]
+		[StringLength(
+			64,
+			MinimumLength = 0,
+			ErrorMessageResourceName = "StringLengthCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public string FirstEmployeeFullName {get; set; }
+		
+		[Display(
+			Name = "FirstSalaryWorkPlaceName",
+			ResourceType = typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesResult))
+		]
+		[Tooltip("FirstSalaryWorkPlaceNameTooltip", typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesResult))]
+		[StringLength(
+			32,
+			MinimumLength = 0,
+			ErrorMessageResourceName = "StringLengthCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public string FirstSalaryWorkPlaceName {get; set; }
+		
+		[Display(
+			Name = "FirstAmount",
+			ResourceType = typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesResult))
+		]
+		[Tooltip("FirstAmountTooltip", typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesResult))]
+        public Nullable<decimal> FirstAmount {get; set; }
+		
+		[Display(
+			Name = "FirstMonth",
+			ResourceType = typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesResult))
+		]
+		[Tooltip("FirstMonthTooltip", typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesResult))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<DateTime> FirstMonth {get; set; }
+		
+		[Display(
+			Name = "SecondEmployeeId",
+			ResourceType = typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesResult))
+		]
+		[Tooltip("SecondEmployeeIdTooltip", typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesResult))]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<int> SecondEmployeeId {get; set; }
+		
+		[Display(
+			Name = "SecondEmployeeFullName",
+			ResourceType = typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesResult))
+		]
+		[Tooltip("SecondEmployeeFullNameTooltip", typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesResult))]
+		[StringLength(
+			64,
+			MinimumLength = 0,
+			ErrorMessageResourceName = "StringLengthCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public string SecondEmployeeFullName {get; set; }
+		
+		[Display(
+			Name = "SecondSalaryWorkPlaceName",
+			ResourceType = typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesResult))
+		]
+		[Tooltip("SecondSalaryWorkPlaceNameTooltip", typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesResult))]
+		[StringLength(
+			32,
+			MinimumLength = 0,
+			ErrorMessageResourceName = "StringLengthCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public string SecondSalaryWorkPlaceName {get; set; }
+		
+		[Display(
+			Name = "SecondAmount",
+			ResourceType = typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesResult))
+		]
+		[Tooltip("SecondAmountTooltip", typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesResult))]
+        public Nullable<decimal> SecondAmount {get; set; }
+		
+		[Display(
+			Name = "SecondMonth",
+			ResourceType = typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesResult))
+		]
+		[Tooltip("SecondMonthTooltip", typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesResult))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<DateTime> SecondMonth {get; set; }
+		
+		[Display(
+			Name = "SubscriptionDiffrence",
+			ResourceType = typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesResult))
+		]
+		[Tooltip("SubscriptionDiffrenceTooltip", typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesResult))]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<int> SubscriptionDiffrence {get; set; }
 		#endregion
 	}
 	#endregion

@@ -8,6 +8,51 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Cf.Data
 {
+	#region EmployeeLoans filter and result classes
+    #region EmployeeLoansFilter class definition
+	/// <summary>
+    /// Filter class for EmployeeLoans.
+	/// </summary>
+    [MetadataType(typeof(EmployeeLoansFilterMetaData))]
+	public partial class EmployeeLoansFilter
+	{
+		#region Public properties
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<int> EmployeeId {get; set; }
+		#endregion
+	}
+	#endregion
+
+	#region EmployeeLoansResult class definition
+	/// <summary>
+    /// Result class for EmployeeLoans.
+	/// </summary>
+    [MetadataType(typeof(EmployeeLoansResultMetaData))]
+	public partial class EmployeeLoansResult
+	{
+		#region Public properties
+        public int ProductEmployeeId {get; set; }
+		
+        public string ProductEmployeeFullName {get; set; }
+		
+        public short ProductProductTypeId {get; set; }
+		
+        public string ProductProductTypeName {get; set; }
+		
+        public decimal ProductId {get; set; }
+		
+        public Nullable<decimal> PaidAmount {get; set; }
+		
+        public short PaymentPeriod {get; set; }
+		
+        public Nullable<int> RemainPeriod {get; set; }
+		#endregion
+	}
+	#endregion
+    #endregion
+
 	#region EmployeeProductCalculator filter and result classes
     #region EmployeeProductCalculatorFilter class definition
 	/// <summary>
@@ -39,7 +84,7 @@ namespace Cf.Data
 	}
 	#endregion
 
-    #region EmployeeProductCalculatorResult class definition
+	#region EmployeeProductCalculatorResult class definition
 	/// <summary>
     /// Result class for EmployeeProductCalculator.
 	/// </summary>
@@ -116,7 +161,7 @@ namespace Cf.Data
 	}
 	#endregion
 
-    #region GetAvailabilityCeilingByProductTypeId_EmployeeIdResult class definition
+	#region GetAvailabilityCeilingByProductTypeId_EmployeeIdResult class definition
 	/// <summary>
     /// Result class for GetAvailabilityCeilingByProductTypeId_EmployeeId.
 	/// </summary>
@@ -161,7 +206,7 @@ namespace Cf.Data
 	}
 	#endregion
 
-    #region GetDebtsResult class definition
+	#region GetDebtsResult class definition
 	/// <summary>
     /// Result class for GetDebts.
 	/// </summary>
@@ -203,18 +248,7 @@ namespace Cf.Data
 		#endregion
 	}
 	#endregion
-
-    #region GetDebtScalar result class
-    public partial class GetDebtScalarResult
-    {
-        public GetDebtScalarResult
-        (
-        )
-        {
-        }
-    }
-    #endregion
-    #endregion
+	#endregion
 
 	#region GetDebtSolvency filter and result classes
     #region GetDebtSolvencyFilter class definition
@@ -233,7 +267,7 @@ namespace Cf.Data
 	}
 	#endregion
 
-    #region GetDebtSolvencyResult class definition
+	#region GetDebtSolvencyResult class definition
 	/// <summary>
     /// Result class for GetDebtSolvency.
 	/// </summary>
@@ -292,18 +326,7 @@ namespace Cf.Data
 		#endregion
 	}
 	#endregion
-
-    #region GetDueProfit result class
-    public partial class GetDueProfitResult
-    {
-        public GetDueProfitResult
-        (
-        )
-        {
-        }
-    }
-    #endregion
-    #endregion
+	#endregion
 
 	#region GetEmployeeDebts filter and result classes
     #region GetEmployeeDebtsFilter class definition
@@ -326,7 +349,7 @@ namespace Cf.Data
 	}
 	#endregion
 
-    #region GetEmployeeDebtsResult class definition
+	#region GetEmployeeDebtsResult class definition
 	/// <summary>
     /// Result class for GetEmployeeDebts.
 	/// </summary>
@@ -387,7 +410,7 @@ namespace Cf.Data
 	}
 	#endregion
 
-    #region GetEmployeeSolvencyResult class definition
+	#region GetEmployeeSolvencyResult class definition
 	/// <summary>
     /// Result class for GetEmployeeSolvency.
 	/// </summary>
@@ -442,7 +465,7 @@ namespace Cf.Data
 	}
 	#endregion
 
-    #region GetEmployeeSumDebtsResult class definition
+	#region GetEmployeeSumDebtsResult class definition
 	/// <summary>
     /// Result class for GetEmployeeSumDebts.
 	/// </summary>
@@ -497,7 +520,7 @@ namespace Cf.Data
 	}
 	#endregion
 
-    #region GetEmployeeWarrantsResult class definition
+	#region GetEmployeeWarrantsResult class definition
 	/// <summary>
     /// Result class for GetEmployeeWarrants.
 	/// </summary>
@@ -542,18 +565,7 @@ namespace Cf.Data
 		#endregion
 	}
 	#endregion
-
-    #region GetFinancialRatio result class
-    public partial class GetFinancialRatioResult
-    {
-        public GetFinancialRatioResult
-        (
-        )
-        {
-        }
-    }
-    #endregion
-    #endregion
+	#endregion
 
 	#region GetInstallment filter and result classes
     #region GetInstallmentFilter class definition
@@ -585,18 +597,7 @@ namespace Cf.Data
 		#endregion
 	}
 	#endregion
-
-    #region GetInstallment result class
-    public partial class GetInstallmentResult
-    {
-        public GetInstallmentResult
-        (
-        )
-        {
-        }
-    }
-    #endregion
-    #endregion
+	#endregion
 
 	#region GetInstallmentPaidAmounts filter and result classes
     #region GetInstallmentPaidAmountsFilter class definition
@@ -615,7 +616,7 @@ namespace Cf.Data
 	}
 	#endregion
 
-    #region GetInstallmentPaidAmountsResult class definition
+	#region GetInstallmentPaidAmountsResult class definition
 	/// <summary>
     /// Result class for GetInstallmentPaidAmounts.
 	/// </summary>
@@ -650,7 +651,7 @@ namespace Cf.Data
 	}
 	#endregion
 
-    #region GetInstallmentsResult class definition
+	#region GetInstallmentsResult class definition
 	/// <summary>
     /// Result class for GetInstallments.
 	/// </summary>
@@ -710,18 +711,7 @@ namespace Cf.Data
 		#endregion
 	}
 	#endregion
-
-    #region GetPresentValue result class
-    public partial class GetPresentValueResult
-    {
-        public GetPresentValueResult
-        (
-        )
-        {
-        }
-    }
-    #endregion
-    #endregion
+	#endregion
 
 	#region GetRefundableProducts filter and result classes
     #region GetRefundableProductsFilter class definition
@@ -740,7 +730,7 @@ namespace Cf.Data
 	}
 	#endregion
 
-    #region GetRefundableProductsResult class definition
+	#region GetRefundableProductsResult class definition
 	/// <summary>
     /// Result class for GetRefundableProducts.
 	/// </summary>
@@ -789,7 +779,7 @@ namespace Cf.Data
 	}
 	#endregion
 
-    #region GetWarrantsResult class definition
+	#region GetWarrantsResult class definition
 	/// <summary>
     /// Result class for GetWarrants.
 	/// </summary>
@@ -834,7 +824,7 @@ namespace Cf.Data
 	}
 	#endregion
 
-    #region GetWarrantSolvencyResult class definition
+	#region GetWarrantSolvencyResult class definition
 	/// <summary>
     /// Result class for GetWarrantSolvency.
 	/// </summary>
@@ -893,18 +883,7 @@ namespace Cf.Data
 		#endregion
 	}
 	#endregion
-
-    #region LoanGenerate result class
-    public partial class LoanGenerateResult
-    {
-        public LoanGenerateResult
-        (
-        )
-        {
-        }
-    }
-    #endregion
-    #endregion
+	#endregion
 
 	#region LoanMoveToEmployee filter and result classes
     #region LoanMoveToEmployeeFilter class definition
@@ -931,17 +910,45 @@ namespace Cf.Data
 		#endregion
 	}
 	#endregion
+	#endregion
 
-    #region LoanMoveToEmployee result class
-    public partial class LoanMoveToEmployeeResult
-    {
-        public LoanMoveToEmployeeResult
-        (
-        )
-        {
-        }
-    }
-    #endregion
+	#region LoansBetweenTwoDates filter and result classes
+    #region LoansBetweenTwoDatesFilter class definition
+	/// <summary>
+    /// Filter class for LoansBetweenTwoDates.
+	/// </summary>
+    [MetadataType(typeof(LoansBetweenTwoDatesFilterMetaData))]
+	public partial class LoansBetweenTwoDatesFilter
+	{
+		#region Public properties
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<DateTime> FromDate {get; set; }
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<DateTime> ToDate {get; set; }
+		#endregion
+	}
+	#endregion
+
+	#region LoansBetweenTwoDatesResult class definition
+	/// <summary>
+    /// Result class for LoansBetweenTwoDates.
+	/// </summary>
+    [MetadataType(typeof(LoansBetweenTwoDatesResultMetaData))]
+	public partial class LoansBetweenTwoDatesResult
+	{
+		#region Public properties
+        public short ProductProductTypeId {get; set; }
+		
+        public string ProductProductTypeName {get; set; }
+		
+        public string Count_Amount {get; set; }
+		#endregion
+	}
+	#endregion
     #endregion
 
 	#region MonthlyBalanceSum filter and result classes
@@ -965,7 +972,7 @@ namespace Cf.Data
 	}
 	#endregion
 
-    #region MonthlyBalanceSumResult class definition
+	#region MonthlyBalanceSumResult class definition
 	/// <summary>
     /// Result class for MonthlyBalanceSum.
 	/// </summary>
@@ -997,6 +1004,43 @@ namespace Cf.Data
 	#endregion
     #endregion
 
+	#region PaymentBetweenTwoDates filter and result classes
+    #region PaymentBetweenTwoDatesFilter class definition
+	/// <summary>
+    /// Filter class for PaymentBetweenTwoDates.
+	/// </summary>
+    [MetadataType(typeof(PaymentBetweenTwoDatesFilterMetaData))]
+	public partial class PaymentBetweenTwoDatesFilter
+	{
+		#region Public properties
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<DateTime> MinDate {get; set; }
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<DateTime> MaxDate {get; set; }
+		#endregion
+	}
+	#endregion
+
+	#region PaymentBetweenTwoDatesResult class definition
+	/// <summary>
+    /// Result class for PaymentBetweenTwoDates.
+	/// </summary>
+    [MetadataType(typeof(PaymentBetweenTwoDatesResultMetaData))]
+	public partial class PaymentBetweenTwoDatesResult
+	{
+		#region Public properties
+        public Nullable<decimal> FirstMonthAmount {get; set; }
+		
+        public Nullable<decimal> SecondMonthAmount {get; set; }
+		#endregion
+	}
+	#endregion
+    #endregion
+
 	#region ProductCalculator filter and result classes
     #region ProductCalculatorFilter class definition
 	/// <summary>
@@ -1023,7 +1067,7 @@ namespace Cf.Data
 	}
 	#endregion
 
-    #region ProductCalculatorResult class definition
+	#region ProductCalculatorResult class definition
 	/// <summary>
     /// Result class for ProductCalculator.
 	/// </summary>
@@ -1072,7 +1116,7 @@ namespace Cf.Data
 	}
 	#endregion
 
-    #region RequestStatisticsResult class definition
+	#region RequestStatisticsResult class definition
 	/// <summary>
     /// Result class for RequestStatistics.
 	/// </summary>
@@ -1087,6 +1131,43 @@ namespace Cf.Data
         public Nullable<int> RequestCount {get; set; }
 		
         public Nullable<decimal> RequestSum {get; set; }
+		#endregion
+	}
+	#endregion
+    #endregion
+
+	#region SubscriptionsBetweenTwoDates filter and result classes
+    #region SubscriptionsBetweenTwoDatesFilter class definition
+	/// <summary>
+    /// Filter class for SubscriptionsBetweenTwoDates.
+	/// </summary>
+    [MetadataType(typeof(SubscriptionsBetweenTwoDatesFilterMetaData))]
+	public partial class SubscriptionsBetweenTwoDatesFilter
+	{
+		#region Public properties
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<DateTime> MinDate {get; set; }
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<DateTime> MaxDate {get; set; }
+		#endregion
+	}
+	#endregion
+
+	#region SubscriptionsBetweenTwoDatesResult class definition
+	/// <summary>
+    /// Result class for SubscriptionsBetweenTwoDates.
+	/// </summary>
+    [MetadataType(typeof(SubscriptionsBetweenTwoDatesResultMetaData))]
+	public partial class SubscriptionsBetweenTwoDatesResult
+	{
+		#region Public properties
+        public Nullable<decimal> FirstMonthAmount {get; set; }
+		
+        public Nullable<decimal> SecondMonthAmount {get; set; }
 		#endregion
 	}
 	#endregion

@@ -1,6 +1,7 @@
 ﻿using Cf.Controllers;
 using Cf.Data;
 using Cf.Services;
+using Cf.Services.Exceptions;
 using Cf.ViewModels;
 using Portal.ViewModels;
 using System;
@@ -15,11 +16,25 @@ namespace Portal.Areas.Loans.Controllers
     {
         private string moduleName = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "LoanReport", "ModuleName");
         private string index = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "LoanReport", "ModuleNamePlural");
+        private string subscriptionReport = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "LoanReport", "SubscriptionReport");
+        private string paymentReport = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "LoanReport", "PaymentReport");
+        private string report = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "LoanReport", "Report");
+        private string requestStatistics = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "LoanReport", "RequestStatistics");
+        private string employeeLoans = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "LoanReport", "EmployeeLoans");
+
+        Db db = new Db(DbServices.ConnectionString);
 
         public LoanReportController()
         {
+            #region ViewBags
             ViewBag.ModuleName = moduleName;
             ViewBag.Title = index;
+            ViewBag.Report = report;
+            ViewBag.SubscriptionReport = subscriptionReport;
+            ViewBag.PaymentReport = paymentReport;
+            ViewBag.RequestStatistics = requestStatistics;
+            ViewBag.EmployeeLoans = employeeLoans;
+            #endregion
         }
         // GET: Loans/LoanReport
         public ActionResult Index(LoanRequestVwViewModel model)
@@ -76,9 +91,89 @@ namespace Portal.Areas.Loans.Controllers
         #region SubscriptionsBetweenDates
         public ActionResult SubscriptionsBetweenDates()
         {
+            ViewBag.Title = subscriptionReport;
             return View();
+        }
+        [HttpPost]
+        public ActionResult SubscriptionsBetweenDates(SubscriptionsBetweenTwoDatesFilter model)
+        {
+            SubscriptionsBetweenTwoDatesResult result = db.SubscriptionsBetweenTwoDates(model).FirstOrDefault();
+
+            return PartialView("SubscriptionsBetweenDatesResult", result);
         }
         #endregion
 
+
+        #region PaymentsBetweenTwoDates
+        public ActionResult PaymentsBetweenTwoDates()
+        {
+            ViewBag.PaymentReport = paymentReport;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult PaymentsBetweenTwoDates(PaymentBetweenTwoDatesFilter model)
+        {
+            try
+            {
+               
+                PaymentBetweenTwoDatesResult result = db.PaymentBetweenTwoDates(model).FirstOrDefault();
+
+                return PartialView("PaymentsBetweenTwoDatesResult", result);
+            }
+            catch (CfException exc)
+            {
+                ViewBag.SubscriptionReport = subscriptionReport;
+                return View();
+            }
+        }
+        #endregion
+
+
+        #region RequestStatistics
+        public ActionResult RequestStatistics()
+        {
+            ViewBag.RequestStatistics = requestStatistics;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult RequestStatistics(RequestStatisticsFilter model)
+        {
+            try
+            {
+                List<RequestStatisticsResult> result = db.RequestStatistics(model);
+                return PartialView("RequestStatisticsResult", result);
+            }
+            catch (CfException exc)
+            {
+                ViewBag.RequestStatistics = requestStatistics;
+                return View();
+            }
+            
+        }
+        #endregion
+
+        #region EmployeeLoans
+        public ActionResult EmployeeLoans()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult EmployeeLoans(EmployeeLoansFilter model)
+        {
+            try
+            {
+                List<EmployeeLoansResult> result = db.EmployeeLoans(model);
+                return PartialView("EmployeeLoansResult", result);
+            }
+            catch (CfException exc)
+            {
+                return View();
+                throw;
+            }
+        }
+        #endregion
     }
 }

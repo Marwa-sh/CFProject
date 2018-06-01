@@ -2,6 +2,233 @@ using System;
 
 namespace Cf.Data.Resources
 {
+	#region EmployeeLoans filter and result classes
+	#region EmployeeLoansFilter meta data class definition
+    /// <summary>
+    /// Resource management for EmployeeLoansFilter class
+    /// </summary>
+	public partial class EmployeeLoansFilter : ResourceBase
+	{
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.EmployeeLoansFilter class
+        /// </summary>
+        internal EmployeeLoansFilter()
+        {
+        }
+	
+		#region Public properties
+        /// <summary>
+        /// Resource for EmployeeLoansFilter.EmployeeId property
+        /// </summary>
+        public static string EmployeeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeLoansFilter", "EmployeeId");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to EmployeeIdTooltip.
+        /// </summary>
+        public static string EmployeeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeLoansFilter", "EmployeeIdTooltip");
+            }
+        }
+		#endregion
+	}
+	#endregion
+
+    #region EmployeeLoansResult class definition
+	/// <summary>
+    /// Result class for EmployeeLoans.
+	/// </summary>
+	public partial class EmployeeLoansResult : ResourceBase
+	{
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.EmployeeLoansResult class
+        /// </summary>
+        internal EmployeeLoansResult()
+        {
+        }
+
+		#region Public properties
+        /// <summary>
+        /// Resource for EmployeeLoansResult.ProductEmployeeId property
+        /// </summary>
+        public static string ProductEmployeeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeLoansResult", "ProductEmployeeId");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to ProductEmployeeIdTooltip.
+        /// </summary>
+        public static string ProductEmployeeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeLoansResult", "ProductEmployeeIdTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for EmployeeLoansResult.ProductEmployeeFullName property
+        /// </summary>
+        public static string ProductEmployeeFullName
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeLoansResult", "ProductEmployeeFullName");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to ProductEmployeeFullNameTooltip.
+        /// </summary>
+        public static string ProductEmployeeFullNameTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeLoansResult", "ProductEmployeeFullNameTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for EmployeeLoansResult.ProductProductTypeId property
+        /// </summary>
+        public static string ProductProductTypeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeLoansResult", "ProductProductTypeId");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to ProductProductTypeIdTooltip.
+        /// </summary>
+        public static string ProductProductTypeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeLoansResult", "ProductProductTypeIdTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for EmployeeLoansResult.ProductProductTypeName property
+        /// </summary>
+        public static string ProductProductTypeName
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeLoansResult", "ProductProductTypeName");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to ProductProductTypeNameTooltip.
+        /// </summary>
+        public static string ProductProductTypeNameTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeLoansResult", "ProductProductTypeNameTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for EmployeeLoansResult.ProductId property
+        /// </summary>
+        public static string ProductId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeLoansResult", "ProductId");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to ProductIdTooltip.
+        /// </summary>
+        public static string ProductIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeLoansResult", "ProductIdTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for EmployeeLoansResult.PaidAmount property
+        /// </summary>
+        public static string PaidAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeLoansResult", "PaidAmount");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to PaidAmountTooltip.
+        /// </summary>
+        public static string PaidAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeLoansResult", "PaidAmountTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for EmployeeLoansResult.PaymentPeriod property
+        /// </summary>
+        public static string PaymentPeriod
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeLoansResult", "PaymentPeriod");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to PaymentPeriodTooltip.
+        /// </summary>
+        public static string PaymentPeriodTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeLoansResult", "PaymentPeriodTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for EmployeeLoansResult.RemainPeriod property
+        /// </summary>
+        public static string RemainPeriod
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeLoansResult", "RemainPeriod");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to RemainPeriodTooltip.
+        /// </summary>
+        public static string RemainPeriodTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeLoansResult", "RemainPeriodTooltip");
+            }
+        }
+    	#endregion
+    }
+   	#endregion
+	#endregion
+
 	#region EmployeeProductCalculator filter and result classes
 	#region EmployeeProductCalculatorFilter meta data class definition
     /// <summary>
@@ -584,7 +811,6 @@ namespace Cf.Data.Resources
     	#endregion
     }
    	#endregion
-
 	#endregion
 
 	#region GetAvailabilityCeilingByProductTypeId_EmployeeId filter and result classes
@@ -791,7 +1017,6 @@ namespace Cf.Data.Resources
     	#endregion
     }
    	#endregion
-
 	#endregion
 
 	#region GetDebts filter and result classes
@@ -977,7 +1202,6 @@ namespace Cf.Data.Resources
     	#endregion
     }
    	#endregion
-
 	#endregion
 
 	#region GetDebtScalar filter and result classes
@@ -1040,7 +1264,6 @@ namespace Cf.Data.Resources
 		#endregion
 	}
 	#endregion
-
 	#endregion
 
 	#region GetDebtSolvency filter and result classes
@@ -1331,7 +1554,6 @@ namespace Cf.Data.Resources
     	#endregion
     }
    	#endregion
-
 	#endregion
 
 	#region GetDueProfit filter and result classes
@@ -1415,7 +1637,6 @@ namespace Cf.Data.Resources
 		#endregion
 	}
 	#endregion
-
 	#endregion
 
 	#region GetEmployeeDebts filter and result classes
@@ -1580,7 +1801,6 @@ namespace Cf.Data.Resources
     	#endregion
     }
    	#endregion
-
 	#endregion
 
 	#region GetEmployeeSolvency filter and result classes
@@ -1976,7 +2196,6 @@ namespace Cf.Data.Resources
     	#endregion
     }
    	#endregion
-
 	#endregion
 
 	#region GetEmployeeSumDebts filter and result classes
@@ -2288,7 +2507,6 @@ namespace Cf.Data.Resources
     	#endregion
     }
    	#endregion
-
 	#endregion
 
 	#region GetEmployeeWarrants filter and result classes
@@ -2453,7 +2671,6 @@ namespace Cf.Data.Resources
     	#endregion
     }
    	#endregion
-
 	#endregion
 
 	#region GetFinancialRatio filter and result classes
@@ -2537,7 +2754,6 @@ namespace Cf.Data.Resources
 		#endregion
 	}
 	#endregion
-
 	#endregion
 
 	#region GetInstallment filter and result classes
@@ -2642,7 +2858,6 @@ namespace Cf.Data.Resources
 		#endregion
 	}
 	#endregion
-
 	#endregion
 
 	#region GetInstallmentPaidAmounts filter and result classes
@@ -2765,7 +2980,6 @@ namespace Cf.Data.Resources
     	#endregion
     }
    	#endregion
-
 	#endregion
 
 	#region GetInstallments filter and result classes
@@ -3014,7 +3228,6 @@ namespace Cf.Data.Resources
     	#endregion
     }
    	#endregion
-
 	#endregion
 
 	#region GetPresentValue filter and result classes
@@ -3119,7 +3332,6 @@ namespace Cf.Data.Resources
 		#endregion
 	}
 	#endregion
-
 	#endregion
 
 	#region GetRefundableProducts filter and result classes
@@ -3347,7 +3559,6 @@ namespace Cf.Data.Resources
     	#endregion
     }
    	#endregion
-
 	#endregion
 
 	#region GetWarrants filter and result classes
@@ -3554,7 +3765,6 @@ namespace Cf.Data.Resources
     	#endregion
     }
    	#endregion
-
 	#endregion
 
 	#region GetWarrantSolvency filter and result classes
@@ -3866,7 +4076,6 @@ namespace Cf.Data.Resources
     	#endregion
     }
    	#endregion
-
 	#endregion
 
 	#region LoanGenerate filter and result classes
@@ -3950,7 +4159,6 @@ namespace Cf.Data.Resources
 		#endregion
 	}
 	#endregion
-
 	#endregion
 
 	#region LoanMoveToEmployee filter and result classes
@@ -4034,7 +4242,149 @@ namespace Cf.Data.Resources
 		#endregion
 	}
 	#endregion
+	#endregion
 
+	#region LoansBetweenTwoDates filter and result classes
+	#region LoansBetweenTwoDatesFilter meta data class definition
+    /// <summary>
+    /// Resource management for LoansBetweenTwoDatesFilter class
+    /// </summary>
+	public partial class LoansBetweenTwoDatesFilter : ResourceBase
+	{
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.LoansBetweenTwoDatesFilter class
+        /// </summary>
+        internal LoansBetweenTwoDatesFilter()
+        {
+        }
+	
+		#region Public properties
+        /// <summary>
+        /// Resource for LoansBetweenTwoDatesFilter.FromDate property
+        /// </summary>
+        public static string FromDate
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoansBetweenTwoDatesFilter", "FromDate");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to FromDateTooltip.
+        /// </summary>
+        public static string FromDateTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoansBetweenTwoDatesFilter", "FromDateTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for LoansBetweenTwoDatesFilter.ToDate property
+        /// </summary>
+        public static string ToDate
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoansBetweenTwoDatesFilter", "ToDate");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to ToDateTooltip.
+        /// </summary>
+        public static string ToDateTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoansBetweenTwoDatesFilter", "ToDateTooltip");
+            }
+        }
+		#endregion
+	}
+	#endregion
+
+    #region LoansBetweenTwoDatesResult class definition
+	/// <summary>
+    /// Result class for LoansBetweenTwoDates.
+	/// </summary>
+	public partial class LoansBetweenTwoDatesResult : ResourceBase
+	{
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.LoansBetweenTwoDatesResult class
+        /// </summary>
+        internal LoansBetweenTwoDatesResult()
+        {
+        }
+
+		#region Public properties
+        /// <summary>
+        /// Resource for LoansBetweenTwoDatesResult.ProductProductTypeId property
+        /// </summary>
+        public static string ProductProductTypeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoansBetweenTwoDatesResult", "ProductProductTypeId");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to ProductProductTypeIdTooltip.
+        /// </summary>
+        public static string ProductProductTypeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoansBetweenTwoDatesResult", "ProductProductTypeIdTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for LoansBetweenTwoDatesResult.ProductProductTypeName property
+        /// </summary>
+        public static string ProductProductTypeName
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoansBetweenTwoDatesResult", "ProductProductTypeName");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to ProductProductTypeNameTooltip.
+        /// </summary>
+        public static string ProductProductTypeNameTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoansBetweenTwoDatesResult", "ProductProductTypeNameTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for LoansBetweenTwoDatesResult.Count_Amount property
+        /// </summary>
+        public static string Count_Amount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoansBetweenTwoDatesResult", "Count_Amount");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to Count_AmountTooltip.
+        /// </summary>
+        public static string Count_AmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoansBetweenTwoDatesResult", "Count_AmountTooltip");
+            }
+        }
+    	#endregion
+    }
+   	#endregion
 	#endregion
 
 	#region MonthlyBalanceSum filter and result classes
@@ -4325,7 +4675,128 @@ namespace Cf.Data.Resources
     	#endregion
     }
    	#endregion
+	#endregion
 
+	#region PaymentBetweenTwoDates filter and result classes
+	#region PaymentBetweenTwoDatesFilter meta data class definition
+    /// <summary>
+    /// Resource management for PaymentBetweenTwoDatesFilter class
+    /// </summary>
+	public partial class PaymentBetweenTwoDatesFilter : ResourceBase
+	{
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.PaymentBetweenTwoDatesFilter class
+        /// </summary>
+        internal PaymentBetweenTwoDatesFilter()
+        {
+        }
+	
+		#region Public properties
+        /// <summary>
+        /// Resource for PaymentBetweenTwoDatesFilter.MinDate property
+        /// </summary>
+        public static string MinDate
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "PaymentBetweenTwoDatesFilter", "MinDate");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to MinDateTooltip.
+        /// </summary>
+        public static string MinDateTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "PaymentBetweenTwoDatesFilter", "MinDateTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for PaymentBetweenTwoDatesFilter.MaxDate property
+        /// </summary>
+        public static string MaxDate
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "PaymentBetweenTwoDatesFilter", "MaxDate");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to MaxDateTooltip.
+        /// </summary>
+        public static string MaxDateTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "PaymentBetweenTwoDatesFilter", "MaxDateTooltip");
+            }
+        }
+		#endregion
+	}
+	#endregion
+
+    #region PaymentBetweenTwoDatesResult class definition
+	/// <summary>
+    /// Result class for PaymentBetweenTwoDates.
+	/// </summary>
+	public partial class PaymentBetweenTwoDatesResult : ResourceBase
+	{
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.PaymentBetweenTwoDatesResult class
+        /// </summary>
+        internal PaymentBetweenTwoDatesResult()
+        {
+        }
+
+		#region Public properties
+        /// <summary>
+        /// Resource for PaymentBetweenTwoDatesResult.FirstMonthAmount property
+        /// </summary>
+        public static string FirstMonthAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "PaymentBetweenTwoDatesResult", "FirstMonthAmount");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to FirstMonthAmountTooltip.
+        /// </summary>
+        public static string FirstMonthAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "PaymentBetweenTwoDatesResult", "FirstMonthAmountTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for PaymentBetweenTwoDatesResult.SecondMonthAmount property
+        /// </summary>
+        public static string SecondMonthAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "PaymentBetweenTwoDatesResult", "SecondMonthAmount");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to SecondMonthAmountTooltip.
+        /// </summary>
+        public static string SecondMonthAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "PaymentBetweenTwoDatesResult", "SecondMonthAmountTooltip");
+            }
+        }
+    	#endregion
+    }
+   	#endregion
 	#endregion
 
 	#region ProductCalculator filter and result classes
@@ -4595,7 +5066,6 @@ namespace Cf.Data.Resources
     	#endregion
     }
    	#endregion
-
 	#endregion
 
 	#region RequestStatistics filter and result classes
@@ -4760,6 +5230,127 @@ namespace Cf.Data.Resources
     	#endregion
     }
    	#endregion
+	#endregion
 
+	#region SubscriptionsBetweenTwoDates filter and result classes
+	#region SubscriptionsBetweenTwoDatesFilter meta data class definition
+    /// <summary>
+    /// Resource management for SubscriptionsBetweenTwoDatesFilter class
+    /// </summary>
+	public partial class SubscriptionsBetweenTwoDatesFilter : ResourceBase
+	{
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.SubscriptionsBetweenTwoDatesFilter class
+        /// </summary>
+        internal SubscriptionsBetweenTwoDatesFilter()
+        {
+        }
+	
+		#region Public properties
+        /// <summary>
+        /// Resource for SubscriptionsBetweenTwoDatesFilter.MinDate property
+        /// </summary>
+        public static string MinDate
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "SubscriptionsBetweenTwoDatesFilter", "MinDate");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to MinDateTooltip.
+        /// </summary>
+        public static string MinDateTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "SubscriptionsBetweenTwoDatesFilter", "MinDateTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for SubscriptionsBetweenTwoDatesFilter.MaxDate property
+        /// </summary>
+        public static string MaxDate
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "SubscriptionsBetweenTwoDatesFilter", "MaxDate");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to MaxDateTooltip.
+        /// </summary>
+        public static string MaxDateTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "SubscriptionsBetweenTwoDatesFilter", "MaxDateTooltip");
+            }
+        }
+		#endregion
+	}
+	#endregion
+
+    #region SubscriptionsBetweenTwoDatesResult class definition
+	/// <summary>
+    /// Result class for SubscriptionsBetweenTwoDates.
+	/// </summary>
+	public partial class SubscriptionsBetweenTwoDatesResult : ResourceBase
+	{
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.SubscriptionsBetweenTwoDatesResult class
+        /// </summary>
+        internal SubscriptionsBetweenTwoDatesResult()
+        {
+        }
+
+		#region Public properties
+        /// <summary>
+        /// Resource for SubscriptionsBetweenTwoDatesResult.FirstMonthAmount property
+        /// </summary>
+        public static string FirstMonthAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "SubscriptionsBetweenTwoDatesResult", "FirstMonthAmount");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to FirstMonthAmountTooltip.
+        /// </summary>
+        public static string FirstMonthAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "SubscriptionsBetweenTwoDatesResult", "FirstMonthAmountTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for SubscriptionsBetweenTwoDatesResult.SecondMonthAmount property
+        /// </summary>
+        public static string SecondMonthAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "SubscriptionsBetweenTwoDatesResult", "SecondMonthAmount");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to SecondMonthAmountTooltip.
+        /// </summary>
+        public static string SecondMonthAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "SubscriptionsBetweenTwoDatesResult", "SecondMonthAmountTooltip");
+            }
+        }
+    	#endregion
+    }
+   	#endregion
 	#endregion
 }

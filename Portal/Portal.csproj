@@ -1851,6 +1851,14 @@
     <Content Include="Areas\DebtsCalculator\Views\DebtsManagement\_CreateDebt.cshtml" />
     <Content Include="Areas\DebtsCalculator\Views\DebtsManagement\_Warrants.cshtml" />
     <Content Include="Areas\DebtsCalculator\Views\DebtsManagement\_WarrantsList.cshtml" />
+    <Content Include="Areas\Loans\Views\LoanReport\SubscriptionsBetweenDates.cshtml" />
+    <Content Include="Areas\Loans\Views\LoanReport\SubscriptionsBetweenDatesResult.cshtml" />
+    <Content Include="Areas\Loans\Views\LoanReport\PaymentsBetweenTwoDates.cshtml" />
+    <Content Include="Areas\Loans\Views\LoanReport\PaymentsBetweenTwoDatesResult.cshtml" />
+    <Content Include="Areas\Loans\Views\LoanReport\RequestStatistics.cshtml" />
+    <Content Include="Areas\Loans\Views\LoanReport\RequestStatisticsResult.cshtml" />
+    <Content Include="Areas\Loans\Views\LoanReport\EmployeeLoans.cshtml" />
+    <Content Include="Areas\Loans\Views\LoanReport\EmployeeLoansResult.cshtml" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Scripts\bootstrap-datepicker\build\build.less" />

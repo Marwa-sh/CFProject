@@ -1,110 +1,13 @@
-﻿@model Cf.ViewModels.LoanRequestVwViewModel
-<div class="form-horizontal">
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-</div>
-@using (Html.BeginForm())
-{
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">@ViewBag.FilterOptions</h4>
-                    <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
-                    <div class="heading-elements">
-                        <ul class="list-inline mb-0">
-                            <li><a data-action="collapse"><i id="mark" class="icon-minus4"></i></a></li>
-                            <li><a data-action="reload"><i class="icon-reload"></i></a></li>
-                            <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div id="cardOptions" class="card-body collapse in">
-                    <div class="card-block">
-                        <form class="form">
-                            <div class="form-body">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            @*@Html.LabelFor(model => model.Filter.RequestProductEmployeeId, htmlAttributes: new { @class = "control-label" })*@
-                                            @Html.LabelFor(model => model.Filter.RequestProductEmployeeId, new Dictionary<string, Object>
-                                                { { "class", "control-label" },
-                                                  {"title", Html.ToolTipMessageFor(model => model.Filter.RequestProductEmployeeId)},
-                                                  {"data-toggle", "tooltip"},
-                                                  {"data-placement", "bottom"}
-                                                })
-                                            @Html.EditorFor(model => model.Filter.RequestProductEmployeeId, new { htmlAttributes = new { @class = "form-control" } })
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            @*@Html.LabelFor(model => model.Filter.RequestProductEmployeeFullNameContains, htmlAttributes: new { @class = "control-label" })*@
-                                            @Html.LabelFor(model => model.Filter.RequestProductEmployeeFullNameContains, new Dictionary<string, Object>
-                                                { { "class", "control-label" },
-                                                  {"title", Html.ToolTipMessageFor(model => model.Filter.RequestProductEmployeeFullNameContains)},
-                                                  {"data-toggle", "tooltip"},
-                                                  {"data-placement", "bottom"}
-                                                })
-                                            @Html.EditorFor(model => model.Filter.RequestProductEmployeeFullNameContains, new { htmlAttributes = new { @class = "form-control" } })
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            @*@Html.LabelFor(model => model.Filter.RequestProductProductTypeId, htmlAttributes: new { @class = "control-label" })*@
-                                            @Html.LabelFor(model => model.Filter.RequestProductProductTypeId, new Dictionary<string, Object>
-                                                { { "class", "control-label" },
-                                                  {"title", Html.ToolTipMessageFor(model => model.Filter.RequestProductProductTypeId)},
-                                                  {"data-toggle", "tooltip"},
-                                                  {"data-placement", "bottom"}
-                                                })
-                                            @Html.EditorFor(model => model.Filter.RequestProductProductTypeId, new { htmlAttributes = new { @class = "form-control" } })
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            @*@Html.LabelFor(model => model.Filter.MinRequestDate, htmlAttributes: new { @class = "control-label" })*@
-                                            @Html.LabelFor(model => model.Filter.MinRequestDate, new Dictionary<string, Object>
-                                                { { "class", "control-label" },
-                                                  {"title", Html.ToolTipMessageFor(model => model.Filter.MinRequestDate)},
-                                                  {"data-toggle", "tooltip"},
-                                                  {"data-placement", "bottom"}
-                                                })
-                                            @Html.TextBoxFor(model => model.Filter.MinRequestDate, htmlAttributes: new { @class = "form-control IsDate" })
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            @*@Html.LabelFor(model => model.Filter.MaxRequestDate, htmlAttributes: new { @class = "control-label" })*@
-                                            @Html.LabelFor(model => model.Filter.MaxRequestDate, new Dictionary<string, Object>
-                                                { { "class", "control-label" },
-                                                  {"title", Html.ToolTipMessageFor(model => model.Filter.MaxRequestDate)},
-                                                  {"data-toggle", "tooltip"},
-                                                  {"data-placement", "bottom"}
-                                                })
-                                            @Html.TextBoxFor(model => model.Filter.MaxRequestDate, htmlAttributes: new { @class = "form-control IsDate" })
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-actions">
-                                <button type="submit" class="btn btn-primary mr-1">
-                                    @ViewBag.Search
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-}
+﻿
 <div class="row">
     <div class="col-xs-12">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">@ViewBag.Title</h4>
+
+                <h4 class="card-title">
+                    @ViewBag.Reports
+                </h4>
+
                 <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
                 <div class="heading-elements">
                     <ul class="list-inline mb-0">
@@ -114,283 +17,111 @@
                     </ul>
                 </div>
             </div>
-            <div class="card-body collapse in">
+            <div class="card-body collapse in ">
                 <div class="card-block card-dashboard">
 
-                    <input type="text" name="EmployeeId" id="EmployeeId" />
-                    <button id="GetLoans" class="btn btn-blue">
-                        Get
-                    </button>
-                    @{
-                        string loansTypesNames = (string)ViewBag.LoansTypesNames;
-                        string remainingAmounts = (string)ViewBag.RemainingAmounts;
-                        string paidAmounts = (string)ViewBag.PaidAmounts;
-                    }
-                    <input type="hidden" value="@loansTypesNames" id="loansTypesNames" />
-                    <input type="hidden" value="@remainingAmounts" id="remainingAmounts" />
-                    <input type="hidden" value="@paidAmounts" id="paidAmounts" />
 
-                    <canvas id="bar-stacked" height="400"></canvas>
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-6 col-xs-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-block">
+                                        <div class="media">
+                                            <div class="media-body text-xs-left">
+                                                <h3 class="light-green">@ViewBag.EmployeeLoans</h3>
+                                                @Html.ActionLink((string)ViewBag.EmployeeLoans, "EmployeeLoans")
+                                            </div>
+                                            <div class="media-right media-middle">
+                                                <i class="icon-user1 light-green font-large-2 float-xs-right"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-xs-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-block">
+                                        <div class="media">
+                                            <div class="media-body text-xs-left">
+                                                <h3 class="blue">@ViewBag.SubscriptionReport</h3>
+                                                @Html.ActionLink((string)ViewBag.SubscriptionReport, "SubscriptionsBetweenDates")
+                                            </div>
+                                            <div class="media-right media-middle">
+                                                <i class="icon-ios-list blue font-large-2 float-xs-right"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-xs-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-block">
+                                        <div class="media">
+                                            <div class="media-body text-xs-left">
+                                                <h3 class="teal">@ViewBag.PaymentReport</h3>
+                                                @Html.ActionLink((string)ViewBag.PaymentReport, "PaymentsBetweenTwoDates")
+                                            </div>
+                                            <div class="media-right media-middle">
+                                                <i class="icon-diagram2 teal font-large-2 float-xs-right"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-xs-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-block">
+                                        <div class="media">
+                                            <div class="media-body text-xs-left">
+                                                <h3 class="green">@ViewBag.RequestStatistics</h3>
+                                                @Html.ActionLink((string)ViewBag.RequestStatistics, "RequestStatistics")
+                                            </div>
+                                            <div class="media-right media-middle">
+                                                <i class="icon-diagram green font-large-2 float-xs-right"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                    @*<div class="row">
+                        <div class="col-xl-3 col-lg-6 col-xs-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-block">
+                                        <div class="media">
+                                            <div class="media-body text-xs-left">
+                                                <h3 class="cyan">@ViewBag.ExceptionalLoanRequestsCount</h3>
+                                                @Html.ActionLink((string)ViewBag.ExceptionalLoanRequests, "ManageExceptionalRequest")
+                                            </div>
+                                            <div class="media-right media-middle">
+                                                <i class="icon-ios-help-outline cyan font-large-2 float-xs-right"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>*@
 
-                    @*
-                        <canvas id="bar-chart" height="400"></canvas>
-                        <canvas id="simple-pie-chart" height="400"></canvas>*@
                 </div>
-             
+
             </div>
         </div>
     </div>
 </div>
 
 
+
 @section Scripts {
-    <script>
-
-        // Bar stacked chart
-        // ------------------------------
-        $(window).on("load", function () {
-
-            var loansTypesNames = $("#loansTypesNames").val().split(',');
-            var remainingAmounts = $("#remainingAmounts").val().split(',').map(Number);
-            var paidAmounts = $("#paidAmounts").val().split(',').map(Number);
-
-
-            // Get the context of the Chart canvas element we want to select
-            var ctx = $("#bar-stacked");
-
-            // Chart Options
-            var chartOptions = {
-                title: {
-                    display: false,
-                    text: "Chart.js Bar Chart - Stacked"
-                },
-                tooltips: {
-                    mode: 'label'
-                },
-                responsive: true,
-                maintainAspectRatio: false,
-                responsiveAnimationDuration: 500,
-                scales: {
-                    xAxes: [{
-                        stacked: true,
-                        display: true,
-                        gridLines: {
-                            color: "#f3f3f3",
-                            drawTicks: false,
-                        },
-                        scaleLabel: {
-                            display: true,
-                        }
-                    }],
-                    yAxes: [{
-                        stacked: true,
-                        display: true,
-                        gridLines: {
-                            color: "#f3f3f3",
-                            drawTicks: false,
-                        },
-                        scaleLabel: {
-                            display: true,
-                        }
-                    }]
-                }
-            };
-
-            // Chart Data
-            var chartData = {
-                labels: loansTypesNames,
-                datasets: [
-                    {
-                        label: "Paid Amounts",
-                        data: paidAmounts,
-                        backgroundColor: "#1DE9B6",
-                        hoverBackgroundColor: "rgba(29,233,182,.8)",
-                        borderColor: "transparent"
-                    },
-                    {
-                    label: "Original Amounts",
-                    data: remainingAmounts,
-                    backgroundColor: "#00BFA5",
-                    hoverBackgroundColor: "rgba(0,191,165,.8)",
-                    borderColor: "transparent"
-                }
-                ]
-            };
-
-            var config = {
-                type: 'horizontalBar',
-
-                // Chart Options
-                options: chartOptions,
-
-                data: chartData
-            };
-
-            // Create the chart
-            var lineChart = new Chart(ctx, config);
-
-        });
-    </script>
-    <script>
-        // Bar chart
-        // ------------------------------
-        $(window).on("load", function () {
-
-            //Get the context of the Chart canvas element we want to select
-            var ctx = $("#bar-chart");
-
-            // Chart Options
-            var chartOptions = {
-                // Elements options apply to all of the options unless overridden in a dataset
-                // In this case, we are setting the border of each horizontal bar to be 2px wide and green
-                elements: {
-                    rectangle: {
-                        borderWidth: 2,
-                        borderColor: 'rgb(0, 255, 0)',
-                        borderSkipped: 'left'
-                    }
-                },
-                responsive: true,
-                maintainAspectRatio: false,
-                responsiveAnimationDuration: 500,
-                legend: {
-                    position: 'top',
-                },
-                scales: {
-                    xAxes: [{
-                        display: true,
-                        gridLines: {
-                            color: "#f3f3f3",
-                            drawTicks: false,
-                        },
-                        scaleLabel: {
-                            display: true,
-                        }
-                    }],
-                    yAxes: [{
-                        display: true,
-                        gridLines: {
-                            color: "#f3f3f3",
-                            drawTicks: false,
-                        },
-                        scaleLabel: {
-                            display: true,
-                        }
-                    }]
-                },
-                title: {
-                    display: false,
-                    text: 'Chart.js Horizontal Bar Chart'
-                }
-            };
-            var ListNames = [""];
-            var names = [$("#names").val()];
-            console.log("Names= "+names)
-            var g = [65, 59, 80, 81];
-            console.log(g);
-            // Chart Data
-            var chartData = {
-                labels: names,
-                datasets: [{
-                    label: "My First dataset",
-                    data: g,
-                    backgroundColor: "#673AB7",
-                    hoverBackgroundColor: "rgba(103,58,183,.9)",
-                    borderColor: "transparent"
-                }, {
-                    label: "My Second dataset",
-                    data: [28, 48, 40, 19],
-                    backgroundColor: "#E91E63",
-                    hoverBackgroundColor: "rgba(233,30,99,.9)",
-                    borderColor: "transparent"
-                }]
-            };
-
-            var config = {
-                type: 'horizontalBar',
-
-                // Chart Options
-                options: chartOptions,
-
-                data: chartData
-            };
-
-            // Create the chart
-            var lineChart = new Chart(ctx, config);
-        });
-    </script>
-    <script>
-
-        // Pie chart
-        // ------------------------------
-        $(window).on("load", function () {
-
-            //Get the context of the Chart canvas element we want to select
-            var ctx = $("#simple-pie-chart");
-
-            // Chart Options
-            var chartOptions = {
-                responsive: true,
-                maintainAspectRatio: false,
-                responsiveAnimationDuration: 500,
-            };
-
-            // Chart Data
-            var chartData = {
-                labels: ["January", "February", "March", "April", "May"],
-                datasets: [{
-                    label: "My First dataset",
-                    data: [85, 65, 34, 45, 35],
-                    backgroundColor: ["#99B898", "#FECEA8", "#FF847C", "#E84A5F", "#2A363B"],
-                }]
-            };
-
-            var config = {
-                type: 'pie',
-
-                // Chart Options
-                options: chartOptions,
-
-                data: chartData
-            };
-
-            // Create the chart
-            var pieSimpleChart = new Chart(ctx, config);
-        });
-    </script>
-    <script>
-	$(document).ready(function () {
-	        var len = $('#Result tr').length;
-	        var res = $("#Result");
-	        if (len == 1) {
-	            var table = document.getElementById("Result").getElementsByTagName('tbody')[0];
-
-	            // Create an empty <tr> element and add it to the 1st position of the table:
-	            var row = table.insertRow(0);
-
-	            //// Insert new cell
-	            var cell1 = row.insertCell(0);
-	            cell1.colSpan = 12;
-	            cell1.innerText = '@ViewBag.NoRecords';
-	            cell1.align = "center";
-	        }
-	        else {
-	            var value = $("#cardOptions").attr("class").replace("in", "");
-	            $("#cardOptions").attr("class", value);
-	            $("#mark").attr("class", "icon-plus4");
-	        }
-	    });
-	    $(function () {
-	        $("#deleteModal").modal("hide");  // initially hides the modal pop-up until needed
-
-	        $(".deleteLink").on("click", function () {
-	            $.get('@Url.Action("Delete")', { id: $(this).data("id") }, function (data) {
-	                $("#deleteModalBody").html(data);
-
-	                $("#deleteModal").modal("show");  // shows the modal pop-up now that we have our partial view
-	            });
-
-	        });
-	    });
-    </script>
+  
+    
 }

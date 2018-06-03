@@ -229,6 +229,418 @@ namespace Cf.Data.Resources
    	#endregion
 	#endregion
 
+	#region EmployeeMonthPayments filter and result classes
+	#region EmployeeMonthPaymentsFilter meta data class definition
+    /// <summary>
+    /// Resource management for EmployeeMonthPaymentsFilter class
+    /// </summary>
+	public partial class EmployeeMonthPaymentsFilter : ResourceBase
+	{
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.EmployeeMonthPaymentsFilter class
+        /// </summary>
+        internal EmployeeMonthPaymentsFilter()
+        {
+        }
+	
+		#region Public properties
+        /// <summary>
+        /// Resource for EmployeeMonthPaymentsFilter.Month property
+        /// </summary>
+        public static string Month
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeMonthPaymentsFilter", "Month");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to MonthTooltip.
+        /// </summary>
+        public static string MonthTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeMonthPaymentsFilter", "MonthTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for EmployeeMonthPaymentsFilter.Employee property
+        /// </summary>
+        public static string Employee
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeMonthPaymentsFilter", "Employee");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to EmployeeTooltip.
+        /// </summary>
+        public static string EmployeeTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeMonthPaymentsFilter", "EmployeeTooltip");
+            }
+        }
+		#endregion
+	}
+	#endregion
+
+    #region EmployeeMonthPaymentsResult class definition
+	/// <summary>
+    /// Result class for EmployeeMonthPayments.
+	/// </summary>
+	public partial class EmployeeMonthPaymentsResult : ResourceBase
+	{
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.EmployeeMonthPaymentsResult class
+        /// </summary>
+        internal EmployeeMonthPaymentsResult()
+        {
+        }
+
+		#region Public properties
+        /// <summary>
+        /// Resource for EmployeeMonthPaymentsResult.EmployeeId property
+        /// </summary>
+        public static string EmployeeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeMonthPaymentsResult", "EmployeeId");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to EmployeeIdTooltip.
+        /// </summary>
+        public static string EmployeeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeMonthPaymentsResult", "EmployeeIdTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for EmployeeMonthPaymentsResult.EmployeeFullName property
+        /// </summary>
+        public static string EmployeeFullName
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeMonthPaymentsResult", "EmployeeFullName");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to EmployeeFullNameTooltip.
+        /// </summary>
+        public static string EmployeeFullNameTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeMonthPaymentsResult", "EmployeeFullNameTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for EmployeeMonthPaymentsResult.EmployeeDepartmentSalaryWorkPlaceName property
+        /// </summary>
+        public static string EmployeeDepartmentSalaryWorkPlaceName
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeMonthPaymentsResult", "EmployeeDepartmentSalaryWorkPlaceName");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to EmployeeDepartmentSalaryWorkPlaceNameTooltip.
+        /// </summary>
+        public static string EmployeeDepartmentSalaryWorkPlaceNameTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeMonthPaymentsResult", "EmployeeDepartmentSalaryWorkPlaceNameTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for EmployeeMonthPaymentsResult.Amount property
+        /// </summary>
+        public static string Amount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeMonthPaymentsResult", "Amount");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to AmountTooltip.
+        /// </summary>
+        public static string AmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeMonthPaymentsResult", "AmountTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for EmployeeMonthPaymentsResult.Month property
+        /// </summary>
+        public static string Month
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeMonthPaymentsResult", "Month");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to MonthTooltip.
+        /// </summary>
+        public static string MonthTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeMonthPaymentsResult", "MonthTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for EmployeeMonthPaymentsResult.PaymentGroupId property
+        /// </summary>
+        public static string PaymentGroupId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeMonthPaymentsResult", "PaymentGroupId");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to PaymentGroupIdTooltip.
+        /// </summary>
+        public static string PaymentGroupIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeMonthPaymentsResult", "PaymentGroupIdTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for EmployeeMonthPaymentsResult.PaymentGroupName property
+        /// </summary>
+        public static string PaymentGroupName
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeMonthPaymentsResult", "PaymentGroupName");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to PaymentGroupNameTooltip.
+        /// </summary>
+        public static string PaymentGroupNameTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeMonthPaymentsResult", "PaymentGroupNameTooltip");
+            }
+        }
+    	#endregion
+    }
+   	#endregion
+	#endregion
+
+	#region EmployeeMonthSubscriptions filter and result classes
+	#region EmployeeMonthSubscriptionsFilter meta data class definition
+    /// <summary>
+    /// Resource management for EmployeeMonthSubscriptionsFilter class
+    /// </summary>
+	public partial class EmployeeMonthSubscriptionsFilter : ResourceBase
+	{
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.EmployeeMonthSubscriptionsFilter class
+        /// </summary>
+        internal EmployeeMonthSubscriptionsFilter()
+        {
+        }
+	
+		#region Public properties
+        /// <summary>
+        /// Resource for EmployeeMonthSubscriptionsFilter.Month property
+        /// </summary>
+        public static string Month
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeMonthSubscriptionsFilter", "Month");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to MonthTooltip.
+        /// </summary>
+        public static string MonthTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeMonthSubscriptionsFilter", "MonthTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for EmployeeMonthSubscriptionsFilter.Employee property
+        /// </summary>
+        public static string Employee
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeMonthSubscriptionsFilter", "Employee");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to EmployeeTooltip.
+        /// </summary>
+        public static string EmployeeTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeMonthSubscriptionsFilter", "EmployeeTooltip");
+            }
+        }
+		#endregion
+	}
+	#endregion
+
+    #region EmployeeMonthSubscriptionsResult class definition
+	/// <summary>
+    /// Result class for EmployeeMonthSubscriptions.
+	/// </summary>
+	public partial class EmployeeMonthSubscriptionsResult : ResourceBase
+	{
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.EmployeeMonthSubscriptionsResult class
+        /// </summary>
+        internal EmployeeMonthSubscriptionsResult()
+        {
+        }
+
+		#region Public properties
+        /// <summary>
+        /// Resource for EmployeeMonthSubscriptionsResult.EmployeeId property
+        /// </summary>
+        public static string EmployeeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeMonthSubscriptionsResult", "EmployeeId");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to EmployeeIdTooltip.
+        /// </summary>
+        public static string EmployeeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeMonthSubscriptionsResult", "EmployeeIdTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for EmployeeMonthSubscriptionsResult.EmployeeFullName property
+        /// </summary>
+        public static string EmployeeFullName
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeMonthSubscriptionsResult", "EmployeeFullName");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to EmployeeFullNameTooltip.
+        /// </summary>
+        public static string EmployeeFullNameTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeMonthSubscriptionsResult", "EmployeeFullNameTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for EmployeeMonthSubscriptionsResult.EmployeeDepartmentSalaryWorkPlaceName property
+        /// </summary>
+        public static string EmployeeDepartmentSalaryWorkPlaceName
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeMonthSubscriptionsResult", "EmployeeDepartmentSalaryWorkPlaceName");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to EmployeeDepartmentSalaryWorkPlaceNameTooltip.
+        /// </summary>
+        public static string EmployeeDepartmentSalaryWorkPlaceNameTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeMonthSubscriptionsResult", "EmployeeDepartmentSalaryWorkPlaceNameTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for EmployeeMonthSubscriptionsResult.Amount property
+        /// </summary>
+        public static string Amount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeMonthSubscriptionsResult", "Amount");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to AmountTooltip.
+        /// </summary>
+        public static string AmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeMonthSubscriptionsResult", "AmountTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for EmployeeMonthSubscriptionsResult.Month property
+        /// </summary>
+        public static string Month
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeMonthSubscriptionsResult", "Month");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to MonthTooltip.
+        /// </summary>
+        public static string MonthTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeMonthSubscriptionsResult", "MonthTooltip");
+            }
+        }
+    	#endregion
+    }
+   	#endregion
+	#endregion
+
 	#region EmployeeProductCalculator filter and result classes
 	#region EmployeeProductCalculatorFilter meta data class definition
     /// <summary>

@@ -945,6 +945,7 @@
     <Content Include="Content\FinalVersion\IBC2.svg" />
     <Content Include="Content\FinalVersion\IBCF.svg" />
     <Content Include="Content\images\animated-overlay.gif" />
+    <Content Include="Content\images\preloader.gif" />
     <Content Include="Content\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
     <Content Include="Content\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
     <Content Include="Content\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -1859,6 +1860,10 @@
     <Content Include="Areas\Loans\Views\LoanReport\RequestStatisticsResult.cshtml" />
     <Content Include="Areas\Loans\Views\LoanReport\EmployeeLoans.cshtml" />
     <Content Include="Areas\Loans\Views\LoanReport\EmployeeLoansResult.cshtml" />
+    <Content Include="Areas\Loans\Views\LoanReport\ReportPayments.cshtml" />
+    <Content Include="Areas\Loans\Views\LoanReport\ReportPaymentsResult.cshtml" />
+    <Content Include="Areas\Loans\Views\LoanReport\ReportSubscriptions.cshtml" />
+    <Content Include="Areas\Loans\Views\LoanReport\ReportSubscriptionsResult.cshtml" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Scripts\bootstrap-datepicker\build\build.less" />

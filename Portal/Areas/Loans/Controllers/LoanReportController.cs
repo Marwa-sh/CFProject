@@ -21,7 +21,9 @@ namespace Portal.Areas.Loans.Controllers
         private string report = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "LoanReport", "Report");
         private string requestStatistics = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "LoanReport", "RequestStatistics");
         private string employeeLoans = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "LoanReport", "EmployeeLoans");
-
+        private string reportPayments = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "LoanReport", "ReportPayments");
+        private string reportSubscriptions = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "LoanReport", "ReportSubscriptions");
+        
         Db db = new Db(DbServices.ConnectionString);
 
         public LoanReportController()
@@ -110,7 +112,6 @@ namespace Portal.Areas.Loans.Controllers
             ViewBag.PaymentReport = paymentReport;
             return View();
         }
-
         [HttpPost]
         public ActionResult PaymentsBetweenTwoDates(PaymentBetweenTwoDatesFilter model)
         {
@@ -173,6 +174,54 @@ namespace Portal.Areas.Loans.Controllers
                 return View();
                 throw;
             }
+        }
+        #endregion
+
+        #region ReportPayments
+        public ActionResult ReportPayments()
+        {
+            ViewBag.ReportPayments = reportPayments;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ReportPayments(ReportPaymentsBetweenTwoDatesFilter filter)
+        {
+            try
+            {
+                List<ReportPaymentsBetweenTwoDatesResult> result = DbServices.ReportPaymentsBetweenTwoDates(filter, db);
+                
+                return PartialView("ReportPaymentsResult", result);
+            }
+            catch (CfException exc)
+            {
+                ViewBag.ReportPayments = reportPayments;
+                return View();
+            }
+            
+        }
+        #endregion
+
+        #region ReportSubscriptions
+        public ActionResult ReportSubscriptions()
+        {
+            ViewBag.ReportSubscriptions = reportSubscriptions;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ReportSubscriptions(ReportSubscriptionsBetweenTwoDatesFilter filter)
+        {
+            try
+            {
+                List<ReportSubscriptionsBetweenTwoDatesResult> result = DbServices.ReportSubscriptionsBetweenTwoDates(filter, db);
+
+                return PartialView("ReportSubscriptionsResult", result);
+            }
+            catch (CfException exc)
+            {
+                ViewBag.ReportSubscriptions = reportSubscriptions;
+                return View();
+            }
+
         }
         #endregion
     }

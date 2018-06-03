@@ -53,6 +53,96 @@ namespace Cf.Data
 	#endregion
     #endregion
 
+	#region EmployeeMonthPayments filter and result classes
+    #region EmployeeMonthPaymentsFilter class definition
+	/// <summary>
+    /// Filter class for EmployeeMonthPayments.
+	/// </summary>
+    [MetadataType(typeof(EmployeeMonthPaymentsFilterMetaData))]
+	public partial class EmployeeMonthPaymentsFilter
+	{
+		#region Public properties
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<DateTime> Month {get; set; }
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<int> Employee {get; set; }
+		#endregion
+	}
+	#endregion
+
+	#region EmployeeMonthPaymentsResult class definition
+	/// <summary>
+    /// Result class for EmployeeMonthPayments.
+	/// </summary>
+    [MetadataType(typeof(EmployeeMonthPaymentsResultMetaData))]
+	public partial class EmployeeMonthPaymentsResult
+	{
+		#region Public properties
+        public int EmployeeId {get; set; }
+		
+        public string EmployeeFullName {get; set; }
+		
+        public string EmployeeDepartmentSalaryWorkPlaceName {get; set; }
+		
+        public Nullable<decimal> Amount {get; set; }
+		
+        public string Month {get; set; }
+		
+        public byte PaymentGroupId {get; set; }
+		
+        public string PaymentGroupName {get; set; }
+		#endregion
+	}
+	#endregion
+    #endregion
+
+	#region EmployeeMonthSubscriptions filter and result classes
+    #region EmployeeMonthSubscriptionsFilter class definition
+	/// <summary>
+    /// Filter class for EmployeeMonthSubscriptions.
+	/// </summary>
+    [MetadataType(typeof(EmployeeMonthSubscriptionsFilterMetaData))]
+	public partial class EmployeeMonthSubscriptionsFilter
+	{
+		#region Public properties
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<DateTime> Month {get; set; }
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<int> Employee {get; set; }
+		#endregion
+	}
+	#endregion
+
+	#region EmployeeMonthSubscriptionsResult class definition
+	/// <summary>
+    /// Result class for EmployeeMonthSubscriptions.
+	/// </summary>
+    [MetadataType(typeof(EmployeeMonthSubscriptionsResultMetaData))]
+	public partial class EmployeeMonthSubscriptionsResult
+	{
+		#region Public properties
+        public int EmployeeId {get; set; }
+		
+        public string EmployeeFullName {get; set; }
+		
+        public string EmployeeDepartmentSalaryWorkPlaceName {get; set; }
+		
+        public Nullable<decimal> Amount {get; set; }
+		
+        public string Month {get; set; }
+		#endregion
+	}
+	#endregion
+    #endregion
+
 	#region EmployeeProductCalculator filter and result classes
     #region EmployeeProductCalculatorFilter class definition
 	/// <summary>
@@ -1146,9 +1236,9 @@ namespace Cf.Data
 		
         public Nullable<decimal> FirstAmount {get; set; }
 		
-        public Nullable<DateTime> FirstDate {get; set; }
+        public string FirstDate {get; set; }
 		
-        public Nullable<int> FirstPaymentGroupId {get; set; }
+        public Nullable<byte> FirstPaymentGroupId {get; set; }
 		
         public string FirstPaymentGroupName {get; set; }
 		
@@ -1160,9 +1250,9 @@ namespace Cf.Data
 		
         public Nullable<decimal> SecondAmount {get; set; }
 		
-        public Nullable<DateTime> SecondDate {get; set; }
+        public string SecondDate {get; set; }
 		
-        public Nullable<int> SecondPaymentGroupId {get; set; }
+        public Nullable<byte> SecondPaymentGroupId {get; set; }
 		
         public string SecondPaymentGroupName {get; set; }
 		
@@ -1219,7 +1309,7 @@ namespace Cf.Data
 		
         public Nullable<decimal> FirstAmount {get; set; }
 		
-        public Nullable<DateTime> FirstMonth {get; set; }
+        public string FirstMonth {get; set; }
 		
         public Nullable<int> SecondEmployeeId {get; set; }
 		
@@ -1229,7 +1319,7 @@ namespace Cf.Data
 		
         public Nullable<decimal> SecondAmount {get; set; }
 		
-        public Nullable<DateTime> SecondMonth {get; set; }
+        public string SecondMonth {get; set; }
 		
         public Nullable<int> SubscriptionDiffrence {get; set; }
 		#endregion

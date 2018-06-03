@@ -108,6 +108,208 @@ namespace Cf.Services
 
 		#endregion
 
+		#region EmployeeMonthPayments procedure.
+
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_month"></param>
+		/// <param name="_employee"></param>
+		/// <returns>A list of EmployeeMonthPaymentsResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public static List<EmployeeMonthPaymentsResult> EmployeeMonthPayments([Parameter(Name = "@Month")] Nullable<DateTime> _month, [Parameter(Name = "@Employee")] Nullable<int> _employee)
+		{
+			Db db = new Db(DbServices.ConnectionString);
+			return db.EmployeeMonthPayments(_month, _employee);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_month"></param>
+		/// <param name="_employee"></param>
+		/// <returns>A list of EmployeeMonthPaymentsResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public static List<EmployeeMonthPaymentsResult> EmployeeMonthPayments([Parameter(Name = "@Month")] Nullable<DateTime> _month, [Parameter(Name = "@Employee")] Nullable<int> _employee, Db db)
+		{
+			return db.EmployeeMonthPayments(_month, _employee);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of EmployeeMonthPaymentsFilter that defines filtering options.</param>
+        /// <returns>A list of EmployeeMonthPaymentsResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public static List<EmployeeMonthPaymentsResult> EmployeeMonthPayments(EmployeeMonthPaymentsFilter filterInstance)
+		{
+			Db db = new Db(DbServices.ConnectionString);
+			return db.EmployeeMonthPayments(filterInstance.Month, filterInstance.Employee);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of EmployeeMonthPaymentsFilter that defines filtering options.</param>
+        /// <returns>A list of EmployeeMonthPaymentsResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public static List<EmployeeMonthPaymentsResult> EmployeeMonthPayments(EmployeeMonthPaymentsFilter filterInstance, Db db)
+		{
+			return db.EmployeeMonthPayments(filterInstance.Month, filterInstance.Employee);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_month"></param>
+		/// <param name="_employee"></param>
+		/// <returns>An instance of EmployeeMonthPaymentsResult or null.</returns>
+		public static EmployeeMonthPaymentsResult EmployeeMonthPaymentsFirstOrDefault([Parameter(Name = "@Month")] Nullable<DateTime> _month, [Parameter(Name = "@Employee")] Nullable<int> _employee)
+		{
+			Db db = new Db(DbServices.ConnectionString);
+			return db.EmployeeMonthPaymentsFirstOrDefault(_month, _employee);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_month"></param>
+		/// <param name="_employee"></param>
+		/// <returns>An instance of EmployeeMonthPaymentsResult or null.</returns>
+		public static EmployeeMonthPaymentsResult EmployeeMonthPaymentsFirstOrDefault([Parameter(Name = "@Month")] Nullable<DateTime> _month, [Parameter(Name = "@Employee")] Nullable<int> _employee, Db db)
+		{
+			return db.EmployeeMonthPaymentsFirstOrDefault(_month, _employee);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of EmployeeMonthPaymentsFilter that defines filtering options.</param>
+        /// <returns>An instance of EmployeeMonthPaymentsResult or null.</returns>
+		public static EmployeeMonthPaymentsResult EmployeeMonthPaymentsFirstOrDefault(EmployeeMonthPaymentsFilter filterInstance)
+		{
+			Db db = new Db(DbServices.ConnectionString);
+			return db.EmployeeMonthPaymentsFirstOrDefault(filterInstance.Month, filterInstance.Employee);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of EmployeeMonthPaymentsFilter that defines filtering options.</param>
+        /// <returns>An instance of EmployeeMonthPaymentsResult or null.</returns>
+		public static EmployeeMonthPaymentsResult EmployeeMonthPaymentsFirstOrDefault(EmployeeMonthPaymentsFilter filterInstance, Db db)
+		{
+			return db.EmployeeMonthPaymentsFirstOrDefault(filterInstance.Month, filterInstance.Employee);
+		}
+
+		#endregion
+
+		#region EmployeeMonthSubscriptions procedure.
+
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_month"></param>
+		/// <param name="_employee"></param>
+		/// <returns>A list of EmployeeMonthSubscriptionsResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public static List<EmployeeMonthSubscriptionsResult> EmployeeMonthSubscriptions([Parameter(Name = "@Month")] Nullable<DateTime> _month, [Parameter(Name = "@Employee")] Nullable<int> _employee)
+		{
+			Db db = new Db(DbServices.ConnectionString);
+			return db.EmployeeMonthSubscriptions(_month, _employee);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_month"></param>
+		/// <param name="_employee"></param>
+		/// <returns>A list of EmployeeMonthSubscriptionsResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public static List<EmployeeMonthSubscriptionsResult> EmployeeMonthSubscriptions([Parameter(Name = "@Month")] Nullable<DateTime> _month, [Parameter(Name = "@Employee")] Nullable<int> _employee, Db db)
+		{
+			return db.EmployeeMonthSubscriptions(_month, _employee);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of EmployeeMonthSubscriptionsFilter that defines filtering options.</param>
+        /// <returns>A list of EmployeeMonthSubscriptionsResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public static List<EmployeeMonthSubscriptionsResult> EmployeeMonthSubscriptions(EmployeeMonthSubscriptionsFilter filterInstance)
+		{
+			Db db = new Db(DbServices.ConnectionString);
+			return db.EmployeeMonthSubscriptions(filterInstance.Month, filterInstance.Employee);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of EmployeeMonthSubscriptionsFilter that defines filtering options.</param>
+        /// <returns>A list of EmployeeMonthSubscriptionsResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public static List<EmployeeMonthSubscriptionsResult> EmployeeMonthSubscriptions(EmployeeMonthSubscriptionsFilter filterInstance, Db db)
+		{
+			return db.EmployeeMonthSubscriptions(filterInstance.Month, filterInstance.Employee);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_month"></param>
+		/// <param name="_employee"></param>
+		/// <returns>An instance of EmployeeMonthSubscriptionsResult or null.</returns>
+		public static EmployeeMonthSubscriptionsResult EmployeeMonthSubscriptionsFirstOrDefault([Parameter(Name = "@Month")] Nullable<DateTime> _month, [Parameter(Name = "@Employee")] Nullable<int> _employee)
+		{
+			Db db = new Db(DbServices.ConnectionString);
+			return db.EmployeeMonthSubscriptionsFirstOrDefault(_month, _employee);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_month"></param>
+		/// <param name="_employee"></param>
+		/// <returns>An instance of EmployeeMonthSubscriptionsResult or null.</returns>
+		public static EmployeeMonthSubscriptionsResult EmployeeMonthSubscriptionsFirstOrDefault([Parameter(Name = "@Month")] Nullable<DateTime> _month, [Parameter(Name = "@Employee")] Nullable<int> _employee, Db db)
+		{
+			return db.EmployeeMonthSubscriptionsFirstOrDefault(_month, _employee);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of EmployeeMonthSubscriptionsFilter that defines filtering options.</param>
+        /// <returns>An instance of EmployeeMonthSubscriptionsResult or null.</returns>
+		public static EmployeeMonthSubscriptionsResult EmployeeMonthSubscriptionsFirstOrDefault(EmployeeMonthSubscriptionsFilter filterInstance)
+		{
+			Db db = new Db(DbServices.ConnectionString);
+			return db.EmployeeMonthSubscriptionsFirstOrDefault(filterInstance.Month, filterInstance.Employee);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of EmployeeMonthSubscriptionsFilter that defines filtering options.</param>
+        /// <returns>An instance of EmployeeMonthSubscriptionsResult or null.</returns>
+		public static EmployeeMonthSubscriptionsResult EmployeeMonthSubscriptionsFirstOrDefault(EmployeeMonthSubscriptionsFilter filterInstance, Db db)
+		{
+			return db.EmployeeMonthSubscriptionsFirstOrDefault(filterInstance.Month, filterInstance.Employee);
+		}
+
+		#endregion
+
 		#region EmployeeProductCalculator procedure.
 
 

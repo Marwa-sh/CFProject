@@ -49,7 +49,7 @@ namespace Portal
 
 
             bundles.Add(new ScriptBundle("~/bundles/sweetalert").Include(
-                        "~/Scripts/sweetalert/sweetalert.min.js"));
+                        "~/Scripts/sweetalert/sweetalert2.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
 					   "~/Scripts/jquery-ui-{version}.js"));

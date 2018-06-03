@@ -70,6 +70,130 @@ namespace Cf.Data
 		}
 		#endregion
 
+		#region EmployeeMonthPayments procedure.
+
+
+		[FunctionAttribute(Name = "dbo.EmployeeMonthPayments", IsComposable = true)]
+		private IQueryable<EmployeeMonthPaymentsResult> _EmployeeMonthPayments([Parameter(Name = "@Month")] Nullable<DateTime> _month, [Parameter(Name = "@Employee")] Nullable<int> _employee)
+		{
+			return this.CreateMethodCallQuery<EmployeeMonthPaymentsResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _month, _employee);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_month"></param>
+		/// <param name="_employee"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>A list of EmployeeMonthPaymentsResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<EmployeeMonthPaymentsResult> EmployeeMonthPayments([Parameter(Name = "@Month")] Nullable<DateTime> _month, [Parameter(Name = "@Employee")] Nullable<int> _employee)
+		{
+			IQueryable<EmployeeMonthPaymentsResult> list = _EmployeeMonthPayments(_month, _employee);
+            return list.ToList<EmployeeMonthPaymentsResult>();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of EmployeeMonthPaymentsFilter that defines filtering options.</param>
+        /// <returns>A list of EmployeeMonthPaymentsResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<EmployeeMonthPaymentsResult> EmployeeMonthPayments(EmployeeMonthPaymentsFilter filterInstance)
+		{
+			IQueryable<EmployeeMonthPaymentsResult> list = _EmployeeMonthPayments(filterInstance.Month, filterInstance.Employee);
+            return list.ToList<EmployeeMonthPaymentsResult>();
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_month"></param>
+		/// <param name="_employee"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>An instance of EmployeeMonthPaymentsResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public EmployeeMonthPaymentsResult EmployeeMonthPaymentsFirstOrDefault([Parameter(Name = "@Month")] Nullable<DateTime> _month, [Parameter(Name = "@Employee")] Nullable<int> _employee)
+		{
+			return EmployeeMonthPayments(_month, _employee).FirstOrDefault();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of EmployeeMonthPaymentsFilter that defines filtering options.</param>
+		/// <returns>An instance of EmployeeMonthPaymentsResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public EmployeeMonthPaymentsResult EmployeeMonthPaymentsFirstOrDefault(EmployeeMonthPaymentsFilter filterInstance)
+		{
+			return EmployeeMonthPayments(filterInstance.Month, filterInstance.Employee).FirstOrDefault();
+		}
+		#endregion
+
+		#region EmployeeMonthSubscriptions procedure.
+
+
+		[FunctionAttribute(Name = "dbo.EmployeeMonthSubscriptions", IsComposable = true)]
+		private IQueryable<EmployeeMonthSubscriptionsResult> _EmployeeMonthSubscriptions([Parameter(Name = "@Month")] Nullable<DateTime> _month, [Parameter(Name = "@Employee")] Nullable<int> _employee)
+		{
+			return this.CreateMethodCallQuery<EmployeeMonthSubscriptionsResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _month, _employee);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_month"></param>
+		/// <param name="_employee"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>A list of EmployeeMonthSubscriptionsResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<EmployeeMonthSubscriptionsResult> EmployeeMonthSubscriptions([Parameter(Name = "@Month")] Nullable<DateTime> _month, [Parameter(Name = "@Employee")] Nullable<int> _employee)
+		{
+			IQueryable<EmployeeMonthSubscriptionsResult> list = _EmployeeMonthSubscriptions(_month, _employee);
+            return list.ToList<EmployeeMonthSubscriptionsResult>();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of EmployeeMonthSubscriptionsFilter that defines filtering options.</param>
+        /// <returns>A list of EmployeeMonthSubscriptionsResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<EmployeeMonthSubscriptionsResult> EmployeeMonthSubscriptions(EmployeeMonthSubscriptionsFilter filterInstance)
+		{
+			IQueryable<EmployeeMonthSubscriptionsResult> list = _EmployeeMonthSubscriptions(filterInstance.Month, filterInstance.Employee);
+            return list.ToList<EmployeeMonthSubscriptionsResult>();
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_month"></param>
+		/// <param name="_employee"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>An instance of EmployeeMonthSubscriptionsResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public EmployeeMonthSubscriptionsResult EmployeeMonthSubscriptionsFirstOrDefault([Parameter(Name = "@Month")] Nullable<DateTime> _month, [Parameter(Name = "@Employee")] Nullable<int> _employee)
+		{
+			return EmployeeMonthSubscriptions(_month, _employee).FirstOrDefault();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of EmployeeMonthSubscriptionsFilter that defines filtering options.</param>
+		/// <returns>An instance of EmployeeMonthSubscriptionsResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public EmployeeMonthSubscriptionsResult EmployeeMonthSubscriptionsFirstOrDefault(EmployeeMonthSubscriptionsFilter filterInstance)
+		{
+			return EmployeeMonthSubscriptions(filterInstance.Month, filterInstance.Employee).FirstOrDefault();
+		}
+		#endregion
+
 		#region EmployeeProductCalculator procedure.
 
 

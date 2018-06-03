@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCfDesktop", "TestCfDesktop\TestCfDesktop.csproj", "{0956CB9F-3092-437C-B822-7BABB4C5C27F}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CfMembership", "CfMembership\CfMembership.csproj", "{28B3D1DA-E648-41AA-B039-557614C889B7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CfProjectAdmin", "CfProjectAdmin\CfProjectAdmin.csproj", "{2671DA1D-9D69-478C-B200-6637CF93689F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CFCommon", "CFCommon\CFCommon.csproj", "{08371E9A-DD81-425E-A15A-CE1F86648E81}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,6 +52,10 @@ Global
 		{2671DA1D-9D69-478C-B200-6637CF93689F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2671DA1D-9D69-478C-B200-6637CF93689F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2671DA1D-9D69-478C-B200-6637CF93689F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08371E9A-DD81-425E-A15A-CE1F86648E81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08371E9A-DD81-425E-A15A-CE1F86648E81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08371E9A-DD81-425E-A15A-CE1F86648E81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08371E9A-DD81-425E-A15A-CE1F86648E81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

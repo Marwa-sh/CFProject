@@ -155,6 +155,296 @@ namespace Cf.Data
 	#endregion
 	#endregion
 
+	#region EmployeeMonthPayments filter and result classes
+	#region EmployeeMonthPaymentsFilter meta data class definition
+    /// <summary>
+    /// Metadata for EmployeeMonthPaymentsFilter class
+    /// </summary>
+	public partial class EmployeeMonthPaymentsFilterMetaData
+	{
+		#region Public properties
+        /// <summary>
+        /// Metadata for EmployeeMonthPaymentsFilter.Month property
+        /// </summary>
+		[Display(
+			Name = "Month",
+			ResourceType = typeof(Cf.Data.Resources.EmployeeMonthPaymentsFilter))
+		]
+		[Tooltip("MonthTooltip", typeof(Cf.Data.Resources.EmployeeMonthPaymentsFilter))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<DateTime> Month { get; set; }
+		
+        /// <summary>
+        /// Metadata for EmployeeMonthPaymentsFilter.Employee property
+        /// </summary>
+		[Display(
+			Name = "Employee",
+			ResourceType = typeof(Cf.Data.Resources.EmployeeMonthPaymentsFilter))
+		]
+		[Tooltip("EmployeeTooltip", typeof(Cf.Data.Resources.EmployeeMonthPaymentsFilter))]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<int> Employee { get; set; }
+		#endregion
+	}
+	#endregion
+
+    #region EmployeeMonthPaymentsResultMetaData class definition
+	/// <summary>
+    /// Result class for EmployeeMonthPayments.
+	/// </summary>
+	public partial class EmployeeMonthPaymentsResultMetaData
+	{
+		#region Public properties
+		[Display(
+			Name = "EmployeeId",
+			ResourceType = typeof(Cf.Data.Resources.EmployeeMonthPaymentsResult))
+		]
+		[Tooltip("EmployeeIdTooltip", typeof(Cf.Data.Resources.EmployeeMonthPaymentsResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public int EmployeeId {get; set; }
+		
+		[Display(
+			Name = "EmployeeFullName",
+			ResourceType = typeof(Cf.Data.Resources.EmployeeMonthPaymentsResult))
+		]
+		[Tooltip("EmployeeFullNameTooltip", typeof(Cf.Data.Resources.EmployeeMonthPaymentsResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		[StringLength(
+			101,
+			MinimumLength = 0,
+			ErrorMessageResourceName = "StringLengthCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public string EmployeeFullName {get; set; }
+		
+		[Display(
+			Name = "EmployeeDepartmentSalaryWorkPlaceName",
+			ResourceType = typeof(Cf.Data.Resources.EmployeeMonthPaymentsResult))
+		]
+		[Tooltip("EmployeeDepartmentSalaryWorkPlaceNameTooltip", typeof(Cf.Data.Resources.EmployeeMonthPaymentsResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		[StringLength(
+			50,
+			MinimumLength = 0,
+			ErrorMessageResourceName = "StringLengthCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public string EmployeeDepartmentSalaryWorkPlaceName {get; set; }
+		
+		[Display(
+			Name = "Amount",
+			ResourceType = typeof(Cf.Data.Resources.EmployeeMonthPaymentsResult))
+		]
+		[Tooltip("AmountTooltip", typeof(Cf.Data.Resources.EmployeeMonthPaymentsResult))]
+        public Nullable<decimal> Amount {get; set; }
+		
+		[Display(
+			Name = "Month",
+			ResourceType = typeof(Cf.Data.Resources.EmployeeMonthPaymentsResult))
+		]
+		[Tooltip("MonthTooltip", typeof(Cf.Data.Resources.EmployeeMonthPaymentsResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		[StringLength(
+			38,
+			MinimumLength = 0,
+			ErrorMessageResourceName = "StringLengthCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public string Month {get; set; }
+		
+		[Display(
+			Name = "PaymentGroupId",
+			ResourceType = typeof(Cf.Data.Resources.EmployeeMonthPaymentsResult))
+		]
+		[Tooltip("PaymentGroupIdTooltip", typeof(Cf.Data.Resources.EmployeeMonthPaymentsResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		[Range(
+			0,
+			127,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public byte PaymentGroupId {get; set; }
+		
+		[Display(
+			Name = "PaymentGroupName",
+			ResourceType = typeof(Cf.Data.Resources.EmployeeMonthPaymentsResult))
+		]
+		[Tooltip("PaymentGroupNameTooltip", typeof(Cf.Data.Resources.EmployeeMonthPaymentsResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		[StringLength(
+			50,
+			MinimumLength = 0,
+			ErrorMessageResourceName = "StringLengthCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public string PaymentGroupName {get; set; }
+		#endregion
+	}
+	#endregion
+	#endregion
+
+	#region EmployeeMonthSubscriptions filter and result classes
+	#region EmployeeMonthSubscriptionsFilter meta data class definition
+    /// <summary>
+    /// Metadata for EmployeeMonthSubscriptionsFilter class
+    /// </summary>
+	public partial class EmployeeMonthSubscriptionsFilterMetaData
+	{
+		#region Public properties
+        /// <summary>
+        /// Metadata for EmployeeMonthSubscriptionsFilter.Month property
+        /// </summary>
+		[Display(
+			Name = "Month",
+			ResourceType = typeof(Cf.Data.Resources.EmployeeMonthSubscriptionsFilter))
+		]
+		[Tooltip("MonthTooltip", typeof(Cf.Data.Resources.EmployeeMonthSubscriptionsFilter))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<DateTime> Month { get; set; }
+		
+        /// <summary>
+        /// Metadata for EmployeeMonthSubscriptionsFilter.Employee property
+        /// </summary>
+		[Display(
+			Name = "Employee",
+			ResourceType = typeof(Cf.Data.Resources.EmployeeMonthSubscriptionsFilter))
+		]
+		[Tooltip("EmployeeTooltip", typeof(Cf.Data.Resources.EmployeeMonthSubscriptionsFilter))]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<int> Employee { get; set; }
+		#endregion
+	}
+	#endregion
+
+    #region EmployeeMonthSubscriptionsResultMetaData class definition
+	/// <summary>
+    /// Result class for EmployeeMonthSubscriptions.
+	/// </summary>
+	public partial class EmployeeMonthSubscriptionsResultMetaData
+	{
+		#region Public properties
+		[Display(
+			Name = "EmployeeId",
+			ResourceType = typeof(Cf.Data.Resources.EmployeeMonthSubscriptionsResult))
+		]
+		[Tooltip("EmployeeIdTooltip", typeof(Cf.Data.Resources.EmployeeMonthSubscriptionsResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public int EmployeeId {get; set; }
+		
+		[Display(
+			Name = "EmployeeFullName",
+			ResourceType = typeof(Cf.Data.Resources.EmployeeMonthSubscriptionsResult))
+		]
+		[Tooltip("EmployeeFullNameTooltip", typeof(Cf.Data.Resources.EmployeeMonthSubscriptionsResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		[StringLength(
+			101,
+			MinimumLength = 0,
+			ErrorMessageResourceName = "StringLengthCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public string EmployeeFullName {get; set; }
+		
+		[Display(
+			Name = "EmployeeDepartmentSalaryWorkPlaceName",
+			ResourceType = typeof(Cf.Data.Resources.EmployeeMonthSubscriptionsResult))
+		]
+		[Tooltip("EmployeeDepartmentSalaryWorkPlaceNameTooltip", typeof(Cf.Data.Resources.EmployeeMonthSubscriptionsResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		[StringLength(
+			50,
+			MinimumLength = 0,
+			ErrorMessageResourceName = "StringLengthCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public string EmployeeDepartmentSalaryWorkPlaceName {get; set; }
+		
+		[Display(
+			Name = "Amount",
+			ResourceType = typeof(Cf.Data.Resources.EmployeeMonthSubscriptionsResult))
+		]
+		[Tooltip("AmountTooltip", typeof(Cf.Data.Resources.EmployeeMonthSubscriptionsResult))]
+        public Nullable<decimal> Amount {get; set; }
+		
+		[Display(
+			Name = "Month",
+			ResourceType = typeof(Cf.Data.Resources.EmployeeMonthSubscriptionsResult))
+		]
+		[Tooltip("MonthTooltip", typeof(Cf.Data.Resources.EmployeeMonthSubscriptionsResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		[StringLength(
+			38,
+			MinimumLength = 0,
+			ErrorMessageResourceName = "StringLengthCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public string Month {get; set; }
+		#endregion
+	}
+	#endregion
+	#endregion
+
 	#region EmployeeProductCalculator filter and result classes
 	#region EmployeeProductCalculatorFilter meta data class definition
     /// <summary>
@@ -2980,7 +3270,7 @@ namespace Cf.Data
 		]
 		[Tooltip("FirstEmployeeFullNameTooltip", typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))]
 		[StringLength(
-			64,
+			101,
 			MinimumLength = 0,
 			ErrorMessageResourceName = "StringLengthCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
@@ -2993,7 +3283,7 @@ namespace Cf.Data
 		]
 		[Tooltip("FirstSalaryWorkPlaceNameTooltip", typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))]
 		[StringLength(
-			32,
+			50,
 			MinimumLength = 0,
 			ErrorMessageResourceName = "StringLengthCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
@@ -3012,12 +3302,13 @@ namespace Cf.Data
 			ResourceType = typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))
 		]
 		[Tooltip("FirstDateTooltip", typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))]
-		[DataType(
-			DataType.Date,
-			ErrorMessageResourceName = "DateCheck",
+		[StringLength(
+			38,
+			MinimumLength = 0,
+			ErrorMessageResourceName = "StringLengthCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-        public Nullable<DateTime> FirstDate {get; set; }
+        public string FirstDate {get; set; }
 		
 		[Display(
 			Name = "FirstPaymentGroupId",
@@ -3026,11 +3317,11 @@ namespace Cf.Data
 		[Tooltip("FirstPaymentGroupIdTooltip", typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))]
 		[Range(
 			0,
-			2147483647,
+			127,
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-        public Nullable<int> FirstPaymentGroupId {get; set; }
+        public Nullable<byte> FirstPaymentGroupId {get; set; }
 		
 		[Display(
 			Name = "FirstPaymentGroupName",
@@ -3064,7 +3355,7 @@ namespace Cf.Data
 		]
 		[Tooltip("SecondEmployeeFullNameTooltip", typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))]
 		[StringLength(
-			64,
+			101,
 			MinimumLength = 0,
 			ErrorMessageResourceName = "StringLengthCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
@@ -3077,7 +3368,7 @@ namespace Cf.Data
 		]
 		[Tooltip("SecondSalaryWorkPlaceNameTooltip", typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))]
 		[StringLength(
-			32,
+			50,
 			MinimumLength = 0,
 			ErrorMessageResourceName = "StringLengthCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
@@ -3096,12 +3387,13 @@ namespace Cf.Data
 			ResourceType = typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))
 		]
 		[Tooltip("SecondDateTooltip", typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))]
-		[DataType(
-			DataType.Date,
-			ErrorMessageResourceName = "DateCheck",
+		[StringLength(
+			38,
+			MinimumLength = 0,
+			ErrorMessageResourceName = "StringLengthCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-        public Nullable<DateTime> SecondDate {get; set; }
+        public string SecondDate {get; set; }
 		
 		[Display(
 			Name = "SecondPaymentGroupId",
@@ -3110,11 +3402,11 @@ namespace Cf.Data
 		[Tooltip("SecondPaymentGroupIdTooltip", typeof(Cf.Data.Resources.ReportPaymentsBetweenTwoDatesResult))]
 		[Range(
 			0,
-			2147483647,
+			127,
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-        public Nullable<int> SecondPaymentGroupId {get; set; }
+        public Nullable<byte> SecondPaymentGroupId {get; set; }
 		
 		[Display(
 			Name = "SecondPaymentGroupName",
@@ -3239,7 +3531,7 @@ namespace Cf.Data
 		]
 		[Tooltip("FirstEmployeeFullNameTooltip", typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesResult))]
 		[StringLength(
-			64,
+			101,
 			MinimumLength = 0,
 			ErrorMessageResourceName = "StringLengthCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
@@ -3252,7 +3544,7 @@ namespace Cf.Data
 		]
 		[Tooltip("FirstSalaryWorkPlaceNameTooltip", typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesResult))]
 		[StringLength(
-			32,
+			50,
 			MinimumLength = 0,
 			ErrorMessageResourceName = "StringLengthCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
@@ -3271,12 +3563,13 @@ namespace Cf.Data
 			ResourceType = typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesResult))
 		]
 		[Tooltip("FirstMonthTooltip", typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesResult))]
-		[DataType(
-			DataType.Date,
-			ErrorMessageResourceName = "DateCheck",
+		[StringLength(
+			38,
+			MinimumLength = 0,
+			ErrorMessageResourceName = "StringLengthCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-        public Nullable<DateTime> FirstMonth {get; set; }
+        public string FirstMonth {get; set; }
 		
 		[Display(
 			Name = "SecondEmployeeId",
@@ -3297,7 +3590,7 @@ namespace Cf.Data
 		]
 		[Tooltip("SecondEmployeeFullNameTooltip", typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesResult))]
 		[StringLength(
-			64,
+			101,
 			MinimumLength = 0,
 			ErrorMessageResourceName = "StringLengthCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
@@ -3310,7 +3603,7 @@ namespace Cf.Data
 		]
 		[Tooltip("SecondSalaryWorkPlaceNameTooltip", typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesResult))]
 		[StringLength(
-			32,
+			50,
 			MinimumLength = 0,
 			ErrorMessageResourceName = "StringLengthCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
@@ -3329,12 +3622,13 @@ namespace Cf.Data
 			ResourceType = typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesResult))
 		]
 		[Tooltip("SecondMonthTooltip", typeof(Cf.Data.Resources.ReportSubscriptionsBetweenTwoDatesResult))]
-		[DataType(
-			DataType.Date,
-			ErrorMessageResourceName = "DateCheck",
+		[StringLength(
+			38,
+			MinimumLength = 0,
+			ErrorMessageResourceName = "StringLengthCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-        public Nullable<DateTime> SecondMonth {get; set; }
+        public string SecondMonth {get; set; }
 		
 		[Display(
 			Name = "SubscriptionDiffrence",

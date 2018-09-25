@@ -12,7 +12,6 @@ namespace Cf.Data
     {
 		#region EmployeeLoans procedure.
 
-
 		[FunctionAttribute(Name = "dbo.EmployeeLoans", IsComposable = true)]
 		private IQueryable<EmployeeLoansResult> _EmployeeLoans([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
 		{
@@ -29,8 +28,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<EmployeeLoansResult> EmployeeLoans([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
 		{
-			IQueryable<EmployeeLoansResult> list = _EmployeeLoans(_employeeId);
-            return list.ToList<EmployeeLoansResult>();
+			return _EmployeeLoans(_employeeId).ToList<EmployeeLoansResult>();
 		}
 
         /// <summary>
@@ -42,8 +40,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<EmployeeLoansResult> EmployeeLoans(EmployeeLoansFilter filterInstance)
 		{
-			IQueryable<EmployeeLoansResult> list = _EmployeeLoans(filterInstance.EmployeeId);
-            return list.ToList<EmployeeLoansResult>();
+			return _EmployeeLoans(filterInstance.EmployeeId).ToList<EmployeeLoansResult>();
 		}
 
 		/// <summary>
@@ -55,7 +52,7 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public EmployeeLoansResult EmployeeLoansFirstOrDefault([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
 		{
-			return EmployeeLoans(_employeeId).FirstOrDefault();
+			return _EmployeeLoans(_employeeId).FirstOrDefault<EmployeeLoansResult>();
 		}
 
         /// <summary>
@@ -66,12 +63,11 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public EmployeeLoansResult EmployeeLoansFirstOrDefault(EmployeeLoansFilter filterInstance)
 		{
-			return EmployeeLoans(filterInstance.EmployeeId).FirstOrDefault();
+			return _EmployeeLoans(filterInstance.EmployeeId).FirstOrDefault<EmployeeLoansResult>();
 		}
 		#endregion
 
 		#region EmployeeMonthPayments procedure.
-
 
 		[FunctionAttribute(Name = "dbo.EmployeeMonthPayments", IsComposable = true)]
 		private IQueryable<EmployeeMonthPaymentsResult> _EmployeeMonthPayments([Parameter(Name = "@Month")] Nullable<DateTime> _month, [Parameter(Name = "@Employee")] Nullable<int> _employee)
@@ -90,8 +86,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<EmployeeMonthPaymentsResult> EmployeeMonthPayments([Parameter(Name = "@Month")] Nullable<DateTime> _month, [Parameter(Name = "@Employee")] Nullable<int> _employee)
 		{
-			IQueryable<EmployeeMonthPaymentsResult> list = _EmployeeMonthPayments(_month, _employee);
-            return list.ToList<EmployeeMonthPaymentsResult>();
+			return _EmployeeMonthPayments(_month, _employee).ToList<EmployeeMonthPaymentsResult>();
 		}
 
         /// <summary>
@@ -103,8 +98,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<EmployeeMonthPaymentsResult> EmployeeMonthPayments(EmployeeMonthPaymentsFilter filterInstance)
 		{
-			IQueryable<EmployeeMonthPaymentsResult> list = _EmployeeMonthPayments(filterInstance.Month, filterInstance.Employee);
-            return list.ToList<EmployeeMonthPaymentsResult>();
+			return _EmployeeMonthPayments(filterInstance.Month, filterInstance.Employee).ToList<EmployeeMonthPaymentsResult>();
 		}
 
 		/// <summary>
@@ -117,7 +111,7 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public EmployeeMonthPaymentsResult EmployeeMonthPaymentsFirstOrDefault([Parameter(Name = "@Month")] Nullable<DateTime> _month, [Parameter(Name = "@Employee")] Nullable<int> _employee)
 		{
-			return EmployeeMonthPayments(_month, _employee).FirstOrDefault();
+			return _EmployeeMonthPayments(_month, _employee).FirstOrDefault<EmployeeMonthPaymentsResult>();
 		}
 
         /// <summary>
@@ -128,12 +122,11 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public EmployeeMonthPaymentsResult EmployeeMonthPaymentsFirstOrDefault(EmployeeMonthPaymentsFilter filterInstance)
 		{
-			return EmployeeMonthPayments(filterInstance.Month, filterInstance.Employee).FirstOrDefault();
+			return _EmployeeMonthPayments(filterInstance.Month, filterInstance.Employee).FirstOrDefault<EmployeeMonthPaymentsResult>();
 		}
 		#endregion
 
 		#region EmployeeMonthSubscriptions procedure.
-
 
 		[FunctionAttribute(Name = "dbo.EmployeeMonthSubscriptions", IsComposable = true)]
 		private IQueryable<EmployeeMonthSubscriptionsResult> _EmployeeMonthSubscriptions([Parameter(Name = "@Month")] Nullable<DateTime> _month, [Parameter(Name = "@Employee")] Nullable<int> _employee)
@@ -152,8 +145,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<EmployeeMonthSubscriptionsResult> EmployeeMonthSubscriptions([Parameter(Name = "@Month")] Nullable<DateTime> _month, [Parameter(Name = "@Employee")] Nullable<int> _employee)
 		{
-			IQueryable<EmployeeMonthSubscriptionsResult> list = _EmployeeMonthSubscriptions(_month, _employee);
-            return list.ToList<EmployeeMonthSubscriptionsResult>();
+			return _EmployeeMonthSubscriptions(_month, _employee).ToList<EmployeeMonthSubscriptionsResult>();
 		}
 
         /// <summary>
@@ -165,8 +157,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<EmployeeMonthSubscriptionsResult> EmployeeMonthSubscriptions(EmployeeMonthSubscriptionsFilter filterInstance)
 		{
-			IQueryable<EmployeeMonthSubscriptionsResult> list = _EmployeeMonthSubscriptions(filterInstance.Month, filterInstance.Employee);
-            return list.ToList<EmployeeMonthSubscriptionsResult>();
+			return _EmployeeMonthSubscriptions(filterInstance.Month, filterInstance.Employee).ToList<EmployeeMonthSubscriptionsResult>();
 		}
 
 		/// <summary>
@@ -179,7 +170,7 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public EmployeeMonthSubscriptionsResult EmployeeMonthSubscriptionsFirstOrDefault([Parameter(Name = "@Month")] Nullable<DateTime> _month, [Parameter(Name = "@Employee")] Nullable<int> _employee)
 		{
-			return EmployeeMonthSubscriptions(_month, _employee).FirstOrDefault();
+			return _EmployeeMonthSubscriptions(_month, _employee).FirstOrDefault<EmployeeMonthSubscriptionsResult>();
 		}
 
         /// <summary>
@@ -190,12 +181,11 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public EmployeeMonthSubscriptionsResult EmployeeMonthSubscriptionsFirstOrDefault(EmployeeMonthSubscriptionsFilter filterInstance)
 		{
-			return EmployeeMonthSubscriptions(filterInstance.Month, filterInstance.Employee).FirstOrDefault();
+			return _EmployeeMonthSubscriptions(filterInstance.Month, filterInstance.Employee).FirstOrDefault<EmployeeMonthSubscriptionsResult>();
 		}
 		#endregion
 
 		#region EmployeeProductCalculator procedure.
-
 
 		[FunctionAttribute(Name = "dbo.EmployeeProductCalculator", IsComposable = true)]
 		private IQueryable<EmployeeProductCalculatorResult> _EmployeeProductCalculator([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@ProductTypeId")] Nullable<short> _productTypeId, [Parameter(Name = "@Amount")] Nullable<decimal> _amount, [Parameter(Name = "@Period")] Nullable<short> _period)
@@ -216,8 +206,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<EmployeeProductCalculatorResult> EmployeeProductCalculator([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@ProductTypeId")] Nullable<short> _productTypeId, [Parameter(Name = "@Amount")] Nullable<decimal> _amount, [Parameter(Name = "@Period")] Nullable<short> _period)
 		{
-			IQueryable<EmployeeProductCalculatorResult> list = _EmployeeProductCalculator(_employeeId, _productTypeId, _amount, _period);
-            return list.ToList<EmployeeProductCalculatorResult>();
+			return _EmployeeProductCalculator(_employeeId, _productTypeId, _amount, _period).ToList<EmployeeProductCalculatorResult>();
 		}
 
         /// <summary>
@@ -229,8 +218,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<EmployeeProductCalculatorResult> EmployeeProductCalculator(EmployeeProductCalculatorFilter filterInstance)
 		{
-			IQueryable<EmployeeProductCalculatorResult> list = _EmployeeProductCalculator(filterInstance.EmployeeId, filterInstance.ProductTypeId, filterInstance.Amount, filterInstance.Period);
-            return list.ToList<EmployeeProductCalculatorResult>();
+			return _EmployeeProductCalculator(filterInstance.EmployeeId, filterInstance.ProductTypeId, filterInstance.Amount, filterInstance.Period).ToList<EmployeeProductCalculatorResult>();
 		}
 
 		/// <summary>
@@ -245,7 +233,7 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public EmployeeProductCalculatorResult EmployeeProductCalculatorFirstOrDefault([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@ProductTypeId")] Nullable<short> _productTypeId, [Parameter(Name = "@Amount")] Nullable<decimal> _amount, [Parameter(Name = "@Period")] Nullable<short> _period)
 		{
-			return EmployeeProductCalculator(_employeeId, _productTypeId, _amount, _period).FirstOrDefault();
+			return _EmployeeProductCalculator(_employeeId, _productTypeId, _amount, _period).FirstOrDefault<EmployeeProductCalculatorResult>();
 		}
 
         /// <summary>
@@ -256,12 +244,11 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public EmployeeProductCalculatorResult EmployeeProductCalculatorFirstOrDefault(EmployeeProductCalculatorFilter filterInstance)
 		{
-			return EmployeeProductCalculator(filterInstance.EmployeeId, filterInstance.ProductTypeId, filterInstance.Amount, filterInstance.Period).FirstOrDefault();
+			return _EmployeeProductCalculator(filterInstance.EmployeeId, filterInstance.ProductTypeId, filterInstance.Amount, filterInstance.Period).FirstOrDefault<EmployeeProductCalculatorResult>();
 		}
 		#endregion
 
 		#region GetAvailabilityCeilingByProductTypeId_EmployeeId procedure.
-
 
 		[FunctionAttribute(Name = "dbo.GetAvailabilityCeilingByProductTypeId_EmployeeId", IsComposable = true)]
 		private IQueryable<GetAvailabilityCeilingByProductTypeId_EmployeeIdResult> _GetAvailabilityCeilingByProductTypeId_EmployeeId([Parameter(Name = "@ProductTypeId")] Nullable<short> _productTypeId, [Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
@@ -280,8 +267,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<GetAvailabilityCeilingByProductTypeId_EmployeeIdResult> GetAvailabilityCeilingByProductTypeId_EmployeeId([Parameter(Name = "@ProductTypeId")] Nullable<short> _productTypeId, [Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
 		{
-			IQueryable<GetAvailabilityCeilingByProductTypeId_EmployeeIdResult> list = _GetAvailabilityCeilingByProductTypeId_EmployeeId(_productTypeId, _employeeId);
-            return list.ToList<GetAvailabilityCeilingByProductTypeId_EmployeeIdResult>();
+			return _GetAvailabilityCeilingByProductTypeId_EmployeeId(_productTypeId, _employeeId).ToList<GetAvailabilityCeilingByProductTypeId_EmployeeIdResult>();
 		}
 
         /// <summary>
@@ -293,8 +279,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<GetAvailabilityCeilingByProductTypeId_EmployeeIdResult> GetAvailabilityCeilingByProductTypeId_EmployeeId(GetAvailabilityCeilingByProductTypeId_EmployeeIdFilter filterInstance)
 		{
-			IQueryable<GetAvailabilityCeilingByProductTypeId_EmployeeIdResult> list = _GetAvailabilityCeilingByProductTypeId_EmployeeId(filterInstance.ProductTypeId, filterInstance.EmployeeId);
-            return list.ToList<GetAvailabilityCeilingByProductTypeId_EmployeeIdResult>();
+			return _GetAvailabilityCeilingByProductTypeId_EmployeeId(filterInstance.ProductTypeId, filterInstance.EmployeeId).ToList<GetAvailabilityCeilingByProductTypeId_EmployeeIdResult>();
 		}
 
 		/// <summary>
@@ -307,7 +292,7 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public GetAvailabilityCeilingByProductTypeId_EmployeeIdResult GetAvailabilityCeilingByProductTypeId_EmployeeIdFirstOrDefault([Parameter(Name = "@ProductTypeId")] Nullable<short> _productTypeId, [Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
 		{
-			return GetAvailabilityCeilingByProductTypeId_EmployeeId(_productTypeId, _employeeId).FirstOrDefault();
+			return _GetAvailabilityCeilingByProductTypeId_EmployeeId(_productTypeId, _employeeId).FirstOrDefault<GetAvailabilityCeilingByProductTypeId_EmployeeIdResult>();
 		}
 
         /// <summary>
@@ -318,12 +303,11 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public GetAvailabilityCeilingByProductTypeId_EmployeeIdResult GetAvailabilityCeilingByProductTypeId_EmployeeIdFirstOrDefault(GetAvailabilityCeilingByProductTypeId_EmployeeIdFilter filterInstance)
 		{
-			return GetAvailabilityCeilingByProductTypeId_EmployeeId(filterInstance.ProductTypeId, filterInstance.EmployeeId).FirstOrDefault();
+			return _GetAvailabilityCeilingByProductTypeId_EmployeeId(filterInstance.ProductTypeId, filterInstance.EmployeeId).FirstOrDefault<GetAvailabilityCeilingByProductTypeId_EmployeeIdResult>();
 		}
 		#endregion
 
 		#region GetDebts procedure.
-
 
 		[FunctionAttribute(Name = "dbo.GetDebts", IsComposable = true)]
 		private IQueryable<GetDebtsResult> _GetDebts([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date)
@@ -342,8 +326,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<GetDebtsResult> GetDebts([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date)
 		{
-			IQueryable<GetDebtsResult> list = _GetDebts(_employeeId, _date);
-            return list.ToList<GetDebtsResult>();
+			return _GetDebts(_employeeId, _date).ToList<GetDebtsResult>();
 		}
 
         /// <summary>
@@ -355,8 +338,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<GetDebtsResult> GetDebts(GetDebtsFilter filterInstance)
 		{
-			IQueryable<GetDebtsResult> list = _GetDebts(filterInstance.EmployeeId, filterInstance.Date);
-            return list.ToList<GetDebtsResult>();
+			return _GetDebts(filterInstance.EmployeeId, filterInstance.Date).ToList<GetDebtsResult>();
 		}
 
 		/// <summary>
@@ -369,7 +351,7 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public GetDebtsResult GetDebtsFirstOrDefault([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date)
 		{
-			return GetDebts(_employeeId, _date).FirstOrDefault();
+			return _GetDebts(_employeeId, _date).FirstOrDefault<GetDebtsResult>();
 		}
 
         /// <summary>
@@ -380,7 +362,7 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public GetDebtsResult GetDebtsFirstOrDefault(GetDebtsFilter filterInstance)
 		{
-			return GetDebts(filterInstance.EmployeeId, filterInstance.Date).FirstOrDefault();
+			return _GetDebts(filterInstance.EmployeeId, filterInstance.Date).FirstOrDefault<GetDebtsResult>();
 		}
 		#endregion
 
@@ -416,7 +398,6 @@ namespace Cf.Data
 
 		#region GetDebtSolvency procedure.
 
-
 		[FunctionAttribute(Name = "dbo.GetDebtSolvency", IsComposable = true)]
 		private IQueryable<GetDebtSolvencyResult> _GetDebtSolvency([Parameter(Name = "@ProductId")] Nullable<int> _productId)
 		{
@@ -433,8 +414,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<GetDebtSolvencyResult> GetDebtSolvency([Parameter(Name = "@ProductId")] Nullable<int> _productId)
 		{
-			IQueryable<GetDebtSolvencyResult> list = _GetDebtSolvency(_productId);
-            return list.ToList<GetDebtSolvencyResult>();
+			return _GetDebtSolvency(_productId).ToList<GetDebtSolvencyResult>();
 		}
 
         /// <summary>
@@ -446,8 +426,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<GetDebtSolvencyResult> GetDebtSolvency(GetDebtSolvencyFilter filterInstance)
 		{
-			IQueryable<GetDebtSolvencyResult> list = _GetDebtSolvency(filterInstance.ProductId);
-            return list.ToList<GetDebtSolvencyResult>();
+			return _GetDebtSolvency(filterInstance.ProductId).ToList<GetDebtSolvencyResult>();
 		}
 
 		/// <summary>
@@ -459,7 +438,7 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public GetDebtSolvencyResult GetDebtSolvencyFirstOrDefault([Parameter(Name = "@ProductId")] Nullable<int> _productId)
 		{
-			return GetDebtSolvency(_productId).FirstOrDefault();
+			return _GetDebtSolvency(_productId).FirstOrDefault<GetDebtSolvencyResult>();
 		}
 
         /// <summary>
@@ -470,7 +449,7 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public GetDebtSolvencyResult GetDebtSolvencyFirstOrDefault(GetDebtSolvencyFilter filterInstance)
 		{
-			return GetDebtSolvency(filterInstance.ProductId).FirstOrDefault();
+			return _GetDebtSolvency(filterInstance.ProductId).FirstOrDefault<GetDebtSolvencyResult>();
 		}
 		#endregion
 
@@ -507,7 +486,6 @@ namespace Cf.Data
 
 		#region GetEmployeeDebts procedure.
 
-
 		[FunctionAttribute(Name = "dbo.GetEmployeeDebts", IsComposable = true)]
 		private IQueryable<GetEmployeeDebtsResult> _GetEmployeeDebts([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date)
 		{
@@ -525,8 +503,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<GetEmployeeDebtsResult> GetEmployeeDebts([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date)
 		{
-			IQueryable<GetEmployeeDebtsResult> list = _GetEmployeeDebts(_employeeId, _date);
-            return list.ToList<GetEmployeeDebtsResult>();
+			return _GetEmployeeDebts(_employeeId, _date).ToList<GetEmployeeDebtsResult>();
 		}
 
         /// <summary>
@@ -538,8 +515,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<GetEmployeeDebtsResult> GetEmployeeDebts(GetEmployeeDebtsFilter filterInstance)
 		{
-			IQueryable<GetEmployeeDebtsResult> list = _GetEmployeeDebts(filterInstance.EmployeeId, filterInstance.Date);
-            return list.ToList<GetEmployeeDebtsResult>();
+			return _GetEmployeeDebts(filterInstance.EmployeeId, filterInstance.Date).ToList<GetEmployeeDebtsResult>();
 		}
 
 		/// <summary>
@@ -552,7 +528,7 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public GetEmployeeDebtsResult GetEmployeeDebtsFirstOrDefault([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date)
 		{
-			return GetEmployeeDebts(_employeeId, _date).FirstOrDefault();
+			return _GetEmployeeDebts(_employeeId, _date).FirstOrDefault<GetEmployeeDebtsResult>();
 		}
 
         /// <summary>
@@ -563,12 +539,11 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public GetEmployeeDebtsResult GetEmployeeDebtsFirstOrDefault(GetEmployeeDebtsFilter filterInstance)
 		{
-			return GetEmployeeDebts(filterInstance.EmployeeId, filterInstance.Date).FirstOrDefault();
+			return _GetEmployeeDebts(filterInstance.EmployeeId, filterInstance.Date).FirstOrDefault<GetEmployeeDebtsResult>();
 		}
 		#endregion
 
 		#region GetEmployeeSolvency procedure.
-
 
 		[FunctionAttribute(Name = "dbo.GetEmployeeSolvency", IsComposable = true)]
 		private IQueryable<GetEmployeeSolvencyResult> _GetEmployeeSolvency([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date, [Parameter(Name = "@Amount")] Nullable<decimal> _amount, [Parameter(Name = "@Installment")] Nullable<decimal> _installment, [Parameter(Name = "@GrossSalary")] Nullable<decimal> _grossSalary, [Parameter(Name = "@NetSalary")] Nullable<decimal> _netSalary)
@@ -591,8 +566,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<GetEmployeeSolvencyResult> GetEmployeeSolvency([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date, [Parameter(Name = "@Amount")] Nullable<decimal> _amount, [Parameter(Name = "@Installment")] Nullable<decimal> _installment, [Parameter(Name = "@GrossSalary")] Nullable<decimal> _grossSalary, [Parameter(Name = "@NetSalary")] Nullable<decimal> _netSalary)
 		{
-			IQueryable<GetEmployeeSolvencyResult> list = _GetEmployeeSolvency(_employeeId, _date, _amount, _installment, _grossSalary, _netSalary);
-            return list.ToList<GetEmployeeSolvencyResult>();
+			return _GetEmployeeSolvency(_employeeId, _date, _amount, _installment, _grossSalary, _netSalary).ToList<GetEmployeeSolvencyResult>();
 		}
 
         /// <summary>
@@ -604,8 +578,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<GetEmployeeSolvencyResult> GetEmployeeSolvency(GetEmployeeSolvencyFilter filterInstance)
 		{
-			IQueryable<GetEmployeeSolvencyResult> list = _GetEmployeeSolvency(filterInstance.EmployeeId, filterInstance.Date, filterInstance.Amount, filterInstance.Installment, filterInstance.GrossSalary, filterInstance.NetSalary);
-            return list.ToList<GetEmployeeSolvencyResult>();
+			return _GetEmployeeSolvency(filterInstance.EmployeeId, filterInstance.Date, filterInstance.Amount, filterInstance.Installment, filterInstance.GrossSalary, filterInstance.NetSalary).ToList<GetEmployeeSolvencyResult>();
 		}
 
 		/// <summary>
@@ -622,7 +595,7 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public GetEmployeeSolvencyResult GetEmployeeSolvencyFirstOrDefault([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date, [Parameter(Name = "@Amount")] Nullable<decimal> _amount, [Parameter(Name = "@Installment")] Nullable<decimal> _installment, [Parameter(Name = "@GrossSalary")] Nullable<decimal> _grossSalary, [Parameter(Name = "@NetSalary")] Nullable<decimal> _netSalary)
 		{
-			return GetEmployeeSolvency(_employeeId, _date, _amount, _installment, _grossSalary, _netSalary).FirstOrDefault();
+			return _GetEmployeeSolvency(_employeeId, _date, _amount, _installment, _grossSalary, _netSalary).FirstOrDefault<GetEmployeeSolvencyResult>();
 		}
 
         /// <summary>
@@ -633,12 +606,11 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public GetEmployeeSolvencyResult GetEmployeeSolvencyFirstOrDefault(GetEmployeeSolvencyFilter filterInstance)
 		{
-			return GetEmployeeSolvency(filterInstance.EmployeeId, filterInstance.Date, filterInstance.Amount, filterInstance.Installment, filterInstance.GrossSalary, filterInstance.NetSalary).FirstOrDefault();
+			return _GetEmployeeSolvency(filterInstance.EmployeeId, filterInstance.Date, filterInstance.Amount, filterInstance.Installment, filterInstance.GrossSalary, filterInstance.NetSalary).FirstOrDefault<GetEmployeeSolvencyResult>();
 		}
 		#endregion
 
 		#region GetEmployeeSumDebts procedure.
-
 
 		[FunctionAttribute(Name = "dbo.GetEmployeeSumDebts", IsComposable = true)]
 		private IQueryable<GetEmployeeSumDebtsResult> _GetEmployeeSumDebts([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date)
@@ -657,8 +629,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<GetEmployeeSumDebtsResult> GetEmployeeSumDebts([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date)
 		{
-			IQueryable<GetEmployeeSumDebtsResult> list = _GetEmployeeSumDebts(_employeeId, _date);
-            return list.ToList<GetEmployeeSumDebtsResult>();
+			return _GetEmployeeSumDebts(_employeeId, _date).ToList<GetEmployeeSumDebtsResult>();
 		}
 
         /// <summary>
@@ -670,8 +641,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<GetEmployeeSumDebtsResult> GetEmployeeSumDebts(GetEmployeeSumDebtsFilter filterInstance)
 		{
-			IQueryable<GetEmployeeSumDebtsResult> list = _GetEmployeeSumDebts(filterInstance.EmployeeId, filterInstance.Date);
-            return list.ToList<GetEmployeeSumDebtsResult>();
+			return _GetEmployeeSumDebts(filterInstance.EmployeeId, filterInstance.Date).ToList<GetEmployeeSumDebtsResult>();
 		}
 
 		/// <summary>
@@ -684,7 +654,7 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public GetEmployeeSumDebtsResult GetEmployeeSumDebtsFirstOrDefault([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date)
 		{
-			return GetEmployeeSumDebts(_employeeId, _date).FirstOrDefault();
+			return _GetEmployeeSumDebts(_employeeId, _date).FirstOrDefault<GetEmployeeSumDebtsResult>();
 		}
 
         /// <summary>
@@ -695,12 +665,11 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public GetEmployeeSumDebtsResult GetEmployeeSumDebtsFirstOrDefault(GetEmployeeSumDebtsFilter filterInstance)
 		{
-			return GetEmployeeSumDebts(filterInstance.EmployeeId, filterInstance.Date).FirstOrDefault();
+			return _GetEmployeeSumDebts(filterInstance.EmployeeId, filterInstance.Date).FirstOrDefault<GetEmployeeSumDebtsResult>();
 		}
 		#endregion
 
 		#region GetEmployeeWarrants procedure.
-
 
 		[FunctionAttribute(Name = "dbo.GetEmployeeWarrants", IsComposable = true)]
 		private IQueryable<GetEmployeeWarrantsResult> _GetEmployeeWarrants([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date)
@@ -719,8 +688,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<GetEmployeeWarrantsResult> GetEmployeeWarrants([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date)
 		{
-			IQueryable<GetEmployeeWarrantsResult> list = _GetEmployeeWarrants(_employeeId, _date);
-            return list.ToList<GetEmployeeWarrantsResult>();
+			return _GetEmployeeWarrants(_employeeId, _date).ToList<GetEmployeeWarrantsResult>();
 		}
 
         /// <summary>
@@ -732,8 +700,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<GetEmployeeWarrantsResult> GetEmployeeWarrants(GetEmployeeWarrantsFilter filterInstance)
 		{
-			IQueryable<GetEmployeeWarrantsResult> list = _GetEmployeeWarrants(filterInstance.EmployeeId, filterInstance.Date);
-            return list.ToList<GetEmployeeWarrantsResult>();
+			return _GetEmployeeWarrants(filterInstance.EmployeeId, filterInstance.Date).ToList<GetEmployeeWarrantsResult>();
 		}
 
 		/// <summary>
@@ -746,7 +713,7 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public GetEmployeeWarrantsResult GetEmployeeWarrantsFirstOrDefault([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date)
 		{
-			return GetEmployeeWarrants(_employeeId, _date).FirstOrDefault();
+			return _GetEmployeeWarrants(_employeeId, _date).FirstOrDefault<GetEmployeeWarrantsResult>();
 		}
 
         /// <summary>
@@ -757,7 +724,7 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public GetEmployeeWarrantsResult GetEmployeeWarrantsFirstOrDefault(GetEmployeeWarrantsFilter filterInstance)
 		{
-			return GetEmployeeWarrants(filterInstance.EmployeeId, filterInstance.Date).FirstOrDefault();
+			return _GetEmployeeWarrants(filterInstance.EmployeeId, filterInstance.Date).FirstOrDefault<GetEmployeeWarrantsResult>();
 		}
 		#endregion
 
@@ -826,7 +793,6 @@ namespace Cf.Data
 
 		#region GetInstallmentPaidAmounts procedure.
 
-
 		[FunctionAttribute(Name = "dbo.GetInstallmentPaidAmounts", IsComposable = true)]
 		private IQueryable<GetInstallmentPaidAmountsResult> _GetInstallmentPaidAmounts([Parameter(Name = "@RefundableProductId")] Nullable<int> _refundableProductId)
 		{
@@ -843,8 +809,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<GetInstallmentPaidAmountsResult> GetInstallmentPaidAmounts([Parameter(Name = "@RefundableProductId")] Nullable<int> _refundableProductId)
 		{
-			IQueryable<GetInstallmentPaidAmountsResult> list = _GetInstallmentPaidAmounts(_refundableProductId);
-            return list.ToList<GetInstallmentPaidAmountsResult>();
+			return _GetInstallmentPaidAmounts(_refundableProductId).ToList<GetInstallmentPaidAmountsResult>();
 		}
 
         /// <summary>
@@ -856,8 +821,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<GetInstallmentPaidAmountsResult> GetInstallmentPaidAmounts(GetInstallmentPaidAmountsFilter filterInstance)
 		{
-			IQueryable<GetInstallmentPaidAmountsResult> list = _GetInstallmentPaidAmounts(filterInstance.RefundableProductId);
-            return list.ToList<GetInstallmentPaidAmountsResult>();
+			return _GetInstallmentPaidAmounts(filterInstance.RefundableProductId).ToList<GetInstallmentPaidAmountsResult>();
 		}
 
 		/// <summary>
@@ -869,7 +833,7 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public GetInstallmentPaidAmountsResult GetInstallmentPaidAmountsFirstOrDefault([Parameter(Name = "@RefundableProductId")] Nullable<int> _refundableProductId)
 		{
-			return GetInstallmentPaidAmounts(_refundableProductId).FirstOrDefault();
+			return _GetInstallmentPaidAmounts(_refundableProductId).FirstOrDefault<GetInstallmentPaidAmountsResult>();
 		}
 
         /// <summary>
@@ -880,12 +844,11 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public GetInstallmentPaidAmountsResult GetInstallmentPaidAmountsFirstOrDefault(GetInstallmentPaidAmountsFilter filterInstance)
 		{
-			return GetInstallmentPaidAmounts(filterInstance.RefundableProductId).FirstOrDefault();
+			return _GetInstallmentPaidAmounts(filterInstance.RefundableProductId).FirstOrDefault<GetInstallmentPaidAmountsResult>();
 		}
 		#endregion
 
 		#region GetInstallments procedure.
-
 
 		[FunctionAttribute(Name = "dbo.GetInstallments", IsComposable = true)]
 		private IQueryable<GetInstallmentsResult> _GetInstallments([Parameter(Name = "@RefundableProductId")] Nullable<int> _refundableProductId)
@@ -903,8 +866,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<GetInstallmentsResult> GetInstallments([Parameter(Name = "@RefundableProductId")] Nullable<int> _refundableProductId)
 		{
-			IQueryable<GetInstallmentsResult> list = _GetInstallments(_refundableProductId);
-            return list.ToList<GetInstallmentsResult>();
+			return _GetInstallments(_refundableProductId).ToList<GetInstallmentsResult>();
 		}
 
         /// <summary>
@@ -916,8 +878,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<GetInstallmentsResult> GetInstallments(GetInstallmentsFilter filterInstance)
 		{
-			IQueryable<GetInstallmentsResult> list = _GetInstallments(filterInstance.RefundableProductId);
-            return list.ToList<GetInstallmentsResult>();
+			return _GetInstallments(filterInstance.RefundableProductId).ToList<GetInstallmentsResult>();
 		}
 
 		/// <summary>
@@ -929,7 +890,7 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public GetInstallmentsResult GetInstallmentsFirstOrDefault([Parameter(Name = "@RefundableProductId")] Nullable<int> _refundableProductId)
 		{
-			return GetInstallments(_refundableProductId).FirstOrDefault();
+			return _GetInstallments(_refundableProductId).FirstOrDefault<GetInstallmentsResult>();
 		}
 
         /// <summary>
@@ -940,7 +901,7 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public GetInstallmentsResult GetInstallmentsFirstOrDefault(GetInstallmentsFilter filterInstance)
 		{
-			return GetInstallments(filterInstance.RefundableProductId).FirstOrDefault();
+			return _GetInstallments(filterInstance.RefundableProductId).FirstOrDefault<GetInstallmentsResult>();
 		}
 		#endregion
 
@@ -978,7 +939,6 @@ namespace Cf.Data
 
 		#region GetRefundableProducts procedure.
 
-
 		[FunctionAttribute(Name = "dbo.GetRefundableProducts", IsComposable = true)]
 		private IQueryable<GetRefundableProductsResult> _GetRefundableProducts([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
 		{
@@ -995,8 +955,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<GetRefundableProductsResult> GetRefundableProducts([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
 		{
-			IQueryable<GetRefundableProductsResult> list = _GetRefundableProducts(_employeeId);
-            return list.ToList<GetRefundableProductsResult>();
+			return _GetRefundableProducts(_employeeId).ToList<GetRefundableProductsResult>();
 		}
 
         /// <summary>
@@ -1008,8 +967,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<GetRefundableProductsResult> GetRefundableProducts(GetRefundableProductsFilter filterInstance)
 		{
-			IQueryable<GetRefundableProductsResult> list = _GetRefundableProducts(filterInstance.EmployeeId);
-            return list.ToList<GetRefundableProductsResult>();
+			return _GetRefundableProducts(filterInstance.EmployeeId).ToList<GetRefundableProductsResult>();
 		}
 
 		/// <summary>
@@ -1021,7 +979,7 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public GetRefundableProductsResult GetRefundableProductsFirstOrDefault([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
 		{
-			return GetRefundableProducts(_employeeId).FirstOrDefault();
+			return _GetRefundableProducts(_employeeId).FirstOrDefault<GetRefundableProductsResult>();
 		}
 
         /// <summary>
@@ -1032,12 +990,11 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public GetRefundableProductsResult GetRefundableProductsFirstOrDefault(GetRefundableProductsFilter filterInstance)
 		{
-			return GetRefundableProducts(filterInstance.EmployeeId).FirstOrDefault();
+			return _GetRefundableProducts(filterInstance.EmployeeId).FirstOrDefault<GetRefundableProductsResult>();
 		}
 		#endregion
 
 		#region GetWarrants procedure.
-
 
 		[FunctionAttribute(Name = "dbo.GetWarrants", IsComposable = true)]
 		private IQueryable<GetWarrantsResult> _GetWarrants([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date)
@@ -1056,8 +1013,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<GetWarrantsResult> GetWarrants([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date)
 		{
-			IQueryable<GetWarrantsResult> list = _GetWarrants(_employeeId, _date);
-            return list.ToList<GetWarrantsResult>();
+			return _GetWarrants(_employeeId, _date).ToList<GetWarrantsResult>();
 		}
 
         /// <summary>
@@ -1069,8 +1025,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<GetWarrantsResult> GetWarrants(GetWarrantsFilter filterInstance)
 		{
-			IQueryable<GetWarrantsResult> list = _GetWarrants(filterInstance.EmployeeId, filterInstance.Date);
-            return list.ToList<GetWarrantsResult>();
+			return _GetWarrants(filterInstance.EmployeeId, filterInstance.Date).ToList<GetWarrantsResult>();
 		}
 
 		/// <summary>
@@ -1083,7 +1038,7 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public GetWarrantsResult GetWarrantsFirstOrDefault([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@Date")] Nullable<DateTime> _date)
 		{
-			return GetWarrants(_employeeId, _date).FirstOrDefault();
+			return _GetWarrants(_employeeId, _date).FirstOrDefault<GetWarrantsResult>();
 		}
 
         /// <summary>
@@ -1094,12 +1049,11 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public GetWarrantsResult GetWarrantsFirstOrDefault(GetWarrantsFilter filterInstance)
 		{
-			return GetWarrants(filterInstance.EmployeeId, filterInstance.Date).FirstOrDefault();
+			return _GetWarrants(filterInstance.EmployeeId, filterInstance.Date).FirstOrDefault<GetWarrantsResult>();
 		}
 		#endregion
 
 		#region GetWarrantSolvency procedure.
-
 
 		[FunctionAttribute(Name = "dbo.GetWarrantSolvency", IsComposable = true)]
 		private IQueryable<GetWarrantSolvencyResult> _GetWarrantSolvency([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@ProductId")] Nullable<int> _productId)
@@ -1118,8 +1072,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<GetWarrantSolvencyResult> GetWarrantSolvency([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@ProductId")] Nullable<int> _productId)
 		{
-			IQueryable<GetWarrantSolvencyResult> list = _GetWarrantSolvency(_employeeId, _productId);
-            return list.ToList<GetWarrantSolvencyResult>();
+			return _GetWarrantSolvency(_employeeId, _productId).ToList<GetWarrantSolvencyResult>();
 		}
 
         /// <summary>
@@ -1131,8 +1084,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<GetWarrantSolvencyResult> GetWarrantSolvency(GetWarrantSolvencyFilter filterInstance)
 		{
-			IQueryable<GetWarrantSolvencyResult> list = _GetWarrantSolvency(filterInstance.EmployeeId, filterInstance.ProductId);
-            return list.ToList<GetWarrantSolvencyResult>();
+			return _GetWarrantSolvency(filterInstance.EmployeeId, filterInstance.ProductId).ToList<GetWarrantSolvencyResult>();
 		}
 
 		/// <summary>
@@ -1145,7 +1097,7 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public GetWarrantSolvencyResult GetWarrantSolvencyFirstOrDefault([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@ProductId")] Nullable<int> _productId)
 		{
-			return GetWarrantSolvency(_employeeId, _productId).FirstOrDefault();
+			return _GetWarrantSolvency(_employeeId, _productId).FirstOrDefault<GetWarrantSolvencyResult>();
 		}
 
         /// <summary>
@@ -1156,7 +1108,7 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public GetWarrantSolvencyResult GetWarrantSolvencyFirstOrDefault(GetWarrantSolvencyFilter filterInstance)
 		{
-			return GetWarrantSolvency(filterInstance.EmployeeId, filterInstance.ProductId).FirstOrDefault();
+			return _GetWarrantSolvency(filterInstance.EmployeeId, filterInstance.ProductId).FirstOrDefault<GetWarrantSolvencyResult>();
 		}
 		#endregion
 
@@ -1222,11 +1174,10 @@ namespace Cf.Data
 
 		#region MonthlyBalanceSum procedure.
 
-
 		[FunctionAttribute(Name = "dbo.MonthlyBalanceSum", IsComposable = true)]
-		private IQueryable<MonthlyBalanceSumResult> _MonthlyBalanceSum([Parameter(Name = "@MinMonth")] Nullable<DateTime> _minMonth, [Parameter(Name = "@MaxMonth")] Nullable<DateTime> _maxMonth)
+		private IQueryable<MonthlyBalanceSumResult> _MonthlyBalanceSum([Parameter(Name = "@MinMonth")] Nullable<DateTime> _minMonth, [Parameter(Name = "@MaxMonth")] Nullable<DateTime> _maxMonth, [Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
 		{
-			return this.CreateMethodCallQuery<MonthlyBalanceSumResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _minMonth, _maxMonth);
+			return this.CreateMethodCallQuery<MonthlyBalanceSumResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _minMonth, _maxMonth, _employeeId);
 		}
 
 		/// <summary>
@@ -1234,14 +1185,14 @@ namespace Cf.Data
 		/// </summary>
 		/// <param name="_minMonth"></param>
 		/// <param name="_maxMonth"></param>
+		/// <param name="_employeeId"></param>
         /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
 		/// <returns>A list of MonthlyBalanceSumResult instances.</returns>
 		/// <remarks>This method never returns null, 
 		///	if no records are available, length of the list will be 0.</remarks>
-		public List<MonthlyBalanceSumResult> MonthlyBalanceSum([Parameter(Name = "@MinMonth")] Nullable<DateTime> _minMonth, [Parameter(Name = "@MaxMonth")] Nullable<DateTime> _maxMonth)
+		public List<MonthlyBalanceSumResult> MonthlyBalanceSum([Parameter(Name = "@MinMonth")] Nullable<DateTime> _minMonth, [Parameter(Name = "@MaxMonth")] Nullable<DateTime> _maxMonth, [Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
 		{
-			IQueryable<MonthlyBalanceSumResult> list = _MonthlyBalanceSum(_minMonth, _maxMonth);
-            return list.ToList<MonthlyBalanceSumResult>();
+			return _MonthlyBalanceSum(_minMonth, _maxMonth, _employeeId).ToList<MonthlyBalanceSumResult>();
 		}
 
         /// <summary>
@@ -1253,8 +1204,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<MonthlyBalanceSumResult> MonthlyBalanceSum(MonthlyBalanceSumFilter filterInstance)
 		{
-			IQueryable<MonthlyBalanceSumResult> list = _MonthlyBalanceSum(filterInstance.MinMonth, filterInstance.MaxMonth);
-            return list.ToList<MonthlyBalanceSumResult>();
+			return _MonthlyBalanceSum(filterInstance.MinMonth, filterInstance.MaxMonth, filterInstance.EmployeeId).ToList<MonthlyBalanceSumResult>();
 		}
 
 		/// <summary>
@@ -1262,12 +1212,13 @@ namespace Cf.Data
 		/// </summary>
 		/// <param name="_minMonth"></param>
 		/// <param name="_maxMonth"></param>
+		/// <param name="_employeeId"></param>
         /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
 		/// <returns>An instance of MonthlyBalanceSumResult.</returns>
 		/// <remarks>If no instances the method returns null.</remarks>
-		public MonthlyBalanceSumResult MonthlyBalanceSumFirstOrDefault([Parameter(Name = "@MinMonth")] Nullable<DateTime> _minMonth, [Parameter(Name = "@MaxMonth")] Nullable<DateTime> _maxMonth)
+		public MonthlyBalanceSumResult MonthlyBalanceSumFirstOrDefault([Parameter(Name = "@MinMonth")] Nullable<DateTime> _minMonth, [Parameter(Name = "@MaxMonth")] Nullable<DateTime> _maxMonth, [Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
 		{
-			return MonthlyBalanceSum(_minMonth, _maxMonth).FirstOrDefault();
+			return _MonthlyBalanceSum(_minMonth, _maxMonth, _employeeId).FirstOrDefault<MonthlyBalanceSumResult>();
 		}
 
         /// <summary>
@@ -1278,12 +1229,11 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public MonthlyBalanceSumResult MonthlyBalanceSumFirstOrDefault(MonthlyBalanceSumFilter filterInstance)
 		{
-			return MonthlyBalanceSum(filterInstance.MinMonth, filterInstance.MaxMonth).FirstOrDefault();
+			return _MonthlyBalanceSum(filterInstance.MinMonth, filterInstance.MaxMonth, filterInstance.EmployeeId).FirstOrDefault<MonthlyBalanceSumResult>();
 		}
 		#endregion
 
 		#region PaymentBetweenTwoDates procedure.
-
 
 		[Function(Name = "dbo.PaymentBetweenTwoDates")]
 		private ISingleResult<PaymentBetweenTwoDatesResult> _PaymentBetweenTwoDates([Parameter(Name = "@MinDate")] Nullable<DateTime> _minDate, [Parameter(Name = "@MaxDate")] Nullable<DateTime> _maxDate)
@@ -1303,8 +1253,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<PaymentBetweenTwoDatesResult> PaymentBetweenTwoDates([Parameter(Name = "@MinDate")] Nullable<DateTime> _minDate, [Parameter(Name = "@MaxDate")] Nullable<DateTime> _maxDate)
 		{
-			ISingleResult<PaymentBetweenTwoDatesResult> list = _PaymentBetweenTwoDates(_minDate, _maxDate);
-            return list.ToList<PaymentBetweenTwoDatesResult>();
+			return _PaymentBetweenTwoDates(_minDate, _maxDate).ToList<PaymentBetweenTwoDatesResult>();
 		}
 
         /// <summary>
@@ -1316,13 +1265,33 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<PaymentBetweenTwoDatesResult> PaymentBetweenTwoDates(PaymentBetweenTwoDatesFilter filterInstance)
 		{
-			ISingleResult<PaymentBetweenTwoDatesResult> list = _PaymentBetweenTwoDates(filterInstance.MinDate, filterInstance.MaxDate);
-            return list.ToList<PaymentBetweenTwoDatesResult>();
+			return _PaymentBetweenTwoDates(filterInstance.MinDate, filterInstance.MaxDate).ToList<PaymentBetweenTwoDatesResult>();
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_minDate"></param>
+		/// <param name="_maxDate"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+        /// <returns>An instance of type PaymentBetweenTwoDatesResult or null.</returns>
+		public PaymentBetweenTwoDatesResult PaymentBetweenTwoDatesFirstOrDefault([Parameter(Name = "@MinDate")] Nullable<DateTime> _minDate, [Parameter(Name = "@MaxDate")] Nullable<DateTime> _maxDate)
+		{
+			return _PaymentBetweenTwoDates(_minDate, _maxDate).FirstOrDefault<PaymentBetweenTwoDatesResult>();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of PaymentBetweenTwoDatesFilter that defines filtering options.</param>
+        /// <returns>An instance of type PaymentBetweenTwoDatesResult or null.</returns>
+		public PaymentBetweenTwoDatesResult PaymentBetweenTwoDatesFirstOrDefault(PaymentBetweenTwoDatesFilter filterInstance)
+		{
+			return _PaymentBetweenTwoDates(filterInstance.MinDate, filterInstance.MaxDate).FirstOrDefault<PaymentBetweenTwoDatesResult>();
 		}
 		#endregion
 
 		#region ProductCalculator procedure.
-
 
 		[FunctionAttribute(Name = "dbo.ProductCalculator", IsComposable = true)]
 		private IQueryable<ProductCalculatorResult> _ProductCalculator([Parameter(Name = "@ProductType")] Nullable<short> _productType, [Parameter(Name = "@Amount")] Nullable<decimal> _amount, [Parameter(Name = "@Period")] Nullable<short> _period)
@@ -1342,8 +1311,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<ProductCalculatorResult> ProductCalculator([Parameter(Name = "@ProductType")] Nullable<short> _productType, [Parameter(Name = "@Amount")] Nullable<decimal> _amount, [Parameter(Name = "@Period")] Nullable<short> _period)
 		{
-			IQueryable<ProductCalculatorResult> list = _ProductCalculator(_productType, _amount, _period);
-            return list.ToList<ProductCalculatorResult>();
+			return _ProductCalculator(_productType, _amount, _period).ToList<ProductCalculatorResult>();
 		}
 
         /// <summary>
@@ -1355,8 +1323,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<ProductCalculatorResult> ProductCalculator(ProductCalculatorFilter filterInstance)
 		{
-			IQueryable<ProductCalculatorResult> list = _ProductCalculator(filterInstance.ProductType, filterInstance.Amount, filterInstance.Period);
-            return list.ToList<ProductCalculatorResult>();
+			return _ProductCalculator(filterInstance.ProductType, filterInstance.Amount, filterInstance.Period).ToList<ProductCalculatorResult>();
 		}
 
 		/// <summary>
@@ -1370,7 +1337,7 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public ProductCalculatorResult ProductCalculatorFirstOrDefault([Parameter(Name = "@ProductType")] Nullable<short> _productType, [Parameter(Name = "@Amount")] Nullable<decimal> _amount, [Parameter(Name = "@Period")] Nullable<short> _period)
 		{
-			return ProductCalculator(_productType, _amount, _period).FirstOrDefault();
+			return _ProductCalculator(_productType, _amount, _period).FirstOrDefault<ProductCalculatorResult>();
 		}
 
         /// <summary>
@@ -1381,12 +1348,11 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public ProductCalculatorResult ProductCalculatorFirstOrDefault(ProductCalculatorFilter filterInstance)
 		{
-			return ProductCalculator(filterInstance.ProductType, filterInstance.Amount, filterInstance.Period).FirstOrDefault();
+			return _ProductCalculator(filterInstance.ProductType, filterInstance.Amount, filterInstance.Period).FirstOrDefault<ProductCalculatorResult>();
 		}
 		#endregion
 
 		#region ReportLoansBetweenTwoDates procedure.
-
 
 		[FunctionAttribute(Name = "dbo.ReportLoansBetweenTwoDates", IsComposable = true)]
 		private IQueryable<ReportLoansBetweenTwoDatesResult> _ReportLoansBetweenTwoDates([Parameter(Name = "@FromDate")] Nullable<DateTime> _fromDate, [Parameter(Name = "@ToDate")] Nullable<DateTime> _toDate)
@@ -1405,8 +1371,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<ReportLoansBetweenTwoDatesResult> ReportLoansBetweenTwoDates([Parameter(Name = "@FromDate")] Nullable<DateTime> _fromDate, [Parameter(Name = "@ToDate")] Nullable<DateTime> _toDate)
 		{
-			IQueryable<ReportLoansBetweenTwoDatesResult> list = _ReportLoansBetweenTwoDates(_fromDate, _toDate);
-            return list.ToList<ReportLoansBetweenTwoDatesResult>();
+			return _ReportLoansBetweenTwoDates(_fromDate, _toDate).ToList<ReportLoansBetweenTwoDatesResult>();
 		}
 
         /// <summary>
@@ -1418,8 +1383,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<ReportLoansBetweenTwoDatesResult> ReportLoansBetweenTwoDates(ReportLoansBetweenTwoDatesFilter filterInstance)
 		{
-			IQueryable<ReportLoansBetweenTwoDatesResult> list = _ReportLoansBetweenTwoDates(filterInstance.FromDate, filterInstance.ToDate);
-            return list.ToList<ReportLoansBetweenTwoDatesResult>();
+			return _ReportLoansBetweenTwoDates(filterInstance.FromDate, filterInstance.ToDate).ToList<ReportLoansBetweenTwoDatesResult>();
 		}
 
 		/// <summary>
@@ -1432,7 +1396,7 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public ReportLoansBetweenTwoDatesResult ReportLoansBetweenTwoDatesFirstOrDefault([Parameter(Name = "@FromDate")] Nullable<DateTime> _fromDate, [Parameter(Name = "@ToDate")] Nullable<DateTime> _toDate)
 		{
-			return ReportLoansBetweenTwoDates(_fromDate, _toDate).FirstOrDefault();
+			return _ReportLoansBetweenTwoDates(_fromDate, _toDate).FirstOrDefault<ReportLoansBetweenTwoDatesResult>();
 		}
 
         /// <summary>
@@ -1443,12 +1407,11 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public ReportLoansBetweenTwoDatesResult ReportLoansBetweenTwoDatesFirstOrDefault(ReportLoansBetweenTwoDatesFilter filterInstance)
 		{
-			return ReportLoansBetweenTwoDates(filterInstance.FromDate, filterInstance.ToDate).FirstOrDefault();
+			return _ReportLoansBetweenTwoDates(filterInstance.FromDate, filterInstance.ToDate).FirstOrDefault<ReportLoansBetweenTwoDatesResult>();
 		}
 		#endregion
 
 		#region ReportPaymentsBetweenTwoDates procedure.
-
 
 		[Function(Name = "dbo.ReportPaymentsBetweenTwoDates")]
 		private ISingleResult<ReportPaymentsBetweenTwoDatesResult> _ReportPaymentsBetweenTwoDates([Parameter(Name = "@FirstMonth")] Nullable<DateTime> _firstMonth, [Parameter(Name = "@SecondMonth")] Nullable<DateTime> _secondMonth, [Parameter(Name = "@Limit")] Nullable<double> _limit, [Parameter(Name = "@PaymentDiff")] Nullable<int> _paymentDiff)
@@ -1470,8 +1433,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<ReportPaymentsBetweenTwoDatesResult> ReportPaymentsBetweenTwoDates([Parameter(Name = "@FirstMonth")] Nullable<DateTime> _firstMonth, [Parameter(Name = "@SecondMonth")] Nullable<DateTime> _secondMonth, [Parameter(Name = "@Limit")] Nullable<double> _limit, [Parameter(Name = "@PaymentDiff")] Nullable<int> _paymentDiff)
 		{
-			ISingleResult<ReportPaymentsBetweenTwoDatesResult> list = _ReportPaymentsBetweenTwoDates(_firstMonth, _secondMonth, _limit, _paymentDiff);
-            return list.ToList<ReportPaymentsBetweenTwoDatesResult>();
+			return _ReportPaymentsBetweenTwoDates(_firstMonth, _secondMonth, _limit, _paymentDiff).ToList<ReportPaymentsBetweenTwoDatesResult>();
 		}
 
         /// <summary>
@@ -1483,13 +1445,35 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<ReportPaymentsBetweenTwoDatesResult> ReportPaymentsBetweenTwoDates(ReportPaymentsBetweenTwoDatesFilter filterInstance)
 		{
-			ISingleResult<ReportPaymentsBetweenTwoDatesResult> list = _ReportPaymentsBetweenTwoDates(filterInstance.FirstMonth, filterInstance.SecondMonth, filterInstance.Limit, filterInstance.PaymentDiff);
-            return list.ToList<ReportPaymentsBetweenTwoDatesResult>();
+			return _ReportPaymentsBetweenTwoDates(filterInstance.FirstMonth, filterInstance.SecondMonth, filterInstance.Limit, filterInstance.PaymentDiff).ToList<ReportPaymentsBetweenTwoDatesResult>();
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_firstMonth"></param>
+		/// <param name="_secondMonth"></param>
+		/// <param name="_limit"></param>
+		/// <param name="_paymentDiff"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+        /// <returns>An instance of type ReportPaymentsBetweenTwoDatesResult or null.</returns>
+		public ReportPaymentsBetweenTwoDatesResult ReportPaymentsBetweenTwoDatesFirstOrDefault([Parameter(Name = "@FirstMonth")] Nullable<DateTime> _firstMonth, [Parameter(Name = "@SecondMonth")] Nullable<DateTime> _secondMonth, [Parameter(Name = "@Limit")] Nullable<double> _limit, [Parameter(Name = "@PaymentDiff")] Nullable<int> _paymentDiff)
+		{
+			return _ReportPaymentsBetweenTwoDates(_firstMonth, _secondMonth, _limit, _paymentDiff).FirstOrDefault<ReportPaymentsBetweenTwoDatesResult>();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of ReportPaymentsBetweenTwoDatesFilter that defines filtering options.</param>
+        /// <returns>An instance of type ReportPaymentsBetweenTwoDatesResult or null.</returns>
+		public ReportPaymentsBetweenTwoDatesResult ReportPaymentsBetweenTwoDatesFirstOrDefault(ReportPaymentsBetweenTwoDatesFilter filterInstance)
+		{
+			return _ReportPaymentsBetweenTwoDates(filterInstance.FirstMonth, filterInstance.SecondMonth, filterInstance.Limit, filterInstance.PaymentDiff).FirstOrDefault<ReportPaymentsBetweenTwoDatesResult>();
 		}
 		#endregion
 
 		#region ReportSubscriptionsBetweenTwoDates procedure.
-
 
 		[Function(Name = "dbo.ReportSubscriptionsBetweenTwoDates")]
 		private ISingleResult<ReportSubscriptionsBetweenTwoDatesResult> _ReportSubscriptionsBetweenTwoDates([Parameter(Name = "@FirstMonth")] Nullable<DateTime> _firstMonth, [Parameter(Name = "@SecondMonth")] Nullable<DateTime> _secondMonth, [Parameter(Name = "@Limit")] Nullable<double> _limit, [Parameter(Name = "@SubscriptionDiff")] Nullable<int> _subscriptionDiff)
@@ -1511,8 +1495,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<ReportSubscriptionsBetweenTwoDatesResult> ReportSubscriptionsBetweenTwoDates([Parameter(Name = "@FirstMonth")] Nullable<DateTime> _firstMonth, [Parameter(Name = "@SecondMonth")] Nullable<DateTime> _secondMonth, [Parameter(Name = "@Limit")] Nullable<double> _limit, [Parameter(Name = "@SubscriptionDiff")] Nullable<int> _subscriptionDiff)
 		{
-			ISingleResult<ReportSubscriptionsBetweenTwoDatesResult> list = _ReportSubscriptionsBetweenTwoDates(_firstMonth, _secondMonth, _limit, _subscriptionDiff);
-            return list.ToList<ReportSubscriptionsBetweenTwoDatesResult>();
+			return _ReportSubscriptionsBetweenTwoDates(_firstMonth, _secondMonth, _limit, _subscriptionDiff).ToList<ReportSubscriptionsBetweenTwoDatesResult>();
 		}
 
         /// <summary>
@@ -1524,13 +1507,35 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<ReportSubscriptionsBetweenTwoDatesResult> ReportSubscriptionsBetweenTwoDates(ReportSubscriptionsBetweenTwoDatesFilter filterInstance)
 		{
-			ISingleResult<ReportSubscriptionsBetweenTwoDatesResult> list = _ReportSubscriptionsBetweenTwoDates(filterInstance.FirstMonth, filterInstance.SecondMonth, filterInstance.Limit, filterInstance.SubscriptionDiff);
-            return list.ToList<ReportSubscriptionsBetweenTwoDatesResult>();
+			return _ReportSubscriptionsBetweenTwoDates(filterInstance.FirstMonth, filterInstance.SecondMonth, filterInstance.Limit, filterInstance.SubscriptionDiff).ToList<ReportSubscriptionsBetweenTwoDatesResult>();
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_firstMonth"></param>
+		/// <param name="_secondMonth"></param>
+		/// <param name="_limit"></param>
+		/// <param name="_subscriptionDiff"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+        /// <returns>An instance of type ReportSubscriptionsBetweenTwoDatesResult or null.</returns>
+		public ReportSubscriptionsBetweenTwoDatesResult ReportSubscriptionsBetweenTwoDatesFirstOrDefault([Parameter(Name = "@FirstMonth")] Nullable<DateTime> _firstMonth, [Parameter(Name = "@SecondMonth")] Nullable<DateTime> _secondMonth, [Parameter(Name = "@Limit")] Nullable<double> _limit, [Parameter(Name = "@SubscriptionDiff")] Nullable<int> _subscriptionDiff)
+		{
+			return _ReportSubscriptionsBetweenTwoDates(_firstMonth, _secondMonth, _limit, _subscriptionDiff).FirstOrDefault<ReportSubscriptionsBetweenTwoDatesResult>();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of ReportSubscriptionsBetweenTwoDatesFilter that defines filtering options.</param>
+        /// <returns>An instance of type ReportSubscriptionsBetweenTwoDatesResult or null.</returns>
+		public ReportSubscriptionsBetweenTwoDatesResult ReportSubscriptionsBetweenTwoDatesFirstOrDefault(ReportSubscriptionsBetweenTwoDatesFilter filterInstance)
+		{
+			return _ReportSubscriptionsBetweenTwoDates(filterInstance.FirstMonth, filterInstance.SecondMonth, filterInstance.Limit, filterInstance.SubscriptionDiff).FirstOrDefault<ReportSubscriptionsBetweenTwoDatesResult>();
 		}
 		#endregion
 
 		#region RequestStatistics procedure.
-
 
 		[FunctionAttribute(Name = "dbo.RequestStatistics", IsComposable = true)]
 		private IQueryable<RequestStatisticsResult> _RequestStatistics([Parameter(Name = "@MinDate")] Nullable<DateTime> _minDate, [Parameter(Name = "@MaxDate")] Nullable<DateTime> _maxDate)
@@ -1549,8 +1554,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<RequestStatisticsResult> RequestStatistics([Parameter(Name = "@MinDate")] Nullable<DateTime> _minDate, [Parameter(Name = "@MaxDate")] Nullable<DateTime> _maxDate)
 		{
-			IQueryable<RequestStatisticsResult> list = _RequestStatistics(_minDate, _maxDate);
-            return list.ToList<RequestStatisticsResult>();
+			return _RequestStatistics(_minDate, _maxDate).ToList<RequestStatisticsResult>();
 		}
 
         /// <summary>
@@ -1562,8 +1566,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<RequestStatisticsResult> RequestStatistics(RequestStatisticsFilter filterInstance)
 		{
-			IQueryable<RequestStatisticsResult> list = _RequestStatistics(filterInstance.MinDate, filterInstance.MaxDate);
-            return list.ToList<RequestStatisticsResult>();
+			return _RequestStatistics(filterInstance.MinDate, filterInstance.MaxDate).ToList<RequestStatisticsResult>();
 		}
 
 		/// <summary>
@@ -1576,7 +1579,7 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public RequestStatisticsResult RequestStatisticsFirstOrDefault([Parameter(Name = "@MinDate")] Nullable<DateTime> _minDate, [Parameter(Name = "@MaxDate")] Nullable<DateTime> _maxDate)
 		{
-			return RequestStatistics(_minDate, _maxDate).FirstOrDefault();
+			return _RequestStatistics(_minDate, _maxDate).FirstOrDefault<RequestStatisticsResult>();
 		}
 
         /// <summary>
@@ -1587,12 +1590,11 @@ namespace Cf.Data
 		/// <remarks>If no instances the method returns null.</remarks>
 		public RequestStatisticsResult RequestStatisticsFirstOrDefault(RequestStatisticsFilter filterInstance)
 		{
-			return RequestStatistics(filterInstance.MinDate, filterInstance.MaxDate).FirstOrDefault();
+			return _RequestStatistics(filterInstance.MinDate, filterInstance.MaxDate).FirstOrDefault<RequestStatisticsResult>();
 		}
 		#endregion
 
 		#region SubscriptionsBetweenTwoDates procedure.
-
 
 		[Function(Name = "dbo.SubscriptionsBetweenTwoDates")]
 		private ISingleResult<SubscriptionsBetweenTwoDatesResult> _SubscriptionsBetweenTwoDates([Parameter(Name = "@MinDate")] Nullable<DateTime> _minDate, [Parameter(Name = "@MaxDate")] Nullable<DateTime> _maxDate)
@@ -1612,8 +1614,7 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<SubscriptionsBetweenTwoDatesResult> SubscriptionsBetweenTwoDates([Parameter(Name = "@MinDate")] Nullable<DateTime> _minDate, [Parameter(Name = "@MaxDate")] Nullable<DateTime> _maxDate)
 		{
-			ISingleResult<SubscriptionsBetweenTwoDatesResult> list = _SubscriptionsBetweenTwoDates(_minDate, _maxDate);
-            return list.ToList<SubscriptionsBetweenTwoDatesResult>();
+			return _SubscriptionsBetweenTwoDates(_minDate, _maxDate).ToList<SubscriptionsBetweenTwoDatesResult>();
 		}
 
         /// <summary>
@@ -1625,8 +1626,122 @@ namespace Cf.Data
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<SubscriptionsBetweenTwoDatesResult> SubscriptionsBetweenTwoDates(SubscriptionsBetweenTwoDatesFilter filterInstance)
 		{
-			ISingleResult<SubscriptionsBetweenTwoDatesResult> list = _SubscriptionsBetweenTwoDates(filterInstance.MinDate, filterInstance.MaxDate);
-            return list.ToList<SubscriptionsBetweenTwoDatesResult>();
+			return _SubscriptionsBetweenTwoDates(filterInstance.MinDate, filterInstance.MaxDate).ToList<SubscriptionsBetweenTwoDatesResult>();
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_minDate"></param>
+		/// <param name="_maxDate"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+        /// <returns>An instance of type SubscriptionsBetweenTwoDatesResult or null.</returns>
+		public SubscriptionsBetweenTwoDatesResult SubscriptionsBetweenTwoDatesFirstOrDefault([Parameter(Name = "@MinDate")] Nullable<DateTime> _minDate, [Parameter(Name = "@MaxDate")] Nullable<DateTime> _maxDate)
+		{
+			return _SubscriptionsBetweenTwoDates(_minDate, _maxDate).FirstOrDefault<SubscriptionsBetweenTwoDatesResult>();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of SubscriptionsBetweenTwoDatesFilter that defines filtering options.</param>
+        /// <returns>An instance of type SubscriptionsBetweenTwoDatesResult or null.</returns>
+		public SubscriptionsBetweenTwoDatesResult SubscriptionsBetweenTwoDatesFirstOrDefault(SubscriptionsBetweenTwoDatesFilter filterInstance)
+		{
+			return _SubscriptionsBetweenTwoDates(filterInstance.MinDate, filterInstance.MaxDate).FirstOrDefault<SubscriptionsBetweenTwoDatesResult>();
+		}
+		#endregion
+
+		#region SumComingLoansForEmployee procedure.
+
+		[Function(Name = "dbo.SumComingLoansForEmployee")]
+		[return: Parameter(DbType = "float")]
+		private double _SumComingLoansForEmployee([Parameter(Name = "@FromDate")] Nullable<DateTime> _fromDate, [Parameter(Name = "@ToDate")] Nullable<DateTime> _toDate, [Parameter(Name = "@Employee")] Nullable<int> _employee)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _fromDate, _toDate, _employee);
+			return (double) (result.ReturnValue);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_fromDate"></param>
+		/// <param name="_toDate"></param>
+		/// <param name="_employee"></param>
+		public double SumComingLoansForEmployee([Parameter(Name = "@FromDate")] Nullable<DateTime> _fromDate, [Parameter(Name = "@ToDate")] Nullable<DateTime> _toDate, [Parameter(Name = "@Employee")] Nullable<int> _employee)
+		{
+			 return _SumComingLoansForEmployee(_fromDate, _toDate, _employee);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of SumComingLoansForEmployeeFilter that defines filtering options.</param>
+		public double SumComingLoansForEmployee(SumComingLoansForEmployeeFilter filterInstance)
+		{
+			 return _SumComingLoansForEmployee(filterInstance.FromDate, filterInstance.ToDate, filterInstance.Employee);
+		}
+		#endregion
+
+		#region SumLoansForEmployee procedure.
+
+		[Function(Name = "dbo.SumLoansForEmployee")]
+		[return: Parameter(DbType = "float")]
+		private double _SumLoansForEmployee([Parameter(Name = "@FromDate")] Nullable<DateTime> _fromDate, [Parameter(Name = "@ToDate")] Nullable<DateTime> _toDate, [Parameter(Name = "@Employee")] Nullable<int> _employee)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _fromDate, _toDate, _employee);
+			return (double) (result.ReturnValue);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_fromDate"></param>
+		/// <param name="_toDate"></param>
+		/// <param name="_employee"></param>
+		public double SumLoansForEmployee([Parameter(Name = "@FromDate")] Nullable<DateTime> _fromDate, [Parameter(Name = "@ToDate")] Nullable<DateTime> _toDate, [Parameter(Name = "@Employee")] Nullable<int> _employee)
+		{
+			 return _SumLoansForEmployee(_fromDate, _toDate, _employee);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of SumLoansForEmployeeFilter that defines filtering options.</param>
+		public double SumLoansForEmployee(SumLoansForEmployeeFilter filterInstance)
+		{
+			 return _SumLoansForEmployee(filterInstance.FromDate, filterInstance.ToDate, filterInstance.Employee);
+		}
+		#endregion
+
+		#region SumOutgoingLoansForEmployee procedure.
+
+		[Function(Name = "dbo.SumOutgoingLoansForEmployee")]
+		[return: Parameter(DbType = "float")]
+		private double _SumOutgoingLoansForEmployee([Parameter(Name = "@FromDate")] Nullable<DateTime> _fromDate, [Parameter(Name = "@ToDate")] Nullable<DateTime> _toDate, [Parameter(Name = "@Employee")] Nullable<int> _employee)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _fromDate, _toDate, _employee);
+			return (double) (result.ReturnValue);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_fromDate"></param>
+		/// <param name="_toDate"></param>
+		/// <param name="_employee"></param>
+		public double SumOutgoingLoansForEmployee([Parameter(Name = "@FromDate")] Nullable<DateTime> _fromDate, [Parameter(Name = "@ToDate")] Nullable<DateTime> _toDate, [Parameter(Name = "@Employee")] Nullable<int> _employee)
+		{
+			 return _SumOutgoingLoansForEmployee(_fromDate, _toDate, _employee);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of SumOutgoingLoansForEmployeeFilter that defines filtering options.</param>
+		public double SumOutgoingLoansForEmployee(SumOutgoingLoansForEmployeeFilter filterInstance)
+		{
+			 return _SumOutgoingLoansForEmployee(filterInstance.FromDate, filterInstance.ToDate, filterInstance.Employee);
 		}
 		#endregion
 	}

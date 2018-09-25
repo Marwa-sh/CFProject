@@ -1,4 +1,5 @@
 ﻿@model Cf.ViewModels.LoanRequestVwViewModel
+@using Cf.Services
 <div class="form-horizontal">
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 </div>
@@ -133,9 +134,9 @@
             </div>
             <div class="card-body collapse in">
                 <div class="card-block card-dashboard">
-                    <button class="btn btn-success type="button">
+                    @*<button class="btn btn-success type="button">
                         @Html.ActionLink((string)ViewBag.Insert + " " + (string)ViewBag.ModuleName, "Create")
-                    </button>
+                    </button>*@
 
                     @*<button class="btn btn-outline-info" type="button">
                         @Html.ActionLink("Employee Calculator" , "EmployeeCalculator")
@@ -145,7 +146,7 @@
                     <table id="Result" class="table table-bordered mb-0 ">
                         <thead class="bg-primary table-head-color">
                             <tr>
-                               
+                                <th></th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.Instance.RequestProductEmployeeId)
                                 </th>
@@ -169,13 +170,42 @@
                                     @Html.DisplayNameFor(model => model.Instance.RequestRequestStatusName)
                                 </th>
 
-                                <th></th>
+                                
                             </tr>
                         </thead>
                         <tbody>
                             @foreach (var item in Model.List)
                             {
-                                <tr>                                    
+                                <tr>        
+                                    <td>
+                                        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                            
+                                            <button type="button" class="btn btn-info tooltips delete"
+                                            data-placement="left" data-container="body" data-toggle="tooltip"
+                                            title="@ResourceServices.GetString("ar", "UI", "Details")">
+                                           
+                                                <a href="@Url.Action("Details",
+                                                    new { id = item.RequestProductId })" class="icon-list" >
+                                                </a>
+                                            </button>
+
+                                            <button type="button" class="btn btn-warning tooltips delete"
+                                                    data-placement="left" data-container="body" data-toggle="tooltip"
+                                                    title="@ResourceServices.GetString("ar", "UI", "Edit")">
+
+                                                <a href="@Url.Action("Edit",
+                                                    new { id = item.RequestProductId })" class="icon-edit">
+                                                </a>
+                                            </button>                                            
+
+                                            <button type="button" class="btn btn-danger deleteLink tooltips icon-remove"
+                                                    data-placement="left" data-container="body"
+                                                     data-toggle="tooltip" title="@ViewBag.Delete" 
+                                                    id="delete" data-id="@item.RequestProductId" style="height:26.8px;width:32px">
+                                            
+                                            </button>
+                                        </div>
+                                    </td>                            
                                     <td>
                                         @Html.DisplayFor(modelItem => item.RequestProductEmployeeId)
                                     </td>
@@ -198,26 +228,7 @@
                                     <td>
                                         @Html.DisplayFor(modelItem => item.RequestRequestStatusName)
                                     </td>
-                                    <td>
-                                        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                                            <button type="button" class="btn btn-info">
-                                                @Html.ActionLink((string)ViewBag.Details, "Details",
-                                            new
-                                            {
-                                                id = item.RequestProductId
-                                            })
-                                            </button>
-                                            <button type="button" class="btn btn-warning">
-                                                @Html.ActionLink((string)ViewBag.Update, "Edit",
-                                            new
-                                            {
-                                                id = item.RequestProductId
-                                            })
-
-                                            </button>
-                                            <button type="button" class="btn btn-danger deleteLink" data-original-title="@ViewBag.Delete" id="delete" data-id="@item.RequestProductId">@ViewBag.Delete</button>
-                                        </div>
-                                    </td>
+                                   
                                 </tr>
                             }
                         </tbody>

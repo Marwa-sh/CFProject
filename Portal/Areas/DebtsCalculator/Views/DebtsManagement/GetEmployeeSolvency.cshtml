@@ -1,0 +1,373 @@
+﻿@model Portal.ViewModels.GetEmployeeSolvencyViewModel
+
+@using (Html.BeginForm())
+{
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title"> @ViewBag.CalculateDebts</h4>
+                    <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i id="minusBtn" class="icon-minus4"></i></a></li>
+                            <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                            <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="CalculationCard" class="card-body collapse in">
+                    <div class="card-block">
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+                        <div class="form-body">
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Filter.EmployeeId, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Filter.EmployeeId)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        @Html.EditorFor(model => model.Filter.EmployeeId, new { htmlAttributes = new { @class = "form-control" } })
+                                        @*@Html.DropDownListFor(model => model.Filter.EmployeeId, (SelectList)@ViewBag.EmployeeList, htmlAttributes: new { @class = "form-control combobox" })*@
+                                        @Html.ValidationMessageFor(model => model.Filter.EmployeeId, "", new { @class = "text-danger" })
+
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Filter.Amount, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Filter.Amount)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        @Html.EditorFor(model => model.Filter.Amount, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Filter.Amount, "", new { @class = "text-danger" })
+
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Filter.Installment, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Filter.Installment)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        @Html.EditorFor(model => model.Filter.Installment, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Filter.Installment, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+
+                                        @Html.LabelFor(model => model.Filter.NetSalary, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Filter.NetSalary)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        @Html.EditorFor(model => model.Filter.NetSalary, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Filter.NetSalary, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Filter.GrossSalary, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Filter.GrossSalary)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        @Html.EditorFor(model => model.Filter.GrossSalary, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Filter.GrossSalary, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        <button type="button" id="discover" class="btn btn-primary mr-1" style="margin-top: 27px;">
+                                            @ViewBag.Discover
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <ul class="nav nav-pills  ">                               
+                                <li class="nav-item">
+                                    <a class="nav-link " id="link-tab" data-toggle="tab" href="#LoanStatusResult" aria-controls="link" aria-expanded="true">@ViewBag.Result</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content px-1 pt-1">
+                               <div class="tab-pane fade " id="LoanStatusResult" role="tabpanel" aria-labelledby="link-tab" aria-expanded="true">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.Result.DebtRemainingAmount, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Result.DebtRemainingAmount)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                    <input disabled id="DebtRemainingAmount" class="form-control" name="DebtRemainingAmount" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.Result.WarrantRemainingAmount, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Result.WarrantRemainingAmount)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                    <input disabled id="WarrantRemainingAmount" class="form-control" name="WarrantRemainingAmount" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.Result.TotalAmount, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Result.TotalAmount)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                    <input disabled id="TotalAmount" class="form-control" name="TotalAmount" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.Result.DebtInstallment, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Result.DebtInstallment)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                    <input disabled id="DebtInstallment" class="form-control" name="DebtInstallment" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.Result.WarrantInstallment, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Result.WarrantInstallment)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                    <input disabled id="WarrantInstallment" class="form-control" name="WarrantInstallment" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.Result.TotalInstallment, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Result.TotalInstallment)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                    <input disabled id="TotalInstallment" class="form-control" name="TotalInstallment" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.Result.MaxAllowedDebt, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Result.MaxAllowedDebt)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                    <input disabled id="MaxAllowedDebt" class="form-control" name="MaxAllowedDebt" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.Result.MaxAllowedDeduction, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Result.MaxAllowedDeduction)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                    <input disabled id="MaxAllowedDeduction" class="form-control" name="MaxAllowedDeduction" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.Result.IncomeSolvency, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Result.IncomeSolvency)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                    <input disabled id="IncomeSolvency" class="form-control" name="IncomeSolvency" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <div class="form-group">
+                                                    @Html.LabelFor(model => model.Result.NetSalarySolvency, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.Result.NetSalarySolvency)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                                    <input disabled id="NetSalarySolvency" class="form-control" name="NetSalarySolvency" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+		$(function () {
+            $.validator.addMethod('date',
+            function (value, element) {
+                if (this.optional(element)) {
+                    return true;
+                }
+                var ok = true;
+                try
+                {
+                    $.datepicker.parseDate('dd/mm/yy', value);
+                }
+                catch (err) {
+                    ok = false;
+                }
+                return ok;
+            });
+            $(".IsDate").datepicker({ dateFormat: 'dd/mm/yy', changeYear: true });
+        });
+    </script>
+    <script>
+        
+        $(function () {
+          
+            $("#discover").click(function () {
+
+                var employeeId = $("#Filter_EmployeeId").val();
+                var amount = $("#Filter_Amount").val();
+                var installment = $("#Filter_Installment").val();
+                var netsalary = $("#Filter_NetSalary").val();
+                var grosssalary = $("#Filter_GrossSalary").val();
+
+                if (!employeeId || !amount || !installment || !netsalary || !grosssalary)
+                {
+                    swal("", '@ViewBag.ValidateDiscover', "error");
+                }
+                else
+                {
+                    $.ajax({
+                        type: "POST",
+                        url: '@Url.Action("GetEmployeeSolvency", "DebtsManagement")',
+                        data:
+                            '{ employeeId: ' + employeeId +
+                            ', amount: ' + amount +
+                            ', installment: ' + installment +
+                            ', netSalary: ' + netsalary +
+                            ', grossSalary: ' + grosssalary + '}'
+                   ,
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (response) {
+                            if (response == "Error")
+                            {
+
+                            }
+                            else
+                            {
+
+                            }
+                            var Solevency = response.Solevency;
+
+                            // Solvency
+                            $("#DebtRemainingAmount").val(Solevency.DebtRemainingAmount);
+                            $("#WarrantRemainingAmount").val(Solevency.WarrantRemainingAmount);
+                            $("#TotalAmount").val(Solevency.TotalAmount);
+                            $("#DebtInstallment").val(Solevency.DebtInstallment);
+                            $("#WarrantInstallment").val(Solevency.WarrantInstallment);
+                            $("#TotalInstallment").val(Solevency.TotalInstallment);
+                            $("#MaxAllowedDebt").val(Solevency.MaxAllowedDebt);
+                            $("#MaxAllowedDeduction").val(Solevency.MaxAllowedDeduction);
+                            $("#IncomeSolvency").val(Solevency.IncomeSolvency);
+                            $("#NetSalarySolvency").val(Solevency.NetSalarySolvency);
+
+                            if(Solevency.IncomeSolvency<Solevency.MaxAllowedDebt)
+                            {
+                                $("#IncomeSolvency").css("color", "green");
+                            }
+                            else
+                            {
+                                $("#IncomeSolvency").css("color", "red");
+                            }
+                            if (Solevency.NetSalarySolvency > 0 )
+                            {
+                                $("#NetSalarySolvency").css("color", "green");
+                            }
+                            else
+                            {
+                                $("#NetSalarySolvency").css("color", "red");
+                            }
+
+                        },
+                        failure: function (response) {
+                            alert(response.responseText);
+                        },
+                        error: function (response) {
+                            alert(response.responseText);
+                        }
+                    });
+                }
+
+            });
+        });
+    </script>
+
+
+
+}

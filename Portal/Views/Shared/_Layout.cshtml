@@ -130,6 +130,9 @@
                             @Html.ActionLink("طلبات السلف", "Index", "LoanRequestViewModel", new { Area = "Loans" }, new { })
                         </li>
                         <li>
+                             @Html.ActionLink("إضافة طلب سلفة", "Create", "LoanRequestViewModel", new { Area = "Loans" }, new { })
+                        </li>
+                        <li>
                             @Html.ActionLink("معالجة طلبات السلف", "Index", "ManageLoanRequests", new { Area = "Loans" }, new { })
                         </li>
                         <li>
@@ -139,7 +142,7 @@
                             @Html.ActionLink("إصدار قرار السلف نقل إلى موظف", "LoanDeciosionMoveToEmployee", "LoanDecisionViewModel", new { Area = "Loans" }, new { })
                         </li>
                         <li>
-                            @Html.ActionLink("تقارير السلف", "Index", "LoanReport", new { Area = "Loans" }, new { })
+                            @Html.ActionLink("تقارير السلف", "Index", "Reports", new { Area = "Loans" }, new { })
                         </li>
                         <li>
                             @Html.ActionLink("السلف الممنوحة", "Index", "Loan", new { Area = "Repository" }, new { })

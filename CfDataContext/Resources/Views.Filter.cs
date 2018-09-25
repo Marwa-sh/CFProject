@@ -2863,6 +2863,219 @@ namespace Cf.Data.Resources
     }
     #endregion
 
+    #region LoanExtendedVwFilter class
+    /// <summary>
+    /// Resource management for Cf.Data.LoanExtendedVwFilter class
+    /// </summary>
+    public class LoanExtendedVwFilter : ResourceBase
+    {
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.LoanExtendedVwFilter class
+        /// </summary>
+        internal LoanExtendedVwFilter()
+        {
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeId.
+        /// </summary>
+        public static string ProductEmployeeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVwFilter", "ProductEmployeeId");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeIdTooltip.
+        /// </summary>
+        public static string ProductEmployeeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVwFilter", "ProductEmployeeIdTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductProductTypeId.
+        /// </summary>
+        public static string ProductProductTypeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVwFilter", "ProductProductTypeId");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductProductTypeIdTooltip.
+        /// </summary>
+        public static string ProductProductTypeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVwFilter", "ProductProductTypeIdTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionYear.
+        /// </summary>
+        public static string LoanDecisionYear
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVwFilter", "LoanDecisionYear");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionYearTooltip.
+        /// </summary>
+        public static string LoanDecisionYearTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVwFilter", "LoanDecisionYearTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to MinLoanDecisionDate.
+        /// </summary>
+        public static string MinLoanDecisionDate
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVwFilter", "MinLoanDecisionDate");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to MinLoanDecisionDateTooltip.
+        /// </summary>
+        public static string MinLoanDecisionDateTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVwFilter", "MinLoanDecisionDateTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to MaxLoanDecisionDate.
+        /// </summary>
+        public static string MaxLoanDecisionDate
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVwFilter", "MaxLoanDecisionDate");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to MaxLoanDecisionDateTooltip.
+        /// </summary>
+        public static string MaxLoanDecisionDateTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVwFilter", "MaxLoanDecisionDateTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to MinLoanDecisionDeductionStartDate.
+        /// </summary>
+        public static string MinLoanDecisionDeductionStartDate
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVwFilter", "MinLoanDecisionDeductionStartDate");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to MinLoanDecisionDeductionStartDateTooltip.
+        /// </summary>
+        public static string MinLoanDecisionDeductionStartDateTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVwFilter", "MinLoanDecisionDeductionStartDateTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to MaxLoanDecisionDeductionStartDate.
+        /// </summary>
+        public static string MaxLoanDecisionDeductionStartDate
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVwFilter", "MaxLoanDecisionDeductionStartDate");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to MaxLoanDecisionDeductionStartDateTooltip.
+        /// </summary>
+        public static string MaxLoanDecisionDeductionStartDateTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVwFilter", "MaxLoanDecisionDeductionStartDateTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to LoanGenerationStatusId.
+        /// </summary>
+        public static string LoanGenerationStatusId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVwFilter", "LoanGenerationStatusId");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to LoanGenerationStatusIdTooltip.
+        /// </summary>
+        public static string LoanGenerationStatusIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVwFilter", "LoanGenerationStatusIdTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to LoanStatusId.
+        /// </summary>
+        public static string LoanStatusId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVwFilter", "LoanStatusId");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to LoanStatusIdTooltip.
+        /// </summary>
+        public static string LoanStatusIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVwFilter", "LoanStatusIdTooltip");
+            }
+        }
+    }
+    #endregion
+
     #region LoanRequestVwFilter class
     /// <summary>
     /// Resource management for Cf.Data.LoanRequestVwFilter class

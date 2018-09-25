@@ -1956,13 +1956,14 @@ namespace Cf.Services
 		/// </summary>
 		/// <param name="_minMonth"></param>
 		/// <param name="_maxMonth"></param>
+		/// <param name="_employeeId"></param>
 		/// <returns>A list of MonthlyBalanceSumResult instances.</returns>
 		/// <remarks>This method never returns null, 
 		///	if no records are available, length of the list will be 0.</remarks>
-		public static List<MonthlyBalanceSumResult> MonthlyBalanceSum([Parameter(Name = "@MinMonth")] Nullable<DateTime> _minMonth, [Parameter(Name = "@MaxMonth")] Nullable<DateTime> _maxMonth)
+		public static List<MonthlyBalanceSumResult> MonthlyBalanceSum([Parameter(Name = "@MinMonth")] Nullable<DateTime> _minMonth, [Parameter(Name = "@MaxMonth")] Nullable<DateTime> _maxMonth, [Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
 		{
 			Db db = new Db(DbServices.ConnectionString);
-			return db.MonthlyBalanceSum(_minMonth, _maxMonth);
+			return db.MonthlyBalanceSum(_minMonth, _maxMonth, _employeeId);
 		}
 
 		/// <summary>
@@ -1970,12 +1971,13 @@ namespace Cf.Services
 		/// </summary>
 		/// <param name="_minMonth"></param>
 		/// <param name="_maxMonth"></param>
+		/// <param name="_employeeId"></param>
 		/// <returns>A list of MonthlyBalanceSumResult instances.</returns>
 		/// <remarks>This method never returns null, 
 		///	if no records are available, length of the list will be 0.</remarks>
-		public static List<MonthlyBalanceSumResult> MonthlyBalanceSum([Parameter(Name = "@MinMonth")] Nullable<DateTime> _minMonth, [Parameter(Name = "@MaxMonth")] Nullable<DateTime> _maxMonth, Db db)
+		public static List<MonthlyBalanceSumResult> MonthlyBalanceSum([Parameter(Name = "@MinMonth")] Nullable<DateTime> _minMonth, [Parameter(Name = "@MaxMonth")] Nullable<DateTime> _maxMonth, [Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, Db db)
 		{
-			return db.MonthlyBalanceSum(_minMonth, _maxMonth);
+			return db.MonthlyBalanceSum(_minMonth, _maxMonth, _employeeId);
 		}
 
         /// <summary>
@@ -1988,7 +1990,7 @@ namespace Cf.Services
 		public static List<MonthlyBalanceSumResult> MonthlyBalanceSum(MonthlyBalanceSumFilter filterInstance)
 		{
 			Db db = new Db(DbServices.ConnectionString);
-			return db.MonthlyBalanceSum(filterInstance.MinMonth, filterInstance.MaxMonth);
+			return db.MonthlyBalanceSum(filterInstance.MinMonth, filterInstance.MaxMonth, filterInstance.EmployeeId);
 		}
 
         /// <summary>
@@ -2000,7 +2002,7 @@ namespace Cf.Services
 		///	if no records are available, length of the list will be 0.</remarks>
 		public static List<MonthlyBalanceSumResult> MonthlyBalanceSum(MonthlyBalanceSumFilter filterInstance, Db db)
 		{
-			return db.MonthlyBalanceSum(filterInstance.MinMonth, filterInstance.MaxMonth);
+			return db.MonthlyBalanceSum(filterInstance.MinMonth, filterInstance.MaxMonth, filterInstance.EmployeeId);
 		}
 
 		/// <summary>
@@ -2008,11 +2010,12 @@ namespace Cf.Services
 		/// </summary>
 		/// <param name="_minMonth"></param>
 		/// <param name="_maxMonth"></param>
+		/// <param name="_employeeId"></param>
 		/// <returns>An instance of MonthlyBalanceSumResult or null.</returns>
-		public static MonthlyBalanceSumResult MonthlyBalanceSumFirstOrDefault([Parameter(Name = "@MinMonth")] Nullable<DateTime> _minMonth, [Parameter(Name = "@MaxMonth")] Nullable<DateTime> _maxMonth)
+		public static MonthlyBalanceSumResult MonthlyBalanceSumFirstOrDefault([Parameter(Name = "@MinMonth")] Nullable<DateTime> _minMonth, [Parameter(Name = "@MaxMonth")] Nullable<DateTime> _maxMonth, [Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
 		{
 			Db db = new Db(DbServices.ConnectionString);
-			return db.MonthlyBalanceSumFirstOrDefault(_minMonth, _maxMonth);
+			return db.MonthlyBalanceSumFirstOrDefault(_minMonth, _maxMonth, _employeeId);
 		}
 
 		/// <summary>
@@ -2020,10 +2023,11 @@ namespace Cf.Services
 		/// </summary>
 		/// <param name="_minMonth"></param>
 		/// <param name="_maxMonth"></param>
+		/// <param name="_employeeId"></param>
 		/// <returns>An instance of MonthlyBalanceSumResult or null.</returns>
-		public static MonthlyBalanceSumResult MonthlyBalanceSumFirstOrDefault([Parameter(Name = "@MinMonth")] Nullable<DateTime> _minMonth, [Parameter(Name = "@MaxMonth")] Nullable<DateTime> _maxMonth, Db db)
+		public static MonthlyBalanceSumResult MonthlyBalanceSumFirstOrDefault([Parameter(Name = "@MinMonth")] Nullable<DateTime> _minMonth, [Parameter(Name = "@MaxMonth")] Nullable<DateTime> _maxMonth, [Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, Db db)
 		{
-			return db.MonthlyBalanceSumFirstOrDefault(_minMonth, _maxMonth);
+			return db.MonthlyBalanceSumFirstOrDefault(_minMonth, _maxMonth, _employeeId);
 		}
 
         /// <summary>
@@ -2034,7 +2038,7 @@ namespace Cf.Services
 		public static MonthlyBalanceSumResult MonthlyBalanceSumFirstOrDefault(MonthlyBalanceSumFilter filterInstance)
 		{
 			Db db = new Db(DbServices.ConnectionString);
-			return db.MonthlyBalanceSumFirstOrDefault(filterInstance.MinMonth, filterInstance.MaxMonth);
+			return db.MonthlyBalanceSumFirstOrDefault(filterInstance.MinMonth, filterInstance.MaxMonth, filterInstance.EmployeeId);
 		}
 
         /// <summary>
@@ -2044,7 +2048,7 @@ namespace Cf.Services
         /// <returns>An instance of MonthlyBalanceSumResult or null.</returns>
 		public static MonthlyBalanceSumResult MonthlyBalanceSumFirstOrDefault(MonthlyBalanceSumFilter filterInstance, Db db)
 		{
-			return db.MonthlyBalanceSumFirstOrDefault(filterInstance.MinMonth, filterInstance.MaxMonth);
+			return db.MonthlyBalanceSumFirstOrDefault(filterInstance.MinMonth, filterInstance.MaxMonth, filterInstance.EmployeeId);
 		}
 
 		#endregion
@@ -2473,6 +2477,141 @@ namespace Cf.Services
 		public static List<SubscriptionsBetweenTwoDatesResult> SubscriptionsBetweenTwoDates(SubscriptionsBetweenTwoDatesFilter filterInstance, Db db)
 		{
 			return db.SubscriptionsBetweenTwoDates(filterInstance.MinDate, filterInstance.MaxDate);
+		}
+		#endregion
+
+		#region SumComingLoansForEmployee procedure.
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_fromDate"></param>
+		/// <param name="_toDate"></param>
+		/// <param name="_employee"></param>
+		public static double SumComingLoansForEmployee([Parameter(Name = "@FromDate")] Nullable<DateTime> _fromDate, [Parameter(Name = "@ToDate")] Nullable<DateTime> _toDate, [Parameter(Name = "@Employee")] Nullable<int> _employee)
+		{
+			Db db = new Db(DbServices.ConnectionString);
+			 return db.SumComingLoansForEmployee(_fromDate, _toDate, _employee);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_fromDate"></param>
+		/// <param name="_toDate"></param>
+		/// <param name="_employee"></param>
+		public static double SumComingLoansForEmployee([Parameter(Name = "@FromDate")] Nullable<DateTime> _fromDate, [Parameter(Name = "@ToDate")] Nullable<DateTime> _toDate, [Parameter(Name = "@Employee")] Nullable<int> _employee, Db db)
+		{
+			return db.SumComingLoansForEmployee(_fromDate, _toDate, _employee);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of SumComingLoansForEmployeeFilter that defines filtering options.</param>
+		public static double SumComingLoansForEmployee(SumComingLoansForEmployeeFilter filterInstance)
+		{
+			Db db = new Db(DbServices.ConnectionString);
+			return db.SumComingLoansForEmployee(filterInstance.FromDate, filterInstance.ToDate, filterInstance.Employee);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of SumComingLoansForEmployeeFilter that defines filtering options.</param>
+		public static double SumComingLoansForEmployee(SumComingLoansForEmployeeFilter filterInstance, Db db)
+		{
+			return db.SumComingLoansForEmployee(filterInstance.FromDate, filterInstance.ToDate, filterInstance.Employee);
+		}
+		#endregion
+
+		#region SumLoansForEmployee procedure.
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_fromDate"></param>
+		/// <param name="_toDate"></param>
+		/// <param name="_employee"></param>
+		public static double SumLoansForEmployee([Parameter(Name = "@FromDate")] Nullable<DateTime> _fromDate, [Parameter(Name = "@ToDate")] Nullable<DateTime> _toDate, [Parameter(Name = "@Employee")] Nullable<int> _employee)
+		{
+			Db db = new Db(DbServices.ConnectionString);
+			 return db.SumLoansForEmployee(_fromDate, _toDate, _employee);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_fromDate"></param>
+		/// <param name="_toDate"></param>
+		/// <param name="_employee"></param>
+		public static double SumLoansForEmployee([Parameter(Name = "@FromDate")] Nullable<DateTime> _fromDate, [Parameter(Name = "@ToDate")] Nullable<DateTime> _toDate, [Parameter(Name = "@Employee")] Nullable<int> _employee, Db db)
+		{
+			return db.SumLoansForEmployee(_fromDate, _toDate, _employee);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of SumLoansForEmployeeFilter that defines filtering options.</param>
+		public static double SumLoansForEmployee(SumLoansForEmployeeFilter filterInstance)
+		{
+			Db db = new Db(DbServices.ConnectionString);
+			return db.SumLoansForEmployee(filterInstance.FromDate, filterInstance.ToDate, filterInstance.Employee);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of SumLoansForEmployeeFilter that defines filtering options.</param>
+		public static double SumLoansForEmployee(SumLoansForEmployeeFilter filterInstance, Db db)
+		{
+			return db.SumLoansForEmployee(filterInstance.FromDate, filterInstance.ToDate, filterInstance.Employee);
+		}
+		#endregion
+
+		#region SumOutgoingLoansForEmployee procedure.
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_fromDate"></param>
+		/// <param name="_toDate"></param>
+		/// <param name="_employee"></param>
+		public static double SumOutgoingLoansForEmployee([Parameter(Name = "@FromDate")] Nullable<DateTime> _fromDate, [Parameter(Name = "@ToDate")] Nullable<DateTime> _toDate, [Parameter(Name = "@Employee")] Nullable<int> _employee)
+		{
+			Db db = new Db(DbServices.ConnectionString);
+			 return db.SumOutgoingLoansForEmployee(_fromDate, _toDate, _employee);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_fromDate"></param>
+		/// <param name="_toDate"></param>
+		/// <param name="_employee"></param>
+		public static double SumOutgoingLoansForEmployee([Parameter(Name = "@FromDate")] Nullable<DateTime> _fromDate, [Parameter(Name = "@ToDate")] Nullable<DateTime> _toDate, [Parameter(Name = "@Employee")] Nullable<int> _employee, Db db)
+		{
+			return db.SumOutgoingLoansForEmployee(_fromDate, _toDate, _employee);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of SumOutgoingLoansForEmployeeFilter that defines filtering options.</param>
+		public static double SumOutgoingLoansForEmployee(SumOutgoingLoansForEmployeeFilter filterInstance)
+		{
+			Db db = new Db(DbServices.ConnectionString);
+			return db.SumOutgoingLoansForEmployee(filterInstance.FromDate, filterInstance.ToDate, filterInstance.Employee);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of SumOutgoingLoansForEmployeeFilter that defines filtering options.</param>
+		public static double SumOutgoingLoansForEmployee(SumOutgoingLoansForEmployeeFilter filterInstance, Db db)
+		{
+			return db.SumOutgoingLoansForEmployee(filterInstance.FromDate, filterInstance.ToDate, filterInstance.Employee);
 		}
 		#endregion
 	}

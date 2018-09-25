@@ -2502,6 +2502,76 @@ namespace Cf.Data
 	}
 	#endregion
 
+	#region EmployeeRefundableProductRollupVw meta data class definition
+    /// <summary>
+    /// Metadata for EmployeeRefundableProductRollupVw class
+    /// </summary>
+	public partial class EmployeeRefundableProductRollupVwMetaData
+	{
+		#region Public properties
+        /// <summary>
+        /// Metadata for EmployeeRefundableProductRollupVw.EmployeeId property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.EmployeeRefundableProductRollupVw)),
+			Name = "EmployeeId")
+		]
+		[Tooltip("EmployeeIdTooltip", typeof(Cf.Data.Resources.EmployeeRefundableProductRollupVw))]
+        public Nullable<int> EmployeeId { get; set; }
+		
+        /// <summary>
+        /// Metadata for EmployeeRefundableProductRollupVw.ProductId property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.EmployeeRefundableProductRollupVw)),
+			Name = "ProductId")
+		]
+		[Tooltip("ProductIdTooltip", typeof(Cf.Data.Resources.EmployeeRefundableProductRollupVw))]
+        public Nullable<int> ProductId { get; set; }
+		
+        /// <summary>
+        /// Metadata for EmployeeRefundableProductRollupVw.DueAmount property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.EmployeeRefundableProductRollupVw)),
+			Name = "DueAmount")
+		]
+		[Tooltip("DueAmountTooltip", typeof(Cf.Data.Resources.EmployeeRefundableProductRollupVw))]
+        public Nullable<decimal> DueAmount { get; set; }
+		
+        /// <summary>
+        /// Metadata for EmployeeRefundableProductRollupVw.PaidAmount property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.EmployeeRefundableProductRollupVw)),
+			Name = "PaidAmount")
+		]
+		[Tooltip("PaidAmountTooltip", typeof(Cf.Data.Resources.EmployeeRefundableProductRollupVw))]
+        public Nullable<decimal> PaidAmount { get; set; }
+		
+        /// <summary>
+        /// Metadata for EmployeeRefundableProductRollupVw.IsGroupingByProduct property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.EmployeeRefundableProductRollupVw)),
+			Name = "IsGroupingByProduct")
+		]
+		[Tooltip("IsGroupingByProductTooltip", typeof(Cf.Data.Resources.EmployeeRefundableProductRollupVw))]
+        public byte IsGroupingByProduct { get; set; }
+		
+        /// <summary>
+        /// Metadata for EmployeeRefundableProductRollupVw.IsGroupingByEmployee property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.EmployeeRefundableProductRollupVw)),
+			Name = "IsGroupingByEmployee")
+		]
+		[Tooltip("IsGroupingByEmployeeTooltip", typeof(Cf.Data.Resources.EmployeeRefundableProductRollupVw))]
+        public byte IsGroupingByEmployee { get; set; }
+		#endregion
+	}
+	#endregion
+
 	#region EmployeeSeniorityVw meta data class definition
     /// <summary>
     /// Metadata for EmployeeSeniorityVw class
@@ -3592,16 +3662,6 @@ namespace Cf.Data
         public string EventStatusIcon { get; set; }
 		
         /// <summary>
-        /// Metadata for EventLogVw.Parameters property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.EventLog)),
-			Name = "Parameters")
-		]
-		[Tooltip("ParametersTooltip", typeof(Cf.Data.Resources.EventLog))]
-        public string Parameters { get; set; }
-		
-        /// <summary>
         /// Metadata for EventLogVw.Date property
         /// </summary>
 		[Display(
@@ -3621,6 +3681,16 @@ namespace Cf.Data
 		]
 		[Tooltip("UserTooltip", typeof(Cf.Data.Resources.EventLog))]
         public int User { get; set; }
+		
+        /// <summary>
+        /// Metadata for EventLogVw.Parameters property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.EventLog)),
+			Name = "Parameters")
+		]
+		[Tooltip("ParametersTooltip", typeof(Cf.Data.Resources.EventLog))]
+        public string Parameters { get; set; }
 		#endregion
 	}
 	#endregion
@@ -16280,6 +16350,645 @@ namespace Cf.Data
 	}
 	#endregion
 
+	#region LoanExtendedVw meta data class definition
+    /// <summary>
+    /// Metadata for LoanExtendedVw class
+    /// </summary>
+	public partial class LoanExtendedVwMetaData
+	{
+		#region Public properties
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductId property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductId")
+		]
+		[Tooltip("ProductIdTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public int ProductId { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductEmployeeId property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductEmployeeId")
+		]
+		[Tooltip("ProductEmployeeIdTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public int ProductEmployeeId { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductEmployeeFirstName property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductEmployeeFirstName")
+		]
+		[Tooltip("ProductEmployeeFirstNameTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public string ProductEmployeeFirstName { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductEmployeeLastName property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductEmployeeLastName")
+		]
+		[Tooltip("ProductEmployeeLastNameTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public string ProductEmployeeLastName { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductEmployeeFullName property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductEmployeeFullName")
+		]
+		[Tooltip("ProductEmployeeFullNameTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public string ProductEmployeeFullName { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductEmployeeFatherName property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductEmployeeFatherName")
+		]
+		[Tooltip("ProductEmployeeFatherNameTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public string ProductEmployeeFatherName { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductEmployeeFullName3 property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductEmployeeFullName3")
+		]
+		[Tooltip("ProductEmployeeFullName3Tooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public string ProductEmployeeFullName3 { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductEmployeeMotherName property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductEmployeeMotherName")
+		]
+		[Tooltip("ProductEmployeeMotherNameTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public string ProductEmployeeMotherName { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductEmployeeBirthDate property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductEmployeeBirthDate")
+		]
+		[Tooltip("ProductEmployeeBirthDateTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        public Nullable<DateTime> ProductEmployeeBirthDate { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductEmployeeExpectedEndDate property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductEmployeeExpectedEndDate")
+		]
+		[Tooltip("ProductEmployeeExpectedEndDateTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        public Nullable<DateTime> ProductEmployeeExpectedEndDate { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductEmployeeCersStartDate property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductEmployeeCersStartDate")
+		]
+		[Tooltip("ProductEmployeeCersStartDateTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        public Nullable<DateTime> ProductEmployeeCersStartDate { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductEmployeeCfStartDate property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductEmployeeCfStartDate")
+		]
+		[Tooltip("ProductEmployeeCfStartDateTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        public Nullable<DateTime> ProductEmployeeCfStartDate { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductEmployeeLeaveDate property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductEmployeeLeaveDate")
+		]
+		[Tooltip("ProductEmployeeLeaveDateTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        public Nullable<DateTime> ProductEmployeeLeaveDate { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductEmployeeLeaveReason property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductEmployeeLeaveReason")
+		]
+		[Tooltip("ProductEmployeeLeaveReasonTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public string ProductEmployeeLeaveReason { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductEmployeeEmployeeStatusId property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductEmployeeEmployeeStatusId")
+		]
+		[Tooltip("ProductEmployeeEmployeeStatusIdTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public byte ProductEmployeeEmployeeStatusId { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductEmployeeEmployeeStatusName property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductEmployeeEmployeeStatusName")
+		]
+		[Tooltip("ProductEmployeeEmployeeStatusNameTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public string ProductEmployeeEmployeeStatusName { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductEmployeeEmployeeStatusIsActive property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductEmployeeEmployeeStatusIsActive")
+		]
+		[Tooltip("ProductEmployeeEmployeeStatusIsActiveTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public bool ProductEmployeeEmployeeStatusIsActive { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductEmployeeDepartmentId property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductEmployeeDepartmentId")
+		]
+		[Tooltip("ProductEmployeeDepartmentIdTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public int ProductEmployeeDepartmentId { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductEmployeeDepartmentName property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductEmployeeDepartmentName")
+		]
+		[Tooltip("ProductEmployeeDepartmentNameTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public string ProductEmployeeDepartmentName { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductEmployeeDepartmentSalaryWorkPlaceId property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductEmployeeDepartmentSalaryWorkPlaceId")
+		]
+		[Tooltip("ProductEmployeeDepartmentSalaryWorkPlaceIdTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public int ProductEmployeeDepartmentSalaryWorkPlaceId { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductEmployeeDepartmentSalaryWorkPlaceName property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductEmployeeDepartmentSalaryWorkPlaceName")
+		]
+		[Tooltip("ProductEmployeeDepartmentSalaryWorkPlaceNameTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public string ProductEmployeeDepartmentSalaryWorkPlaceName { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId")
+		]
+		[Tooltip("ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceIdTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public int ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName")
+		]
+		[Tooltip("ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceNameTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public string ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductEmployeeNotes property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductEmployeeNotes")
+		]
+		[Tooltip("ProductEmployeeNotesTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public string ProductEmployeeNotes { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductEmployeeCategoryId property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductEmployeeCategoryId")
+		]
+		[Tooltip("ProductEmployeeCategoryIdTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public byte ProductEmployeeCategoryId { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductEmployeeCategoryName property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductEmployeeCategoryName")
+		]
+		[Tooltip("ProductEmployeeCategoryNameTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public string ProductEmployeeCategoryName { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductProductTypeId property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductProductTypeId")
+		]
+		[Tooltip("ProductProductTypeIdTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public short ProductProductTypeId { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductProductTypeName property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductProductTypeName")
+		]
+		[Tooltip("ProductProductTypeNameTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public string ProductProductTypeName { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductProductTypeRate property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductProductTypeRate")
+		]
+		[Tooltip("ProductProductTypeRateTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public Nullable<decimal> ProductProductTypeRate { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductProductTypeGuarantorsCount property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductProductTypeGuarantorsCount")
+		]
+		[Tooltip("ProductProductTypeGuarantorsCountTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public byte ProductProductTypeGuarantorsCount { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductProductTypeAccountNumber property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductProductTypeAccountNumber")
+		]
+		[Tooltip("ProductProductTypeAccountNumberTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public string ProductProductTypeAccountNumber { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductProductTypePrintLabel property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductProductTypePrintLabel")
+		]
+		[Tooltip("ProductProductTypePrintLabelTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public string ProductProductTypePrintLabel { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductProductTypeProfitStrategyId property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductProductTypeProfitStrategyId")
+		]
+		[Tooltip("ProductProductTypeProfitStrategyIdTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public Nullable<byte> ProductProductTypeProfitStrategyId { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductProductTypeProfitStrategyName property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductProductTypeProfitStrategyName")
+		]
+		[Tooltip("ProductProductTypeProfitStrategyNameTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public string ProductProductTypeProfitStrategyName { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductProductTypePaymentGroupId property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductProductTypePaymentGroupId")
+		]
+		[Tooltip("ProductProductTypePaymentGroupIdTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public Nullable<byte> ProductProductTypePaymentGroupId { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductProductTypePaymentGroupName property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductProductTypePaymentGroupName")
+		]
+		[Tooltip("ProductProductTypePaymentGroupNameTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public string ProductProductTypePaymentGroupName { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductProductTypeIsActive property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductProductTypeIsActive")
+		]
+		[Tooltip("ProductProductTypeIsActiveTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public Nullable<bool> ProductProductTypeIsActive { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductAmount property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductAmount")
+		]
+		[Tooltip("ProductAmountTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public decimal ProductAmount { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.ProductNotes property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "ProductNotes")
+		]
+		[Tooltip("ProductNotesTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public string ProductNotes { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.LoanDecisionId property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "LoanDecisionId")
+		]
+		[Tooltip("LoanDecisionIdTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public int LoanDecisionId { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.LoanDecisionNumber property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "LoanDecisionNumber")
+		]
+		[Tooltip("LoanDecisionNumberTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public short LoanDecisionNumber { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.LoanDecisionYear property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "LoanDecisionYear")
+		]
+		[Tooltip("LoanDecisionYearTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public short LoanDecisionYear { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.LoanDecisionDate property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "LoanDecisionDate")
+		]
+		[Tooltip("LoanDecisionDateTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        public DateTime LoanDecisionDate { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.LoanDecisionDeductionStartDate property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "LoanDecisionDeductionStartDate")
+		]
+		[Tooltip("LoanDecisionDeductionStartDateTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        public DateTime LoanDecisionDeductionStartDate { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.LoanDecisionCersNumber property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "LoanDecisionCersNumber")
+		]
+		[Tooltip("LoanDecisionCersNumberTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public string LoanDecisionCersNumber { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.LoanDecisionCersDate property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "LoanDecisionCersDate")
+		]
+		[Tooltip("LoanDecisionCersDateTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        public Nullable<DateTime> LoanDecisionCersDate { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.LoanDecisionNotes property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "LoanDecisionNotes")
+		]
+		[Tooltip("LoanDecisionNotesTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public string LoanDecisionNotes { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.LoanDecisionLoanDecisionTypeId property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "LoanDecisionLoanDecisionTypeId")
+		]
+		[Tooltip("LoanDecisionLoanDecisionTypeIdTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public byte LoanDecisionLoanDecisionTypeId { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.LoanDecisionLoanDecisionTypeName property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "LoanDecisionLoanDecisionTypeName")
+		]
+		[Tooltip("LoanDecisionLoanDecisionTypeNameTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public string LoanDecisionLoanDecisionTypeName { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.LoanDecisionPaymentNumber property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "LoanDecisionPaymentNumber")
+		]
+		[Tooltip("LoanDecisionPaymentNumberTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public string LoanDecisionPaymentNumber { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.LoanDecisionPaymentDate property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "LoanDecisionPaymentDate")
+		]
+		[Tooltip("LoanDecisionPaymentDateTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        public Nullable<DateTime> LoanDecisionPaymentDate { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.LoanDecisionIsPaidFromSalary property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "LoanDecisionIsPaidFromSalary")
+		]
+		[Tooltip("LoanDecisionIsPaidFromSalaryTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public Nullable<bool> LoanDecisionIsPaidFromSalary { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.LoanDecisionReason property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "LoanDecisionReason")
+		]
+		[Tooltip("LoanDecisionReasonTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public string LoanDecisionReason { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.LoanDecisionAdditionalClause property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "LoanDecisionAdditionalClause")
+		]
+		[Tooltip("LoanDecisionAdditionalClauseTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public string LoanDecisionAdditionalClause { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.LoanDecisionAdditionalIntroduction property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "LoanDecisionAdditionalIntroduction")
+		]
+		[Tooltip("LoanDecisionAdditionalIntroductionTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public string LoanDecisionAdditionalIntroduction { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.LoanType property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "LoanType")
+		]
+		[Tooltip("LoanTypeTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public short LoanType { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.LoanGenerationStatusId property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "LoanGenerationStatusId")
+		]
+		[Tooltip("LoanGenerationStatusIdTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public byte LoanGenerationStatusId { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.LoanGenerationStatusName property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "LoanGenerationStatusName")
+		]
+		[Tooltip("LoanGenerationStatusNameTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public string LoanGenerationStatusName { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.LoanStatusId property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "LoanStatusId")
+		]
+		[Tooltip("LoanStatusIdTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public byte LoanStatusId { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.LoanStatusName property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "LoanStatusName")
+		]
+		[Tooltip("LoanStatusNameTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public string LoanStatusName { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.RefundableProductProfitAmount property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "RefundableProductProfitAmount")
+		]
+		[Tooltip("RefundableProductProfitAmountTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public decimal RefundableProductProfitAmount { get; set; }
+		
+        /// <summary>
+        /// Metadata for LoanExtendedVw.RefundableProductNetAmount property
+        /// </summary>
+		[Display(
+			ResourceType = (typeof(Cf.Data.Resources.LoanExtendedVw)),
+			Name = "RefundableProductNetAmount")
+		]
+		[Tooltip("RefundableProductNetAmountTooltip", typeof(Cf.Data.Resources.LoanExtendedVw))]
+        public decimal RefundableProductNetAmount { get; set; }
+		#endregion
+	}
+	#endregion
+
 	#region LoanGenerationStatusVw meta data class definition
     /// <summary>
     /// Metadata for LoanGenerationStatusVw class
@@ -28445,1428 +29154,6 @@ namespace Cf.Data
 			Name = "Notes")
 		]
 		[Tooltip("NotesTooltip", typeof(Cf.Data.Resources.SpecialCaseLoan))]
-        public string Notes { get; set; }
-		#endregion
-	}
-	#endregion
-
-	#region SubscriptionTypeVw meta data class definition
-    /// <summary>
-    /// Metadata for SubscriptionTypeVw class
-    /// </summary>
-	public partial class SubscriptionTypeVwMetaData
-	{
-		#region Public properties
-        /// <summary>
-        /// Metadata for SubscriptionTypeVw.Id property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.SubscriptionType)),
-			Name = "Id")
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.SubscriptionType))]
-        public byte Id { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionTypeVw.Name property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.SubscriptionType)),
-			Name = "Name")
-		]
-		[Tooltip("NameTooltip", typeof(Cf.Data.Resources.SubscriptionType))]
-        public string Name { get; set; }
-		#endregion
-	}
-	#endregion
-
-	#region SubscriptionVw meta data class definition
-    /// <summary>
-    /// Metadata for SubscriptionVw class
-    /// </summary>
-	public partial class SubscriptionVwMetaData
-	{
-		#region Public properties
-        /// <summary>
-        /// Metadata for SubscriptionVw.Id property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Subscription)),
-			Name = "Id")
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.Subscription))]
-        public int Id { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.EmployeeId property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "Id")
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.Employee))]
-        public int EmployeeId { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.EmployeeFirstName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "FirstName")
-		]
-		[Tooltip("FirstNameTooltip", typeof(Cf.Data.Resources.Employee))]
-        public string EmployeeFirstName { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.EmployeeLastName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "LastName")
-		]
-		[Tooltip("LastNameTooltip", typeof(Cf.Data.Resources.Employee))]
-        public string EmployeeLastName { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.EmployeeFullName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "FullName")
-		]
-		[Tooltip("FullNameTooltip", typeof(Cf.Data.Resources.Employee))]
-        public string EmployeeFullName { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.EmployeeFatherName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "FatherName")
-		]
-		[Tooltip("FatherNameTooltip", typeof(Cf.Data.Resources.Employee))]
-        public string EmployeeFatherName { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.EmployeeFullName3 property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "FullName3")
-		]
-		[Tooltip("FullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
-        public string EmployeeFullName3 { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.EmployeeMotherName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "MotherName")
-		]
-		[Tooltip("MotherNameTooltip", typeof(Cf.Data.Resources.Employee))]
-        public string EmployeeMotherName { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.EmployeeBirthDate property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "BirthDate")
-		]
-		[Tooltip("BirthDateTooltip", typeof(Cf.Data.Resources.Employee))]
-		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        public Nullable<DateTime> EmployeeBirthDate { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.EmployeeExpectedEndDate property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "ExpectedEndDate")
-		]
-		[Tooltip("ExpectedEndDateTooltip", typeof(Cf.Data.Resources.Employee))]
-		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        public Nullable<DateTime> EmployeeExpectedEndDate { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.EmployeeCersStartDate property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "CersStartDate")
-		]
-		[Tooltip("CersStartDateTooltip", typeof(Cf.Data.Resources.Employee))]
-		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        public Nullable<DateTime> EmployeeCersStartDate { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.EmployeeCfStartDate property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "CfStartDate")
-		]
-		[Tooltip("CfStartDateTooltip", typeof(Cf.Data.Resources.Employee))]
-		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        public Nullable<DateTime> EmployeeCfStartDate { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.EmployeeLeaveDate property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "LeaveDate")
-		]
-		[Tooltip("LeaveDateTooltip", typeof(Cf.Data.Resources.Employee))]
-		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        public Nullable<DateTime> EmployeeLeaveDate { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.EmployeeLeaveReason property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "LeaveReason")
-		]
-		[Tooltip("LeaveReasonTooltip", typeof(Cf.Data.Resources.Employee))]
-        public string EmployeeLeaveReason { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.EmployeeEmployeeStatusId property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.EmployeeStatus)),
-			Name = "Id")
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.EmployeeStatus))]
-        public byte EmployeeEmployeeStatusId { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.EmployeeEmployeeStatusName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.EmployeeStatus)),
-			Name = "Name")
-		]
-		[Tooltip("NameTooltip", typeof(Cf.Data.Resources.EmployeeStatus))]
-        public string EmployeeEmployeeStatusName { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.EmployeeEmployeeStatusIsActive property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.EmployeeStatus)),
-			Name = "IsActive")
-		]
-		[Tooltip("IsActiveTooltip", typeof(Cf.Data.Resources.EmployeeStatus))]
-        public bool EmployeeEmployeeStatusIsActive { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.EmployeeDepartmentId property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Department)),
-			Name = "Id")
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.Department))]
-        public int EmployeeDepartmentId { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.EmployeeDepartmentName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Department)),
-			Name = "Name")
-		]
-		[Tooltip("NameTooltip", typeof(Cf.Data.Resources.Department))]
-        public string EmployeeDepartmentName { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.EmployeeDepartmentSalaryWorkPlaceId property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.SalaryWorkPlace)),
-			Name = "Id")
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.SalaryWorkPlace))]
-        public int EmployeeDepartmentSalaryWorkPlaceId { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.EmployeeDepartmentSalaryWorkPlaceName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.SalaryWorkPlace)),
-			Name = "Name")
-		]
-		[Tooltip("NameTooltip", typeof(Cf.Data.Resources.SalaryWorkPlace))]
-        public string EmployeeDepartmentSalaryWorkPlaceName { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.MainWorkPlace)),
-			Name = "Id")
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.MainWorkPlace))]
-        public int EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.MainWorkPlace)),
-			Name = "Name")
-		]
-		[Tooltip("NameTooltip", typeof(Cf.Data.Resources.MainWorkPlace))]
-        public string EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.EmployeeNotes property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "Notes")
-		]
-		[Tooltip("NotesTooltip", typeof(Cf.Data.Resources.Employee))]
-        public string EmployeeNotes { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.EmployeeCategoryId property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Category)),
-			Name = "Id")
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.Category))]
-        public byte EmployeeCategoryId { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.EmployeeCategoryName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Category)),
-			Name = "Name")
-		]
-		[Tooltip("NameTooltip", typeof(Cf.Data.Resources.Category))]
-        public string EmployeeCategoryName { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.Month property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Subscription)),
-			Name = "Month")
-		]
-		[Tooltip("MonthTooltip", typeof(Cf.Data.Resources.Subscription))]
-		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        public DateTime Month { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.DepartmentId property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Department)),
-			Name = "Id")
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.Department))]
-        public int DepartmentId { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.DepartmentName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Department)),
-			Name = "Name")
-		]
-		[Tooltip("NameTooltip", typeof(Cf.Data.Resources.Department))]
-        public string DepartmentName { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.DepartmentSalaryWorkPlaceId property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.SalaryWorkPlace)),
-			Name = "Id")
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.SalaryWorkPlace))]
-        public int DepartmentSalaryWorkPlaceId { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.DepartmentSalaryWorkPlaceName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.SalaryWorkPlace)),
-			Name = "Name")
-		]
-		[Tooltip("NameTooltip", typeof(Cf.Data.Resources.SalaryWorkPlace))]
-        public string DepartmentSalaryWorkPlaceName { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.DepartmentSalaryWorkPlaceMainWorkPlaceId property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.MainWorkPlace)),
-			Name = "Id")
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.MainWorkPlace))]
-        public int DepartmentSalaryWorkPlaceMainWorkPlaceId { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.DepartmentSalaryWorkPlaceMainWorkPlaceName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.MainWorkPlace)),
-			Name = "Name")
-		]
-		[Tooltip("NameTooltip", typeof(Cf.Data.Resources.MainWorkPlace))]
-        public string DepartmentSalaryWorkPlaceMainWorkPlaceName { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.SubscriptionTypeId property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.SubscriptionType)),
-			Name = "Id")
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.SubscriptionType))]
-        public byte SubscriptionTypeId { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.SubscriptionTypeName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.SubscriptionType)),
-			Name = "Name")
-		]
-		[Tooltip("NameTooltip", typeof(Cf.Data.Resources.SubscriptionType))]
-        public string SubscriptionTypeName { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.Amount property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Subscription)),
-			Name = "Amount")
-		]
-		[Tooltip("AmountTooltip", typeof(Cf.Data.Resources.Subscription))]
-        public decimal Amount { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.Notes property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Subscription)),
-			Name = "Notes")
-		]
-		[Tooltip("NotesTooltip", typeof(Cf.Data.Resources.Subscription))]
-        public string Notes { get; set; }
-		
-        /// <summary>
-        /// Metadata for SubscriptionVw.IsFixed property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Subscription)),
-			Name = "IsFixed")
-		]
-		[Tooltip("IsFixedTooltip", typeof(Cf.Data.Resources.Subscription))]
-        public bool IsFixed { get; set; }
-		#endregion
-	}
-	#endregion
-
-	#region TransitoryIncomingLoanVw meta data class definition
-    /// <summary>
-    /// Metadata for TransitoryIncomingLoanVw class
-    /// </summary>
-	public partial class TransitoryIncomingLoanVwMetaData
-	{
-		#region Public properties
-        /// <summary>
-        /// Metadata for TransitoryIncomingLoanVw.EmployeeId property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "Id")
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.Employee))]
-        public int EmployeeId { get; set; }
-		
-        /// <summary>
-        /// Metadata for TransitoryIncomingLoanVw.EmployeeFirstName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "FirstName")
-		]
-		[Tooltip("FirstNameTooltip", typeof(Cf.Data.Resources.Employee))]
-        public string EmployeeFirstName { get; set; }
-		
-        /// <summary>
-        /// Metadata for TransitoryIncomingLoanVw.EmployeeLastName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "LastName")
-		]
-		[Tooltip("LastNameTooltip", typeof(Cf.Data.Resources.Employee))]
-        public string EmployeeLastName { get; set; }
-		
-        /// <summary>
-        /// Metadata for TransitoryIncomingLoanVw.EmployeeFullName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "FullName")
-		]
-		[Tooltip("FullNameTooltip", typeof(Cf.Data.Resources.Employee))]
-        public string EmployeeFullName { get; set; }
-		
-        /// <summary>
-        /// Metadata for TransitoryIncomingLoanVw.EmployeeFatherName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "FatherName")
-		]
-		[Tooltip("FatherNameTooltip", typeof(Cf.Data.Resources.Employee))]
-        public string EmployeeFatherName { get; set; }
-		
-        /// <summary>
-        /// Metadata for TransitoryIncomingLoanVw.EmployeeFullName3 property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "FullName3")
-		]
-		[Tooltip("FullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
-        public string EmployeeFullName3 { get; set; }
-		
-        /// <summary>
-        /// Metadata for TransitoryIncomingLoanVw.EmployeeMotherName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "MotherName")
-		]
-		[Tooltip("MotherNameTooltip", typeof(Cf.Data.Resources.Employee))]
-        public string EmployeeMotherName { get; set; }
-		
-        /// <summary>
-        /// Metadata for TransitoryIncomingLoanVw.EmployeeBirthDate property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "BirthDate")
-		]
-		[Tooltip("BirthDateTooltip", typeof(Cf.Data.Resources.Employee))]
-		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        public Nullable<DateTime> EmployeeBirthDate { get; set; }
-		
-        /// <summary>
-        /// Metadata for TransitoryIncomingLoanVw.EmployeeExpectedEndDate property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "ExpectedEndDate")
-		]
-		[Tooltip("ExpectedEndDateTooltip", typeof(Cf.Data.Resources.Employee))]
-		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        public Nullable<DateTime> EmployeeExpectedEndDate { get; set; }
-		
-        /// <summary>
-        /// Metadata for TransitoryIncomingLoanVw.EmployeeCersStartDate property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "CersStartDate")
-		]
-		[Tooltip("CersStartDateTooltip", typeof(Cf.Data.Resources.Employee))]
-		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        public Nullable<DateTime> EmployeeCersStartDate { get; set; }
-		
-        /// <summary>
-        /// Metadata for TransitoryIncomingLoanVw.EmployeeCfStartDate property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "CfStartDate")
-		]
-		[Tooltip("CfStartDateTooltip", typeof(Cf.Data.Resources.Employee))]
-		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        public Nullable<DateTime> EmployeeCfStartDate { get; set; }
-		
-        /// <summary>
-        /// Metadata for TransitoryIncomingLoanVw.EmployeeLeaveDate property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "LeaveDate")
-		]
-		[Tooltip("LeaveDateTooltip", typeof(Cf.Data.Resources.Employee))]
-		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        public Nullable<DateTime> EmployeeLeaveDate { get; set; }
-		
-        /// <summary>
-        /// Metadata for TransitoryIncomingLoanVw.EmployeeLeaveReason property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "LeaveReason")
-		]
-		[Tooltip("LeaveReasonTooltip", typeof(Cf.Data.Resources.Employee))]
-        public string EmployeeLeaveReason { get; set; }
-		
-        /// <summary>
-        /// Metadata for TransitoryIncomingLoanVw.EmployeeEmployeeStatusId property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.EmployeeStatus)),
-			Name = "Id")
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.EmployeeStatus))]
-        public byte EmployeeEmployeeStatusId { get; set; }
-		
-        /// <summary>
-        /// Metadata for TransitoryIncomingLoanVw.EmployeeEmployeeStatusName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.EmployeeStatus)),
-			Name = "Name")
-		]
-		[Tooltip("NameTooltip", typeof(Cf.Data.Resources.EmployeeStatus))]
-        public string EmployeeEmployeeStatusName { get; set; }
-		
-        /// <summary>
-        /// Metadata for TransitoryIncomingLoanVw.EmployeeEmployeeStatusIsActive property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.EmployeeStatus)),
-			Name = "IsActive")
-		]
-		[Tooltip("IsActiveTooltip", typeof(Cf.Data.Resources.EmployeeStatus))]
-        public bool EmployeeEmployeeStatusIsActive { get; set; }
-		
-        /// <summary>
-        /// Metadata for TransitoryIncomingLoanVw.EmployeeDepartmentId property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Department)),
-			Name = "Id")
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.Department))]
-        public int EmployeeDepartmentId { get; set; }
-		
-        /// <summary>
-        /// Metadata for TransitoryIncomingLoanVw.EmployeeDepartmentName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Department)),
-			Name = "Name")
-		]
-		[Tooltip("NameTooltip", typeof(Cf.Data.Resources.Department))]
-        public string EmployeeDepartmentName { get; set; }
-		
-        /// <summary>
-        /// Metadata for TransitoryIncomingLoanVw.EmployeeDepartmentSalaryWorkPlaceId property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.SalaryWorkPlace)),
-			Name = "Id")
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.SalaryWorkPlace))]
-        public int EmployeeDepartmentSalaryWorkPlaceId { get; set; }
-		
-        /// <summary>
-        /// Metadata for TransitoryIncomingLoanVw.EmployeeDepartmentSalaryWorkPlaceName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.SalaryWorkPlace)),
-			Name = "Name")
-		]
-		[Tooltip("NameTooltip", typeof(Cf.Data.Resources.SalaryWorkPlace))]
-        public string EmployeeDepartmentSalaryWorkPlaceName { get; set; }
-		
-        /// <summary>
-        /// Metadata for TransitoryIncomingLoanVw.EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.MainWorkPlace)),
-			Name = "Id")
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.MainWorkPlace))]
-        public int EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId { get; set; }
-		
-        /// <summary>
-        /// Metadata for TransitoryIncomingLoanVw.EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.MainWorkPlace)),
-			Name = "Name")
-		]
-		[Tooltip("NameTooltip", typeof(Cf.Data.Resources.MainWorkPlace))]
-        public string EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName { get; set; }
-		
-        /// <summary>
-        /// Metadata for TransitoryIncomingLoanVw.EmployeeNotes property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "Notes")
-		]
-		[Tooltip("NotesTooltip", typeof(Cf.Data.Resources.Employee))]
-        public string EmployeeNotes { get; set; }
-		
-        /// <summary>
-        /// Metadata for TransitoryIncomingLoanVw.EmployeeCategoryId property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Category)),
-			Name = "Id")
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.Category))]
-        public byte EmployeeCategoryId { get; set; }
-		
-        /// <summary>
-        /// Metadata for TransitoryIncomingLoanVw.EmployeeCategoryName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Category)),
-			Name = "Name")
-		]
-		[Tooltip("NameTooltip", typeof(Cf.Data.Resources.Category))]
-        public string EmployeeCategoryName { get; set; }
-		
-        /// <summary>
-        /// Metadata for TransitoryIncomingLoanVw.MainWorkPlaceId property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.MainWorkPlace)),
-			Name = "Id")
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.MainWorkPlace))]
-        public int MainWorkPlaceId { get; set; }
-		
-        /// <summary>
-        /// Metadata for TransitoryIncomingLoanVw.MainWorkPlaceName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.MainWorkPlace)),
-			Name = "Name")
-		]
-		[Tooltip("NameTooltip", typeof(Cf.Data.Resources.MainWorkPlace))]
-        public string MainWorkPlaceName { get; set; }
-		
-        /// <summary>
-        /// Metadata for TransitoryIncomingLoanVw.ApprovedAmount property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.TransitoryIncomingLoan)),
-			Name = "ApprovedAmount")
-		]
-		[Tooltip("ApprovedAmountTooltip", typeof(Cf.Data.Resources.TransitoryIncomingLoan))]
-        public decimal ApprovedAmount { get; set; }
-		
-        /// <summary>
-        /// Metadata for TransitoryIncomingLoanVw.Installment property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.TransitoryIncomingLoan)),
-			Name = "Installment")
-		]
-		[Tooltip("InstallmentTooltip", typeof(Cf.Data.Resources.TransitoryIncomingLoan))]
-        public decimal Installment { get; set; }
-		
-        /// <summary>
-        /// Metadata for TransitoryIncomingLoanVw.Notes property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.TransitoryIncomingLoan)),
-			Name = "Notes")
-		]
-		[Tooltip("NotesTooltip", typeof(Cf.Data.Resources.TransitoryIncomingLoan))]
-        public string Notes { get; set; }
-		
-        /// <summary>
-        /// Metadata for TransitoryIncomingLoanVw.IsVerified property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.TransitoryIncomingLoan)),
-			Name = "IsVerified")
-		]
-		[Tooltip("IsVerifiedTooltip", typeof(Cf.Data.Resources.TransitoryIncomingLoan))]
-        public bool IsVerified { get; set; }
-		#endregion
-	}
-	#endregion
-
-	#region WarrantVw meta data class definition
-    /// <summary>
-    /// Metadata for WarrantVw class
-    /// </summary>
-	public partial class WarrantVwMetaData
-	{
-		#region Public properties
-        /// <summary>
-        /// Metadata for WarrantVw.Id property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Warrant)),
-			Name = "Id")
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.Warrant))]
-        public int Id { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtId property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Debt)),
-			Name = "Id")
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.Debt))]
-        public int DebtId { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtEmployeeId property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "Id")
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.Employee))]
-        public int DebtEmployeeId { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtEmployeeFirstName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "FirstName")
-		]
-		[Tooltip("FirstNameTooltip", typeof(Cf.Data.Resources.Employee))]
-        public string DebtEmployeeFirstName { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtEmployeeLastName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "LastName")
-		]
-		[Tooltip("LastNameTooltip", typeof(Cf.Data.Resources.Employee))]
-        public string DebtEmployeeLastName { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtEmployeeFullName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "FullName")
-		]
-		[Tooltip("FullNameTooltip", typeof(Cf.Data.Resources.Employee))]
-        public string DebtEmployeeFullName { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtEmployeeFatherName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "FatherName")
-		]
-		[Tooltip("FatherNameTooltip", typeof(Cf.Data.Resources.Employee))]
-        public string DebtEmployeeFatherName { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtEmployeeFullName3 property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "FullName3")
-		]
-		[Tooltip("FullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
-        public string DebtEmployeeFullName3 { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtEmployeeMotherName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "MotherName")
-		]
-		[Tooltip("MotherNameTooltip", typeof(Cf.Data.Resources.Employee))]
-        public string DebtEmployeeMotherName { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtEmployeeBirthDate property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "BirthDate")
-		]
-		[Tooltip("BirthDateTooltip", typeof(Cf.Data.Resources.Employee))]
-		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        public Nullable<DateTime> DebtEmployeeBirthDate { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtEmployeeExpectedEndDate property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "ExpectedEndDate")
-		]
-		[Tooltip("ExpectedEndDateTooltip", typeof(Cf.Data.Resources.Employee))]
-		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        public Nullable<DateTime> DebtEmployeeExpectedEndDate { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtEmployeeCersStartDate property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "CersStartDate")
-		]
-		[Tooltip("CersStartDateTooltip", typeof(Cf.Data.Resources.Employee))]
-		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        public Nullable<DateTime> DebtEmployeeCersStartDate { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtEmployeeCfStartDate property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "CfStartDate")
-		]
-		[Tooltip("CfStartDateTooltip", typeof(Cf.Data.Resources.Employee))]
-		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        public Nullable<DateTime> DebtEmployeeCfStartDate { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtEmployeeLeaveDate property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "LeaveDate")
-		]
-		[Tooltip("LeaveDateTooltip", typeof(Cf.Data.Resources.Employee))]
-		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        public Nullable<DateTime> DebtEmployeeLeaveDate { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtEmployeeLeaveReason property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "LeaveReason")
-		]
-		[Tooltip("LeaveReasonTooltip", typeof(Cf.Data.Resources.Employee))]
-        public string DebtEmployeeLeaveReason { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtEmployeeEmployeeStatusId property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.EmployeeStatus)),
-			Name = "Id")
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.EmployeeStatus))]
-        public byte DebtEmployeeEmployeeStatusId { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtEmployeeEmployeeStatusName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.EmployeeStatus)),
-			Name = "Name")
-		]
-		[Tooltip("NameTooltip", typeof(Cf.Data.Resources.EmployeeStatus))]
-        public string DebtEmployeeEmployeeStatusName { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtEmployeeEmployeeStatusIsActive property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.EmployeeStatus)),
-			Name = "IsActive")
-		]
-		[Tooltip("IsActiveTooltip", typeof(Cf.Data.Resources.EmployeeStatus))]
-        public bool DebtEmployeeEmployeeStatusIsActive { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtEmployeeDepartmentId property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Department)),
-			Name = "Id")
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.Department))]
-        public int DebtEmployeeDepartmentId { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtEmployeeDepartmentName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Department)),
-			Name = "Name")
-		]
-		[Tooltip("NameTooltip", typeof(Cf.Data.Resources.Department))]
-        public string DebtEmployeeDepartmentName { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtEmployeeDepartmentSalaryWorkPlaceId property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.SalaryWorkPlace)),
-			Name = "Id")
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.SalaryWorkPlace))]
-        public int DebtEmployeeDepartmentSalaryWorkPlaceId { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtEmployeeDepartmentSalaryWorkPlaceName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.SalaryWorkPlace)),
-			Name = "Name")
-		]
-		[Tooltip("NameTooltip", typeof(Cf.Data.Resources.SalaryWorkPlace))]
-        public string DebtEmployeeDepartmentSalaryWorkPlaceName { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.MainWorkPlace)),
-			Name = "Id")
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.MainWorkPlace))]
-        public int DebtEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.MainWorkPlace)),
-			Name = "Name")
-		]
-		[Tooltip("NameTooltip", typeof(Cf.Data.Resources.MainWorkPlace))]
-        public string DebtEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtEmployeeNotes property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "Notes")
-		]
-		[Tooltip("NotesTooltip", typeof(Cf.Data.Resources.Employee))]
-        public string DebtEmployeeNotes { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtEmployeeCategoryId property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Category)),
-			Name = "Id")
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.Category))]
-        public byte DebtEmployeeCategoryId { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtEmployeeCategoryName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Category)),
-			Name = "Name")
-		]
-		[Tooltip("NameTooltip", typeof(Cf.Data.Resources.Category))]
-        public string DebtEmployeeCategoryName { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtAmount property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Debt)),
-			Name = "Amount")
-		]
-		[Tooltip("AmountTooltip", typeof(Cf.Data.Resources.Debt))]
-        public decimal DebtAmount { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtIssuerId property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Issuer)),
-			Name = "Id")
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.Issuer))]
-        public byte DebtIssuerId { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtIssuerName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Issuer)),
-			Name = "Name")
-		]
-		[Tooltip("NameTooltip", typeof(Cf.Data.Resources.Issuer))]
-        public string DebtIssuerName { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtReferenceNumber property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Debt)),
-			Name = "ReferenceNumber")
-		]
-		[Tooltip("ReferenceNumberTooltip", typeof(Cf.Data.Resources.Debt))]
-        public string DebtReferenceNumber { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtDate property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Debt)),
-			Name = "Date")
-		]
-		[Tooltip("DateTooltip", typeof(Cf.Data.Resources.Debt))]
-		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        public Nullable<DateTime> DebtDate { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtPeriodInMonths property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Debt)),
-			Name = "PeriodInMonths")
-		]
-		[Tooltip("PeriodInMonthsTooltip", typeof(Cf.Data.Resources.Debt))]
-        public Nullable<byte> DebtPeriodInMonths { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtExceptionalPayment property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Debt)),
-			Name = "ExceptionalPayment")
-		]
-		[Tooltip("ExceptionalPaymentTooltip", typeof(Cf.Data.Resources.Debt))]
-        public decimal DebtExceptionalPayment { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtIsActive property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Debt)),
-			Name = "IsActive")
-		]
-		[Tooltip("IsActiveTooltip", typeof(Cf.Data.Resources.Debt))]
-        public bool DebtIsActive { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtNotes property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Debt)),
-			Name = "Notes")
-		]
-		[Tooltip("NotesTooltip", typeof(Cf.Data.Resources.Debt))]
-        public string DebtNotes { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtIssueDescription property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Debt)),
-			Name = "IssueDescription")
-		]
-		[Tooltip("IssueDescriptionTooltip", typeof(Cf.Data.Resources.Debt))]
-        public string DebtIssueDescription { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.DebtInstallment property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Debt)),
-			Name = "Installment")
-		]
-		[Tooltip("InstallmentTooltip", typeof(Cf.Data.Resources.Debt))]
-        public decimal DebtInstallment { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.EmployeeId property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "Id")
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.Employee))]
-        public int EmployeeId { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.EmployeeFirstName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "FirstName")
-		]
-		[Tooltip("FirstNameTooltip", typeof(Cf.Data.Resources.Employee))]
-        public string EmployeeFirstName { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.EmployeeLastName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "LastName")
-		]
-		[Tooltip("LastNameTooltip", typeof(Cf.Data.Resources.Employee))]
-        public string EmployeeLastName { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.EmployeeFullName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "FullName")
-		]
-		[Tooltip("FullNameTooltip", typeof(Cf.Data.Resources.Employee))]
-        public string EmployeeFullName { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.EmployeeFatherName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "FatherName")
-		]
-		[Tooltip("FatherNameTooltip", typeof(Cf.Data.Resources.Employee))]
-        public string EmployeeFatherName { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.EmployeeFullName3 property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "FullName3")
-		]
-		[Tooltip("FullName3Tooltip", typeof(Cf.Data.Resources.Employee))]
-        public string EmployeeFullName3 { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.EmployeeMotherName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "MotherName")
-		]
-		[Tooltip("MotherNameTooltip", typeof(Cf.Data.Resources.Employee))]
-        public string EmployeeMotherName { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.EmployeeBirthDate property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "BirthDate")
-		]
-		[Tooltip("BirthDateTooltip", typeof(Cf.Data.Resources.Employee))]
-		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        public Nullable<DateTime> EmployeeBirthDate { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.EmployeeExpectedEndDate property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "ExpectedEndDate")
-		]
-		[Tooltip("ExpectedEndDateTooltip", typeof(Cf.Data.Resources.Employee))]
-		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        public Nullable<DateTime> EmployeeExpectedEndDate { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.EmployeeCersStartDate property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "CersStartDate")
-		]
-		[Tooltip("CersStartDateTooltip", typeof(Cf.Data.Resources.Employee))]
-		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        public Nullable<DateTime> EmployeeCersStartDate { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.EmployeeCfStartDate property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "CfStartDate")
-		]
-		[Tooltip("CfStartDateTooltip", typeof(Cf.Data.Resources.Employee))]
-		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        public Nullable<DateTime> EmployeeCfStartDate { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.EmployeeLeaveDate property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "LeaveDate")
-		]
-		[Tooltip("LeaveDateTooltip", typeof(Cf.Data.Resources.Employee))]
-		[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
-        public Nullable<DateTime> EmployeeLeaveDate { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.EmployeeLeaveReason property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "LeaveReason")
-		]
-		[Tooltip("LeaveReasonTooltip", typeof(Cf.Data.Resources.Employee))]
-        public string EmployeeLeaveReason { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.EmployeeEmployeeStatusId property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.EmployeeStatus)),
-			Name = "Id")
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.EmployeeStatus))]
-        public byte EmployeeEmployeeStatusId { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.EmployeeEmployeeStatusName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.EmployeeStatus)),
-			Name = "Name")
-		]
-		[Tooltip("NameTooltip", typeof(Cf.Data.Resources.EmployeeStatus))]
-        public string EmployeeEmployeeStatusName { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.EmployeeEmployeeStatusIsActive property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.EmployeeStatus)),
-			Name = "IsActive")
-		]
-		[Tooltip("IsActiveTooltip", typeof(Cf.Data.Resources.EmployeeStatus))]
-        public bool EmployeeEmployeeStatusIsActive { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.EmployeeDepartmentId property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Department)),
-			Name = "Id")
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.Department))]
-        public int EmployeeDepartmentId { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.EmployeeDepartmentName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Department)),
-			Name = "Name")
-		]
-		[Tooltip("NameTooltip", typeof(Cf.Data.Resources.Department))]
-        public string EmployeeDepartmentName { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.EmployeeDepartmentSalaryWorkPlaceId property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.SalaryWorkPlace)),
-			Name = "Id")
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.SalaryWorkPlace))]
-        public int EmployeeDepartmentSalaryWorkPlaceId { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.EmployeeDepartmentSalaryWorkPlaceName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.SalaryWorkPlace)),
-			Name = "Name")
-		]
-		[Tooltip("NameTooltip", typeof(Cf.Data.Resources.SalaryWorkPlace))]
-        public string EmployeeDepartmentSalaryWorkPlaceName { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.MainWorkPlace)),
-			Name = "Id")
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.MainWorkPlace))]
-        public int EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.MainWorkPlace)),
-			Name = "Name")
-		]
-		[Tooltip("NameTooltip", typeof(Cf.Data.Resources.MainWorkPlace))]
-        public string EmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.EmployeeNotes property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Employee)),
-			Name = "Notes")
-		]
-		[Tooltip("NotesTooltip", typeof(Cf.Data.Resources.Employee))]
-        public string EmployeeNotes { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.EmployeeCategoryId property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Category)),
-			Name = "Id")
-		]
-		[Tooltip("IdTooltip", typeof(Cf.Data.Resources.Category))]
-        public byte EmployeeCategoryId { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.EmployeeCategoryName property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Category)),
-			Name = "Name")
-		]
-		[Tooltip("NameTooltip", typeof(Cf.Data.Resources.Category))]
-        public string EmployeeCategoryName { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.IsActive property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Warrant)),
-			Name = "IsActive")
-		]
-		[Tooltip("IsActiveTooltip", typeof(Cf.Data.Resources.Warrant))]
-        public bool IsActive { get; set; }
-		
-        /// <summary>
-        /// Metadata for WarrantVw.Notes property
-        /// </summary>
-		[Display(
-			ResourceType = (typeof(Cf.Data.Resources.Warrant)),
-			Name = "Notes")
-		]
-		[Tooltip("NotesTooltip", typeof(Cf.Data.Resources.Warrant))]
         public string Notes { get; set; }
 		#endregion
 	}

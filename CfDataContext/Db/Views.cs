@@ -82,6 +82,16 @@ namespace Cf.Data
 		public List<AvailabilityCeilingVw> AvailabilityCeilingVwGetByAvailabilityId([Parameter(Name = "@AvailabilityId")] short _availabilityId)
 		{
 			return _AvailabilityCeilingVwGetByAvailabilityId(_availabilityId).ToList<AvailabilityCeilingVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of AvailabilityId columns in the  dbo.AvailabilityCeilingVw view.
+		/// </summary>
+		/// <param name="_availabilityId">نوع السلف</param>
+		/// <returns>An instance of AvailabilityCeilingVw.</returns>
+		public AvailabilityCeilingVw AvailabilityCeilingVwGetByAvailabilityIdFirstOrDefault([Parameter(Name = "@AvailabilityId")] short _availabilityId)
+		{
+			return _AvailabilityCeilingVwGetByAvailabilityId(_availabilityId).ToList<AvailabilityCeilingVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.AvailabilityCeilingVwGetByAvailabilityId_FromYear")]
@@ -102,6 +112,17 @@ namespace Cf.Data
 		public List<AvailabilityCeilingVw> AvailabilityCeilingVwGetByAvailabilityId_FromYear([Parameter(Name = "@AvailabilityId")] short _availabilityId, [Parameter(Name = "@FromYear")] short _fromYear)
 		{
 			return _AvailabilityCeilingVwGetByAvailabilityId_FromYear(_availabilityId, _fromYear).ToList<AvailabilityCeilingVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of AvailabilityId_FromYear columns in the  dbo.AvailabilityCeilingVw view.
+		/// </summary>
+		/// <param name="_availabilityId">نوع السلف</param>
+		/// <param name="_fromYear">الحد الأدنى لسنوات الخدمة</param>
+		/// <returns>An instance of AvailabilityCeilingVw.</returns>
+		public AvailabilityCeilingVw AvailabilityCeilingVwGetByAvailabilityId_FromYearFirstOrDefault([Parameter(Name = "@AvailabilityId")] short _availabilityId, [Parameter(Name = "@FromYear")] short _fromYear)
+		{
+			return _AvailabilityCeilingVwGetByAvailabilityId_FromYear(_availabilityId, _fromYear).ToList<AvailabilityCeilingVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -150,6 +171,7 @@ namespace Cf.Data
 
 		#region GetChidlren procedure
         [Function(Name = "dbo.AvailabilityVwGetChildren")]
+        [ResultType(typeof(AvailabilityVw))]
         [ResultType(typeof(AvailabilityCeilingVw))]
         [ResultType(typeof(ProductTypeAvailabilityVw))]
         private IMultipleResults _AvailabilityVwGetChildren([Parameter(Name = "@Id")] short _id)
@@ -247,6 +269,16 @@ namespace Cf.Data
 		public List<BypassStatusVw> BypassStatusVwGetByName([Parameter(Name = "@Name")] string _name)
 		{
 			return _BypassStatusVwGetByName(_name).ToList<BypassStatusVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Name columns in the  dbo.BypassStatusVw view.
+		/// </summary>
+		/// <param name="_name">بيان الحالة</param>
+		/// <returns>An instance of BypassStatusVw.</returns>
+		public BypassStatusVw BypassStatusVwGetByNameFirstOrDefault([Parameter(Name = "@Name")] string _name)
+		{
+			return _BypassStatusVwGetByName(_name).ToList<BypassStatusVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -379,6 +411,16 @@ namespace Cf.Data
 		{
 			return _CategoryVwGetByName(_name).ToList<CategoryVw>();
 		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Name columns in the  dbo.CategoryVw view.
+		/// </summary>
+		/// <param name="_name">بيان الهيئة</param>
+		/// <returns>An instance of CategoryVw.</returns>
+		public CategoryVw CategoryVwGetByNameFirstOrDefault([Parameter(Name = "@Name")] string _name)
+		{
+			return _CategoryVwGetByName(_name).ToList<CategoryVw>().FirstOrDefault();
+		}
 		#endregion
 		#endregion
 
@@ -426,6 +468,7 @@ namespace Cf.Data
 
 		#region GetChidlren procedure
         [Function(Name = "dbo.CollectOrderVwGetChildren")]
+        [ResultType(typeof(CollectOrderVw))]
         [ResultType(typeof(PaymentVw))]
         private IMultipleResults _CollectOrderVwGetChildren([Parameter(Name = "@Id")] int _id)
 		{
@@ -493,6 +536,7 @@ namespace Cf.Data
 
 		#region GetChidlren procedure
         [Function(Name = "dbo.DebtVwGetChildren")]
+        [ResultType(typeof(DebtVw))]
         [ResultType(typeof(WarrantVw))]
         private IMultipleResults _DebtVwGetChildren([Parameter(Name = "@Id")] int _id)
 		{
@@ -533,6 +577,16 @@ namespace Cf.Data
 		public List<DebtVw> DebtVwGetByDate([Parameter(Name = "@Date")] Nullable<DateTime> _date)
 		{
 			return _DebtVwGetByDate(_date).ToList<DebtVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Date columns in the  dbo.DebtVw view.
+		/// </summary>
+		/// <param name="_date">تاريخ المديونية</param>
+		/// <returns>An instance of DebtVw.</returns>
+		public DebtVw DebtVwGetByDateFirstOrDefault([Parameter(Name = "@Date")] Nullable<DateTime> _date)
+		{
+			return _DebtVwGetByDate(_date).ToList<DebtVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.DebtVwGetByEmployeeId")]
@@ -552,6 +606,16 @@ namespace Cf.Data
 		public List<DebtVw> DebtVwGetByEmployeeId([Parameter(Name = "@EmployeeId")] int _employeeId)
 		{
 			return _DebtVwGetByEmployeeId(_employeeId).ToList<DebtVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of EmployeeId columns in the  dbo.DebtVw view.
+		/// </summary>
+		/// <param name="_employeeId">الرقم الذاتي للمشترك</param>
+		/// <returns>An instance of DebtVw.</returns>
+		public DebtVw DebtVwGetByEmployeeIdFirstOrDefault([Parameter(Name = "@EmployeeId")] int _employeeId)
+		{
+			return _DebtVwGetByEmployeeId(_employeeId).ToList<DebtVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.DebtVwGetByIsActive")]
@@ -571,6 +635,16 @@ namespace Cf.Data
 		public List<DebtVw> DebtVwGetByIsActive([Parameter(Name = "@IsActive")] bool _isActive)
 		{
 			return _DebtVwGetByIsActive(_isActive).ToList<DebtVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of IsActive columns in the  dbo.DebtVw view.
+		/// </summary>
+		/// <param name="_isActive">المديونية فعالة؟</param>
+		/// <returns>An instance of DebtVw.</returns>
+		public DebtVw DebtVwGetByIsActiveFirstOrDefault([Parameter(Name = "@IsActive")] bool _isActive)
+		{
+			return _DebtVwGetByIsActive(_isActive).ToList<DebtVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.DebtVwGetByIssuerId")]
@@ -590,6 +664,16 @@ namespace Cf.Data
 		public List<DebtVw> DebtVwGetByIssuerId([Parameter(Name = "@IssuerId")] byte _issuerId)
 		{
 			return _DebtVwGetByIssuerId(_issuerId).ToList<DebtVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of IssuerId columns in the  dbo.DebtVw view.
+		/// </summary>
+		/// <param name="_issuerId">جهة المنح</param>
+		/// <returns>An instance of DebtVw.</returns>
+		public DebtVw DebtVwGetByIssuerIdFirstOrDefault([Parameter(Name = "@IssuerId")] byte _issuerId)
+		{
+			return _DebtVwGetByIssuerId(_issuerId).ToList<DebtVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -666,6 +750,16 @@ namespace Cf.Data
 		public List<DepartmentVw> DepartmentVwGetByName([Parameter(Name = "@Name")] string _name)
 		{
 			return _DepartmentVwGetByName(_name).ToList<DepartmentVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Name columns in the  dbo.DepartmentVw view.
+		/// </summary>
+		/// <param name="_name">اسم الفعالية</param>
+		/// <returns>An instance of DepartmentVw.</returns>
+		public DepartmentVw DepartmentVwGetByNameFirstOrDefault([Parameter(Name = "@Name")] string _name)
+		{
+			return _DepartmentVwGetByName(_name).ToList<DepartmentVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.DepartmentVwGetBySalaryWorkPlaceId")]
@@ -685,6 +779,16 @@ namespace Cf.Data
 		public List<DepartmentVw> DepartmentVwGetBySalaryWorkPlaceId([Parameter(Name = "@SalaryWorkPlaceId")] int _salaryWorkPlaceId)
 		{
 			return _DepartmentVwGetBySalaryWorkPlaceId(_salaryWorkPlaceId).ToList<DepartmentVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of SalaryWorkPlaceId columns in the  dbo.DepartmentVw view.
+		/// </summary>
+		/// <param name="_salaryWorkPlaceId">جهة صرف الراتب</param>
+		/// <returns>An instance of DepartmentVw.</returns>
+		public DepartmentVw DepartmentVwGetBySalaryWorkPlaceIdFirstOrDefault([Parameter(Name = "@SalaryWorkPlaceId")] int _salaryWorkPlaceId)
+		{
+			return _DepartmentVwGetBySalaryWorkPlaceId(_salaryWorkPlaceId).ToList<DepartmentVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -762,6 +866,16 @@ namespace Cf.Data
 		{
 			return _DownPaymentVwGetByRequestProductId(_requestProductId).ToList<DownPaymentVw>();
 		}
+
+		/// <summary>
+		/// Gets rows related to one combination of RequestProductId columns in the  dbo.DownPaymentVw view.
+		/// </summary>
+		/// <param name="_requestProductId">رقم الطلب</param>
+		/// <returns>An instance of DownPaymentVw.</returns>
+		public DownPaymentVw DownPaymentVwGetByRequestProductIdFirstOrDefault([Parameter(Name = "@RequestProductId")] int _requestProductId)
+		{
+			return _DownPaymentVwGetByRequestProductId(_requestProductId).ToList<DownPaymentVw>().FirstOrDefault();
+		}
 		#endregion
 		#endregion
 
@@ -825,6 +939,16 @@ namespace Cf.Data
 		public List<EmployeeDetailVw> EmployeeDetailVwGetByCategoryId([Parameter(Name = "@CategoryId")] byte _categoryId)
 		{
 			return _EmployeeDetailVwGetByCategoryId(_categoryId).ToList<EmployeeDetailVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of CategoryId columns in the  dbo.EmployeeDetailVw view.
+		/// </summary>
+		/// <param name="_categoryId">الهيئة الوظيفية</param>
+		/// <returns>An instance of EmployeeDetailVw.</returns>
+		public EmployeeDetailVw EmployeeDetailVwGetByCategoryIdFirstOrDefault([Parameter(Name = "@CategoryId")] byte _categoryId)
+		{
+			return _EmployeeDetailVwGetByCategoryId(_categoryId).ToList<EmployeeDetailVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.EmployeeDetailVwGetByDepartmentId")]
@@ -844,6 +968,16 @@ namespace Cf.Data
 		public List<EmployeeDetailVw> EmployeeDetailVwGetByDepartmentId([Parameter(Name = "@DepartmentId")] int _departmentId)
 		{
 			return _EmployeeDetailVwGetByDepartmentId(_departmentId).ToList<EmployeeDetailVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of DepartmentId columns in the  dbo.EmployeeDetailVw view.
+		/// </summary>
+		/// <param name="_departmentId">الفعالية</param>
+		/// <returns>An instance of EmployeeDetailVw.</returns>
+		public EmployeeDetailVw EmployeeDetailVwGetByDepartmentIdFirstOrDefault([Parameter(Name = "@DepartmentId")] int _departmentId)
+		{
+			return _EmployeeDetailVwGetByDepartmentId(_departmentId).ToList<EmployeeDetailVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.EmployeeDetailVwGetByEmployeeStatusId")]
@@ -863,6 +997,16 @@ namespace Cf.Data
 		public List<EmployeeDetailVw> EmployeeDetailVwGetByEmployeeStatusId([Parameter(Name = "@EmployeeStatusId")] byte _employeeStatusId)
 		{
 			return _EmployeeDetailVwGetByEmployeeStatusId(_employeeStatusId).ToList<EmployeeDetailVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of EmployeeStatusId columns in the  dbo.EmployeeDetailVw view.
+		/// </summary>
+		/// <param name="_employeeStatusId">الوضع الوظيفي</param>
+		/// <returns>An instance of EmployeeDetailVw.</returns>
+		public EmployeeDetailVw EmployeeDetailVwGetByEmployeeStatusIdFirstOrDefault([Parameter(Name = "@EmployeeStatusId")] byte _employeeStatusId)
+		{
+			return _EmployeeDetailVwGetByEmployeeStatusId(_employeeStatusId).ToList<EmployeeDetailVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.EmployeeDetailVwGetByFirstName_LastName")]
@@ -884,9 +1028,22 @@ namespace Cf.Data
 		{
 			return _EmployeeDetailVwGetByFirstName_LastName(_firstName, _lastName).ToList<EmployeeDetailVw>();
 		}
+
+		/// <summary>
+		/// Gets rows related to one combination of FirstName_LastName columns in the  dbo.EmployeeDetailVw view.
+		/// </summary>
+		/// <param name="_firstName">الاسم</param>
+		/// <param name="_lastName">الشهرة</param>
+		/// <returns>An instance of EmployeeDetailVw.</returns>
+		public EmployeeDetailVw EmployeeDetailVwGetByFirstName_LastNameFirstOrDefault([Parameter(Name = "@FirstName")] string _firstName, [Parameter(Name = "@LastName")] string _lastName)
+		{
+			return _EmployeeDetailVwGetByFirstName_LastName(_firstName, _lastName).ToList<EmployeeDetailVw>().FirstOrDefault();
+		}
 		#endregion
 		#endregion
 
+        #region EmployeeRefundableProductRollupVw procedures.
+		#endregion
         #region EmployeeSeniorityVw procedures.
 		#region List procedure
 		[Function(Name = "dbo.EmployeeSeniorityVwList")]
@@ -1014,6 +1171,16 @@ namespace Cf.Data
 		public List<EmployeeStatusVw> EmployeeStatusVwGetByIsActive([Parameter(Name = "@IsActive")] bool _isActive)
 		{
 			return _EmployeeStatusVwGetByIsActive(_isActive).ToList<EmployeeStatusVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of IsActive columns in the  dbo.EmployeeStatusVw view.
+		/// </summary>
+		/// <param name="_isActive">مفعل؟</param>
+		/// <returns>An instance of EmployeeStatusVw.</returns>
+		public EmployeeStatusVw EmployeeStatusVwGetByIsActiveFirstOrDefault([Parameter(Name = "@IsActive")] bool _isActive)
+		{
+			return _EmployeeStatusVwGetByIsActive(_isActive).ToList<EmployeeStatusVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.EmployeeStatusVwGetByName")]
@@ -1033,6 +1200,16 @@ namespace Cf.Data
 		public List<EmployeeStatusVw> EmployeeStatusVwGetByName([Parameter(Name = "@Name")] string _name)
 		{
 			return _EmployeeStatusVwGetByName(_name).ToList<EmployeeStatusVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Name columns in the  dbo.EmployeeStatusVw view.
+		/// </summary>
+		/// <param name="_name">بيان الوضع الوظيفي</param>
+		/// <returns>An instance of EmployeeStatusVw.</returns>
+		public EmployeeStatusVw EmployeeStatusVwGetByNameFirstOrDefault([Parameter(Name = "@Name")] string _name)
+		{
+			return _EmployeeStatusVwGetByName(_name).ToList<EmployeeStatusVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -1081,6 +1258,7 @@ namespace Cf.Data
 
 		#region GetChidlren procedure
         [Function(Name = "dbo.EmployeeVwGetChildren")]
+        [ResultType(typeof(EmployeeVw))]
         [ResultType(typeof(DebtVw))]
         [ResultType(typeof(GuarantorVw))]
         [ResultType(typeof(MonthlyBalanceVw))]
@@ -1135,6 +1313,16 @@ namespace Cf.Data
 		public List<EmployeeVw> EmployeeVwGetByCategoryId([Parameter(Name = "@CategoryId")] byte _categoryId)
 		{
 			return _EmployeeVwGetByCategoryId(_categoryId).ToList<EmployeeVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of CategoryId columns in the  dbo.EmployeeVw view.
+		/// </summary>
+		/// <param name="_categoryId">الهيئة الوظيفية</param>
+		/// <returns>An instance of EmployeeVw.</returns>
+		public EmployeeVw EmployeeVwGetByCategoryIdFirstOrDefault([Parameter(Name = "@CategoryId")] byte _categoryId)
+		{
+			return _EmployeeVwGetByCategoryId(_categoryId).ToList<EmployeeVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.EmployeeVwGetByDepartmentId")]
@@ -1154,6 +1342,16 @@ namespace Cf.Data
 		public List<EmployeeVw> EmployeeVwGetByDepartmentId([Parameter(Name = "@DepartmentId")] int _departmentId)
 		{
 			return _EmployeeVwGetByDepartmentId(_departmentId).ToList<EmployeeVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of DepartmentId columns in the  dbo.EmployeeVw view.
+		/// </summary>
+		/// <param name="_departmentId">الفعالية</param>
+		/// <returns>An instance of EmployeeVw.</returns>
+		public EmployeeVw EmployeeVwGetByDepartmentIdFirstOrDefault([Parameter(Name = "@DepartmentId")] int _departmentId)
+		{
+			return _EmployeeVwGetByDepartmentId(_departmentId).ToList<EmployeeVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.EmployeeVwGetByEmployeeStatusId")]
@@ -1173,6 +1371,16 @@ namespace Cf.Data
 		public List<EmployeeVw> EmployeeVwGetByEmployeeStatusId([Parameter(Name = "@EmployeeStatusId")] byte _employeeStatusId)
 		{
 			return _EmployeeVwGetByEmployeeStatusId(_employeeStatusId).ToList<EmployeeVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of EmployeeStatusId columns in the  dbo.EmployeeVw view.
+		/// </summary>
+		/// <param name="_employeeStatusId">الوضع الوظيفي</param>
+		/// <returns>An instance of EmployeeVw.</returns>
+		public EmployeeVw EmployeeVwGetByEmployeeStatusIdFirstOrDefault([Parameter(Name = "@EmployeeStatusId")] byte _employeeStatusId)
+		{
+			return _EmployeeVwGetByEmployeeStatusId(_employeeStatusId).ToList<EmployeeVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.EmployeeVwGetByFirstName_LastName")]
@@ -1193,6 +1401,17 @@ namespace Cf.Data
 		public List<EmployeeVw> EmployeeVwGetByFirstName_LastName([Parameter(Name = "@FirstName")] string _firstName, [Parameter(Name = "@LastName")] string _lastName)
 		{
 			return _EmployeeVwGetByFirstName_LastName(_firstName, _lastName).ToList<EmployeeVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of FirstName_LastName columns in the  dbo.EmployeeVw view.
+		/// </summary>
+		/// <param name="_firstName">الاسم</param>
+		/// <param name="_lastName">الشهرة</param>
+		/// <returns>An instance of EmployeeVw.</returns>
+		public EmployeeVw EmployeeVwGetByFirstName_LastNameFirstOrDefault([Parameter(Name = "@FirstName")] string _firstName, [Parameter(Name = "@LastName")] string _lastName)
+		{
+			return _EmployeeVwGetByFirstName_LastName(_firstName, _lastName).ToList<EmployeeVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -1325,6 +1544,16 @@ namespace Cf.Data
 		{
 			return _ErrorDefinitionVwGetByLikeExpression(_likeExpression).ToList<ErrorDefinitionVw>();
 		}
+
+		/// <summary>
+		/// Gets rows related to one combination of LikeExpression columns in the  dbo.ErrorDefinitionVw view.
+		/// </summary>
+		/// <param name="_likeExpression">An expresion with which messages are compared to get matches. If two messages match to the same LikeExpression they are considered identical.</param>
+		/// <returns>An instance of ErrorDefinitionVw.</returns>
+		public ErrorDefinitionVw ErrorDefinitionVwGetByLikeExpressionFirstOrDefault([Parameter(Name = "@LikeExpression")] string _likeExpression)
+		{
+			return _ErrorDefinitionVwGetByLikeExpression(_likeExpression).ToList<ErrorDefinitionVw>().FirstOrDefault();
+		}
 		#endregion
 		#endregion
 
@@ -1401,6 +1630,16 @@ namespace Cf.Data
 		{
 			return _EventCategoryVwGetByName(_name).ToList<EventCategoryVw>();
 		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Name columns in the  dbo.EventCategoryVw view.
+		/// </summary>
+		/// <param name="_name">EventCategory Name</param>
+		/// <returns>An instance of EventCategoryVw.</returns>
+		public EventCategoryVw EventCategoryVwGetByNameFirstOrDefault([Parameter(Name = "@Name")] string _name)
+		{
+			return _EventCategoryVwGetByName(_name).ToList<EventCategoryVw>().FirstOrDefault();
+		}
 		#endregion
 		#endregion
 
@@ -1464,6 +1703,16 @@ namespace Cf.Data
 		public List<EventLogDetailVw> EventLogDetailVwGetByDate([Parameter(Name = "@Date")] DateTime _date)
 		{
 			return _EventLogDetailVwGetByDate(_date).ToList<EventLogDetailVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Date columns in the  dbo.EventLogDetailVw view.
+		/// </summary>
+		/// <param name="_date">Date of the EventLog</param>
+		/// <returns>An instance of EventLogDetailVw.</returns>
+		public EventLogDetailVw EventLogDetailVwGetByDateFirstOrDefault([Parameter(Name = "@Date")] DateTime _date)
+		{
+			return _EventLogDetailVwGetByDate(_date).ToList<EventLogDetailVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.EventLogDetailVwGetByEventCategoryId")]
@@ -1483,6 +1732,16 @@ namespace Cf.Data
 		public List<EventLogDetailVw> EventLogDetailVwGetByEventCategoryId([Parameter(Name = "@EventCategoryId")] int _eventCategoryId)
 		{
 			return _EventLogDetailVwGetByEventCategoryId(_eventCategoryId).ToList<EventLogDetailVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of EventCategoryId columns in the  dbo.EventLogDetailVw view.
+		/// </summary>
+		/// <param name="_eventCategoryId">EventCategory identifier</param>
+		/// <returns>An instance of EventLogDetailVw.</returns>
+		public EventLogDetailVw EventLogDetailVwGetByEventCategoryIdFirstOrDefault([Parameter(Name = "@EventCategoryId")] int _eventCategoryId)
+		{
+			return _EventLogDetailVwGetByEventCategoryId(_eventCategoryId).ToList<EventLogDetailVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.EventLogDetailVwGetByEventSourceId")]
@@ -1502,6 +1761,16 @@ namespace Cf.Data
 		public List<EventLogDetailVw> EventLogDetailVwGetByEventSourceId([Parameter(Name = "@EventSourceId")] int _eventSourceId)
 		{
 			return _EventLogDetailVwGetByEventSourceId(_eventSourceId).ToList<EventLogDetailVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of EventSourceId columns in the  dbo.EventLogDetailVw view.
+		/// </summary>
+		/// <param name="_eventSourceId">EventSource identifier</param>
+		/// <returns>An instance of EventLogDetailVw.</returns>
+		public EventLogDetailVw EventLogDetailVwGetByEventSourceIdFirstOrDefault([Parameter(Name = "@EventSourceId")] int _eventSourceId)
+		{
+			return _EventLogDetailVwGetByEventSourceId(_eventSourceId).ToList<EventLogDetailVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.EventLogDetailVwGetByEventStatusId")]
@@ -1521,6 +1790,16 @@ namespace Cf.Data
 		public List<EventLogDetailVw> EventLogDetailVwGetByEventStatusId([Parameter(Name = "@EventStatusId")] int _eventStatusId)
 		{
 			return _EventLogDetailVwGetByEventStatusId(_eventStatusId).ToList<EventLogDetailVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of EventStatusId columns in the  dbo.EventLogDetailVw view.
+		/// </summary>
+		/// <param name="_eventStatusId">EventStatus identifier</param>
+		/// <returns>An instance of EventLogDetailVw.</returns>
+		public EventLogDetailVw EventLogDetailVwGetByEventStatusIdFirstOrDefault([Parameter(Name = "@EventStatusId")] int _eventStatusId)
+		{
+			return _EventLogDetailVwGetByEventStatusId(_eventStatusId).ToList<EventLogDetailVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.EventLogDetailVwGetByUser")]
@@ -1540,6 +1819,16 @@ namespace Cf.Data
 		public List<EventLogDetailVw> EventLogDetailVwGetByUser([Parameter(Name = "@User")] int _user)
 		{
 			return _EventLogDetailVwGetByUser(_user).ToList<EventLogDetailVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of User columns in the  dbo.EventLogDetailVw view.
+		/// </summary>
+		/// <param name="_user">User identifier</param>
+		/// <returns>An instance of EventLogDetailVw.</returns>
+		public EventLogDetailVw EventLogDetailVwGetByUserFirstOrDefault([Parameter(Name = "@User")] int _user)
+		{
+			return _EventLogDetailVwGetByUser(_user).ToList<EventLogDetailVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -1671,6 +1960,16 @@ namespace Cf.Data
 		public List<EventLogVw> EventLogVwGetByDate([Parameter(Name = "@Date")] DateTime _date)
 		{
 			return _EventLogVwGetByDate(_date).ToList<EventLogVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Date columns in the  dbo.EventLogVw view.
+		/// </summary>
+		/// <param name="_date">Date of the EventLog</param>
+		/// <returns>An instance of EventLogVw.</returns>
+		public EventLogVw EventLogVwGetByDateFirstOrDefault([Parameter(Name = "@Date")] DateTime _date)
+		{
+			return _EventLogVwGetByDate(_date).ToList<EventLogVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.EventLogVwGetByEventCategoryId")]
@@ -1690,6 +1989,16 @@ namespace Cf.Data
 		public List<EventLogVw> EventLogVwGetByEventCategoryId([Parameter(Name = "@EventCategoryId")] int _eventCategoryId)
 		{
 			return _EventLogVwGetByEventCategoryId(_eventCategoryId).ToList<EventLogVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of EventCategoryId columns in the  dbo.EventLogVw view.
+		/// </summary>
+		/// <param name="_eventCategoryId">EventCategory identifier</param>
+		/// <returns>An instance of EventLogVw.</returns>
+		public EventLogVw EventLogVwGetByEventCategoryIdFirstOrDefault([Parameter(Name = "@EventCategoryId")] int _eventCategoryId)
+		{
+			return _EventLogVwGetByEventCategoryId(_eventCategoryId).ToList<EventLogVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.EventLogVwGetByEventSourceId")]
@@ -1709,6 +2018,16 @@ namespace Cf.Data
 		public List<EventLogVw> EventLogVwGetByEventSourceId([Parameter(Name = "@EventSourceId")] int _eventSourceId)
 		{
 			return _EventLogVwGetByEventSourceId(_eventSourceId).ToList<EventLogVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of EventSourceId columns in the  dbo.EventLogVw view.
+		/// </summary>
+		/// <param name="_eventSourceId">EventSource identifier</param>
+		/// <returns>An instance of EventLogVw.</returns>
+		public EventLogVw EventLogVwGetByEventSourceIdFirstOrDefault([Parameter(Name = "@EventSourceId")] int _eventSourceId)
+		{
+			return _EventLogVwGetByEventSourceId(_eventSourceId).ToList<EventLogVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.EventLogVwGetByEventStatusId")]
@@ -1728,6 +2047,16 @@ namespace Cf.Data
 		public List<EventLogVw> EventLogVwGetByEventStatusId([Parameter(Name = "@EventStatusId")] int _eventStatusId)
 		{
 			return _EventLogVwGetByEventStatusId(_eventStatusId).ToList<EventLogVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of EventStatusId columns in the  dbo.EventLogVw view.
+		/// </summary>
+		/// <param name="_eventStatusId">EventStatus identifier</param>
+		/// <returns>An instance of EventLogVw.</returns>
+		public EventLogVw EventLogVwGetByEventStatusIdFirstOrDefault([Parameter(Name = "@EventStatusId")] int _eventStatusId)
+		{
+			return _EventLogVwGetByEventStatusId(_eventStatusId).ToList<EventLogVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.EventLogVwGetByUser")]
@@ -1747,6 +2076,16 @@ namespace Cf.Data
 		public List<EventLogVw> EventLogVwGetByUser([Parameter(Name = "@User")] int _user)
 		{
 			return _EventLogVwGetByUser(_user).ToList<EventLogVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of User columns in the  dbo.EventLogVw view.
+		/// </summary>
+		/// <param name="_user">User identifier</param>
+		/// <returns>An instance of EventLogVw.</returns>
+		public EventLogVw EventLogVwGetByUserFirstOrDefault([Parameter(Name = "@User")] int _user)
+		{
+			return _EventLogVwGetByUser(_user).ToList<EventLogVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -1824,6 +2163,16 @@ namespace Cf.Data
 		{
 			return _EventSourceVwGetByName(_name).ToList<EventSourceVw>();
 		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Name columns in the  dbo.EventSourceVw view.
+		/// </summary>
+		/// <param name="_name">EventSource name</param>
+		/// <returns>An instance of EventSourceVw.</returns>
+		public EventSourceVw EventSourceVwGetByNameFirstOrDefault([Parameter(Name = "@Name")] string _name)
+		{
+			return _EventSourceVwGetByName(_name).ToList<EventSourceVw>().FirstOrDefault();
+		}
 		#endregion
 		#endregion
 
@@ -1899,6 +2248,16 @@ namespace Cf.Data
 		public List<EventStatusVw> EventStatusVwGetByName([Parameter(Name = "@Name")] string _name)
 		{
 			return _EventStatusVwGetByName(_name).ToList<EventStatusVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Name columns in the  dbo.EventStatusVw view.
+		/// </summary>
+		/// <param name="_name">EventStatus name</param>
+		/// <returns>An instance of EventStatusVw.</returns>
+		public EventStatusVw EventStatusVwGetByNameFirstOrDefault([Parameter(Name = "@Name")] string _name)
+		{
+			return _EventStatusVwGetByName(_name).ToList<EventStatusVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -2030,6 +2389,16 @@ namespace Cf.Data
 		public List<ExceptionalAmountVw> ExceptionalAmountVwGetByExceptionalAmountTypeId([Parameter(Name = "@ExceptionalAmountTypeId")] byte _exceptionalAmountTypeId)
 		{
 			return _ExceptionalAmountVwGetByExceptionalAmountTypeId(_exceptionalAmountTypeId).ToList<ExceptionalAmountVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of ExceptionalAmountTypeId columns in the  dbo.ExceptionalAmountVw view.
+		/// </summary>
+		/// <param name="_exceptionalAmountTypeId">نوع المبلغ الاستثنائي</param>
+		/// <returns>An instance of ExceptionalAmountVw.</returns>
+		public ExceptionalAmountVw ExceptionalAmountVwGetByExceptionalAmountTypeIdFirstOrDefault([Parameter(Name = "@ExceptionalAmountTypeId")] byte _exceptionalAmountTypeId)
+		{
+			return _ExceptionalAmountVwGetByExceptionalAmountTypeId(_exceptionalAmountTypeId).ToList<ExceptionalAmountVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.ExceptionalAmountVwGetByLoanRequestRequestProductId")]
@@ -2049,6 +2418,16 @@ namespace Cf.Data
 		public List<ExceptionalAmountVw> ExceptionalAmountVwGetByLoanRequestRequestProductId([Parameter(Name = "@LoanRequestRequestProductId")] int _loanRequestRequestProductId)
 		{
 			return _ExceptionalAmountVwGetByLoanRequestRequestProductId(_loanRequestRequestProductId).ToList<ExceptionalAmountVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of LoanRequestRequestProductId columns in the  dbo.ExceptionalAmountVw view.
+		/// </summary>
+		/// <param name="_loanRequestRequestProductId">رقم طلب السلفة</param>
+		/// <returns>An instance of ExceptionalAmountVw.</returns>
+		public ExceptionalAmountVw ExceptionalAmountVwGetByLoanRequestRequestProductIdFirstOrDefault([Parameter(Name = "@LoanRequestRequestProductId")] int _loanRequestRequestProductId)
+		{
+			return _ExceptionalAmountVwGetByLoanRequestRequestProductId(_loanRequestRequestProductId).ToList<ExceptionalAmountVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -2125,6 +2504,16 @@ namespace Cf.Data
 		public List<ExternalGrantVw> ExternalGrantVwGetByEmployeeId([Parameter(Name = "@EmployeeId")] int _employeeId)
 		{
 			return _ExternalGrantVwGetByEmployeeId(_employeeId).ToList<ExternalGrantVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of EmployeeId columns in the  dbo.ExternalGrantVw view.
+		/// </summary>
+		/// <param name="_employeeId">الرقم الذاتي</param>
+		/// <returns>An instance of ExternalGrantVw.</returns>
+		public ExternalGrantVw ExternalGrantVwGetByEmployeeIdFirstOrDefault([Parameter(Name = "@EmployeeId")] int _employeeId)
+		{
+			return _ExternalGrantVwGetByEmployeeId(_employeeId).ToList<ExternalGrantVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.ExternalGrantVwGetByGrantTypeId")]
@@ -2144,6 +2533,16 @@ namespace Cf.Data
 		public List<ExternalGrantVw> ExternalGrantVwGetByGrantTypeId([Parameter(Name = "@GrantTypeId")] byte _grantTypeId)
 		{
 			return _ExternalGrantVwGetByGrantTypeId(_grantTypeId).ToList<ExternalGrantVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of GrantTypeId columns in the  dbo.ExternalGrantVw view.
+		/// </summary>
+		/// <param name="_grantTypeId">نوع الإعانة</param>
+		/// <returns>An instance of ExternalGrantVw.</returns>
+		public ExternalGrantVw ExternalGrantVwGetByGrantTypeIdFirstOrDefault([Parameter(Name = "@GrantTypeId")] byte _grantTypeId)
+		{
+			return _ExternalGrantVwGetByGrantTypeId(_grantTypeId).ToList<ExternalGrantVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -2192,6 +2591,7 @@ namespace Cf.Data
 
 		#region GetChidlren procedure
         [Function(Name = "dbo.GrantDecisionVwGetChildren")]
+        [ResultType(typeof(GrantDecisionVw))]
         [ResultType(typeof(GrantVw))]
         private IMultipleResults _GrantDecisionVwGetChildren([Parameter(Name = "@Id")] int _id)
 		{
@@ -2232,6 +2632,16 @@ namespace Cf.Data
 		public List<GrantDecisionVw> GrantDecisionVwGetByGrantTypeGroupId([Parameter(Name = "@GrantTypeGroupId")] byte _grantTypeGroupId)
 		{
 			return _GrantDecisionVwGetByGrantTypeGroupId(_grantTypeGroupId).ToList<GrantDecisionVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of GrantTypeGroupId columns in the  dbo.GrantDecisionVw view.
+		/// </summary>
+		/// <param name="_grantTypeGroupId">مجموعة أنواع القرارات</param>
+		/// <returns>An instance of GrantDecisionVw.</returns>
+		public GrantDecisionVw GrantDecisionVwGetByGrantTypeGroupIdFirstOrDefault([Parameter(Name = "@GrantTypeGroupId")] byte _grantTypeGroupId)
+		{
+			return _GrantDecisionVwGetByGrantTypeGroupId(_grantTypeGroupId).ToList<GrantDecisionVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.GrantDecisionVwGetByNumber_Year")]
@@ -2252,6 +2662,17 @@ namespace Cf.Data
 		public List<GrantDecisionVw> GrantDecisionVwGetByNumber_Year([Parameter(Name = "@Number")] short _number, [Parameter(Name = "@Year")] short _year)
 		{
 			return _GrantDecisionVwGetByNumber_Year(_number, _year).ToList<GrantDecisionVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Number_Year columns in the  dbo.GrantDecisionVw view.
+		/// </summary>
+		/// <param name="_number">رقم القرار</param>
+		/// <param name="_year">العام</param>
+		/// <returns>An instance of GrantDecisionVw.</returns>
+		public GrantDecisionVw GrantDecisionVwGetByNumber_YearFirstOrDefault([Parameter(Name = "@Number")] short _number, [Parameter(Name = "@Year")] short _year)
+		{
+			return _GrantDecisionVwGetByNumber_Year(_number, _year).ToList<GrantDecisionVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -2372,6 +2793,16 @@ namespace Cf.Data
 		{
 			return _GrantDetailVwGetByGrantDecisionId(_grantDecisionId).ToList<GrantDetailVw>();
 		}
+
+		/// <summary>
+		/// Gets rows related to one combination of GrantDecisionId columns in the  dbo.GrantDetailVw view.
+		/// </summary>
+		/// <param name="_grantDecisionId">قرار المنح</param>
+		/// <returns>An instance of GrantDetailVw.</returns>
+		public GrantDetailVw GrantDetailVwGetByGrantDecisionIdFirstOrDefault([Parameter(Name = "@GrantDecisionId")] int _grantDecisionId)
+		{
+			return _GrantDetailVwGetByGrantDecisionId(_grantDecisionId).ToList<GrantDetailVw>().FirstOrDefault();
+		}
 		#endregion
 		#endregion
 
@@ -2419,6 +2850,7 @@ namespace Cf.Data
 
 		#region GetChidlren procedure
         [Function(Name = "dbo.GrantPaymentOrderVwGetChildren")]
+        [ResultType(typeof(GrantPaymentOrderVw))]
         [ResultType(typeof(GrantPaymentVw))]
         private IMultipleResults _GrantPaymentOrderVwGetChildren([Parameter(Name = "@Id")] int _id)
 		{
@@ -2459,6 +2891,16 @@ namespace Cf.Data
 		public List<GrantPaymentOrderVw> GrantPaymentOrderVwGetByDate([Parameter(Name = "@Date")] DateTime _date)
 		{
 			return _GrantPaymentOrderVwGetByDate(_date).ToList<GrantPaymentOrderVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Date columns in the  dbo.GrantPaymentOrderVw view.
+		/// </summary>
+		/// <param name="_date">تاريخ مستند الدفع</param>
+		/// <returns>An instance of GrantPaymentOrderVw.</returns>
+		public GrantPaymentOrderVw GrantPaymentOrderVwGetByDateFirstOrDefault([Parameter(Name = "@Date")] DateTime _date)
+		{
+			return _GrantPaymentOrderVwGetByDate(_date).ToList<GrantPaymentOrderVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.GrantPaymentOrderVwGetByNumber_Year")]
@@ -2479,6 +2921,17 @@ namespace Cf.Data
 		public List<GrantPaymentOrderVw> GrantPaymentOrderVwGetByNumber_Year([Parameter(Name = "@Number")] short _number, [Parameter(Name = "@Year")] short _year)
 		{
 			return _GrantPaymentOrderVwGetByNumber_Year(_number, _year).ToList<GrantPaymentOrderVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Number_Year columns in the  dbo.GrantPaymentOrderVw view.
+		/// </summary>
+		/// <param name="_number">رقم مستند الدفع</param>
+		/// <param name="_year">عام مستند الدفع</param>
+		/// <returns>An instance of GrantPaymentOrderVw.</returns>
+		public GrantPaymentOrderVw GrantPaymentOrderVwGetByNumber_YearFirstOrDefault([Parameter(Name = "@Number")] short _number, [Parameter(Name = "@Year")] short _year)
+		{
+			return _GrantPaymentOrderVwGetByNumber_Year(_number, _year).ToList<GrantPaymentOrderVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -2555,6 +3008,16 @@ namespace Cf.Data
 		public List<GrantPaymentVw> GrantPaymentVwGetByGrantPaymentOrderId([Parameter(Name = "@GrantPaymentOrderId")] int _grantPaymentOrderId)
 		{
 			return _GrantPaymentVwGetByGrantPaymentOrderId(_grantPaymentOrderId).ToList<GrantPaymentVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of GrantPaymentOrderId columns in the  dbo.GrantPaymentVw view.
+		/// </summary>
+		/// <param name="_grantPaymentOrderId">رقم مستند الدفع</param>
+		/// <returns>An instance of GrantPaymentVw.</returns>
+		public GrantPaymentVw GrantPaymentVwGetByGrantPaymentOrderIdFirstOrDefault([Parameter(Name = "@GrantPaymentOrderId")] int _grantPaymentOrderId)
+		{
+			return _GrantPaymentVwGetByGrantPaymentOrderId(_grantPaymentOrderId).ToList<GrantPaymentVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.GrantPaymentVwGetByGrantPaymentOrderId_SubNumber")]
@@ -2575,6 +3038,17 @@ namespace Cf.Data
 		public List<GrantPaymentVw> GrantPaymentVwGetByGrantPaymentOrderId_SubNumber([Parameter(Name = "@GrantPaymentOrderId")] int _grantPaymentOrderId, [Parameter(Name = "@SubNumber")] byte _subNumber)
 		{
 			return _GrantPaymentVwGetByGrantPaymentOrderId_SubNumber(_grantPaymentOrderId, _subNumber).ToList<GrantPaymentVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of GrantPaymentOrderId_SubNumber columns in the  dbo.GrantPaymentVw view.
+		/// </summary>
+		/// <param name="_grantPaymentOrderId">رقم مستند الدفع</param>
+		/// <param name="_subNumber">الرقم المتسلسل للدفعة</param>
+		/// <returns>An instance of GrantPaymentVw.</returns>
+		public GrantPaymentVw GrantPaymentVwGetByGrantPaymentOrderId_SubNumberFirstOrDefault([Parameter(Name = "@GrantPaymentOrderId")] int _grantPaymentOrderId, [Parameter(Name = "@SubNumber")] byte _subNumber)
+		{
+			return _GrantPaymentVwGetByGrantPaymentOrderId_SubNumber(_grantPaymentOrderId, _subNumber).ToList<GrantPaymentVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.GrantPaymentVwGetByGrantProductId")]
@@ -2594,6 +3068,16 @@ namespace Cf.Data
 		public List<GrantPaymentVw> GrantPaymentVwGetByGrantProductId([Parameter(Name = "@GrantProductId")] int _grantProductId)
 		{
 			return _GrantPaymentVwGetByGrantProductId(_grantProductId).ToList<GrantPaymentVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of GrantProductId columns in the  dbo.GrantPaymentVw view.
+		/// </summary>
+		/// <param name="_grantProductId">معرف الإعانة</param>
+		/// <returns>An instance of GrantPaymentVw.</returns>
+		public GrantPaymentVw GrantPaymentVwGetByGrantProductIdFirstOrDefault([Parameter(Name = "@GrantProductId")] int _grantProductId)
+		{
+			return _GrantPaymentVwGetByGrantProductId(_grantProductId).ToList<GrantPaymentVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -2685,6 +3169,7 @@ namespace Cf.Data
 
 		#region GetChidlren procedure
         [Function(Name = "dbo.GrantRequestVwGetChildren")]
+        [ResultType(typeof(GrantRequestVw))]
         [ResultType(typeof(ServiceEndGrantRequestVw))]
         private IMultipleResults _GrantRequestVwGetChildren([Parameter(Name = "@RequestProductId")] int _requestProductId)
 		{
@@ -2752,6 +3237,7 @@ namespace Cf.Data
 
 		#region GetChidlren procedure
         [Function(Name = "dbo.GrantTypeGroupVwGetChildren")]
+        [ResultType(typeof(GrantTypeGroupVw))]
         [ResultType(typeof(GrantTypeVw))]
         private IMultipleResults _GrantTypeGroupVwGetChildren([Parameter(Name = "@Id")] byte _id)
 		{
@@ -2792,6 +3278,16 @@ namespace Cf.Data
 		public List<GrantTypeGroupVw> GrantTypeGroupVwGetByName([Parameter(Name = "@Name")] string _name)
 		{
 			return _GrantTypeGroupVwGetByName(_name).ToList<GrantTypeGroupVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Name columns in the  dbo.GrantTypeGroupVw view.
+		/// </summary>
+		/// <param name="_name">بيان مجموعة أنواع الإعانات</param>
+		/// <returns>An instance of GrantTypeGroupVw.</returns>
+		public GrantTypeGroupVw GrantTypeGroupVwGetByNameFirstOrDefault([Parameter(Name = "@Name")] string _name)
+		{
+			return _GrantTypeGroupVwGetByName(_name).ToList<GrantTypeGroupVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -2868,6 +3364,16 @@ namespace Cf.Data
 		public List<GrantTypeVw> GrantTypeVwGetByGrantTypeGroupId([Parameter(Name = "@GrantTypeGroupId")] byte _grantTypeGroupId)
 		{
 			return _GrantTypeVwGetByGrantTypeGroupId(_grantTypeGroupId).ToList<GrantTypeVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of GrantTypeGroupId columns in the  dbo.GrantTypeVw view.
+		/// </summary>
+		/// <param name="_grantTypeGroupId">مجموعة أنواع الإعانات</param>
+		/// <returns>An instance of GrantTypeVw.</returns>
+		public GrantTypeVw GrantTypeVwGetByGrantTypeGroupIdFirstOrDefault([Parameter(Name = "@GrantTypeGroupId")] byte _grantTypeGroupId)
+		{
+			return _GrantTypeVwGetByGrantTypeGroupId(_grantTypeGroupId).ToList<GrantTypeVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.GrantTypeVwGetByName")]
@@ -2887,6 +3393,16 @@ namespace Cf.Data
 		public List<GrantTypeVw> GrantTypeVwGetByName([Parameter(Name = "@Name")] string _name)
 		{
 			return _GrantTypeVwGetByName(_name).ToList<GrantTypeVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Name columns in the  dbo.GrantTypeVw view.
+		/// </summary>
+		/// <param name="_name">بيان نوع الإعانة</param>
+		/// <returns>An instance of GrantTypeVw.</returns>
+		public GrantTypeVw GrantTypeVwGetByNameFirstOrDefault([Parameter(Name = "@Name")] string _name)
+		{
+			return _GrantTypeVwGetByName(_name).ToList<GrantTypeVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -2935,6 +3451,7 @@ namespace Cf.Data
 
 		#region GetChidlren procedure
         [Function(Name = "dbo.GrantVwGetChildren")]
+        [ResultType(typeof(GrantVw))]
         [ResultType(typeof(GrantDeductionVw))]
         [ResultType(typeof(GrantPaymentVw))]
         private IMultipleResults _GrantVwGetChildren([Parameter(Name = "@ProductId")] int _productId)
@@ -2977,6 +3494,16 @@ namespace Cf.Data
 		public List<GrantVw> GrantVwGetByGrantDecisionId([Parameter(Name = "@GrantDecisionId")] int _grantDecisionId)
 		{
 			return _GrantVwGetByGrantDecisionId(_grantDecisionId).ToList<GrantVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of GrantDecisionId columns in the  dbo.GrantVw view.
+		/// </summary>
+		/// <param name="_grantDecisionId">قرار المنح</param>
+		/// <returns>An instance of GrantVw.</returns>
+		public GrantVw GrantVwGetByGrantDecisionIdFirstOrDefault([Parameter(Name = "@GrantDecisionId")] int _grantDecisionId)
+		{
+			return _GrantVwGetByGrantDecisionId(_grantDecisionId).ToList<GrantVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -3041,6 +3568,16 @@ namespace Cf.Data
 		public List<GuarantorDetailVw> GuarantorDetailVwGetByEmployeeId([Parameter(Name = "@EmployeeId")] int _employeeId)
 		{
 			return _GuarantorDetailVwGetByEmployeeId(_employeeId).ToList<GuarantorDetailVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of EmployeeId columns in the  dbo.GuarantorDetailVw view.
+		/// </summary>
+		/// <param name="_employeeId">الرقم الذاتي للكفيل</param>
+		/// <returns>An instance of GuarantorDetailVw.</returns>
+		public GuarantorDetailVw GuarantorDetailVwGetByEmployeeIdFirstOrDefault([Parameter(Name = "@EmployeeId")] int _employeeId)
+		{
+			return _GuarantorDetailVwGetByEmployeeId(_employeeId).ToList<GuarantorDetailVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.GuarantorDetailVwGetByGuarantorStatusId")]
@@ -3060,6 +3597,16 @@ namespace Cf.Data
 		public List<GuarantorDetailVw> GuarantorDetailVwGetByGuarantorStatusId([Parameter(Name = "@GuarantorStatusId")] byte _guarantorStatusId)
 		{
 			return _GuarantorDetailVwGetByGuarantorStatusId(_guarantorStatusId).ToList<GuarantorDetailVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of GuarantorStatusId columns in the  dbo.GuarantorDetailVw view.
+		/// </summary>
+		/// <param name="_guarantorStatusId">حالة الكفيل</param>
+		/// <returns>An instance of GuarantorDetailVw.</returns>
+		public GuarantorDetailVw GuarantorDetailVwGetByGuarantorStatusIdFirstOrDefault([Parameter(Name = "@GuarantorStatusId")] byte _guarantorStatusId)
+		{
+			return _GuarantorDetailVwGetByGuarantorStatusId(_guarantorStatusId).ToList<GuarantorDetailVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.GuarantorDetailVwGetByRefundableProductProductId")]
@@ -3079,6 +3626,16 @@ namespace Cf.Data
 		public List<GuarantorDetailVw> GuarantorDetailVwGetByRefundableProductProductId([Parameter(Name = "@RefundableProductProductId")] int _refundableProductProductId)
 		{
 			return _GuarantorDetailVwGetByRefundableProductProductId(_refundableProductProductId).ToList<GuarantorDetailVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of RefundableProductProductId columns in the  dbo.GuarantorDetailVw view.
+		/// </summary>
+		/// <param name="_refundableProductProductId">المنتج</param>
+		/// <returns>An instance of GuarantorDetailVw.</returns>
+		public GuarantorDetailVw GuarantorDetailVwGetByRefundableProductProductIdFirstOrDefault([Parameter(Name = "@RefundableProductProductId")] int _refundableProductProductId)
+		{
+			return _GuarantorDetailVwGetByRefundableProductProductId(_refundableProductProductId).ToList<GuarantorDetailVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.GuarantorDetailVwGetByRefundableProductProductId_SubNumber")]
@@ -3099,6 +3656,17 @@ namespace Cf.Data
 		public List<GuarantorDetailVw> GuarantorDetailVwGetByRefundableProductProductId_SubNumber([Parameter(Name = "@RefundableProductProductId")] int _refundableProductProductId, [Parameter(Name = "@SubNumber")] byte _subNumber)
 		{
 			return _GuarantorDetailVwGetByRefundableProductProductId_SubNumber(_refundableProductProductId, _subNumber).ToList<GuarantorDetailVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of RefundableProductProductId_SubNumber columns in the  dbo.GuarantorDetailVw view.
+		/// </summary>
+		/// <param name="_refundableProductProductId">المنتج</param>
+		/// <param name="_subNumber">مسلسل فرعي للكفيل</param>
+		/// <returns>An instance of GuarantorDetailVw.</returns>
+		public GuarantorDetailVw GuarantorDetailVwGetByRefundableProductProductId_SubNumberFirstOrDefault([Parameter(Name = "@RefundableProductProductId")] int _refundableProductProductId, [Parameter(Name = "@SubNumber")] byte _subNumber)
+		{
+			return _GuarantorDetailVwGetByRefundableProductProductId_SubNumber(_refundableProductProductId, _subNumber).ToList<GuarantorDetailVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -3231,6 +3799,16 @@ namespace Cf.Data
 		{
 			return _GuarantorStatusVwGetByName(_name).ToList<GuarantorStatusVw>();
 		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Name columns in the  dbo.GuarantorStatusVw view.
+		/// </summary>
+		/// <param name="_name">بيان حالة الكفيل</param>
+		/// <returns>An instance of GuarantorStatusVw.</returns>
+		public GuarantorStatusVw GuarantorStatusVwGetByNameFirstOrDefault([Parameter(Name = "@Name")] string _name)
+		{
+			return _GuarantorStatusVwGetByName(_name).ToList<GuarantorStatusVw>().FirstOrDefault();
+		}
 		#endregion
 		#endregion
 
@@ -3278,6 +3856,7 @@ namespace Cf.Data
 
 		#region GetChidlren procedure
         [Function(Name = "dbo.GuarantorVwGetChildren")]
+        [ResultType(typeof(GuarantorVw))]
         [ResultType(typeof(GuarantorStatementVw))]
         private IMultipleResults _GuarantorVwGetChildren([Parameter(Name = "@Id")] int _id)
 		{
@@ -3318,6 +3897,16 @@ namespace Cf.Data
 		public List<GuarantorVw> GuarantorVwGetByEmployeeId([Parameter(Name = "@EmployeeId")] int _employeeId)
 		{
 			return _GuarantorVwGetByEmployeeId(_employeeId).ToList<GuarantorVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of EmployeeId columns in the  dbo.GuarantorVw view.
+		/// </summary>
+		/// <param name="_employeeId">الرقم الذاتي للكفيل</param>
+		/// <returns>An instance of GuarantorVw.</returns>
+		public GuarantorVw GuarantorVwGetByEmployeeIdFirstOrDefault([Parameter(Name = "@EmployeeId")] int _employeeId)
+		{
+			return _GuarantorVwGetByEmployeeId(_employeeId).ToList<GuarantorVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.GuarantorVwGetByGuarantorStatusId")]
@@ -3337,6 +3926,16 @@ namespace Cf.Data
 		public List<GuarantorVw> GuarantorVwGetByGuarantorStatusId([Parameter(Name = "@GuarantorStatusId")] byte _guarantorStatusId)
 		{
 			return _GuarantorVwGetByGuarantorStatusId(_guarantorStatusId).ToList<GuarantorVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of GuarantorStatusId columns in the  dbo.GuarantorVw view.
+		/// </summary>
+		/// <param name="_guarantorStatusId">حالة الكفيل</param>
+		/// <returns>An instance of GuarantorVw.</returns>
+		public GuarantorVw GuarantorVwGetByGuarantorStatusIdFirstOrDefault([Parameter(Name = "@GuarantorStatusId")] byte _guarantorStatusId)
+		{
+			return _GuarantorVwGetByGuarantorStatusId(_guarantorStatusId).ToList<GuarantorVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.GuarantorVwGetByRefundableProductProductId")]
@@ -3356,6 +3955,47 @@ namespace Cf.Data
 		public List<GuarantorVw> GuarantorVwGetByRefundableProductProductId([Parameter(Name = "@RefundableProductProductId")] int _refundableProductProductId)
 		{
 			return _GuarantorVwGetByRefundableProductProductId(_refundableProductProductId).ToList<GuarantorVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of RefundableProductProductId columns in the  dbo.GuarantorVw view.
+		/// </summary>
+		/// <param name="_refundableProductProductId">المنتج</param>
+		/// <returns>An instance of GuarantorVw.</returns>
+		public GuarantorVw GuarantorVwGetByRefundableProductProductIdFirstOrDefault([Parameter(Name = "@RefundableProductProductId")] int _refundableProductProductId)
+		{
+			return _GuarantorVwGetByRefundableProductProductId(_refundableProductProductId).ToList<GuarantorVw>().FirstOrDefault();
+		}		
+
+		[Function(Name = "dbo.GuarantorVwGetByRefundableProductProductId_EmployeeId")]
+		private ISingleResult<GuarantorVw> _GuarantorVwGetByRefundableProductProductId_EmployeeId([Parameter(Name = "@RefundableProductProductId")] int _refundableProductProductId, [Parameter(Name = "@EmployeeId")] int _employeeId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _refundableProductProductId, _employeeId);
+			return (result.ReturnValue as ISingleResult<GuarantorVw>);
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of RefundableProductProductId_EmployeeId columns in the  dbo.GuarantorVw view.
+		/// </summary>
+		/// <param name="_refundableProductProductId">المنتج</param>
+		/// <param name="_employeeId">الرقم الذاتي للكفيل</param>
+		/// <returns>A list of GuarantorVw instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<GuarantorVw> GuarantorVwGetByRefundableProductProductId_EmployeeId([Parameter(Name = "@RefundableProductProductId")] int _refundableProductProductId, [Parameter(Name = "@EmployeeId")] int _employeeId)
+		{
+			return _GuarantorVwGetByRefundableProductProductId_EmployeeId(_refundableProductProductId, _employeeId).ToList<GuarantorVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of RefundableProductProductId_EmployeeId columns in the  dbo.GuarantorVw view.
+		/// </summary>
+		/// <param name="_refundableProductProductId">المنتج</param>
+		/// <param name="_employeeId">الرقم الذاتي للكفيل</param>
+		/// <returns>An instance of GuarantorVw.</returns>
+		public GuarantorVw GuarantorVwGetByRefundableProductProductId_EmployeeIdFirstOrDefault([Parameter(Name = "@RefundableProductProductId")] int _refundableProductProductId, [Parameter(Name = "@EmployeeId")] int _employeeId)
+		{
+			return _GuarantorVwGetByRefundableProductProductId_EmployeeId(_refundableProductProductId, _employeeId).ToList<GuarantorVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.GuarantorVwGetByRefundableProductProductId_SubNumber")]
@@ -3376,6 +4016,17 @@ namespace Cf.Data
 		public List<GuarantorVw> GuarantorVwGetByRefundableProductProductId_SubNumber([Parameter(Name = "@RefundableProductProductId")] int _refundableProductProductId, [Parameter(Name = "@SubNumber")] byte _subNumber)
 		{
 			return _GuarantorVwGetByRefundableProductProductId_SubNumber(_refundableProductProductId, _subNumber).ToList<GuarantorVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of RefundableProductProductId_SubNumber columns in the  dbo.GuarantorVw view.
+		/// </summary>
+		/// <param name="_refundableProductProductId">المنتج</param>
+		/// <param name="_subNumber">مسلسل فرعي للكفيل</param>
+		/// <returns>An instance of GuarantorVw.</returns>
+		public GuarantorVw GuarantorVwGetByRefundableProductProductId_SubNumberFirstOrDefault([Parameter(Name = "@RefundableProductProductId")] int _refundableProductProductId, [Parameter(Name = "@SubNumber")] byte _subNumber)
+		{
+			return _GuarantorVwGetByRefundableProductProductId_SubNumber(_refundableProductProductId, _subNumber).ToList<GuarantorVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -3452,6 +4103,16 @@ namespace Cf.Data
 		public List<HealthLoanDecisionFirstPaymentVw> HealthLoanDecisionFirstPaymentVwGetByDepartment([Parameter(Name = "@Department")] Nullable<int> _department)
 		{
 			return _HealthLoanDecisionFirstPaymentVwGetByDepartment(_department).ToList<HealthLoanDecisionFirstPaymentVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Department columns in the  dbo.HealthLoanDecisionFirstPaymentVw view.
+		/// </summary>
+		/// <param name="_department">مكان العمل</param>
+		/// <returns>An instance of HealthLoanDecisionFirstPaymentVw.</returns>
+		public HealthLoanDecisionFirstPaymentVw HealthLoanDecisionFirstPaymentVwGetByDepartmentFirstOrDefault([Parameter(Name = "@Department")] Nullable<int> _department)
+		{
+			return _HealthLoanDecisionFirstPaymentVwGetByDepartment(_department).ToList<HealthLoanDecisionFirstPaymentVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.HealthLoanDecisionFirstPaymentVwGetByEmployeeId")]
@@ -3471,6 +4132,16 @@ namespace Cf.Data
 		public List<HealthLoanDecisionFirstPaymentVw> HealthLoanDecisionFirstPaymentVwGetByEmployeeId([Parameter(Name = "@EmployeeId")] int _employeeId)
 		{
 			return _HealthLoanDecisionFirstPaymentVwGetByEmployeeId(_employeeId).ToList<HealthLoanDecisionFirstPaymentVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of EmployeeId columns in the  dbo.HealthLoanDecisionFirstPaymentVw view.
+		/// </summary>
+		/// <param name="_employeeId">الرقم الذاتي</param>
+		/// <returns>An instance of HealthLoanDecisionFirstPaymentVw.</returns>
+		public HealthLoanDecisionFirstPaymentVw HealthLoanDecisionFirstPaymentVwGetByEmployeeIdFirstOrDefault([Parameter(Name = "@EmployeeId")] int _employeeId)
+		{
+			return _HealthLoanDecisionFirstPaymentVwGetByEmployeeId(_employeeId).ToList<HealthLoanDecisionFirstPaymentVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.HealthLoanDecisionFirstPaymentVwGetByEmployeeId_PaymentDate")]
@@ -3491,6 +4162,17 @@ namespace Cf.Data
 		public List<HealthLoanDecisionFirstPaymentVw> HealthLoanDecisionFirstPaymentVwGetByEmployeeId_PaymentDate([Parameter(Name = "@EmployeeId")] int _employeeId, [Parameter(Name = "@PaymentDate")] DateTime _paymentDate)
 		{
 			return _HealthLoanDecisionFirstPaymentVwGetByEmployeeId_PaymentDate(_employeeId, _paymentDate).ToList<HealthLoanDecisionFirstPaymentVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of EmployeeId_PaymentDate columns in the  dbo.HealthLoanDecisionFirstPaymentVw view.
+		/// </summary>
+		/// <param name="_employeeId">الرقم الذاتي</param>
+		/// <param name="_paymentDate">تاريخ الدفعة</param>
+		/// <returns>An instance of HealthLoanDecisionFirstPaymentVw.</returns>
+		public HealthLoanDecisionFirstPaymentVw HealthLoanDecisionFirstPaymentVwGetByEmployeeId_PaymentDateFirstOrDefault([Parameter(Name = "@EmployeeId")] int _employeeId, [Parameter(Name = "@PaymentDate")] DateTime _paymentDate)
+		{
+			return _HealthLoanDecisionFirstPaymentVwGetByEmployeeId_PaymentDate(_employeeId, _paymentDate).ToList<HealthLoanDecisionFirstPaymentVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.HealthLoanDecisionFirstPaymentVwGetByHealthLoanDecisionId")]
@@ -3510,6 +4192,16 @@ namespace Cf.Data
 		public List<HealthLoanDecisionFirstPaymentVw> HealthLoanDecisionFirstPaymentVwGetByHealthLoanDecisionId([Parameter(Name = "@HealthLoanDecisionId")] Nullable<int> _healthLoanDecisionId)
 		{
 			return _HealthLoanDecisionFirstPaymentVwGetByHealthLoanDecisionId(_healthLoanDecisionId).ToList<HealthLoanDecisionFirstPaymentVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of HealthLoanDecisionId columns in the  dbo.HealthLoanDecisionFirstPaymentVw view.
+		/// </summary>
+		/// <param name="_healthLoanDecisionId">رقم قرار التسليف</param>
+		/// <returns>An instance of HealthLoanDecisionFirstPaymentVw.</returns>
+		public HealthLoanDecisionFirstPaymentVw HealthLoanDecisionFirstPaymentVwGetByHealthLoanDecisionIdFirstOrDefault([Parameter(Name = "@HealthLoanDecisionId")] Nullable<int> _healthLoanDecisionId)
+		{
+			return _HealthLoanDecisionFirstPaymentVwGetByHealthLoanDecisionId(_healthLoanDecisionId).ToList<HealthLoanDecisionFirstPaymentVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.HealthLoanDecisionFirstPaymentVwGetByInsuranceTypeId")]
@@ -3529,6 +4221,16 @@ namespace Cf.Data
 		public List<HealthLoanDecisionFirstPaymentVw> HealthLoanDecisionFirstPaymentVwGetByInsuranceTypeId([Parameter(Name = "@InsuranceTypeId")] Nullable<byte> _insuranceTypeId)
 		{
 			return _HealthLoanDecisionFirstPaymentVwGetByInsuranceTypeId(_insuranceTypeId).ToList<HealthLoanDecisionFirstPaymentVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of InsuranceTypeId columns in the  dbo.HealthLoanDecisionFirstPaymentVw view.
+		/// </summary>
+		/// <param name="_insuranceTypeId">معرف طريقة قبض التأمين</param>
+		/// <returns>An instance of HealthLoanDecisionFirstPaymentVw.</returns>
+		public HealthLoanDecisionFirstPaymentVw HealthLoanDecisionFirstPaymentVwGetByInsuranceTypeIdFirstOrDefault([Parameter(Name = "@InsuranceTypeId")] Nullable<byte> _insuranceTypeId)
+		{
+			return _HealthLoanDecisionFirstPaymentVwGetByInsuranceTypeId(_insuranceTypeId).ToList<HealthLoanDecisionFirstPaymentVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.HealthLoanDecisionFirstPaymentVwGetByLoanRequest")]
@@ -3548,6 +4250,16 @@ namespace Cf.Data
 		public List<HealthLoanDecisionFirstPaymentVw> HealthLoanDecisionFirstPaymentVwGetByLoanRequest([Parameter(Name = "@LoanRequest")] Nullable<int> _loanRequest)
 		{
 			return _HealthLoanDecisionFirstPaymentVwGetByLoanRequest(_loanRequest).ToList<HealthLoanDecisionFirstPaymentVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of LoanRequest columns in the  dbo.HealthLoanDecisionFirstPaymentVw view.
+		/// </summary>
+		/// <param name="_loanRequest">معرف طلب السلفة</param>
+		/// <returns>An instance of HealthLoanDecisionFirstPaymentVw.</returns>
+		public HealthLoanDecisionFirstPaymentVw HealthLoanDecisionFirstPaymentVwGetByLoanRequestFirstOrDefault([Parameter(Name = "@LoanRequest")] Nullable<int> _loanRequest)
+		{
+			return _HealthLoanDecisionFirstPaymentVwGetByLoanRequest(_loanRequest).ToList<HealthLoanDecisionFirstPaymentVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.HealthLoanDecisionFirstPaymentVwGetByPaymentStatus")]
@@ -3567,6 +4279,16 @@ namespace Cf.Data
 		public List<HealthLoanDecisionFirstPaymentVw> HealthLoanDecisionFirstPaymentVwGetByPaymentStatus([Parameter(Name = "@PaymentStatus")] Nullable<byte> _paymentStatus)
 		{
 			return _HealthLoanDecisionFirstPaymentVwGetByPaymentStatus(_paymentStatus).ToList<HealthLoanDecisionFirstPaymentVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of PaymentStatus columns in the  dbo.HealthLoanDecisionFirstPaymentVw view.
+		/// </summary>
+		/// <param name="_paymentStatus">الحالة non:0; checked:1; chgd2%:2; chgd14%:3; Refunded:4</param>
+		/// <returns>An instance of HealthLoanDecisionFirstPaymentVw.</returns>
+		public HealthLoanDecisionFirstPaymentVw HealthLoanDecisionFirstPaymentVwGetByPaymentStatusFirstOrDefault([Parameter(Name = "@PaymentStatus")] Nullable<byte> _paymentStatus)
+		{
+			return _HealthLoanDecisionFirstPaymentVwGetByPaymentStatus(_paymentStatus).ToList<HealthLoanDecisionFirstPaymentVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -3615,6 +4337,7 @@ namespace Cf.Data
 
 		#region GetChidlren procedure
         [Function(Name = "dbo.HealthLoanDecisionVwGetChildren")]
+        [ResultType(typeof(HealthLoanDecisionVw))]
         [ResultType(typeof(HealthLoanDecisionFirstPaymentVw))]
         private IMultipleResults _HealthLoanDecisionVwGetChildren([Parameter(Name = "@Id")] int _id)
 		{
@@ -3655,6 +4378,16 @@ namespace Cf.Data
 		public List<HealthLoanDecisionVw> HealthLoanDecisionVwGetByDate([Parameter(Name = "@Date")] Nullable<DateTime> _date)
 		{
 			return _HealthLoanDecisionVwGetByDate(_date).ToList<HealthLoanDecisionVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Date columns in the  dbo.HealthLoanDecisionVw view.
+		/// </summary>
+		/// <param name="_date">تاريخ القرار</param>
+		/// <returns>An instance of HealthLoanDecisionVw.</returns>
+		public HealthLoanDecisionVw HealthLoanDecisionVwGetByDateFirstOrDefault([Parameter(Name = "@Date")] Nullable<DateTime> _date)
+		{
+			return _HealthLoanDecisionVwGetByDate(_date).ToList<HealthLoanDecisionVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.HealthLoanDecisionVwGetByNumber_Year")]
@@ -3675,6 +4408,17 @@ namespace Cf.Data
 		public List<HealthLoanDecisionVw> HealthLoanDecisionVwGetByNumber_Year([Parameter(Name = "@Number")] short _number, [Parameter(Name = "@Year")] short _year)
 		{
 			return _HealthLoanDecisionVwGetByNumber_Year(_number, _year).ToList<HealthLoanDecisionVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Number_Year columns in the  dbo.HealthLoanDecisionVw view.
+		/// </summary>
+		/// <param name="_number">رقم القرار</param>
+		/// <param name="_year">عام القرار</param>
+		/// <returns>An instance of HealthLoanDecisionVw.</returns>
+		public HealthLoanDecisionVw HealthLoanDecisionVwGetByNumber_YearFirstOrDefault([Parameter(Name = "@Number")] short _number, [Parameter(Name = "@Year")] short _year)
+		{
+			return _HealthLoanDecisionVwGetByNumber_Year(_number, _year).ToList<HealthLoanDecisionVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -3752,6 +4496,16 @@ namespace Cf.Data
 		{
 			return _IncomingLoanVwGetByMainWorkPlaceId(_mainWorkPlaceId).ToList<IncomingLoanVw>();
 		}
+
+		/// <summary>
+		/// Gets rows related to one combination of MainWorkPlaceId columns in the  dbo.IncomingLoanVw view.
+		/// </summary>
+		/// <param name="_mainWorkPlaceId">الفرع المنقولة منه السلفة</param>
+		/// <returns>An instance of IncomingLoanVw.</returns>
+		public IncomingLoanVw IncomingLoanVwGetByMainWorkPlaceIdFirstOrDefault([Parameter(Name = "@MainWorkPlaceId")] int _mainWorkPlaceId)
+		{
+			return _IncomingLoanVwGetByMainWorkPlaceId(_mainWorkPlaceId).ToList<IncomingLoanVw>().FirstOrDefault();
+		}
 		#endregion
 		#endregion
 
@@ -3799,6 +4553,7 @@ namespace Cf.Data
 
 		#region GetChidlren procedure
         [Function(Name = "dbo.InstallmentDecreaseOrderVwGetChildren")]
+        [ResultType(typeof(InstallmentDecreaseOrderVw))]
         [ResultType(typeof(InstallmentDecreaseVw))]
         private IMultipleResults _InstallmentDecreaseOrderVwGetChildren([Parameter(Name = "@Id")] int _id)
 		{
@@ -3839,6 +4594,16 @@ namespace Cf.Data
 		public List<InstallmentDecreaseOrderVw> InstallmentDecreaseOrderVwGetByMonth([Parameter(Name = "@Month")] DateTime _month)
 		{
 			return _InstallmentDecreaseOrderVwGetByMonth(_month).ToList<InstallmentDecreaseOrderVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Month columns in the  dbo.InstallmentDecreaseOrderVw view.
+		/// </summary>
+		/// <param name="_month">الشهر الجاري توزيعه عند إنشاء الكتاب</param>
+		/// <returns>An instance of InstallmentDecreaseOrderVw.</returns>
+		public InstallmentDecreaseOrderVw InstallmentDecreaseOrderVwGetByMonthFirstOrDefault([Parameter(Name = "@Month")] DateTime _month)
+		{
+			return _InstallmentDecreaseOrderVwGetByMonth(_month).ToList<InstallmentDecreaseOrderVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -3915,6 +4680,16 @@ namespace Cf.Data
 		public List<InstallmentDecreaseVw> InstallmentDecreaseVwGetByDepartmentId([Parameter(Name = "@DepartmentId")] Nullable<int> _departmentId)
 		{
 			return _InstallmentDecreaseVwGetByDepartmentId(_departmentId).ToList<InstallmentDecreaseVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of DepartmentId columns in the  dbo.InstallmentDecreaseVw view.
+		/// </summary>
+		/// <param name="_departmentId">الفعالية</param>
+		/// <returns>An instance of InstallmentDecreaseVw.</returns>
+		public InstallmentDecreaseVw InstallmentDecreaseVwGetByDepartmentIdFirstOrDefault([Parameter(Name = "@DepartmentId")] Nullable<int> _departmentId)
+		{
+			return _InstallmentDecreaseVwGetByDepartmentId(_departmentId).ToList<InstallmentDecreaseVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.InstallmentDecreaseVwGetByEmployeeId")]
@@ -3934,6 +4709,16 @@ namespace Cf.Data
 		public List<InstallmentDecreaseVw> InstallmentDecreaseVwGetByEmployeeId([Parameter(Name = "@EmployeeId")] int _employeeId)
 		{
 			return _InstallmentDecreaseVwGetByEmployeeId(_employeeId).ToList<InstallmentDecreaseVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of EmployeeId columns in the  dbo.InstallmentDecreaseVw view.
+		/// </summary>
+		/// <param name="_employeeId">الرقم الذاتي</param>
+		/// <returns>An instance of InstallmentDecreaseVw.</returns>
+		public InstallmentDecreaseVw InstallmentDecreaseVwGetByEmployeeIdFirstOrDefault([Parameter(Name = "@EmployeeId")] int _employeeId)
+		{
+			return _InstallmentDecreaseVwGetByEmployeeId(_employeeId).ToList<InstallmentDecreaseVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.InstallmentDecreaseVwGetByInstallmentDecreaseOrderId")]
@@ -3953,6 +4738,16 @@ namespace Cf.Data
 		public List<InstallmentDecreaseVw> InstallmentDecreaseVwGetByInstallmentDecreaseOrderId([Parameter(Name = "@InstallmentDecreaseOrderId")] int _installmentDecreaseOrderId)
 		{
 			return _InstallmentDecreaseVwGetByInstallmentDecreaseOrderId(_installmentDecreaseOrderId).ToList<InstallmentDecreaseVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of InstallmentDecreaseOrderId columns in the  dbo.InstallmentDecreaseVw view.
+		/// </summary>
+		/// <param name="_installmentDecreaseOrderId">رقم الكتاب الداخلي</param>
+		/// <returns>An instance of InstallmentDecreaseVw.</returns>
+		public InstallmentDecreaseVw InstallmentDecreaseVwGetByInstallmentDecreaseOrderIdFirstOrDefault([Parameter(Name = "@InstallmentDecreaseOrderId")] int _installmentDecreaseOrderId)
+		{
+			return _InstallmentDecreaseVwGetByInstallmentDecreaseOrderId(_installmentDecreaseOrderId).ToList<InstallmentDecreaseVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.InstallmentDecreaseVwGetByInstallmentDecreaseOrderId_EmployeeId")]
@@ -3973,6 +4768,17 @@ namespace Cf.Data
 		public List<InstallmentDecreaseVw> InstallmentDecreaseVwGetByInstallmentDecreaseOrderId_EmployeeId([Parameter(Name = "@InstallmentDecreaseOrderId")] int _installmentDecreaseOrderId, [Parameter(Name = "@EmployeeId")] int _employeeId)
 		{
 			return _InstallmentDecreaseVwGetByInstallmentDecreaseOrderId_EmployeeId(_installmentDecreaseOrderId, _employeeId).ToList<InstallmentDecreaseVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of InstallmentDecreaseOrderId_EmployeeId columns in the  dbo.InstallmentDecreaseVw view.
+		/// </summary>
+		/// <param name="_installmentDecreaseOrderId">رقم الكتاب الداخلي</param>
+		/// <param name="_employeeId">الرقم الذاتي</param>
+		/// <returns>An instance of InstallmentDecreaseVw.</returns>
+		public InstallmentDecreaseVw InstallmentDecreaseVwGetByInstallmentDecreaseOrderId_EmployeeIdFirstOrDefault([Parameter(Name = "@InstallmentDecreaseOrderId")] int _installmentDecreaseOrderId, [Parameter(Name = "@EmployeeId")] int _employeeId)
+		{
+			return _InstallmentDecreaseVwGetByInstallmentDecreaseOrderId_EmployeeId(_installmentDecreaseOrderId, _employeeId).ToList<InstallmentDecreaseVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -4021,6 +4827,7 @@ namespace Cf.Data
 
 		#region GetChidlren procedure
         [Function(Name = "dbo.InstallmentVwGetChildren")]
+        [ResultType(typeof(InstallmentVw))]
         [ResultType(typeof(SettlementVw))]
         private IMultipleResults _InstallmentVwGetChildren([Parameter(Name = "@Id")] int _id)
 		{
@@ -4061,6 +4868,16 @@ namespace Cf.Data
 		public List<InstallmentVw> InstallmentVwGetByDueDate([Parameter(Name = "@DueDate")] DateTime _dueDate)
 		{
 			return _InstallmentVwGetByDueDate(_dueDate).ToList<InstallmentVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of DueDate columns in the  dbo.InstallmentVw view.
+		/// </summary>
+		/// <param name="_dueDate">تاريخ الاستحقاق</param>
+		/// <returns>An instance of InstallmentVw.</returns>
+		public InstallmentVw InstallmentVwGetByDueDateFirstOrDefault([Parameter(Name = "@DueDate")] DateTime _dueDate)
+		{
+			return _InstallmentVwGetByDueDate(_dueDate).ToList<InstallmentVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.InstallmentVwGetByRefundableProductProductId")]
@@ -4080,6 +4897,16 @@ namespace Cf.Data
 		public List<InstallmentVw> InstallmentVwGetByRefundableProductProductId([Parameter(Name = "@RefundableProductProductId")] int _refundableProductProductId)
 		{
 			return _InstallmentVwGetByRefundableProductProductId(_refundableProductProductId).ToList<InstallmentVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of RefundableProductProductId columns in the  dbo.InstallmentVw view.
+		/// </summary>
+		/// <param name="_refundableProductProductId">معرف المنتج</param>
+		/// <returns>An instance of InstallmentVw.</returns>
+		public InstallmentVw InstallmentVwGetByRefundableProductProductIdFirstOrDefault([Parameter(Name = "@RefundableProductProductId")] int _refundableProductProductId)
+		{
+			return _InstallmentVwGetByRefundableProductProductId(_refundableProductProductId).ToList<InstallmentVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.InstallmentVwGetByRefundableProductProductId_SubNumber")]
@@ -4100,6 +4927,17 @@ namespace Cf.Data
 		public List<InstallmentVw> InstallmentVwGetByRefundableProductProductId_SubNumber([Parameter(Name = "@RefundableProductProductId")] int _refundableProductProductId, [Parameter(Name = "@SubNumber")] short _subNumber)
 		{
 			return _InstallmentVwGetByRefundableProductProductId_SubNumber(_refundableProductProductId, _subNumber).ToList<InstallmentVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of RefundableProductProductId_SubNumber columns in the  dbo.InstallmentVw view.
+		/// </summary>
+		/// <param name="_refundableProductProductId">معرف المنتج</param>
+		/// <param name="_subNumber">مسلسل القسط</param>
+		/// <returns>An instance of InstallmentVw.</returns>
+		public InstallmentVw InstallmentVwGetByRefundableProductProductId_SubNumberFirstOrDefault([Parameter(Name = "@RefundableProductProductId")] int _refundableProductProductId, [Parameter(Name = "@SubNumber")] short _subNumber)
+		{
+			return _InstallmentVwGetByRefundableProductProductId_SubNumber(_refundableProductProductId, _subNumber).ToList<InstallmentVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -4148,6 +4986,7 @@ namespace Cf.Data
 
 		#region GetChidlren procedure
         [Function(Name = "dbo.InsuranceTypeVwGetChildren")]
+        [ResultType(typeof(InsuranceTypeVw))]
         [ResultType(typeof(HealthLoanDecisionFirstPaymentVw))]
         private IMultipleResults _InsuranceTypeVwGetChildren([Parameter(Name = "@Id")] byte _id)
 		{
@@ -4188,6 +5027,16 @@ namespace Cf.Data
 		public List<InsuranceTypeVw> InsuranceTypeVwGetByName([Parameter(Name = "@Name")] string _name)
 		{
 			return _InsuranceTypeVwGetByName(_name).ToList<InsuranceTypeVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Name columns in the  dbo.InsuranceTypeVw view.
+		/// </summary>
+		/// <param name="_name">بيان طريقة قبض التأمين</param>
+		/// <returns>An instance of InsuranceTypeVw.</returns>
+		public InsuranceTypeVw InsuranceTypeVwGetByNameFirstOrDefault([Parameter(Name = "@Name")] string _name)
+		{
+			return _InsuranceTypeVwGetByName(_name).ToList<InsuranceTypeVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -4265,6 +5114,16 @@ namespace Cf.Data
 		{
 			return _IssuerVwGetByName(_name).ToList<IssuerVw>();
 		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Name columns in the  dbo.IssuerVw view.
+		/// </summary>
+		/// <param name="_name">بيان الجهة المصدرة للمديونية</param>
+		/// <returns>An instance of IssuerVw.</returns>
+		public IssuerVw IssuerVwGetByNameFirstOrDefault([Parameter(Name = "@Name")] string _name)
+		{
+			return _IssuerVwGetByName(_name).ToList<IssuerVw>().FirstOrDefault();
+		}
 		#endregion
 		#endregion
 
@@ -4340,6 +5199,16 @@ namespace Cf.Data
 		public List<LoanChangeVw> LoanChangeVwGetByFromLoanProductId([Parameter(Name = "@FromLoanProductId")] int _fromLoanProductId)
 		{
 			return _LoanChangeVwGetByFromLoanProductId(_fromLoanProductId).ToList<LoanChangeVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of FromLoanProductId columns in the  dbo.LoanChangeVw view.
+		/// </summary>
+		/// <param name="_fromLoanProductId">معرف بطاقة السلفة المنقولة</param>
+		/// <returns>An instance of LoanChangeVw.</returns>
+		public LoanChangeVw LoanChangeVwGetByFromLoanProductIdFirstOrDefault([Parameter(Name = "@FromLoanProductId")] int _fromLoanProductId)
+		{
+			return _LoanChangeVwGetByFromLoanProductId(_fromLoanProductId).ToList<LoanChangeVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.LoanChangeVwGetByLoanProductId")]
@@ -4359,6 +5228,16 @@ namespace Cf.Data
 		public List<LoanChangeVw> LoanChangeVwGetByLoanProductId([Parameter(Name = "@LoanProductId")] int _loanProductId)
 		{
 			return _LoanChangeVwGetByLoanProductId(_loanProductId).ToList<LoanChangeVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of LoanProductId columns in the  dbo.LoanChangeVw view.
+		/// </summary>
+		/// <param name="_loanProductId">معرف بطاقة السلفة الجديدة</param>
+		/// <returns>An instance of LoanChangeVw.</returns>
+		public LoanChangeVw LoanChangeVwGetByLoanProductIdFirstOrDefault([Parameter(Name = "@LoanProductId")] int _loanProductId)
+		{
+			return _LoanChangeVwGetByLoanProductId(_loanProductId).ToList<LoanChangeVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -4436,6 +5315,16 @@ namespace Cf.Data
 		{
 			return _LoanDecisionTypeVwGetByName(_name).ToList<LoanDecisionTypeVw>();
 		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Name columns in the  dbo.LoanDecisionTypeVw view.
+		/// </summary>
+		/// <param name="_name">بيان نوع قرار السلف</param>
+		/// <returns>An instance of LoanDecisionTypeVw.</returns>
+		public LoanDecisionTypeVw LoanDecisionTypeVwGetByNameFirstOrDefault([Parameter(Name = "@Name")] string _name)
+		{
+			return _LoanDecisionTypeVwGetByName(_name).ToList<LoanDecisionTypeVw>().FirstOrDefault();
+		}
 		#endregion
 		#endregion
 
@@ -4483,6 +5372,7 @@ namespace Cf.Data
 
 		#region GetChidlren procedure
         [Function(Name = "dbo.LoanDecisionVwGetChildren")]
+        [ResultType(typeof(LoanDecisionVw))]
         [ResultType(typeof(LoanVw))]
         [ResultType(typeof(OutgoingLoanVw))]
         private IMultipleResults _LoanDecisionVwGetChildren([Parameter(Name = "@Id")] int _id)
@@ -4526,6 +5416,17 @@ namespace Cf.Data
 		public List<LoanDecisionVw> LoanDecisionVwGetByNumber_Year([Parameter(Name = "@Number")] short _number, [Parameter(Name = "@Year")] short _year)
 		{
 			return _LoanDecisionVwGetByNumber_Year(_number, _year).ToList<LoanDecisionVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Number_Year columns in the  dbo.LoanDecisionVw view.
+		/// </summary>
+		/// <param name="_number">رقم القرار</param>
+		/// <param name="_year">العام</param>
+		/// <returns>An instance of LoanDecisionVw.</returns>
+		public LoanDecisionVw LoanDecisionVwGetByNumber_YearFirstOrDefault([Parameter(Name = "@Number")] short _number, [Parameter(Name = "@Year")] short _year)
+		{
+			return _LoanDecisionVwGetByNumber_Year(_number, _year).ToList<LoanDecisionVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -4590,6 +5491,16 @@ namespace Cf.Data
 		public List<LoanDetailVw> LoanDetailVwGetByLoanDecisionId([Parameter(Name = "@LoanDecisionId")] int _loanDecisionId)
 		{
 			return _LoanDetailVwGetByLoanDecisionId(_loanDecisionId).ToList<LoanDetailVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of LoanDecisionId columns in the  dbo.LoanDetailVw view.
+		/// </summary>
+		/// <param name="_loanDecisionId">معرف قرار السلف</param>
+		/// <returns>An instance of LoanDetailVw.</returns>
+		public LoanDetailVw LoanDetailVwGetByLoanDecisionIdFirstOrDefault([Parameter(Name = "@LoanDecisionId")] int _loanDecisionId)
+		{
+			return _LoanDetailVwGetByLoanDecisionId(_loanDecisionId).ToList<LoanDetailVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.LoanDetailVwGetByLoanGenerationStatusId")]
@@ -4609,6 +5520,16 @@ namespace Cf.Data
 		public List<LoanDetailVw> LoanDetailVwGetByLoanGenerationStatusId([Parameter(Name = "@LoanGenerationStatusId")] byte _loanGenerationStatusId)
 		{
 			return _LoanDetailVwGetByLoanGenerationStatusId(_loanGenerationStatusId).ToList<LoanDetailVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of LoanGenerationStatusId columns in the  dbo.LoanDetailVw view.
+		/// </summary>
+		/// <param name="_loanGenerationStatusId">حالة توليد البطاقة</param>
+		/// <returns>An instance of LoanDetailVw.</returns>
+		public LoanDetailVw LoanDetailVwGetByLoanGenerationStatusIdFirstOrDefault([Parameter(Name = "@LoanGenerationStatusId")] byte _loanGenerationStatusId)
+		{
+			return _LoanDetailVwGetByLoanGenerationStatusId(_loanGenerationStatusId).ToList<LoanDetailVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.LoanDetailVwGetByLoanStatusId")]
@@ -4629,9 +5550,21 @@ namespace Cf.Data
 		{
 			return _LoanDetailVwGetByLoanStatusId(_loanStatusId).ToList<LoanDetailVw>();
 		}
+
+		/// <summary>
+		/// Gets rows related to one combination of LoanStatusId columns in the  dbo.LoanDetailVw view.
+		/// </summary>
+		/// <param name="_loanStatusId">حالة البطاقة</param>
+		/// <returns>An instance of LoanDetailVw.</returns>
+		public LoanDetailVw LoanDetailVwGetByLoanStatusIdFirstOrDefault([Parameter(Name = "@LoanStatusId")] byte _loanStatusId)
+		{
+			return _LoanDetailVwGetByLoanStatusId(_loanStatusId).ToList<LoanDetailVw>().FirstOrDefault();
+		}
 		#endregion
 		#endregion
 
+        #region LoanExtendedVw procedures.
+		#endregion
         #region LoanGenerationStatusVw procedures.
 		#region List procedure
 		[Function(Name = "dbo.LoanGenerationStatusVwList")]
@@ -4705,6 +5638,16 @@ namespace Cf.Data
 		{
 			return _LoanGenerationStatusVwGetByName(_name).ToList<LoanGenerationStatusVw>();
 		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Name columns in the  dbo.LoanGenerationStatusVw view.
+		/// </summary>
+		/// <param name="_name">بيان حالة توليد البطاقة</param>
+		/// <returns>An instance of LoanGenerationStatusVw.</returns>
+		public LoanGenerationStatusVw LoanGenerationStatusVwGetByNameFirstOrDefault([Parameter(Name = "@Name")] string _name)
+		{
+			return _LoanGenerationStatusVwGetByName(_name).ToList<LoanGenerationStatusVw>().FirstOrDefault();
+		}
 		#endregion
 		#endregion
 
@@ -4752,6 +5695,7 @@ namespace Cf.Data
 
 		#region GetChidlren procedure
         [Function(Name = "dbo.LoanRequestVwGetChildren")]
+        [ResultType(typeof(LoanRequestVw))]
         [ResultType(typeof(ExceptionalAmountVw))]
         private IMultipleResults _LoanRequestVwGetChildren([Parameter(Name = "@RequestProductId")] int _requestProductId)
 		{
@@ -4848,6 +5792,16 @@ namespace Cf.Data
 		{
 			return _LoanStatusVwGetByName(_name).ToList<LoanStatusVw>();
 		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Name columns in the  dbo.LoanStatusVw view.
+		/// </summary>
+		/// <param name="_name">بيان حالة البطاقة</param>
+		/// <returns>An instance of LoanStatusVw.</returns>
+		public LoanStatusVw LoanStatusVwGetByNameFirstOrDefault([Parameter(Name = "@Name")] string _name)
+		{
+			return _LoanStatusVwGetByName(_name).ToList<LoanStatusVw>().FirstOrDefault();
+		}
 		#endregion
 		#endregion
 
@@ -4923,6 +5877,16 @@ namespace Cf.Data
 		public List<LoanTypeClosureVw> LoanTypeClosureVwGetByClosingLoanTypeProductTypeId([Parameter(Name = "@ClosingLoanTypeProductTypeId")] short _closingLoanTypeProductTypeId)
 		{
 			return _LoanTypeClosureVwGetByClosingLoanTypeProductTypeId(_closingLoanTypeProductTypeId).ToList<LoanTypeClosureVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of ClosingLoanTypeProductTypeId columns in the  dbo.LoanTypeClosureVw view.
+		/// </summary>
+		/// <param name="_closingLoanTypeProductTypeId">نوع السلفة التي تؤدي إلى الإغلاق</param>
+		/// <returns>An instance of LoanTypeClosureVw.</returns>
+		public LoanTypeClosureVw LoanTypeClosureVwGetByClosingLoanTypeProductTypeIdFirstOrDefault([Parameter(Name = "@ClosingLoanTypeProductTypeId")] short _closingLoanTypeProductTypeId)
+		{
+			return _LoanTypeClosureVwGetByClosingLoanTypeProductTypeId(_closingLoanTypeProductTypeId).ToList<LoanTypeClosureVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.LoanTypeClosureVwGetByLoanTypeProductTypeId")]
@@ -4942,6 +5906,16 @@ namespace Cf.Data
 		public List<LoanTypeClosureVw> LoanTypeClosureVwGetByLoanTypeProductTypeId([Parameter(Name = "@LoanTypeProductTypeId")] short _loanTypeProductTypeId)
 		{
 			return _LoanTypeClosureVwGetByLoanTypeProductTypeId(_loanTypeProductTypeId).ToList<LoanTypeClosureVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of LoanTypeProductTypeId columns in the  dbo.LoanTypeClosureVw view.
+		/// </summary>
+		/// <param name="_loanTypeProductTypeId">نوع السلف المغلَقة</param>
+		/// <returns>An instance of LoanTypeClosureVw.</returns>
+		public LoanTypeClosureVw LoanTypeClosureVwGetByLoanTypeProductTypeIdFirstOrDefault([Parameter(Name = "@LoanTypeProductTypeId")] short _loanTypeProductTypeId)
+		{
+			return _LoanTypeClosureVwGetByLoanTypeProductTypeId(_loanTypeProductTypeId).ToList<LoanTypeClosureVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.LoanTypeClosureVwGetByLoanTypeProductTypeId_ClosingLoanTypeProductTypeId")]
@@ -4962,6 +5936,17 @@ namespace Cf.Data
 		public List<LoanTypeClosureVw> LoanTypeClosureVwGetByLoanTypeProductTypeId_ClosingLoanTypeProductTypeId([Parameter(Name = "@LoanTypeProductTypeId")] short _loanTypeProductTypeId, [Parameter(Name = "@ClosingLoanTypeProductTypeId")] short _closingLoanTypeProductTypeId)
 		{
 			return _LoanTypeClosureVwGetByLoanTypeProductTypeId_ClosingLoanTypeProductTypeId(_loanTypeProductTypeId, _closingLoanTypeProductTypeId).ToList<LoanTypeClosureVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of LoanTypeProductTypeId_ClosingLoanTypeProductTypeId columns in the  dbo.LoanTypeClosureVw view.
+		/// </summary>
+		/// <param name="_loanTypeProductTypeId">نوع السلف المغلَقة</param>
+		/// <param name="_closingLoanTypeProductTypeId">نوع السلفة التي تؤدي إلى الإغلاق</param>
+		/// <returns>An instance of LoanTypeClosureVw.</returns>
+		public LoanTypeClosureVw LoanTypeClosureVwGetByLoanTypeProductTypeId_ClosingLoanTypeProductTypeIdFirstOrDefault([Parameter(Name = "@LoanTypeProductTypeId")] short _loanTypeProductTypeId, [Parameter(Name = "@ClosingLoanTypeProductTypeId")] short _closingLoanTypeProductTypeId)
+		{
+			return _LoanTypeClosureVwGetByLoanTypeProductTypeId_ClosingLoanTypeProductTypeId(_loanTypeProductTypeId, _closingLoanTypeProductTypeId).ToList<LoanTypeClosureVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -5010,6 +5995,7 @@ namespace Cf.Data
 
 		#region GetChidlren procedure
         [Function(Name = "dbo.LoanTypeVwGetChildren")]
+        [ResultType(typeof(LoanTypeVw))]
         [ResultType(typeof(LoanTypeClosureVw))]
         [ResultType(typeof(LoanTypeClosureVw))]
         private IMultipleResults _LoanTypeVwGetChildren([Parameter(Name = "@ProductTypeId")] short _productTypeId)
@@ -5079,6 +6065,7 @@ namespace Cf.Data
 
 		#region GetChidlren procedure
         [Function(Name = "dbo.LoanVwGetChildren")]
+        [ResultType(typeof(LoanVw))]
         [ResultType(typeof(IncomingLoanVw))]
         [ResultType(typeof(LoanChangeVw))]
         [ResultType(typeof(LoanChangeVw))]
@@ -5125,6 +6112,16 @@ namespace Cf.Data
 		public List<LoanVw> LoanVwGetByLoanDecisionId([Parameter(Name = "@LoanDecisionId")] int _loanDecisionId)
 		{
 			return _LoanVwGetByLoanDecisionId(_loanDecisionId).ToList<LoanVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of LoanDecisionId columns in the  dbo.LoanVw view.
+		/// </summary>
+		/// <param name="_loanDecisionId">معرف قرار السلف</param>
+		/// <returns>An instance of LoanVw.</returns>
+		public LoanVw LoanVwGetByLoanDecisionIdFirstOrDefault([Parameter(Name = "@LoanDecisionId")] int _loanDecisionId)
+		{
+			return _LoanVwGetByLoanDecisionId(_loanDecisionId).ToList<LoanVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.LoanVwGetByLoanGenerationStatusId")]
@@ -5144,6 +6141,16 @@ namespace Cf.Data
 		public List<LoanVw> LoanVwGetByLoanGenerationStatusId([Parameter(Name = "@LoanGenerationStatusId")] byte _loanGenerationStatusId)
 		{
 			return _LoanVwGetByLoanGenerationStatusId(_loanGenerationStatusId).ToList<LoanVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of LoanGenerationStatusId columns in the  dbo.LoanVw view.
+		/// </summary>
+		/// <param name="_loanGenerationStatusId">حالة توليد البطاقة</param>
+		/// <returns>An instance of LoanVw.</returns>
+		public LoanVw LoanVwGetByLoanGenerationStatusIdFirstOrDefault([Parameter(Name = "@LoanGenerationStatusId")] byte _loanGenerationStatusId)
+		{
+			return _LoanVwGetByLoanGenerationStatusId(_loanGenerationStatusId).ToList<LoanVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.LoanVwGetByLoanStatusId")]
@@ -5163,6 +6170,16 @@ namespace Cf.Data
 		public List<LoanVw> LoanVwGetByLoanStatusId([Parameter(Name = "@LoanStatusId")] byte _loanStatusId)
 		{
 			return _LoanVwGetByLoanStatusId(_loanStatusId).ToList<LoanVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of LoanStatusId columns in the  dbo.LoanVw view.
+		/// </summary>
+		/// <param name="_loanStatusId">حالة البطاقة</param>
+		/// <returns>An instance of LoanVw.</returns>
+		public LoanVw LoanVwGetByLoanStatusIdFirstOrDefault([Parameter(Name = "@LoanStatusId")] byte _loanStatusId)
+		{
+			return _LoanVwGetByLoanStatusId(_loanStatusId).ToList<LoanVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -5211,6 +6228,7 @@ namespace Cf.Data
 
 		#region GetChidlren procedure
         [Function(Name = "dbo.MainWorkPlaceVwGetChildren")]
+        [ResultType(typeof(MainWorkPlaceVw))]
         [ResultType(typeof(SalaryWorkPlaceVw))]
         private IMultipleResults _MainWorkPlaceVwGetChildren([Parameter(Name = "@Id")] int _id)
 		{
@@ -5251,6 +6269,16 @@ namespace Cf.Data
 		public List<MainWorkPlaceVw> MainWorkPlaceVwGetByName([Parameter(Name = "@Name")] string _name)
 		{
 			return _MainWorkPlaceVwGetByName(_name).ToList<MainWorkPlaceVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Name columns in the  dbo.MainWorkPlaceVw view.
+		/// </summary>
+		/// <param name="_name">بيان مكان العمل الرئيسي</param>
+		/// <returns>An instance of MainWorkPlaceVw.</returns>
+		public MainWorkPlaceVw MainWorkPlaceVwGetByNameFirstOrDefault([Parameter(Name = "@Name")] string _name)
+		{
+			return _MainWorkPlaceVwGetByName(_name).ToList<MainWorkPlaceVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -5382,6 +6410,16 @@ namespace Cf.Data
 		public List<MonthlyBalanceVw> MonthlyBalanceVwGetByEmployeeId([Parameter(Name = "@EmployeeId")] int _employeeId)
 		{
 			return _MonthlyBalanceVwGetByEmployeeId(_employeeId).ToList<MonthlyBalanceVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of EmployeeId columns in the  dbo.MonthlyBalanceVw view.
+		/// </summary>
+		/// <param name="_employeeId">الرقم الذاتي</param>
+		/// <returns>An instance of MonthlyBalanceVw.</returns>
+		public MonthlyBalanceVw MonthlyBalanceVwGetByEmployeeIdFirstOrDefault([Parameter(Name = "@EmployeeId")] int _employeeId)
+		{
+			return _MonthlyBalanceVwGetByEmployeeId(_employeeId).ToList<MonthlyBalanceVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.MonthlyBalanceVwGetByEmployeeId_PaymentGroupId_Month")]
@@ -5403,6 +6441,18 @@ namespace Cf.Data
 		public List<MonthlyBalanceVw> MonthlyBalanceVwGetByEmployeeId_PaymentGroupId_Month([Parameter(Name = "@EmployeeId")] int _employeeId, [Parameter(Name = "@PaymentGroupId")] byte _paymentGroupId, [Parameter(Name = "@Month")] DateTime _month)
 		{
 			return _MonthlyBalanceVwGetByEmployeeId_PaymentGroupId_Month(_employeeId, _paymentGroupId, _month).ToList<MonthlyBalanceVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of EmployeeId_PaymentGroupId_Month columns in the  dbo.MonthlyBalanceVw view.
+		/// </summary>
+		/// <param name="_employeeId">الرقم الذاتي</param>
+		/// <param name="_paymentGroupId">مجموعة الدفع</param>
+		/// <param name="_month">الشهر</param>
+		/// <returns>An instance of MonthlyBalanceVw.</returns>
+		public MonthlyBalanceVw MonthlyBalanceVwGetByEmployeeId_PaymentGroupId_MonthFirstOrDefault([Parameter(Name = "@EmployeeId")] int _employeeId, [Parameter(Name = "@PaymentGroupId")] byte _paymentGroupId, [Parameter(Name = "@Month")] DateTime _month)
+		{
+			return _MonthlyBalanceVwGetByEmployeeId_PaymentGroupId_Month(_employeeId, _paymentGroupId, _month).ToList<MonthlyBalanceVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.MonthlyBalanceVwGetByMonth")]
@@ -5422,6 +6472,16 @@ namespace Cf.Data
 		public List<MonthlyBalanceVw> MonthlyBalanceVwGetByMonth([Parameter(Name = "@Month")] DateTime _month)
 		{
 			return _MonthlyBalanceVwGetByMonth(_month).ToList<MonthlyBalanceVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Month columns in the  dbo.MonthlyBalanceVw view.
+		/// </summary>
+		/// <param name="_month">الشهر</param>
+		/// <returns>An instance of MonthlyBalanceVw.</returns>
+		public MonthlyBalanceVw MonthlyBalanceVwGetByMonthFirstOrDefault([Parameter(Name = "@Month")] DateTime _month)
+		{
+			return _MonthlyBalanceVwGetByMonth(_month).ToList<MonthlyBalanceVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.MonthlyBalanceVwGetByPaymentGroupId")]
@@ -5441,6 +6501,16 @@ namespace Cf.Data
 		public List<MonthlyBalanceVw> MonthlyBalanceVwGetByPaymentGroupId([Parameter(Name = "@PaymentGroupId")] byte _paymentGroupId)
 		{
 			return _MonthlyBalanceVwGetByPaymentGroupId(_paymentGroupId).ToList<MonthlyBalanceVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of PaymentGroupId columns in the  dbo.MonthlyBalanceVw view.
+		/// </summary>
+		/// <param name="_paymentGroupId">مجموعة الدفع</param>
+		/// <returns>An instance of MonthlyBalanceVw.</returns>
+		public MonthlyBalanceVw MonthlyBalanceVwGetByPaymentGroupIdFirstOrDefault([Parameter(Name = "@PaymentGroupId")] byte _paymentGroupId)
+		{
+			return _MonthlyBalanceVwGetByPaymentGroupId(_paymentGroupId).ToList<MonthlyBalanceVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -5517,6 +6587,16 @@ namespace Cf.Data
 		public List<OutgoingLoanVw> OutgoingLoanVwGetByLoanDecisionId([Parameter(Name = "@LoanDecisionId")] int _loanDecisionId)
 		{
 			return _OutgoingLoanVwGetByLoanDecisionId(_loanDecisionId).ToList<OutgoingLoanVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of LoanDecisionId columns in the  dbo.OutgoingLoanVw view.
+		/// </summary>
+		/// <param name="_loanDecisionId">قرار منح السلف</param>
+		/// <returns>An instance of OutgoingLoanVw.</returns>
+		public OutgoingLoanVw OutgoingLoanVwGetByLoanDecisionIdFirstOrDefault([Parameter(Name = "@LoanDecisionId")] int _loanDecisionId)
+		{
+			return _OutgoingLoanVwGetByLoanDecisionId(_loanDecisionId).ToList<OutgoingLoanVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.OutgoingLoanVwGetByMainWorkPlaceId")]
@@ -5536,6 +6616,16 @@ namespace Cf.Data
 		public List<OutgoingLoanVw> OutgoingLoanVwGetByMainWorkPlaceId([Parameter(Name = "@MainWorkPlaceId")] int _mainWorkPlaceId)
 		{
 			return _OutgoingLoanVwGetByMainWorkPlaceId(_mainWorkPlaceId).ToList<OutgoingLoanVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of MainWorkPlaceId columns in the  dbo.OutgoingLoanVw view.
+		/// </summary>
+		/// <param name="_mainWorkPlaceId">مكان العمل الرئيسي المحولة إليه</param>
+		/// <returns>An instance of OutgoingLoanVw.</returns>
+		public OutgoingLoanVw OutgoingLoanVwGetByMainWorkPlaceIdFirstOrDefault([Parameter(Name = "@MainWorkPlaceId")] int _mainWorkPlaceId)
+		{
+			return _OutgoingLoanVwGetByMainWorkPlaceId(_mainWorkPlaceId).ToList<OutgoingLoanVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -5600,6 +6690,16 @@ namespace Cf.Data
 		public List<PaymentDetailVw> PaymentDetailVwGetByCollectOrderId([Parameter(Name = "@CollectOrderId")] Nullable<int> _collectOrderId)
 		{
 			return _PaymentDetailVwGetByCollectOrderId(_collectOrderId).ToList<PaymentDetailVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of CollectOrderId columns in the  dbo.PaymentDetailVw view.
+		/// </summary>
+		/// <param name="_collectOrderId">أمر القبض</param>
+		/// <returns>An instance of PaymentDetailVw.</returns>
+		public PaymentDetailVw PaymentDetailVwGetByCollectOrderIdFirstOrDefault([Parameter(Name = "@CollectOrderId")] Nullable<int> _collectOrderId)
+		{
+			return _PaymentDetailVwGetByCollectOrderId(_collectOrderId).ToList<PaymentDetailVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.PaymentDetailVwGetByDate")]
@@ -5619,6 +6719,16 @@ namespace Cf.Data
 		public List<PaymentDetailVw> PaymentDetailVwGetByDate([Parameter(Name = "@Date")] DateTime _date)
 		{
 			return _PaymentDetailVwGetByDate(_date).ToList<PaymentDetailVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Date columns in the  dbo.PaymentDetailVw view.
+		/// </summary>
+		/// <param name="_date">تاريخ السداد</param>
+		/// <returns>An instance of PaymentDetailVw.</returns>
+		public PaymentDetailVw PaymentDetailVwGetByDateFirstOrDefault([Parameter(Name = "@Date")] DateTime _date)
+		{
+			return _PaymentDetailVwGetByDate(_date).ToList<PaymentDetailVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.PaymentDetailVwGetByEmployeeId")]
@@ -5638,6 +6748,16 @@ namespace Cf.Data
 		public List<PaymentDetailVw> PaymentDetailVwGetByEmployeeId([Parameter(Name = "@EmployeeId")] int _employeeId)
 		{
 			return _PaymentDetailVwGetByEmployeeId(_employeeId).ToList<PaymentDetailVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of EmployeeId columns in the  dbo.PaymentDetailVw view.
+		/// </summary>
+		/// <param name="_employeeId">الرقم الذاتي</param>
+		/// <returns>An instance of PaymentDetailVw.</returns>
+		public PaymentDetailVw PaymentDetailVwGetByEmployeeIdFirstOrDefault([Parameter(Name = "@EmployeeId")] int _employeeId)
+		{
+			return _PaymentDetailVwGetByEmployeeId(_employeeId).ToList<PaymentDetailVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.PaymentDetailVwGetByPaymentGroupId")]
@@ -5657,6 +6777,16 @@ namespace Cf.Data
 		public List<PaymentDetailVw> PaymentDetailVwGetByPaymentGroupId([Parameter(Name = "@PaymentGroupId")] byte _paymentGroupId)
 		{
 			return _PaymentDetailVwGetByPaymentGroupId(_paymentGroupId).ToList<PaymentDetailVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of PaymentGroupId columns in the  dbo.PaymentDetailVw view.
+		/// </summary>
+		/// <param name="_paymentGroupId">مجموعة أنواع الدفع</param>
+		/// <returns>An instance of PaymentDetailVw.</returns>
+		public PaymentDetailVw PaymentDetailVwGetByPaymentGroupIdFirstOrDefault([Parameter(Name = "@PaymentGroupId")] byte _paymentGroupId)
+		{
+			return _PaymentDetailVwGetByPaymentGroupId(_paymentGroupId).ToList<PaymentDetailVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.PaymentDetailVwGetByPaymentStatusId")]
@@ -5676,6 +6806,16 @@ namespace Cf.Data
 		public List<PaymentDetailVw> PaymentDetailVwGetByPaymentStatusId([Parameter(Name = "@PaymentStatusId")] Nullable<byte> _paymentStatusId)
 		{
 			return _PaymentDetailVwGetByPaymentStatusId(_paymentStatusId).ToList<PaymentDetailVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of PaymentStatusId columns in the  dbo.PaymentDetailVw view.
+		/// </summary>
+		/// <param name="_paymentStatusId">حالة السداد</param>
+		/// <returns>An instance of PaymentDetailVw.</returns>
+		public PaymentDetailVw PaymentDetailVwGetByPaymentStatusIdFirstOrDefault([Parameter(Name = "@PaymentStatusId")] Nullable<byte> _paymentStatusId)
+		{
+			return _PaymentDetailVwGetByPaymentStatusId(_paymentStatusId).ToList<PaymentDetailVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -5724,6 +6864,7 @@ namespace Cf.Data
 
 		#region GetChidlren procedure
         [Function(Name = "dbo.PaymentGroupVwGetChildren")]
+        [ResultType(typeof(PaymentGroupVw))]
         [ResultType(typeof(ProductTypeVw))]
         private IMultipleResults _PaymentGroupVwGetChildren([Parameter(Name = "@Id")] byte _id)
 		{
@@ -5764,6 +6905,16 @@ namespace Cf.Data
 		public List<PaymentGroupVw> PaymentGroupVwGetByName([Parameter(Name = "@Name")] string _name)
 		{
 			return _PaymentGroupVwGetByName(_name).ToList<PaymentGroupVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Name columns in the  dbo.PaymentGroupVw view.
+		/// </summary>
+		/// <param name="_name">بيان مجموعة الدفع</param>
+		/// <returns>An instance of PaymentGroupVw.</returns>
+		public PaymentGroupVw PaymentGroupVwGetByNameFirstOrDefault([Parameter(Name = "@Name")] string _name)
+		{
+			return _PaymentGroupVwGetByName(_name).ToList<PaymentGroupVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -5867,6 +7018,7 @@ namespace Cf.Data
 
 		#region GetChidlren procedure
         [Function(Name = "dbo.PaymentVwGetChildren")]
+        [ResultType(typeof(PaymentVw))]
         [ResultType(typeof(CashPaymentVw))]
         [ResultType(typeof(DownPaymentVw))]
         [ResultType(typeof(SalaryPaymentVw))]
@@ -5913,6 +7065,16 @@ namespace Cf.Data
 		public List<PaymentVw> PaymentVwGetByCollectOrderId([Parameter(Name = "@CollectOrderId")] Nullable<int> _collectOrderId)
 		{
 			return _PaymentVwGetByCollectOrderId(_collectOrderId).ToList<PaymentVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of CollectOrderId columns in the  dbo.PaymentVw view.
+		/// </summary>
+		/// <param name="_collectOrderId">أمر القبض</param>
+		/// <returns>An instance of PaymentVw.</returns>
+		public PaymentVw PaymentVwGetByCollectOrderIdFirstOrDefault([Parameter(Name = "@CollectOrderId")] Nullable<int> _collectOrderId)
+		{
+			return _PaymentVwGetByCollectOrderId(_collectOrderId).ToList<PaymentVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.PaymentVwGetByDate")]
@@ -5932,6 +7094,16 @@ namespace Cf.Data
 		public List<PaymentVw> PaymentVwGetByDate([Parameter(Name = "@Date")] DateTime _date)
 		{
 			return _PaymentVwGetByDate(_date).ToList<PaymentVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Date columns in the  dbo.PaymentVw view.
+		/// </summary>
+		/// <param name="_date">تاريخ السداد</param>
+		/// <returns>An instance of PaymentVw.</returns>
+		public PaymentVw PaymentVwGetByDateFirstOrDefault([Parameter(Name = "@Date")] DateTime _date)
+		{
+			return _PaymentVwGetByDate(_date).ToList<PaymentVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.PaymentVwGetByEmployeeId")]
@@ -5951,6 +7123,16 @@ namespace Cf.Data
 		public List<PaymentVw> PaymentVwGetByEmployeeId([Parameter(Name = "@EmployeeId")] int _employeeId)
 		{
 			return _PaymentVwGetByEmployeeId(_employeeId).ToList<PaymentVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of EmployeeId columns in the  dbo.PaymentVw view.
+		/// </summary>
+		/// <param name="_employeeId">الرقم الذاتي</param>
+		/// <returns>An instance of PaymentVw.</returns>
+		public PaymentVw PaymentVwGetByEmployeeIdFirstOrDefault([Parameter(Name = "@EmployeeId")] int _employeeId)
+		{
+			return _PaymentVwGetByEmployeeId(_employeeId).ToList<PaymentVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.PaymentVwGetByPaymentGroupId")]
@@ -5970,6 +7152,16 @@ namespace Cf.Data
 		public List<PaymentVw> PaymentVwGetByPaymentGroupId([Parameter(Name = "@PaymentGroupId")] byte _paymentGroupId)
 		{
 			return _PaymentVwGetByPaymentGroupId(_paymentGroupId).ToList<PaymentVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of PaymentGroupId columns in the  dbo.PaymentVw view.
+		/// </summary>
+		/// <param name="_paymentGroupId">مجموعة أنواع الدفع</param>
+		/// <returns>An instance of PaymentVw.</returns>
+		public PaymentVw PaymentVwGetByPaymentGroupIdFirstOrDefault([Parameter(Name = "@PaymentGroupId")] byte _paymentGroupId)
+		{
+			return _PaymentVwGetByPaymentGroupId(_paymentGroupId).ToList<PaymentVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.PaymentVwGetByPaymentStatusId")]
@@ -5989,6 +7181,16 @@ namespace Cf.Data
 		public List<PaymentVw> PaymentVwGetByPaymentStatusId([Parameter(Name = "@PaymentStatusId")] Nullable<byte> _paymentStatusId)
 		{
 			return _PaymentVwGetByPaymentStatusId(_paymentStatusId).ToList<PaymentVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of PaymentStatusId columns in the  dbo.PaymentVw view.
+		/// </summary>
+		/// <param name="_paymentStatusId">حالة السداد</param>
+		/// <returns>An instance of PaymentVw.</returns>
+		public PaymentVw PaymentVwGetByPaymentStatusIdFirstOrDefault([Parameter(Name = "@PaymentStatusId")] Nullable<byte> _paymentStatusId)
+		{
+			return _PaymentVwGetByPaymentStatusId(_paymentStatusId).ToList<PaymentVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -6065,6 +7267,16 @@ namespace Cf.Data
 		public List<PayOrderVw> PayOrderVwGetByDate([Parameter(Name = "@Date")] DateTime _date)
 		{
 			return _PayOrderVwGetByDate(_date).ToList<PayOrderVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Date columns in the  dbo.PayOrderVw view.
+		/// </summary>
+		/// <param name="_date">تاريخ البيان</param>
+		/// <returns>An instance of PayOrderVw.</returns>
+		public PayOrderVw PayOrderVwGetByDateFirstOrDefault([Parameter(Name = "@Date")] DateTime _date)
+		{
+			return _PayOrderVwGetByDate(_date).ToList<PayOrderVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.PayOrderVwGetByEmployeeId")]
@@ -6084,6 +7296,16 @@ namespace Cf.Data
 		public List<PayOrderVw> PayOrderVwGetByEmployeeId([Parameter(Name = "@EmployeeId")] int _employeeId)
 		{
 			return _PayOrderVwGetByEmployeeId(_employeeId).ToList<PayOrderVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of EmployeeId columns in the  dbo.PayOrderVw view.
+		/// </summary>
+		/// <param name="_employeeId">الرقم الذاتي</param>
+		/// <returns>An instance of PayOrderVw.</returns>
+		public PayOrderVw PayOrderVwGetByEmployeeIdFirstOrDefault([Parameter(Name = "@EmployeeId")] int _employeeId)
+		{
+			return _PayOrderVwGetByEmployeeId(_employeeId).ToList<PayOrderVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.PayOrderVwGetByIsFixed")]
@@ -6103,6 +7325,16 @@ namespace Cf.Data
 		public List<PayOrderVw> PayOrderVwGetByIsFixed([Parameter(Name = "@IsFixed")] byte _isFixed)
 		{
 			return _PayOrderVwGetByIsFixed(_isFixed).ToList<PayOrderVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of IsFixed columns in the  dbo.PayOrderVw view.
+		/// </summary>
+		/// <param name="_isFixed">تم تثبيت الدفع؟</param>
+		/// <returns>An instance of PayOrderVw.</returns>
+		public PayOrderVw PayOrderVwGetByIsFixedFirstOrDefault([Parameter(Name = "@IsFixed")] byte _isFixed)
+		{
+			return _PayOrderVwGetByIsFixed(_isFixed).ToList<PayOrderVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.PayOrderVwGetByPaymentGroupId")]
@@ -6122,6 +7354,16 @@ namespace Cf.Data
 		public List<PayOrderVw> PayOrderVwGetByPaymentGroupId([Parameter(Name = "@PaymentGroupId")] byte _paymentGroupId)
 		{
 			return _PayOrderVwGetByPaymentGroupId(_paymentGroupId).ToList<PayOrderVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of PaymentGroupId columns in the  dbo.PayOrderVw view.
+		/// </summary>
+		/// <param name="_paymentGroupId">مجموعة الدفع</param>
+		/// <returns>An instance of PayOrderVw.</returns>
+		public PayOrderVw PayOrderVwGetByPaymentGroupIdFirstOrDefault([Parameter(Name = "@PaymentGroupId")] byte _paymentGroupId)
+		{
+			return _PayOrderVwGetByPaymentGroupId(_paymentGroupId).ToList<PayOrderVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -6186,6 +7428,16 @@ namespace Cf.Data
 		public List<ProductDetailVw> ProductDetailVwGetByEmployeeId([Parameter(Name = "@EmployeeId")] int _employeeId)
 		{
 			return _ProductDetailVwGetByEmployeeId(_employeeId).ToList<ProductDetailVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of EmployeeId columns in the  dbo.ProductDetailVw view.
+		/// </summary>
+		/// <param name="_employeeId">الرقم الذاتي</param>
+		/// <returns>An instance of ProductDetailVw.</returns>
+		public ProductDetailVw ProductDetailVwGetByEmployeeIdFirstOrDefault([Parameter(Name = "@EmployeeId")] int _employeeId)
+		{
+			return _ProductDetailVwGetByEmployeeId(_employeeId).ToList<ProductDetailVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.ProductDetailVwGetByProductTypeId")]
@@ -6205,6 +7457,16 @@ namespace Cf.Data
 		public List<ProductDetailVw> ProductDetailVwGetByProductTypeId([Parameter(Name = "@ProductTypeId")] short _productTypeId)
 		{
 			return _ProductDetailVwGetByProductTypeId(_productTypeId).ToList<ProductDetailVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of ProductTypeId columns in the  dbo.ProductDetailVw view.
+		/// </summary>
+		/// <param name="_productTypeId">نوع المنتج</param>
+		/// <returns>An instance of ProductDetailVw.</returns>
+		public ProductDetailVw ProductDetailVwGetByProductTypeIdFirstOrDefault([Parameter(Name = "@ProductTypeId")] short _productTypeId)
+		{
+			return _ProductDetailVwGetByProductTypeId(_productTypeId).ToList<ProductDetailVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -6281,6 +7543,16 @@ namespace Cf.Data
 		public List<ProductTypeAvailabilityVw> ProductTypeAvailabilityVwGetByAvailabilityId([Parameter(Name = "@AvailabilityId")] short _availabilityId)
 		{
 			return _ProductTypeAvailabilityVwGetByAvailabilityId(_availabilityId).ToList<ProductTypeAvailabilityVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of AvailabilityId columns in the  dbo.ProductTypeAvailabilityVw view.
+		/// </summary>
+		/// <param name="_availabilityId">قاعدة الاستخدام</param>
+		/// <returns>An instance of ProductTypeAvailabilityVw.</returns>
+		public ProductTypeAvailabilityVw ProductTypeAvailabilityVwGetByAvailabilityIdFirstOrDefault([Parameter(Name = "@AvailabilityId")] short _availabilityId)
+		{
+			return _ProductTypeAvailabilityVwGetByAvailabilityId(_availabilityId).ToList<ProductTypeAvailabilityVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.ProductTypeAvailabilityVwGetByProductTypeId")]
@@ -6300,6 +7572,16 @@ namespace Cf.Data
 		public List<ProductTypeAvailabilityVw> ProductTypeAvailabilityVwGetByProductTypeId([Parameter(Name = "@ProductTypeId")] short _productTypeId)
 		{
 			return _ProductTypeAvailabilityVwGetByProductTypeId(_productTypeId).ToList<ProductTypeAvailabilityVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of ProductTypeId columns in the  dbo.ProductTypeAvailabilityVw view.
+		/// </summary>
+		/// <param name="_productTypeId">نوع المنتج</param>
+		/// <returns>An instance of ProductTypeAvailabilityVw.</returns>
+		public ProductTypeAvailabilityVw ProductTypeAvailabilityVwGetByProductTypeIdFirstOrDefault([Parameter(Name = "@ProductTypeId")] short _productTypeId)
+		{
+			return _ProductTypeAvailabilityVwGetByProductTypeId(_productTypeId).ToList<ProductTypeAvailabilityVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.ProductTypeAvailabilityVwGetByProductTypeId_AvailabilityId")]
@@ -6320,6 +7602,17 @@ namespace Cf.Data
 		public List<ProductTypeAvailabilityVw> ProductTypeAvailabilityVwGetByProductTypeId_AvailabilityId([Parameter(Name = "@ProductTypeId")] short _productTypeId, [Parameter(Name = "@AvailabilityId")] short _availabilityId)
 		{
 			return _ProductTypeAvailabilityVwGetByProductTypeId_AvailabilityId(_productTypeId, _availabilityId).ToList<ProductTypeAvailabilityVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of ProductTypeId_AvailabilityId columns in the  dbo.ProductTypeAvailabilityVw view.
+		/// </summary>
+		/// <param name="_productTypeId">نوع المنتج</param>
+		/// <param name="_availabilityId">قاعدة الاستخدام</param>
+		/// <returns>An instance of ProductTypeAvailabilityVw.</returns>
+		public ProductTypeAvailabilityVw ProductTypeAvailabilityVwGetByProductTypeId_AvailabilityIdFirstOrDefault([Parameter(Name = "@ProductTypeId")] short _productTypeId, [Parameter(Name = "@AvailabilityId")] short _availabilityId)
+		{
+			return _ProductTypeAvailabilityVwGetByProductTypeId_AvailabilityId(_productTypeId, _availabilityId).ToList<ProductTypeAvailabilityVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -6384,6 +7677,16 @@ namespace Cf.Data
 		public List<ProductTypeDetailVw> ProductTypeDetailVwGetByName([Parameter(Name = "@Name")] string _name)
 		{
 			return _ProductTypeDetailVwGetByName(_name).ToList<ProductTypeDetailVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Name columns in the  dbo.ProductTypeDetailVw view.
+		/// </summary>
+		/// <param name="_name">بيان نوع المنتج</param>
+		/// <returns>An instance of ProductTypeDetailVw.</returns>
+		public ProductTypeDetailVw ProductTypeDetailVwGetByNameFirstOrDefault([Parameter(Name = "@Name")] string _name)
+		{
+			return _ProductTypeDetailVwGetByName(_name).ToList<ProductTypeDetailVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.ProductTypeDetailVwGetByPaymentGroupId")]
@@ -6403,6 +7706,16 @@ namespace Cf.Data
 		public List<ProductTypeDetailVw> ProductTypeDetailVwGetByPaymentGroupId([Parameter(Name = "@PaymentGroupId")] Nullable<byte> _paymentGroupId)
 		{
 			return _ProductTypeDetailVwGetByPaymentGroupId(_paymentGroupId).ToList<ProductTypeDetailVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of PaymentGroupId columns in the  dbo.ProductTypeDetailVw view.
+		/// </summary>
+		/// <param name="_paymentGroupId">مجموعة الدفع</param>
+		/// <returns>An instance of ProductTypeDetailVw.</returns>
+		public ProductTypeDetailVw ProductTypeDetailVwGetByPaymentGroupIdFirstOrDefault([Parameter(Name = "@PaymentGroupId")] Nullable<byte> _paymentGroupId)
+		{
+			return _ProductTypeDetailVwGetByPaymentGroupId(_paymentGroupId).ToList<ProductTypeDetailVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.ProductTypeDetailVwGetByProfitStrategyId")]
@@ -6422,6 +7735,16 @@ namespace Cf.Data
 		public List<ProductTypeDetailVw> ProductTypeDetailVwGetByProfitStrategyId([Parameter(Name = "@ProfitStrategyId")] Nullable<byte> _profitStrategyId)
 		{
 			return _ProductTypeDetailVwGetByProfitStrategyId(_profitStrategyId).ToList<ProductTypeDetailVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of ProfitStrategyId columns in the  dbo.ProductTypeDetailVw view.
+		/// </summary>
+		/// <param name="_profitStrategyId">آلية حساب العوائد الربحية</param>
+		/// <returns>An instance of ProductTypeDetailVw.</returns>
+		public ProductTypeDetailVw ProductTypeDetailVwGetByProfitStrategyIdFirstOrDefault([Parameter(Name = "@ProfitStrategyId")] Nullable<byte> _profitStrategyId)
+		{
+			return _ProductTypeDetailVwGetByProfitStrategyId(_profitStrategyId).ToList<ProductTypeDetailVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -6470,6 +7793,7 @@ namespace Cf.Data
 
 		#region GetChidlren procedure
         [Function(Name = "dbo.ProductTypeVwGetChildren")]
+        [ResultType(typeof(ProductTypeVw))]
         [ResultType(typeof(LoanTypeVw))]
         [ResultType(typeof(ProductTypeAvailabilityVw))]
         private IMultipleResults _ProductTypeVwGetChildren([Parameter(Name = "@Id")] short _id)
@@ -6512,6 +7836,16 @@ namespace Cf.Data
 		public List<ProductTypeVw> ProductTypeVwGetByName([Parameter(Name = "@Name")] string _name)
 		{
 			return _ProductTypeVwGetByName(_name).ToList<ProductTypeVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Name columns in the  dbo.ProductTypeVw view.
+		/// </summary>
+		/// <param name="_name">بيان نوع المنتج</param>
+		/// <returns>An instance of ProductTypeVw.</returns>
+		public ProductTypeVw ProductTypeVwGetByNameFirstOrDefault([Parameter(Name = "@Name")] string _name)
+		{
+			return _ProductTypeVwGetByName(_name).ToList<ProductTypeVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.ProductTypeVwGetByPaymentGroupId")]
@@ -6531,6 +7865,16 @@ namespace Cf.Data
 		public List<ProductTypeVw> ProductTypeVwGetByPaymentGroupId([Parameter(Name = "@PaymentGroupId")] Nullable<byte> _paymentGroupId)
 		{
 			return _ProductTypeVwGetByPaymentGroupId(_paymentGroupId).ToList<ProductTypeVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of PaymentGroupId columns in the  dbo.ProductTypeVw view.
+		/// </summary>
+		/// <param name="_paymentGroupId">مجموعة الدفع</param>
+		/// <returns>An instance of ProductTypeVw.</returns>
+		public ProductTypeVw ProductTypeVwGetByPaymentGroupIdFirstOrDefault([Parameter(Name = "@PaymentGroupId")] Nullable<byte> _paymentGroupId)
+		{
+			return _ProductTypeVwGetByPaymentGroupId(_paymentGroupId).ToList<ProductTypeVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.ProductTypeVwGetByProfitStrategyId")]
@@ -6550,6 +7894,16 @@ namespace Cf.Data
 		public List<ProductTypeVw> ProductTypeVwGetByProfitStrategyId([Parameter(Name = "@ProfitStrategyId")] Nullable<byte> _profitStrategyId)
 		{
 			return _ProductTypeVwGetByProfitStrategyId(_profitStrategyId).ToList<ProductTypeVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of ProfitStrategyId columns in the  dbo.ProductTypeVw view.
+		/// </summary>
+		/// <param name="_profitStrategyId">آلية حساب العوائد الربحية</param>
+		/// <returns>An instance of ProductTypeVw.</returns>
+		public ProductTypeVw ProductTypeVwGetByProfitStrategyIdFirstOrDefault([Parameter(Name = "@ProfitStrategyId")] Nullable<byte> _profitStrategyId)
+		{
+			return _ProductTypeVwGetByProfitStrategyId(_profitStrategyId).ToList<ProductTypeVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -6598,6 +7952,7 @@ namespace Cf.Data
 
 		#region GetChidlren procedure
         [Function(Name = "dbo.ProductVwGetChildren")]
+        [ResultType(typeof(ProductVw))]
         [ResultType(typeof(GrantVw))]
         [ResultType(typeof(LoanVw))]
         [ResultType(typeof(RefundableProductVw))]
@@ -6644,6 +7999,16 @@ namespace Cf.Data
 		public List<ProductVw> ProductVwGetByEmployeeId([Parameter(Name = "@EmployeeId")] int _employeeId)
 		{
 			return _ProductVwGetByEmployeeId(_employeeId).ToList<ProductVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of EmployeeId columns in the  dbo.ProductVw view.
+		/// </summary>
+		/// <param name="_employeeId">الرقم الذاتي</param>
+		/// <returns>An instance of ProductVw.</returns>
+		public ProductVw ProductVwGetByEmployeeIdFirstOrDefault([Parameter(Name = "@EmployeeId")] int _employeeId)
+		{
+			return _ProductVwGetByEmployeeId(_employeeId).ToList<ProductVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.ProductVwGetByProductTypeId")]
@@ -6663,6 +8028,16 @@ namespace Cf.Data
 		public List<ProductVw> ProductVwGetByProductTypeId([Parameter(Name = "@ProductTypeId")] short _productTypeId)
 		{
 			return _ProductVwGetByProductTypeId(_productTypeId).ToList<ProductVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of ProductTypeId columns in the  dbo.ProductVw view.
+		/// </summary>
+		/// <param name="_productTypeId">نوع المنتج</param>
+		/// <returns>An instance of ProductVw.</returns>
+		public ProductVw ProductVwGetByProductTypeIdFirstOrDefault([Parameter(Name = "@ProductTypeId")] short _productTypeId)
+		{
+			return _ProductVwGetByProductTypeId(_productTypeId).ToList<ProductVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -6766,6 +8141,7 @@ namespace Cf.Data
 
 		#region GetChidlren procedure
         [Function(Name = "dbo.ProfitStrategyVwGetChildren")]
+        [ResultType(typeof(ProfitStrategyVw))]
         [ResultType(typeof(ProductTypeVw))]
         private IMultipleResults _ProfitStrategyVwGetChildren([Parameter(Name = "@Id")] byte _id)
 		{
@@ -6806,6 +8182,16 @@ namespace Cf.Data
 		public List<ProfitStrategyVw> ProfitStrategyVwGetByName([Parameter(Name = "@Name")] string _name)
 		{
 			return _ProfitStrategyVwGetByName(_name).ToList<ProfitStrategyVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Name columns in the  dbo.ProfitStrategyVw view.
+		/// </summary>
+		/// <param name="_name">بيان آلية حساب العوائد الربحية</param>
+		/// <returns>An instance of ProfitStrategyVw.</returns>
+		public ProfitStrategyVw ProfitStrategyVwGetByNameFirstOrDefault([Parameter(Name = "@Name")] string _name)
+		{
+			return _ProfitStrategyVwGetByName(_name).ToList<ProfitStrategyVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -6854,6 +8240,7 @@ namespace Cf.Data
 
 		#region GetChidlren procedure
         [Function(Name = "dbo.RefundableProductVwGetChildren")]
+        [ResultType(typeof(RefundableProductVw))]
         [ResultType(typeof(GuarantorVw))]
         [ResultType(typeof(InstallmentVw))]
         private IMultipleResults _RefundableProductVwGetChildren([Parameter(Name = "@ProductId")] int _productId)
@@ -6939,6 +8326,16 @@ namespace Cf.Data
 		public List<RequestDetailVw> RequestDetailVwGetByBypassStatusId([Parameter(Name = "@BypassStatusId")] int _bypassStatusId)
 		{
 			return _RequestDetailVwGetByBypassStatusId(_bypassStatusId).ToList<RequestDetailVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of BypassStatusId columns in the  dbo.RequestDetailVw view.
+		/// </summary>
+		/// <param name="_bypassStatusId">حالة تجاوز الشروط</param>
+		/// <returns>An instance of RequestDetailVw.</returns>
+		public RequestDetailVw RequestDetailVwGetByBypassStatusIdFirstOrDefault([Parameter(Name = "@BypassStatusId")] int _bypassStatusId)
+		{
+			return _RequestDetailVwGetByBypassStatusId(_bypassStatusId).ToList<RequestDetailVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.RequestDetailVwGetByRequestStatusId")]
@@ -6958,6 +8355,16 @@ namespace Cf.Data
 		public List<RequestDetailVw> RequestDetailVwGetByRequestStatusId([Parameter(Name = "@RequestStatusId")] Nullable<byte> _requestStatusId)
 		{
 			return _RequestDetailVwGetByRequestStatusId(_requestStatusId).ToList<RequestDetailVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of RequestStatusId columns in the  dbo.RequestDetailVw view.
+		/// </summary>
+		/// <param name="_requestStatusId">حالة الطلب</param>
+		/// <returns>An instance of RequestDetailVw.</returns>
+		public RequestDetailVw RequestDetailVwGetByRequestStatusIdFirstOrDefault([Parameter(Name = "@RequestStatusId")] Nullable<byte> _requestStatusId)
+		{
+			return _RequestDetailVwGetByRequestStatusId(_requestStatusId).ToList<RequestDetailVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -7035,6 +8442,16 @@ namespace Cf.Data
 		{
 			return _RequestStatusVwGetByName(_name).ToList<RequestStatusVw>();
 		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Name columns in the  dbo.RequestStatusVw view.
+		/// </summary>
+		/// <param name="_name">بيان حالة طلب الحصول على منتج</param>
+		/// <returns>An instance of RequestStatusVw.</returns>
+		public RequestStatusVw RequestStatusVwGetByNameFirstOrDefault([Parameter(Name = "@Name")] string _name)
+		{
+			return _RequestStatusVwGetByName(_name).ToList<RequestStatusVw>().FirstOrDefault();
+		}
 		#endregion
 		#endregion
 
@@ -7082,6 +8499,7 @@ namespace Cf.Data
 
 		#region GetChidlren procedure
         [Function(Name = "dbo.RequestVwGetChildren")]
+        [ResultType(typeof(RequestVw))]
         [ResultType(typeof(DownPaymentVw))]
         [ResultType(typeof(GrantRequestVw))]
         [ResultType(typeof(LoanRequestVw))]
@@ -7126,6 +8544,16 @@ namespace Cf.Data
 		public List<RequestVw> RequestVwGetByBypassStatusId([Parameter(Name = "@BypassStatusId")] int _bypassStatusId)
 		{
 			return _RequestVwGetByBypassStatusId(_bypassStatusId).ToList<RequestVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of BypassStatusId columns in the  dbo.RequestVw view.
+		/// </summary>
+		/// <param name="_bypassStatusId">حالة تجاوز الشروط</param>
+		/// <returns>An instance of RequestVw.</returns>
+		public RequestVw RequestVwGetByBypassStatusIdFirstOrDefault([Parameter(Name = "@BypassStatusId")] int _bypassStatusId)
+		{
+			return _RequestVwGetByBypassStatusId(_bypassStatusId).ToList<RequestVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.RequestVwGetByRequestStatusId")]
@@ -7145,6 +8573,16 @@ namespace Cf.Data
 		public List<RequestVw> RequestVwGetByRequestStatusId([Parameter(Name = "@RequestStatusId")] Nullable<byte> _requestStatusId)
 		{
 			return _RequestVwGetByRequestStatusId(_requestStatusId).ToList<RequestVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of RequestStatusId columns in the  dbo.RequestVw view.
+		/// </summary>
+		/// <param name="_requestStatusId">حالة الطلب</param>
+		/// <returns>An instance of RequestVw.</returns>
+		public RequestVw RequestVwGetByRequestStatusIdFirstOrDefault([Parameter(Name = "@RequestStatusId")] Nullable<byte> _requestStatusId)
+		{
+			return _RequestVwGetByRequestStatusId(_requestStatusId).ToList<RequestVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -7223,6 +8661,18 @@ namespace Cf.Data
 		public List<ResourceVw> ResourceVwGetByLanguage_Module_Key([Parameter(Name = "@Language")] string _language, [Parameter(Name = "@Module")] string _module, [Parameter(Name = "@Key")] string _key)
 		{
 			return _ResourceVwGetByLanguage_Module_Key(_language, _module, _key).ToList<ResourceVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Language_Module_Key columns in the  dbo.ResourceVw view.
+		/// </summary>
+		/// <param name="_language">اللغة</param>
+		/// <param name="_module">الوحدة</param>
+		/// <param name="_key">المفتاح</param>
+		/// <returns>An instance of ResourceVw.</returns>
+		public ResourceVw ResourceVwGetByLanguage_Module_KeyFirstOrDefault([Parameter(Name = "@Language")] string _language, [Parameter(Name = "@Module")] string _module, [Parameter(Name = "@Key")] string _key)
+		{
+			return _ResourceVwGetByLanguage_Module_Key(_language, _module, _key).ToList<ResourceVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.ResourceVwGetByModule")]
@@ -7242,6 +8692,16 @@ namespace Cf.Data
 		public List<ResourceVw> ResourceVwGetByModule([Parameter(Name = "@Module")] string _module)
 		{
 			return _ResourceVwGetByModule(_module).ToList<ResourceVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Module columns in the  dbo.ResourceVw view.
+		/// </summary>
+		/// <param name="_module">الوحدة</param>
+		/// <returns>An instance of ResourceVw.</returns>
+		public ResourceVw ResourceVwGetByModuleFirstOrDefault([Parameter(Name = "@Module")] string _module)
+		{
+			return _ResourceVwGetByModule(_module).ToList<ResourceVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -7319,6 +8779,16 @@ namespace Cf.Data
 		{
 			return _SalaryPaymentVwGetByDepartmentId(_departmentId).ToList<SalaryPaymentVw>();
 		}
+
+		/// <summary>
+		/// Gets rows related to one combination of DepartmentId columns in the  dbo.SalaryPaymentVw view.
+		/// </summary>
+		/// <param name="_departmentId">الفعالية</param>
+		/// <returns>An instance of SalaryPaymentVw.</returns>
+		public SalaryPaymentVw SalaryPaymentVwGetByDepartmentIdFirstOrDefault([Parameter(Name = "@DepartmentId")] int _departmentId)
+		{
+			return _SalaryPaymentVwGetByDepartmentId(_departmentId).ToList<SalaryPaymentVw>().FirstOrDefault();
+		}
 		#endregion
 		#endregion
 
@@ -7366,6 +8836,7 @@ namespace Cf.Data
 
 		#region GetChidlren procedure
         [Function(Name = "dbo.SalaryWorkPlaceVwGetChildren")]
+        [ResultType(typeof(SalaryWorkPlaceVw))]
         [ResultType(typeof(DepartmentVw))]
         private IMultipleResults _SalaryWorkPlaceVwGetChildren([Parameter(Name = "@Id")] int _id)
 		{
@@ -7406,6 +8877,16 @@ namespace Cf.Data
 		public List<SalaryWorkPlaceVw> SalaryWorkPlaceVwGetByMainWorkPlaceId([Parameter(Name = "@MainWorkPlaceId")] int _mainWorkPlaceId)
 		{
 			return _SalaryWorkPlaceVwGetByMainWorkPlaceId(_mainWorkPlaceId).ToList<SalaryWorkPlaceVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of MainWorkPlaceId columns in the  dbo.SalaryWorkPlaceVw view.
+		/// </summary>
+		/// <param name="_mainWorkPlaceId">مكان العمل الرئيسي</param>
+		/// <returns>An instance of SalaryWorkPlaceVw.</returns>
+		public SalaryWorkPlaceVw SalaryWorkPlaceVwGetByMainWorkPlaceIdFirstOrDefault([Parameter(Name = "@MainWorkPlaceId")] int _mainWorkPlaceId)
+		{
+			return _SalaryWorkPlaceVwGetByMainWorkPlaceId(_mainWorkPlaceId).ToList<SalaryWorkPlaceVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.SalaryWorkPlaceVwGetByName")]
@@ -7425,6 +8906,16 @@ namespace Cf.Data
 		public List<SalaryWorkPlaceVw> SalaryWorkPlaceVwGetByName([Parameter(Name = "@Name")] string _name)
 		{
 			return _SalaryWorkPlaceVwGetByName(_name).ToList<SalaryWorkPlaceVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Name columns in the  dbo.SalaryWorkPlaceVw view.
+		/// </summary>
+		/// <param name="_name">بيان جهة صرف الراتب</param>
+		/// <returns>An instance of SalaryWorkPlaceVw.</returns>
+		public SalaryWorkPlaceVw SalaryWorkPlaceVwGetByNameFirstOrDefault([Parameter(Name = "@Name")] string _name)
+		{
+			return _SalaryWorkPlaceVwGetByName(_name).ToList<SalaryWorkPlaceVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -7556,6 +9047,16 @@ namespace Cf.Data
 		public List<SettlementVw> SettlementVwGetByInstallmentId([Parameter(Name = "@InstallmentId")] int _installmentId)
 		{
 			return _SettlementVwGetByInstallmentId(_installmentId).ToList<SettlementVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of InstallmentId columns in the  dbo.SettlementVw view.
+		/// </summary>
+		/// <param name="_installmentId">القسط</param>
+		/// <returns>An instance of SettlementVw.</returns>
+		public SettlementVw SettlementVwGetByInstallmentIdFirstOrDefault([Parameter(Name = "@InstallmentId")] int _installmentId)
+		{
+			return _SettlementVwGetByInstallmentId(_installmentId).ToList<SettlementVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.SettlementVwGetByInstallmentId_PaymentId")]
@@ -7576,6 +9077,17 @@ namespace Cf.Data
 		public List<SettlementVw> SettlementVwGetByInstallmentId_PaymentId([Parameter(Name = "@InstallmentId")] int _installmentId, [Parameter(Name = "@PaymentId")] int _paymentId)
 		{
 			return _SettlementVwGetByInstallmentId_PaymentId(_installmentId, _paymentId).ToList<SettlementVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of InstallmentId_PaymentId columns in the  dbo.SettlementVw view.
+		/// </summary>
+		/// <param name="_installmentId">القسط</param>
+		/// <param name="_paymentId">الدفعة</param>
+		/// <returns>An instance of SettlementVw.</returns>
+		public SettlementVw SettlementVwGetByInstallmentId_PaymentIdFirstOrDefault([Parameter(Name = "@InstallmentId")] int _installmentId, [Parameter(Name = "@PaymentId")] int _paymentId)
+		{
+			return _SettlementVwGetByInstallmentId_PaymentId(_installmentId, _paymentId).ToList<SettlementVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.SettlementVwGetByPaymentId")]
@@ -7595,6 +9107,16 @@ namespace Cf.Data
 		public List<SettlementVw> SettlementVwGetByPaymentId([Parameter(Name = "@PaymentId")] int _paymentId)
 		{
 			return _SettlementVwGetByPaymentId(_paymentId).ToList<SettlementVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of PaymentId columns in the  dbo.SettlementVw view.
+		/// </summary>
+		/// <param name="_paymentId">الدفعة</param>
+		/// <returns>An instance of SettlementVw.</returns>
+		public SettlementVw SettlementVwGetByPaymentIdFirstOrDefault([Parameter(Name = "@PaymentId")] int _paymentId)
+		{
+			return _SettlementVwGetByPaymentId(_paymentId).ToList<SettlementVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -7671,6 +9193,16 @@ namespace Cf.Data
 		public List<SpecialCaseLoanVw> SpecialCaseLoanVwGetByDate([Parameter(Name = "@Date")] DateTime _date)
 		{
 			return _SpecialCaseLoanVwGetByDate(_date).ToList<SpecialCaseLoanVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Date columns in the  dbo.SpecialCaseLoanVw view.
+		/// </summary>
+		/// <param name="_date">تاريخ السلفة</param>
+		/// <returns>An instance of SpecialCaseLoanVw.</returns>
+		public SpecialCaseLoanVw SpecialCaseLoanVwGetByDateFirstOrDefault([Parameter(Name = "@Date")] DateTime _date)
+		{
+			return _SpecialCaseLoanVwGetByDate(_date).ToList<SpecialCaseLoanVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.SpecialCaseLoanVwGetByEmployeeId")]
@@ -7690,6 +9222,16 @@ namespace Cf.Data
 		public List<SpecialCaseLoanVw> SpecialCaseLoanVwGetByEmployeeId([Parameter(Name = "@EmployeeId")] int _employeeId)
 		{
 			return _SpecialCaseLoanVwGetByEmployeeId(_employeeId).ToList<SpecialCaseLoanVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of EmployeeId columns in the  dbo.SpecialCaseLoanVw view.
+		/// </summary>
+		/// <param name="_employeeId">الرقم الذاتي</param>
+		/// <returns>An instance of SpecialCaseLoanVw.</returns>
+		public SpecialCaseLoanVw SpecialCaseLoanVwGetByEmployeeIdFirstOrDefault([Parameter(Name = "@EmployeeId")] int _employeeId)
+		{
+			return _SpecialCaseLoanVwGetByEmployeeId(_employeeId).ToList<SpecialCaseLoanVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.SpecialCaseLoanVwGetByEmployeeId_Date_LoanTypeProductTypeId")]
@@ -7711,6 +9253,18 @@ namespace Cf.Data
 		public List<SpecialCaseLoanVw> SpecialCaseLoanVwGetByEmployeeId_Date_LoanTypeProductTypeId([Parameter(Name = "@EmployeeId")] int _employeeId, [Parameter(Name = "@Date")] DateTime _date, [Parameter(Name = "@LoanTypeProductTypeId")] short _loanTypeProductTypeId)
 		{
 			return _SpecialCaseLoanVwGetByEmployeeId_Date_LoanTypeProductTypeId(_employeeId, _date, _loanTypeProductTypeId).ToList<SpecialCaseLoanVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of EmployeeId_Date_LoanTypeProductTypeId columns in the  dbo.SpecialCaseLoanVw view.
+		/// </summary>
+		/// <param name="_employeeId">الرقم الذاتي</param>
+		/// <param name="_date">تاريخ السلفة</param>
+		/// <param name="_loanTypeProductTypeId">نوع السلف</param>
+		/// <returns>An instance of SpecialCaseLoanVw.</returns>
+		public SpecialCaseLoanVw SpecialCaseLoanVwGetByEmployeeId_Date_LoanTypeProductTypeIdFirstOrDefault([Parameter(Name = "@EmployeeId")] int _employeeId, [Parameter(Name = "@Date")] DateTime _date, [Parameter(Name = "@LoanTypeProductTypeId")] short _loanTypeProductTypeId)
+		{
+			return _SpecialCaseLoanVwGetByEmployeeId_Date_LoanTypeProductTypeId(_employeeId, _date, _loanTypeProductTypeId).ToList<SpecialCaseLoanVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.SpecialCaseLoanVwGetByLoanTypeProductTypeId")]
@@ -7730,6 +9284,16 @@ namespace Cf.Data
 		public List<SpecialCaseLoanVw> SpecialCaseLoanVwGetByLoanTypeProductTypeId([Parameter(Name = "@LoanTypeProductTypeId")] short _loanTypeProductTypeId)
 		{
 			return _SpecialCaseLoanVwGetByLoanTypeProductTypeId(_loanTypeProductTypeId).ToList<SpecialCaseLoanVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of LoanTypeProductTypeId columns in the  dbo.SpecialCaseLoanVw view.
+		/// </summary>
+		/// <param name="_loanTypeProductTypeId">نوع السلف</param>
+		/// <returns>An instance of SpecialCaseLoanVw.</returns>
+		public SpecialCaseLoanVw SpecialCaseLoanVwGetByLoanTypeProductTypeIdFirstOrDefault([Parameter(Name = "@LoanTypeProductTypeId")] short _loanTypeProductTypeId)
+		{
+			return _SpecialCaseLoanVwGetByLoanTypeProductTypeId(_loanTypeProductTypeId).ToList<SpecialCaseLoanVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -7807,6 +9371,16 @@ namespace Cf.Data
 		{
 			return _SubscriptionTypeVwGetByName(_name).ToList<SubscriptionTypeVw>();
 		}
+
+		/// <summary>
+		/// Gets rows related to one combination of Name columns in the  dbo.SubscriptionTypeVw view.
+		/// </summary>
+		/// <param name="_name">بيان نوع الاشتراك</param>
+		/// <returns>An instance of SubscriptionTypeVw.</returns>
+		public SubscriptionTypeVw SubscriptionTypeVwGetByNameFirstOrDefault([Parameter(Name = "@Name")] string _name)
+		{
+			return _SubscriptionTypeVwGetByName(_name).ToList<SubscriptionTypeVw>().FirstOrDefault();
+		}
 		#endregion
 		#endregion
 
@@ -7882,6 +9456,16 @@ namespace Cf.Data
 		public List<SubscriptionVw> SubscriptionVwGetByDepartmentId([Parameter(Name = "@DepartmentId")] int _departmentId)
 		{
 			return _SubscriptionVwGetByDepartmentId(_departmentId).ToList<SubscriptionVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of DepartmentId columns in the  dbo.SubscriptionVw view.
+		/// </summary>
+		/// <param name="_departmentId">الفعالية</param>
+		/// <returns>An instance of SubscriptionVw.</returns>
+		public SubscriptionVw SubscriptionVwGetByDepartmentIdFirstOrDefault([Parameter(Name = "@DepartmentId")] int _departmentId)
+		{
+			return _SubscriptionVwGetByDepartmentId(_departmentId).ToList<SubscriptionVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.SubscriptionVwGetByEmployeeId")]
@@ -7901,6 +9485,16 @@ namespace Cf.Data
 		public List<SubscriptionVw> SubscriptionVwGetByEmployeeId([Parameter(Name = "@EmployeeId")] int _employeeId)
 		{
 			return _SubscriptionVwGetByEmployeeId(_employeeId).ToList<SubscriptionVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of EmployeeId columns in the  dbo.SubscriptionVw view.
+		/// </summary>
+		/// <param name="_employeeId">الرقم الذاتي</param>
+		/// <returns>An instance of SubscriptionVw.</returns>
+		public SubscriptionVw SubscriptionVwGetByEmployeeIdFirstOrDefault([Parameter(Name = "@EmployeeId")] int _employeeId)
+		{
+			return _SubscriptionVwGetByEmployeeId(_employeeId).ToList<SubscriptionVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.SubscriptionVwGetByEmployeeId_Month_DepartmentId_SubscriptionTypeId")]
@@ -7923,6 +9517,19 @@ namespace Cf.Data
 		public List<SubscriptionVw> SubscriptionVwGetByEmployeeId_Month_DepartmentId_SubscriptionTypeId([Parameter(Name = "@EmployeeId")] int _employeeId, [Parameter(Name = "@Month")] DateTime _month, [Parameter(Name = "@DepartmentId")] int _departmentId, [Parameter(Name = "@SubscriptionTypeId")] byte _subscriptionTypeId)
 		{
 			return _SubscriptionVwGetByEmployeeId_Month_DepartmentId_SubscriptionTypeId(_employeeId, _month, _departmentId, _subscriptionTypeId).ToList<SubscriptionVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of EmployeeId_Month_DepartmentId_SubscriptionTypeId columns in the  dbo.SubscriptionVw view.
+		/// </summary>
+		/// <param name="_employeeId">الرقم الذاتي</param>
+		/// <param name="_month">التاريخ</param>
+		/// <param name="_departmentId">الفعالية</param>
+		/// <param name="_subscriptionTypeId">نوع الاشتراك</param>
+		/// <returns>An instance of SubscriptionVw.</returns>
+		public SubscriptionVw SubscriptionVwGetByEmployeeId_Month_DepartmentId_SubscriptionTypeIdFirstOrDefault([Parameter(Name = "@EmployeeId")] int _employeeId, [Parameter(Name = "@Month")] DateTime _month, [Parameter(Name = "@DepartmentId")] int _departmentId, [Parameter(Name = "@SubscriptionTypeId")] byte _subscriptionTypeId)
+		{
+			return _SubscriptionVwGetByEmployeeId_Month_DepartmentId_SubscriptionTypeId(_employeeId, _month, _departmentId, _subscriptionTypeId).ToList<SubscriptionVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.SubscriptionVwGetByIsFixed")]
@@ -7942,6 +9549,16 @@ namespace Cf.Data
 		public List<SubscriptionVw> SubscriptionVwGetByIsFixed([Parameter(Name = "@IsFixed")] bool _isFixed)
 		{
 			return _SubscriptionVwGetByIsFixed(_isFixed).ToList<SubscriptionVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of IsFixed columns in the  dbo.SubscriptionVw view.
+		/// </summary>
+		/// <param name="_isFixed">مثبت؟</param>
+		/// <returns>An instance of SubscriptionVw.</returns>
+		public SubscriptionVw SubscriptionVwGetByIsFixedFirstOrDefault([Parameter(Name = "@IsFixed")] bool _isFixed)
+		{
+			return _SubscriptionVwGetByIsFixed(_isFixed).ToList<SubscriptionVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.SubscriptionVwGetBySubscriptionTypeId")]
@@ -7961,6 +9578,16 @@ namespace Cf.Data
 		public List<SubscriptionVw> SubscriptionVwGetBySubscriptionTypeId([Parameter(Name = "@SubscriptionTypeId")] byte _subscriptionTypeId)
 		{
 			return _SubscriptionVwGetBySubscriptionTypeId(_subscriptionTypeId).ToList<SubscriptionVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of SubscriptionTypeId columns in the  dbo.SubscriptionVw view.
+		/// </summary>
+		/// <param name="_subscriptionTypeId">نوع الاشتراك</param>
+		/// <returns>An instance of SubscriptionVw.</returns>
+		public SubscriptionVw SubscriptionVwGetBySubscriptionTypeIdFirstOrDefault([Parameter(Name = "@SubscriptionTypeId")] byte _subscriptionTypeId)
+		{
+			return _SubscriptionVwGetBySubscriptionTypeId(_subscriptionTypeId).ToList<SubscriptionVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -8037,6 +9664,16 @@ namespace Cf.Data
 		public List<TransitoryIncomingLoanVw> TransitoryIncomingLoanVwGetByIsVerified([Parameter(Name = "@IsVerified")] bool _isVerified)
 		{
 			return _TransitoryIncomingLoanVwGetByIsVerified(_isVerified).ToList<TransitoryIncomingLoanVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of IsVerified columns in the  dbo.TransitoryIncomingLoanVw view.
+		/// </summary>
+		/// <param name="_isVerified">الحالة  non:0; verified:1; to be deleted:2</param>
+		/// <returns>An instance of TransitoryIncomingLoanVw.</returns>
+		public TransitoryIncomingLoanVw TransitoryIncomingLoanVwGetByIsVerifiedFirstOrDefault([Parameter(Name = "@IsVerified")] bool _isVerified)
+		{
+			return _TransitoryIncomingLoanVwGetByIsVerified(_isVerified).ToList<TransitoryIncomingLoanVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.TransitoryIncomingLoanVwGetByMainWorkPlaceId")]
@@ -8056,6 +9693,16 @@ namespace Cf.Data
 		public List<TransitoryIncomingLoanVw> TransitoryIncomingLoanVwGetByMainWorkPlaceId([Parameter(Name = "@MainWorkPlaceId")] int _mainWorkPlaceId)
 		{
 			return _TransitoryIncomingLoanVwGetByMainWorkPlaceId(_mainWorkPlaceId).ToList<TransitoryIncomingLoanVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of MainWorkPlaceId columns in the  dbo.TransitoryIncomingLoanVw view.
+		/// </summary>
+		/// <param name="_mainWorkPlaceId">الفرع المنقولة منه السلفة</param>
+		/// <returns>An instance of TransitoryIncomingLoanVw.</returns>
+		public TransitoryIncomingLoanVw TransitoryIncomingLoanVwGetByMainWorkPlaceIdFirstOrDefault([Parameter(Name = "@MainWorkPlaceId")] int _mainWorkPlaceId)
+		{
+			return _TransitoryIncomingLoanVwGetByMainWorkPlaceId(_mainWorkPlaceId).ToList<TransitoryIncomingLoanVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion
@@ -8132,6 +9779,16 @@ namespace Cf.Data
 		public List<WarrantVw> WarrantVwGetByDebtId([Parameter(Name = "@DebtId")] int _debtId)
 		{
 			return _WarrantVwGetByDebtId(_debtId).ToList<WarrantVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of DebtId columns in the  dbo.WarrantVw view.
+		/// </summary>
+		/// <param name="_debtId">معرف المديونية</param>
+		/// <returns>An instance of WarrantVw.</returns>
+		public WarrantVw WarrantVwGetByDebtIdFirstOrDefault([Parameter(Name = "@DebtId")] int _debtId)
+		{
+			return _WarrantVwGetByDebtId(_debtId).ToList<WarrantVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.WarrantVwGetByDebtId_EmployeeId")]
@@ -8152,6 +9809,17 @@ namespace Cf.Data
 		public List<WarrantVw> WarrantVwGetByDebtId_EmployeeId([Parameter(Name = "@DebtId")] int _debtId, [Parameter(Name = "@EmployeeId")] int _employeeId)
 		{
 			return _WarrantVwGetByDebtId_EmployeeId(_debtId, _employeeId).ToList<WarrantVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of DebtId_EmployeeId columns in the  dbo.WarrantVw view.
+		/// </summary>
+		/// <param name="_debtId">معرف المديونية</param>
+		/// <param name="_employeeId">الرقم الذاتي</param>
+		/// <returns>An instance of WarrantVw.</returns>
+		public WarrantVw WarrantVwGetByDebtId_EmployeeIdFirstOrDefault([Parameter(Name = "@DebtId")] int _debtId, [Parameter(Name = "@EmployeeId")] int _employeeId)
+		{
+			return _WarrantVwGetByDebtId_EmployeeId(_debtId, _employeeId).ToList<WarrantVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.WarrantVwGetByEmployeeId")]
@@ -8171,6 +9839,16 @@ namespace Cf.Data
 		public List<WarrantVw> WarrantVwGetByEmployeeId([Parameter(Name = "@EmployeeId")] int _employeeId)
 		{
 			return _WarrantVwGetByEmployeeId(_employeeId).ToList<WarrantVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of EmployeeId columns in the  dbo.WarrantVw view.
+		/// </summary>
+		/// <param name="_employeeId">الرقم الذاتي</param>
+		/// <returns>An instance of WarrantVw.</returns>
+		public WarrantVw WarrantVwGetByEmployeeIdFirstOrDefault([Parameter(Name = "@EmployeeId")] int _employeeId)
+		{
+			return _WarrantVwGetByEmployeeId(_employeeId).ToList<WarrantVw>().FirstOrDefault();
 		}		
 
 		[Function(Name = "dbo.WarrantVwGetByIsActive")]
@@ -8190,6 +9868,16 @@ namespace Cf.Data
 		public List<WarrantVw> WarrantVwGetByIsActive([Parameter(Name = "@IsActive")] bool _isActive)
 		{
 			return _WarrantVwGetByIsActive(_isActive).ToList<WarrantVw>();
+		}
+
+		/// <summary>
+		/// Gets rows related to one combination of IsActive columns in the  dbo.WarrantVw view.
+		/// </summary>
+		/// <param name="_isActive">الكفالة فعالة؟</param>
+		/// <returns>An instance of WarrantVw.</returns>
+		public WarrantVw WarrantVwGetByIsActiveFirstOrDefault([Parameter(Name = "@IsActive")] bool _isActive)
+		{
+			return _WarrantVwGetByIsActive(_isActive).ToList<WarrantVw>().FirstOrDefault();
 		}
 		#endregion
 		#endregion

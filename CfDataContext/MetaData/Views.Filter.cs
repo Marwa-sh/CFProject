@@ -26,7 +26,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  PaymentEmployeeId { get; set; }
+		public int  PaymentEmployeeId { get; set; }
 
 		/// <summary>
 		/// Metadata for PaymentEmployeeFullNameContains  filter property
@@ -58,7 +58,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  PaymentEmployeeDepartmentSalaryWorkPlaceId { get; set; }
+		public int  PaymentEmployeeDepartmentSalaryWorkPlaceId { get; set; }
 
 		/// <summary>
 		/// Metadata for MinPaymentDate  filter property
@@ -73,7 +73,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MinPaymentDate { get; set; }
+		public DateTime  MinPaymentDate { get; set; }
 
 		/// <summary>
 		/// Metadata for MaxPaymentDate  filter property
@@ -88,7 +88,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MaxPaymentDate { get; set; }
+		public DateTime  MaxPaymentDate { get; set; }
 
 		/// <summary>
 		/// Metadata for Number  filter property
@@ -104,7 +104,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  Number { get; set; }
+		public short  Number { get; set; }
 		#endregion
 	}
 	#endregion
@@ -130,7 +130,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  Number { get; set; }
+		public short  Number { get; set; }
 
 		/// <summary>
 		/// Metadata for MinDate  filter property
@@ -145,7 +145,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MinDate { get; set; }
+		public DateTime  MinDate { get; set; }
 
 		/// <summary>
 		/// Metadata for MaxDate  filter property
@@ -160,7 +160,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MaxDate { get; set; }
+		public DateTime  MaxDate { get; set; }
 		#endregion
 	}
 	#endregion
@@ -186,7 +186,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  EmployeeId { get; set; }
+		public int  EmployeeId { get; set; }
 
 		/// <summary>
 		/// Metadata for EmployeeFullNameContains  filter property
@@ -218,7 +218,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  EmployeeDepartmentSalaryWorkPlaceId { get; set; }
+		public int  EmployeeDepartmentSalaryWorkPlaceId { get; set; }
 
 		/// <summary>
 		/// Metadata for IssuerId  filter property
@@ -234,7 +234,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<byte>  IssuerId { get; set; }
+		public byte  IssuerId { get; set; }
 
 		/// <summary>
 		/// Metadata for MinDate  filter property
@@ -249,7 +249,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MinDate { get; set; }
+		public DateTime  MinDate { get; set; }
 
 		/// <summary>
 		/// Metadata for MaxDate  filter property
@@ -264,7 +264,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MaxDate { get; set; }
+		public DateTime  MaxDate { get; set; }
 		#endregion
 	}
 	#endregion
@@ -290,7 +290,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  Id { get; set; }
+		public int  Id { get; set; }
 
 		/// <summary>
 		/// Metadata for NameContains  filter property
@@ -322,7 +322,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  SalaryWorkPlaceId { get; set; }
+		public int  SalaryWorkPlaceId { get; set; }
 
 		/// <summary>
 		/// Metadata for SalaryWorkPlaceMainWorkPlaceId  filter property
@@ -338,7 +338,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  SalaryWorkPlaceMainWorkPlaceId { get; set; }
+		public int  SalaryWorkPlaceMainWorkPlaceId { get; set; }
 		#endregion
 	}
 	#endregion
@@ -364,7 +364,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  PaymentEmployeeId { get; set; }
+		public int  PaymentEmployeeId { get; set; }
 
 		/// <summary>
 		/// Metadata for PaymentEmployeeFullNameContains  filter property
@@ -395,7 +395,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MinPaymentDate { get; set; }
+		public DateTime  MinPaymentDate { get; set; }
 
 		/// <summary>
 		/// Metadata for MaxPaymentDate  filter property
@@ -410,7 +410,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MaxPaymentDate { get; set; }
+		public DateTime  MaxPaymentDate { get; set; }
 
 		/// <summary>
 		/// Metadata for RequestProductProductTypeId  filter property
@@ -426,7 +426,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  RequestProductProductTypeId { get; set; }
+		public short  RequestProductProductTypeId { get; set; }
 		#endregion
 	}
 	#endregion
@@ -452,7 +452,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  Id { get; set; }
+		public int  Id { get; set; }
 
 		/// <summary>
 		/// Metadata for FullNameArabicSoundex  filter property
@@ -484,7 +484,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  DepartmentId { get; set; }
+		public int  DepartmentId { get; set; }
 
 		/// <summary>
 		/// Metadata for DepartmentNameContains  filter property
@@ -516,7 +516,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<byte>  CategoryId { get; set; }
+		public byte  CategoryId { get; set; }
 		#endregion
 	}
 	#endregion
@@ -610,7 +610,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  EventLogEventCategoryId { get; set; }
+		public int  EventLogEventCategoryId { get; set; }
 
 		/// <summary>
 		/// Metadata for EventLogEventStatusId  filter property
@@ -626,7 +626,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  EventLogEventStatusId { get; set; }
+		public int  EventLogEventStatusId { get; set; }
 
 		/// <summary>
 		/// Metadata for MinEventLogDate  filter property
@@ -641,7 +641,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateTimeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MinEventLogDate { get; set; }
+		public DateTime  MinEventLogDate { get; set; }
 
 		/// <summary>
 		/// Metadata for MaxEventLogDate  filter property
@@ -656,7 +656,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateTimeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MaxEventLogDate { get; set; }
+		public DateTime  MaxEventLogDate { get; set; }
 
 		/// <summary>
 		/// Metadata for EventLogUser  filter property
@@ -672,7 +672,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  EventLogUser { get; set; }
+		public int  EventLogUser { get; set; }
 
 		/// <summary>
 		/// Metadata for MessageContains  filter property
@@ -714,7 +714,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<long>  Id { get; set; }
+		public long  Id { get; set; }
 
 		/// <summary>
 		/// Metadata for EventCategoryId  filter property
@@ -730,7 +730,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  EventCategoryId { get; set; }
+		public int  EventCategoryId { get; set; }
 
 		/// <summary>
 		/// Metadata for EventStatusId  filter property
@@ -746,7 +746,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  EventStatusId { get; set; }
+		public int  EventStatusId { get; set; }
 
 		/// <summary>
 		/// Metadata for MinDate  filter property
@@ -761,7 +761,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateTimeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MinDate { get; set; }
+		public DateTime  MinDate { get; set; }
 
 		/// <summary>
 		/// Metadata for MaxDate  filter property
@@ -776,7 +776,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateTimeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MaxDate { get; set; }
+		public DateTime  MaxDate { get; set; }
 
 		/// <summary>
 		/// Metadata for User  filter property
@@ -792,7 +792,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  User { get; set; }
+		public int  User { get; set; }
 		#endregion
 	}
 	#endregion
@@ -818,7 +818,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  EmployeeId { get; set; }
+		public int  EmployeeId { get; set; }
 
 		/// <summary>
 		/// Metadata for EmployeeFullNameContains  filter property
@@ -849,7 +849,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MinRequestDate { get; set; }
+		public DateTime  MinRequestDate { get; set; }
 
 		/// <summary>
 		/// Metadata for MaxRequestDate  filter property
@@ -864,7 +864,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MaxRequestDate { get; set; }
+		public DateTime  MaxRequestDate { get; set; }
 
 		/// <summary>
 		/// Metadata for GrantTypeId  filter property
@@ -880,7 +880,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<byte>  GrantTypeId { get; set; }
+		public byte  GrantTypeId { get; set; }
 		#endregion
 	}
 	#endregion
@@ -906,7 +906,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  Number { get; set; }
+		public short  Number { get; set; }
 
 		/// <summary>
 		/// Metadata for Year  filter property
@@ -922,7 +922,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  Year { get; set; }
+		public short  Year { get; set; }
 
 		/// <summary>
 		/// Metadata for GrantTypeGroupId  filter property
@@ -938,7 +938,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<byte>  GrantTypeGroupId { get; set; }
+		public byte  GrantTypeGroupId { get; set; }
 
 		/// <summary>
 		/// Metadata for MinDate  filter property
@@ -953,7 +953,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MinDate { get; set; }
+		public DateTime  MinDate { get; set; }
 
 		/// <summary>
 		/// Metadata for MaxDate  filter property
@@ -968,7 +968,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MaxDate { get; set; }
+		public DateTime  MaxDate { get; set; }
 		#endregion
 	}
 	#endregion
@@ -994,7 +994,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  Number { get; set; }
+		public short  Number { get; set; }
 
 		/// <summary>
 		/// Metadata for Year  filter property
@@ -1010,7 +1010,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  Year { get; set; }
+		public short  Year { get; set; }
 
 		/// <summary>
 		/// Metadata for MinDate  filter property
@@ -1025,7 +1025,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MinDate { get; set; }
+		public DateTime  MinDate { get; set; }
 
 		/// <summary>
 		/// Metadata for MaxDate  filter property
@@ -1040,7 +1040,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MaxDate { get; set; }
+		public DateTime  MaxDate { get; set; }
 		#endregion
 	}
 	#endregion
@@ -1066,7 +1066,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  GrantPaymentOrderNumber { get; set; }
+		public short  GrantPaymentOrderNumber { get; set; }
 
 		/// <summary>
 		/// Metadata for MinGrantPaymentOrderDate  filter property
@@ -1081,7 +1081,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MinGrantPaymentOrderDate { get; set; }
+		public DateTime  MinGrantPaymentOrderDate { get; set; }
 
 		/// <summary>
 		/// Metadata for MaxGrantPaymentOrderDate  filter property
@@ -1096,7 +1096,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MaxGrantPaymentOrderDate { get; set; }
+		public DateTime  MaxGrantPaymentOrderDate { get; set; }
 
 		/// <summary>
 		/// Metadata for SubNumber  filter property
@@ -1112,7 +1112,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<byte>  SubNumber { get; set; }
+		public byte  SubNumber { get; set; }
 
 		/// <summary>
 		/// Metadata for GrantProductEmployeeId  filter property
@@ -1128,7 +1128,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  GrantProductEmployeeId { get; set; }
+		public int  GrantProductEmployeeId { get; set; }
 
 		/// <summary>
 		/// Metadata for GrantProductEmployeeFullNameContains  filter property
@@ -1154,7 +1154,7 @@ namespace Cf.Data
 			ResourceType = typeof(Cf.Data.Resources.GrantPaymentVwFilter))
 		]
 		[Tooltip("MinAmountTooltip", typeof(Cf.Data.Resources.GrantPaymentVwFilter))]
-		public Nullable<decimal>  MinAmount { get; set; }
+		public decimal  MinAmount { get; set; }
 
 		/// <summary>
 		/// Metadata for MaxAmount  filter property
@@ -1164,7 +1164,7 @@ namespace Cf.Data
 			ResourceType = typeof(Cf.Data.Resources.GrantPaymentVwFilter))
 		]
 		[Tooltip("MaxAmountTooltip", typeof(Cf.Data.Resources.GrantPaymentVwFilter))]
-		public Nullable<decimal>  MaxAmount { get; set; }
+		public decimal  MaxAmount { get; set; }
 		#endregion
 	}
 	#endregion
@@ -1190,7 +1190,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  RequestProductEmployeeId { get; set; }
+		public int  RequestProductEmployeeId { get; set; }
 
 		/// <summary>
 		/// Metadata for RequestProductEmployeeFullNameContains  filter property
@@ -1222,7 +1222,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<byte>  GrantType { get; set; }
+		public byte  GrantType { get; set; }
 		#endregion
 	}
 	#endregion
@@ -1248,7 +1248,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  ProductEmployeeId { get; set; }
+		public int  ProductEmployeeId { get; set; }
 
 		/// <summary>
 		/// Metadata for ProductEmployeeFullNameContains  filter property
@@ -1280,7 +1280,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  GrantDecisionNumber { get; set; }
+		public short  GrantDecisionNumber { get; set; }
 
 		/// <summary>
 		/// Metadata for GrantDecisionYear  filter property
@@ -1296,7 +1296,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  GrantDecisionYear { get; set; }
+		public short  GrantDecisionYear { get; set; }
 		#endregion
 	}
 	#endregion
@@ -1322,7 +1322,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  RefundableProductProductEmployeeId { get; set; }
+		public int  RefundableProductProductEmployeeId { get; set; }
 
 		/// <summary>
 		/// Metadata for RefundableProductProductEmployeeFullNameContains  filter property
@@ -1354,7 +1354,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  EmployeeId { get; set; }
+		public int  EmployeeId { get; set; }
 
 		/// <summary>
 		/// Metadata for EmployeeFullNameContains  filter property
@@ -1396,7 +1396,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  EmployeeId { get; set; }
+		public int  EmployeeId { get; set; }
 
 		/// <summary>
 		/// Metadata for EmployeeFullNameContains  filter property
@@ -1428,7 +1428,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  HealthLoanDecisionNumber { get; set; }
+		public short  HealthLoanDecisionNumber { get; set; }
 
 		/// <summary>
 		/// Metadata for HealthLoanDecisionYear  filter property
@@ -1444,7 +1444,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  HealthLoanDecisionYear { get; set; }
+		public short  HealthLoanDecisionYear { get; set; }
 		#endregion
 	}
 	#endregion
@@ -1470,7 +1470,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  Number { get; set; }
+		public short  Number { get; set; }
 
 		/// <summary>
 		/// Metadata for Year  filter property
@@ -1486,7 +1486,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  Year { get; set; }
+		public short  Year { get; set; }
 
 		/// <summary>
 		/// Metadata for MinDate  filter property
@@ -1501,7 +1501,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MinDate { get; set; }
+		public DateTime  MinDate { get; set; }
 
 		/// <summary>
 		/// Metadata for MaxDate  filter property
@@ -1516,7 +1516,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MaxDate { get; set; }
+		public DateTime  MaxDate { get; set; }
 		#endregion
 	}
 	#endregion
@@ -1542,7 +1542,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  LoanProductEmployeeId { get; set; }
+		public int  LoanProductEmployeeId { get; set; }
 
 		/// <summary>
 		/// Metadata for LoanProductEmployeeFullNameContains  filter property
@@ -1574,7 +1574,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  LoanProductProductTypeId { get; set; }
+		public short  LoanProductProductTypeId { get; set; }
 
 		/// <summary>
 		/// Metadata for LoanLoanDecisionNumber  filter property
@@ -1590,7 +1590,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  LoanLoanDecisionNumber { get; set; }
+		public short  LoanLoanDecisionNumber { get; set; }
 
 		/// <summary>
 		/// Metadata for LoanLoanDecisionYear  filter property
@@ -1606,7 +1606,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  LoanLoanDecisionYear { get; set; }
+		public short  LoanLoanDecisionYear { get; set; }
 		#endregion
 	}
 	#endregion
@@ -1631,7 +1631,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MinMonth { get; set; }
+		public DateTime  MinMonth { get; set; }
 
 		/// <summary>
 		/// Metadata for MaxMonth  filter property
@@ -1646,7 +1646,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MaxMonth { get; set; }
+		public DateTime  MaxMonth { get; set; }
 		#endregion
 	}
 	#endregion
@@ -1671,7 +1671,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MinInstallmentDecreaseOrderMonth { get; set; }
+		public DateTime  MinInstallmentDecreaseOrderMonth { get; set; }
 
 		/// <summary>
 		/// Metadata for MaxInstallmentDecreaseOrderMonth  filter property
@@ -1686,7 +1686,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MaxInstallmentDecreaseOrderMonth { get; set; }
+		public DateTime  MaxInstallmentDecreaseOrderMonth { get; set; }
 
 		/// <summary>
 		/// Metadata for EmployeeId  filter property
@@ -1702,7 +1702,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  EmployeeId { get; set; }
+		public int  EmployeeId { get; set; }
 
 		/// <summary>
 		/// Metadata for EmployeeFullNameContains  filter property
@@ -1744,7 +1744,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  RefundableProductProductEmployeeId { get; set; }
+		public int  RefundableProductProductEmployeeId { get; set; }
 
 		/// <summary>
 		/// Metadata for RefundableProductProductEmployeeFullNameContains  filter property
@@ -1776,7 +1776,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  RefundableProductProductProductTypeId { get; set; }
+		public short  RefundableProductProductProductTypeId { get; set; }
 
 		/// <summary>
 		/// Metadata for SubNumber  filter property
@@ -1792,7 +1792,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  SubNumber { get; set; }
+		public short  SubNumber { get; set; }
 
 		/// <summary>
 		/// Metadata for MinDueDate  filter property
@@ -1807,7 +1807,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MinDueDate { get; set; }
+		public DateTime  MinDueDate { get; set; }
 
 		/// <summary>
 		/// Metadata for MaxDueDate  filter property
@@ -1822,7 +1822,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MaxDueDate { get; set; }
+		public DateTime  MaxDueDate { get; set; }
 		#endregion
 	}
 	#endregion
@@ -1848,7 +1848,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  LoanProductEmployeeId { get; set; }
+		public int  LoanProductEmployeeId { get; set; }
 
 		/// <summary>
 		/// Metadata for LoanProductEmployeeFullNameContains  filter property
@@ -1880,7 +1880,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  LoanLoanType { get; set; }
+		public short  LoanLoanType { get; set; }
 
 		/// <summary>
 		/// Metadata for FromLoanProductEmployeeId  filter property
@@ -1896,7 +1896,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  FromLoanProductEmployeeId { get; set; }
+		public int  FromLoanProductEmployeeId { get; set; }
 
 		/// <summary>
 		/// Metadata for FromLoanProductEmployeeFullNameContains  filter property
@@ -1928,7 +1928,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  FromLoanLoanType { get; set; }
+		public short  FromLoanLoanType { get; set; }
 		#endregion
 	}
 	#endregion
@@ -1954,7 +1954,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  Number { get; set; }
+		public short  Number { get; set; }
 
 		/// <summary>
 		/// Metadata for Year  filter property
@@ -1970,7 +1970,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  Year { get; set; }
+		public short  Year { get; set; }
 
 		/// <summary>
 		/// Metadata for MinDate  filter property
@@ -1985,7 +1985,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MinDate { get; set; }
+		public DateTime  MinDate { get; set; }
 
 		/// <summary>
 		/// Metadata for MaxDate  filter property
@@ -2000,7 +2000,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MaxDate { get; set; }
+		public DateTime  MaxDate { get; set; }
 
 		/// <summary>
 		/// Metadata for LoanDecisionTypeId  filter property
@@ -2016,7 +2016,157 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<byte>  LoanDecisionTypeId { get; set; }
+		public byte  LoanDecisionTypeId { get; set; }
+		#endregion
+	}
+	#endregion
+
+    #region LoanExtendedVwFilter meta data class definition
+    /// <summary>
+    /// Metadata for the Filter filter of LoanExtendedVw class
+    /// </summary>
+	public partial class LoanExtendedVwFilterMetaData
+	{
+		#region Public properties
+		/// <summary>
+		/// Metadata for ProductEmployeeId  filter property
+		/// </summary>
+		[Display(
+			Name = "ProductEmployeeId",
+			ResourceType = typeof(Cf.Data.Resources.LoanExtendedVwFilter))
+		]
+		[Tooltip("ProductEmployeeIdTooltip", typeof(Cf.Data.Resources.LoanExtendedVwFilter))]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		public int  ProductEmployeeId { get; set; }
+
+		/// <summary>
+		/// Metadata for ProductProductTypeId  filter property
+		/// </summary>
+		[Display(
+			Name = "ProductProductTypeId",
+			ResourceType = typeof(Cf.Data.Resources.LoanExtendedVwFilter))
+		]
+		[Tooltip("ProductProductTypeIdTooltip", typeof(Cf.Data.Resources.LoanExtendedVwFilter))]
+		[Range(
+			0,
+			32767,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		public short  ProductProductTypeId { get; set; }
+
+		/// <summary>
+		/// Metadata for LoanDecisionYear  filter property
+		/// </summary>
+		[Display(
+			Name = "LoanDecisionYear",
+			ResourceType = typeof(Cf.Data.Resources.LoanExtendedVwFilter))
+		]
+		[Tooltip("LoanDecisionYearTooltip", typeof(Cf.Data.Resources.LoanExtendedVwFilter))]
+		[Range(
+			0,
+			32767,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		public short  LoanDecisionYear { get; set; }
+
+		/// <summary>
+		/// Metadata for MinLoanDecisionDate  filter property
+		/// </summary>
+		[Display(
+			Name = "MinLoanDecisionDate",
+			ResourceType = typeof(Cf.Data.Resources.LoanExtendedVwFilter))
+		]
+		[Tooltip("MinLoanDecisionDateTooltip", typeof(Cf.Data.Resources.LoanExtendedVwFilter))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		public DateTime  MinLoanDecisionDate { get; set; }
+
+		/// <summary>
+		/// Metadata for MaxLoanDecisionDate  filter property
+		/// </summary>
+		[Display(
+			Name = "MaxLoanDecisionDate",
+			ResourceType = typeof(Cf.Data.Resources.LoanExtendedVwFilter))
+		]
+		[Tooltip("MaxLoanDecisionDateTooltip", typeof(Cf.Data.Resources.LoanExtendedVwFilter))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		public DateTime  MaxLoanDecisionDate { get; set; }
+
+		/// <summary>
+		/// Metadata for MinLoanDecisionDeductionStartDate  filter property
+		/// </summary>
+		[Display(
+			Name = "MinLoanDecisionDeductionStartDate",
+			ResourceType = typeof(Cf.Data.Resources.LoanExtendedVwFilter))
+		]
+		[Tooltip("MinLoanDecisionDeductionStartDateTooltip", typeof(Cf.Data.Resources.LoanExtendedVwFilter))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		public DateTime  MinLoanDecisionDeductionStartDate { get; set; }
+
+		/// <summary>
+		/// Metadata for MaxLoanDecisionDeductionStartDate  filter property
+		/// </summary>
+		[Display(
+			Name = "MaxLoanDecisionDeductionStartDate",
+			ResourceType = typeof(Cf.Data.Resources.LoanExtendedVwFilter))
+		]
+		[Tooltip("MaxLoanDecisionDeductionStartDateTooltip", typeof(Cf.Data.Resources.LoanExtendedVwFilter))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		public DateTime  MaxLoanDecisionDeductionStartDate { get; set; }
+
+		/// <summary>
+		/// Metadata for LoanGenerationStatusId  filter property
+		/// </summary>
+		[Display(
+			Name = "LoanGenerationStatusId",
+			ResourceType = typeof(Cf.Data.Resources.LoanExtendedVwFilter))
+		]
+		[Tooltip("LoanGenerationStatusIdTooltip", typeof(Cf.Data.Resources.LoanExtendedVwFilter))]
+		[Range(
+			0,
+			127,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		public byte  LoanGenerationStatusId { get; set; }
+
+		/// <summary>
+		/// Metadata for LoanStatusId  filter property
+		/// </summary>
+		[Display(
+			Name = "LoanStatusId",
+			ResourceType = typeof(Cf.Data.Resources.LoanExtendedVwFilter))
+		]
+		[Tooltip("LoanStatusIdTooltip", typeof(Cf.Data.Resources.LoanExtendedVwFilter))]
+		[Range(
+			0,
+			127,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		public byte  LoanStatusId { get; set; }
 		#endregion
 	}
 	#endregion
@@ -2042,7 +2192,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  RequestProductEmployeeId { get; set; }
+		public int  RequestProductEmployeeId { get; set; }
 
 		/// <summary>
 		/// Metadata for RequestProductEmployeeFullNameContains  filter property
@@ -2074,7 +2224,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  RequestProductProductTypeId { get; set; }
+		public short  RequestProductProductTypeId { get; set; }
 
 		/// <summary>
 		/// Metadata for MinRequestDate  filter property
@@ -2089,7 +2239,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MinRequestDate { get; set; }
+		public DateTime  MinRequestDate { get; set; }
 
 		/// <summary>
 		/// Metadata for MaxRequestDate  filter property
@@ -2104,7 +2254,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MaxRequestDate { get; set; }
+		public DateTime  MaxRequestDate { get; set; }
 
 		/// <summary>
 		/// Metadata for RequestRequestStatusId  filter property
@@ -2120,7 +2270,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<byte>  RequestRequestStatusId { get; set; }
+		public byte  RequestRequestStatusId { get; set; }
 		#endregion
 	}
 	#endregion
@@ -2162,7 +2312,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<byte>  ProductTypeProfitStrategyId { get; set; }
+		public byte  ProductTypeProfitStrategyId { get; set; }
 
 		/// <summary>
 		/// Metadata for ProductTypePaymentGroupId  filter property
@@ -2178,7 +2328,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<byte>  ProductTypePaymentGroupId { get; set; }
+		public byte  ProductTypePaymentGroupId { get; set; }
 		#endregion
 	}
 	#endregion
@@ -2204,7 +2354,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  ProductEmployeeId { get; set; }
+		public int  ProductEmployeeId { get; set; }
 
 		/// <summary>
 		/// Metadata for ProductEmployeeFullNameContains  filter property
@@ -2236,7 +2386,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  ProductProductTypeId { get; set; }
+		public short  ProductProductTypeId { get; set; }
 
 		/// <summary>
 		/// Metadata for LoanDecisionNumber  filter property
@@ -2252,7 +2402,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  LoanDecisionNumber { get; set; }
+		public short  LoanDecisionNumber { get; set; }
 
 		/// <summary>
 		/// Metadata for MinLoanDecisionDate  filter property
@@ -2267,7 +2417,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MinLoanDecisionDate { get; set; }
+		public DateTime  MinLoanDecisionDate { get; set; }
 
 		/// <summary>
 		/// Metadata for MaxLoanDecisionDate  filter property
@@ -2282,7 +2432,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MaxLoanDecisionDate { get; set; }
+		public DateTime  MaxLoanDecisionDate { get; set; }
 
 		/// <summary>
 		/// Metadata for LoanStatusId  filter property
@@ -2298,7 +2448,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<byte>  LoanStatusId { get; set; }
+		public byte  LoanStatusId { get; set; }
 		#endregion
 	}
 	#endregion
@@ -2324,7 +2474,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  EmployeeId { get; set; }
+		public int  EmployeeId { get; set; }
 
 		/// <summary>
 		/// Metadata for EmployeeFullNameContains  filter property
@@ -2355,7 +2505,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MinTransferMonth { get; set; }
+		public DateTime  MinTransferMonth { get; set; }
 
 		/// <summary>
 		/// Metadata for MaxTransferMonth  filter property
@@ -2370,7 +2520,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MaxTransferMonth { get; set; }
+		public DateTime  MaxTransferMonth { get; set; }
 		#endregion
 	}
 	#endregion
@@ -2396,7 +2546,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  EmployeeId { get; set; }
+		public int  EmployeeId { get; set; }
 
 		/// <summary>
 		/// Metadata for EmployeeFullNameContains  filter property
@@ -2428,7 +2578,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<byte>  PaymentGroupId { get; set; }
+		public byte  PaymentGroupId { get; set; }
 
 		/// <summary>
 		/// Metadata for MinMonth  filter property
@@ -2443,7 +2593,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MinMonth { get; set; }
+		public DateTime  MinMonth { get; set; }
 
 		/// <summary>
 		/// Metadata for MaxMonth  filter property
@@ -2458,7 +2608,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MaxMonth { get; set; }
+		public DateTime  MaxMonth { get; set; }
 		#endregion
 	}
 	#endregion
@@ -2484,7 +2634,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  LoanProductEmployeeId { get; set; }
+		public int  LoanProductEmployeeId { get; set; }
 
 		/// <summary>
 		/// Metadata for LoanProductEmployeeFullNameContains  filter property
@@ -2516,7 +2666,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  LoanProductProductTypeId { get; set; }
+		public short  LoanProductProductTypeId { get; set; }
 
 		/// <summary>
 		/// Metadata for MainWorkPlaceId  filter property
@@ -2532,7 +2682,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  MainWorkPlaceId { get; set; }
+		public int  MainWorkPlaceId { get; set; }
 		#endregion
 	}
 	#endregion
@@ -2558,7 +2708,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  EmployeeId { get; set; }
+		public int  EmployeeId { get; set; }
 
 		/// <summary>
 		/// Metadata for EmployeeFullNameContains  filter property
@@ -2589,7 +2739,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MinDate { get; set; }
+		public DateTime  MinDate { get; set; }
 
 		/// <summary>
 		/// Metadata for MaxDate  filter property
@@ -2604,7 +2754,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MaxDate { get; set; }
+		public DateTime  MaxDate { get; set; }
 
 		/// <summary>
 		/// Metadata for PaymentGroupId  filter property
@@ -2620,7 +2770,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<byte>  PaymentGroupId { get; set; }
+		public byte  PaymentGroupId { get; set; }
 
 		/// <summary>
 		/// Metadata for PaymentStatusId  filter property
@@ -2636,7 +2786,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<byte>  PaymentStatusId { get; set; }
+		public byte  PaymentStatusId { get; set; }
 		#endregion
 	}
 	#endregion
@@ -2662,7 +2812,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  EmployeeId { get; set; }
+		public int  EmployeeId { get; set; }
 
 		/// <summary>
 		/// Metadata for EmployeeFullNameContains  filter property
@@ -2694,7 +2844,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  Number { get; set; }
+		public short  Number { get; set; }
 
 		/// <summary>
 		/// Metadata for MinDate  filter property
@@ -2709,7 +2859,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MinDate { get; set; }
+		public DateTime  MinDate { get; set; }
 
 		/// <summary>
 		/// Metadata for MaxDate  filter property
@@ -2724,7 +2874,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MaxDate { get; set; }
+		public DateTime  MaxDate { get; set; }
 
 		/// <summary>
 		/// Metadata for PaymentGroupId  filter property
@@ -2740,7 +2890,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<byte>  PaymentGroupId { get; set; }
+		public byte  PaymentGroupId { get; set; }
 		#endregion
 	}
 	#endregion
@@ -2766,7 +2916,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  EmployeeId { get; set; }
+		public int  EmployeeId { get; set; }
 
 		/// <summary>
 		/// Metadata for EmployeeFullNameContains  filter property
@@ -2798,7 +2948,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  ProductTypeId { get; set; }
+		public short  ProductTypeId { get; set; }
 		#endregion
 	}
 	#endregion
@@ -2824,7 +2974,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  ProductEmployeeId { get; set; }
+		public int  ProductEmployeeId { get; set; }
 
 		/// <summary>
 		/// Metadata for ProductEmployeeFullNameContains  filter property
@@ -2856,7 +3006,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  ProductProductTypeId { get; set; }
+		public short  ProductProductTypeId { get; set; }
 		#endregion
 	}
 	#endregion
@@ -2882,7 +3032,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  ProductEmployeeId { get; set; }
+		public int  ProductEmployeeId { get; set; }
 
 		/// <summary>
 		/// Metadata for ProductEmployeeFullNameContains  filter property
@@ -2914,7 +3064,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  ProductProductTypeId { get; set; }
+		public short  ProductProductTypeId { get; set; }
 
 		/// <summary>
 		/// Metadata for MinDate  filter property
@@ -2929,7 +3079,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MinDate { get; set; }
+		public DateTime  MinDate { get; set; }
 
 		/// <summary>
 		/// Metadata for MaxDate  filter property
@@ -2944,7 +3094,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MaxDate { get; set; }
+		public DateTime  MaxDate { get; set; }
 
 		/// <summary>
 		/// Metadata for RequestStatusId  filter property
@@ -2960,7 +3110,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<byte>  RequestStatusId { get; set; }
+		public byte  RequestStatusId { get; set; }
 		#endregion
 	}
 	#endregion
@@ -3060,7 +3210,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  PaymentEmployeeId { get; set; }
+		public int  PaymentEmployeeId { get; set; }
 
 		/// <summary>
 		/// Metadata for PaymentEmployeeFullNameContains  filter property
@@ -3091,7 +3241,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MinPaymentDate { get; set; }
+		public DateTime  MinPaymentDate { get; set; }
 
 		/// <summary>
 		/// Metadata for MaxPaymentDate  filter property
@@ -3106,7 +3256,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MaxPaymentDate { get; set; }
+		public DateTime  MaxPaymentDate { get; set; }
 
 		/// <summary>
 		/// Metadata for PaymentPaymentGroupId  filter property
@@ -3122,7 +3272,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<byte>  PaymentPaymentGroupId { get; set; }
+		public byte  PaymentPaymentGroupId { get; set; }
 
 		/// <summary>
 		/// Metadata for PaymentPaymentStatusId  filter property
@@ -3138,7 +3288,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<byte>  PaymentPaymentStatusId { get; set; }
+		public byte  PaymentPaymentStatusId { get; set; }
 		#endregion
 	}
 	#endregion
@@ -3164,7 +3314,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  MainWorkPlaceId { get; set; }
+		public int  MainWorkPlaceId { get; set; }
 		#endregion
 	}
 	#endregion
@@ -3190,7 +3340,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  GrantRequestRequestProductEmployeeId { get; set; }
+		public int  GrantRequestRequestProductEmployeeId { get; set; }
 
 		/// <summary>
 		/// Metadata for GrantRequestRequestProductEmployeeFullNameContains  filter property
@@ -3232,7 +3382,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  InstallmentRefundableProductProductEmployeeId { get; set; }
+		public int  InstallmentRefundableProductProductEmployeeId { get; set; }
 
 		/// <summary>
 		/// Metadata for InstallmentRefundableProductProductEmployeeFullNameContains  filter property
@@ -3264,7 +3414,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  InstallmentRefundableProductProductProductTypeId { get; set; }
+		public short  InstallmentRefundableProductProductProductTypeId { get; set; }
 
 		/// <summary>
 		/// Metadata for MinInstallmentSubNumber  filter property
@@ -3280,7 +3430,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  MinInstallmentSubNumber { get; set; }
+		public short  MinInstallmentSubNumber { get; set; }
 
 		/// <summary>
 		/// Metadata for MaxInstallmentSubNumber  filter property
@@ -3296,7 +3446,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  MaxInstallmentSubNumber { get; set; }
+		public short  MaxInstallmentSubNumber { get; set; }
 
 		/// <summary>
 		/// Metadata for MinPaymentDate  filter property
@@ -3311,7 +3461,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MinPaymentDate { get; set; }
+		public DateTime  MinPaymentDate { get; set; }
 
 		/// <summary>
 		/// Metadata for MaxPaymentDate  filter property
@@ -3326,7 +3476,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MaxPaymentDate { get; set; }
+		public DateTime  MaxPaymentDate { get; set; }
 
 		/// <summary>
 		/// Metadata for MinPaymentAmount  filter property
@@ -3336,7 +3486,7 @@ namespace Cf.Data
 			ResourceType = typeof(Cf.Data.Resources.SettlementVwFilter))
 		]
 		[Tooltip("MinPaymentAmountTooltip", typeof(Cf.Data.Resources.SettlementVwFilter))]
-		public Nullable<decimal>  MinPaymentAmount { get; set; }
+		public decimal  MinPaymentAmount { get; set; }
 
 		/// <summary>
 		/// Metadata for MaxPaymentAmount  filter property
@@ -3346,7 +3496,7 @@ namespace Cf.Data
 			ResourceType = typeof(Cf.Data.Resources.SettlementVwFilter))
 		]
 		[Tooltip("MaxPaymentAmountTooltip", typeof(Cf.Data.Resources.SettlementVwFilter))]
-		public Nullable<decimal>  MaxPaymentAmount { get; set; }
+		public decimal  MaxPaymentAmount { get; set; }
 
 		/// <summary>
 		/// Metadata for MinAmount  filter property
@@ -3356,7 +3506,7 @@ namespace Cf.Data
 			ResourceType = typeof(Cf.Data.Resources.SettlementVwFilter))
 		]
 		[Tooltip("MinAmountTooltip", typeof(Cf.Data.Resources.SettlementVwFilter))]
-		public Nullable<decimal>  MinAmount { get; set; }
+		public decimal  MinAmount { get; set; }
 
 		/// <summary>
 		/// Metadata for MaxAmount  filter property
@@ -3366,7 +3516,7 @@ namespace Cf.Data
 			ResourceType = typeof(Cf.Data.Resources.SettlementVwFilter))
 		]
 		[Tooltip("MaxAmountTooltip", typeof(Cf.Data.Resources.SettlementVwFilter))]
-		public Nullable<decimal>  MaxAmount { get; set; }
+		public decimal  MaxAmount { get; set; }
 		#endregion
 	}
 	#endregion
@@ -3392,7 +3542,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  EmployeeId { get; set; }
+		public int  EmployeeId { get; set; }
 
 		/// <summary>
 		/// Metadata for EmployeeFullNameContains  filter property
@@ -3423,7 +3573,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MinDate { get; set; }
+		public DateTime  MinDate { get; set; }
 
 		/// <summary>
 		/// Metadata for MaxDate  filter property
@@ -3438,7 +3588,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MaxDate { get; set; }
+		public DateTime  MaxDate { get; set; }
 
 		/// <summary>
 		/// Metadata for LoanTypeProductTypeId  filter property
@@ -3454,7 +3604,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<short>  LoanTypeProductTypeId { get; set; }
+		public short  LoanTypeProductTypeId { get; set; }
 		#endregion
 	}
 	#endregion
@@ -3480,7 +3630,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  EmployeeId { get; set; }
+		public int  EmployeeId { get; set; }
 
 		/// <summary>
 		/// Metadata for EmployeeFullNameContains  filter property
@@ -3511,7 +3661,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MinMonth { get; set; }
+		public DateTime  MinMonth { get; set; }
 
 		/// <summary>
 		/// Metadata for MaxMonth  filter property
@@ -3526,7 +3676,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MaxMonth { get; set; }
+		public DateTime  MaxMonth { get; set; }
 
 		/// <summary>
 		/// Metadata for SubscriptionTypeId  filter property
@@ -3542,7 +3692,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<byte>  SubscriptionTypeId { get; set; }
+		public byte  SubscriptionTypeId { get; set; }
 		#endregion
 	}
 	#endregion
@@ -3568,7 +3718,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  EmployeeId { get; set; }
+		public int  EmployeeId { get; set; }
 
 		/// <summary>
 		/// Metadata for EmployeeFullNameContains  filter property
@@ -3600,7 +3750,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  MainWorkPlaceId { get; set; }
+		public int  MainWorkPlaceId { get; set; }
 
 		/// <summary>
 		/// Metadata for IsVerified  filter property
@@ -3610,7 +3760,7 @@ namespace Cf.Data
 			ResourceType = typeof(Cf.Data.Resources.TransitoryIncomingLoanVwFilter))
 		]
 		[Tooltip("IsVerifiedTooltip", typeof(Cf.Data.Resources.TransitoryIncomingLoanVwFilter))]
-		public Nullable<bool>  IsVerified { get; set; }
+		public bool  IsVerified { get; set; }
 		#endregion
 	}
 	#endregion
@@ -3636,7 +3786,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  DebtEmployeeId { get; set; }
+		public int  DebtEmployeeId { get; set; }
 
 		/// <summary>
 		/// Metadata for DebtEmployeeFullNameContains  filter property
@@ -3667,7 +3817,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MinDebtDate { get; set; }
+		public DateTime  MinDebtDate { get; set; }
 
 		/// <summary>
 		/// Metadata for MaxDebtDate  filter property
@@ -3682,7 +3832,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "DateCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<DateTime>  MaxDebtDate { get; set; }
+		public DateTime  MaxDebtDate { get; set; }
 
 		/// <summary>
 		/// Metadata for EmployeeId  filter property
@@ -3698,7 +3848,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RangeCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-		public Nullable<int>  EmployeeId { get; set; }
+		public int  EmployeeId { get; set; }
 
 		/// <summary>
 		/// Metadata for EmployeeFullNameContains  filter property

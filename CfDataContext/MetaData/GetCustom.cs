@@ -1438,6 +1438,23 @@ namespace Cf.Data
         public int EmployeeId {get; set; }
 		
 		[Display(
+			Name = "FullName",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeSolvencyResult))
+		]
+		[Tooltip("FullNameTooltip", typeof(Cf.Data.Resources.GetEmployeeSolvencyResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		[StringLength(
+			100,
+			MinimumLength = 0,
+			ErrorMessageResourceName = "StringLengthCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public string FullName {get; set; }
+		
+		[Display(
 			Name = "DebtRemainingAmount",
 			ResourceType = typeof(Cf.Data.Resources.GetEmployeeSolvencyResult))
 		]
@@ -1592,6 +1609,23 @@ namespace Cf.Data
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
         public int EmployeeId {get; set; }
+		
+		[Display(
+			Name = "FullName",
+			ResourceType = typeof(Cf.Data.Resources.GetEmployeeSumDebtsResult))
+		]
+		[Tooltip("FullNameTooltip", typeof(Cf.Data.Resources.GetEmployeeSumDebtsResult))]
+		[Required(
+			ErrorMessageResourceName = "RequiredCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+		[StringLength(
+			100,
+			MinimumLength = 0,
+			ErrorMessageResourceName = "StringLengthCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public string FullName {get; set; }
 		
 		[Display(
 			Name = "HasDebts",
@@ -2776,6 +2810,22 @@ namespace Cf.Data
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
         public Nullable<DateTime> MaxMonth { get; set; }
+		
+        /// <summary>
+        /// Metadata for MonthlyBalanceSumFilter.EmployeeId property
+        /// </summary>
+		[Display(
+			Name = "EmployeeId",
+			ResourceType = typeof(Cf.Data.Resources.MonthlyBalanceSumFilter))
+		]
+		[Tooltip("EmployeeIdTooltip", typeof(Cf.Data.Resources.MonthlyBalanceSumFilter))]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<int> EmployeeId { get; set; }
 		#endregion
 	}
 	#endregion
@@ -3806,6 +3856,180 @@ namespace Cf.Data
 		]
 		[Tooltip("SecondMonthAmountTooltip", typeof(Cf.Data.Resources.SubscriptionsBetweenTwoDatesResult))]
         public Nullable<decimal> SecondMonthAmount {get; set; }
+		#endregion
+	}
+	#endregion
+	#endregion
+
+	#region SumComingLoansForEmployee filter and result classes
+	#region SumComingLoansForEmployeeFilter meta data class definition
+    /// <summary>
+    /// Metadata for SumComingLoansForEmployeeFilter class
+    /// </summary>
+	public partial class SumComingLoansForEmployeeFilterMetaData
+	{
+		#region Public properties
+        /// <summary>
+        /// Metadata for SumComingLoansForEmployeeFilter.FromDate property
+        /// </summary>
+		[Display(
+			Name = "FromDate",
+			ResourceType = typeof(Cf.Data.Resources.SumComingLoansForEmployeeFilter))
+		]
+		[Tooltip("FromDateTooltip", typeof(Cf.Data.Resources.SumComingLoansForEmployeeFilter))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<DateTime> FromDate { get; set; }
+		
+        /// <summary>
+        /// Metadata for SumComingLoansForEmployeeFilter.ToDate property
+        /// </summary>
+		[Display(
+			Name = "ToDate",
+			ResourceType = typeof(Cf.Data.Resources.SumComingLoansForEmployeeFilter))
+		]
+		[Tooltip("ToDateTooltip", typeof(Cf.Data.Resources.SumComingLoansForEmployeeFilter))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<DateTime> ToDate { get; set; }
+		
+        /// <summary>
+        /// Metadata for SumComingLoansForEmployeeFilter.Employee property
+        /// </summary>
+		[Display(
+			Name = "Employee",
+			ResourceType = typeof(Cf.Data.Resources.SumComingLoansForEmployeeFilter))
+		]
+		[Tooltip("EmployeeTooltip", typeof(Cf.Data.Resources.SumComingLoansForEmployeeFilter))]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<int> Employee { get; set; }
+		#endregion
+	}
+	#endregion
+	#endregion
+
+	#region SumLoansForEmployee filter and result classes
+	#region SumLoansForEmployeeFilter meta data class definition
+    /// <summary>
+    /// Metadata for SumLoansForEmployeeFilter class
+    /// </summary>
+	public partial class SumLoansForEmployeeFilterMetaData
+	{
+		#region Public properties
+        /// <summary>
+        /// Metadata for SumLoansForEmployeeFilter.FromDate property
+        /// </summary>
+		[Display(
+			Name = "FromDate",
+			ResourceType = typeof(Cf.Data.Resources.SumLoansForEmployeeFilter))
+		]
+		[Tooltip("FromDateTooltip", typeof(Cf.Data.Resources.SumLoansForEmployeeFilter))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<DateTime> FromDate { get; set; }
+		
+        /// <summary>
+        /// Metadata for SumLoansForEmployeeFilter.ToDate property
+        /// </summary>
+		[Display(
+			Name = "ToDate",
+			ResourceType = typeof(Cf.Data.Resources.SumLoansForEmployeeFilter))
+		]
+		[Tooltip("ToDateTooltip", typeof(Cf.Data.Resources.SumLoansForEmployeeFilter))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<DateTime> ToDate { get; set; }
+		
+        /// <summary>
+        /// Metadata for SumLoansForEmployeeFilter.Employee property
+        /// </summary>
+		[Display(
+			Name = "Employee",
+			ResourceType = typeof(Cf.Data.Resources.SumLoansForEmployeeFilter))
+		]
+		[Tooltip("EmployeeTooltip", typeof(Cf.Data.Resources.SumLoansForEmployeeFilter))]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<int> Employee { get; set; }
+		#endregion
+	}
+	#endregion
+	#endregion
+
+	#region SumOutgoingLoansForEmployee filter and result classes
+	#region SumOutgoingLoansForEmployeeFilter meta data class definition
+    /// <summary>
+    /// Metadata for SumOutgoingLoansForEmployeeFilter class
+    /// </summary>
+	public partial class SumOutgoingLoansForEmployeeFilterMetaData
+	{
+		#region Public properties
+        /// <summary>
+        /// Metadata for SumOutgoingLoansForEmployeeFilter.FromDate property
+        /// </summary>
+		[Display(
+			Name = "FromDate",
+			ResourceType = typeof(Cf.Data.Resources.SumOutgoingLoansForEmployeeFilter))
+		]
+		[Tooltip("FromDateTooltip", typeof(Cf.Data.Resources.SumOutgoingLoansForEmployeeFilter))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<DateTime> FromDate { get; set; }
+		
+        /// <summary>
+        /// Metadata for SumOutgoingLoansForEmployeeFilter.ToDate property
+        /// </summary>
+		[Display(
+			Name = "ToDate",
+			ResourceType = typeof(Cf.Data.Resources.SumOutgoingLoansForEmployeeFilter))
+		]
+		[Tooltip("ToDateTooltip", typeof(Cf.Data.Resources.SumOutgoingLoansForEmployeeFilter))]
+		[DataType(
+			DataType.Date,
+			ErrorMessageResourceName = "DateCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<DateTime> ToDate { get; set; }
+		
+        /// <summary>
+        /// Metadata for SumOutgoingLoansForEmployeeFilter.Employee property
+        /// </summary>
+		[Display(
+			Name = "Employee",
+			ResourceType = typeof(Cf.Data.Resources.SumOutgoingLoansForEmployeeFilter))
+		]
+		[Tooltip("EmployeeTooltip", typeof(Cf.Data.Resources.SumOutgoingLoansForEmployeeFilter))]
+		[Range(
+			0,
+			2147483647,
+			ErrorMessageResourceName = "RangeCheck",
+			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+		]
+        public Nullable<int> Employee { get; set; }
 		#endregion
 	}
 	#endregion

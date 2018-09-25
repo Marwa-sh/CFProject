@@ -5464,6 +5464,165 @@ namespace Cf.Data.Resources
     }
     #endregion
 
+    #region EmployeeRefundableProductRollupVw class
+    /// <summary>
+    /// Resource management for Cf.Data.EmployeeRefundableProductRollupVw class
+    /// </summary>
+    public partial class EmployeeRefundableProductRollupVw : ResourceBase
+    {
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.EmployeeRefundableProductRollupVw class
+        /// </summary>
+        internal EmployeeRefundableProductRollupVw()
+        {
+        }
+/*
+        /// <summary>
+        /// Gets the Culture for which EmployeeRefundableProductRollupVw localized resources should be got
+        /// </summary>
+        public static string Culture
+        {
+            get
+            {
+                return System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName;
+            }
+        }
+*/
+
+        /// <summary>
+        /// Looks up a localized string similar to EmployeeId.
+        /// </summary>
+        public static string EmployeeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeRefundableProductRollupVw", "EmployeeId");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to EmployeeIdTooltip.
+        /// </summary>
+        public static string EmployeeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeRefundableProductRollupVw", "EmployeeIdTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductId.
+        /// </summary>
+        public static string ProductId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeRefundableProductRollupVw", "ProductId");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductIdTooltip.
+        /// </summary>
+        public static string ProductIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeRefundableProductRollupVw", "ProductIdTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to DueAmount.
+        /// </summary>
+        public static string DueAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeRefundableProductRollupVw", "DueAmount");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to DueAmountTooltip.
+        /// </summary>
+        public static string DueAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeRefundableProductRollupVw", "DueAmountTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to PaidAmount.
+        /// </summary>
+        public static string PaidAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeRefundableProductRollupVw", "PaidAmount");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to PaidAmountTooltip.
+        /// </summary>
+        public static string PaidAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeRefundableProductRollupVw", "PaidAmountTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to IsGroupingByProduct.
+        /// </summary>
+        public static string IsGroupingByProduct
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeRefundableProductRollupVw", "IsGroupingByProduct");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to IsGroupingByProductTooltip.
+        /// </summary>
+        public static string IsGroupingByProductTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeRefundableProductRollupVw", "IsGroupingByProductTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to IsGroupingByEmployee.
+        /// </summary>
+        public static string IsGroupingByEmployee
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeRefundableProductRollupVw", "IsGroupingByEmployee");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to IsGroupingByEmployeeTooltip.
+        /// </summary>
+        public static string IsGroupingByEmployeeTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeRefundableProductRollupVw", "IsGroupingByEmployeeTooltip");
+            }
+        }
+    }
+    #endregion
+
     #region EmployeeSeniorityVw class
     /// <summary>
     /// Resource management for Cf.Data.EmployeeSeniorityVw class
@@ -7884,28 +8043,6 @@ namespace Cf.Data.Resources
         }
 
         /// <summary>
-        /// Looks up a localized string similar to Parameters.
-        /// </summary>
-        public static string Parameters
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EventLog", "Parameters");
-            }
-        }
-        
-        /// <summary>
-        /// Looks up a localized string similar to ParametersTooltip.
-        /// </summary>
-        public static string ParametersTooltip
-        {
-            get
-            {
-                return ResourcesCollection.GetString(Culture, "EventLog", "ParametersTooltip");
-            }
-        }
-
-        /// <summary>
         /// Looks up a localized string similar to Date.
         /// </summary>
         public static string Date
@@ -7946,6 +8083,28 @@ namespace Cf.Data.Resources
             get
             {
                 return ResourcesCollection.GetString(Culture, "EventLog", "UserTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to Parameters.
+        /// </summary>
+        public static string Parameters
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EventLog", "Parameters");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ParametersTooltip.
+        /// </summary>
+        public static string ParametersTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EventLog", "ParametersTooltip");
             }
         }
     }
@@ -35535,6 +35694,1397 @@ namespace Cf.Data.Resources
             get
             {
                 return ResourcesCollection.GetString(Culture, "OutgoingLoan", "ProfitAmountTooltip");
+            }
+        }
+    }
+    #endregion
+
+    #region LoanExtendedVw class
+    /// <summary>
+    /// Resource management for Cf.Data.LoanExtendedVw class
+    /// </summary>
+    public partial class LoanExtendedVw : ResourceBase
+    {
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.LoanExtendedVw class
+        /// </summary>
+        internal LoanExtendedVw()
+        {
+        }
+/*
+        /// <summary>
+        /// Gets the Culture for which LoanExtendedVw localized resources should be got
+        /// </summary>
+        public static string Culture
+        {
+            get
+            {
+                return System.Threading.Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName;
+            }
+        }
+*/
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductId.
+        /// </summary>
+        public static string ProductId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductId");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductIdTooltip.
+        /// </summary>
+        public static string ProductIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductIdTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeId.
+        /// </summary>
+        public static string ProductEmployeeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeId");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeIdTooltip.
+        /// </summary>
+        public static string ProductEmployeeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeIdTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeFirstName.
+        /// </summary>
+        public static string ProductEmployeeFirstName
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeFirstName");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeFirstNameTooltip.
+        /// </summary>
+        public static string ProductEmployeeFirstNameTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeFirstNameTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeLastName.
+        /// </summary>
+        public static string ProductEmployeeLastName
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeLastName");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeLastNameTooltip.
+        /// </summary>
+        public static string ProductEmployeeLastNameTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeLastNameTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeFullName.
+        /// </summary>
+        public static string ProductEmployeeFullName
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeFullName");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeFullNameTooltip.
+        /// </summary>
+        public static string ProductEmployeeFullNameTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeFullNameTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeFatherName.
+        /// </summary>
+        public static string ProductEmployeeFatherName
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeFatherName");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeFatherNameTooltip.
+        /// </summary>
+        public static string ProductEmployeeFatherNameTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeFatherNameTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeFullName3.
+        /// </summary>
+        public static string ProductEmployeeFullName3
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeFullName3");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeFullName3Tooltip.
+        /// </summary>
+        public static string ProductEmployeeFullName3Tooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeFullName3Tooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeMotherName.
+        /// </summary>
+        public static string ProductEmployeeMotherName
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeMotherName");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeMotherNameTooltip.
+        /// </summary>
+        public static string ProductEmployeeMotherNameTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeMotherNameTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeBirthDate.
+        /// </summary>
+        public static string ProductEmployeeBirthDate
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeBirthDate");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeBirthDateTooltip.
+        /// </summary>
+        public static string ProductEmployeeBirthDateTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeBirthDateTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeExpectedEndDate.
+        /// </summary>
+        public static string ProductEmployeeExpectedEndDate
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeExpectedEndDate");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeExpectedEndDateTooltip.
+        /// </summary>
+        public static string ProductEmployeeExpectedEndDateTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeExpectedEndDateTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeCersStartDate.
+        /// </summary>
+        public static string ProductEmployeeCersStartDate
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeCersStartDate");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeCersStartDateTooltip.
+        /// </summary>
+        public static string ProductEmployeeCersStartDateTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeCersStartDateTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeCfStartDate.
+        /// </summary>
+        public static string ProductEmployeeCfStartDate
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeCfStartDate");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeCfStartDateTooltip.
+        /// </summary>
+        public static string ProductEmployeeCfStartDateTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeCfStartDateTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeLeaveDate.
+        /// </summary>
+        public static string ProductEmployeeLeaveDate
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeLeaveDate");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeLeaveDateTooltip.
+        /// </summary>
+        public static string ProductEmployeeLeaveDateTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeLeaveDateTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeLeaveReason.
+        /// </summary>
+        public static string ProductEmployeeLeaveReason
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeLeaveReason");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeLeaveReasonTooltip.
+        /// </summary>
+        public static string ProductEmployeeLeaveReasonTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeLeaveReasonTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeEmployeeStatusId.
+        /// </summary>
+        public static string ProductEmployeeEmployeeStatusId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeEmployeeStatusId");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeEmployeeStatusIdTooltip.
+        /// </summary>
+        public static string ProductEmployeeEmployeeStatusIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeEmployeeStatusIdTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeEmployeeStatusName.
+        /// </summary>
+        public static string ProductEmployeeEmployeeStatusName
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeEmployeeStatusName");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeEmployeeStatusNameTooltip.
+        /// </summary>
+        public static string ProductEmployeeEmployeeStatusNameTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeEmployeeStatusNameTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeEmployeeStatusIsActive.
+        /// </summary>
+        public static string ProductEmployeeEmployeeStatusIsActive
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeEmployeeStatusIsActive");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeEmployeeStatusIsActiveTooltip.
+        /// </summary>
+        public static string ProductEmployeeEmployeeStatusIsActiveTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeEmployeeStatusIsActiveTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeDepartmentId.
+        /// </summary>
+        public static string ProductEmployeeDepartmentId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeDepartmentId");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeDepartmentIdTooltip.
+        /// </summary>
+        public static string ProductEmployeeDepartmentIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeDepartmentIdTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeDepartmentName.
+        /// </summary>
+        public static string ProductEmployeeDepartmentName
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeDepartmentName");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeDepartmentNameTooltip.
+        /// </summary>
+        public static string ProductEmployeeDepartmentNameTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeDepartmentNameTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeDepartmentSalaryWorkPlaceId.
+        /// </summary>
+        public static string ProductEmployeeDepartmentSalaryWorkPlaceId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeDepartmentSalaryWorkPlaceId");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeDepartmentSalaryWorkPlaceIdTooltip.
+        /// </summary>
+        public static string ProductEmployeeDepartmentSalaryWorkPlaceIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeDepartmentSalaryWorkPlaceIdTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeDepartmentSalaryWorkPlaceName.
+        /// </summary>
+        public static string ProductEmployeeDepartmentSalaryWorkPlaceName
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeDepartmentSalaryWorkPlaceName");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeDepartmentSalaryWorkPlaceNameTooltip.
+        /// </summary>
+        public static string ProductEmployeeDepartmentSalaryWorkPlaceNameTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeDepartmentSalaryWorkPlaceNameTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId.
+        /// </summary>
+        public static string ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceIdTooltip.
+        /// </summary>
+        public static string ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceIdTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName.
+        /// </summary>
+        public static string ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceNameTooltip.
+        /// </summary>
+        public static string ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceNameTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceNameTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeNotes.
+        /// </summary>
+        public static string ProductEmployeeNotes
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeNotes");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeNotesTooltip.
+        /// </summary>
+        public static string ProductEmployeeNotesTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeNotesTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeCategoryId.
+        /// </summary>
+        public static string ProductEmployeeCategoryId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeCategoryId");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeCategoryIdTooltip.
+        /// </summary>
+        public static string ProductEmployeeCategoryIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeCategoryIdTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeCategoryName.
+        /// </summary>
+        public static string ProductEmployeeCategoryName
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeCategoryName");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductEmployeeCategoryNameTooltip.
+        /// </summary>
+        public static string ProductEmployeeCategoryNameTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductEmployeeCategoryNameTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductProductTypeId.
+        /// </summary>
+        public static string ProductProductTypeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductProductTypeId");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductProductTypeIdTooltip.
+        /// </summary>
+        public static string ProductProductTypeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductProductTypeIdTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductProductTypeName.
+        /// </summary>
+        public static string ProductProductTypeName
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductProductTypeName");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductProductTypeNameTooltip.
+        /// </summary>
+        public static string ProductProductTypeNameTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductProductTypeNameTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductProductTypeRate.
+        /// </summary>
+        public static string ProductProductTypeRate
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductProductTypeRate");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductProductTypeRateTooltip.
+        /// </summary>
+        public static string ProductProductTypeRateTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductProductTypeRateTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductProductTypeGuarantorsCount.
+        /// </summary>
+        public static string ProductProductTypeGuarantorsCount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductProductTypeGuarantorsCount");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductProductTypeGuarantorsCountTooltip.
+        /// </summary>
+        public static string ProductProductTypeGuarantorsCountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductProductTypeGuarantorsCountTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductProductTypeAccountNumber.
+        /// </summary>
+        public static string ProductProductTypeAccountNumber
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductProductTypeAccountNumber");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductProductTypeAccountNumberTooltip.
+        /// </summary>
+        public static string ProductProductTypeAccountNumberTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductProductTypeAccountNumberTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductProductTypePrintLabel.
+        /// </summary>
+        public static string ProductProductTypePrintLabel
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductProductTypePrintLabel");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductProductTypePrintLabelTooltip.
+        /// </summary>
+        public static string ProductProductTypePrintLabelTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductProductTypePrintLabelTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductProductTypeProfitStrategyId.
+        /// </summary>
+        public static string ProductProductTypeProfitStrategyId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductProductTypeProfitStrategyId");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductProductTypeProfitStrategyIdTooltip.
+        /// </summary>
+        public static string ProductProductTypeProfitStrategyIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductProductTypeProfitStrategyIdTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductProductTypeProfitStrategyName.
+        /// </summary>
+        public static string ProductProductTypeProfitStrategyName
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductProductTypeProfitStrategyName");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductProductTypeProfitStrategyNameTooltip.
+        /// </summary>
+        public static string ProductProductTypeProfitStrategyNameTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductProductTypeProfitStrategyNameTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductProductTypePaymentGroupId.
+        /// </summary>
+        public static string ProductProductTypePaymentGroupId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductProductTypePaymentGroupId");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductProductTypePaymentGroupIdTooltip.
+        /// </summary>
+        public static string ProductProductTypePaymentGroupIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductProductTypePaymentGroupIdTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductProductTypePaymentGroupName.
+        /// </summary>
+        public static string ProductProductTypePaymentGroupName
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductProductTypePaymentGroupName");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductProductTypePaymentGroupNameTooltip.
+        /// </summary>
+        public static string ProductProductTypePaymentGroupNameTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductProductTypePaymentGroupNameTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductProductTypeIsActive.
+        /// </summary>
+        public static string ProductProductTypeIsActive
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductProductTypeIsActive");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductProductTypeIsActiveTooltip.
+        /// </summary>
+        public static string ProductProductTypeIsActiveTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductProductTypeIsActiveTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductAmount.
+        /// </summary>
+        public static string ProductAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductAmount");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductAmountTooltip.
+        /// </summary>
+        public static string ProductAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductAmountTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductNotes.
+        /// </summary>
+        public static string ProductNotes
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductNotes");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to ProductNotesTooltip.
+        /// </summary>
+        public static string ProductNotesTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "ProductNotesTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionId.
+        /// </summary>
+        public static string LoanDecisionId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanDecisionId");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionIdTooltip.
+        /// </summary>
+        public static string LoanDecisionIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanDecisionIdTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionNumber.
+        /// </summary>
+        public static string LoanDecisionNumber
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanDecisionNumber");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionNumberTooltip.
+        /// </summary>
+        public static string LoanDecisionNumberTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanDecisionNumberTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionYear.
+        /// </summary>
+        public static string LoanDecisionYear
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanDecisionYear");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionYearTooltip.
+        /// </summary>
+        public static string LoanDecisionYearTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanDecisionYearTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionDate.
+        /// </summary>
+        public static string LoanDecisionDate
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanDecisionDate");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionDateTooltip.
+        /// </summary>
+        public static string LoanDecisionDateTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanDecisionDateTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionDeductionStartDate.
+        /// </summary>
+        public static string LoanDecisionDeductionStartDate
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanDecisionDeductionStartDate");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionDeductionStartDateTooltip.
+        /// </summary>
+        public static string LoanDecisionDeductionStartDateTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanDecisionDeductionStartDateTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionCersNumber.
+        /// </summary>
+        public static string LoanDecisionCersNumber
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanDecisionCersNumber");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionCersNumberTooltip.
+        /// </summary>
+        public static string LoanDecisionCersNumberTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanDecisionCersNumberTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionCersDate.
+        /// </summary>
+        public static string LoanDecisionCersDate
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanDecisionCersDate");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionCersDateTooltip.
+        /// </summary>
+        public static string LoanDecisionCersDateTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanDecisionCersDateTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionNotes.
+        /// </summary>
+        public static string LoanDecisionNotes
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanDecisionNotes");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionNotesTooltip.
+        /// </summary>
+        public static string LoanDecisionNotesTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanDecisionNotesTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionLoanDecisionTypeId.
+        /// </summary>
+        public static string LoanDecisionLoanDecisionTypeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanDecisionLoanDecisionTypeId");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionLoanDecisionTypeIdTooltip.
+        /// </summary>
+        public static string LoanDecisionLoanDecisionTypeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanDecisionLoanDecisionTypeIdTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionLoanDecisionTypeName.
+        /// </summary>
+        public static string LoanDecisionLoanDecisionTypeName
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanDecisionLoanDecisionTypeName");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionLoanDecisionTypeNameTooltip.
+        /// </summary>
+        public static string LoanDecisionLoanDecisionTypeNameTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanDecisionLoanDecisionTypeNameTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionPaymentNumber.
+        /// </summary>
+        public static string LoanDecisionPaymentNumber
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanDecisionPaymentNumber");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionPaymentNumberTooltip.
+        /// </summary>
+        public static string LoanDecisionPaymentNumberTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanDecisionPaymentNumberTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionPaymentDate.
+        /// </summary>
+        public static string LoanDecisionPaymentDate
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanDecisionPaymentDate");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionPaymentDateTooltip.
+        /// </summary>
+        public static string LoanDecisionPaymentDateTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanDecisionPaymentDateTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionIsPaidFromSalary.
+        /// </summary>
+        public static string LoanDecisionIsPaidFromSalary
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanDecisionIsPaidFromSalary");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionIsPaidFromSalaryTooltip.
+        /// </summary>
+        public static string LoanDecisionIsPaidFromSalaryTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanDecisionIsPaidFromSalaryTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionReason.
+        /// </summary>
+        public static string LoanDecisionReason
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanDecisionReason");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionReasonTooltip.
+        /// </summary>
+        public static string LoanDecisionReasonTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanDecisionReasonTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionAdditionalClause.
+        /// </summary>
+        public static string LoanDecisionAdditionalClause
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanDecisionAdditionalClause");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionAdditionalClauseTooltip.
+        /// </summary>
+        public static string LoanDecisionAdditionalClauseTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanDecisionAdditionalClauseTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionAdditionalIntroduction.
+        /// </summary>
+        public static string LoanDecisionAdditionalIntroduction
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanDecisionAdditionalIntroduction");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionAdditionalIntroductionTooltip.
+        /// </summary>
+        public static string LoanDecisionAdditionalIntroductionTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanDecisionAdditionalIntroductionTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to LoanType.
+        /// </summary>
+        public static string LoanType
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanType");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to LoanTypeTooltip.
+        /// </summary>
+        public static string LoanTypeTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanTypeTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to LoanGenerationStatusId.
+        /// </summary>
+        public static string LoanGenerationStatusId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanGenerationStatusId");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to LoanGenerationStatusIdTooltip.
+        /// </summary>
+        public static string LoanGenerationStatusIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanGenerationStatusIdTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to LoanGenerationStatusName.
+        /// </summary>
+        public static string LoanGenerationStatusName
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanGenerationStatusName");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to LoanGenerationStatusNameTooltip.
+        /// </summary>
+        public static string LoanGenerationStatusNameTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanGenerationStatusNameTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to LoanStatusId.
+        /// </summary>
+        public static string LoanStatusId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanStatusId");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to LoanStatusIdTooltip.
+        /// </summary>
+        public static string LoanStatusIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanStatusIdTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to LoanStatusName.
+        /// </summary>
+        public static string LoanStatusName
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanStatusName");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to LoanStatusNameTooltip.
+        /// </summary>
+        public static string LoanStatusNameTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "LoanStatusNameTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to RefundableProductProfitAmount.
+        /// </summary>
+        public static string RefundableProductProfitAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "RefundableProductProfitAmount");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to RefundableProductProfitAmountTooltip.
+        /// </summary>
+        public static string RefundableProductProfitAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "RefundableProductProfitAmountTooltip");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to RefundableProductNetAmount.
+        /// </summary>
+        public static string RefundableProductNetAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "RefundableProductNetAmount");
+            }
+        }
+        
+        /// <summary>
+        /// Looks up a localized string similar to RefundableProductNetAmountTooltip.
+        /// </summary>
+        public static string RefundableProductNetAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanExtendedVw", "RefundableProductNetAmountTooltip");
             }
         }
     }

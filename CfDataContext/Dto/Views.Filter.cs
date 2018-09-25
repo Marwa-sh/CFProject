@@ -2300,6 +2300,140 @@ namespace Cf.Data
     }
 	#endregion
 
+	#region LoanExtendedVwFilter class definition
+	/// <summary>
+    /// Filter class for LoanExtendedVw
+	/// </summary>
+    [MetadataType(typeof(LoanExtendedVwFilterMetaData))]
+	public partial class LoanExtendedVwFilter : Query
+	{
+        #region Constructors
+        public LoanExtendedVwFilter()
+        {
+
+            // Fill Select clause
+            Select.Columns.Add("[ProductId]");
+            Select.Columns.Add("[ProductEmployeeId]");
+            Select.Columns.Add("[ProductEmployeeFirstName]");
+            Select.Columns.Add("[ProductEmployeeLastName]");
+            Select.Columns.Add("[ProductEmployeeFullName]");
+            Select.Columns.Add("[ProductEmployeeFatherName]");
+            Select.Columns.Add("[ProductEmployeeFullName3]");
+            Select.Columns.Add("[ProductEmployeeMotherName]");
+            Select.Columns.Add("[ProductEmployeeBirthDate]");
+            Select.Columns.Add("[ProductEmployeeExpectedEndDate]");
+            Select.Columns.Add("[ProductEmployeeCersStartDate]");
+            Select.Columns.Add("[ProductEmployeeCfStartDate]");
+            Select.Columns.Add("[ProductEmployeeLeaveDate]");
+            Select.Columns.Add("[ProductEmployeeLeaveReason]");
+            Select.Columns.Add("[ProductEmployeeEmployeeStatusId]");
+            Select.Columns.Add("[ProductEmployeeEmployeeStatusName]");
+            Select.Columns.Add("[ProductEmployeeEmployeeStatusIsActive]");
+            Select.Columns.Add("[ProductEmployeeDepartmentId]");
+            Select.Columns.Add("[ProductEmployeeDepartmentName]");
+            Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceId]");
+            Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceName]");
+            Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceId]");
+            Select.Columns.Add("[ProductEmployeeDepartmentSalaryWorkPlaceMainWorkPlaceName]");
+            Select.Columns.Add("[ProductEmployeeNotes]");
+            Select.Columns.Add("[ProductEmployeeCategoryId]");
+            Select.Columns.Add("[ProductEmployeeCategoryName]");
+            Select.Columns.Add("[ProductProductTypeId]");
+            Select.Columns.Add("[ProductProductTypeName]");
+            Select.Columns.Add("[ProductProductTypeRate]");
+            Select.Columns.Add("[ProductProductTypeGuarantorsCount]");
+            Select.Columns.Add("[ProductProductTypeAccountNumber]");
+            Select.Columns.Add("[ProductProductTypePrintLabel]");
+            Select.Columns.Add("[ProductProductTypeProfitStrategyId]");
+            Select.Columns.Add("[ProductProductTypeProfitStrategyName]");
+            Select.Columns.Add("[ProductProductTypePaymentGroupId]");
+            Select.Columns.Add("[ProductProductTypePaymentGroupName]");
+            Select.Columns.Add("[ProductProductTypeIsActive]");
+            Select.Columns.Add("[ProductAmount]");
+            Select.Columns.Add("[ProductNotes]");
+            Select.Columns.Add("[LoanDecisionId]");
+            Select.Columns.Add("[LoanDecisionNumber]");
+            Select.Columns.Add("[LoanDecisionYear]");
+            Select.Columns.Add("[LoanDecisionDate]");
+            Select.Columns.Add("[LoanDecisionDeductionStartDate]");
+            Select.Columns.Add("[LoanDecisionCersNumber]");
+            Select.Columns.Add("[LoanDecisionCersDate]");
+            Select.Columns.Add("[LoanDecisionNotes]");
+            Select.Columns.Add("[LoanDecisionLoanDecisionTypeId]");
+            Select.Columns.Add("[LoanDecisionLoanDecisionTypeName]");
+            Select.Columns.Add("[LoanDecisionPaymentNumber]");
+            Select.Columns.Add("[LoanDecisionPaymentDate]");
+            Select.Columns.Add("[LoanDecisionIsPaidFromSalary]");
+            Select.Columns.Add("[LoanDecisionReason]");
+            Select.Columns.Add("[LoanDecisionAdditionalClause]");
+            Select.Columns.Add("[LoanDecisionAdditionalIntroduction]");
+            Select.Columns.Add("[LoanType]");
+            Select.Columns.Add("[LoanGenerationStatusId]");
+            Select.Columns.Add("[LoanGenerationStatusName]");
+            Select.Columns.Add("[LoanStatusId]");
+            Select.Columns.Add("[LoanStatusName]");
+            Select.Columns.Add("[RefundableProductProfitAmount]");
+            Select.Columns.Add("[RefundableProductNetAmount]");
+            FromClause = "[dbo].[LoanExtendedVw]";
+        }
+        #endregion
+
+        #region Public properties
+
+		public Nullable<int> ProductEmployeeId { get; set; }
+		public Nullable<short> ProductProductTypeId { get; set; }
+		public Nullable<short> LoanDecisionYear { get; set; }
+		public Nullable<DateTime> MinLoanDecisionDate { get; set; }
+		public Nullable<DateTime> MaxLoanDecisionDate { get; set; }
+		public Nullable<DateTime> MinLoanDecisionDeductionStartDate { get; set; }
+		public Nullable<DateTime> MaxLoanDecisionDeductionStartDate { get; set; }
+		public Nullable<byte> LoanGenerationStatusId { get; set; }
+		public Nullable<byte> LoanStatusId { get; set; }
+		#endregion
+
+        #region Overrides
+        protected override void ResetCriteria()
+        {
+            // Clear Criteria
+            Criteria.Clear();
+
+            CriterionBase criterion;
+            // If you need to use parameters, please uncomment the following line
+            // Parameter[] parameters;
+
+			// Add ProductEmployeeId criterion
+			criterion = new SimpleCriterion("[ProductEmployeeId]", SqlDbType.Int, OperatorType.Equals, new Parameter("@ProductEmployeeId", ProductEmployeeId));
+			Criteria.Add(criterion);
+
+			// Add ProductProductTypeId criterion
+			criterion = new SimpleCriterion("[ProductProductTypeId]", SqlDbType.SmallInt, OperatorType.Equals, new Parameter("@ProductProductTypeId", ProductProductTypeId));
+			Criteria.Add(criterion);
+
+			// Add LoanDecisionYear criterion
+			criterion = new SimpleCriterion("[LoanDecisionYear]", SqlDbType.SmallInt, OperatorType.Equals, new Parameter("@LoanDecisionYear", LoanDecisionYear));
+			Criteria.Add(criterion);
+
+			// Add LoanDecisionDateDateBetween criterion
+			criterion = new DateBetweenCriterion("[LoanDecisionDate]", SqlDbType.Date, new Parameter("@MinLoanDecisionDate", MinLoanDecisionDate), new Parameter("@MaxLoanDecisionDate", MaxLoanDecisionDate));
+			Criteria.Add(criterion);
+
+			// Add LoanDecisionDeductionStartDateDateBetween criterion
+			criterion = new DateBetweenCriterion("[LoanDecisionDeductionStartDate]", SqlDbType.Date, new Parameter("@MinLoanDecisionDeductionStartDate", MinLoanDecisionDeductionStartDate), new Parameter("@MaxLoanDecisionDeductionStartDate", MaxLoanDecisionDeductionStartDate));
+			Criteria.Add(criterion);
+
+			// Add LoanGenerationStatusId criterion
+			criterion = new SimpleCriterion("[LoanGenerationStatusId]", SqlDbType.TinyInt, OperatorType.Equals, new Parameter("@LoanGenerationStatusId", LoanGenerationStatusId));
+			Criteria.Add(criterion);
+
+			// Add LoanStatusId criterion
+			criterion = new SimpleCriterion("[LoanStatusId]", SqlDbType.TinyInt, OperatorType.Equals, new Parameter("@LoanStatusId", LoanStatusId));
+			Criteria.Add(criterion);
+
+        }
+        #endregion
+    }
+	#endregion
+
 	#region LoanRequestVwFilter class definition
 	/// <summary>
     /// Filter class for LoanRequestVw

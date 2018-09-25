@@ -960,6 +960,44 @@ namespace Cf.Services
     }
     #endregion
 
+    #region LoanExtendedVwServices
+    public static partial class LoanExtendedVwServices
+    {
+		public static List<LoanExtendedVw> Get(LoanExtendedVwFilter filter)
+		{
+            Db db = new Db(DbServices.ConnectionString);
+			return Get(filter, db);
+		}
+
+		public static List<LoanExtendedVw> Get(LoanExtendedVwFilter filter, Db db)
+		{
+			return db.Get(filter);
+		}
+
+        public static List<LoanExtendedVw> GetPage(LoanExtendedVwFilter filter, int pageIndex, int pageSize)
+		{
+            Db db = new Db(DbServices.ConnectionString);
+            return GetPage(filter, pageIndex, pageSize, db);
+		}
+
+        public static List<LoanExtendedVw> GetPage(LoanExtendedVwFilter filter, int pageIndex, int pageSize, Db db)
+		{
+			return db.GetPage(filter, pageIndex, pageSize);
+		}
+
+        public static int GetTotalRowCount(LoanExtendedVwFilter filter)
+        {
+            Db db = new Db(DbServices.ConnectionString);
+            return GetTotalRowCount(filter, db);
+        }
+
+        public static int GetTotalRowCount(LoanExtendedVwFilter filter, Db db)
+        {
+            return db.GetTotalRowCount(filter);
+        }
+    }
+    #endregion
+
     #region LoanRequestVwServices
     public static partial class LoanRequestVwServices
     {

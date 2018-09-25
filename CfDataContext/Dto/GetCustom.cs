@@ -510,6 +510,8 @@ namespace Cf.Data
 		#region Public properties
         public int EmployeeId {get; set; }
 		
+        public string FullName {get; set; }
+		
         public decimal DebtRemainingAmount {get; set; }
 		
         public decimal WarrantRemainingAmount {get; set; }
@@ -564,6 +566,8 @@ namespace Cf.Data
 	{
 		#region Public properties
         public int EmployeeId {get; set; }
+		
+        public string FullName {get; set; }
 		
         public int HasDebts {get; set; }
 		
@@ -1015,10 +1019,15 @@ namespace Cf.Data
 		/// Needs summary!
 		/// </summary>
 		public Nullable<DateTime> MinMonth {get; set; }
+		
 		/// <summary>
 		/// Needs summary!
 		/// </summary>
 		public Nullable<DateTime> MaxMonth {get; set; }
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<int> EmployeeId {get; set; }
 		#endregion
 	}
 	#endregion
@@ -1404,4 +1413,85 @@ namespace Cf.Data
 	}
 	#endregion
     #endregion
+
+	#region SumComingLoansForEmployee filter and result classes
+    #region SumComingLoansForEmployeeFilter class definition
+	/// <summary>
+    /// Filter class for SumComingLoansForEmployee.
+	/// </summary>
+    [MetadataType(typeof(SumComingLoansForEmployeeFilterMetaData))]
+	public partial class SumComingLoansForEmployeeFilter
+	{
+		#region Public properties
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<DateTime> FromDate {get; set; }
+		
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<DateTime> ToDate {get; set; }
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<int> Employee {get; set; }
+		#endregion
+	}
+	#endregion
+	#endregion
+
+	#region SumLoansForEmployee filter and result classes
+    #region SumLoansForEmployeeFilter class definition
+	/// <summary>
+    /// Filter class for SumLoansForEmployee.
+	/// </summary>
+    [MetadataType(typeof(SumLoansForEmployeeFilterMetaData))]
+	public partial class SumLoansForEmployeeFilter
+	{
+		#region Public properties
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<DateTime> FromDate {get; set; }
+		
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<DateTime> ToDate {get; set; }
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<int> Employee {get; set; }
+		#endregion
+	}
+	#endregion
+	#endregion
+
+	#region SumOutgoingLoansForEmployee filter and result classes
+    #region SumOutgoingLoansForEmployeeFilter class definition
+	/// <summary>
+    /// Filter class for SumOutgoingLoansForEmployee.
+	/// </summary>
+    [MetadataType(typeof(SumOutgoingLoansForEmployeeFilterMetaData))]
+	public partial class SumOutgoingLoansForEmployeeFilter
+	{
+		#region Public properties
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<DateTime> FromDate {get; set; }
+		
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<DateTime> ToDate {get; set; }
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<int> Employee {get; set; }
+		#endregion
+	}
+	#endregion
+	#endregion
 }

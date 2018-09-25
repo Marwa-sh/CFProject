@@ -387,6 +387,21 @@ namespace Cf.Data
         }
         #endregion
 
+        #region LoanExtendedVw
+        public List<LoanExtendedVw> Get(LoanExtendedVwFilter filter)
+        {
+            return ExecuteQuery<LoanExtendedVw>(filter.ToString(ParameterReplacementOption.BracketEnclosedNumber), filter.ExtractValues().ToArray()).ToList<LoanExtendedVw>();
+        }
+        public List<LoanExtendedVw> GetPage(LoanExtendedVwFilter filter, int pageIndex, int pageSize)
+        {
+            return ExecuteQuery<LoanExtendedVw>(filter.ToString(pageIndex, pageSize, ParameterReplacementOption.BracketEnclosedNumber), filter.ExtractValues().ToArray()).ToList<LoanExtendedVw>();
+        }
+        public int GetTotalRowCount(LoanExtendedVwFilter filter)
+        {
+            return ExecuteQuery<Scalar<int>>(filter.GetTotalRowCountStatement(ParameterReplacementOption.BracketEnclosedNumber), filter.ExtractValues().ToArray()).First<Scalar<int>>().Value;
+        }
+        #endregion
+
         #region LoanRequestVw
         public List<LoanRequestVw> Get(LoanRequestVwFilter filter)
         {

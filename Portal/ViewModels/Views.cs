@@ -3,7 +3,6 @@ using System.Reflection;
 using System.Collections.Generic;
 using System.Linq;
 using Cf.Data;
-// using PagedList;
 
 namespace Cf.ViewModels
 {
@@ -173,6 +172,23 @@ namespace Cf.ViewModels
         /// An instance of EmployeeDetailVw to be returned in the model
 		/// </summary>
         public EmployeeDetailVw Instance {get; set; } = new EmployeeDetailVw();
+        #endregion
+	}
+	#endregion
+
+    #region EmployeeRefundableProductRollupVw class definition
+    public partial class EmployeeRefundableProductRollupVwViewModel
+	{
+		#region Public properties
+		/// <summary>
+        /// A list of EmployeeRefundableProductRollupVw objects to be returned in the model
+		/// </summary>
+		public List<EmployeeRefundableProductRollupVw> List {get; set; } = new List<EmployeeRefundableProductRollupVw>();
+
+        /// <summary>
+        /// An instance of EmployeeRefundableProductRollupVw to be returned in the model
+		/// </summary>
+        public EmployeeRefundableProductRollupVw Instance {get; set; } = new EmployeeRefundableProductRollupVw();
         #endregion
 	}
 	#endregion
@@ -853,6 +869,23 @@ namespace Cf.ViewModels
         /// An instance of LoanDetailVw to be returned in the model
 		/// </summary>
         public LoanDetailVw Instance {get; set; } = new LoanDetailVw();
+        #endregion
+	}
+	#endregion
+
+    #region LoanExtendedVw class definition
+    public partial class LoanExtendedVwViewModel
+	{
+		#region Public properties
+		/// <summary>
+        /// A list of LoanExtendedVw objects to be returned in the model
+		/// </summary>
+		public List<LoanExtendedVw> List {get; set; } = new List<LoanExtendedVw>();
+
+        /// <summary>
+        /// An instance of LoanExtendedVw to be returned in the model
+		/// </summary>
+        public LoanExtendedVw Instance {get; set; } = new LoanExtendedVw();
         #endregion
 	}
 	#endregion

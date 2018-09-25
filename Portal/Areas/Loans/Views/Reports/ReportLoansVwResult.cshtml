@@ -1,0 +1,76 @@
+@model IEnumerable<Cf.Data.LoanExtendedVw>
+
+
+<table class="table table-bordered mb-0">
+    <thead class="bg-primary table-head-color">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductEmployeeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductEmployeeFullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductProductTypeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoanGenerationStatusName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoanStatusName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RefundableProductNetAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RefundableProductProfitAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoanDecisionNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoanDecisionDate)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductEmployeeId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductEmployeeFullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductProductTypeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LoanGenerationStatusName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LoanStatusName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RefundableProductNetAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RefundableProductProfitAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LoanDecisionNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LoanDecisionDate)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

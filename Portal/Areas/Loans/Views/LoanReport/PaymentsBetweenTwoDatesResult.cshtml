@@ -1,0 +1,30 @@
+﻿@model Cf.Data.PaymentBetweenTwoDatesResult
+
+
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.Filter.RequestProductEmployeeFullNameContains, htmlAttributes: new { @class = "control-label" })*@
+            @Html.LabelFor(model => model.FirstMonthAmount, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.FirstMonthAmount)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+            @Html.DisplayFor(model => model.FirstMonthAmount, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.Filter.RequestProductEmployeeId, htmlAttributes: new { @class = "control-label" })*@
+            @Html.LabelFor(model => model.SecondMonthAmount, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.SecondMonthAmount)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+            @Html.DisplayFor(model => model.SecondMonthAmount, new { @class = "form-control" })
+        </div>
+    </div>
+</div>

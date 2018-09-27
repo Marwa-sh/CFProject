@@ -1,0 +1,46 @@
+@model IEnumerable<Cf.Data.ReportLoansBetweenTwoDatesResult>
+
+<div id="printDiv" class="table-responsive">
+    <table class="table">
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductProductTypeId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductProductTypeName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Amounts)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LoanCounts)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProfitAmount)
+                </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProductProductTypeId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProductProductTypeName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Amounts)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LoanCounts)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProfitAmount)
+                        </td>
+            </tr>
+        }
+
+    </table>
+</div>
+

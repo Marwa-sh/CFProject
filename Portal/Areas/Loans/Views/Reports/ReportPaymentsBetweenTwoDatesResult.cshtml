@@ -1,0 +1,138 @@
+@model IEnumerable<Cf.Data.ReportPaymentsBetweenTwoDatesResult>
+
+<div class="table-responsive">
+    <table class="table">
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstEmployeeId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstEmployeeFullName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstSalaryWorkPlaceName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstAmount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstPaymentGroupId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstPaymentGroupName)
+                </th>
+                @*<th>
+                    @Html.DisplayNameFor(model => model.SecondEmployeeId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SecondEmployeeFullName)
+                </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.SecondSalaryWorkPlaceName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SecondAmount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SecondDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SecondPaymentGroupId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SecondPaymentGroupName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PaymentDiffrence)
+                </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstEmployeeId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstEmployeeFullName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstSalaryWorkPlaceName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstAmount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstDate)
+                        </td>
+                        @*<td>
+                            @Html.DisplayFor(modelItem => item.FirstPaymentGroupId)
+                        </td>*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstPaymentGroupName)
+                        </td>
+                        @*<td>
+                            @Html.DisplayFor(modelItem => item.SecondEmployeeId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SecondEmployeeFullName)
+                        </td>*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SecondSalaryWorkPlaceName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SecondAmount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SecondDate) 
+                        </td>
+                        @*<td>
+                            @Html.DisplayFor(modelItem => item.SecondPaymentGroupId)
+                        </td>*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SecondPaymentGroupName)
+                        </td>
+                        <td>
+                            @{
+                                int diff = item.PaymentDiffrence.Value;
+                                switch (diff)
+                                {
+                                    case 0:
+                                        {
+                                            @ViewBag.EqualAmounts
+                                            break;
+                                        }
+                                    case 1:
+                                        {
+                                            @ViewBag.DiffAmountsMore
+                                            break;
+                                        }
+                                    case -1:
+                                        {
+                                            @ViewBag.DiffAmountsLess
+                                            break;
+                                        }
+                                    case 2:
+                                        {
+                                            @ViewBag.NewAmounts
+                                            break;
+                                        }
+                                    case 3:
+                                        {
+                                            @ViewBag.FinishedAmounts
+                                            break;
+                                        }
+                                    default:
+                                        break;
+                                }
+                            }
+                        </td>
+            </tr>
+        }
+
+    </table>
+</div>
+

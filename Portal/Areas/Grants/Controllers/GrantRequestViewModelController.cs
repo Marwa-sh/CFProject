@@ -239,5 +239,25 @@ namespace Portal.Areas.Grants.Controllers
             }
         }
         #endregion
+
+        #region getGrantTypeAmount
+        public JsonResult getGrantTypeAmount(int id)
+        {
+            GrantType type = GrantTypeServices.Get((byte)id);
+            if(type != null)
+            {
+                if(type.Amount == null)
+                {
+                    return Json(new { amount = 0 }, JsonRequestBehavior.AllowGet);
+                }
+                else
+                    return Json(new { amount = type.Amount }, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(new { amount = 0 }, JsonRequestBehavior.AllowGet);
+            }
+        }
+        #endregion
     }
 }

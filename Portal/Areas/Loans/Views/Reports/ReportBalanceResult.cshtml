@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Cf.Data.ReportMonthlyBalanceSumResult>
+
+<div class="table-responsive">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeFullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Opening)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NormalLoans)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OutgoingLoans)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IncomingLoans)
+            </th>           
+            <th>
+                @Html.DisplayNameFor(model => model.SalaryPayments)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CashPayments)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AllLoans)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AllPayments)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmployeeId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmployeeFullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Opening)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NormalLoans)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OutgoingLoans)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IncomingLoans)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SalaryPayments)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CashPayments)
+                </td>
+                <td>
+                    @{ 
+//decimal diff = item.AllLoans.Value - item.AllPayments.Value;
+                    }
+                    @Html.DisplayFor(modelItem => item.AllLoans)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AllPayments)
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+

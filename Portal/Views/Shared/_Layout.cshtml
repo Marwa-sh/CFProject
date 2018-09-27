@@ -210,8 +210,11 @@
                         <li>
                             @Html.ActionLink("الكفالات", "Index", "Warrant", new { Area = "Repository" }, new { })
                         </li>
-                        <li>
+                        @*<li>
                             @Html.ActionLink("حساب المديونية", "EmployeeDebts", "DebtsManagement", new { Area = "DebtsCalculator" }, new { })
+                        </li>*@
+                        <li>
+                            @Html.ActionLink("حساب المديونية", "GetEmployeeSolvency", "DebtsManagement", new { Area = "DebtsCalculator" }, new { })
                         </li>
                     </ul>
                 </li>

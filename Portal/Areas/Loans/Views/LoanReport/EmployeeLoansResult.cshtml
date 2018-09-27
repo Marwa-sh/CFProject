@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Cf.Data.EmployeeLoansResult>
+@using Cf.Data
+
+
+<div class="table-responsive">
+    <table id="Result" class="table table-bordered mb-0">
+        <thead class="bg-primary table-head-color">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductEmployeeId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductEmployeeFullName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductProductTypeName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PaidAmount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PaymentPeriod)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RemainPeriod)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductEmployeeId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductEmployeeFullName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductProductTypeName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PaidAmount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PaymentPeriod)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RemainPeriod)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

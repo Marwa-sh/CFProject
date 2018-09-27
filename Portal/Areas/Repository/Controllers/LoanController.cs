@@ -243,6 +243,25 @@ namespace Portal.Areas.Repository.Controllers
         {
             base.Dispose(disposing);
         }
+
+        #region Print
+        [HttpGet]
+        //public ActionResult Print(int? employeeId, string fullName, int? typeId, int? decisionNumber, DateTime mindecisionDate, DateTime maxdecisionDate, int? statusId)
+        public ActionResult Print(LoanVwViewModel Model)
+        {
+            Db db = new Db(DbServices.ConnectionString);
+            ViewBag.ProductTypeList = new SelectList(ProductTypeServices.List(db), "Id", "Name");
+            ViewBag.LoanStatusList = new SelectList(LoanStatusServices.List(db), "Id", "Name");
+           
+            if (Model.Filter.HasCriteria)
+            {
+                Model.List = LoanVwServices.Get(Model.Filter, db);
+            }
+            else
+                Model.List = new List<LoanVw>();
+            return PartialView(Model);
+        }
+        #endregion
     }
 }
 

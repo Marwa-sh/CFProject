@@ -5585,6 +5585,359 @@ namespace Cf.Data.Resources
    	#endregion
 	#endregion
 
+	#region ReportMonthlyBalanceSum filter and result classes
+	#region ReportMonthlyBalanceSumFilter meta data class definition
+    /// <summary>
+    /// Resource management for ReportMonthlyBalanceSumFilter class
+    /// </summary>
+	public partial class ReportMonthlyBalanceSumFilter : ResourceBase
+	{
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.ReportMonthlyBalanceSumFilter class
+        /// </summary>
+        internal ReportMonthlyBalanceSumFilter()
+        {
+        }
+	
+		#region Public properties
+        /// <summary>
+        /// Resource for ReportMonthlyBalanceSumFilter.MinMonth property
+        /// </summary>
+        public static string MinMonth
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportMonthlyBalanceSumFilter", "MinMonth");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to MinMonthTooltip.
+        /// </summary>
+        public static string MinMonthTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportMonthlyBalanceSumFilter", "MinMonthTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for ReportMonthlyBalanceSumFilter.MaxMonth property
+        /// </summary>
+        public static string MaxMonth
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportMonthlyBalanceSumFilter", "MaxMonth");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to MaxMonthTooltip.
+        /// </summary>
+        public static string MaxMonthTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportMonthlyBalanceSumFilter", "MaxMonthTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for ReportMonthlyBalanceSumFilter.EmployeeId property
+        /// </summary>
+        public static string EmployeeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportMonthlyBalanceSumFilter", "EmployeeId");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to EmployeeIdTooltip.
+        /// </summary>
+        public static string EmployeeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportMonthlyBalanceSumFilter", "EmployeeIdTooltip");
+            }
+        }
+		#endregion
+	}
+	#endregion
+
+    #region ReportMonthlyBalanceSumResult class definition
+	/// <summary>
+    /// Result class for ReportMonthlyBalanceSum.
+	/// </summary>
+	public partial class ReportMonthlyBalanceSumResult : ResourceBase
+	{
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.ReportMonthlyBalanceSumResult class
+        /// </summary>
+        internal ReportMonthlyBalanceSumResult()
+        {
+        }
+
+		#region Public properties
+        /// <summary>
+        /// Resource for ReportMonthlyBalanceSumResult.EmployeeId property
+        /// </summary>
+        public static string EmployeeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportMonthlyBalanceSumResult", "EmployeeId");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to EmployeeIdTooltip.
+        /// </summary>
+        public static string EmployeeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportMonthlyBalanceSumResult", "EmployeeIdTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for ReportMonthlyBalanceSumResult.EmployeeFullName property
+        /// </summary>
+        public static string EmployeeFullName
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportMonthlyBalanceSumResult", "EmployeeFullName");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to EmployeeFullNameTooltip.
+        /// </summary>
+        public static string EmployeeFullNameTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportMonthlyBalanceSumResult", "EmployeeFullNameTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for ReportMonthlyBalanceSumResult.Month property
+        /// </summary>
+        public static string Month
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportMonthlyBalanceSumResult", "Month");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to MonthTooltip.
+        /// </summary>
+        public static string MonthTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportMonthlyBalanceSumResult", "MonthTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for ReportMonthlyBalanceSumResult.Opening property
+        /// </summary>
+        public static string Opening
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportMonthlyBalanceSumResult", "Opening");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to OpeningTooltip.
+        /// </summary>
+        public static string OpeningTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportMonthlyBalanceSumResult", "OpeningTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for ReportMonthlyBalanceSumResult.NormalLoans property
+        /// </summary>
+        public static string NormalLoans
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportMonthlyBalanceSumResult", "NormalLoans");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to NormalLoansTooltip.
+        /// </summary>
+        public static string NormalLoansTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportMonthlyBalanceSumResult", "NormalLoansTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for ReportMonthlyBalanceSumResult.IncomingLoans property
+        /// </summary>
+        public static string IncomingLoans
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportMonthlyBalanceSumResult", "IncomingLoans");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to IncomingLoansTooltip.
+        /// </summary>
+        public static string IncomingLoansTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportMonthlyBalanceSumResult", "IncomingLoansTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for ReportMonthlyBalanceSumResult.OutgoingLoans property
+        /// </summary>
+        public static string OutgoingLoans
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportMonthlyBalanceSumResult", "OutgoingLoans");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to OutgoingLoansTooltip.
+        /// </summary>
+        public static string OutgoingLoansTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportMonthlyBalanceSumResult", "OutgoingLoansTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for ReportMonthlyBalanceSumResult.Restitutions property
+        /// </summary>
+        public static string Restitutions
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportMonthlyBalanceSumResult", "Restitutions");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to RestitutionsTooltip.
+        /// </summary>
+        public static string RestitutionsTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportMonthlyBalanceSumResult", "RestitutionsTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for ReportMonthlyBalanceSumResult.SalaryPayments property
+        /// </summary>
+        public static string SalaryPayments
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportMonthlyBalanceSumResult", "SalaryPayments");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to SalaryPaymentsTooltip.
+        /// </summary>
+        public static string SalaryPaymentsTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportMonthlyBalanceSumResult", "SalaryPaymentsTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for ReportMonthlyBalanceSumResult.CashPayments property
+        /// </summary>
+        public static string CashPayments
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportMonthlyBalanceSumResult", "CashPayments");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to CashPaymentsTooltip.
+        /// </summary>
+        public static string CashPaymentsTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportMonthlyBalanceSumResult", "CashPaymentsTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for ReportMonthlyBalanceSumResult.AllLoans property
+        /// </summary>
+        public static string AllLoans
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportMonthlyBalanceSumResult", "AllLoans");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to AllLoansTooltip.
+        /// </summary>
+        public static string AllLoansTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportMonthlyBalanceSumResult", "AllLoansTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for ReportMonthlyBalanceSumResult.AllPayments property
+        /// </summary>
+        public static string AllPayments
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportMonthlyBalanceSumResult", "AllPayments");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to AllPaymentsTooltip.
+        /// </summary>
+        public static string AllPaymentsTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportMonthlyBalanceSumResult", "AllPaymentsTooltip");
+            }
+        }
+    	#endregion
+    }
+   	#endregion
+	#endregion
+
 	#region ReportPaymentsBetweenTwoDates filter and result classes
 	#region ReportPaymentsBetweenTwoDatesFilter meta data class definition
     /// <summary>

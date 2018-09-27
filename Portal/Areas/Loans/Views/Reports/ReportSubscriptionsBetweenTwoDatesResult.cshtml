@@ -1,0 +1,114 @@
+@model IEnumerable<Cf.Data.ReportSubscriptionsBetweenTwoDatesResult>
+
+<div class="table-responsive">
+    <table class="table">
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstEmployeeId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstEmployeeFullName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstSalaryWorkPlaceName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstAmount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstMonth)
+                </th>
+                @*<th>
+                    @Html.DisplayNameFor(model => model.SecondEmployeeId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SecondEmployeeFullName)
+                </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.SecondSalaryWorkPlaceName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SecondAmount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SecondMonth)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SubscriptionDiffrence)
+                </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstEmployeeId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstEmployeeFullName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstSalaryWorkPlaceName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstAmount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirstMonth)
+                        </td>
+                        @*<td>
+                            @Html.DisplayFor(modelItem => item.SecondEmployeeId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SecondEmployeeFullName)
+                        </td>*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SecondSalaryWorkPlaceName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SecondAmount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SecondMonth)
+                        </td>
+                        <td>
+                            @{
+                                int diff = item.SubscriptionDiffrence.Value;
+                                switch (diff)
+                                {
+                                    case 0:
+                                        {
+                                            @ViewBag.EqualAmounts
+                                            break;
+                                        }
+                                    case 1:
+                                        {
+                                            @ViewBag.DiffAmountsMore
+                                            break;
+                                        }
+                                    case -1:
+                                        {
+                                            @ViewBag.DiffAmountsLess
+                                            break;
+                                        }
+                                    case 2:
+                                        {
+                                            @ViewBag.NewAmounts
+                                            break;
+                                        }
+                                    case 3:
+                                        {
+                                            @ViewBag.FinishedAmounts
+                                            break;
+                                        }
+                                    default:
+                                        break;
+                                }
+                            }
+                        </td>
+            </tr>
+        }
+
+    </table>
+</div>
+

@@ -1,0 +1,136 @@
+﻿@model IEnumerable<Cf.Data.ReportSubscriptionsBetweenTwoDatesResult>
+
+<div class="table-responsive">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstEmployeeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstEmployeeFullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstSalaryWorkPlaceName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstAmount)
+            </th>
+            @*<th>
+        @Html.DisplayNameFor(model => model.FirstDate)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.FirstPaymentGroupId)
+    </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.FirstPaymentGroupName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SecondEmployeeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SecondEmployeeFullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SecondSalaryWorkPlaceName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SecondAmount)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.SecondDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SecondPaymentGroupId)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.SecondPaymentGroupName)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.PaymentDiffrence)
+            </th>*@
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            string colorF = System.ConsoleColor.Green.ToString();
+            string colorS = System.ConsoleColor.Green.ToString();
+            switch(item.PaymentDiffrence)
+            {
+                case 0:
+                    {
+                        colorF= System.ConsoleColor.Green.ToString();
+                        colorS = System.ConsoleColor.Green.ToString();
+                        break;
+                    }
+                case -1:
+                case 1:
+                    {
+                        colorF = System.ConsoleColor.Red.ToString();
+                        colorS = System.ConsoleColor.Red.ToString();
+                        break;
+                    }
+                case 2:
+                    {
+                        colorF = System.ConsoleColor.Blue.ToString();
+                        colorS = System.ConsoleColor.Blue.ToString();
+                        break;
+                    }
+                case 3:
+                    {
+                        colorF = System.ConsoleColor.Gray.ToString();
+                        colorS = System.ConsoleColor.Gray.ToString();
+                        break;
+                    }
+            }
+
+            <tr>
+                <td style="color:@colorF">
+                    @Html.DisplayFor(modelItem => item.FirstEmployeeId)
+                </td>
+                <td style="color:@colorF">
+                    @Html.DisplayFor(modelItem => item.FirstEmployeeFullName)
+                </td>
+                <td style="color:@colorF">
+                    @Html.DisplayFor(modelItem => item.FirstSalaryWorkPlaceName)
+                </td>
+                <td style="color:@colorF">
+                    @Html.DisplayFor(modelItem => item.FirstAmount)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.FirstDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstPaymentGroupId)
+                </td>*@
+                <td style="color:@colorF">
+                    @Html.DisplayFor(modelItem => item.FirstPaymentGroupName)
+                </td>
+                <td style="color:@colorS">
+                    @Html.DisplayFor(modelItem => item.SecondEmployeeId)
+                </td>
+                <td style="color:@colorS">
+                    @Html.DisplayFor(modelItem => item.SecondEmployeeFullName)
+                </td>
+                <td style="color:@colorS">
+                    @Html.DisplayFor(modelItem => item.SecondSalaryWorkPlaceName)
+                </td>
+                <td style="color:@colorS">
+                    @Html.DisplayFor(modelItem => item.SecondAmount)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.SecondDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SecondPaymentGroupId)
+                </td>*@
+                <td style="color:@colorS">
+                    @Html.DisplayFor(modelItem => item.SecondPaymentGroupName)
+                </td>
+                @*<td style="color:@colorS">
+                    @Html.DisplayFor(modelItem => item.PaymentDiffrence)
+                </td>*@
+            </tr>
+        }
+
+    </table>
+</div>

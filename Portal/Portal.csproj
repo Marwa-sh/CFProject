@@ -1873,7 +1873,7 @@
     <Content Include="Areas\Loans\Views\Reports\_FilterReportSubscriptionsBetweenTwoDates.cshtml" />
     <Content Include="Areas\Loans\Views\Reports\Index.cshtml" />
     <Content Include="Areas\Loans\Views\Reports\_FilterReportBalance.cshtml" />
-    <Content Include="Areas\Loans\Views\Reports\ReportBalance.cshtml" />
+    <Content Include="Areas\Loans\Views\Reports\ReportBalanceResult.cshtml" />
     <Content Include="Areas\Loans\Views\Reports\PrintReportLoansBetweenTwoDates.cshtml" />
     <Content Include="Areas\Loans\Views\Reports\PrintReportPaymentsBetweenTwoDates.cshtml" />
     <Content Include="Areas\Loans\Views\Reports\PrintReportSubscriptionsBetweenTwoDates.cshtml" />
@@ -1881,6 +1881,9 @@
     <Content Include="Areas\Loans\Views\Reports\ReportLoansVwResult.cshtml" />
     <Content Include="Areas\Loans\Views\Reports\PrintReportLoansVw.cshtml" />
     <Content Include="Areas\DebtsCalculator\Views\DebtsManagement\GetEmployeeSolvency.cshtml" />
+    <Content Include="Areas\Loans\Views\Reports\PrintReportBalance.cshtml" />
+    <Content Include="Areas\Repository\Views\Loan\Print.cshtml" />
+    <Content Include="Areas\Repository\Views\Loan\Result.cshtml" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Scripts\bootstrap-datepicker\build\build.less" />

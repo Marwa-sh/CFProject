@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Cf.Data.ReportLoansBetweenTwoDatesResult>
+@{
+    string ui = "UI";
+    string lang = "ar";
+    string leftOrRight = (ViewBag.CurrentLayout == "rtl") ? "rtl" : "ltr";
+}
+
+   <div id="printDiv" class="panel-body">
+       <div class="row" style="padding-bottom:20px">
+           <div style="float:left" class="col-md-2">@System.DateTime.Now.ToShortDateString()</div>
+           <div class="col-md-8"></div>
+           <div class="col-md-2">الصندوق التعاوني</div>
+       </div>
+       <div class="row" style="padding-bottom:20px">
+           <div class="col-md-2"></div>
+           <div class="col-md-8" style="text-align:center">تقرير أقساط السلف</div>
+           <div class="col-md-2"></div>
+       </div>
+      @Html.Partial("ReportLoansBetweenTwoDatesResult")
+    </div>
+
+    <script>
+        //w = window.open();
+        //w.document.write(document.body.innerHTML);
+        ////w.document.write($('#printDiv').html());
+        //w.print();
+        //w.close();
+
+        //var printContents = document.getElementById("printDiv").innerHTML;
+        //w = window.open();
+
+        //w.document.write(printContents);
+        //w.document.write('<scr' + 'ipt type="text/javascript">' + 'window.onload = function() { window.print(); window.close(); };' + '</sc' + 'ript>');
+
+        //w.document.close(); // necessary for IE >= 10
+        //w.focus();
+
+        var printContents = document.getElementById("printDiv").innerHTML;
+        var originalContents = document.body.innerHTML;        
+        var head = document.head.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        console.log("header= " + head);
+        console.log(originalContents);
+
+        document.body.innerHTML = originalContents;
+        document.head.innerHTML = head;
+        location.reload();
+    </script>
+  

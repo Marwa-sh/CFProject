@@ -1,0 +1,95 @@
+﻿@model Cf.Data.PaymentBetweenTwoDatesFilter
+<div class="form-horizontal">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+</div>
+@using (Ajax.BeginForm("PaymentsBetweenTwoDates", "LoanReport", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "Result" }))
+{
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">@ViewBag.PaymentReport</h4>
+                    <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i id="mark" class="icon-minus4"></i></a></li>
+                            <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                            <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="cardOptions" class="card-body collapse in">
+                    <div class="card-block">
+                        <form class="form">
+                            <div class="form-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @*@Html.LabelFor(model => model.Filter.RequestProductEmployeeFullNameContains, htmlAttributes: new { @class = "control-label" })*@
+                                            @Html.LabelFor(model => model.MinDate, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.MinDate)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                            @Html.TextBoxFor(model => model.MinDate, new { @class = "form-control IsDate" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            @*@Html.LabelFor(model => model.Filter.RequestProductEmployeeId, htmlAttributes: new { @class = "control-label" })*@
+                                            @Html.LabelFor(model => model.MaxDate, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.MaxDate)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                            @Html.TextBoxFor(model => model.MaxDate, new { @class = "form-control IsDate" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary mr-1">
+                                    @ViewBag.Search
+                                </button>
+                            </div>
+                            <div id="Result">
+
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+}
+
+@section Scripts {
+
+    <script>
+		$(function () {
+            $.validator.addMethod('date',
+            function (value, element) {
+                if (this.optional(element)) {
+                    return true;
+                }
+                var ok = true;
+                try {
+                    $.datepicker.parseDate('dd/mm/yy', value);
+                }
+                catch (err) {
+                    ok = false;
+                }
+                return ok;
+            });
+            $(".IsDate").datepicker({ dateFormat: 'dd/mm/yy', changeYear: true });
+        });
+    </script>
+
+}
+

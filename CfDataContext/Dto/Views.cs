@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Data.Linq;
 using System.Data.Linq.Mapping;
-
+using System.ComponentModel.DataAnnotations;
 
 namespace Cf.Data
 {
@@ -12,6 +12,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.AvailabilityCeiling table.
 	/// </summary>
+    [MetadataType(typeof(AvailabilityCeilingVwMetaData))]
     public partial class AvailabilityCeilingVw
 	{
 		#region Public properties
@@ -57,6 +58,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.Availability table.
 	/// </summary>
+    [MetadataType(typeof(AvailabilityVwMetaData))]
     public partial class AvailabilityVw
 	{
 		#region Public properties
@@ -87,6 +89,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.BypassStatus table.
 	/// </summary>
+    [MetadataType(typeof(BypassStatusVwMetaData))]
     public partial class BypassStatusVw
 	{
 		#region Public properties
@@ -107,6 +110,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.CashPayment table.
 	/// </summary>
+    [MetadataType(typeof(CashPaymentVwMetaData))]
     public partial class CashPaymentVw
 	{
 		#region Public properties
@@ -327,6 +331,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.Category table.
 	/// </summary>
+    [MetadataType(typeof(CategoryVwMetaData))]
     public partial class CategoryVw
 	{
 		#region Public properties
@@ -347,6 +352,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.CollectOrder table.
 	/// </summary>
+    [MetadataType(typeof(CollectOrderVwMetaData))]
     public partial class CollectOrderVw
 	{
 		#region Public properties
@@ -382,6 +388,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.Debt table.
 	/// </summary>
+    [MetadataType(typeof(DebtVwMetaData))]
     public partial class DebtVw
 	{
 		#region Public properties
@@ -577,6 +584,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.Department table.
 	/// </summary>
+    [MetadataType(typeof(DepartmentVwMetaData))]
     public partial class DepartmentVw
 	{
 		#region Public properties
@@ -617,6 +625,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.DownPayment table.
 	/// </summary>
+    [MetadataType(typeof(DownPaymentVwMetaData))]
     public partial class DownPaymentVw
 	{
 		#region Public properties
@@ -1057,6 +1066,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.Employee table with related data of one to one related child tables.
 	/// </summary>
+    [MetadataType(typeof(EmployeeDetailVwMetaData))]
     public partial class EmployeeDetailVw
 	{
 		#region Public properties
@@ -1292,6 +1302,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Needs summary!
 	/// </summary>
+    [MetadataType(typeof(EmployeeRefundableProductRollupVwMetaData))]
     public partial class EmployeeRefundableProductRollupVw
 	{
 		#region Public properties
@@ -1332,6 +1343,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.EmployeeSeniority table.
 	/// </summary>
+    [MetadataType(typeof(EmployeeSeniorityVwMetaData))]
     public partial class EmployeeSeniorityVw
 	{
 		#region Public properties
@@ -1472,6 +1484,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.EmployeeStatus table.
 	/// </summary>
+    [MetadataType(typeof(EmployeeStatusVwMetaData))]
     public partial class EmployeeStatusVw
 	{
 		#region Public properties
@@ -1497,6 +1510,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.Employee table.
 	/// </summary>
+    [MetadataType(typeof(EmployeeVwMetaData))]
     public partial class EmployeeVw
 	{
 		#region Public properties
@@ -1632,6 +1646,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.EndWorkGrantBracket table.
 	/// </summary>
+    [MetadataType(typeof(EndWorkGrantBracketVwMetaData))]
     public partial class EndWorkGrantBracketVw
 	{
 		#region Public properties
@@ -1652,6 +1667,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.ErrorDefinition table.
 	/// </summary>
+    [MetadataType(typeof(ErrorDefinitionVwMetaData))]
     public partial class ErrorDefinitionVw
 	{
 		#region Public properties
@@ -1682,6 +1698,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.EventCategory table.
 	/// </summary>
+    [MetadataType(typeof(EventCategoryVwMetaData))]
     public partial class EventCategoryVw
 	{
 		#region Public properties
@@ -1702,6 +1719,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.EventLog table with related data of one to one related child tables.
 	/// </summary>
+    [MetadataType(typeof(EventLogDetailVwMetaData))]
     public partial class EventLogDetailVw
 	{
 		#region Public properties
@@ -1787,6 +1805,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.EventLogError table.
 	/// </summary>
+    [MetadataType(typeof(EventLogErrorVwMetaData))]
     public partial class EventLogErrorVw
 	{
 		#region Public properties
@@ -1867,6 +1886,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.EventLog table.
 	/// </summary>
+    [MetadataType(typeof(EventLogVwMetaData))]
     public partial class EventLogVw
 	{
 		#region Public properties
@@ -1932,6 +1952,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.EventSource table.
 	/// </summary>
+    [MetadataType(typeof(EventSourceVwMetaData))]
     public partial class EventSourceVw
 	{
 		#region Public properties
@@ -1952,6 +1973,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.EventStatus table.
 	/// </summary>
+    [MetadataType(typeof(EventStatusVwMetaData))]
     public partial class EventStatusVw
 	{
 		#region Public properties
@@ -1977,6 +1999,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.ExceptionalAmountType table.
 	/// </summary>
+    [MetadataType(typeof(ExceptionalAmountTypeVwMetaData))]
     public partial class ExceptionalAmountTypeVw
 	{
 		#region Public properties
@@ -2002,6 +2025,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.ExceptionalAmount table.
 	/// </summary>
+    [MetadataType(typeof(ExceptionalAmountVwMetaData))]
     public partial class ExceptionalAmountVw
 	{
 		#region Public properties
@@ -2297,6 +2321,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.ExternalGrant table.
 	/// </summary>
+    [MetadataType(typeof(ExternalGrantVwMetaData))]
     public partial class ExternalGrantVw
 	{
 		#region Public properties
@@ -2502,6 +2527,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.GrantDecision table.
 	/// </summary>
+    [MetadataType(typeof(GrantDecisionVwMetaData))]
     public partial class GrantDecisionVw
 	{
 		#region Public properties
@@ -2597,6 +2623,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.GrantDeduction table.
 	/// </summary>
+    [MetadataType(typeof(GrantDeductionVwMetaData))]
     public partial class GrantDeductionVw
 	{
 		#region Public properties
@@ -2902,6 +2929,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.Grant table with related data of one to one related child tables.
 	/// </summary>
+    [MetadataType(typeof(GrantDetailVwMetaData))]
     public partial class GrantDetailVw
 	{
 		#region Public properties
@@ -3212,6 +3240,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.GrantPaymentOrder table.
 	/// </summary>
+    [MetadataType(typeof(GrantPaymentOrderVwMetaData))]
     public partial class GrantPaymentOrderVw
 	{
 		#region Public properties
@@ -3247,6 +3276,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.GrantPayment table.
 	/// </summary>
+    [MetadataType(typeof(GrantPaymentVwMetaData))]
     public partial class GrantPaymentVw
 	{
 		#region Public properties
@@ -3587,6 +3617,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.GrantRequest table with related data of one to one related child tables.
 	/// </summary>
+    [MetadataType(typeof(GrantRequestDetailVwMetaData))]
     public partial class GrantRequestDetailVw
 	{
 		#region Public properties
@@ -3887,6 +3918,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.GrantRequest table.
 	/// </summary>
+    [MetadataType(typeof(GrantRequestVwMetaData))]
     public partial class GrantRequestVw
 	{
 		#region Public properties
@@ -4167,6 +4199,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.GrantTypeGroup table.
 	/// </summary>
+    [MetadataType(typeof(GrantTypeGroupVwMetaData))]
     public partial class GrantTypeGroupVw
 	{
 		#region Public properties
@@ -4187,6 +4220,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.GrantType table.
 	/// </summary>
+    [MetadataType(typeof(GrantTypeVwMetaData))]
     public partial class GrantTypeVw
 	{
 		#region Public properties
@@ -4222,6 +4256,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.Grant table.
 	/// </summary>
+    [MetadataType(typeof(GrantVwMetaData))]
     public partial class GrantVw
 	{
 		#region Public properties
@@ -4517,6 +4552,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.Guarantor table with related data of one to one related child tables.
 	/// </summary>
+    [MetadataType(typeof(GuarantorDetailVwMetaData))]
     public partial class GuarantorDetailVw
 	{
 		#region Public properties
@@ -4922,6 +4958,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.GuarantorStatement table.
 	/// </summary>
+    [MetadataType(typeof(GuarantorStatementVwMetaData))]
     public partial class GuarantorStatementVw
 	{
 		#region Public properties
@@ -5322,6 +5359,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.GuarantorStatus table.
 	/// </summary>
+    [MetadataType(typeof(GuarantorStatusVwMetaData))]
     public partial class GuarantorStatusVw
 	{
 		#region Public properties
@@ -5342,6 +5380,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.Guarantor table.
 	/// </summary>
+    [MetadataType(typeof(GuarantorVwMetaData))]
     public partial class GuarantorVw
 	{
 		#region Public properties
@@ -5722,6 +5761,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.HealthLoanDecisionFirstPayment table.
 	/// </summary>
+    [MetadataType(typeof(HealthLoanDecisionFirstPaymentVwMetaData))]
     public partial class HealthLoanDecisionFirstPaymentVw
 	{
 		#region Public properties
@@ -6022,6 +6062,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.HealthLoanDecision table.
 	/// </summary>
+    [MetadataType(typeof(HealthLoanDecisionVwMetaData))]
     public partial class HealthLoanDecisionVw
 	{
 		#region Public properties
@@ -6077,6 +6118,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.IncomingLoan table.
 	/// </summary>
+    [MetadataType(typeof(IncomingLoanVwMetaData))]
     public partial class IncomingLoanVw
 	{
 		#region Public properties
@@ -6397,6 +6439,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.InstallmentDecreaseOrder table.
 	/// </summary>
+    [MetadataType(typeof(InstallmentDecreaseOrderVwMetaData))]
     public partial class InstallmentDecreaseOrderVw
 	{
 		#region Public properties
@@ -6432,6 +6475,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.InstallmentDecrease table.
 	/// </summary>
+    [MetadataType(typeof(InstallmentDecreaseVwMetaData))]
     public partial class InstallmentDecreaseVw
 	{
 		#region Public properties
@@ -6642,6 +6686,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.Installment table.
 	/// </summary>
+    [MetadataType(typeof(InstallmentVwMetaData))]
     public partial class InstallmentVw
 	{
 		#region Public properties
@@ -6902,6 +6947,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.InsuranceType table.
 	/// </summary>
+    [MetadataType(typeof(InsuranceTypeVwMetaData))]
     public partial class InsuranceTypeVw
 	{
 		#region Public properties
@@ -6922,6 +6968,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.Issuer table.
 	/// </summary>
+    [MetadataType(typeof(IssuerVwMetaData))]
     public partial class IssuerVw
 	{
 		#region Public properties
@@ -6942,6 +6989,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.LoanChange table.
 	/// </summary>
+    [MetadataType(typeof(LoanChangeVwMetaData))]
     public partial class LoanChangeVw
 	{
 		#region Public properties
@@ -7552,6 +7600,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.LoanDecisionType table.
 	/// </summary>
+    [MetadataType(typeof(LoanDecisionTypeVwMetaData))]
     public partial class LoanDecisionTypeVw
 	{
 		#region Public properties
@@ -7572,6 +7621,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.LoanDecision table.
 	/// </summary>
+    [MetadataType(typeof(LoanDecisionVwMetaData))]
     public partial class LoanDecisionVw
 	{
 		#region Public properties
@@ -7662,6 +7712,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.Loan table with related data of one to one related child tables.
 	/// </summary>
+    [MetadataType(typeof(LoanDetailVwMetaData))]
     public partial class LoanDetailVw
 	{
 		#region Public properties
@@ -8322,6 +8373,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Needs summary!
 	/// </summary>
+    [MetadataType(typeof(LoanExtendedVwMetaData))]
     public partial class LoanExtendedVw
 	{
 		#region Public properties
@@ -8642,6 +8694,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.LoanGenerationStatus table.
 	/// </summary>
+    [MetadataType(typeof(LoanGenerationStatusVwMetaData))]
     public partial class LoanGenerationStatusVw
 	{
 		#region Public properties
@@ -8662,6 +8715,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.LoanRequest table.
 	/// </summary>
+    [MetadataType(typeof(LoanRequestVwMetaData))]
     public partial class LoanRequestVw
 	{
 		#region Public properties
@@ -8922,6 +8976,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.LoanStatus table.
 	/// </summary>
+    [MetadataType(typeof(LoanStatusVwMetaData))]
     public partial class LoanStatusVw
 	{
 		#region Public properties
@@ -8942,6 +8997,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.LoanTypeClosure table.
 	/// </summary>
+    [MetadataType(typeof(LoanTypeClosureVwMetaData))]
     public partial class LoanTypeClosureVw
 	{
 		#region Public properties
@@ -9067,6 +9123,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.LoanType table.
 	/// </summary>
+    [MetadataType(typeof(LoanTypeVwMetaData))]
     public partial class LoanTypeVw
 	{
 		#region Public properties
@@ -9132,6 +9189,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.Loan table.
 	/// </summary>
+    [MetadataType(typeof(LoanVwMetaData))]
     public partial class LoanVw
 	{
 		#region Public properties
@@ -9442,6 +9500,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.MainWorkPlace table.
 	/// </summary>
+    [MetadataType(typeof(MainWorkPlaceVwMetaData))]
     public partial class MainWorkPlaceVw
 	{
 		#region Public properties
@@ -9462,6 +9521,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.MissingInstallmentDecrease table.
 	/// </summary>
+    [MetadataType(typeof(MissingInstallmentDecreaseVwMetaData))]
     public partial class MissingInstallmentDecreaseVw
 	{
 		#region Public properties
@@ -9622,6 +9682,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.MonthlyBalance table.
 	/// </summary>
+    [MetadataType(typeof(MonthlyBalanceVwMetaData))]
     public partial class MonthlyBalanceVw
 	{
 		#region Public properties
@@ -9812,6 +9873,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.OutgoingLoan table.
 	/// </summary>
+    [MetadataType(typeof(OutgoingLoanVwMetaData))]
     public partial class OutgoingLoanVw
 	{
 		#region Public properties
@@ -10227,6 +10289,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.Payment table with related data of one to one related child tables.
 	/// </summary>
+    [MetadataType(typeof(PaymentDetailVwMetaData))]
     public partial class PaymentDetailVw
 	{
 		#region Public properties
@@ -10737,6 +10800,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.PaymentGroup table.
 	/// </summary>
+    [MetadataType(typeof(PaymentGroupVwMetaData))]
     public partial class PaymentGroupVw
 	{
 		#region Public properties
@@ -10757,6 +10821,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.PaymentStatus table.
 	/// </summary>
+    [MetadataType(typeof(PaymentStatusVwMetaData))]
     public partial class PaymentStatusVw
 	{
 		#region Public properties
@@ -10777,6 +10842,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.Payment table.
 	/// </summary>
+    [MetadataType(typeof(PaymentVwMetaData))]
     public partial class PaymentVw
 	{
 		#region Public properties
@@ -10977,6 +11043,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.PayOrder table.
 	/// </summary>
+    [MetadataType(typeof(PayOrderVwMetaData))]
     public partial class PayOrderVw
 	{
 		#region Public properties
@@ -11187,6 +11254,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.Product table with related data of one to one related child tables.
 	/// </summary>
+    [MetadataType(typeof(ProductDetailVwMetaData))]
     public partial class ProductDetailVw
 	{
 		#region Public properties
@@ -12112,6 +12180,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.ProductTypeAvailability table.
 	/// </summary>
+    [MetadataType(typeof(ProductTypeAvailabilityVwMetaData))]
     public partial class ProductTypeAvailabilityVw
 	{
 		#region Public properties
@@ -12202,6 +12271,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.ProductType table with related data of one to one related child tables.
 	/// </summary>
+    [MetadataType(typeof(ProductTypeDetailVwMetaData))]
     public partial class ProductTypeDetailVw
 	{
 		#region Public properties
@@ -12272,6 +12342,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.ProductType table.
 	/// </summary>
+    [MetadataType(typeof(ProductTypeVwMetaData))]
     public partial class ProductTypeVw
 	{
 		#region Public properties
@@ -12337,6 +12408,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.Product table.
 	/// </summary>
+    [MetadataType(typeof(ProductVwMetaData))]
     public partial class ProductVw
 	{
 		#region Public properties
@@ -12542,6 +12614,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.Profile table.
 	/// </summary>
+    [MetadataType(typeof(ProfileVwMetaData))]
     public partial class ProfileVw
 	{
 		#region Public properties
@@ -12697,6 +12770,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.ProfitStrategy table.
 	/// </summary>
+    [MetadataType(typeof(ProfitStrategyVwMetaData))]
     public partial class ProfitStrategyVw
 	{
 		#region Public properties
@@ -12717,6 +12791,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.RefundableProduct table.
 	/// </summary>
+    [MetadataType(typeof(RefundableProductVwMetaData))]
     public partial class RefundableProductVw
 	{
 		#region Public properties
@@ -12947,6 +13022,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.Request table with related data of one to one related child tables.
 	/// </summary>
+    [MetadataType(typeof(RequestDetailVwMetaData))]
     public partial class RequestDetailVw
 	{
 		#region Public properties
@@ -13267,6 +13343,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.RequestStatus table.
 	/// </summary>
+    [MetadataType(typeof(RequestStatusVwMetaData))]
     public partial class RequestStatusVw
 	{
 		#region Public properties
@@ -13287,6 +13364,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.Request table.
 	/// </summary>
+    [MetadataType(typeof(RequestVwMetaData))]
     public partial class RequestVw
 	{
 		#region Public properties
@@ -13537,6 +13615,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.Resource table.
 	/// </summary>
+    [MetadataType(typeof(ResourceVwMetaData))]
     public partial class ResourceVw
 	{
 		#region Public properties
@@ -13577,6 +13656,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.SalaryPayment table.
 	/// </summary>
+    [MetadataType(typeof(SalaryPaymentVwMetaData))]
     public partial class SalaryPaymentVw
 	{
 		#region Public properties
@@ -13812,6 +13892,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.SalaryWorkPlace table.
 	/// </summary>
+    [MetadataType(typeof(SalaryWorkPlaceVwMetaData))]
     public partial class SalaryWorkPlaceVw
 	{
 		#region Public properties
@@ -13842,6 +13923,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.ServiceEndGrantRequest table.
 	/// </summary>
+    [MetadataType(typeof(ServiceEndGrantRequestVwMetaData))]
     public partial class ServiceEndGrantRequestVw
 	{
 		#region Public properties
@@ -14137,6 +14219,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.Settlement table.
 	/// </summary>
+    [MetadataType(typeof(SettlementVwMetaData))]
     public partial class SettlementVw
 	{
 		#region Public properties
@@ -14597,6 +14680,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.SpecialCaseLoan table.
 	/// </summary>
+    [MetadataType(typeof(SpecialCaseLoanVwMetaData))]
     public partial class SpecialCaseLoanVw
 	{
 		#region Public properties
@@ -14807,6 +14891,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.SubscriptionType table.
 	/// </summary>
+    [MetadataType(typeof(SubscriptionTypeVwMetaData))]
     public partial class SubscriptionTypeVw
 	{
 		#region Public properties
@@ -14827,6 +14912,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.Subscription table.
 	/// </summary>
+    [MetadataType(typeof(SubscriptionVwMetaData))]
     public partial class SubscriptionVw
 	{
 		#region Public properties
@@ -15027,6 +15113,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.TransitoryIncomingLoan table.
 	/// </summary>
+    [MetadataType(typeof(TransitoryIncomingLoanVwMetaData))]
     public partial class TransitoryIncomingLoanVw
 	{
 		#region Public properties
@@ -15192,6 +15279,7 @@ namespace Cf.Data
 	/// <summary>
 	/// Selects all rows from the dbo.Warrant table.
 	/// </summary>
+    [MetadataType(typeof(WarrantVwMetaData))]
     public partial class WarrantVw
 	{
 		#region Public properties

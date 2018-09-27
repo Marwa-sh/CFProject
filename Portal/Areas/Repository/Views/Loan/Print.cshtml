@@ -1,0 +1,179 @@
+@model Cf.ViewModels.LoanVwViewModel
+<div class="form-horizontal">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+</div>    
+<div id="printDiv" class="row">
+    <div class="col-xs-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">@ViewBag.Title @if(Model.List.Count == 0) {<span class="tag tag-default">@Model.List.Count</span>} else {<span class="tag tag-danger">@Model.List.Count</span> }</h4>
+                <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
+                        <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                        <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="d" class="card-body collapse in">				
+                <div class="table-responsive">
+                    <table id="Result" class="table table-bordered mb-0">
+                        <thead class="bg-primary table-head-color">
+					        <tr>
+					            <th>
+					                @Html.DisplayNameFor(model => model.Instance.ProductId)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.Instance.ProductEmployeeId)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.Instance.ProductEmployeeFullName)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.Instance.ProductEmployeeDepartmentSalaryWorkPlaceName)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.Instance.ProductProductTypeName)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.Instance.ProductProductTypeRate)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.Instance.ProductAmount)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.Instance.LoanDecisionNumber)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.Instance.LoanDecisionDate)
+					            </th>
+					            <th>
+					                @Html.DisplayNameFor(model => model.Instance.LoanStatusName)
+					            </th>
+					        </tr>
+                        </thead>
+                        <tbody>
+        @foreach (var item in Model.List)
+        {
+				            <tr>
+                				<td>
+                    				@Html.DisplayFor(modelItem => item.ProductId)
+                				</td>
+                				<td>
+                    				@Html.DisplayFor(modelItem => item.ProductEmployeeId)
+                				</td>
+                				<td>
+                    				@Html.DisplayFor(modelItem => item.ProductEmployeeFullName)
+                				</td>
+                				<td>
+                    				@Html.DisplayFor(modelItem => item.ProductEmployeeDepartmentSalaryWorkPlaceName)
+                				</td>
+                				<td>
+                    				@Html.DisplayFor(modelItem => item.ProductProductTypeName)
+                				</td>
+                				<td>
+                    				@Html.DisplayFor(modelItem => item.ProductProductTypeRate)
+                				</td>
+                				<td>
+                    				@Html.DisplayFor(modelItem => item.ProductAmount)
+                				</td>
+                				<td>
+                    				@Html.DisplayFor(modelItem => item.LoanDecisionNumber)
+                				</td>
+                				<td>
+                    				@Html.DisplayFor(modelItem => item.LoanDecisionDate)
+                				</td>
+                				<td>
+                    				@Html.DisplayFor(modelItem => item.LoanStatusName)
+                				</td>
+                            </tr>
+				        }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+
+@*<script>
+        var printContents = document.getElementById("printDiv").innerHTML;
+        var originalContents = document.body.innerHTML;
+        var head = document.head.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        console.log("header= " + head);
+        console.log(originalContents);
+
+        document.body.innerHTML = originalContents;
+        document.head.innerHTML = head;
+        location.reload();
+</script>*@
+	<script>
+	$(document).ready(function () {
+	        var len = $('#Result tr').length;
+	        var res = $("#Result");
+	        if (len == 1)
+			{
+                var table = document.getElementById("Result").tBodies[0];
+
+                // Create an empty <tr> element and add it to the 1st position of the table:
+                var row = table.insertRow(0);
+
+                //// Insert new cell 
+                var cell1 = row.insertCell(0);
+                cell1.colSpan = 12;
+                cell1.innerText = '@ViewBag.NoRecords';
+                cell1.align="center";
+			
+	        }	        
+	    });	    
+	</script>
+
+<script>
+        $(".printBtn").on("click", function () {
+
+            @*window.open("@Url.Action("Print", Model)", "_blank",
+            "menubar=no, toolbar=no, resizable=no, top=100, left=200, width=500, height=500");*@
+
+            var employeeId = $("#Filter_ProductEmployeeId").val();
+            var fullName = $("#Filter_ProductEmployeeFullNameContains").val();
+            var typeId = $("#Filter_ProductProductTypeId").val();
+            var decisionNumber = $("#Filter_LoanDecisionNumber").val();
+            var mindecisionDate = $("#Filter_MinLoanDecisionDate").val();
+            var maxdecisionDate = $("#Filter_MaxLoanDecisionDate").val();
+            var statusId = $("#Filter_LoanStatusId").val();
+
+            $.ajax({
+                url: '@Url.Action("Print")',
+                data: {
+                    "employeeId": employeeId,
+                    "fullName": fullName,
+                    "typeId": typeId,
+                    "decisionNumber": decisionNumber,
+                    "mindecisionDate": mindecisionDate,
+                    "maxdecisionDate": maxdecisionDate,
+                    "statusId": statusId
+                },
+                type: "Get",
+                success: function (result) {
+                    alert("Hi");
+                    var printContents = result;// document.getElementById("printDiv").innerHTML;
+                    var originalContents = document.body.innerHTML;
+                    var head = document.head.innerHTML;
+                    document.body.innerHTML = printContents;
+                    window.print();
+                    //$("#Request_Amount").val(result.amount)
+                },
+                error: function (error) {
+                    console.log("error" + error);
+                    alert("ÕœÀ Œÿ√ „«");
+                    //alert("Error while adding the debt");
+                }
+            });
+        });
+</script>
+}

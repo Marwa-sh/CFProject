@@ -1198,6 +1198,68 @@ namespace Cf.Data
 	#endregion
     #endregion
 
+	#region ReportMonthlyBalanceSum filter and result classes
+    #region ReportMonthlyBalanceSumFilter class definition
+	/// <summary>
+    /// Filter class for ReportMonthlyBalanceSum.
+	/// </summary>
+    [MetadataType(typeof(ReportMonthlyBalanceSumFilterMetaData))]
+	public partial class ReportMonthlyBalanceSumFilter
+	{
+		#region Public properties
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<DateTime> MinMonth {get; set; }
+		
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<DateTime> MaxMonth {get; set; }
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<int> EmployeeId {get; set; }
+		#endregion
+	}
+	#endregion
+
+	#region ReportMonthlyBalanceSumResult class definition
+	/// <summary>
+    /// Result class for ReportMonthlyBalanceSum.
+	/// </summary>
+    [MetadataType(typeof(ReportMonthlyBalanceSumResultMetaData))]
+	public partial class ReportMonthlyBalanceSumResult
+	{
+		#region Public properties
+        public int EmployeeId {get; set; }
+		
+        public string EmployeeFullName {get; set; }
+		
+        public DateTime Month {get; set; }
+		
+        public Nullable<decimal> Opening {get; set; }
+		
+        public Nullable<decimal> NormalLoans {get; set; }
+		
+        public Nullable<decimal> IncomingLoans {get; set; }
+		
+        public Nullable<decimal> OutgoingLoans {get; set; }
+		
+        public Nullable<decimal> Restitutions {get; set; }
+		
+        public Nullable<decimal> SalaryPayments {get; set; }
+		
+        public Nullable<decimal> CashPayments {get; set; }
+		
+        public Nullable<decimal> AllLoans {get; set; }
+		
+        public Nullable<decimal> AllPayments {get; set; }
+		#endregion
+	}
+	#endregion
+    #endregion
+
 	#region ReportPaymentsBetweenTwoDates filter and result classes
     #region ReportPaymentsBetweenTwoDatesFilter class definition
 	/// <summary>

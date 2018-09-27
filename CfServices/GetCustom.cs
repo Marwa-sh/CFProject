@@ -2288,6 +2288,111 @@ namespace Cf.Services
 
 		#endregion
 
+		#region ReportMonthlyBalanceSum procedure.
+
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_minMonth"></param>
+		/// <param name="_maxMonth"></param>
+		/// <param name="_employeeId"></param>
+		/// <returns>A list of ReportMonthlyBalanceSumResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public static List<ReportMonthlyBalanceSumResult> ReportMonthlyBalanceSum([Parameter(Name = "@MinMonth")] Nullable<DateTime> _minMonth, [Parameter(Name = "@MaxMonth")] Nullable<DateTime> _maxMonth, [Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
+		{
+			Db db = new Db(DbServices.ConnectionString);
+			return db.ReportMonthlyBalanceSum(_minMonth, _maxMonth, _employeeId);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_minMonth"></param>
+		/// <param name="_maxMonth"></param>
+		/// <param name="_employeeId"></param>
+		/// <returns>A list of ReportMonthlyBalanceSumResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public static List<ReportMonthlyBalanceSumResult> ReportMonthlyBalanceSum([Parameter(Name = "@MinMonth")] Nullable<DateTime> _minMonth, [Parameter(Name = "@MaxMonth")] Nullable<DateTime> _maxMonth, [Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, Db db)
+		{
+			return db.ReportMonthlyBalanceSum(_minMonth, _maxMonth, _employeeId);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of ReportMonthlyBalanceSumFilter that defines filtering options.</param>
+        /// <returns>A list of ReportMonthlyBalanceSumResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public static List<ReportMonthlyBalanceSumResult> ReportMonthlyBalanceSum(ReportMonthlyBalanceSumFilter filterInstance)
+		{
+			Db db = new Db(DbServices.ConnectionString);
+			return db.ReportMonthlyBalanceSum(filterInstance.MinMonth, filterInstance.MaxMonth, filterInstance.EmployeeId);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of ReportMonthlyBalanceSumFilter that defines filtering options.</param>
+        /// <returns>A list of ReportMonthlyBalanceSumResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public static List<ReportMonthlyBalanceSumResult> ReportMonthlyBalanceSum(ReportMonthlyBalanceSumFilter filterInstance, Db db)
+		{
+			return db.ReportMonthlyBalanceSum(filterInstance.MinMonth, filterInstance.MaxMonth, filterInstance.EmployeeId);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_minMonth"></param>
+		/// <param name="_maxMonth"></param>
+		/// <param name="_employeeId"></param>
+		/// <returns>An instance of ReportMonthlyBalanceSumResult or null.</returns>
+		public static ReportMonthlyBalanceSumResult ReportMonthlyBalanceSumFirstOrDefault([Parameter(Name = "@MinMonth")] Nullable<DateTime> _minMonth, [Parameter(Name = "@MaxMonth")] Nullable<DateTime> _maxMonth, [Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
+		{
+			Db db = new Db(DbServices.ConnectionString);
+			return db.ReportMonthlyBalanceSumFirstOrDefault(_minMonth, _maxMonth, _employeeId);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_minMonth"></param>
+		/// <param name="_maxMonth"></param>
+		/// <param name="_employeeId"></param>
+		/// <returns>An instance of ReportMonthlyBalanceSumResult or null.</returns>
+		public static ReportMonthlyBalanceSumResult ReportMonthlyBalanceSumFirstOrDefault([Parameter(Name = "@MinMonth")] Nullable<DateTime> _minMonth, [Parameter(Name = "@MaxMonth")] Nullable<DateTime> _maxMonth, [Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, Db db)
+		{
+			return db.ReportMonthlyBalanceSumFirstOrDefault(_minMonth, _maxMonth, _employeeId);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of ReportMonthlyBalanceSumFilter that defines filtering options.</param>
+        /// <returns>An instance of ReportMonthlyBalanceSumResult or null.</returns>
+		public static ReportMonthlyBalanceSumResult ReportMonthlyBalanceSumFirstOrDefault(ReportMonthlyBalanceSumFilter filterInstance)
+		{
+			Db db = new Db(DbServices.ConnectionString);
+			return db.ReportMonthlyBalanceSumFirstOrDefault(filterInstance.MinMonth, filterInstance.MaxMonth, filterInstance.EmployeeId);
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of ReportMonthlyBalanceSumFilter that defines filtering options.</param>
+        /// <returns>An instance of ReportMonthlyBalanceSumResult or null.</returns>
+		public static ReportMonthlyBalanceSumResult ReportMonthlyBalanceSumFirstOrDefault(ReportMonthlyBalanceSumFilter filterInstance, Db db)
+		{
+			return db.ReportMonthlyBalanceSumFirstOrDefault(filterInstance.MinMonth, filterInstance.MaxMonth, filterInstance.EmployeeId);
+		}
+
+		#endregion
+
 		#region ReportPaymentsBetweenTwoDates procedure.
 
 		/// <summary>

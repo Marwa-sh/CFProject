@@ -1411,6 +1411,67 @@ namespace Cf.Data
 		}
 		#endregion
 
+		#region ReportMonthlyBalanceSum procedure.
+
+		[FunctionAttribute(Name = "dbo.ReportMonthlyBalanceSum", IsComposable = true)]
+		private IQueryable<ReportMonthlyBalanceSumResult> _ReportMonthlyBalanceSum([Parameter(Name = "@MinMonth")] Nullable<DateTime> _minMonth, [Parameter(Name = "@MaxMonth")] Nullable<DateTime> _maxMonth, [Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
+		{
+			return this.CreateMethodCallQuery<ReportMonthlyBalanceSumResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _minMonth, _maxMonth, _employeeId);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_minMonth"></param>
+		/// <param name="_maxMonth"></param>
+		/// <param name="_employeeId"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>A list of ReportMonthlyBalanceSumResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<ReportMonthlyBalanceSumResult> ReportMonthlyBalanceSum([Parameter(Name = "@MinMonth")] Nullable<DateTime> _minMonth, [Parameter(Name = "@MaxMonth")] Nullable<DateTime> _maxMonth, [Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
+		{
+			return _ReportMonthlyBalanceSum(_minMonth, _maxMonth, _employeeId).ToList<ReportMonthlyBalanceSumResult>();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of ReportMonthlyBalanceSumFilter that defines filtering options.</param>
+        /// <returns>A list of ReportMonthlyBalanceSumResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<ReportMonthlyBalanceSumResult> ReportMonthlyBalanceSum(ReportMonthlyBalanceSumFilter filterInstance)
+		{
+			return _ReportMonthlyBalanceSum(filterInstance.MinMonth, filterInstance.MaxMonth, filterInstance.EmployeeId).ToList<ReportMonthlyBalanceSumResult>();
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_minMonth"></param>
+		/// <param name="_maxMonth"></param>
+		/// <param name="_employeeId"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>An instance of ReportMonthlyBalanceSumResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public ReportMonthlyBalanceSumResult ReportMonthlyBalanceSumFirstOrDefault([Parameter(Name = "@MinMonth")] Nullable<DateTime> _minMonth, [Parameter(Name = "@MaxMonth")] Nullable<DateTime> _maxMonth, [Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
+		{
+			return _ReportMonthlyBalanceSum(_minMonth, _maxMonth, _employeeId).FirstOrDefault<ReportMonthlyBalanceSumResult>();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of ReportMonthlyBalanceSumFilter that defines filtering options.</param>
+		/// <returns>An instance of ReportMonthlyBalanceSumResult.</returns>
+		/// <remarks>If no instances the method returns null.</remarks>
+		public ReportMonthlyBalanceSumResult ReportMonthlyBalanceSumFirstOrDefault(ReportMonthlyBalanceSumFilter filterInstance)
+		{
+			return _ReportMonthlyBalanceSum(filterInstance.MinMonth, filterInstance.MaxMonth, filterInstance.EmployeeId).FirstOrDefault<ReportMonthlyBalanceSumResult>();
+		}
+		#endregion
+
 		#region ReportPaymentsBetweenTwoDates procedure.
 
 		[Function(Name = "dbo.ReportPaymentsBetweenTwoDates")]

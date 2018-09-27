@@ -32,15 +32,15 @@
                                                   {"data-toggle", "tooltip"},
                                                   {"data-placement", "bottom"}
                                                 })
-                                        <input class="form-control text-box single-line" data-val="true" 
-                                               data-val-number="The field الرقم الذاتي must be a number." 
-                                               data-val-range="الرقم الذاتي يجب أن يكون أكبر من 0" 
-                                               data-val-range-max="2147483647" data-val-range-min="0" 
+                                        <input class="form-control text-box single-line" data-val="true"
+                                               data-val-number="The field الرقم الذاتي must be a number."
+                                               data-val-range="الرقم الذاتي يجب أن يكون أكبر من 0"
+                                               data-val-range-max="2147483647" data-val-range-min="0"
                                                data-val-required="حقل الرقم الذاتي مطلوب."
-                                                id="RequestProduct_Employee" name="RequestProduct.Employee" 
-                                               type="number" value="" 
+                                               id="RequestProduct_Employee" name="RequestProduct.Employee"
+                                               type="number" value=""
                                                onkeypress="checkEmployeeId(event)">
-                                         
+
                                         @*@Html.EditorFor(model => model.RequestProduct.Employee, new { htmlAttributes = new { @class = "form-control" } })*@
                                         @*@Html.DropDownListFor(model=> model.RequestProduct.Employee, (SelectList)@ViewBag.EmployeeList,"Choose", htmlAttributes: new { @class = "form-control combobox" })*@
                                         @Html.ValidationMessageFor(model => model.RequestProduct.Employee, "", new { @class = "text-danger" })
@@ -81,12 +81,12 @@
                                                   {"data-toggle", "tooltip"},
                                                   {"data-placement", "bottom"}
                                                 })
-                                        @Html.DropDownListFor(model => model.GrantRequest.GrantType, (SelectList)@ViewBag.GrantTypeList, htmlAttributes: new { @class = "form-control" })
+                                        @Html.DropDownListFor(model => model.GrantRequest.GrantType, (SelectList)@ViewBag.GrantTypeList, htmlAttributes: new { @class = "form-control", onchange = "getAmount(this);" })
                                         @Html.ValidationMessageFor(model => model.GrantRequest.GrantType, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
-                            </div>                             
-                            <div class="row">                                 
+                            </div>
+                            <div class="row">
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         @*@Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label" })*@
@@ -139,7 +139,7 @@
                                         @Html.ValidationMessageFor(model => model.Request.Attachment, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
-                            </div>                             
+                            </div>
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="form-group">
@@ -156,7 +156,7 @@
                                 </div>
                             </div>
                         </div>
-                         
+
                         <br />
                         <button type="submit" class="btn btn-primary mr-1">
                             @ViewBag.Save
@@ -164,7 +164,7 @@
                         <button type="button" class="btn btn-warning">
                             @Html.ActionLink((string)ViewBag.Back, "Index")
                         </button>
-                        
+
                     </div>
 
                 </div>
@@ -175,21 +175,20 @@
 }
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-     
+
     <script>
-       
-            function checkEmployeeId(event)
-            {
-                //var employee_id = $(this).text();
-                //alert(employee_id);
-                @*$.ajax({
+
+        function checkEmployeeId(event) {
+            //var employee_id = $(this).text();
+            //alert(employee_id);
+            @*$.ajax({
                     type: "POST",
-                    url: '@Url.Action("CheckEmployee")', 
+                    url: '@Url.Action("CheckEmployee")',
                     data: '{id: "' + employee_id + '" }',
                     contentType: "application/json; charset=utf-8",
                     dataType: "html",
                     success: function (response) {
-                        
+
                         if(response=="success")
                         {
 
@@ -206,12 +205,30 @@
                         alert(response.responseText);
                     }
                 });*@
-            }
-             
-        
+        }
+
+
     </script>
 
     <script>
+        function getAmount(drop) {
+            if (drop.value) {
+                $.ajax({
+                    url: '@Url.Action("getGrantTypeAmount")',
+                    data: { "id": drop.value },
+                    type: "POST",
+                    success: function (result) {
+
+                        $("#Request_Amount").val(result.amount)
+                    },
+                    error: function (error) {
+                        console.log("error" + error);
+                        alert("حدث خطأ ما");
+                        //alert("Error while adding the debt");
+                    }
+                });
+            }
+        }
         $(function () {
             $.validator.addMethod('date',
             function (value, element) {
@@ -326,7 +343,12 @@
         $(document).ready(function () {
             $('.combobox').combobox();
 
+
+
+
         });
+
+
 
     </script>
 }

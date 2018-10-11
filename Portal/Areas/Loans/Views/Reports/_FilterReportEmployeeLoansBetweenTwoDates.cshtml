@@ -1,0 +1,163 @@
+@model Cf.Data.ReportEmployeeLoansBetweenTwoDatesFilter
+@using Cf.Services
+
+<div class="form-horizontal">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+</div>
+@using (Ajax.BeginForm("ReportEmployeeLoansBetweenTwoDates", "Reports", new { Area = "Loans" },
+    new AjaxOptions
+    {
+
+        UpdateTargetId = "Result",
+        HttpMethod = "Post"
+        ,
+        OnBegin = "onBegin",
+        InsertionMode = InsertionMode.Replace,
+        OnSuccess = "onSuccess",
+        OnFailure = "onFailure"
+    },
+    new
+    {
+        @role = "form",
+        @id = "ReportEmployeeLoansBetweenTwoDates"
+    }
+    ))
+{
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">@ViewBag.ReportEmployeeLoansBetweenTwoDates</h4>
+                    <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i id="mark" class="icon-minus4"></i></a></li>
+                            <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                            <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="cardOptions" class="card-body collapse in">
+                    <div class="card-block">
+                        <form class="form">
+                            <div class="form-body">
+                            
+                                <div class="row">
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.@FromDate, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.@FromDate, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.@FromDate)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                @Html.TextBoxFor(model => model.@FromDate, new { @class = "form-control IsDate" })
+								                @Html.ValidationMessageFor(model => model.@FromDate, "", new { @class = "text-danger" })
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.@ToDate, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.@ToDate, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.@ToDate)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+								                @Html.TextBoxFor(model => model.@ToDate, new { @class = "form-control IsDate" })
+								                @Html.ValidationMessageFor(model => model.@ToDate, "", new { @class = "text-danger" })
+								        </div>
+									</div>
+									<div class="col-md-4">
+								        <div class="form-group">
+								            @*@Html.LabelFor(model => model.@EmployeeId, htmlAttributes: new { @class = "control-label" })*@
+								            @Html.LabelFor(model => model.@EmployeeId, new Dictionary<string, Object>
+								                { { "class", "control-label" },
+								                  {"title", Html.ToolTipMessageFor(model => model.@EmployeeId)},
+								                  {"data-toggle", "tooltip"},
+								                  {"data-placement", "bottom"}
+								                })
+                                                @Html.TextBoxFor(model => model.@EmployeeId, new { @class = "form-control" })
+								                @Html.ValidationMessageFor(model => model.@EmployeeId, "", new { @class = "text-danger" })
+								        </div>
+									</div>
+								</div>
+                            </div>
+                            
+                                
+                            <div class="form-actions">
+                                <button type="submit" name="operationType" value="search" class="btn btn-primary mr-1">
+                                    @ViewBag.Search
+                                </button>
+                                <button type="submit" name="operationType" value="print" class="btn btn-primary mr-1">
+                                    @ViewBag.Print
+                                </button>   
+                                @*@using (Html.BeginForm("GetCSVEmployeeLoansBetweenTwoDates"))
+                                {
+                                    <button type="submit" name="operationType" value="csv" class="btn btn-primary mr-1">
+                                        csv
+                                    </button>
+                                }*@                             
+                            </div>
+                            <div id="Result">
+
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+}
+
+
+@section Scripts {
+
+    <script>
+		$(function () {
+            $.validator.addMethod('date',
+            function (value, element) {
+                if (this.optional(element)) {
+                    return true;
+                }
+                var ok = true;
+                try {
+                    $.datepicker.parseDate('dd/mm/yy', value);
+                }
+                catch (err) {
+                    ok = false;
+                }
+                return ok;
+            });
+            $(".IsDate").datepicker({ dateFormat: 'dd/mm/yy', changeYear: true });
+        });
+    </script>
+    <script>
+        function showSweetAlertLoading() {
+            swal({
+                title: "",
+                text: "@ResourceServices.GetString("ar", "UI", "PleaseWait")",
+                onOpen: () => {
+                    swal.showLoading()
+                }
+            });
+        }
+    </script>
+
+    <script>
+        function onBegin() {
+                showSweetAlertLoading();
+            }
+            function onSuccess() {
+                swal.close();
+            }
+            function onFailure() {
+                swal.close();
+                alert("Error");
+            }
+    </script>
+}

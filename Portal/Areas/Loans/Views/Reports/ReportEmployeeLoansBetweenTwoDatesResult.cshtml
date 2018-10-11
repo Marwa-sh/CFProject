@@ -1,0 +1,79 @@
+@model IEnumerable<Cf.Data.ReportEmployeeLoansBetweenTwoDatesResult>
+<div class="table-responsive">
+    <table class="table">
+        <tr>
+            <td></td>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductEmployeeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductEmployeeFullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductProductTypeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoanDecisionNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoanDecisionDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoanDecisionPaymentNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoanDecisionPaymentDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Installment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProfitAmount)
+            </th>            
+        </tr>
+        @{ int index = 1; }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@index</td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductEmployeeId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductEmployeeFullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductProductTypeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LoanDecisionNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LoanDecisionDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LoanDecisionPaymentNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LoanDecisionPaymentDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Installment)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProfitAmount)
+                </td>               
+            </tr>
+            @Html.Raw(item.HtmlGarantors)
+            index++;
+        }
+
+    </table>
+</div>
+

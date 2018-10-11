@@ -5400,6 +5400,338 @@ namespace Cf.Data.Resources
    	#endregion
 	#endregion
 
+	#region ReportEmployeeLoansBetweenTwoDates filter and result classes
+	#region ReportEmployeeLoansBetweenTwoDatesFilter meta data class definition
+    /// <summary>
+    /// Resource management for ReportEmployeeLoansBetweenTwoDatesFilter class
+    /// </summary>
+	public partial class ReportEmployeeLoansBetweenTwoDatesFilter : ResourceBase
+	{
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.ReportEmployeeLoansBetweenTwoDatesFilter class
+        /// </summary>
+        internal ReportEmployeeLoansBetweenTwoDatesFilter()
+        {
+        }
+	
+		#region Public properties
+        /// <summary>
+        /// Resource for ReportEmployeeLoansBetweenTwoDatesFilter.FromDate property
+        /// </summary>
+        public static string FromDate
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportEmployeeLoansBetweenTwoDatesFilter", "FromDate");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to FromDateTooltip.
+        /// </summary>
+        public static string FromDateTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportEmployeeLoansBetweenTwoDatesFilter", "FromDateTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for ReportEmployeeLoansBetweenTwoDatesFilter.ToDate property
+        /// </summary>
+        public static string ToDate
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportEmployeeLoansBetweenTwoDatesFilter", "ToDate");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to ToDateTooltip.
+        /// </summary>
+        public static string ToDateTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportEmployeeLoansBetweenTwoDatesFilter", "ToDateTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for ReportEmployeeLoansBetweenTwoDatesFilter.EmployeeId property
+        /// </summary>
+        public static string EmployeeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportEmployeeLoansBetweenTwoDatesFilter", "EmployeeId");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to EmployeeIdTooltip.
+        /// </summary>
+        public static string EmployeeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportEmployeeLoansBetweenTwoDatesFilter", "EmployeeIdTooltip");
+            }
+        }
+		#endregion
+	}
+	#endregion
+
+    #region ReportEmployeeLoansBetweenTwoDatesResult class definition
+	/// <summary>
+    /// Result class for ReportEmployeeLoansBetweenTwoDates.
+	/// </summary>
+	public partial class ReportEmployeeLoansBetweenTwoDatesResult : ResourceBase
+	{
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.ReportEmployeeLoansBetweenTwoDatesResult class
+        /// </summary>
+        internal ReportEmployeeLoansBetweenTwoDatesResult()
+        {
+        }
+
+		#region Public properties
+        /// <summary>
+        /// Resource for ReportEmployeeLoansBetweenTwoDatesResult.ProductEmployeeId property
+        /// </summary>
+        public static string ProductEmployeeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportEmployeeLoansBetweenTwoDatesResult", "ProductEmployeeId");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to ProductEmployeeIdTooltip.
+        /// </summary>
+        public static string ProductEmployeeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportEmployeeLoansBetweenTwoDatesResult", "ProductEmployeeIdTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for ReportEmployeeLoansBetweenTwoDatesResult.ProductEmployeeFullName property
+        /// </summary>
+        public static string ProductEmployeeFullName
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportEmployeeLoansBetweenTwoDatesResult", "ProductEmployeeFullName");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to ProductEmployeeFullNameTooltip.
+        /// </summary>
+        public static string ProductEmployeeFullNameTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportEmployeeLoansBetweenTwoDatesResult", "ProductEmployeeFullNameTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for ReportEmployeeLoansBetweenTwoDatesResult.ProductProductTypeName property
+        /// </summary>
+        public static string ProductProductTypeName
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportEmployeeLoansBetweenTwoDatesResult", "ProductProductTypeName");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to ProductProductTypeNameTooltip.
+        /// </summary>
+        public static string ProductProductTypeNameTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportEmployeeLoansBetweenTwoDatesResult", "ProductProductTypeNameTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for ReportEmployeeLoansBetweenTwoDatesResult.ProductAmount property
+        /// </summary>
+        public static string ProductAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportEmployeeLoansBetweenTwoDatesResult", "ProductAmount");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to ProductAmountTooltip.
+        /// </summary>
+        public static string ProductAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportEmployeeLoansBetweenTwoDatesResult", "ProductAmountTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for ReportEmployeeLoansBetweenTwoDatesResult.LoanDecisionNumber property
+        /// </summary>
+        public static string LoanDecisionNumber
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportEmployeeLoansBetweenTwoDatesResult", "LoanDecisionNumber");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to LoanDecisionNumberTooltip.
+        /// </summary>
+        public static string LoanDecisionNumberTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportEmployeeLoansBetweenTwoDatesResult", "LoanDecisionNumberTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for ReportEmployeeLoansBetweenTwoDatesResult.LoanDecisionDate property
+        /// </summary>
+        public static string LoanDecisionDate
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportEmployeeLoansBetweenTwoDatesResult", "LoanDecisionDate");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to LoanDecisionDateTooltip.
+        /// </summary>
+        public static string LoanDecisionDateTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportEmployeeLoansBetweenTwoDatesResult", "LoanDecisionDateTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for ReportEmployeeLoansBetweenTwoDatesResult.LoanDecisionPaymentNumber property
+        /// </summary>
+        public static string LoanDecisionPaymentNumber
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportEmployeeLoansBetweenTwoDatesResult", "LoanDecisionPaymentNumber");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to LoanDecisionPaymentNumberTooltip.
+        /// </summary>
+        public static string LoanDecisionPaymentNumberTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportEmployeeLoansBetweenTwoDatesResult", "LoanDecisionPaymentNumberTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for ReportEmployeeLoansBetweenTwoDatesResult.LoanDecisionPaymentDate property
+        /// </summary>
+        public static string LoanDecisionPaymentDate
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportEmployeeLoansBetweenTwoDatesResult", "LoanDecisionPaymentDate");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to LoanDecisionPaymentDateTooltip.
+        /// </summary>
+        public static string LoanDecisionPaymentDateTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportEmployeeLoansBetweenTwoDatesResult", "LoanDecisionPaymentDateTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for ReportEmployeeLoansBetweenTwoDatesResult.Installment property
+        /// </summary>
+        public static string Installment
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportEmployeeLoansBetweenTwoDatesResult", "Installment");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to InstallmentTooltip.
+        /// </summary>
+        public static string InstallmentTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportEmployeeLoansBetweenTwoDatesResult", "InstallmentTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for ReportEmployeeLoansBetweenTwoDatesResult.ProfitAmount property
+        /// </summary>
+        public static string ProfitAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportEmployeeLoansBetweenTwoDatesResult", "ProfitAmount");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to ProfitAmountTooltip.
+        /// </summary>
+        public static string ProfitAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportEmployeeLoansBetweenTwoDatesResult", "ProfitAmountTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for ReportEmployeeLoansBetweenTwoDatesResult.Guarantors property
+        /// </summary>
+        public static string Guarantors
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportEmployeeLoansBetweenTwoDatesResult", "Guarantors");
+            }
+        }
+
+		/// <summary>
+        /// Looks up a localized string similar to GuarantorsTooltip.
+        /// </summary>
+        public static string GuarantorsTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "ReportEmployeeLoansBetweenTwoDatesResult", "GuarantorsTooltip");
+            }
+        }
+    	#endregion
+    }
+   	#endregion
+	#endregion
+
 	#region ReportLoansBetweenTwoDates filter and result classes
 	#region ReportLoansBetweenTwoDatesFilter meta data class definition
     /// <summary>

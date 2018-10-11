@@ -4,18 +4,45 @@
     string lang = "ar";
     string leftOrRight = (ViewBag.CurrentLayout == "rtl") ? "rtl" : "ltr";
 }
-
-
+@*<style>
+    table {
+    border:solid #000 !important;
+    border-width:1px 0 0 1px !important;
+}
+th, td {
+    border:solid #000 !important;
+    border-width:0 1px 1px 0 !important;
+}
+</style>*@
+<div id="header" style="display:none">
+    <div class="row" style="padding-bottom:20px">
+        <div style="float:left" class="col-md-2">@System.DateTime.Now.ToShortDateString()</div>
+        <div class="col-md-8"></div>
+        <div class="col-md-2">الصندوق التعاوني</div>
+    </div>
+    <div class="row" style="padding-bottom:20px">
+        <div class="col-md-2"></div>
+        <div class="col-md-8" style="text-align:center">تقرير الاشتراكات خلال فترة</div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
    <div id="printDiv" class="panel-body">
       @Html.Partial("ReportSubscriptionsBetweenTwoDatesResult")
     </div>
 
     <script>
-        //w = window.open();
-        //w.document.write(document.body.innerHTML);
-        ////w.document.write($('#printDiv').html());
-        //w.print();
-        //w.close();
+        w = window.open();
+        var style = "<style>table { border:solid #000 !important;border-width:1px 0 0 1px !important; }"
+        + "th, td { border:solid #000 !important;  border-width:0 1px 1px 0 !important; font-size:12px !important;}</style>"
+        var header = document.getElementById("header").innerHTML;
+
+        var table = document.getElementById("printDiv").innerHTML;
+
+        var str = style + "<body dir='rtl'>" + header + table + "</body>";
+        w.document.write(str);
+        //w.document.write($('#printDiv').html());
+        w.print();
+        w.close();
 
         //var printContents = document.getElementById("printDiv").innerHTML;
         //w = window.open();
@@ -26,16 +53,16 @@
         //w.document.close(); // necessary for IE >= 10
         //w.focus();
 
-        var printContents = document.getElementById("printDiv").innerHTML;
-        var originalContents = document.body.innerHTML;        
-        var head = document.head.innerHTML;
-        document.body.innerHTML = printContents;
-        window.print();
-        console.log("header= " + head);
-        console.log(originalContents);
+        //var printContents = document.getElementById("printDiv").innerHTML;
+        //var originalContents = document.body.innerHTML;        
+        //var head = document.head.innerHTML;
+        //document.body.innerHTML = printContents;
+        //window.print();
+        //console.log("header= " + head);
+        //console.log(originalContents);
 
-        document.body.innerHTML = originalContents;
-        document.head.innerHTML = head;
-        location.reload();
+        //document.body.innerHTML = originalContents;
+        //document.head.innerHTML = head;
+        //location.reload();
     </script>
   

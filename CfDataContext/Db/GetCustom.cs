@@ -1352,6 +1352,66 @@ namespace Cf.Data
 		}
 		#endregion
 
+		#region ReportEmployeeLoansBetweenTwoDates procedure.
+
+		[Function(Name = "dbo.ReportEmployeeLoansBetweenTwoDates")]
+		private ISingleResult<ReportEmployeeLoansBetweenTwoDatesResult> _ReportEmployeeLoansBetweenTwoDates([Parameter(Name = "@FromDate")] Nullable<DateTime> _fromDate, [Parameter(Name = "@ToDate")] Nullable<DateTime> _toDate, [Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _fromDate, _toDate, _employeeId);
+			return (result.ReturnValue as ISingleResult<ReportEmployeeLoansBetweenTwoDatesResult>);
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_fromDate"></param>
+		/// <param name="_toDate"></param>
+		/// <param name="_employeeId"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+		/// <returns>A list of ReportEmployeeLoansBetweenTwoDatesResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<ReportEmployeeLoansBetweenTwoDatesResult> ReportEmployeeLoansBetweenTwoDates([Parameter(Name = "@FromDate")] Nullable<DateTime> _fromDate, [Parameter(Name = "@ToDate")] Nullable<DateTime> _toDate, [Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
+		{
+			return _ReportEmployeeLoansBetweenTwoDates(_fromDate, _toDate, _employeeId).ToList<ReportEmployeeLoansBetweenTwoDatesResult>();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of ReportEmployeeLoansBetweenTwoDatesFilter that defines filtering options.</param>
+        /// <returns>A list of ReportEmployeeLoansBetweenTwoDatesResult instances.</returns>
+		/// <remarks>This method never returns null, 
+		///	if no records are available, length of the list will be 0.</remarks>
+		public List<ReportEmployeeLoansBetweenTwoDatesResult> ReportEmployeeLoansBetweenTwoDates(ReportEmployeeLoansBetweenTwoDatesFilter filterInstance)
+		{
+			return _ReportEmployeeLoansBetweenTwoDates(filterInstance.FromDate, filterInstance.ToDate, filterInstance.EmployeeId).ToList<ReportEmployeeLoansBetweenTwoDatesResult>();
+		}
+
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		/// <param name="_fromDate"></param>
+		/// <param name="_toDate"></param>
+		/// <param name="_employeeId"></param>
+        /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
+        /// <returns>An instance of type ReportEmployeeLoansBetweenTwoDatesResult or null.</returns>
+		public ReportEmployeeLoansBetweenTwoDatesResult ReportEmployeeLoansBetweenTwoDatesFirstOrDefault([Parameter(Name = "@FromDate")] Nullable<DateTime> _fromDate, [Parameter(Name = "@ToDate")] Nullable<DateTime> _toDate, [Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
+		{
+			return _ReportEmployeeLoansBetweenTwoDates(_fromDate, _toDate, _employeeId).FirstOrDefault<ReportEmployeeLoansBetweenTwoDatesResult>();
+		}
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of ReportEmployeeLoansBetweenTwoDatesFilter that defines filtering options.</param>
+        /// <returns>An instance of type ReportEmployeeLoansBetweenTwoDatesResult or null.</returns>
+		public ReportEmployeeLoansBetweenTwoDatesResult ReportEmployeeLoansBetweenTwoDatesFirstOrDefault(ReportEmployeeLoansBetweenTwoDatesFilter filterInstance)
+		{
+			return _ReportEmployeeLoansBetweenTwoDates(filterInstance.FromDate, filterInstance.ToDate, filterInstance.EmployeeId).FirstOrDefault<ReportEmployeeLoansBetweenTwoDatesResult>();
+		}
+		#endregion
+
 		#region ReportLoansBetweenTwoDates procedure.
 
 		[FunctionAttribute(Name = "dbo.ReportLoansBetweenTwoDates", IsComposable = true)]

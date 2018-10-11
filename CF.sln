@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CfProjectAdmin", "CfProject
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CFCommon", "CFCommon\CFCommon.csproj", "{08371E9A-DD81-425E-A15A-CE1F86648E81}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublicPortal", "PublicPortal\PublicPortal.csproj", "{EF8275D9-3AEB-4E8C-9EE6-1A25DF3BCAAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +58,10 @@ Global
 		{08371E9A-DD81-425E-A15A-CE1F86648E81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08371E9A-DD81-425E-A15A-CE1F86648E81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08371E9A-DD81-425E-A15A-CE1F86648E81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF8275D9-3AEB-4E8C-9EE6-1A25DF3BCAAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF8275D9-3AEB-4E8C-9EE6-1A25DF3BCAAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF8275D9-3AEB-4E8C-9EE6-1A25DF3BCAAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF8275D9-3AEB-4E8C-9EE6-1A25DF3BCAAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

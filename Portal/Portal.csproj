@@ -238,6 +238,7 @@
     </Compile>
     <Compile Include="Helper.cs" />
     <Compile Include="Helpers\LoanDecisionHelper.cs" />
+    <Compile Include="Helpers\Utils.cs" />
     <Compile Include="MetaData\HtmlHelperExtensions\ToolTipHelper.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1369,6 +1370,7 @@
     <Folder Include="Areas\DebtsCalculator\Models\" />
     <Folder Include="Areas\Grants\Models\" />
     <Folder Include="Areas\Loans\Models\" />
+    <Folder Include="Areas\Loans\Views\NewFolder1\" />
     <Folder Include="Controllers\Log\" />
   </ItemGroup>
   <ItemGroup>
@@ -1884,6 +1886,9 @@
     <Content Include="Areas\Loans\Views\Reports\PrintReportBalance.cshtml" />
     <Content Include="Areas\Repository\Views\Loan\Print.cshtml" />
     <Content Include="Areas\Repository\Views\Loan\Result.cshtml" />
+    <Content Include="Areas\Loans\Views\Reports\ReportEmployeeLoansBetweenTwoDatesResult.cshtml" />
+    <Content Include="Areas\Loans\Views\Reports\_FilterReportEmployeeLoansBetweenTwoDates.cshtml" />
+    <Content Include="Areas\Loans\Views\Reports\PrintReportEmployeeLoansBetweenTwoDates.cshtml" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Scripts\bootstrap-datepicker\build\build.less" />

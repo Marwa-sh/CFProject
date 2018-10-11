@@ -1,39 +1,49 @@
-@model IEnumerable<Cf.Data.LoanExtendedVw>
-
+ï»¿@model IEnumerable<Cf.Data.ReportEmployeeLoansBetweenTwoDatesResult>
 @{
     string ui = "UI";
     string lang = "ar";
     string leftOrRight = (ViewBag.CurrentLayout == "rtl") ? "rtl" : "ltr";
 }
+@*<style>
+    table {
+    border:solid #000 !important;
+    border-width:1px 0 0 1px !important;
+}
+th, td {
+    border:solid #000 !important;
+    border-width:0 1px 1px 0 !important;
+}
+</style>*@
 <div id="header" style="display:none">
     <div class="row" style="padding-bottom:20px">
         <div style="float:left" class="col-md-2">@System.DateTime.Now.ToShortDateString()</div>
         <div class="col-md-8"></div>
-        <div class="col-md-2">ÇáÕäÏæŞ ÇáÊÚÇæäí</div>
+        <div class="col-md-2">Ø§Ù„ØµÙ†Ø¯ÙˆÙ‚ Ø§Ù„ØªØ¹Ø§ÙˆÙ†ÙŠ</div>
     </div>
     <div class="row" style="padding-bottom:20px">
         <div class="col-md-2"></div>
-        <div class="col-md-8" style="text-align:center">ÊŞÑíÑ ÇáÓáİ ÇáããäæÍÉ ÎáÇá İÊÑÉ</div>
+        <div class="col-md-8" style="text-align:center">ØªÙ‚Ø±ÙŠØ± Ø§Ù„Ø³Ù„Ù Ø§Ù„Ù…Ù…Ù†ÙˆØ­Ø© Ù„Ù…ÙˆØ¸Ù Ø®Ù„Ø§Ù„ ÙØªØ±Ø©</div>
         <div class="col-md-2"></div>
     </div>
 </div>
-<div id="printDiv" class="panel-body">   
-    @Html.Partial("ReportLoansVwResult")
-</div>
+   <div id="printDiv" class="panel-body">
+      @Html.Partial("ReportEmployeeLoansBetweenTwoDatesResult")
+    </div>
 
-<script>
-    w = window.open();
-    var style = "<style>table { border:solid #000 !important;border-width:1px 0 0 1px !important; }"
-    + "th, td { border:solid #000 !important;  border-width:0 1px 1px 0 !important; font-size:12px !important;}</style>"
-    var header = document.getElementById("header").innerHTML;
+    <script>
+        w = window.open();
+        var style = "<style>table { border:solid #000 !important;border-width:1px 0 0 1px !important; }"
+        + "th, td { border:solid #000 !important;  border-width:0 1px 1px 0 !important; font-size:12px !important;}</style>"
+        var header = document.getElementById("header").innerHTML;
 
-    var table = document.getElementById("printDiv").innerHTML;
+        var table = document.getElementById("printDiv").innerHTML;
 
-    var str = style + "<body dir='rtl'>" + header + table + "</body>";
-    w.document.write(str);
-    //w.document.write($('#printDiv').html());
-    w.print();
-    w.close();
+        var str = style + "<body dir='rtl'>" + header + table + "</body>";
+        w.document.write(str);
+        //w.document.write($('#printDiv').html());
+        w.print();
+        w.close();
+
         //var printContents = document.getElementById("printDiv").innerHTML;
         //w = window.open();
 
@@ -44,7 +54,7 @@
         //w.focus();
 
         //var printContents = document.getElementById("printDiv").innerHTML;
-        //var originalContents = document.body.innerHTML;
+        //var originalContents = document.body.innerHTML;        
         //var head = document.head.innerHTML;
         //document.body.innerHTML = printContents;
         //window.print();
@@ -54,4 +64,5 @@
         //document.body.innerHTML = originalContents;
         //document.head.innerHTML = head;
         //location.reload();
-</script>
+    </script>
+  

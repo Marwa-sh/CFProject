@@ -1155,6 +1155,66 @@ namespace Cf.Data
 	#endregion
     #endregion
 
+	#region ReportEmployeeLoansBetweenTwoDates filter and result classes
+    #region ReportEmployeeLoansBetweenTwoDatesFilter class definition
+	/// <summary>
+    /// Filter class for ReportEmployeeLoansBetweenTwoDates.
+	/// </summary>
+    [MetadataType(typeof(ReportEmployeeLoansBetweenTwoDatesFilterMetaData))]
+	public partial class ReportEmployeeLoansBetweenTwoDatesFilter
+	{
+		#region Public properties
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<DateTime> FromDate {get; set; }
+		
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<DateTime> ToDate {get; set; }
+		/// <summary>
+		/// Needs summary!
+		/// </summary>
+		public Nullable<int> EmployeeId {get; set; }
+		#endregion
+	}
+	#endregion
+
+	#region ReportEmployeeLoansBetweenTwoDatesResult class definition
+	/// <summary>
+    /// Result class for ReportEmployeeLoansBetweenTwoDates.
+	/// </summary>
+    [MetadataType(typeof(ReportEmployeeLoansBetweenTwoDatesResultMetaData))]
+	public partial class ReportEmployeeLoansBetweenTwoDatesResult
+	{
+		#region Public properties
+        public int ProductEmployeeId {get; set; }
+		
+        public string ProductEmployeeFullName {get; set; }
+		
+        public string ProductProductTypeName {get; set; }
+		
+        public decimal ProductAmount {get; set; }
+		
+        public short LoanDecisionNumber {get; set; }
+		
+        public DateTime LoanDecisionDate {get; set; }
+		
+        public string LoanDecisionPaymentNumber {get; set; }
+		
+        public Nullable<DateTime> LoanDecisionPaymentDate {get; set; }
+		
+        public decimal Installment {get; set; }
+		
+        public decimal ProfitAmount {get; set; }
+		
+        public string Guarantors {get; set; }
+		#endregion
+	}
+	#endregion
+    #endregion
+
 	#region ReportLoansBetweenTwoDates filter and result classes
     #region ReportLoansBetweenTwoDatesFilter class definition
 	/// <summary>

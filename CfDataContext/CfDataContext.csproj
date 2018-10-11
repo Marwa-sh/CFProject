@@ -64,6 +64,7 @@
     <Compile Include="Dto\EventLogVw.Factory.cs" />
     <Compile Include="Dto\GetCustom.cs" />
     <Compile Include="Dto\ParametersCustomCriterion.cs" />
+    <Compile Include="Dto\Reports.Extended.cs" />
     <Compile Include="Dto\Tables.cs" />
     <Compile Include="Dto\Views.cs" />
     <Compile Include="Dto\Tables.Extended.cs" />
@@ -71,7 +72,9 @@
     <Compile Include="Dto\Views.Filter.cs" />
     <Compile Include="Enumerations\DataEnumerations.cs" />
     <Compile Include="Log\Enumerations.cs" />
+    <Compile Include="Log\Views.XmlFormatters.Extended.cs" />
     <Compile Include="Log\Views.XmlFormatters.cs" />
+    <Compile Include="Log\Views.XmlRepresenters.Extended.cs" />
     <Compile Include="Log\Views.XmlRepresenters.cs" />
     <Compile Include="Log\XmlFormatterBase.cs" />
     <Compile Include="Log\XmlRepresenterBase.cs" />

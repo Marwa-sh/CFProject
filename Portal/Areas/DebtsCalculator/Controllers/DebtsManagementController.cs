@@ -88,7 +88,10 @@ namespace Portal.Areas.DebtsCalculator.Controllers
         }
 
 
-
+        public ActionResult AddEmployeeDebtsAndWarrants()
+        {
+            return View();
+        }
 
         public ActionResult EmployeeDebts()
         {
@@ -165,6 +168,12 @@ namespace Portal.Areas.DebtsCalculator.Controllers
         {
             try
             {
+                EmployeeVw employee = EmployeeVwServices.Get(employeeId);
+                if (employee == null)
+                {
+                    return Json(new { status = false, message = "الرقم الذاتي غير صحيح" }, JsonRequestBehavior.AllowGet);
+                }
+
                 EmployeeProductCalculatorFilter f = new EmployeeProductCalculatorFilter()
                 {
                     EmployeeId = employeeId,
@@ -176,7 +185,7 @@ namespace Portal.Areas.DebtsCalculator.Controllers
                 EmployeeProductCalculatorResult result = db.EmployeeProductCalculatorFirstOrDefault(f);
                 if (result == null)
                 {
-                    return Json("Error", JsonRequestBehavior.AllowGet);
+                    return Json(new { status = false, message = "NoResult" }, JsonRequestBehavior.AllowGet);
                 }
                 else
                 {
@@ -192,19 +201,20 @@ namespace Portal.Areas.DebtsCalculator.Controllers
                     };
                     GetEmployeeSolvencyResult solvencyResult = db.GetEmployeeSolvencyFirstOrDefault(filter);
 
-                    return Json(new { Calculator = result, Solevency = solvencyResult }, JsonRequestBehavior.AllowGet);
+                    return Json(new {status= true, Calculator = result, Solevency = solvencyResult }, JsonRequestBehavior.AllowGet);
                 }
             }
             catch (CfException cfex)
             {
-                TempData["Failure"] = cfex.ErrorDefinition.LocalizedMessage;
+                //TempData["Failure"] = cfex.ErrorDefinition.LocalizedMessage;
+                return Json(new { status = false, message = cfex.ErrorDefinition.LocalizedMessage }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)
             {
-                TempData["Failure"] = ex.Message;
+                //TempData["Failure"] = ex.Message;
+                return Json(new { status = false, message = ex.Message }, JsonRequestBehavior.AllowGet);
             }
-
-            return Json("Error", JsonRequestBehavior.AllowGet);
+            
         }
         #endregion
 
@@ -217,6 +227,15 @@ namespace Portal.Areas.DebtsCalculator.Controllers
             {
                 try
                 {
+                    EmployeeVw employee = EmployeeVwServices.Get(debt.Employee);
+                    if (employee == null)
+                    {
+                        return Json(new { status = false, message = "الرقم الذاتي غير صحيح" }, JsonRequestBehavior.AllowGet);
+                    }
+                    if(debt.Date == null)
+                    {
+                        debt.Date = System.DateTime.Now;
+                    }
                     debt = DebtServices.Insert(CurrentUser.Id, debt, db);
                     TempData["Success"] = ResourceServices.GetString(Cf.Data.Resources.ResourceBase.Culture, "UI", "InsertConfirmed");
                 }
@@ -231,14 +250,27 @@ namespace Portal.Areas.DebtsCalculator.Controllers
             }
             else
             {
-                string errorMsg = "Modal is not valid";
+                string errorMsg = "";
+                foreach (ModelState item in ModelState.Values)
+                {
+                    if (item.Errors.Count == 0)
+                        continue;
+                    else
+                    {
+                        for (int i = 0; i < item.Errors.Count; i++)
+                        {
+                            errorMsg += item.Errors[i].ErrorMessage + "\n";
+                        }
+                    }
+                }
+               
                 return Json(new
                 {
-                    error = errorMsg,
-                    data = 0
+                    status= false,
+                    message = errorMsg,                    
                 }, JsonRequestBehavior.AllowGet);
             }
-            return new JsonResult() { Data = debt.Id };
+            return Json( new { status = true, Data = debt.Id }, JsonRequestBehavior.AllowGet);
         }
         //public string CreateDeb(Debt debt)
         //{
@@ -280,17 +312,62 @@ namespace Portal.Areas.DebtsCalculator.Controllers
         public ActionResult CreateWarrant(WarrantVwViewModel model)
         {
             WarrantVwViewModel Model = new WarrantVwViewModel();
-            Warrant w = new Warrant()
+            try
             {
-                Debt = model.Instance.DebtId,
-                Employee = model.Instance.DebtEmployeeId,
-                IsActive = model.Instance.IsActive,
-                Notes = model.Instance.Notes
-            };
-            w = WarrantServices.Insert(CurrentUserId, w, db);
+                EmployeeVw employee = EmployeeVwServices.Get(model.Instance.DebtEmployeeId);
+                if (employee == null)
+                {
+                    TempData["Failure"] = "الرقم الذاتي غير صحيح";
+                    Model.List = WarrantVwServices.GetByDebtId(model.Instance.DebtId, db);
+                    return PartialView("_WarrantsList", Model);                  
+                }
+                // check if this employee is not the debt employee
+                Debt d = DebtServices.Get(model.Instance.DebtId, db);
+                if(d != null)
+                {
+                    if(d.Employee == model.Instance.DebtEmployeeId)
+                    {
+                        TempData["Failure"] = "لا يمكن أن يكفل الموظف نفسه";
+                        Model.List = WarrantVwServices.GetByDebtId(model.Instance.DebtId, db);
+                        return PartialView("_WarrantsList", Model);
+                    }
+                }
 
+                
+                // check if this employee has been added as a garantaur
+                Warrant ewarrant = WarrantServices.GetByDebt_EmployeeFirstOrNull(model.Instance.DebtId, model.Instance.DebtEmployeeId);
+                if(ewarrant != null)
+                {
+                    TempData["Failure"] = "هذا الموظف هو كفيل حالياً لهذه المديونية";
+                }
+                else
+                {
+                    Warrant w = new Warrant()
+                    {
+                        Debt = model.Instance.DebtId,
+                        Employee = model.Instance.DebtEmployeeId,
+                        IsActive = model.Instance.IsActive,
+                        Notes = model.Instance.Notes
+                    };
+                    w = WarrantServices.Insert(CurrentUserId, w, db);
+
+                }
+
+                Model.List = WarrantVwServices.GetByDebtId(model.Instance.DebtId, db);
+
+                return PartialView("_WarrantsList", Model);
+            }
+            catch (CfException cfex)
+            {
+                TempData["Failure"] = cfex.ErrorDefinition.LocalizedMessage;
+                //return Json(new { status = false, message = cfex.ErrorDefinition.LocalizedMessage }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                TempData["Failure"] = ex.Message;
+                //return Json(new { status = false, message = ex.Message }, JsonRequestBehavior.AllowGet);
+            }
             Model.List = WarrantVwServices.GetByDebtId(model.Instance.DebtId, db);
-
             return PartialView("_WarrantsList", Model);
         }
 

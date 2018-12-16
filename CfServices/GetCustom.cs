@@ -11,33 +11,35 @@ namespace Cf.Services
 	#region Db class definition
     public static partial class DbServices
     {
-		#region EmployeeLoans procedure.
+        #region EmployeeLoans procedure.
 
 
-		/// <summary>
-		/// Needs summary!
-		/// </summary>
-		/// <param name="_employeeId"></param>
-		/// <returns>A list of EmployeeLoansResult instances.</returns>
-		/// <remarks>This method never returns null, 
-		///	if no records are available, length of the list will be 0.</remarks>
-		public static List<EmployeeLoansResult> EmployeeLoans([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
-		{
-			Db db = new Db(DbServices.ConnectionString);
-			return db.EmployeeLoans(_employeeId);
-		}
+        /// <summary>
+        /// Needs summary!
+        /// </summary>
+        /// <param name="_employeeId"></param>
+        /// <param name="_loanStatusId"></param>
+        /// <returns>A list of EmployeeLoansResult instances.</returns>
+        /// <remarks>This method never returns null, 
+        ///	if no records are available, length of the list will be 0.</remarks>
+        public static List<EmployeeLoansResult> EmployeeLoans([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@LoanStatusId")] Nullable<int> _loanStatusId)
+        {
+            Db db = new Db(DbServices.ConnectionString);
+            return db.EmployeeLoans(_employeeId, _loanStatusId);
+        }
 
-		/// <summary>
-		/// Needs summary!
-		/// </summary>
-		/// <param name="_employeeId"></param>
-		/// <returns>A list of EmployeeLoansResult instances.</returns>
-		/// <remarks>This method never returns null, 
-		///	if no records are available, length of the list will be 0.</remarks>
-		public static List<EmployeeLoansResult> EmployeeLoans([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, Db db)
-		{
-			return db.EmployeeLoans(_employeeId);
-		}
+        /// <summary>
+        /// Needs summary!
+        /// </summary>
+        /// <param name="_employeeId"></param>
+        /// <param name="_loanStatusId"></param>
+        /// <returns>A list of EmployeeLoansResult instances.</returns>
+        /// <remarks>This method never returns null, 
+        ///	if no records are available, length of the list will be 0.</remarks>
+        public static List<EmployeeLoansResult> EmployeeLoans([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@LoanStatusId")] Nullable<int> _loanStatusId, Db db)
+        {
+            return db.EmployeeLoans(_employeeId, _loanStatusId);
+        }
 
         /// <summary>
 		/// Needs summary!
@@ -47,10 +49,10 @@ namespace Cf.Services
 		/// <remarks>This method never returns null, 
 		///	if no records are available, length of the list will be 0.</remarks>
 		public static List<EmployeeLoansResult> EmployeeLoans(EmployeeLoansFilter filterInstance)
-		{
-			Db db = new Db(DbServices.ConnectionString);
-			return db.EmployeeLoans(filterInstance.EmployeeId);
-		}
+        {
+            Db db = new Db(DbServices.ConnectionString);
+            return db.EmployeeLoans(filterInstance.EmployeeId, filterInstance.LoanStatusId);
+        }
 
         /// <summary>
 		/// Needs summary!
@@ -60,30 +62,32 @@ namespace Cf.Services
 		/// <remarks>This method never returns null, 
 		///	if no records are available, length of the list will be 0.</remarks>
 		public static List<EmployeeLoansResult> EmployeeLoans(EmployeeLoansFilter filterInstance, Db db)
-		{
-			return db.EmployeeLoans(filterInstance.EmployeeId);
-		}
+        {
+            return db.EmployeeLoans(filterInstance.EmployeeId, filterInstance.LoanStatusId);
+        }
 
-		/// <summary>
-		/// Needs summary!
-		/// </summary>
-		/// <param name="_employeeId"></param>
-		/// <returns>An instance of EmployeeLoansResult or null.</returns>
-		public static EmployeeLoansResult EmployeeLoansFirstOrDefault([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
-		{
-			Db db = new Db(DbServices.ConnectionString);
-			return db.EmployeeLoansFirstOrDefault(_employeeId);
-		}
+        /// <summary>
+        /// Needs summary!
+        /// </summary>
+        /// <param name="_employeeId"></param>
+        /// <param name="_loanStatusId"></param>
+        /// <returns>An instance of EmployeeLoansResult or null.</returns>
+        public static EmployeeLoansResult EmployeeLoansFirstOrDefault([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@LoanStatusId")] Nullable<int> _loanStatusId)
+        {
+            Db db = new Db(DbServices.ConnectionString);
+            return db.EmployeeLoansFirstOrDefault(_employeeId, _loanStatusId);
+        }
 
-		/// <summary>
-		/// Needs summary!
-		/// </summary>
-		/// <param name="_employeeId"></param>
-		/// <returns>An instance of EmployeeLoansResult or null.</returns>
-		public static EmployeeLoansResult EmployeeLoansFirstOrDefault([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, Db db)
-		{
-			return db.EmployeeLoansFirstOrDefault(_employeeId);
-		}
+        /// <summary>
+        /// Needs summary!
+        /// </summary>
+        /// <param name="_employeeId"></param>
+        /// <param name="_loanStatusId"></param>
+        /// <returns>An instance of EmployeeLoansResult or null.</returns>
+        public static EmployeeLoansResult EmployeeLoansFirstOrDefault([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@LoanStatusId")] Nullable<int> _loanStatusId, Db db)
+        {
+            return db.EmployeeLoansFirstOrDefault(_employeeId, _loanStatusId);
+        }
 
         /// <summary>
 		/// Needs summary!
@@ -91,10 +95,10 @@ namespace Cf.Services
         /// <param name="filterInstance">An instance of EmployeeLoansFilter that defines filtering options.</param>
         /// <returns>An instance of EmployeeLoansResult or null.</returns>
 		public static EmployeeLoansResult EmployeeLoansFirstOrDefault(EmployeeLoansFilter filterInstance)
-		{
-			Db db = new Db(DbServices.ConnectionString);
-			return db.EmployeeLoansFirstOrDefault(filterInstance.EmployeeId);
-		}
+        {
+            Db db = new Db(DbServices.ConnectionString);
+            return db.EmployeeLoansFirstOrDefault(filterInstance.EmployeeId, filterInstance.LoanStatusId);
+        }
 
         /// <summary>
 		/// Needs summary!
@@ -102,24 +106,116 @@ namespace Cf.Services
         /// <param name="filterInstance">An instance of EmployeeLoansFilter that defines filtering options.</param>
         /// <returns>An instance of EmployeeLoansResult or null.</returns>
 		public static EmployeeLoansResult EmployeeLoansFirstOrDefault(EmployeeLoansFilter filterInstance, Db db)
-		{
-			return db.EmployeeLoansFirstOrDefault(filterInstance.EmployeeId);
-		}
+        {
+            return db.EmployeeLoansFirstOrDefault(filterInstance.EmployeeId, filterInstance.LoanStatusId);
+        }
 
-		#endregion
+        #endregion
 
-		#region EmployeeMonthPayments procedure.
+        #region LoanMoveFromEmployeeToEmployee procedure.
 
+        /// <summary>
+        /// Needs summary!
+        /// </summary>
+        /// <param name="_loan"></param>
+        /// <param name="_employeeId"></param>
+        /// <param name="_loanDecisionId"></param>
+        public static void LoanMoveFromEmployeeToEmployee([Parameter(Name = "@Loan")] Nullable<int> _loan, [Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@LoanDecisionId")] Nullable<int> _loanDecisionId)
+        {
+            Db db = new Db(DbServices.ConnectionString);
+            db.LoanMoveFromEmployeeToEmployee(_loan, _employeeId, _loanDecisionId);
+        }
 
-		/// <summary>
+        /// <summary>
+        /// Needs summary!
+        /// </summary>
+        /// <param name="_loan"></param>
+        /// <param name="_employeeId"></param>
+        /// <param name="_loanDecisionId"></param>
+        public static void LoanMoveFromEmployeeToEmployee([Parameter(Name = "@Loan")] Nullable<int> _loan, [Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@LoanDecisionId")] Nullable<int> _loanDecisionId, Db db)
+        {
+            db.LoanMoveFromEmployeeToEmployee(_loan, _employeeId, _loanDecisionId);
+        }
+
+        /// <summary>
 		/// Needs summary!
 		/// </summary>
-		/// <param name="_month"></param>
-		/// <param name="_employee"></param>
-		/// <returns>A list of EmployeeMonthPaymentsResult instances.</returns>
-		/// <remarks>This method never returns null, 
-		///	if no records are available, length of the list will be 0.</remarks>
-		public static List<EmployeeMonthPaymentsResult> EmployeeMonthPayments([Parameter(Name = "@Month")] Nullable<DateTime> _month, [Parameter(Name = "@Employee")] Nullable<int> _employee)
+        /// <param name="filterInstance">An instance of LoanMoveFromEmployeeToEmployeeFilter that defines filtering options.</param>
+		public static void LoanMoveFromEmployeeToEmployee(LoanMoveFromEmployeeToEmployeeFilter filterInstance)
+        {
+            Db db = new Db(DbServices.ConnectionString);
+            db.LoanMoveFromEmployeeToEmployee(filterInstance.Loan, filterInstance.EmployeeId, filterInstance.LoanDecisionId);
+        }
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of LoanMoveFromEmployeeToEmployeeFilter that defines filtering options.</param>
+		public static void LoanMoveFromEmployeeToEmployee(LoanMoveFromEmployeeToEmployeeFilter filterInstance, Db db)
+        {
+            db.LoanMoveFromEmployeeToEmployee(filterInstance.Loan, filterInstance.EmployeeId, filterInstance.LoanDecisionId);
+        }
+        #endregion
+
+        #region LoanMoveFromEmployeeToGuarantor procedure.
+
+        /// <summary>
+        /// Needs summary!
+        /// </summary>
+        /// <param name="_loan"></param>
+        /// <param name="_employeeId"></param>
+        /// <param name="_loanDecisionId"></param>
+        /// <param name="_numberOfGuarantors"></param>
+        public static void LoanMoveFromEmployeeToGuarantor([Parameter(Name = "@Loan")] Nullable<int> _loan, [Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@LoanDecisionId")] Nullable<int> _loanDecisionId, [Parameter(Name = "@NumberOfGuarantors")] Nullable<int> _numberOfGuarantors)
+        {
+            Db db = new Db(DbServices.ConnectionString);
+            db.LoanMoveFromEmployeeToGuarantor(_loan, _employeeId, _loanDecisionId, _numberOfGuarantors);
+        }
+
+        /// <summary>
+        /// Needs summary!
+        /// </summary>
+        /// <param name="_loan"></param>
+        /// <param name="_employeeId"></param>
+        /// <param name="_loanDecisionId"></param>
+        /// <param name="_numberOfGuarantors"></param>
+        public static void LoanMoveFromEmployeeToGuarantor([Parameter(Name = "@Loan")] Nullable<int> _loan, [Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@LoanDecisionId")] Nullable<int> _loanDecisionId, [Parameter(Name = "@NumberOfGuarantors")] Nullable<int> _numberOfGuarantors, Db db)
+        {
+            db.LoanMoveFromEmployeeToGuarantor(_loan, _employeeId, _loanDecisionId, _numberOfGuarantors);
+        }
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of LoanMoveFromEmployeeToGuarantorFilter that defines filtering options.</param>
+		public static void LoanMoveFromEmployeeToGuarantor(LoanMoveFromEmployeeToGuarantorFilter filterInstance)
+        {
+            Db db = new Db(DbServices.ConnectionString);
+            db.LoanMoveFromEmployeeToGuarantor(filterInstance.Loan, filterInstance.EmployeeId, filterInstance.LoanDecisionId, filterInstance.NumberOfGuarantors);
+        }
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of LoanMoveFromEmployeeToGuarantorFilter that defines filtering options.</param>
+		public static void LoanMoveFromEmployeeToGuarantor(LoanMoveFromEmployeeToGuarantorFilter filterInstance, Db db)
+        {
+            db.LoanMoveFromEmployeeToGuarantor(filterInstance.Loan, filterInstance.EmployeeId, filterInstance.LoanDecisionId, filterInstance.NumberOfGuarantors);
+        }
+        #endregion
+
+        #region EmployeeMonthPayments procedure.
+
+
+        /// <summary>
+        /// Needs summary!
+        /// </summary>
+        /// <param name="_month"></param>
+        /// <param name="_employee"></param>
+        /// <returns>A list of EmployeeMonthPaymentsResult instances.</returns>
+        /// <remarks>This method never returns null, 
+        ///	if no records are available, length of the list will be 0.</remarks>
+        public static List<EmployeeMonthPaymentsResult> EmployeeMonthPayments([Parameter(Name = "@Month")] Nullable<DateTime> _month, [Parameter(Name = "@Employee")] Nullable<int> _employee)
 		{
 			Db db = new Db(DbServices.ConnectionString);
 			return db.EmployeeMonthPayments(_month, _employee);

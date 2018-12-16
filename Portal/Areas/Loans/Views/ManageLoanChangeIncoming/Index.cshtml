@@ -1,0 +1,101 @@
+﻿
+<div class="row">
+    <div class="col-xs-12">
+        <div class="card">
+            <div class="card-header">
+
+                <h4 class="card-title">
+                    @ViewBag.Title
+                </h4>
+
+                <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
+                        <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                        <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-body collapse in ">
+                <div class="card-block card-dashboard">
+
+
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-6 col-xs-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-block">
+                                        <div class="media">
+                                            <div class="media-body text-xs-left">
+                                                <h3 class="blue"></h3>
+                                                @Html.ActionLink((string)ViewBag.TransitoryIncomingLoan, "Create", "TransitoryIncomingLoan", new { Area = "Repository" }, new { })
+                                            </div>
+                                            <div class="media-right media-middle">
+                                                <i class="icon-ios-list blue font-large-2 float-xs-right"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-xs-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-block">
+                                        <div class="media">
+                                            <div class="media-body text-xs-left">
+                                                <h3 class="blue"></h3>
+                                                @Html.ActionLink((string)ViewBag.MoveLoansToGuarantor, "MoveLoansToGuarantor")
+                                            </div>
+                                            <div class="media-right media-middle">
+                                                <i class="icon-ios-list blue font-large-2 float-xs-right"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts
+{
+    <script>
+        $(function () {
+
+
+            $(".details").click(function () {
+                var request_id = $(this).data("id");
+                $.ajax({
+                    type: "POST",
+                    url: "/ManageLoanRequests/Details",
+                    data: '{id: "' + request_id + '" }',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "html",
+                    success: function (response) {
+                        //$('#dialog').html(response);
+                        //$('#dialog').dialog('open');
+                        $("#detailsModalBody").html(response);
+
+                        $("#detailsModal").modal("show");
+                    },
+                    failure: function (response) {
+                        alert(response.responseText);
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+            });
+
+        });
+    </script>
+}

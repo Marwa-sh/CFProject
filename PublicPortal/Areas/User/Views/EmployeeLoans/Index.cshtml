@@ -1,0 +1,124 @@
+﻿@model Cf.ViewModels.LoanVwViewModel
+@{
+    ViewBag.Title = "EmployeeLoans";
+}
+
+
+<div class="form-horizontal">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">
+                    @ViewBag.EmployeeLoans @if (Model.List.Count == 0)
+                    {<span class="tag tag-default">@Model.List.Count</span>}
+                    else
+                    {<span class="tag tag-danger">@Model.List.Count</span> }
+                </h4>
+                <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
+                        <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                        <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-body collapse in">
+                <div class="card-block card-dashboard">
+
+                </div>
+                <div class="table-responsive">
+                    <table id="Result" class="table table-bordered mb-0">
+                        <thead class="bg-primary table-head-color">
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Instance.ProductId)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Instance.ProductEmployeeId)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Instance.ProductEmployeeFullName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Instance.ProductEmployeeDepartmentSalaryWorkPlaceName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Instance.ProductProductTypeName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Instance.ProductProductTypeRate)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Instance.ProductAmount)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Instance.LoanDecisionNumber)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Instance.LoanDecisionDate)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Instance.LoanStatusName)
+                                </th>
+
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.List)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ProductId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ProductEmployeeId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ProductEmployeeFullName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ProductEmployeeDepartmentSalaryWorkPlaceName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ProductProductTypeName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ProductProductTypeRate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ProductAmount)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LoanDecisionNumber)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LoanDecisionDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LoanStatusName)
+                                    </td>
+                                    <td>
+                                        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                            <button type="button" class="btn btn-info">
+                                                @Html.ActionLink((string)ViewBag.Details, "Details",
+                                            new
+                                            {
+                                                product = item.ProductId
+                                            })
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

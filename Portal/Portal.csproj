@@ -150,6 +150,8 @@
     <Compile Include="Areas\Grants\Controllers\GrantRequestViewModelController.cs" />
     <Compile Include="Areas\Loans\Controllers\LoanDecisionViewModelController.cs" />
     <Compile Include="Areas\Loans\Controllers\LoanReportController.cs" />
+    <Compile Include="Areas\Loans\Controllers\ManageLoanChangeIncomingController.cs" />
+    <Compile Include="Areas\Loans\Controllers\ManageLoanChangesController.cs" />
     <Compile Include="Areas\Loans\Controllers\ReportsController.cs" />
     <Compile Include="Areas\Loans\LoansAreaRegistration.cs" />
     <Compile Include="Areas\Repository\Controllers\AvailabilityCeilingController.cs" />
@@ -244,6 +246,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\EmployeeDebtsViewModel.cs" />
     <Compile Include="ViewModels\EmployeeLoansReport.cs" />
+    <Compile Include="ViewModels\HelperClasses.cs" />
     <Compile Include="ViewModels\Tables.Extended.cs" />
     <Compile Include="ViewModels\DeepLoadViews.cs" />
     <Compile Include="ViewModels\GuarantorWithStatmentViewModel.cs" />
@@ -1340,6 +1343,7 @@
     <Content Include="Scripts\scripts\tooltip\tooltip.js" />
     <Content Include="Scripts\scripts\tooltip\tooltip.min.js" />
     <Content Include="Scripts\sweetalert\sweetalert.min.js" />
+    <Content Include="Scripts\sweetalert\sweetalert2.js" />
     <Content Include="Scripts\ui\affix.js" />
     <Content Include="Scripts\ui\blockUI.min.js" />
     <Content Include="Scripts\ui\jquery.matchHeight-min.js" />
@@ -1370,7 +1374,6 @@
     <Folder Include="Areas\DebtsCalculator\Models\" />
     <Folder Include="Areas\Grants\Models\" />
     <Folder Include="Areas\Loans\Models\" />
-    <Folder Include="Areas\Loans\Views\NewFolder1\" />
     <Folder Include="Controllers\Log\" />
   </ItemGroup>
   <ItemGroup>
@@ -1889,6 +1892,16 @@
     <Content Include="Areas\Loans\Views\Reports\ReportEmployeeLoansBetweenTwoDatesResult.cshtml" />
     <Content Include="Areas\Loans\Views\Reports\_FilterReportEmployeeLoansBetweenTwoDates.cshtml" />
     <Content Include="Areas\Loans\Views\Reports\PrintReportEmployeeLoansBetweenTwoDates.cshtml" />
+    <Content Include="Areas\Loans\Views\ManageLoanChanges\ChangeLoanToEmployee.cshtml" />
+    <Content Include="Areas\Loans\Views\ManageLoanChanges\_Filter.cshtml" />
+    <Content Include="Areas\Loans\Views\ManageLoanChanges\Index.cshtml" />
+    <Content Include="Areas\DebtsCalculator\Views\DebtsManagement\AddEmployeeDebtsAndWarrants.cshtml" />
+    <Content Include="Areas\Loans\Views\ManageLoanChanges\MoveLoansToEmployee.cshtml" />
+    <Content Include="Areas\Loans\Views\ManageLoanChanges\MoveLoansToGuarantor.cshtml" />
+    <Content Include="Areas\Loans\Views\ManageLoanChanges\_ListOfGuarantors.cshtml" />
+    <Content Include="Areas\Loans\Views\ManageLoanChangeOutgoing\MoveLoansToEmployee.cshtml" />
+    <Content Include="Areas\Loans\Views\ManageLoanChangeIncoming\MoveLoansToIncoming.cshtml" />
+    <Content Include="Areas\Loans\Views\ManageLoanChangeIncoming\Index.cshtml" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Scripts\bootstrap-datepicker\build\build.less" />

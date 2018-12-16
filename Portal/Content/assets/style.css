@@ -184,3 +184,8 @@ button a:hover,
 button a:visited{
     color: #fff !important;
 }
+
+.divMargin{
+    margin-top: 20px;
+    margin-right: 10px;
+}

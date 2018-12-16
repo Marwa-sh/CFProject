@@ -158,6 +158,12 @@
                             @Html.ActionLink("إصدار قرار السلف", "CreateLoanRequestDecision", "LoanDecision", new { Area = "Repository" }, new { })
                         </li>
                         <li>
+                            @Html.ActionLink("تحويلات السلف", "Index", "ManageLoanChanges", new { Area = "Loans" }, new { })
+                        </li>
+                        <li>
+                            @Html.ActionLink("السلف المنقولة من فرع", "Index", "ManageLoanChangeIncoming", new { Area = "Loans" }, new { })
+                        </li>
+                        <li>
                             @Html.ActionLink("مجموعات الدفع", "Index", "PaymentGroup", new { Area = "Repository" }, new { })
                         </li>
                         <li>

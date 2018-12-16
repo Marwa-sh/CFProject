@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Hi after login</h2>
+<div class="row">
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-block">
+                    <div class="media">
+                        <div class="media-body text-xs-right">
+                            @Html.ActionLink((string)ViewBag.EmployeeLoans, "Index", "EmployeeLoans")
+                        </div>
+                        <div class="media-left media-middle">
+                            <i class="icon-pencil cyan font-large-2 float-xs-left"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-block">
+                    <div class="media">
+                        <div class="media-body text-xs-right">
+                            @Html.ActionLink((string)ViewBag.EmployeeGrants, "Index", "EmployeeGrants")
+                        </div>
+                        <div class="media-left media-middle">
+                            <i class="icon-pencil cyan font-large-2 float-xs-left"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-block">
+                    <div class="media">
+                        <div class="media-body text-xs-right">
+                            @Html.ActionLink((string)ViewBag.EmployeeDebts, "Index", "EmployeeDebts")
+                        </div>
+                        <div class="media-left media-middle">
+                            <i class="icon-pencil cyan font-large-2 float-xs-left"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-block">
+                    <div class="media">
+                        <div class="media-body text-xs-right">
+                            @Html.ActionLink((string)ViewBag.EmployeeWarrants, "Index", "EmployeeWarrants")
+                        </div>
+                        <div class="media-left media-middle">
+                            <i class="icon-pencil cyan font-large-2 float-xs-left"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-block">
+                    <div class="media">
+                        <div class="media-body text-xs-right">
+                            @Html.ActionLink((string)ViewBag.EmployeeSubscriptions, "Index", "EmployeeSubscriptions")
+                        </div>
+                        <div class="media-left media-middle">
+                            <i class="icon-pencil cyan font-large-2 float-xs-left"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+</div>
+

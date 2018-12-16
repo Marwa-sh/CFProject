@@ -143,7 +143,7 @@
                                                   {"data-toggle", "tooltip"},
                                                   {"data-placement", "bottom"}
                                                 })
-                                        @Html.EditorFor(model => model.IsActive, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.EditorFor(model => model.IsActive, new { htmlAttributes = new { @class = "form-control", @checked= true } })
                                         @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
                                     </div>
                                 </div>

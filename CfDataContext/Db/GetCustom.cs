@@ -10,26 +10,27 @@ namespace Cf.Data
 	#region Db class definition
     public partial class Db
     {
-		#region EmployeeLoans procedure.
+        #region EmployeeLoans procedure.
 
-		[FunctionAttribute(Name = "dbo.EmployeeLoans", IsComposable = true)]
-		private IQueryable<EmployeeLoansResult> _EmployeeLoans([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
-		{
-			return this.CreateMethodCallQuery<EmployeeLoansResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _employeeId);
-		}
+        [FunctionAttribute(Name = "dbo.EmployeeLoans", IsComposable = true)]
+        private IQueryable<EmployeeLoansResult> _EmployeeLoans([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@LoanStatusId")] Nullable<int> _loanStatusId)
+        {
+            return this.CreateMethodCallQuery<EmployeeLoansResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _employeeId, _loanStatusId);
+        }
 
-		/// <summary>
-		/// Needs summary!
-		/// </summary>
-		/// <param name="_employeeId"></param>
+        /// <summary>
+        /// Needs summary!
+        /// </summary>
+        /// <param name="_employeeId"></param>
+        /// <param name="_loanStatusId"></param>
         /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
-		/// <returns>A list of EmployeeLoansResult instances.</returns>
-		/// <remarks>This method never returns null, 
-		///	if no records are available, length of the list will be 0.</remarks>
-		public List<EmployeeLoansResult> EmployeeLoans([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
-		{
-			return _EmployeeLoans(_employeeId).ToList<EmployeeLoansResult>();
-		}
+        /// <returns>A list of EmployeeLoansResult instances.</returns>
+        /// <remarks>This method never returns null, 
+        ///	if no records are available, length of the list will be 0.</remarks>
+        public List<EmployeeLoansResult> EmployeeLoans([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@LoanStatusId")] Nullable<int> _loanStatusId)
+        {
+            return _EmployeeLoans(_employeeId, _loanStatusId).ToList<EmployeeLoansResult>();
+        }
 
         /// <summary>
 		/// Needs summary!
@@ -39,21 +40,22 @@ namespace Cf.Data
 		/// <remarks>This method never returns null, 
 		///	if no records are available, length of the list will be 0.</remarks>
 		public List<EmployeeLoansResult> EmployeeLoans(EmployeeLoansFilter filterInstance)
-		{
-			return _EmployeeLoans(filterInstance.EmployeeId).ToList<EmployeeLoansResult>();
-		}
+        {
+            return _EmployeeLoans(filterInstance.EmployeeId, filterInstance.LoanStatusId).ToList<EmployeeLoansResult>();
+        }
 
-		/// <summary>
-		/// Needs summary!
-		/// </summary>
-		/// <param name="_employeeId"></param>
+        /// <summary>
+        /// Needs summary!
+        /// </summary>
+        /// <param name="_employeeId"></param>
+        /// <param name="_loanStatusId"></param>
         /// <param name="_totalRowCount">Total number of rows returned by the specified filter.</param>
-		/// <returns>An instance of EmployeeLoansResult.</returns>
-		/// <remarks>If no instances the method returns null.</remarks>
-		public EmployeeLoansResult EmployeeLoansFirstOrDefault([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId)
-		{
-			return _EmployeeLoans(_employeeId).FirstOrDefault<EmployeeLoansResult>();
-		}
+        /// <returns>An instance of EmployeeLoansResult.</returns>
+        /// <remarks>If no instances the method returns null.</remarks>
+        public EmployeeLoansResult EmployeeLoansFirstOrDefault([Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@LoanStatusId")] Nullable<int> _loanStatusId)
+        {
+            return _EmployeeLoans(_employeeId, _loanStatusId).FirstOrDefault<EmployeeLoansResult>();
+        }
 
         /// <summary>
 		/// Needs summary!
@@ -62,14 +64,75 @@ namespace Cf.Data
 		/// <returns>An instance of EmployeeLoansResult.</returns>
 		/// <remarks>If no instances the method returns null.</remarks>
 		public EmployeeLoansResult EmployeeLoansFirstOrDefault(EmployeeLoansFilter filterInstance)
-		{
-			return _EmployeeLoans(filterInstance.EmployeeId).FirstOrDefault<EmployeeLoansResult>();
-		}
-		#endregion
+        {
+            return _EmployeeLoans(filterInstance.EmployeeId, filterInstance.LoanStatusId).FirstOrDefault<EmployeeLoansResult>();
+        }
+        #endregion
 
-		#region EmployeeMonthPayments procedure.
+        #region LoanMoveFromEmployeeToEmployee procedure.
 
-		[FunctionAttribute(Name = "dbo.EmployeeMonthPayments", IsComposable = true)]
+        [Function(Name = "dbo.LoanMoveFromEmployeeToEmployee")]
+        private int _LoanMoveFromEmployeeToEmployee([Parameter(Name = "@Loan")] Nullable<int> _loan, [Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@LoanDecisionId")] Nullable<int> _loanDecisionId)
+        {
+            IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _loan, _employeeId, _loanDecisionId);
+            return (int)(result.ReturnValue);
+        }
+
+        /// <summary>
+        /// Needs summary!
+        /// </summary>
+        /// <param name="_loan"></param>
+        /// <param name="_employeeId"></param>
+        /// <param name="_loanDecisionId"></param>
+        public void LoanMoveFromEmployeeToEmployee([Parameter(Name = "@Loan")] Nullable<int> _loan, [Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@LoanDecisionId")] Nullable<int> _loanDecisionId)
+        {
+            _LoanMoveFromEmployeeToEmployee(_loan, _employeeId, _loanDecisionId);
+        }
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of LoanMoveFromEmployeeToEmployeeFilter that defines filtering options.</param>
+		public void LoanMoveFromEmployeeToEmployee(LoanMoveFromEmployeeToEmployeeFilter filterInstance)
+        {
+            _LoanMoveFromEmployeeToEmployee(filterInstance.Loan, filterInstance.EmployeeId, filterInstance.LoanDecisionId);
+        }
+        #endregion
+
+        #region LoanMoveFromEmployeeToGuarantor procedure.
+
+        [Function(Name = "dbo.LoanMoveFromEmployeeToGuarantor")]
+        private int _LoanMoveFromEmployeeToGuarantor([Parameter(Name = "@Loan")] Nullable<int> _loan, [Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@LoanDecisionId")] Nullable<int> _loanDecisionId, [Parameter(Name = "@NumberOfGuarantors")] Nullable<int> _numberOfGuarantors)
+        {
+            IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _loan, _employeeId, _loanDecisionId, _numberOfGuarantors);
+            return (int)(result.ReturnValue);
+        }
+
+        /// <summary>
+        /// Needs summary!
+        /// </summary>
+        /// <param name="_loan"></param>
+        /// <param name="_employeeId"></param>
+        /// <param name="_loanDecisionId"></param>
+        /// <param name="_numberOfGuarantors"></param>
+        public void LoanMoveFromEmployeeToGuarantor([Parameter(Name = "@Loan")] Nullable<int> _loan, [Parameter(Name = "@EmployeeId")] Nullable<int> _employeeId, [Parameter(Name = "@LoanDecisionId")] Nullable<int> _loanDecisionId, [Parameter(Name = "@NumberOfGuarantors")] Nullable<int> _numberOfGuarantors)
+        {
+            _LoanMoveFromEmployeeToGuarantor(_loan, _employeeId, _loanDecisionId, _numberOfGuarantors);
+        }
+
+        /// <summary>
+		/// Needs summary!
+		/// </summary>
+        /// <param name="filterInstance">An instance of LoanMoveFromEmployeeToGuarantorFilter that defines filtering options.</param>
+		public void LoanMoveFromEmployeeToGuarantor(LoanMoveFromEmployeeToGuarantorFilter filterInstance)
+        {
+            _LoanMoveFromEmployeeToGuarantor(filterInstance.Loan, filterInstance.EmployeeId, filterInstance.LoanDecisionId, filterInstance.NumberOfGuarantors);
+        }
+        #endregion
+
+        #region EmployeeMonthPayments procedure.
+
+        [FunctionAttribute(Name = "dbo.EmployeeMonthPayments", IsComposable = true)]
 		private IQueryable<EmployeeMonthPaymentsResult> _EmployeeMonthPayments([Parameter(Name = "@Month")] Nullable<DateTime> _month, [Parameter(Name = "@Employee")] Nullable<int> _employee)
 		{
 			return this.CreateMethodCallQuery<EmployeeMonthPaymentsResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), _month, _employee);

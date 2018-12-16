@@ -141,6 +141,28 @@ namespace Cf.Data.Resources
             }
         }
         /// <summary>
+        /// Resource for EmployeeLoansResult.ProductAmount property
+        /// </summary>
+        public static string ProductAmount
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeLoansResult", "ProductAmount");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to ProductAmountTooltip.
+        /// </summary>
+        public static string ProductAmountTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "EmployeeLoansResult", "ProductAmountTooltip");
+            }
+        }
+
+        /// <summary>
         /// Resource for EmployeeLoansResult.ProductId property
         /// </summary>
         public static string ProductId
@@ -226,15 +248,202 @@ namespace Cf.Data.Resources
         }
     	#endregion
     }
-   	#endregion
-	#endregion
+    #endregion
+    #endregion
 
-	#region EmployeeMonthPayments filter and result classes
-	#region EmployeeMonthPaymentsFilter meta data class definition
+    #region LoanMoveFromEmployeeToEmployee filter and result classes
+    #region LoanMoveFromEmployeeToEmployeeFilter meta data class definition
+    /// <summary>
+    /// Resource management for LoanMoveFromEmployeeToEmployeeFilter class
+    /// </summary>
+    public partial class LoanMoveFromEmployeeToEmployeeFilter : ResourceBase
+    {
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.LoanMoveFromEmployeeToEmployeeFilter class
+        /// </summary>
+        internal LoanMoveFromEmployeeToEmployeeFilter()
+        {
+        }
+
+        #region Public properties
+        /// <summary>
+        /// Resource for LoanMoveFromEmployeeToEmployeeFilter.Loan property
+        /// </summary>
+        public static string Loan
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanMoveFromEmployeeToEmployeeFilter", "Loan");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to LoanTooltip.
+        /// </summary>
+        public static string LoanTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanMoveFromEmployeeToEmployeeFilter", "LoanTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for LoanMoveFromEmployeeToEmployeeFilter.EmployeeId property
+        /// </summary>
+        public static string EmployeeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanMoveFromEmployeeToEmployeeFilter", "EmployeeId");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to EmployeeIdTooltip.
+        /// </summary>
+        public static string EmployeeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanMoveFromEmployeeToEmployeeFilter", "EmployeeIdTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for LoanMoveFromEmployeeToEmployeeFilter.LoanDecisionId property
+        /// </summary>
+        public static string LoanDecisionId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanMoveFromEmployeeToEmployeeFilter", "LoanDecisionId");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionIdTooltip.
+        /// </summary>
+        public static string LoanDecisionIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanMoveFromEmployeeToEmployeeFilter", "LoanDecisionIdTooltip");
+            }
+        }
+        #endregion
+    }
+    #endregion
+    #endregion
+
+    #region LoanMoveFromEmployeeToGuarantor filter and result classes
+    #region LoanMoveFromEmployeeToGuarantorFilter meta data class definition
+    /// <summary>
+    /// Resource management for LoanMoveFromEmployeeToGuarantorFilter class
+    /// </summary>
+    public partial class LoanMoveFromEmployeeToGuarantorFilter : ResourceBase
+    {
+        /// <summary>
+        /// Internal constructor for Cf.Data.Resources.LoanMoveFromEmployeeToGuarantorFilter class
+        /// </summary>
+        internal LoanMoveFromEmployeeToGuarantorFilter()
+        {
+        }
+
+        #region Public properties
+        /// <summary>
+        /// Resource for LoanMoveFromEmployeeToGuarantorFilter.Loan property
+        /// </summary>
+        public static string Loan
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanMoveFromEmployeeToGuarantorFilter", "Loan");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to LoanTooltip.
+        /// </summary>
+        public static string LoanTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanMoveFromEmployeeToGuarantorFilter", "LoanTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for LoanMoveFromEmployeeToGuarantorFilter.EmployeeId property
+        /// </summary>
+        public static string EmployeeId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanMoveFromEmployeeToGuarantorFilter", "EmployeeId");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to EmployeeIdTooltip.
+        /// </summary>
+        public static string EmployeeIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanMoveFromEmployeeToGuarantorFilter", "EmployeeIdTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for LoanMoveFromEmployeeToGuarantorFilter.LoanDecisionId property
+        /// </summary>
+        public static string LoanDecisionId
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanMoveFromEmployeeToGuarantorFilter", "LoanDecisionId");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to LoanDecisionIdTooltip.
+        /// </summary>
+        public static string LoanDecisionIdTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanMoveFromEmployeeToGuarantorFilter", "LoanDecisionIdTooltip");
+            }
+        }
+        /// <summary>
+        /// Resource for LoanMoveFromEmployeeToGuarantorFilter.NumberOfGuarantors property
+        /// </summary>
+        public static string NumberOfGuarantors
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanMoveFromEmployeeToGuarantorFilter", "NumberOfGuarantors");
+            }
+        }
+
+        /// <summary>
+        /// Looks up a localized string similar to NumberOfGuarantorsTooltip.
+        /// </summary>
+        public static string NumberOfGuarantorsTooltip
+        {
+            get
+            {
+                return ResourcesCollection.GetString(Culture, "LoanMoveFromEmployeeToGuarantorFilter", "NumberOfGuarantorsTooltip");
+            }
+        }
+        #endregion
+    }
+    #endregion
+    #endregion
+
+    #region EmployeeMonthPayments filter and result classes
+    #region EmployeeMonthPaymentsFilter meta data class definition
     /// <summary>
     /// Resource management for EmployeeMonthPaymentsFilter class
     /// </summary>
-	public partial class EmployeeMonthPaymentsFilter : ResourceBase
+    public partial class EmployeeMonthPaymentsFilter : ResourceBase
 	{
         /// <summary>
         /// Internal constructor for Cf.Data.Resources.EmployeeMonthPaymentsFilter class

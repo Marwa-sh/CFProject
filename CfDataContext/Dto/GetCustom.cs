@@ -21,8 +21,12 @@ namespace Cf.Data
 		/// Needs summary!
 		/// </summary>
 		public Nullable<int> EmployeeId {get; set; }
-		#endregion
-	}
+        /// <summary>
+        /// Needs summary!
+        /// </summary>
+        public Nullable<int> LoanStatusId { get; set; }
+        #endregion
+    }
 	#endregion
 
 	#region EmployeeLoansResult class definition
@@ -40,24 +44,81 @@ namespace Cf.Data
         public short ProductProductTypeId {get; set; }
 		
         public string ProductProductTypeName {get; set; }
-		
-        public decimal ProductId {get; set; }
-		
-        public Nullable<decimal> PaidAmount {get; set; }
+        public decimal ProductAmount { get; set; }
+        public int ProductId {get; set; }        
+
+        public decimal PaidAmount {get; set; }
 		
         public short PaymentPeriod {get; set; }
 		
-        public Nullable<int> RemainPeriod {get; set; }
+        public int RemainPeriod {get; set; }
 		#endregion
 	}
-	#endregion
+    #endregion
     #endregion
 
-	#region EmployeeMonthPayments filter and result classes
+    #region LoanMoveFromEmployeeToEmployee filter and result classes
+    #region LoanMoveFromEmployeeToEmployeeFilter class definition
+    /// <summary>
+    /// Filter class for LoanMoveFromEmployeeToEmployee.
+    /// </summary>
+    public partial class LoanMoveFromEmployeeToEmployeeFilter
+    {
+        #region Public properties
+        /// <summary>
+        /// Needs summary!
+        /// </summary>
+        public Nullable<int> Loan { get; set; }
+
+        /// <summary>
+        /// Needs summary!
+        /// </summary>
+        public Nullable<int> EmployeeId { get; set; }
+        /// <summary>
+        /// Needs summary!
+        /// </summary>
+        public Nullable<int> LoanDecisionId { get; set; }
+        #endregion
+    }
+    #endregion
+    #endregion
+
+    #region LoanMoveFromEmployeeToGuarantor filter and result classes
+    #region LoanMoveFromEmployeeToGuarantorFilter class definition
+    /// <summary>
+    /// Filter class for LoanMoveFromEmployeeToGuarantor.
+    /// </summary>
+    public partial class LoanMoveFromEmployeeToGuarantorFilter
+    {
+        #region Public properties
+        /// <summary>
+        /// Needs summary!
+        /// </summary>
+        public Nullable<int> Loan { get; set; }
+
+        /// <summary>
+        /// Needs summary!
+        /// </summary>
+        public Nullable<int> EmployeeId { get; set; }
+
+        /// <summary>
+        /// Needs summary!
+        /// </summary>
+        public Nullable<int> LoanDecisionId { get; set; }
+        /// <summary>
+        /// Needs summary!
+        /// </summary>
+        public Nullable<int> NumberOfGuarantors { get; set; }
+        #endregion
+    }
+    #endregion
+    #endregion
+
+    #region EmployeeMonthPayments filter and result classes
     #region EmployeeMonthPaymentsFilter class definition
-	/// <summary>
+    /// <summary>
     /// Filter class for EmployeeMonthPayments.
-	/// </summary>
+    /// </summary>
     [MetadataType(typeof(EmployeeMonthPaymentsFilterMetaData))]
 	public partial class EmployeeMonthPaymentsFilter
 	{

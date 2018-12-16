@@ -139,6 +139,12 @@
                             @Html.ActionLink("إصدار قرار السلف", "CreateLoanRequestDecision", "LoanDecision", new { Area = "Repository" }, new { })
                         </li>
                         <li>
+                            @Html.ActionLink("تحويلات السلف", "Index", "ManageLoanChanges", new { Area = "Loans" }, new { })
+                        </li>
+                        <li>
+                            @Html.ActionLink("السلف المنقولة من فرع", "Index", "ManageLoanChangeIncoming", new { Area = "Loans" }, new { })
+                        </li>
+                        <li>
                             @Html.ActionLink("إصدار قرار السلف نقل إلى موظف", "LoanDeciosionMoveToEmployee", "LoanDecisionViewModel", new { Area = "Loans" }, new { })
                         </li>
                         <li>
@@ -403,6 +409,7 @@
     @Scripts.Render("~/bundles/Adminjquiry")
 
    
+    <script src="~/Scripts/sweetalert/sweetalert2.js" type="text/javascript"></script>
 
     <!-- BEGIN VENDOR JS-->
     <!-- BEGIN PAGE VENDOR JS-->

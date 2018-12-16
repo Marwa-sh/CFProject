@@ -119,7 +119,7 @@ namespace Portal.Areas.Grants.Controllers
                 return RedirectToAction("Details", new { id = productId });
             }
             catch
-            {
+            {                
                 return View();
             }
         }

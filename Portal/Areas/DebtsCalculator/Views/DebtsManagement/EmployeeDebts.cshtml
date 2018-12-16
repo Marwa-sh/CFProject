@@ -78,7 +78,7 @@
                                         @Html.EditorFor(model => model.LoanRequest.RequestProductProductRefundableProduct.PaymentPeriod, new { htmlAttributes = new { @class = "form-control" } })
                                         @Html.ValidationMessageFor(model => model.LoanRequest.RequestProductProductRefundableProduct.PaymentPeriod, "", new { @class = "text-danger" })
                                     </div>
-                                </div>                                
+                                </div>
                             </div>
 
 
@@ -107,7 +107,7 @@
                                         @Html.ValidationMessageFor(model => model.LoanRequest.LoanRequest.NetIncome, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
-                                
+
                                 <div class="col-md-2">
                                     <div class="form-group">
                                         <button type="button" id="discover" class="btn btn-primary mr-1" style="margin-top: 27px;">
@@ -510,32 +510,31 @@
                             @ViewBag.Insert
                         </button>
                         @*<button type="button" class="btn btn-warning">
-                             @Html.ActionLink((string)ViewBag.Back, "Index")
-                        </button>*@
+                                 @Html.ActionLink((string)ViewBag.Back, "Index")
+                            </button>*@
                     </div>
 
                 </div>
             </div>
         </div>
     </div>
-   
-    
+
+
 }
 @Html.Partial("_CreateDebt")
 @Html.Partial("_Warrants")
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-<script>
-		$(function () {
+    <script>
+        $(function () {
             $.validator.addMethod('date',
             function (value, element) {
                 if (this.optional(element)) {
                     return true;
                 }
                 var ok = true;
-                try
-                {
+                try {
                     $.datepicker.parseDate('dd/mm/yy', value);
                 }
                 catch (err) {
@@ -545,7 +544,7 @@
             });
             $(".IsDate").datepicker({ dateFormat: 'dd/mm/yy', changeYear: true });
         });
-</script>
+    </script>
     <script>
         $(document).ready(function () {
 
@@ -566,12 +565,12 @@
                 $("#minusBtn").attr("class", "icon-plus4");
 
                 // set the informations
-                
+
                 var employeeId = $("#LoanRequest_RequestProduct_Employee").val();
                 var amount = $("#LoanRequest_Request_Amount").val();
                 var period = $("#LoanRequest_RequestProductProductRefundableProduct_PaymentPeriod").val();
                 var installment = $("#Installment").val();
-              
+
                 console.log(employeeId + "," + amount + "," + period + "," + installment);
 
                 $("#EmployeeIdDebt").val(employeeId);
@@ -580,15 +579,15 @@
                 $("#InstallmentDebt").val(installment);
 
                 // expand the second card
-                $("#debtminusBtn").attr("class", "icon-minus4");               
+                $("#debtminusBtn").attr("class", "icon-minus4");
                 $("#DebtCard").attr("class", "card-body collapse in");
-                 
+
             });
 
             $("#AddDebt").click(function () {
-                 
-                // minimize the second card (Debts) 
-               
+
+                // minimize the second card (Debts)
+
                 var data = $("#CreateDebtForm").serialize();
 
                 $.ajax({
@@ -596,15 +595,13 @@
                     data: data,
                     type: "POST",
                     success: function (result) {
-                        if (result.data == 0)
-                        {
-                            console.log("Here is the data = " + result.error);
-                            alert("Error : "+ result.error);
+                        if (result.status == false) {
+                           // console.log("Here is the data = " + result.message);
+                            swal(result.message);
                         }
-                        else
-                        {
-                            console.log("Here is the data = " + data);
-                            $("#Instance_DebtId").val(result);
+                        else {
+                            //console.log("Here is the data = " + data);
+                            $("#Instance_DebtId").val(result.Data);
                             var value = $("#DebtCard").attr("class").replace("in", "");
                             $("#DebtCard").attr("class", value);
                             $("#debtminusBtn").attr("class", "icon-plus4");
@@ -612,20 +609,20 @@
                             $("#warrantMinusBtn").attr("class", "icon-minus4");
                             $("#warrantCard").attr("class", "card-body collapse in");
                             //alert("Debts has been added sucessfully");
-                            alert("تم إضافة المديونية بنجاح");
+                            swal("تم إضافة المديونية بنجاح");
                         }
                         //$('#loading').hide();
                     },
                     error: function (error) {
                         console.log("error" + error);
-                        alert("حدث خطأ ما");
+                        swal("حدث خطأ ما");
                         //alert("Error while adding the debt");
                     }
                 });
                 //$("#CreateDebtForm").submit();
             });
             $("#discover").click(function () {
-                
+
                 var productId = $("#LoanRequest_RequestProduct_ProductType").val();
                 var employeeId = $("#LoanRequest_RequestProduct_Employee").val();
                 var amount = $("#LoanRequest_Request_Amount").val();
@@ -633,12 +630,10 @@
                 var netAmount = $("#LoanRequest_LoanRequest_NetIncome").val();
                 var deductions = $("#LoanRequest_LoanRequest_TotalDeduction").val();
 
-                if (productId == '' || employeeId == '' || amount == '' || period == '' || netAmount == '' || deductions == '')
-                {
+                if (productId == '' || employeeId == '' || amount == '' || period == '' || netAmount == '' || deductions == '') {
                     swal("", '@ViewBag.ValidateDiscover', "error");
                 }
-                else
-                {
+                else {
                     $.ajax({
                         type: "POST",
                         url: '@Url.Action( "Calculate", "DebtsManagement")',
@@ -648,91 +643,84 @@
                             ', amount: ' + amount +
                             ', period: ' + period +
                             ', netAmount: ' + netAmount +
-                            ', deductions: '+ deductions + '}'
+                            ', deductions: ' + deductions + '}'
                    ,
                         contentType: "application/json; charset=utf-8",
                         dataType: "json",
                         success: function (response) {
-                            if (response == "Error")
-                            {
-
-                            }
-                            else
-                            {
-
-                            }
-
-                            var Calculator = response.Calculator;
-                            var Solevency = response.Solevency;
-
-                            var CersStartDate = Calculator.CersStartDate.replace('/Date(', '');
-                            CersStartDate = CersStartDate.replace(')/', '');
-                            var dateCersStartDate = new Date(parseInt(CersStartDate));
-
-                            var CfStartDate = Calculator.CfStartDate.replace('/Date(', '');
-                            CfStartDate = CfStartDate.replace(')/', '');
-
-                            var dateCfStartDate = new Date(parseInt(CfStartDate));
-
-                            console.log("Date=" + dateCersStartDate.toISOString() + " ,, " + dateCfStartDate.toLocaleDateString())
-
-                            // Employee Info
-                            $("#MaxAmount").val(Calculator.MaxAmount);
-                            $("#Seniority").val(Calculator.Seniority);
-                            $("#MinSeniority").val(Calculator.MinSeniority);
-                            $("#MinReusePeriod").val(Calculator.MinReusePeriod);
-                            $("#CersStartDate").val(dateCersStartDate.toLocaleDateString());
-                            $("#CfStartDate").val(dateCfStartDate.toLocaleDateString());
-                            $("#LeaveDate").val(Calculator.LeaveDate);
-                            $("#LeaveReason").val(Calculator.LeaveReason);
-                            $("#DepartmentName").val(Calculator.DepartmentName);
-                            $("#DepartmentSalaryWorkPlaceName").val(Calculator.DepartmentSalaryWorkPlaceName);
-                            $("#EmployeeStatusName").val(Calculator.EmployeeStatusName);
-                            $("#CategoryName").val(Calculator.CategoryName);
-                            $("#FullName").val(Calculator.FullName);
-
-                            // Loan Info
-                            $("#Installment").val(Calculator.Installment);
-                            $("#NetAmount").val(Calculator.NetAmount);
-                            $("#ProfitAmount").val(Calculator.ProfitAmount);
-                            $("#Rate").val(Calculator.AnnualRate);
-                            $("#GuarantorsCount").val(Calculator.GuarantorsCount);
-
-                            if (amount > Calculator.MaxAmount) {
-                                $("#ResultStatus").val('@ViewBag.Exceeds');
-                                $("#ResultStatus").css("color", "red");
+                            if (response.status == false) {
+                                swal(response.message);
                             }
                             else {
-                                $("#ResultStatus").val('@ViewBag.Good');
-                                $("#ResultStatus").css("color", "green");
-                            }
-                            // Solvency
-                            $("#DebtRemainingAmount").val(Solevency.DebtRemainingAmount);
-                            $("#WarrantRemainingAmount").val(Solevency.WarrantRemainingAmount);
-                            $("#TotalAmount").val(Solevency.TotalAmount);
-                            $("#DebtInstallment").val(Solevency.DebtInstallment);
-                            $("#WarrantInstallment").val(Solevency.WarrantInstallment);
-                            $("#TotalInstallment").val(Solevency.TotalInstallment);
-                            $("#MaxAllowedDebt").val(Solevency.MaxAllowedDebt);
-                            $("#MaxAllowedDeduction").val(Solevency.MaxAllowedDeduction);
-                            $("#IncomeSolvency").val(Solevency.IncomeSolvency);
-                            $("#NetSalarySolvency").val(Solevency.NetSalarySolvency);
 
-                            if(Solevency.IncomeSolvency<Solevency.MaxAllowedDebt)
-                            {
-                                $("#IncomeSolvency").css("color", "green");
-                            }
-                            else
-                            {
-                                $("#IncomeSolvency").css("color", "red");
-                            }
-                            if (Solevency.NetSalarySolvency > 0 )
-                            {
-                                $("#NetSalarySolvency").css("color", "green");
-                            }
-                            else
-                            {
-                                $("#NetSalarySolvency").css("color", "red");
+                                var Calculator = response.Calculator;
+                                var Solevency = response.Solevency;
+
+                                var CersStartDate = Calculator.CersStartDate.replace('/Date(', '');
+                                CersStartDate = CersStartDate.replace(')/', '');
+                                var dateCersStartDate = new Date(parseInt(CersStartDate));
+
+                                var CfStartDate = Calculator.CfStartDate.replace('/Date(', '');
+                                CfStartDate = CfStartDate.replace(')/', '');
+
+                                var dateCfStartDate = new Date(parseInt(CfStartDate));
+
+                                console.log("Date=" + dateCersStartDate.toISOString() + " ,, " + dateCfStartDate.toLocaleDateString())
+
+                                // Employee Info
+                                $("#MaxAmount").val(Calculator.MaxAmount);
+                                $("#Seniority").val(Calculator.Seniority);
+                                $("#MinSeniority").val(Calculator.MinSeniority);
+                                $("#MinReusePeriod").val(Calculator.MinReusePeriod);
+                                $("#CersStartDate").val(dateCersStartDate.toLocaleDateString());
+                                $("#CfStartDate").val(dateCfStartDate.toLocaleDateString());
+                                $("#LeaveDate").val(Calculator.LeaveDate);
+                                $("#LeaveReason").val(Calculator.LeaveReason);
+                                $("#DepartmentName").val(Calculator.DepartmentName);
+                                $("#DepartmentSalaryWorkPlaceName").val(Calculator.DepartmentSalaryWorkPlaceName);
+                                $("#EmployeeStatusName").val(Calculator.EmployeeStatusName);
+                                $("#CategoryName").val(Calculator.CategoryName);
+                                $("#FullName").val(Calculator.FullName);
+
+                                // Loan Info
+                                $("#Installment").val(Calculator.Installment);
+                                $("#NetAmount").val(Calculator.NetAmount);
+                                $("#ProfitAmount").val(Calculator.ProfitAmount);
+                                $("#Rate").val(Calculator.AnnualRate);
+                                $("#GuarantorsCount").val(Calculator.GuarantorsCount);
+
+                                if (amount > Calculator.MaxAmount) {
+                                    $("#ResultStatus").val('@ViewBag.Exceeds');
+                                    $("#ResultStatus").css("color", "red");
+                                }
+                                else {
+                                    $("#ResultStatus").val('@ViewBag.Good');
+                                    $("#ResultStatus").css("color", "green");
+                                }
+                                // Solvency
+                                $("#DebtRemainingAmount").val(Solevency.DebtRemainingAmount);
+                                $("#WarrantRemainingAmount").val(Solevency.WarrantRemainingAmount);
+                                $("#TotalAmount").val(Solevency.TotalAmount);
+                                $("#DebtInstallment").val(Solevency.DebtInstallment);
+                                $("#WarrantInstallment").val(Solevency.WarrantInstallment);
+                                $("#TotalInstallment").val(Solevency.TotalInstallment);
+                                $("#MaxAllowedDebt").val(Solevency.MaxAllowedDebt);
+                                $("#MaxAllowedDeduction").val(Solevency.MaxAllowedDeduction);
+                                $("#IncomeSolvency").val(Solevency.IncomeSolvency);
+                                $("#NetSalarySolvency").val(Solevency.NetSalarySolvency);
+
+                                if (Solevency.IncomeSolvency < Solevency.MaxAllowedDebt) {
+                                    $("#IncomeSolvency").css("color", "green");
+                                }
+                                else {
+                                    $("#IncomeSolvency").css("color", "red");
+                                }
+                                if (Solevency.NetSalarySolvency > 0) {
+                                    $("#NetSalarySolvency").css("color", "green");
+                                }
+                                else {
+                                    $("#NetSalarySolvency").css("color", "red");
+                                }
                             }
 
                         },
@@ -748,31 +736,31 @@
             });
         });
     </script>
-   
-<script>
-    //$('#CreateDebtForm').on('submit', function (e) {
-    //    // Prevent actual form submission
-    //    e.preventDefault();
-    //    //$('#loading').show();
-    //    // Serialize form data
-    //    var data = $("#CreateDebtForm").$('input,select,textarea').serialize();
 
-    //    // Submit form data via Ajax
-    //    $.ajax({
-    //        url: $(this).attr("action"),
-    //        data: data,
-    //        type: "POST",
-    //        success: function (data) {
-    //            console.log("Here is the data = " + data);
-                
-    //            //$('#loading').hide();
-    //        },
-    //        error: function (error) {
-    //            onsole.log("error" + error);
-    //        }
-    //    });
-    //});
-</script>    
+    <script>
+        //$('#CreateDebtForm').on('submit', function (e) {
+        //    // Prevent actual form submission
+        //    e.preventDefault();
+        //    //$('#loading').show();
+        //    // Serialize form data
+        //    var data = $("#CreateDebtForm").$('input,select,textarea').serialize();
 
- 
+        //    // Submit form data via Ajax
+        //    $.ajax({
+        //        url: $(this).attr("action"),
+        //        data: data,
+        //        type: "POST",
+        //        success: function (data) {
+        //            console.log("Here is the data = " + data);
+
+        //            //$('#loading').hide();
+        //        },
+        //        error: function (error) {
+        //            onsole.log("error" + error);
+        //        }
+        //    });
+        //});
+    </script>
+
+
 }

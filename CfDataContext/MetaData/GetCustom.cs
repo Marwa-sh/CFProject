@@ -102,8 +102,19 @@ namespace Cf.Data
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
         public string ProductProductTypeName {get; set; }
-		
-		[Display(
+
+        [Display(
+            Name = "ProductAmount",
+            ResourceType = typeof(Cf.Data.Resources.EmployeeLoansResult))
+        ]
+        [Tooltip("ProductAmountTooltip", typeof(Cf.Data.Resources.EmployeeLoansResult))]
+        [Required(
+            ErrorMessageResourceName = "RequiredCheck",
+            ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+        ]
+        public decimal ProductAmount { get; set; }
+
+        [Display(
 			Name = "ProductId",
 			ResourceType = typeof(Cf.Data.Resources.EmployeeLoansResult))
 		]
@@ -112,7 +123,7 @@ namespace Cf.Data
 			ErrorMessageResourceName = "RequiredCheck",
 			ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
 		]
-        public decimal ProductId {get; set; }
+        public int ProductId {get; set; }
 		
 		[Display(
 			Name = "PaidAmount",
@@ -152,15 +163,150 @@ namespace Cf.Data
         public Nullable<int> RemainPeriod {get; set; }
 		#endregion
 	}
-	#endregion
-	#endregion
+    #endregion
+    #endregion
 
-	#region EmployeeMonthPayments filter and result classes
-	#region EmployeeMonthPaymentsFilter meta data class definition
+    #region LoanMoveFromEmployeeToEmployee filter and result classes
+    #region LoanMoveFromEmployeeToEmployeeFilter meta data class definition
+    /// <summary>
+    /// Metadata for LoanMoveFromEmployeeToEmployeeFilter class
+    /// </summary>
+    public partial class LoanMoveFromEmployeeToEmployeeFilterMetaData
+    {
+        #region Public properties
+        /// <summary>
+        /// Metadata for LoanMoveFromEmployeeToEmployeeFilter.Loan property
+        /// </summary>
+        [Display(
+            Name = "Loan",
+            ResourceType = typeof(Cf.Data.Resources.LoanMoveFromEmployeeToEmployeeFilter))
+        ]
+        [Tooltip("LoanTooltip", typeof(Cf.Data.Resources.LoanMoveFromEmployeeToEmployeeFilter))]
+        [Range(
+            0,
+            2147483647,
+            ErrorMessageResourceName = "RangeCheck",
+            ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+        ]
+        public Nullable<int> Loan { get; set; }
+
+        /// <summary>
+        /// Metadata for LoanMoveFromEmployeeToEmployeeFilter.EmployeeId property
+        /// </summary>
+        [Display(
+            Name = "EmployeeId",
+            ResourceType = typeof(Cf.Data.Resources.LoanMoveFromEmployeeToEmployeeFilter))
+        ]
+        [Tooltip("EmployeeIdTooltip", typeof(Cf.Data.Resources.LoanMoveFromEmployeeToEmployeeFilter))]
+        [Range(
+            0,
+            2147483647,
+            ErrorMessageResourceName = "RangeCheck",
+            ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+        ]
+        public Nullable<int> EmployeeId { get; set; }
+
+        /// <summary>
+        /// Metadata for LoanMoveFromEmployeeToEmployeeFilter.LoanDecisionId property
+        /// </summary>
+        [Display(
+            Name = "LoanDecisionId",
+            ResourceType = typeof(Cf.Data.Resources.LoanMoveFromEmployeeToEmployeeFilter))
+        ]
+        [Tooltip("LoanDecisionIdTooltip", typeof(Cf.Data.Resources.LoanMoveFromEmployeeToEmployeeFilter))]
+        [Range(
+            0,
+            2147483647,
+            ErrorMessageResourceName = "RangeCheck",
+            ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+        ]
+        public Nullable<int> LoanDecisionId { get; set; }
+        #endregion
+    }
+    #endregion
+    #endregion
+
+    #region LoanMoveFromEmployeeToGuarantor filter and result classes
+    #region LoanMoveFromEmployeeToGuarantorFilter meta data class definition
+    /// <summary>
+    /// Metadata for LoanMoveFromEmployeeToGuarantorFilter class
+    /// </summary>
+    public partial class LoanMoveFromEmployeeToGuarantorFilterMetaData
+    {
+        #region Public properties
+        /// <summary>
+        /// Metadata for LoanMoveFromEmployeeToGuarantorFilter.Loan property
+        /// </summary>
+        [Display(
+            Name = "Loan",
+            ResourceType = typeof(Cf.Data.Resources.LoanMoveFromEmployeeToGuarantorFilter))
+        ]
+        [Tooltip("LoanTooltip", typeof(Cf.Data.Resources.LoanMoveFromEmployeeToGuarantorFilter))]
+        [Range(
+            0,
+            2147483647,
+            ErrorMessageResourceName = "RangeCheck",
+            ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+        ]
+        public Nullable<int> Loan { get; set; }
+
+        /// <summary>
+        /// Metadata for LoanMoveFromEmployeeToGuarantorFilter.EmployeeId property
+        /// </summary>
+        [Display(
+            Name = "EmployeeId",
+            ResourceType = typeof(Cf.Data.Resources.LoanMoveFromEmployeeToGuarantorFilter))
+        ]
+        [Tooltip("EmployeeIdTooltip", typeof(Cf.Data.Resources.LoanMoveFromEmployeeToGuarantorFilter))]
+        [Range(
+            0,
+            2147483647,
+            ErrorMessageResourceName = "RangeCheck",
+            ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+        ]
+        public Nullable<int> EmployeeId { get; set; }
+
+        /// <summary>
+        /// Metadata for LoanMoveFromEmployeeToGuarantorFilter.LoanDecisionId property
+        /// </summary>
+        [Display(
+            Name = "LoanDecisionId",
+            ResourceType = typeof(Cf.Data.Resources.LoanMoveFromEmployeeToGuarantorFilter))
+        ]
+        [Tooltip("LoanDecisionIdTooltip", typeof(Cf.Data.Resources.LoanMoveFromEmployeeToGuarantorFilter))]
+        [Range(
+            0,
+            2147483647,
+            ErrorMessageResourceName = "RangeCheck",
+            ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+        ]
+        public Nullable<int> LoanDecisionId { get; set; }
+
+        /// <summary>
+        /// Metadata for LoanMoveFromEmployeeToGuarantorFilter.NumberOfGuarantors property
+        /// </summary>
+        [Display(
+            Name = "NumberOfGuarantors",
+            ResourceType = typeof(Cf.Data.Resources.LoanMoveFromEmployeeToGuarantorFilter))
+        ]
+        [Tooltip("NumberOfGuarantorsTooltip", typeof(Cf.Data.Resources.LoanMoveFromEmployeeToGuarantorFilter))]
+        [Range(
+            0,
+            2147483647,
+            ErrorMessageResourceName = "RangeCheck",
+            ErrorMessageResourceType = typeof(Cf.Data.Resources.CommonResources))
+        ]
+        public Nullable<int> NumberOfGuarantors { get; set; }
+        #endregion
+    }
+    #endregion
+    #endregion
+    #region EmployeeMonthPayments filter and result classes
+    #region EmployeeMonthPaymentsFilter meta data class definition
     /// <summary>
     /// Metadata for EmployeeMonthPaymentsFilter class
     /// </summary>
-	public partial class EmployeeMonthPaymentsFilterMetaData
+    public partial class EmployeeMonthPaymentsFilterMetaData
 	{
 		#region Public properties
         /// <summary>

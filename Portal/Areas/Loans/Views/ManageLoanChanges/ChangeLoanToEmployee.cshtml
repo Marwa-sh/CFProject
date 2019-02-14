@@ -1,0 +1,385 @@
+﻿@model Cf.ViewModels.LoanVwViewModel
+<div class="form-horizontal">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+</div>
+@Html.Partial("_Filter", Model)
+<div class="row">
+    <div class="col-xs-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">
+                    @ViewBag.Title @if (Model.List.Count == 0)
+                    {<span class="tag tag-default">@Model.List.Count</span>}
+                    else
+                    {<span class="tag tag-danger">@Model.List.Count</span> }
+                </h4>
+                <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
+                        <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                        <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-body collapse in">
+                <div class="card-block card-dashboard">
+                </div>
+                @using (Html.BeginForm())
+                {
+                    <div class="table-responsive">
+                        <table id="Result" class="table table-bordered mb-0">
+                            <thead class="bg-primary table-head-color">
+                                <tr>
+                                    <th></th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Instance.ProductId)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Instance.ProductEmployeeId)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Instance.ProductEmployeeFullName)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Instance.ProductEmployeeDepartmentSalaryWorkPlaceName)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Instance.ProductProductTypeName)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Instance.ProductProductTypeRate)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Instance.ProductAmount)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Instance.LoanDecisionNumber)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Instance.LoanDecisionDate)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Instance.LoanStatusName)
+                                    </th>
+
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    int index = 0;
+                                }
+                                @foreach (var item in Model.List)
+                                {
+                                <tr>
+                                    <td>
+                                        <input type="hidden" name="SelectedLoansList[@index].LoanId" value="@item.ProductId" />
+                                        @Html.CheckBox("SelectedLoansList[" + index + "].IsSelected")
+                                        @*<input id="isSellected" name="Requests[@index].isChecked" type="checkbox" checked />*@
+                                    </td>
+                                    @{ index = index + 1;}
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ProductId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ProductEmployeeId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ProductEmployeeFullName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ProductEmployeeDepartmentSalaryWorkPlaceName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ProductProductTypeName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ProductProductTypeRate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ProductAmount)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LoanDecisionNumber)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LoanDecisionDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LoanStatusName)
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                            }
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row divMargin">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                @*@Html.LabelFor(model => model.Filter.ProductEmployeeId, htmlAttributes: new { @class = "control-label" })*@
+                                @Html.Label("", "الموظف المحول له", 
+                                                new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", @ViewBag.EmployeeIdTo},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                }
+                                )
+
+                                <input type="text" id="EmployeeId" class="form-control" name="EmployeeId" />
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <button type="button" id="discover" class="btn btn-primary mr-1" style="margin-top: 27px;">
+                                    @ViewBag.Discover
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row divMargin">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.EmployeeInfo.FullName, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.EmployeeInfo.FullName)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                <input disabled id="FullName" class="form-control" name="FullName" />
+                            </div>
+
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.EmployeeInfo.DepartmentName, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.EmployeeInfo.DepartmentName)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                <input disabled id="DepartmentName" class="form-control" name="DepartmentName" />
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.EmployeeInfo.DepartmentSalaryWorkPlaceName, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.EmployeeInfo.DepartmentSalaryWorkPlaceName)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                <input disabled id="DepartmentSalaryWorkPlaceName" class="form-control" name="DepartmentSalaryWorkPlaceName" />
+                            </div>
+
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.EmployeeInfo.EmployeeStatusName, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.EmployeeInfo.EmployeeStatusName)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                <input disabled id="EmployeeStatusName" class="form-control" name="EmployeeStatusName" />
+                            </div>
+                        </div>
+
+                    </div>
+                        <div class="row divMargin">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.EmployeeInfo.CategoryName, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.EmployeeInfo.CategoryName)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                    <input disabled id="CategoryName" class="form-control" name="CategoryName" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.EmployeeInfo.CersStartDate, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.EmployeeInfo.CersStartDate)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                    <input disabled id="CersStartDate" class="form-control" name="CersStartDate" />
+                                </div>
+
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.EmployeeInfo.CfStartDate, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.EmployeeInfo.CfStartDate)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                    <input disabled id="CfStartDate" class="form-control" name="CfStartDate" />
+                                </div>
+
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.EmployeeInfo.LeaveDate, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.EmployeeInfo.LeaveDate)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                    <input disabled id="LeaveDate" class="form-control" name="LeaveDate" />
+                                </div>
+                            </div>
+                        </div>
+                            <div class="row divMargin">
+                               
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.EmployeeInfo.LeaveReason, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.EmployeeInfo.LeaveReason)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        <input disabled id="LeaveReason" class="form-control" name="LeaveReason" />
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="form-actions divMargin">
+                                <button type="submit" name="operationType" value="Move" class="btn btn-primary mr-1">
+                                    @ViewBag.Insert
+                                </button>
+                            </div>
+                                        }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(function () {
+            $.validator.addMethod('date',
+            function (value, element) {
+                if (this.optional(element)) {
+                    return true;
+                }
+                var ok = true;
+                try {
+                    $.datepicker.parseDate('dd/mm/yy', value);
+                }
+                catch (err) {
+                    ok = false;
+                }
+                return ok;
+            });
+            $(".IsDate").datepicker({ dateFormat: 'dd/mm/yy', changeYear: true });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            var len = $('#Result tr').length;
+            var res = $("#Result");
+            if (len == 1) {
+                var table = document.getElementById("Result").tBodies[0];
+
+                // Create an empty <tr> element and add it to the 1st position of the table:
+                var row = table.insertRow(0);
+
+                //// Insert new cell
+                var cell1 = row.insertCell(0);
+                cell1.colSpan = 12;
+                cell1.innerText = '@ViewBag.NoRecords';
+                cell1.align = "center";
+
+            }
+            else {
+                var value = $("#cardOptions").attr("class").replace("in", "");
+                $("#cardOptions").attr("class", value);
+                $("#filter").attr("class", "icon-plus4");
+            }
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+
+            $(window).keydown(function (e) {
+                if (e.keyCode == 13) {
+                    $('#discover').click();
+                    event.preventDefault();
+                    return false;
+                }
+            });
+        });
+        $(function () {
+
+            $("#discover").click(function () {
+
+                var employeeId = $("#EmployeeId").val();
+
+                if (employeeId == '') {
+                    swal("", '@ViewBag.ValidateDiscover', "error");
+                }
+                else {
+                    $.ajax({
+                        type: "POST",
+                        url: '@Url.Action("GetEmployeeInformation", "ManageLoanChanges")',// "/LoanRequestViewModel/Calculate",
+                        data:
+                            '{ employeeId: ' + employeeId + '}'
+                        ,
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (response) {
+                            if (response.error == "Error") {
+                                swal(response.message);
+                            }
+                            else {
+
+                                var Employee = response.Employee;
+
+                                var CersStartDate = Employee.CersStartDate.replace('/Date(', '');
+                                CersStartDate = CersStartDate.replace(')/', '');
+                                var dateCersStartDate = new Date(parseInt(CersStartDate));
+
+                                var CfStartDate = Employee.CfStartDate.replace('/Date(', '');
+                                CfStartDate = CfStartDate.replace(')/', '');
+
+                                var dateCfStartDate = new Date(parseInt(CfStartDate));
+
+                                console.log("Date=" + dateCersStartDate.toISOString() + " ,, " + dateCfStartDate.toLocaleDateString())
+
+                                // Employee Info
+                                $("#CersStartDate").val(dateCersStartDate.toLocaleDateString());
+                                $("#CfStartDate").val(dateCfStartDate.toLocaleDateString());
+                                $("#LeaveDate").val(Employee.LeaveDate);
+                                $("#LeaveReason").val(Employee.LeaveReason);
+                                $("#DepartmentName").val(Employee.DepartmentName);
+                                $("#DepartmentSalaryWorkPlaceName").val(Employee.DepartmentSalaryWorkPlaceName);
+                                $("#EmployeeStatusName").val(Employee.EmployeeStatusName);
+                                $("#CategoryName").val(Employee.CategoryName);
+                                $("#FullName").val(Employee.FullName);
+                            }
+
+                        },
+                        failure: function (response) {
+                            alert(response.responseText);
+                        },
+                        error: function (response) {
+                            alert(response.responseText);
+                        }
+                    });
+                }
+
+            });
+        });
+    </script>
+}

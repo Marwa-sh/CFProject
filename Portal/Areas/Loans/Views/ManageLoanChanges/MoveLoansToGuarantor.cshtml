@@ -1,0 +1,305 @@
+﻿@model Cf.ViewModels.LoanVwViewModel
+<div class="form-horizontal">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+</div>
+
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">
+                    @ViewBag.MoveLoansToGuarantor @if (Model.EmployeeLoansResult.Count == 0)
+                    {<span class="tag tag-default">@Model.EmployeeLoansResult.Count</span>}
+                    else
+                    {<span class="tag tag-danger">@Model.EmployeeLoansResult.Count</span> }
+                </h4>
+                <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+                        <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
+                        <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                        <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-body collapse in">
+                @*<div class="card-block card-dashboard">
+                </div>*@
+                @using (Html.BeginForm())
+                {
+                    <div class="card-block card-dashboard">
+                        <div class="form-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        @*@Html.LabelFor(model => model.Filter.ProductEmployeeId, htmlAttributes: new { @class = "control-label" })*@
+                                        @Html.LabelFor(model => model.EmployeeLoansFilter.EmployeeId, new Dictionary<string, Object>
+                                                { { "class", "control-label" },
+                                                  {"title", Html.ToolTipMessageFor(model => model.EmployeeLoansFilter.EmployeeId)},
+                                                  {"data-toggle", "tooltip"},
+                                                  {"data-placement", "bottom"}
+                                                })
+                                        @Html.EditorFor(model => model.EmployeeLoansFilter.EmployeeId, new { htmlAttributes = new { @class = "form-control" } })
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary mr-1" style="margin-top: 27px;">
+                                            @ViewBag.Search
+                                        </button>
+                                        </div>
+                                    </div>
+                            </div>
+                            @*<div class="form-actions">
+                                <button type="submit" class="btn btn-primary mr-1">
+                                    @ViewBag.Search
+                                </button>
+                            </div>*@
+                        </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table id="Result" class="table table-bordered mb-0">
+                                <thead class="bg-primary table-head-color">
+                                    <tr>
+                                        <th></th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.InstanceResult.ProductEmployeeId)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.InstanceResult.ProductEmployeeFullName)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.InstanceResult.ProductProductTypeName)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.InstanceResult.ProductAmount)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.InstanceResult.PaidAmount)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.InstanceResult.PaymentPeriod)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.InstanceResult.RemainPeriod)
+                                        </th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{
+                                    int index = 0;
+                                    }
+                                    @foreach (var item in Model.EmployeeLoansResult)
+                                    {
+                                        decimal result;
+                                        result = item.ProductAmount - item.PaidAmount;
+                                    <tr>
+                                        <td>
+                                            <input type="hidden" name="SelectedLoansList[@index].LoanId" value="@item.ProductId" />
+                                            <input type="hidden" name="SelectedLoansList[@index].RemainingAmount" value="@result " />
+                                            <input type="hidden" name="SelectedLoansList[@index].RemainingPeriod" value="@item.RemainPeriod" />
+                                            <input type="hidden" name="SelectedLoansList[@index].ProductTypeId" value="@item.ProductProductTypeId" />
+                                            @Html.CheckBox("SelectedLoansList[" + index + "].IsSelected", new { @class = "selectLoan", data_id = @item.ProductId })
+                                        </td>
+                                        @{ index = index + 1;}
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ProductEmployeeId)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ProductEmployeeFullName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ProductProductTypeName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ProductAmount)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.PaymentPeriod)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.PaymentPeriod)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.RemainPeriod)
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                            }
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="GuarantorsSection">
+
+                        </div>
+                        <div class="form-actions divMargin">
+                            <button type="submit" name="operationType" value="Move" class="btn btn-primary mr-1">
+                                @ViewBag.MoveToGuarantors
+                            </button>
+                        </div>
+                        }
+                    </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(function () {
+            $.validator.addMethod('date',
+            function (value, element) {
+                if (this.optional(element)) {
+                    return true;
+                }
+                var ok = true;
+                try {
+                    $.datepicker.parseDate('dd/mm/yy', value);
+                }
+                catch (err) {
+                    ok = false;
+                }
+                return ok;
+            });
+            $(".IsDate").datepicker({ dateFormat: 'dd/mm/yy', changeYear: true });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            var len = $('#Result tr').length;
+            var res = $("#Result");
+            if (len == 1) {
+                var table = document.getElementById("Result").tBodies[0];
+
+                // Create an empty <tr> element and add it to the 1st position of the table:
+                var row = table.insertRow(0);
+
+                //// Insert new cell
+                var cell1 = row.insertCell(0);
+                cell1.colSpan = 12;
+                cell1.innerText = '@ViewBag.NoRecords';
+                cell1.align = "center";
+
+            }
+            //else {
+            //    var value = $("#cardOptions").attr("class").replace("in", "");
+            //    $("#cardOptions").attr("class", value);
+            //    $("#filter").attr("class", "icon-plus4");
+            //}
+
+            $(".selectLoan").on("click", function () {
+                var c = $(this);
+                // unselect other loans
+                $(".selectLoan input").each(function () {
+                    if ($(this) != c)
+                        $(this).prop("check", "false");
+                });
+
+                var loanId = $(this).data("id");
+                if (loanId) {
+                    // refresh guarantors section                    
+                    $.ajax({
+                        type: "POST",
+                        url: '@Url.Action("GetLoanGuarantors", "ManageLoanChanges")',
+                        data:
+                            '{ LoanId : ' + loanId + '}'
+                            ,
+                        contentType: "application/json; charset=utf-8",
+                        //dataType: "json",
+                        success: function (response) {
+                            if (response.error == "Error") {
+                                swal(response.message);
+                            }
+                            else
+                            {
+                                $("#GuarantorsSection").html(response);                               
+                            }
+
+                        },
+                        failure: function (response) {
+                            alert(response.responseText);
+                        },
+                        error: function (response) {
+                            alert(response.responseText);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+
+            $(window).keydown(function (e) {
+                if (e.keyCode == 13) {
+                    $('#discover').click();
+                    event.preventDefault();
+                    return false;
+                }
+            });
+        });
+        $(function () {
+
+            $("#discover").click(function () {
+
+                var employeeId = $("#EmployeeId").val();
+
+                if (employeeId == '') {
+                    swal("", '@ViewBag.ValidateDiscover', "error");
+                }
+                else {
+                    $.ajax({
+                        type: "POST",
+                        url: '@Url.Action("GetEmployeeInformation", "ManageLoanChanges")',// "/LoanRequestViewModel/Calculate",
+                        data:
+                            '{ employeeId: ' + employeeId + '}'
+                        ,
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (response) {
+                            if (response.error == "Error") {
+                                swal(response.message);
+                            }
+                            else {
+
+                                var Employee = response.Employee;
+
+                                var CersStartDate = Employee.CersStartDate.replace('/Date(', '');
+                                CersStartDate = CersStartDate.replace(')/', '');
+                                var dateCersStartDate = new Date(parseInt(CersStartDate));
+
+                                var CfStartDate = Employee.CfStartDate.replace('/Date(', '');
+                                CfStartDate = CfStartDate.replace(')/', '');
+
+                                var dateCfStartDate = new Date(parseInt(CfStartDate));
+
+                                console.log("Date=" + dateCersStartDate.toISOString() + " ,, " + dateCfStartDate.toLocaleDateString())
+
+                                // Employee Info
+                                $("#CersStartDate").val(dateCersStartDate.toLocaleDateString());
+                                $("#CfStartDate").val(dateCfStartDate.toLocaleDateString());
+                                $("#LeaveDate").val(Employee.LeaveDate);
+                                $("#LeaveReason").val(Employee.LeaveReason);
+                                $("#DepartmentName").val(Employee.DepartmentName);
+                                $("#DepartmentSalaryWorkPlaceName").val(Employee.DepartmentSalaryWorkPlaceName);
+                                $("#EmployeeStatusName").val(Employee.EmployeeStatusName);
+                                $("#CategoryName").val(Employee.CategoryName);
+                                $("#FullName").val(Employee.FullName);
+                            }
+
+                        },
+                        failure: function (response) {
+                            alert(response.responseText);
+                        },
+                        error: function (response) {
+                            alert(response.responseText);
+                        }
+                    });
+                }
+
+            });
+        });
+    </script>
+}
